@@ -7,9 +7,9 @@
 //
 
 
-//title
+//MARK: Title of View Controller
 let kTitleLogin = Localizable(value: "Login")
 
 
-//alert
+//MARK: Alert message
 let kAlertOk = Localizable(value: "OK")

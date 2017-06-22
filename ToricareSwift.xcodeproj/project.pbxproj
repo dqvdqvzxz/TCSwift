@@ -16,7 +16,6 @@
 		3FB411521EFB7CC0008720A6 /* TRCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411511EFB7CC0008720A6 /* TRCLoginViewController.xib */; };
 		3FB411541EFB7ED3008720A6 /* TRCObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411531EFB7ED3008720A6 /* TRCObject.swift */; };
 		3FB411561EFB9DD2008720A6 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411551EFB9DD2008720A6 /* HexColor.swift */; };
-		3FB411581EFBA680008720A6 /* UITextField+PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411571EFBA680008720A6 /* UITextField+PlaceHolder.swift */; };
 		3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411671EFBBA11008720A6 /* TRCConfigConstant.swift */; };
 		3FB4116A1EFBBAC2008720A6 /* TRCStringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411691EFBBAC2008720A6 /* TRCStringConstant.swift */; };
 		3FB4116C1EFBBEF6008720A6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4116B1EFBBEF6008720A6 /* Alert.swift */; };
@@ -33,7 +32,6 @@
 		3FB411511EFB7CC0008720A6 /* TRCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCLoginViewController.xib; sourceTree = "<group>"; };
 		3FB411531EFB7ED3008720A6 /* TRCObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCObject.swift; sourceTree = "<group>"; };
 		3FB411551EFB9DD2008720A6 /* HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
-		3FB411571EFBA680008720A6 /* UITextField+PlaceHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceHolder.swift"; sourceTree = "<group>"; };
 		3FB411671EFBBA11008720A6 /* TRCConfigConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCConfigConstant.swift; sourceTree = "<group>"; };
 		3FB411691EFBBAC2008720A6 /* TRCStringConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCStringConstant.swift; sourceTree = "<group>"; };
 		3FB4116B1EFBBEF6008720A6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				3FB411551EFB9DD2008720A6 /* HexColor.swift */,
-				3FB411571EFBA680008720A6 /* UITextField+PlaceHolder.swift */,
 				3FB4116B1EFBBEF6008720A6 /* Alert.swift */,
 			);
 			path = Extensions;
@@ -284,7 +281,6 @@
 			files = (
 				3FB4116C1EFBBEF6008720A6 /* Alert.swift in Sources */,
 				3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */,
-				3FB411581EFBA680008720A6 /* UITextField+PlaceHolder.swift in Sources */,
 				3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */,
 				3FB4114F1EFB7CA7008720A6 /* TRCLoginViewController.swift in Sources */,
 				3FB4116A1EFBBAC2008720A6 /* TRCStringConstant.swift in Sources */,
@@ -404,7 +400,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meobeo.ToricareSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG=0";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG_LEVEL_1;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
