@@ -10,10 +10,18 @@ import UIKit
 
 class TRCLoginViewController: TRCBaseViewController {
 
+    @IBOutlet weak var viewTest: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        strTest = "abc"
+        print("\(strTest!)")
+        
+        viewTest.backgroundColor = UIColor(hexString: "ff0000", alpha: 0.1)
+        
     }
 
     override func didReceiveMemoryWarning() {

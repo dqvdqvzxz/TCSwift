@@ -14,6 +14,8 @@
 		3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4114B1EFB7C98008720A6 /* TRCBaseViewController.swift */; };
 		3FB4114F1EFB7CA7008720A6 /* TRCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4114D1EFB7CA7008720A6 /* TRCLoginViewController.swift */; };
 		3FB411521EFB7CC0008720A6 /* TRCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411511EFB7CC0008720A6 /* TRCLoginViewController.xib */; };
+		3FB411541EFB7ED3008720A6 /* TRCObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411531EFB7ED3008720A6 /* TRCObject.swift */; };
+		3FB411561EFB9DD2008720A6 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411551EFB9DD2008720A6 /* UIColor+HexColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		3FB4114B1EFB7C98008720A6 /* TRCBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCBaseViewController.swift; sourceTree = "<group>"; };
 		3FB4114D1EFB7CA7008720A6 /* TRCLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCLoginViewController.swift; sourceTree = "<group>"; };
 		3FB411511EFB7CC0008720A6 /* TRCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCLoginViewController.xib; sourceTree = "<group>"; };
+		3FB411531EFB7ED3008720A6 /* TRCObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCObject.swift; sourceTree = "<group>"; };
+		3FB411551EFB9DD2008720A6 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +82,10 @@
 		3FB411311EFB6221008720A6 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				3FB411321EFB6221008720A6 /* Contant */,
-				3FB411331EFB6221008720A6 /* Extensions */,
-				3FB411341EFB6221008720A6 /* ServerAdapter */,
 				3FB411351EFB6221008720A6 /* TRCObject */,
+				3FB411341EFB6221008720A6 /* ServerAdapter */,
+				3FB411331EFB6221008720A6 /* Extensions */,
+				3FB411321EFB6221008720A6 /* Contant */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -96,6 +100,7 @@
 		3FB411331EFB6221008720A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3FB411551EFB9DD2008720A6 /* UIColor+HexColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 		3FB411351EFB6221008720A6 /* TRCObject */ = {
 			isa = PBXGroup;
 			children = (
+				3FB411531EFB7ED3008720A6 /* TRCObject.swift */,
 			);
 			path = TRCObject;
 			sourceTree = "<group>";
@@ -266,6 +272,8 @@
 			files = (
 				3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */,
 				3FB4114F1EFB7CA7008720A6 /* TRCLoginViewController.swift in Sources */,
+				3FB411541EFB7ED3008720A6 /* TRCObject.swift in Sources */,
+				3FB411561EFB9DD2008720A6 /* UIColor+HexColor.swift in Sources */,
 				3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
