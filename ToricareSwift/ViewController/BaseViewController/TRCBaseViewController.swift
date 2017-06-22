@@ -22,7 +22,7 @@ class TRCBaseViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.touchesBegan(touches, with: event)
+        super.touchesBegan(touches, with: event)
     }
 
     /*

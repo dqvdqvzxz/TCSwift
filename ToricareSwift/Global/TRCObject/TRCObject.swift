@@ -8,7 +8,7 @@
 
 import UIKit
 
-var strTest : NSString?
+var strTest : String?
 
 class TRCObject: NSObject {
     class var sharedInstance: TRCObject{
@@ -21,6 +21,6 @@ class TRCObject: NSObject {
     override init() {
         super.init()
         
-        strTest = NSString()
+        strTest = String()
     }
 }
