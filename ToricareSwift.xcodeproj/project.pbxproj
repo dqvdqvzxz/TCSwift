@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FB4111E1EFB607C008720A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4111D1EFB607C008720A6 /* AppDelegate.swift */; };
-		3FB411201EFB607C008720A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4111F1EFB607C008720A6 /* ViewController.swift */; };
-		3FB411231EFB607C008720A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411211EFB607C008720A6 /* Main.storyboard */; };
-		3FB411251EFB607C008720A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411241EFB607C008720A6 /* Assets.xcassets */; };
-		3FB411281EFB607C008720A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411261EFB607C008720A6 /* LaunchScreen.storyboard */; };
+		3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411301EFB6221008720A6 /* AppDelegate.swift */; };
+		3FB411451EFB6221008720A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411371EFB6221008720A6 /* Main.storyboard */; };
+		3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411391EFB6221008720A6 /* Assets.xcassets */; };
+		3FB411471EFB6221008720A6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4113B1EFB6221008720A6 /* Info.plist */; };
+		3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */; };
+		3FB411491EFB6221008720A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411431EFB6221008720A6 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3FB4111A1EFB607C008720A6 /* ToricareSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FB4111D1EFB607C008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FB4111F1EFB607C008720A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3FB411221EFB607C008720A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3FB411241EFB607C008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3FB411271EFB607C008720A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3FB411291EFB607C008720A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FB411301EFB6221008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FB411371EFB6221008720A6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3FB411391EFB6221008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FB4113B1EFB6221008720A6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3FB411431EFB6221008720A6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +55,134 @@
 		3FB4111C1EFB607C008720A6 /* ToricareSwift */ = {
 			isa = PBXGroup;
 			children = (
-				3FB4111D1EFB607C008720A6 /* AppDelegate.swift */,
-				3FB4111F1EFB607C008720A6 /* ViewController.swift */,
-				3FB411211EFB607C008720A6 /* Main.storyboard */,
-				3FB411241EFB607C008720A6 /* Assets.xcassets */,
-				3FB411261EFB607C008720A6 /* LaunchScreen.storyboard */,
-				3FB411291EFB607C008720A6 /* Info.plist */,
+				3FB4112F1EFB6221008720A6 /* AppDelegate */,
+				3FB411311EFB6221008720A6 /* Global */,
+				3FB411361EFB6221008720A6 /* Libraries */,
+				3FB411371EFB6221008720A6 /* Main.storyboard */,
+				3FB411381EFB6221008720A6 /* Resource */,
+				3FB4113A1EFB6221008720A6 /* Supporting File */,
+				3FB4113D1EFB6221008720A6 /* ViewController */,
+				3FB411431EFB6221008720A6 /* ViewController.swift */,
 			);
 			path = ToricareSwift;
+			sourceTree = "<group>";
+		};
+		3FB4112F1EFB6221008720A6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3FB411301EFB6221008720A6 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3FB411311EFB6221008720A6 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				3FB411321EFB6221008720A6 /* Contant */,
+				3FB411331EFB6221008720A6 /* Extensions */,
+				3FB411341EFB6221008720A6 /* ServerAdapter */,
+				3FB411351EFB6221008720A6 /* TRCObject */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		3FB411321EFB6221008720A6 /* Contant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contant;
+			sourceTree = "<group>";
+		};
+		3FB411331EFB6221008720A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3FB411341EFB6221008720A6 /* ServerAdapter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServerAdapter;
+			sourceTree = "<group>";
+		};
+		3FB411351EFB6221008720A6 /* TRCObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TRCObject;
+			sourceTree = "<group>";
+		};
+		3FB411361EFB6221008720A6 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		3FB411381EFB6221008720A6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3FB411391EFB6221008720A6 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3FB4113A1EFB6221008720A6 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				3FB4113B1EFB6221008720A6 /* Info.plist */,
+				3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting File";
+			sourceTree = "<group>";
+		};
+		3FB4113D1EFB6221008720A6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FB4113E1EFB6221008720A6 /* BaseViewController */,
+				3FB4113F1EFB6221008720A6 /* Login */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3FB4113E1EFB6221008720A6 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		3FB4113F1EFB6221008720A6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3FB411401EFB6221008720A6 /* Controller */,
+				3FB411411EFB6221008720A6 /* Model */,
+				3FB411421EFB6221008720A6 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3FB411401EFB6221008720A6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3FB411411EFB6221008720A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3FB411421EFB6221008720A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +218,7 @@
 					3FB411191EFB607C008720A6 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 2L8CWRYK58;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,9 +246,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FB411281EFB607C008720A6 /* LaunchScreen.storyboard in Resources */,
-				3FB411251EFB607C008720A6 /* Assets.xcassets in Resources */,
-				3FB411231EFB607C008720A6 /* Main.storyboard in Resources */,
+				3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */,
+				3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */,
+				3FB411451EFB6221008720A6 /* Main.storyboard in Resources */,
+				3FB411471EFB6221008720A6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,31 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FB411201EFB607C008720A6 /* ViewController.swift in Sources */,
-				3FB4111E1EFB607C008720A6 /* AppDelegate.swift in Sources */,
+				3FB411491EFB6221008720A6 /* ViewController.swift in Sources */,
+				3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		3FB411211EFB607C008720A6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3FB411221EFB607C008720A6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3FB411261EFB607C008720A6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3FB411271EFB607C008720A6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3FB4112A1EFB607C008720A6 /* Debug */ = {
@@ -263,11 +367,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2L8CWRYK58;
-				INFOPLIST_FILE = ToricareSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ToricareSwift/Supporting File/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meobeo.ToricareSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -276,8 +383,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2L8CWRYK58;
-				INFOPLIST_FILE = ToricareSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ToricareSwift/Supporting File/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meobeo.ToricareSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
