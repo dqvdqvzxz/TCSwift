@@ -27,3 +27,23 @@ extension UIViewController{
         presentViewController(alert: alert, animated: true, completion: nil)
     }
 }
+
+extension NSError {
+    func isNoInternetConnectionError() -> Bool {
+        return (self.domain == NSURLErrorDomain && (self.code == NSURLErrorNotConnectedToInternet || self.code == NSURLErrorNetworkConnectionLost || self.code == NSURLErrorCannotConnectToHost));
+    }
+    
+    func isRequestTimeOutError() -> Bool {
+        return self.code == NSURLErrorTimedOut
+    }
+}
+
+extension HTTPURLResponse {
+    func isServerNotFound() -> Bool {
+        return self.statusCode == 404
+    }
+    
+    func isInternalError() -> Bool {
+        return self.statusCode == 500
+    }
+}

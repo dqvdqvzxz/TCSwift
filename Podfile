@@ -7,6 +7,18 @@ target 'ToricareSwift' do
 
   # Pods for ToricareSwift
 
-pod 'Alamofire', '~> 4.5.0'
+pod 'Alamofire', '~> 4.0.0'
+
+
+#pod 'FBSDKCoreKit'
+#pod 'FBSDKLoginKit'
+#pod 'FBSDKShareKit'
+#
+#pod 'Firebase/Core'
+#pod 'Firebase/Messaging'
+#
+#pod 'Charts'
+#
+#pod 'ZXingObjC', '~> 3.2.1'
 
 end

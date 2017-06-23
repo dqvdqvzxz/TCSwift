@@ -19,11 +19,13 @@ class TRCLoginViewController: TRCBaseViewController {
         
         self.navigationItem.title = kTitleLogin
         
-        Alert(title: "Test")
-        
-        ELog("abc")
+//        Alert(title: "Test")
+//        
+//        ELog("abc")
         
         viewTest.backgroundColor = UIColor(hexString: "ff0000", alpha: 0.1)
+        
+//        TRCLoginController().Login()
         
     }
 
