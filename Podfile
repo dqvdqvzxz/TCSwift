@@ -7,4 +7,6 @@ target 'ToricareSwift' do
 
   # Pods for ToricareSwift
 
+pod 'Alamofire', '~> 4.5.0'
+
 end
