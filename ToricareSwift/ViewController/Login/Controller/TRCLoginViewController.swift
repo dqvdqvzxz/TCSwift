@@ -61,7 +61,7 @@ class TRCLoginViewController: TRCBaseViewController {
                 DLog("Access Token: \(String(describing: token!))")
                 
                 //save facebook token to UserDefaults
-                UserDefaults.saveLoginState(token)
+                UserDefaults.kSetValue(token, FB_TOKEN)
                 
                 //upload token into server
                 

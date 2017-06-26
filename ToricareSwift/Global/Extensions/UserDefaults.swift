@@ -9,13 +9,12 @@
 import UIKit
 
 extension UserDefaults{
-    //MARK: Login state
-    class func saveLoginState(_ value: String?){
-        UserDefaults.standard.setValue(value, forKey: FB_TOKEN)
+    class func kSetValue(_ value: Any?, _ forKey: String){
+        UserDefaults.standard.setValue(value, forKey: forKey)
         UserDefaults.standard.synchronize()
     }
     
-    class func isLogged() -> Any? {
-        return UserDefaults.standard.value(forKey: FB_TOKEN)
+    class func kGetValue(_ key: String) -> Any? {
+        return UserDefaults.standard.value(forKey: key)
     }
 }

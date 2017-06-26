@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //first view when run app
         window = UIWindow(frame: UIScreen.main.bounds)
-        if(UserDefaults.isLogged() != nil){
+        if(UserDefaults.kGetValue(FB_TOKEN) != nil){
             let mainVC = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
             window?.rootViewController = mainVC
             window?.makeKeyAndVisible()
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //get device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
-//        userDefaults?.setValue(deviceID, forKey: DEVICE_ID)
+        UserDefaults.kSetValue(deviceID, DEVICE_ID)
 
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
