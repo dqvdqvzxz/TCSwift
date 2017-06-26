@@ -12,11 +12,11 @@ class TRCLoginController: NSObject {
     func Login(_ mailAddress: String, _ password: String, completion: @escaping()->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
-        parameters["mail_address"] = mailAddress
-        parameters["password"] = password
-        parameters["device_id"] = ""
-        parameters["device_token"] = ""
-        parameters["device_type"] = ""
+        parameters["mail_address"] = "minhthaind@gmail.com"
+        parameters["password"] = "123456"
+        parameters["device_id"] = "21323232323232fdfdfdfdddd1111"
+        parameters["device_token"] = "232321423423414514141414143423dfdfdfdfderererere232323232"
+        parameters["device_type"] = "1"
         
         sendParams(parameters, atPath: "\(URL_LOGIN)", blockCompletion: { (data) in
             completion()

@@ -25,8 +25,11 @@ class TRCLoginViewController: TRCBaseViewController {
         
         viewTest.backgroundColor = UIColor(hexString: "ff0000", alpha: 0.1)
         
-//        TRCLoginController().Login()
-        
+        TRCLoginController().Login("", "", completion: {
+            //
+        }) { (String) in
+            //
+        }
     }
 
     override func didReceiveMemoryWarning() {

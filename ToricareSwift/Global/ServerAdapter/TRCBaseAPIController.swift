@@ -15,20 +15,29 @@ func sendParams(_ params: Dictionary<String, String>, atPath path:String, blockC
     let urls = "\(APP_DOMAIN)\(path)"
     
     let headers = [
-        "Authorization" : ""
+        "Authorization" : HEADER_AUTHORIZATION
     ]
     
     if let _ = URL(string: urls){
-        Alamofire.request("https://httpbin.org/get", method: HTTPMethod.post, parameters: params, encoding: URLEncoding.default, headers: headers).validate(statusCode: 200..<300).validate(contentType: ["application/json"]).validate().responseJSON { (response) in
+        Alamofire.request(urls, method: HTTPMethod.post, parameters: params, encoding: URLEncoding.default, headers: headers).validate().responseJSON { (response) in
             
             switch response.result{
             case .success:
-                if let json = response.result.value{
-                    print("JSON: \(json)") //serialized json response
+                if let statusCode = response.response?.statusCode{
+                    if statusCode == 200{
+                        if let json = response.result.value{
+                            DLog("JSON: \(json)")
+                        }
+                    }
                 }
-                print("Validation Successfull !")
-            case .failure(let error):
-                print(error)
+                DLog("Validation Successfull !")
+            case .failure(_):
+                if let statusCode = response.response?.statusCode{
+                    ELog("Status code: \(statusCode)")
+                    if statusCode == 400{
+                        //handle
+                    }
+                }
             }
         }
     }
