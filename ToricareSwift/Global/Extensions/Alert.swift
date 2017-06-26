@@ -28,22 +28,16 @@ extension UIViewController{
     }
 }
 
-extension NSError {
-    func isNoInternetConnectionError() -> Bool {
-        return (self.domain == NSURLErrorDomain && (self.code == NSURLErrorNotConnectedToInternet || self.code == NSURLErrorNetworkConnectionLost || self.code == NSURLErrorCannotConnectToHost));
-    }
-    
-    func isRequestTimeOutError() -> Bool {
-        return self.code == NSURLErrorTimedOut
-    }
+func Alert(title: String){
+    let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+    let action = UIAlertAction(title: kAlertOk, style: .default, handler: nil)
+    alert.addAction(action)
+    presentViewController(alert: alert, animated: true, completion: nil)
 }
 
-extension HTTPURLResponse {
-    func isServerNotFound() -> Bool {
-        return self.statusCode == 404
-    }
-    
-    func isInternalError() -> Bool {
-        return self.statusCode == 500
-    }
+func Alert2(title: String, message: String){
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let action = UIAlertAction(title: kAlertOk, style: .default, handler: nil)
+    alert.addAction(action)
+    presentViewController(alert: alert, animated: true, completion: nil)
 }

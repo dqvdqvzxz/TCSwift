@@ -18,11 +18,10 @@ class TRCLoginController: NSObject {
         parameters["device_token"] = "232321423423414514141414143423dfdfdfdfderererere232323232"
         parameters["device_type"] = "1"
         
-        sendParams(parameters, atPath: "\(URL_LOGIN)", blockCompletion: { (data) in
+        postAPI(parameters, atPath: "\(URL_LOGIN)", blockCompletion: { (data) in
             completion()
         }) { (error) in
             failed(error!)
         }
-
     }
 }

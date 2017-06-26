@@ -22,6 +22,7 @@
 		3FB4116F1EFCF09C008720A6 /* TRCLoginAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4116E1EFCF09C008720A6 /* TRCLoginAPIController.swift */; };
 		3FB411731EFD0DDA008720A6 /* TRCBaseAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411721EFD0DDA008720A6 /* TRCBaseAPIController.swift */; };
 		3FB411771F00988A008720A6 /* TRCAPIKeyContant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411761F00988A008720A6 /* TRCAPIKeyContant.swift */; };
+		3FB411791F00B05A008720A6 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411781F00B05A008720A6 /* Connectivity.swift */; };
 		57C6E70B6D71631356703859 /* Pods_ToricareSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		3FB4116E1EFCF09C008720A6 /* TRCLoginAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCLoginAPIController.swift; sourceTree = "<group>"; };
 		3FB411721EFD0DDA008720A6 /* TRCBaseAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCBaseAPIController.swift; sourceTree = "<group>"; };
 		3FB411761F00988A008720A6 /* TRCAPIKeyContant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCAPIKeyContant.swift; sourceTree = "<group>"; };
+		3FB411781F00B05A008720A6 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 			children = (
 				3FB411551EFB9DD2008720A6 /* HexColor.swift */,
 				3FB4116B1EFBBEF6008720A6 /* Alert.swift */,
+				3FB411781F00B05A008720A6 /* Connectivity.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				3FB411771F00988A008720A6 /* TRCAPIKeyContant.swift in Sources */,
 				3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */,
 				3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */,
+				3FB411791F00B05A008720A6 /* Connectivity.swift in Sources */,
 				3FB4114F1EFB7CA7008720A6 /* TRCLoginViewController.swift in Sources */,
 				3FB4116A1EFBBAC2008720A6 /* TRCStringConstant.swift in Sources */,
 				3FB411541EFB7ED3008720A6 /* TRCObject.swift in Sources */,
