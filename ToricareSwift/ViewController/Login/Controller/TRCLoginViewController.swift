@@ -23,6 +23,7 @@ class TRCLoginViewController: TRCBaseViewController {
         
         TRCLoginAPIController().Login("", "", completion: {
             DLog("1")
+
         }) { (String) in
             DLog("2")
         }
@@ -58,14 +59,19 @@ class TRCLoginViewController: TRCBaseViewController {
             case .success: //let grantedPermissions, let declinedPermissions, let accessToken
                 let token = FBSDKAccessToken.current().tokenString
                 DLog("Access Token: \(String(describing: token!))")
+                
+                //save facebook token to UserDefaults
+                UserDefaults.saveLoginState(token)
+                
+                //upload token into server
+                
+                
+                //process after login
+                let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+                self.present(vc, animated: true, completion: nil)
             }
         }
     }
-
-    @IBAction func tapBtnLoginWithFB(_ sender: Any) {
-       
-    }
-    
 }
 
 

@@ -27,6 +27,7 @@ class TRCBaseAPIController{
                     
                     switch response.result{
                     case .success:
+                        //block
                         if let statusCode = response.response?.statusCode{
                             if statusCode == 200{
                                 if let json = response.result.value{
@@ -36,6 +37,7 @@ class TRCBaseAPIController{
                         }
                         DLog("Validation Successfull !")
                     case .failure(_):
+                        //block
                         if let statusCode = response.response?.statusCode{
                             ELog("Status code: \(statusCode)")
                             if statusCode == 400{

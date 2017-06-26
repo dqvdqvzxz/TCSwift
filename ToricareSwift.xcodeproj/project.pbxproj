@@ -25,6 +25,9 @@
 		3FB411791F00B05A008720A6 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411781F00B05A008720A6 /* Connectivity.swift */; };
 		3FB4117C1F00EEAC008720A6 /* TRCPreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4117A1F00EEAC008720A6 /* TRCPreLoginViewController.swift */; };
 		3FB4117F1F00EED1008720A6 /* TRCPreLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4117E1F00EED1008720A6 /* TRCPreLoginViewController.xib */; };
+		3FB4118A1F010E2B008720A6 /* TRCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411891F010E2B008720A6 /* TRCHomeViewController.swift */; };
+		3FB4118C1F010E32008720A6 /* TRCHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4118B1F010E32008720A6 /* TRCHomeViewController.xib */; };
+		3FB4118E1F0122D0008720A6 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4118D1F0122D0008720A6 /* UserDefaults.swift */; };
 		57C6E70B6D71631356703859 /* Pods_ToricareSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		3FB411781F00B05A008720A6 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		3FB4117A1F00EEAC008720A6 /* TRCPreLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPreLoginViewController.swift; sourceTree = "<group>"; };
 		3FB4117E1F00EED1008720A6 /* TRCPreLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPreLoginViewController.xib; sourceTree = "<group>"; };
+		3FB411891F010E2B008720A6 /* TRCHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCHomeViewController.swift; sourceTree = "<group>"; };
+		3FB4118B1F010E32008720A6 /* TRCHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCHomeViewController.xib; sourceTree = "<group>"; };
+		3FB4118D1F0122D0008720A6 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +137,7 @@
 				3FB411551EFB9DD2008720A6 /* HexColor.swift */,
 				3FB4116B1EFBBEF6008720A6 /* Alert.swift */,
 				3FB411781F00B05A008720A6 /* Connectivity.swift */,
+				3FB4118D1F0122D0008720A6 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 				3FB411401EFB6221008720A6 /* Controller */,
 				3FB411411EFB6221008720A6 /* Model */,
 				3FB411421EFB6221008720A6 /* View */,
+				3FB411851F010E01008720A6 /* Home */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -224,6 +232,40 @@
 			children = (
 				3FB4117E1F00EED1008720A6 /* TRCPreLoginViewController.xib */,
 				3FB411511EFB7CC0008720A6 /* TRCLoginViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FB411851F010E01008720A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3FB411861F010E01008720A6 /* Controller */,
+				3FB411871F010E01008720A6 /* Model */,
+				3FB411881F010E01008720A6 /* View */,
+			);
+			name = Home;
+			path = ../Home;
+			sourceTree = "<group>";
+		};
+		3FB411861F010E01008720A6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3FB411891F010E2B008720A6 /* TRCHomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3FB411871F010E01008720A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3FB411881F010E01008720A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FB4118B1F010E32008720A6 /* TRCHomeViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +357,7 @@
 				3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */,
 				3FB4117F1F00EED1008720A6 /* TRCPreLoginViewController.xib in Resources */,
 				3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */,
+				3FB4118C1F010E32008720A6 /* TRCHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +427,10 @@
 				3FB411541EFB7ED3008720A6 /* TRCObject.swift in Sources */,
 				3FB4117C1F00EEAC008720A6 /* TRCPreLoginViewController.swift in Sources */,
 				3FB411561EFB9DD2008720A6 /* HexColor.swift in Sources */,
+				3FB4118E1F0122D0008720A6 /* UserDefaults.swift in Sources */,
 				3FB411731EFD0DDA008720A6 /* TRCBaseAPIController.swift in Sources */,
 				3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */,
+				3FB4118A1F010E2B008720A6 /* TRCHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,24 +23,24 @@ func LocalizableWithComment(value: String, withComment: String) -> String{
 //DEBUG_LEVEL_2 : only show error log
 //other : do not show log
 #if DEBUG_LEVEL_1
-    func DLog(_ text: String,  fileName: String = #file, function: String =  #function, line: Int = #line) {
+    func DLog(_ text: Any,  fileName: String = #file, function: String =  #function, line: Int = #line) {
         print("[\((fileName as NSString).lastPathComponent)] [\(function)] [Line: \(line)] -:- \(text)")
     }
-    func ELog(_ text: String,  fileName: String = #file, function: String =  #function, line: Int = #line) {
+    func ELog(_ text: Any,  fileName: String = #file, function: String =  #function, line: Int = #line) {
         print("[\((fileName as NSString).lastPathComponent)] [\(function)] [Line: \(line)] -:- \(text)")
     }
 #elseif DEBUG_LEVEL_2
     func DLog() {
         print("")
     }
-    func ELog(_ text: String,  fileName: String = #file, function: String =  #function, line: Int = #line) {
+    func ELog(_ text: Any,  fileName: String = #file, function: String =  #function, line: Int = #line) {
         print("[\((fileName as NSString).lastPathComponent)] [\(function)] [Line: \(line)] -:- \(text)")
     }
 #else
-    func DLog(_ text: String) {
+    func DLog(_ text: Any) {
         print("")
     }
-    func ELog(_ text: String) {
+    func ELog(_ text: Any) {
         print("")
     }
 #endif

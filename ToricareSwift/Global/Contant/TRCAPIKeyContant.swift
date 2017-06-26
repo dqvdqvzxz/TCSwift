@@ -17,3 +17,4 @@ let URL_LOGIN = "login"
 
 //MARK: UserDefaults
 let DEVICE_ID = "deviceID"
+let FB_TOKEN = "facebookToken"
