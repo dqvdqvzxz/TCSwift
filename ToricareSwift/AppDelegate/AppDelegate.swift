@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //first view when run app
         window = UIWindow(frame: UIScreen.main.bounds)
-        let mainVC = TRCLoginViewController(nibName: "TRCLoginViewController", bundle: nil)
+        let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
         let nav = UINavigationController(rootViewController: mainVC)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

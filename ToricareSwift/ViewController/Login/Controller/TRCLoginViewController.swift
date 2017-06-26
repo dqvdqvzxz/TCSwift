@@ -10,22 +10,14 @@ import UIKit
 
 class TRCLoginViewController: TRCBaseViewController {
 
-    @IBOutlet weak var viewTest: UIView!
+    @IBOutlet weak var btnLoginWithFB: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        self.navigationItem.title = kTitleLogin
+        configUI()
         
-//        Alert(title: "Test")
-//        
-//        ELog("abc")
-        
-        viewTest.backgroundColor = UIColor(hexString: "ff0000", alpha: 0.1)
-        
-        TRCLoginController().Login("", "", completion: {
+        TRCLoginAPIController().Login("", "", completion: {
             DLog("1")
         }) { (String) in
             DLog("2")
@@ -37,17 +29,19 @@ class TRCLoginViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Config UI
+    func configUI(){
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationItem.title = kTitleLogin
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        btnLoginWithFB.layer.backgroundColor = UIColor.blue.cgColor
+        btnLoginWithFB.setTitleColor(UIColor.white, for: UIControlState.normal)
     }
-    */
 
+    @IBAction func tapBtnLoginWithFB(_ sender: Any) {
+    }
+    
+    
 }
 
 

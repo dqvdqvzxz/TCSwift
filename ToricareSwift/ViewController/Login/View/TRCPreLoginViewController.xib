@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCPreLoginViewController" customModule="ToricareSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="btnLogin" destination="2pe-xW-eh2" id="SPK-HI-dOh"/>
+                <outlet property="btnRegister" destination="H51-Tb-RSO" id="pUA-Jg-dfZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H51-Tb-RSO">
+                    <rect key="frame" x="30" y="507" width="315" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Qoh-V7-sSC"/>
+                    </constraints>
+                    <state key="normal" title="Resgister"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-xW-eh2">
+                    <rect key="frame" x="30" y="567" width="315" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="f6Y-pa-248"/>
+                    </constraints>
+                    <state key="normal" title="Login"/>
+                    <connections>
+                        <action selector="tapBtnLogin:" destination="-1" eventType="touchUpInside" id="rWW-Vy-VQz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2pe-xW-eh2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="8BE-Z7-eiV"/>
+                <constraint firstItem="H51-Tb-RSO" firstAttribute="bottom" secondItem="2pe-xW-eh2" secondAttribute="top" constant="-20" id="AdG-HR-GNz"/>
+                <constraint firstAttribute="trailing" secondItem="H51-Tb-RSO" secondAttribute="trailing" constant="30" id="GSw-0G-8oW"/>
+                <constraint firstAttribute="trailing" secondItem="2pe-xW-eh2" secondAttribute="trailing" constant="30" id="H6L-bu-dJr"/>
+                <constraint firstItem="H51-Tb-RSO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mci-NF-7I6"/>
+                <constraint firstAttribute="bottom" secondItem="2pe-xW-eh2" secondAttribute="bottom" constant="60" id="b3P-zZ-tdA"/>
+                <constraint firstItem="2pe-xW-eh2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fFs-Gb-J2g"/>
+                <constraint firstItem="H51-Tb-RSO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="rAQ-nF-gR1"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
