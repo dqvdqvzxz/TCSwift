@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -25,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav = UINavigationController(rootViewController: mainVC)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
+        
+        //get device id
+        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+        userDefaults?.setValue(deviceID, forKey: DEVICE_ID)
+        userDefaults?.synchronize()
         
         return true
     }

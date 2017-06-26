@@ -13,3 +13,4 @@ let kTitleLogin = Localizable(value: "Login")
 //MARK: Alert message
 let kAlertOk =                          Localizable(value: "OK")
 let kNetworkDisable =                   Localizable(value: "Please check your network connection !")
+let kParamInvalid =                     Localizable(value: "Please check again your source !")

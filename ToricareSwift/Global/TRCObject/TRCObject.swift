@@ -8,7 +8,8 @@
 
 import UIKit
 
-var strTest : String?
+var strTest: String?
+var userDefaults: UserDefaults?
 
 class TRCObject: NSObject {
     class var sharedInstance: TRCObject{
@@ -20,7 +21,7 @@ class TRCObject: NSObject {
     
     override init() {
         super.init()
-        
         strTest = String()
+        userDefaults = UserDefaults.standard
     }
 }

@@ -26,9 +26,9 @@ class TRCLoginViewController: TRCBaseViewController {
         viewTest.backgroundColor = UIColor(hexString: "ff0000", alpha: 0.1)
         
         TRCLoginController().Login("", "", completion: {
-            //
+            DLog("1")
         }) { (String) in
-            //
+            DLog("2")
         }
     }
 
