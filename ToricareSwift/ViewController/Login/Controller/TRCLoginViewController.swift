@@ -8,6 +8,9 @@
 
 import UIKit
 
+import FacebookLogin
+import FacebookCore
+
 class TRCLoginViewController: TRCBaseViewController {
 
     @IBOutlet weak var btnLoginWithFB: UIButton!
@@ -34,13 +37,33 @@ class TRCLoginViewController: TRCBaseViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.title = kTitleLogin
 
+        print(btnLoginWithFB.frame)
         btnLoginWithFB.layer.backgroundColor = UIColor.blue.cgColor
         btnLoginWithFB.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
+//        let loginBtn = LoginButton(readPermissions: [.publicProfile])
+//        btnLoginWithFB.addSubview(LoginButton)
+        
+        btnLoginWithFB.addTarget(self, action: #selector(loginFB), for: .touchUpInside)
+    }
+    
+    func loginFB(){
+        let loginManager = LoginManager()
+        loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                print("Logged in!")
+            }
+        }
     }
 
     @IBAction func tapBtnLoginWithFB(_ sender: Any) {
+       
     }
-    
     
 }
 

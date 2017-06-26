@@ -7,13 +7,15 @@ target 'ToricareSwift' do
 
   # Pods for ToricareSwift
 
-pod 'Alamofire', '~> 4.0.0'
+pod 'Alamofire'
 
+pod 'FacebookCore', '~> 0.2'
+pod 'FacebookLogin', '~> 0.2'
+pod 'FacebookShare', '~> 0.2'
+pod 'FBSDKCoreKit', '~> 4.22.1'
+pod 'FBSDKLoginKit', '~> 4.22.1'
+pod 'FBSDKShareKit', '~> 4.22.1'
 
-#pod 'FBSDKCoreKit'
-#pod 'FBSDKLoginKit'
-#pod 'FBSDKShareKit'
-#
 #pod 'Firebase/Core'
 #pod 'Firebase/Messaging'
 #
