@@ -10,6 +10,7 @@ import UIKit
 
 import FacebookLogin
 import FacebookCore
+import FBSDKLoginKit
 
 class TRCLoginViewController: TRCBaseViewController {
 
@@ -37,7 +38,6 @@ class TRCLoginViewController: TRCBaseViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.title = kTitleLogin
 
-        print(btnLoginWithFB.frame)
         btnLoginWithFB.layer.backgroundColor = UIColor.blue.cgColor
         btnLoginWithFB.setTitleColor(UIColor.white, for: UIControlState.normal)
         
@@ -49,14 +49,15 @@ class TRCLoginViewController: TRCBaseViewController {
     
     func loginFB(){
         let loginManager = LoginManager()
-        loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
+        loginManager.logIn([ .publicProfile, .email, .userFriends ], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
-                print(error)
+                ELog(error as! String)
             case .cancelled:
-                print("User cancelled login.")
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                print("Logged in!")
+                DLog("User cancelled login.")
+            case .success: //let grantedPermissions, let declinedPermissions, let accessToken
+                let token = FBSDKAccessToken.current().tokenString
+                DLog("Access Token: \(String(describing: token!))")
             }
         }
     }
