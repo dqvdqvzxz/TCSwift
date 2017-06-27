@@ -14,6 +14,13 @@ class TRCHomeViewController: TRCBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        TRCLoginAPIController().Login("", "", completion: {
+            DLog("1")
+            
+        }) { (String) in
+            DLog("2")
+        }
     }
 
     override func didReceiveMemoryWarning() {

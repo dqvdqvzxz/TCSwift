@@ -21,12 +21,7 @@ class TRCLoginViewController: TRCBaseViewController {
         
         configUI()
         
-        TRCLoginAPIController().Login("", "", completion: {
-            DLog("1")
 
-        }) { (String) in
-            DLog("2")
-        }
     }
 
     override func didReceiveMemoryWarning() {

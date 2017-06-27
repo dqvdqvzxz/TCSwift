@@ -18,3 +18,9 @@ let URL_LOGIN = "login"
 //MARK: UserDefaults
 let DEVICE_ID = "deviceID"
 let FB_TOKEN = "facebookToken"
+
+//MARK: Http method
+let HTTP_POST = "POST"
+let HTTP_PUT = "PUT"
+let HTTP_GET = "GET"
+let HTTP_DELETE = "DELETE"
