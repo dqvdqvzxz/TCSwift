@@ -11,13 +11,16 @@ import UIKit
 import Alamofire
 
 class TRCBaseAPIController{
-    class func postAPI(_ params: Dictionary<String, String>, atPath path:String, withMethod httpMethod:String, blockCompletion completion:@escaping (_ data: NSDictionary?) -> (), blockFailed failed:@escaping (_ error:String?)->()){
-        
+    class func callAPI(_ params: Dictionary<String, String>, atPath path:String, withMethod httpMethod:String, blockCompletion completion:@escaping () -> (), blockFailed failed:@escaping ()->()){
+    
         if Connectivity.isConnectToNetwork() == false{
-            Alert(title: kNetworkDisable)
+            failed(Alert(title: kNetworkDisable))
         }else{
-            let urls = "\(APP_DOMAIN)\(path)"
-//            let urls = "http://private-855d6c-ilovestayadmin.apiary-mock.com/getUserList?status=approval"
+//            let urls = "\(APP_DOMAIN)\(path)"
+            let urls = "http://private-855d6c-ilovestayadmin.apiary-mock.com/getUserList?status=approval"
+            if(path == ""){
+                failed(ELog("URL is not exist !"))
+            }
             
             if let url = URL(string: urls){
                 var urlRequest = URLRequest(url: url)
@@ -35,29 +38,29 @@ class TRCBaseAPIController{
                 case HTTP_DELETE:
                     urlRequest.httpMethod = HTTP_DELETE
                 default:
+                    failed(ELog("Method is invalid !"))
                     break
                 }
                 
                 //header
                 urlRequest.setValue(HEADER_AUTHORIZATION, forHTTPHeaderField: "Authorization")
+                if((urlRequest.value(forHTTPHeaderField: "Authorization")) == nil){
+                    failed(ELog("Header of request HTTP is invalid !"))
+                }
                 
                 Alamofire.request(urlRequest).responseJSON { (response) in
-
                     switch response.result{
                     case .success:
-                        //block
                         if let statusCode = response.response?.statusCode{
                             if statusCode == 200{
                                 if let json = response.result.value{
-                                    DLog("JSON: \(json)")
+                                    completion(DLog("JSON: \(json)"))
                                 }
                             }
                         }
-                        DLog("Validation Successfull !")
                     case .failure(_):
-                        //block
                         if let statusCode = response.response?.statusCode{
-                            ELog("Status code: \(statusCode)")
+                            failed(ELog("Status code: \(statusCode)"))
                             if statusCode == 400{
                                 //handle
                             }
@@ -65,7 +68,7 @@ class TRCBaseAPIController{
                     }
                 }
             }else{
-                Alert(title: kParamInvalid)
+                failed(Alert(title: kParamInvalid))
             }
         }
     }

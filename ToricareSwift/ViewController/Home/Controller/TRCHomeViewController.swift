@@ -16,9 +16,11 @@ class TRCHomeViewController: TRCBaseViewController {
         // Do any additional setup after loading the view.
         
         TRCLoginAPIController().Login("", "", completion: {
+            //xu ly hien thu du lieu khi pass
             DLog("1")
             
         }) { (String) in
+            //khi fail
             DLog("2")
         }
     }

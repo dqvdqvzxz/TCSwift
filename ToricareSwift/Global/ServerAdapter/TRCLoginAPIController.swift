@@ -19,13 +19,13 @@ class TRCLoginAPIController: NSObject {
         parameters["device_token"] = "232321423423414514141414143423dfdfdfdfderererere232323232"
         parameters["device_type"] = "1"
         
-        TRCBaseAPIController.postAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_POST, blockCompletion: { (data) in
+        TRCBaseAPIController.callAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_GET, blockCompletion: { (data) in
             DLog("Process success")
             completion()
             
         }) { (error) in
             DLog("Process failed")
-            failed(error!)
+            failed("Failed")
             
         }
     }
