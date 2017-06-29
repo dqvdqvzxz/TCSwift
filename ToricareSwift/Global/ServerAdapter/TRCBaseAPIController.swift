@@ -55,11 +55,15 @@ class TRCBaseAPIController{
                             if statusCode == 200{
                                 
                                 if let json = response.result.value{
-//                                    DLog("JSON: \(json)")
-                                    let abc = json as! NSDictionary
-                                    let z = abc.object(forKey: "report_array") as? NSDictionary
-                                    let a = z?.object(forKey: "user_id")
-                                    print(a)
+                                    completion(json as? NSDictionary)
+//                                    let abc = json as! NSDictionary
+//                                    let z = abc.object(forKey: "report_array") as! NSArray
+//                                    for index in 0...z.count-1{
+//                                        let f = z[index] as! [String:AnyObject]
+//                                        let s = f["user_id"]
+//                                        print(s)
+//                                    }
+                                    
                                 }
                             }
                         }
