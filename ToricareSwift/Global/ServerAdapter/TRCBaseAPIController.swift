@@ -11,13 +11,13 @@ import UIKit
 import Alamofire
 
 class TRCBaseAPIController{
-    class func callAPI(_ params: Dictionary<String, String>, atPath path:String, withMethod httpMethod:String, blockCompletion completion:@escaping () -> (), blockFailed failed:@escaping ()->()){
+    class func callAPI(_ params: Dictionary<String, String>, atPath path:String, withMethod httpMethod:String, blockCompletion completion:@escaping (_ data: NSDictionary?) -> (), blockFailed failed:@escaping ()->()){
     
         if Connectivity.isConnectToNetwork() == false{
             failed(Alert(title: kNetworkDisable))
         }else{
 //            let urls = "\(APP_DOMAIN)\(path)"
-            let urls = "http://private-855d6c-ilovestayadmin.apiary-mock.com/getUserList?status=approval"
+            let urls = "http://private-855d6c-ilovestayadmin.apiary-mock.com/getReport?room_id=123456"
             if(path == ""){
                 failed(ELog("URL is not exist !"))
             }
@@ -53,8 +53,13 @@ class TRCBaseAPIController{
                     case .success:
                         if let statusCode = response.response?.statusCode{
                             if statusCode == 200{
+                                
                                 if let json = response.result.value{
-                                    completion(DLog("JSON: \(json)"))
+//                                    DLog("JSON: \(json)")
+                                    let abc = json as! NSDictionary
+                                    let z = abc.object(forKey: "report_array") as? NSDictionary
+                                    let a = z?.object(forKey: "user_id")
+                                    print(a)
                                 }
                             }
                         }

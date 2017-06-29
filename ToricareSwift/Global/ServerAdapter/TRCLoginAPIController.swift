@@ -10,7 +10,7 @@ import UIKit
 
 
 class TRCLoginAPIController: NSObject {
-    func Login(_ mailAddress: String, _ password: String, completion: @escaping()->(), failed: @escaping(_ error: String)->()){
+    func Login(_ mailAddress: String, _ password: String, completion: @escaping()->(), failed: @escaping()->()){
         
         var parameters = Dictionary <String, String>()
         parameters["mail_address"] = "minhthaind@gmail.com"
@@ -21,11 +21,13 @@ class TRCLoginAPIController: NSObject {
         
         TRCBaseAPIController.callAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_GET, blockCompletion: { (data) in
             DLog("Process success")
+            print(data!)
+            
+            //parse data from model
             completion()
             
-        }) { (error) in
-            DLog("Process failed")
-            failed("Failed")
+        }) { () in
+            failed(ELog("Process failed"))
             
         }
     }

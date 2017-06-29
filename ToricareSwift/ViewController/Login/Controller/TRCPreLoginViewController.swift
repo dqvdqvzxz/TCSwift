@@ -36,8 +36,6 @@ class TRCPreLoginViewController: TRCBaseViewController {
     //MARK: Button Action 
     @IBAction func tapBtnLogin(_ sender: Any) {
         let vc = TRCLoginViewController(nibName: "TRCLoginViewController", bundle: nil)
-//        let nav = UINavigationController(rootViewController: vc)
-//        self.navigationController?.pushViewController(vc, animated: true)
         self.present(vc, animated: true, completion: nil)
     }
 }
