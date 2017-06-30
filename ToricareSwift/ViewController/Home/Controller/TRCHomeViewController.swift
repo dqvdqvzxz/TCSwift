@@ -10,10 +10,14 @@ import UIKit
 
 class TRCHomeViewController: TRCBaseViewController {
 
+    @IBOutlet weak var testBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        testBtn.styleButton(title: "Test BTN", fontSize: 7, titleColor: "0caa7d", borderWidth: 1, borderColor: "a6d4ca", radius: 10, backgroundColor: "ff00ff")
         
         TRCLoginAPIController().Login("", "", completion: {
             //xu ly hien thi du lieu khi pass
