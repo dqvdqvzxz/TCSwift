@@ -11,6 +11,7 @@ import UIKit
 class TRCHomeViewController: TRCBaseViewController {
 
     @IBOutlet weak var testBtn: UIButton!
+    @IBOutlet weak var testLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,8 @@ class TRCHomeViewController: TRCBaseViewController {
         // Do any additional setup after loading the view.
         
         testBtn.styleButton(title: "Test BTN", fontSize: 7, titleColor: "0caa7d", borderWidth: 1, borderColor: "a6d4ca", radius: 10, backgroundColor: "ff00ff")
+        
+        testLabel.styleLabel(title: "Test Label", fontSize: 20, textColor: "0caa7d`")
         
         TRCLoginAPIController().Login("", "", completion: {
             //xu ly hien thi du lieu khi pass
