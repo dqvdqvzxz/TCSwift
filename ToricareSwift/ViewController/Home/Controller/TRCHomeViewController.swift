@@ -12,15 +12,18 @@ class TRCHomeViewController: TRCBaseViewController {
 
     @IBOutlet weak var testBtn: UIButton!
     @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var textTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        testBtn.styleButton(title: "Test BTN", fontSize: 7, titleColor: "0caa7d", borderWidth: 1, borderColor: "a6d4ca", radius: 10, backgroundColor: "ff00ff")
+        testBtn.styleButton(title: "Test BTN", fontSize: 7, titleColor: "0caa7d", borderWidth: 1, borderColor: "a6d4ca", radius: 10, backgroundColor: nil)
         
-        testLabel.styleLabel(title: "Test Label", fontSize: 20, textColor: "0caa7d`")
+        testLabel.styleLabel(title: "Test Label", fontSize: 20, textColor: "0caa7d")
+        
+        textTextField.textFieldStyle(placeHolder: "Test Place hoder", fontSize: 15, textColor: "0caa7d", borderWidth: 1, borderColor: "a6d4ca", radius: 5, backgroundColor: "a6d4ca")
         
         TRCLoginAPIController().Login("", "", completion: {
             //xu ly hien thi du lieu khi pass

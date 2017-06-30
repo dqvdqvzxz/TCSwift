@@ -30,6 +30,7 @@
 		3FB411921F05F7B9008720A6 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411911F05F7B9008720A6 /* Label.swift */; };
 		3FB411991F05F988008720A6 /* TRCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411951F05F988008720A6 /* TRCHomeViewController.swift */; };
 		3FB4119A1F05F988008720A6 /* TRCHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411981F05F988008720A6 /* TRCHomeViewController.xib */; };
+		3FB4119C1F05FB8B008720A6 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4119B1F05FB8B008720A6 /* Textfield.swift */; };
 		57C6E70B6D71631356703859 /* Pods_ToricareSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		3FB411911F05F7B9008720A6 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		3FB411951F05F988008720A6 /* TRCHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCHomeViewController.swift; sourceTree = "<group>"; };
 		3FB411981F05F988008720A6 /* TRCHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCHomeViewController.xib; sourceTree = "<group>"; };
+		3FB4119B1F05FB8B008720A6 /* Textfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 				3FB4118D1F0122D0008720A6 /* UserDefaults.swift */,
 				3FB4118F1F04F884008720A6 /* Button.swift */,
 				3FB411911F05F7B9008720A6 /* Label.swift */,
+				3FB4119B1F05FB8B008720A6 /* Textfield.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				3FB411991F05F988008720A6 /* TRCHomeViewController.swift in Sources */,
 				3FB4117C1F00EEAC008720A6 /* TRCPreLoginViewController.swift in Sources */,
 				3FB411561EFB9DD2008720A6 /* HexColor.swift in Sources */,
+				3FB4119C1F05FB8B008720A6 /* Textfield.swift in Sources */,
 				3FB4118E1F0122D0008720A6 /* UserDefaults.swift in Sources */,
 				3FB411731EFD0DDA008720A6 /* TRCBaseAPIController.swift in Sources */,
 				3FB411921F05F7B9008720A6 /* Label.swift in Sources */,

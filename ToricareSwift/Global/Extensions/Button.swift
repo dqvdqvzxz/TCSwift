@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton{
-    func styleButton(title: String, fontSize: CGFloat,titleColor: String, borderWidth: CGFloat, borderColor: String, radius: CGFloat, backgroundColor: String){
+    func styleButton(title: String, fontSize: CGFloat,titleColor: String, borderWidth: CGFloat, borderColor: String, radius: CGFloat, backgroundColor: String?){
         let button = self
         button.setTitle(title, for: UIControlState.normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: fontSize)
@@ -18,6 +18,7 @@ extension UIButton{
         button.layer.borderColor = UIColor.init(hexString: borderColor).cgColor
         button.layer.cornerRadius = radius
         button.clipsToBounds = true
-        button.backgroundColor = UIColor.init(hexString: backgroundColor)
+        if(backgroundColor != nil){
+            button.backgroundColor = UIColor.init(hexString: backgroundColor!)}
     }
 }
