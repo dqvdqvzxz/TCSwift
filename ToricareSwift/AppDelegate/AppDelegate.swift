@@ -24,14 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         if(UserDefaults.kGetValue(FB_TOKEN) != nil){
             let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-            window?.rootViewController = mainVC
+            let navController = UINavigationController(rootViewController: mainVC)
+            window?.rootViewController = navController
             window?.makeKeyAndVisible()
         }else{
             let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-            window?.rootViewController = mainVC
+            let navController = UINavigationController(rootViewController: mainVC)
+            window?.rootViewController = navController
             window?.makeKeyAndVisible()
         }
         
+        //set color of status
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.init(hexString: MAIN_COLOR)
         
         //get device id

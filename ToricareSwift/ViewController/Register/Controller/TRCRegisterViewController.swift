@@ -8,10 +8,9 @@
 
 import UIKit
 
-class TRCRegisterViewController: UIViewController {
+class TRCRegisterViewController: TRCBaseViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var titleNavigation: UINavigationItem!
     
     @IBOutlet weak var lblUsername: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
@@ -36,11 +35,15 @@ class TRCRegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    
     //MARK: Config UI
     func configUI(){
-        navigationBar.barTintColor = UIColor.init(hexString: MAIN_COLOR)
-        titleNavigation.title = kTitleRegister
+        //back button
+        self.navigationController?.navigationBar.backItem?.title = kBackButton
+        self.navigationController?.navigationBar.topItem?.title = kTitleRegister
         
+        //UI of outlet
         lblUsername.labelStyle(title: kLblUsername, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         lblPassword.labelStyle(title: kLblPassword, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         lblRePassword.labelStyle(title: kLblRePassword, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)

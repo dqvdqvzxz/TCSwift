@@ -15,6 +15,9 @@ let kAlertOk =                          Localizable(value: "OK")
 let kNetworkDisable =                   Localizable(value: "Please check your network connection !")
 let kParamInvalid =                     Localizable(value: "Please check again your source !")
 
+//MARK: Navigation 
+let kBackButton =                       Localizable(value: "BacK")
+
 //MARK: PreLoginViewController
 let kBtnRegister =                      Localizable(value: "Register")
 let kBtnLogin =                         Localizable(value: "Login")

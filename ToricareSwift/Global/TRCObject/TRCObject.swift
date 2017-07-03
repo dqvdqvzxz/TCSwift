@@ -10,6 +10,8 @@ import UIKit
 
 var strTest: String?
 
+var navController: UINavigationController?
+
 class TRCObject: NSObject {
     class var sharedInstance: TRCObject{
         struct Static{
@@ -20,5 +22,7 @@ class TRCObject: NSObject {
     
     override init() {
         super.init()
+        
+        navController = UINavigationController()
     }
 }

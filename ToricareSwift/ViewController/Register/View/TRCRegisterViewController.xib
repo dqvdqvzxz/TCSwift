@@ -21,7 +21,6 @@
                 <outlet property="tfPassword" destination="emo-oJ-zVE" id="Cpr-Va-ib2"/>
                 <outlet property="tfRePassword" destination="cON-df-md1" id="ZGe-d2-YHT"/>
                 <outlet property="tfUsername" destination="5fK-GN-LkQ" id="ffw-cr-tSg"/>
-                <outlet property="titleNavigation" destination="B8O-XE-16c" id="ZBj-kn-D6l"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,9 +35,6 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="oQm-He-6ip"/>
                     </constraints>
-                    <items>
-                        <navigationItem title="Title" id="B8O-XE-16c"/>
-                    </items>
                 </navigationBar>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cn-zU-Lta" userLabel="lblUsername">
                     <rect key="frame" x="10" y="74" width="355" height="30"/>
@@ -157,6 +153,7 @@
                 <constraint firstItem="5fK-GN-LkQ" firstAttribute="top" secondItem="9cn-zU-Lta" secondAttribute="bottom" id="vNZ-Mx-72f"/>
                 <constraint firstItem="emo-oJ-zVE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="z1Z-OW-h62"/>
             </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
         </view>
     </objects>
 </document>
