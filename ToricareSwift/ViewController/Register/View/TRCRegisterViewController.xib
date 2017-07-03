@@ -32,6 +32,7 @@
             <subviews>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Arf-Tn-5pZ">
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="oQm-He-6ip"/>
                     </constraints>
@@ -73,7 +74,7 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAI-fp-rmg" userLabel="lblRePassword">
                     <rect key="frame" x="10" y="214" width="355" height="30"/>

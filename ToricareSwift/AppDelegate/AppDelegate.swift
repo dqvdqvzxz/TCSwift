@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
         }
         
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.init(hexString: MAIN_COLOR)
         
         //get device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
@@ -71,3 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
+}
