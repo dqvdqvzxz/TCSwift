@@ -9,7 +9,7 @@
 import UIKit
 
 extension UILabel{
-    func styleLabel(title: String?, fontSize: CGFloat?, textColor: String?){
+    func labelStyle(title: String?, fontSize: CGFloat?, textColor: String?){
         let label = self
         if(title != nil){
             label.text = title

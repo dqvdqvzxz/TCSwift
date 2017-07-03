@@ -22,16 +22,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H51-Tb-RSO">
-                    <rect key="frame" x="30" y="507" width="315" height="40"/>
+                    <rect key="frame" x="10" y="527" width="355" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Qoh-V7-sSC"/>
+                        <constraint firstAttribute="height" constant="60" id="Qoh-V7-sSC"/>
                     </constraints>
                     <state key="normal" title="Resgister"/>
+                    <connections>
+                        <action selector="tapBtnRegister:" destination="-1" eventType="touchUpInside" id="1CB-LB-0w5"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-xW-eh2">
-                    <rect key="frame" x="30" y="567" width="315" height="40"/>
+                    <rect key="frame" x="10" y="597" width="355" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="f6Y-pa-248"/>
+                        <constraint firstAttribute="height" constant="60" id="f6Y-pa-248"/>
                     </constraints>
                     <state key="normal" title="Login"/>
                     <connections>
@@ -41,14 +44,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="2pe-xW-eh2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="8BE-Z7-eiV"/>
-                <constraint firstItem="H51-Tb-RSO" firstAttribute="bottom" secondItem="2pe-xW-eh2" secondAttribute="top" constant="-20" id="AdG-HR-GNz"/>
-                <constraint firstAttribute="trailing" secondItem="H51-Tb-RSO" secondAttribute="trailing" constant="30" id="GSw-0G-8oW"/>
-                <constraint firstAttribute="trailing" secondItem="2pe-xW-eh2" secondAttribute="trailing" constant="30" id="H6L-bu-dJr"/>
+                <constraint firstItem="2pe-xW-eh2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="8BE-Z7-eiV"/>
+                <constraint firstItem="H51-Tb-RSO" firstAttribute="bottom" secondItem="2pe-xW-eh2" secondAttribute="top" constant="-10" id="AdG-HR-GNz"/>
+                <constraint firstAttribute="trailing" secondItem="H51-Tb-RSO" secondAttribute="trailing" constant="10" id="GSw-0G-8oW"/>
+                <constraint firstAttribute="trailing" secondItem="2pe-xW-eh2" secondAttribute="trailing" constant="10" id="H6L-bu-dJr"/>
                 <constraint firstItem="H51-Tb-RSO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mci-NF-7I6"/>
-                <constraint firstAttribute="bottom" secondItem="2pe-xW-eh2" secondAttribute="bottom" constant="60" id="b3P-zZ-tdA"/>
+                <constraint firstAttribute="bottom" secondItem="2pe-xW-eh2" secondAttribute="bottom" constant="10" id="b3P-zZ-tdA"/>
                 <constraint firstItem="2pe-xW-eh2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fFs-Gb-J2g"/>
-                <constraint firstItem="H51-Tb-RSO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="rAQ-nF-gR1"/>
+                <constraint firstItem="H51-Tb-RSO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="rAQ-nF-gR1"/>
             </constraints>
         </view>
     </objects>

@@ -19,9 +19,9 @@ class TRCHomeViewController: TRCBaseViewController {
 
         // Do any additional setup after loading the view.
         
-        testBtn.styleButton(title: "Test BTN", fontSize: 7, titleColor: "0caa7d", borderWidth: 1, borderColor: "nil", radius: nil, backgroundColor: nil)
+        testBtn.buttonStyle(title: "Test BTN", fontSize: 7, titleColor: "0caa7d", borderWidth: 1, borderColor: "nil", radius: nil, backgroundColor: nil)
         
-        testLabel.styleLabel(title: "Test Label", fontSize: 20, textColor: "0caa7d")
+        testLabel.labelStyle(title: "Test Label", fontSize: 20, textColor: "0caa7d")
         
         textTextField.textFieldStyle(placeHolder: "Test Place hoder", fontSize: 15, textColor: "0caa7d", borderWidth: 1, borderColor: "a6d4ca", radius: 5, backgroundColor: "a6d4ca")
         

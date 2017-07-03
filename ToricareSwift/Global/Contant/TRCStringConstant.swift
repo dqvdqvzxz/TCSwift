@@ -14,3 +14,7 @@ let kTitleLogin = Localizable(value: "Login")
 let kAlertOk =                          Localizable(value: "OK")
 let kNetworkDisable =                   Localizable(value: "Please check your network connection !")
 let kParamInvalid =                     Localizable(value: "Please check again your source !")
+
+//MARK: PreLoginViewController
+let kBtnRegister =                      Localizable(value: "Register")
+let kBtnLogin =                         Localizable(value: "Login")
