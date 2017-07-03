@@ -10,10 +10,25 @@ import UIKit
 
 class TRCRegisterViewController: UIViewController {
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var titleNavigation: UINavigationItem!
+    
+    @IBOutlet weak var lblUsername: UILabel!
+    @IBOutlet weak var lblPassword: UILabel!
+    @IBOutlet weak var lblRePassword: UILabel!
+    @IBOutlet weak var lblOr: UILabel!
+    
+    @IBOutlet weak var tfUsername: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var tfRePassword: UITextField!
+    
+    @IBOutlet weak var btnRegister: UIButton!
+    @IBOutlet weak var btnRegisterWithFB: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +36,29 @@ class TRCRegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Config UI
+    func configUI(){
+        navigationBar.barTintColor = UIColor.init(hexString: MAIN_COLOR)
+        titleNavigation.title = kTitleRegister
+        
+        lblUsername.labelStyle(title: kLblUsername, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblPassword.labelStyle(title: kLblPassword, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblRePassword.labelStyle(title: kLblRePassword, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblOr.labelStyle(title: kLblOr, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        
+        tfUsername.textFieldStyle(placeHolder: kTfUsernamePH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfPassword.textFieldStyle(placeHolder: kTfPasswordPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfRePassword.textFieldStyle(placeHolder: kTfRePasswordPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        
+        btnRegister.buttonStyle(title: kTitleRegister, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnRegisterWithFB.buttonStyle(title: kBtnRegisterWithFB, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BUTTON_REGISTER_FB)
     }
-    */
-
+    
+    //MARK: Button Action
+    @IBAction func tapBtnRegister(_ sender: Any) {
+    }
+    
+    @IBAction func tapBtnRegisterWithFB(_ sender: Any) {
+    }
+    
 }

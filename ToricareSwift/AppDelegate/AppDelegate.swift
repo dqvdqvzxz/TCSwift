@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = mainVC
             window?.makeKeyAndVisible()
         }
-
         
         
         //get device id

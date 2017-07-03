@@ -18,3 +18,14 @@ let kParamInvalid =                     Localizable(value: "Please check again y
 //MARK: PreLoginViewController
 let kBtnRegister =                      Localizable(value: "Register")
 let kBtnLogin =                         Localizable(value: "Login")
+
+//MARK: RegisterViewController
+let kTitleRegister =                    Localizable(value: "Register")
+let kLblUsername =                      Localizable(value: "Username")
+let kTfUsernamePH =                     Localizable(value: "test@tricare.com")
+let kLblPassword =                      Localizable(value: "Password")
+let kTfPasswordPH =                     Localizable(value: "Please enter the password...")
+let kLblRePassword =                    Localizable(value: "Re-enter password")
+let kTfRePasswordPH =                   Localizable(value: "Please re-enter the password...")
+let kBtnRegisterWithFB =                Localizable(value: "Register with Facebook")
+let kLblOr =                            Localizable(value: "Or")
