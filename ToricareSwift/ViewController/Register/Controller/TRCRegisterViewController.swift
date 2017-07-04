@@ -59,6 +59,8 @@ class TRCRegisterViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
+        let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func tapBtnRegisterWithFB(_ sender: Any) {
