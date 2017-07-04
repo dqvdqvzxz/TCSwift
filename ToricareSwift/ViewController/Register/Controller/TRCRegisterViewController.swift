@@ -37,7 +37,7 @@ class TRCRegisterViewController: TRCBaseViewController {
     
     //MARK: Config UI
     func configUI(){
-        //back button
+        //navigation
         self.navigationController?.navigationBar.topItem?.title = kTitleRegister
         self.navigationController?.navigationBar.backItem?.title = kBackButton
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]

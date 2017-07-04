@@ -13,8 +13,6 @@ import FacebookCore
 import FBSDKLoginKit
 
 class TRCLoginViewController: TRCBaseViewController {
-
-    @IBOutlet weak var navBar: UINavigationBar!
     
     @IBOutlet weak var lblUsername: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
@@ -44,8 +42,9 @@ class TRCLoginViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationController?.navigationBar.backItem?.title = kBackButton
         self.navigationController?.navigationBar.topItem?.title = kTitleLogin
+        self.navigationController?.navigationBar.backItem?.title = kBackButton
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
 
         
         //UI of outlet
@@ -96,7 +95,7 @@ class TRCLoginViewController: TRCBaseViewController {
     }
     
     func forgotPassword(sender: UITapGestureRecognizer){
-        let vc = TRCForgotPasswordSentViewController(nibName: "TRCForgotPasswordSentViewController", bundle: nil)
+        let vc = TRCForgotPasswordEmailInputViewController(nibName: "TRCForgotPasswordEmailInputViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
