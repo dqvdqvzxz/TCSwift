@@ -9,8 +9,6 @@
 import UIKit
 
 class TRCRegisterViewController: TRCBaseViewController {
-
-    @IBOutlet weak var navigationBar: UINavigationBar!
     
     @IBOutlet weak var lblUsername: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
@@ -40,8 +38,9 @@ class TRCRegisterViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //back button
-        self.navigationController?.navigationBar.backItem?.title = kBackButton
         self.navigationController?.navigationBar.topItem?.title = kTitleRegister
+        self.navigationController?.navigationBar.backItem?.title = kBackButton
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
         
         //UI of outlet
         lblUsername.labelStyle(title: kLblUsername, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
