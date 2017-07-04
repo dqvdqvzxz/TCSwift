@@ -32,3 +32,11 @@ let kLblRePassword =                    Localizable(value: "Re-enter password")
 let kTfRePasswordPH =                   Localizable(value: "Please re-enter the password...")
 let kBtnRegisterWithFB =                Localizable(value: "Register with Facebook")
 let kLblOr =                            Localizable(value: "Or")
+
+//MARK: LoginViewController
+let kForgotPassword =                   Localizable(value: "Forgot password")
+
+//MARK: ForgotPasswordEmailInput
+let kPolicy =                           Localizable(value: "Enter the email address you used to create the account")
+let kEmail =                            Localizable(value: "Email")
+let kSendEmail =                        Localizable(value: "Send Email")
