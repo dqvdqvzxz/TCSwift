@@ -45,6 +45,9 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnSendEmail(_ sender: Any) {
         let vc = TRCForgotPasswordSentViewController(nibName: "TRCForgotPasswordSentViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = kBackButton
+        navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

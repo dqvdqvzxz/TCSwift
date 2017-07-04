@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //set main color for navigation bar
+        UINavigationBar.appearance().backgroundColor = UIColor.init(hexString: MAIN_COLOR)
+        UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
+        UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
+        
         //first view when run app
         window = UIWindow(frame: UIScreen.main.bounds)
         if(UserDefaults.kGetValue(FB_TOKEN) != nil){

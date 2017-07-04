@@ -18,14 +18,7 @@ class TRCBaseViewController: UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        //set main color for navigation bar
-        UINavigationBar.appearance().backgroundColor = UIColor.init(hexString: MAIN_COLOR)
-        UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
-        UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
-        self.navigationController?.navigationBar.backItem?.title = kBackButton
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-
     }
 
     override func didReceiveMemoryWarning() {
