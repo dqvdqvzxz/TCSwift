@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F4758E51F0B46A800B82645 /* TRCForgotPasswordEmailInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758E31F0B46A800B82645 /* TRCForgotPasswordEmailInputViewController.swift */; };
-		3F4758E91F0B46B900B82645 /* TRCForgotPasswordSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758E71F0B46B900B82645 /* TRCForgotPasswordSentViewController.swift */; };
-		3F4758ED1F0B46D200B82645 /* TRCForgotPasswordEmailInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4758EB1F0B46D200B82645 /* TRCForgotPasswordEmailInputViewController.xib */; };
-		3F4758EE1F0B46D200B82645 /* TRCForgotPasswordSentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4758EC1F0B46D200B82645 /* TRCForgotPasswordSentViewController.xib */; };
 		3F4758F11F0BA02400B82645 /* TRCAccountInfoInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758EF1F0BA02400B82645 /* TRCAccountInfoInputViewController.swift */; };
 		3F4758F51F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758F31F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift */; };
 		3F4758F91F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758F71F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift */; };
@@ -23,6 +19,10 @@
 		3F4759101F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47590A1F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib */; };
 		3F4759111F0BA0D500B82645 /* TRCPharmacySearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47590B1F0BA0D500B82645 /* TRCPharmacySearchViewController.xib */; };
 		3F4759121F0BA0D500B82645 /* TRCUserRegistCompleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47590C1F0BA0D500B82645 /* TRCUserRegistCompleteViewController.xib */; };
+		3F4759151F0BA86C00B82645 /* TRCForgotPasswordEmailInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759131F0BA86C00B82645 /* TRCForgotPasswordEmailInputViewController.swift */; };
+		3F4759161F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759141F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift */; };
+		3F4759191F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759171F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib */; };
+		3F47591A1F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759181F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib */; };
 		3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411301EFB6221008720A6 /* AppDelegate.swift */; };
 		3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411391EFB6221008720A6 /* Assets.xcassets */; };
 		3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */; };
@@ -54,10 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F4758E31F0B46A800B82645 /* TRCForgotPasswordEmailInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCForgotPasswordEmailInputViewController.swift; sourceTree = "<group>"; };
-		3F4758E71F0B46B900B82645 /* TRCForgotPasswordSentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCForgotPasswordSentViewController.swift; sourceTree = "<group>"; };
-		3F4758EB1F0B46D200B82645 /* TRCForgotPasswordEmailInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCForgotPasswordEmailInputViewController.xib; sourceTree = "<group>"; };
-		3F4758EC1F0B46D200B82645 /* TRCForgotPasswordSentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCForgotPasswordSentViewController.xib; sourceTree = "<group>"; };
 		3F4758EF1F0BA02400B82645 /* TRCAccountInfoInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCAccountInfoInputViewController.swift; sourceTree = "<group>"; };
 		3F4758F31F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacySearchResultsViewController.swift; sourceTree = "<group>"; };
 		3F4758F71F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCMyPharmacistInputViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +66,10 @@
 		3F47590A1F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPharmacySearchResultsViewController.xib; sourceTree = "<group>"; };
 		3F47590B1F0BA0D500B82645 /* TRCPharmacySearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPharmacySearchViewController.xib; sourceTree = "<group>"; };
 		3F47590C1F0BA0D500B82645 /* TRCUserRegistCompleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCUserRegistCompleteViewController.xib; sourceTree = "<group>"; };
+		3F4759131F0BA86C00B82645 /* TRCForgotPasswordEmailInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCForgotPasswordEmailInputViewController.swift; sourceTree = "<group>"; };
+		3F4759141F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCForgotPasswordSentViewController.swift; sourceTree = "<group>"; };
+		3F4759171F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCForgotPasswordEmailInputViewController.xib; sourceTree = "<group>"; };
+		3F4759181F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCForgotPasswordSentViewController.xib; sourceTree = "<group>"; };
 		3FB4111A1EFB607C008720A6 /* ToricareSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB411301EFB6221008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FB411391EFB6221008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,41 +115,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F4758DF1F0B467400B82645 /* ForgotPassword */ = {
-			isa = PBXGroup;
-			children = (
-				3F4758E01F0B467400B82645 /* Controller */,
-				3F4758E11F0B467400B82645 /* Model */,
-				3F4758E21F0B467400B82645 /* View */,
-			);
-			path = ForgotPassword;
-			sourceTree = "<group>";
-		};
-		3F4758E01F0B467400B82645 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				3F4758E31F0B46A800B82645 /* TRCForgotPasswordEmailInputViewController.swift */,
-				3F4758E71F0B46B900B82645 /* TRCForgotPasswordSentViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		3F4758E11F0B467400B82645 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		3F4758E21F0B467400B82645 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3F4758EB1F0B46D200B82645 /* TRCForgotPasswordEmailInputViewController.xib */,
-				3F4758EC1F0B46D200B82645 /* TRCForgotPasswordSentViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		3FB411111EFB607C008720A6 = {
 			isa = PBXGroup;
 			children = (
@@ -273,7 +238,6 @@
 				3FB4119F1F09E13E008720A6 /* PreLogin */,
 				3FB411A71F09F0FA008720A6 /* Register */,
 				3FB4113F1EFB6221008720A6 /* Login */,
-				3F4758DF1F0B467400B82645 /* ForgotPassword */,
 				3FB411931F05F988008720A6 /* Home */,
 			);
 			path = ViewController;
@@ -301,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				3FB4114D1EFB7CA7008720A6 /* TRCLoginViewController.swift */,
+				3F4759131F0BA86C00B82645 /* TRCForgotPasswordEmailInputViewController.swift */,
+				3F4759141F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,6 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				3FB411511EFB7CC0008720A6 /* TRCLoginViewController.xib */,
+				3F4759171F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib */,
+				3F4759181F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,14 +477,14 @@
 				3FB411A61F09E13E008720A6 /* TRCPreLoginViewController.xib in Resources */,
 				3FB411B01F09F2C2008720A6 /* TRCRegisterViewController.xib in Resources */,
 				3F4759101F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib in Resources */,
-				3F4758EE1F0B46D200B82645 /* TRCForgotPasswordSentViewController.xib in Resources */,
 				3F4759111F0BA0D500B82645 /* TRCPharmacySearchViewController.xib in Resources */,
 				3F4759121F0BA0D500B82645 /* TRCUserRegistCompleteViewController.xib in Resources */,
-				3F4758ED1F0B46D200B82645 /* TRCForgotPasswordEmailInputViewController.xib in Resources */,
+				3F4759191F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib in Resources */,
 				3FB411521EFB7CC0008720A6 /* TRCLoginViewController.xib in Resources */,
 				3F47590D1F0BA0D500B82645 /* TRCAccountInfoInputViewController.xib in Resources */,
 				3FB4114A1EFB7C17008720A6 /* Info.plist in Resources */,
 				3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */,
+				3F47591A1F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib in Resources */,
 				3F47590E1F0BA0D500B82645 /* TRCMyPharmacistInputViewController.xib in Resources */,
 				3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */,
 				3FB4119A1F05F988008720A6 /* TRCHomeViewController.xib in Resources */,
@@ -584,12 +552,10 @@
 				3FB411771F00988A008720A6 /* TRCAPIKeyContant.swift in Sources */,
 				3F4758F51F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift in Sources */,
 				3FB411AD1F09F2AA008720A6 /* TRCRegisterViewController.swift in Sources */,
-				3F4758E91F0B46B900B82645 /* TRCForgotPasswordSentViewController.swift in Sources */,
 				3F4758FD1F0BA08100B82645 /* TRCPharmacySearchViewController.swift in Sources */,
 				3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */,
 				3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */,
 				3FB411901F04F884008720A6 /* Button.swift in Sources */,
-				3F4758E51F0B46A800B82645 /* TRCForgotPasswordEmailInputViewController.swift in Sources */,
 				3FB4119E1F063819008720A6 /* View.swift in Sources */,
 				3FB411791F00B05A008720A6 /* Connectivity.swift in Sources */,
 				3FB4114F1EFB7CA7008720A6 /* TRCLoginViewController.swift in Sources */,
@@ -602,9 +568,11 @@
 				3FB4119C1F05FB8B008720A6 /* Textfield.swift in Sources */,
 				3F4759051F0BA0A700B82645 /* TRCUserRegistCompleteViewController.swift in Sources */,
 				3FB4118E1F0122D0008720A6 /* UserDefaults.swift in Sources */,
+				3F4759161F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift in Sources */,
 				3FB411731EFD0DDA008720A6 /* TRCBaseAPIController.swift in Sources */,
 				3FB411921F05F7B9008720A6 /* Label.swift in Sources */,
 				3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */,
+				3F4759151F0BA86C00B82645 /* TRCForgotPasswordEmailInputViewController.swift in Sources */,
 				3F4759011F0BA09000B82645 /* TRCPharmacyDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

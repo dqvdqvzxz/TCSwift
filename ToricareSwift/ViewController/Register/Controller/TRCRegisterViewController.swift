@@ -56,10 +56,7 @@ class TRCRegisterViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
-        let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
-        navigationItem.backBarButtonItem = backItem
+        let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
