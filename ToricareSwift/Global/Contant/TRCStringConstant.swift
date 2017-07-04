@@ -41,5 +41,10 @@ let kPolicy =                           Localizable(value: "Enter the email addr
 let kEmail =                            Localizable(value: "Email")
 let kSendEmail =                        Localizable(value: "Send Email")
 
+//MARK: ForgotPasswordSent
+let kInform1 =                          Localizable(value: "Link setup new password was sent to your email ")
+let kInform2 =                          Localizable(value: "Please check your email to setup new password")
+let kBackToHome =                       Localizable(value: "Back To Home")
+
 //MARK: Home
 let kTitleHome =                        Localizable(value: "Home")
