@@ -9,8 +9,6 @@
 import UIKit
 
 class TRCBaseViewController: UIViewController {
-    
-    var backButton: UIBarButtonItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +18,14 @@ class TRCBaseViewController: UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
+        //set main color for navigation bar
+        UINavigationBar.appearance().backgroundColor = UIColor.init(hexString: MAIN_COLOR)
+        UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
+        UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
+        self.navigationController?.navigationBar.backItem?.title = kBackButton
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(hexString: MAIN_COLOR)
-        self.navigationController?.navigationBar.tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,10 +40,5 @@ class TRCBaseViewController: UIViewController {
     //call this function when the tap is recognized
     func dismissKeyboard(){
         view.endEditing(true)
-    }
-    
-    //func back button
-    func back(sender: UIBarButtonItem){
-        _ = navigationController?.popViewController(animated: true)
     }
 }

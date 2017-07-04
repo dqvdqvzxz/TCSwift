@@ -30,7 +30,6 @@ class TRCLoginViewController: TRCBaseViewController {
         super.viewDidLoad()
         
         configUI()
-        
 
     }
 
@@ -42,9 +41,7 @@ class TRCLoginViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationController?.navigationBar.topItem?.title = kTitleLogin
-        self.navigationController?.navigationBar.backItem?.title = kBackButton
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
+        self.navigationItem.title = kTitleLogin
 
         
         //UI of outlet

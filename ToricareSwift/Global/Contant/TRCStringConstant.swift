@@ -40,3 +40,6 @@ let kForgotPassword =                   Localizable(value: "Forgot password")
 let kPolicy =                           Localizable(value: "Enter the email address you used to create the account")
 let kEmail =                            Localizable(value: "Email")
 let kSendEmail =                        Localizable(value: "Send Email")
+
+//MARK: Home
+let kTitleHome =                        Localizable(value: "Home")

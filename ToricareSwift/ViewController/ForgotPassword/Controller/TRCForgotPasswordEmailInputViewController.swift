@@ -8,9 +8,7 @@
 
 import UIKit
 
-class TRCForgotPasswordEmailInputViewController: UIViewController {
-
-    @IBOutlet weak var navBar: UINavigationBar!
+class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
     
     @IBOutlet weak var lblPolicy: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
@@ -22,7 +20,7 @@ class TRCForgotPasswordEmailInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +31,7 @@ class TRCForgotPasswordEmailInputViewController: UIViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        navBar.backItem?.title = kBackButton
-        navBar.topItem?.title = kForgotPassword
+        self.navigationItem.title = kForgotPassword
         
         //UI of outlet
         lblPolicy.labelStyle(title: kPolicy, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
@@ -47,5 +44,7 @@ class TRCForgotPasswordEmailInputViewController: UIViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnSendEmail(_ sender: Any) {
+        let vc = TRCForgotPasswordSentViewController(nibName: "TRCForgotPasswordSentViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
