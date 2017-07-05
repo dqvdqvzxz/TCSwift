@@ -51,13 +51,13 @@ let kTitleHome =                        Localizable(value: "Home")
 
 //MARK: AccountInfoInput
 let kTitleAccountInfoInput =            Localizable(value: "Register member")
-let kFirstName =                        Localizable(value: "Firstname")
+let kFirstName =                        Localizable(value: "First Name")
 let kFirstNamePH =                      Localizable(value: "Your first name...")
-let kLastName =                         Localizable(value: "Lastname")
+let kLastName =                         Localizable(value: "Last Name")
 let kLastNamePH =                       Localizable(value: "Your last name...")
-let kFirstNameKata =                    Localizable(value: "FirstnameKata")
+let kFirstNameKata =                    Localizable(value: "First Name (Kata)")
 let kFirstNameKataPH =                  Localizable(value: "Your first kata name...")
-let kLastNameKata =                     Localizable(value: "LastnameKata")
+let kLastNameKata =                     Localizable(value: "Last Name (Kata)")
 let kLastNameKataPH =                   Localizable(value: "Your last kata name...")
 let kDateOfBirth =                      Localizable(value: "Date of Birth")
 

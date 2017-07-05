@@ -23,6 +23,7 @@
 		3F4759161F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759141F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift */; };
 		3F4759191F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759171F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib */; };
 		3F47591A1F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759181F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib */; };
+		3F47591C1F0C7DA100B82645 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47591B1F0C7DA100B82645 /* Image.swift */; };
 		3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411301EFB6221008720A6 /* AppDelegate.swift */; };
 		3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411391EFB6221008720A6 /* Assets.xcassets */; };
 		3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */; };
@@ -70,6 +71,7 @@
 		3F4759141F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCForgotPasswordSentViewController.swift; sourceTree = "<group>"; };
 		3F4759171F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCForgotPasswordEmailInputViewController.xib; sourceTree = "<group>"; };
 		3F4759181F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCForgotPasswordSentViewController.xib; sourceTree = "<group>"; };
+		3F47591B1F0C7DA100B82645 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		3FB4111A1EFB607C008720A6 /* ToricareSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB411301EFB6221008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FB411391EFB6221008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				3FB411911F05F7B9008720A6 /* Label.swift */,
 				3FB4119B1F05FB8B008720A6 /* Textfield.swift */,
 				3FB4119D1F063819008720A6 /* View.swift */,
+				3F47591B1F0C7DA100B82645 /* Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				3FB4116F1EFCF09C008720A6 /* TRCLoginAPIController.swift in Sources */,
 				3FB4116C1EFBBEF6008720A6 /* Alert.swift in Sources */,
 				3FB411771F00988A008720A6 /* TRCAPIKeyContant.swift in Sources */,
+				3F47591C1F0C7DA100B82645 /* Image.swift in Sources */,
 				3F4758F51F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift in Sources */,
 				3FB411AD1F09F2AA008720A6 /* TRCRegisterViewController.swift in Sources */,
 				3F4758FD1F0BA08100B82645 /* TRCPharmacySearchViewController.swift in Sources */,

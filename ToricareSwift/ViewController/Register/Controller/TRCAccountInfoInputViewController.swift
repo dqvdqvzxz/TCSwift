@@ -12,6 +12,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
     @IBOutlet weak var imgUser: UIImageView!
     
+    @IBOutlet weak var viewLeft: UIView!
+    @IBOutlet weak var viewRight: UIView!
+    
     @IBOutlet weak var lblFirstName: UILabel!
     @IBOutlet weak var lblLastName: UILabel!
     @IBOutlet weak var lblFirstNameKata: UILabel!
@@ -49,5 +52,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         tfLastName.textFieldStyle(placeHolder: kLastNamePH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         tfFirstNameKata.textFieldStyle(placeHolder: kFirstNameKataPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         tfLastNameKata.textFieldStyle(placeHolder: kLastNameKataPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        
+        //make image circle
+        imgUser.makeCircle()
     }
 }
