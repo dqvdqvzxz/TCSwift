@@ -80,6 +80,7 @@ let kNewEmailPH =                       Localizable(value: "Enter the new email.
 let kConfirmNewEmail =                  Localizable(value: "Confirm new email")
 let kConfirmNewEmailPH =                Localizable(value: "Re-etner the new email...")
 let kConfirm =                          Localizable(value: "Confirm")
+let kBackToMyPage =                     Localizable(value: "Back to MyPage")
 //change pass
 let kChangePass =                       Localizable(value: "Change password")
 //linked service

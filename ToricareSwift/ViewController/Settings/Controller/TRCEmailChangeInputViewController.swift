@@ -53,5 +53,10 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnConfirm(_ sender: Any) {
+        let vc = TRCEmailChangeCompleteViewController(nibName: "TRCEmailChangeCompleteViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = kBackButton
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
