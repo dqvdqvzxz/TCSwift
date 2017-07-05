@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //first view when run app
         window = UIWindow(frame: UIScreen.main.bounds)
         if(UserDefaults.kGetValue(FB_TOKEN) != nil){
-            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+            let mainVC = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
             window?.rootViewController = navController
             window?.makeKeyAndVisible()

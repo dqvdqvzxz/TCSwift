@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCHomeViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="tabBar" destination="d37-E7-Pdn" id="xJg-TF-hVi"/>
+                <outlet property="tabSetting" destination="rdw-mS-f8W" id="QaN-vU-LM8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +20,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d37-E7-Pdn">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ISW-nL-fKj"/>
+                    </constraints>
+                    <items>
+                        <tabBarItem tag="1" title="Item" id="ox8-AQ-ebR"/>
+                        <tabBarItem tag="2" title="Item" id="zax-jY-YQw"/>
+                        <tabBarItem tag="3" title="Item" id="TWO-no-jHe"/>
+                        <tabBarItem tag="4" title="Item" id="yZ6-IE-67Q"/>
+                        <tabBarItem tag="5" title="Item" id="rdw-mS-f8W" userLabel="tabSetting"/>
+                    </items>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="OSA-Gm-hsk"/>
+                    </connections>
+                </tabBar>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="d37-E7-Pdn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2sV-kh-pRF"/>
+                <constraint firstAttribute="trailing" secondItem="d37-E7-Pdn" secondAttribute="trailing" id="8GG-fz-MmG"/>
+                <constraint firstAttribute="bottom" secondItem="d37-E7-Pdn" secondAttribute="bottom" id="rXG-9M-YKQ"/>
+            </constraints>
             <point key="canvasLocation" x="33.5" y="71.5"/>
         </view>
     </objects>
