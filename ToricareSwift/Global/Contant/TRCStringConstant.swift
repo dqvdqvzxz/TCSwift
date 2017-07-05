@@ -77,8 +77,9 @@ let kChangeEmail =                      Localizable(value: "Change email")
 let kCurrentEmail =                     Localizable(value: "Your current email")
 let kNewEmail =                         Localizable(value: "New email")
 let kNewEmailPH =                       Localizable(value: "Enter the new email...")
-let kReNewEmail =                       Localizable(value: "Confirm new email")
-let kReNewEmailPH =                     Localizable(value: "Re-etner the new email...")
+let kConfirmNewEmail =                  Localizable(value: "Confirm new email")
+let kConfirmNewEmailPH =                Localizable(value: "Re-etner the new email...")
+let kConfirm =                          Localizable(value: "Confirm")
 //change pass
 let kChangePass =                       Localizable(value: "Change password")
 //linked service
