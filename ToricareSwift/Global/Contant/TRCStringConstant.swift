@@ -17,6 +17,8 @@ let kParamInvalid =                     Localizable(value: "Please check again y
 
 //MARK: Navigation 
 let kBackButton =                       Localizable(value: "BacK")
+let kDone =                             Localizable(value: "Done")
+let kCancel =                           Localizable(value: "Cancel")
 
 //MARK: PreLoginViewController
 let kBtnRegister =                      Localizable(value: "Register")
@@ -60,6 +62,12 @@ let kFirstNameKataPH =                  Localizable(value: "Your first kata name
 let kLastNameKata =                     Localizable(value: "Last Name (Kata)")
 let kLastNameKataPH =                   Localizable(value: "Your last kata name...")
 let kDateOfBirth =                      Localizable(value: "Date of Birth")
+let kDateOfBirthPH =                    Localizable(value: "Enter the date of birth")
+let kGender =                           Localizable(value: "Gender")
+let kGenderPH =                         Localizable(value: "Pick gender...")
+let kMale =                             Localizable(value: "Male")
+let kFemale =                           Localizable(value: "Female")
+let kNext =                             Localizable(value: "Next")
 
 
 
