@@ -144,7 +144,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
-        let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
+        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
         let backItem = UIBarButtonItem()
         backItem.title = kBackButton
         navigationItem.backBarButtonItem = backItem

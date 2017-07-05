@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCPharmacySearchViewController: UIViewController {
+class TRCPharmacySearchViewController: TRCBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -364,9 +364,9 @@
 			children = (
 				3FB411AB1F09F2AA008720A6 /* TRCRegisterViewController.swift */,
 				3F4758EF1F0BA02400B82645 /* TRCAccountInfoInputViewController.swift */,
+				3F4758FB1F0BA08100B82645 /* TRCPharmacySearchViewController.swift */,
 				3F4758F31F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift */,
 				3F4758F71F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift */,
-				3F4758FB1F0BA08100B82645 /* TRCPharmacySearchViewController.swift */,
 				3F4758FF1F0BA09000B82645 /* TRCPharmacyDetailViewController.swift */,
 				3F4759031F0BA0A700B82645 /* TRCUserRegistCompleteViewController.swift */,
 			);
@@ -385,10 +385,10 @@
 			children = (
 				3FB411AF1F09F2C2008720A6 /* TRCRegisterViewController.xib */,
 				3F4759071F0BA0D500B82645 /* TRCAccountInfoInputViewController.xib */,
+				3F47590B1F0BA0D500B82645 /* TRCPharmacySearchViewController.xib */,
 				3F4759081F0BA0D500B82645 /* TRCMyPharmacistInputViewController.xib */,
 				3F4759091F0BA0D500B82645 /* TRCPharmacyDetailViewController.xib */,
 				3F47590A1F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib */,
-				3F47590B1F0BA0D500B82645 /* TRCPharmacySearchViewController.xib */,
 				3F47590C1F0BA0D500B82645 /* TRCUserRegistCompleteViewController.xib */,
 			);
 			path = View;
