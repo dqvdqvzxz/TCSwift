@@ -70,7 +70,31 @@ let kBackToHome =                       Localizable(value: "Back To Home")
 let kTitleHome =                        Localizable(value: "Home")
 
 
-
+//MARK: Settings
+let kTitleSetting =                     Localizable(value: "Setting")
+//change email
+let kChangeEmail =                      Localizable(value: "Change email")
+let kCurrentEmail =                     Localizable(value: "Your current email")
+let kNewEmail =                         Localizable(value: "New email")
+let kNewEmailPH =                       Localizable(value: "Enter the new email...")
+let kReNewEmail =                       Localizable(value: "Confirm new email")
+let kReNewEmailPH =                     Localizable(value: "Re-etner the new email...")
+//change pass
+let kChangePass =                       Localizable(value: "Change password")
+//linked service
+let kLinkedService =                    Localizable(value: "Linked Services")
+//notification
+let kNotification =                     Localizable(value: "Notification")
+//passcode
+let kPasscode =                         Localizable(value: "Passcode")
+//theme
+let kTheme =                            Localizable(value: "Theme")
+//about app
+let kAboutApp =                         Localizable(value: "About App")
+//user leave
+let kUserLeave =                        Localizable(value: "Deactive User")
+//logout
+let kLogout =                           Localizable(value: "Log out")
 
 
 

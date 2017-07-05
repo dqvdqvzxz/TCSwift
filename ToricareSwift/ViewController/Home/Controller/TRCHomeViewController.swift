@@ -60,12 +60,11 @@ class TRCHomeViewController: TRCBaseViewController {
 extension TRCHomeViewController: UITabBarDelegate{
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if(item.tag == 5){
-            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+            let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
             let backItem = UIBarButtonItem()
             backItem.title = kBackButton
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
-            
         }
     }
 }
