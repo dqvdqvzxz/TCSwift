@@ -24,6 +24,31 @@
 		3F4759191F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759171F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib */; };
 		3F47591A1F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759181F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib */; };
 		3F47591C1F0C7DA100B82645 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47591B1F0C7DA100B82645 /* Image.swift */; };
+		3F4759231F0CC37B00B82645 /* TRCSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759211F0CC37B00B82645 /* TRCSettingViewController.swift */; };
+		3F4759281F0CC3AD00B82645 /* TRCLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759271F0CC3AD00B82645 /* TRCLogoutViewController.swift */; };
+		3F47592B1F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759291F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift */; };
+		3F47592F1F0CC3CC00B82645 /* TRCLinkedServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47592D1F0CC3CC00B82645 /* TRCLinkedServicesViewController.swift */; };
+		3F4759331F0CC3DF00B82645 /* TRCEmailChangeCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759311F0CC3DF00B82645 /* TRCEmailChangeCompleteViewController.swift */; };
+		3F4759371F0CC3EA00B82645 /* TRCPasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759351F0CC3EA00B82645 /* TRCPasswordChangeViewController.swift */; };
+		3F47593B1F0CC40000B82645 /* TRCPasscodeLockSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759391F0CC40000B82645 /* TRCPasscodeLockSettingViewController.swift */; };
+		3F47593F1F0CC40F00B82645 /* TRCPasscodeLockInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47593D1F0CC40F00B82645 /* TRCPasscodeLockInputViewController.swift */; };
+		3F4759431F0CC42F00B82645 /* TRCNotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759411F0CC42F00B82645 /* TRCNotificationSettingViewController.swift */; };
+		3F4759471F0CC44000B82645 /* TRCThemeColorSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759451F0CC44000B82645 /* TRCThemeColorSettingViewController.swift */; };
+		3F47594B1F0CC45000B82645 /* TRCAboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759491F0CC45000B82645 /* TRCAboutAppViewController.swift */; };
+		3F47594F1F0CC46000B82645 /* TRCUserLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47594D1F0CC46000B82645 /* TRCUserLeaveViewController.swift */; };
+		3F4759531F0CC46E00B82645 /* TRCUserLeaveCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759511F0CC46E00B82645 /* TRCUserLeaveCompleteViewController.swift */; };
+		3F4759611F0CC50C00B82645 /* TRCAboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759551F0CC50C00B82645 /* TRCAboutAppViewController.xib */; };
+		3F4759621F0CC50C00B82645 /* TRCEmailChangeCompleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759561F0CC50C00B82645 /* TRCEmailChangeCompleteViewController.xib */; };
+		3F4759631F0CC50C00B82645 /* TRCEmailChangeInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759571F0CC50C00B82645 /* TRCEmailChangeInputViewController.xib */; };
+		3F4759641F0CC50C00B82645 /* TRCLinkedServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759581F0CC50C00B82645 /* TRCLinkedServicesViewController.xib */; };
+		3F4759651F0CC50C00B82645 /* TRCNotificationSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759591F0CC50C00B82645 /* TRCNotificationSettingViewController.xib */; };
+		3F4759661F0CC50C00B82645 /* TRCPasscodeLockInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47595A1F0CC50C00B82645 /* TRCPasscodeLockInputViewController.xib */; };
+		3F4759671F0CC50C00B82645 /* TRCPasscodeLockSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47595B1F0CC50C00B82645 /* TRCPasscodeLockSettingViewController.xib */; };
+		3F4759681F0CC50C00B82645 /* TRCPasswordChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47595C1F0CC50C00B82645 /* TRCPasswordChangeViewController.xib */; };
+		3F4759691F0CC50C00B82645 /* TRCSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47595D1F0CC50C00B82645 /* TRCSettingViewController.xib */; };
+		3F47596A1F0CC50C00B82645 /* TRCThemeColorSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47595E1F0CC50C00B82645 /* TRCThemeColorSettingViewController.xib */; };
+		3F47596B1F0CC50C00B82645 /* TRCUserLeaveCompleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47595F1F0CC50C00B82645 /* TRCUserLeaveCompleteViewController.xib */; };
+		3F47596C1F0CC50C00B82645 /* TRCUserLeaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4759601F0CC50C00B82645 /* TRCUserLeaveViewController.xib */; };
 		3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411301EFB6221008720A6 /* AppDelegate.swift */; };
 		3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411391EFB6221008720A6 /* Assets.xcassets */; };
 		3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */; };
@@ -72,6 +97,31 @@
 		3F4759171F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCForgotPasswordEmailInputViewController.xib; sourceTree = "<group>"; };
 		3F4759181F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCForgotPasswordSentViewController.xib; sourceTree = "<group>"; };
 		3F47591B1F0C7DA100B82645 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		3F4759211F0CC37B00B82645 /* TRCSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSettingViewController.swift; sourceTree = "<group>"; };
+		3F4759271F0CC3AD00B82645 /* TRCLogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCLogoutViewController.swift; sourceTree = "<group>"; };
+		3F4759291F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCEmailChangeInputViewController.swift; sourceTree = "<group>"; };
+		3F47592D1F0CC3CC00B82645 /* TRCLinkedServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCLinkedServicesViewController.swift; sourceTree = "<group>"; };
+		3F4759311F0CC3DF00B82645 /* TRCEmailChangeCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCEmailChangeCompleteViewController.swift; sourceTree = "<group>"; };
+		3F4759351F0CC3EA00B82645 /* TRCPasswordChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPasswordChangeViewController.swift; sourceTree = "<group>"; };
+		3F4759391F0CC40000B82645 /* TRCPasscodeLockSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPasscodeLockSettingViewController.swift; sourceTree = "<group>"; };
+		3F47593D1F0CC40F00B82645 /* TRCPasscodeLockInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPasscodeLockInputViewController.swift; sourceTree = "<group>"; };
+		3F4759411F0CC42F00B82645 /* TRCNotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCNotificationSettingViewController.swift; sourceTree = "<group>"; };
+		3F4759451F0CC44000B82645 /* TRCThemeColorSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCThemeColorSettingViewController.swift; sourceTree = "<group>"; };
+		3F4759491F0CC45000B82645 /* TRCAboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCAboutAppViewController.swift; sourceTree = "<group>"; };
+		3F47594D1F0CC46000B82645 /* TRCUserLeaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCUserLeaveViewController.swift; sourceTree = "<group>"; };
+		3F4759511F0CC46E00B82645 /* TRCUserLeaveCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCUserLeaveCompleteViewController.swift; sourceTree = "<group>"; };
+		3F4759551F0CC50C00B82645 /* TRCAboutAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCAboutAppViewController.xib; sourceTree = "<group>"; };
+		3F4759561F0CC50C00B82645 /* TRCEmailChangeCompleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCEmailChangeCompleteViewController.xib; sourceTree = "<group>"; };
+		3F4759571F0CC50C00B82645 /* TRCEmailChangeInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCEmailChangeInputViewController.xib; sourceTree = "<group>"; };
+		3F4759581F0CC50C00B82645 /* TRCLinkedServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCLinkedServicesViewController.xib; sourceTree = "<group>"; };
+		3F4759591F0CC50C00B82645 /* TRCNotificationSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCNotificationSettingViewController.xib; sourceTree = "<group>"; };
+		3F47595A1F0CC50C00B82645 /* TRCPasscodeLockInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPasscodeLockInputViewController.xib; sourceTree = "<group>"; };
+		3F47595B1F0CC50C00B82645 /* TRCPasscodeLockSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPasscodeLockSettingViewController.xib; sourceTree = "<group>"; };
+		3F47595C1F0CC50C00B82645 /* TRCPasswordChangeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPasswordChangeViewController.xib; sourceTree = "<group>"; };
+		3F47595D1F0CC50C00B82645 /* TRCSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCSettingViewController.xib; sourceTree = "<group>"; };
+		3F47595E1F0CC50C00B82645 /* TRCThemeColorSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCThemeColorSettingViewController.xib; sourceTree = "<group>"; };
+		3F47595F1F0CC50C00B82645 /* TRCUserLeaveCompleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCUserLeaveCompleteViewController.xib; sourceTree = "<group>"; };
+		3F4759601F0CC50C00B82645 /* TRCUserLeaveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCUserLeaveViewController.xib; sourceTree = "<group>"; };
 		3FB4111A1EFB607C008720A6 /* ToricareSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB411301EFB6221008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FB411391EFB6221008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +167,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F47591D1F0CC0F400B82645 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3F47591E1F0CC0F400B82645 /* Controller */,
+				3F47591F1F0CC0F400B82645 /* Model */,
+				3F4759201F0CC0F400B82645 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3F47591E1F0CC0F400B82645 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F4759211F0CC37B00B82645 /* TRCSettingViewController.swift */,
+				3F4759291F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift */,
+				3F4759311F0CC3DF00B82645 /* TRCEmailChangeCompleteViewController.swift */,
+				3F4759351F0CC3EA00B82645 /* TRCPasswordChangeViewController.swift */,
+				3F47592D1F0CC3CC00B82645 /* TRCLinkedServicesViewController.swift */,
+				3F4759411F0CC42F00B82645 /* TRCNotificationSettingViewController.swift */,
+				3F4759391F0CC40000B82645 /* TRCPasscodeLockSettingViewController.swift */,
+				3F47593D1F0CC40F00B82645 /* TRCPasscodeLockInputViewController.swift */,
+				3F4759451F0CC44000B82645 /* TRCThemeColorSettingViewController.swift */,
+				3F4759491F0CC45000B82645 /* TRCAboutAppViewController.swift */,
+				3F47594D1F0CC46000B82645 /* TRCUserLeaveViewController.swift */,
+				3F4759511F0CC46E00B82645 /* TRCUserLeaveCompleteViewController.swift */,
+				3F4759271F0CC3AD00B82645 /* TRCLogoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F47591F1F0CC0F400B82645 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F4759201F0CC0F400B82645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F47595D1F0CC50C00B82645 /* TRCSettingViewController.xib */,
+				3F4759571F0CC50C00B82645 /* TRCEmailChangeInputViewController.xib */,
+				3F4759561F0CC50C00B82645 /* TRCEmailChangeCompleteViewController.xib */,
+				3F47595C1F0CC50C00B82645 /* TRCPasswordChangeViewController.xib */,
+				3F4759581F0CC50C00B82645 /* TRCLinkedServicesViewController.xib */,
+				3F4759591F0CC50C00B82645 /* TRCNotificationSettingViewController.xib */,
+				3F47595B1F0CC50C00B82645 /* TRCPasscodeLockSettingViewController.xib */,
+				3F47595A1F0CC50C00B82645 /* TRCPasscodeLockInputViewController.xib */,
+				3F47595E1F0CC50C00B82645 /* TRCThemeColorSettingViewController.xib */,
+				3F4759551F0CC50C00B82645 /* TRCAboutAppViewController.xib */,
+				3F4759601F0CC50C00B82645 /* TRCUserLeaveViewController.xib */,
+				3F47595F1F0CC50C00B82645 /* TRCUserLeaveCompleteViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3FB411111EFB607C008720A6 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +348,7 @@
 				3FB411A71F09F0FA008720A6 /* Register */,
 				3FB4113F1EFB6221008720A6 /* Login */,
 				3FB411931F05F988008720A6 /* Home */,
+				3F47591D1F0CC0F400B82645 /* Settings */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -478,12 +585,24 @@
 			files = (
 				3F47590F1F0BA0D500B82645 /* TRCPharmacyDetailViewController.xib in Resources */,
 				3FB411A61F09E13E008720A6 /* TRCPreLoginViewController.xib in Resources */,
+				3F4759611F0CC50C00B82645 /* TRCAboutAppViewController.xib in Resources */,
+				3F4759691F0CC50C00B82645 /* TRCSettingViewController.xib in Resources */,
 				3FB411B01F09F2C2008720A6 /* TRCRegisterViewController.xib in Resources */,
+				3F4759671F0CC50C00B82645 /* TRCPasscodeLockSettingViewController.xib in Resources */,
+				3F47596C1F0CC50C00B82645 /* TRCUserLeaveViewController.xib in Resources */,
+				3F47596A1F0CC50C00B82645 /* TRCThemeColorSettingViewController.xib in Resources */,
 				3F4759101F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib in Resources */,
+				3F4759621F0CC50C00B82645 /* TRCEmailChangeCompleteViewController.xib in Resources */,
+				3F4759641F0CC50C00B82645 /* TRCLinkedServicesViewController.xib in Resources */,
+				3F4759631F0CC50C00B82645 /* TRCEmailChangeInputViewController.xib in Resources */,
 				3F4759111F0BA0D500B82645 /* TRCPharmacySearchViewController.xib in Resources */,
+				3F4759661F0CC50C00B82645 /* TRCPasscodeLockInputViewController.xib in Resources */,
 				3F4759121F0BA0D500B82645 /* TRCUserRegistCompleteViewController.xib in Resources */,
+				3F4759681F0CC50C00B82645 /* TRCPasswordChangeViewController.xib in Resources */,
+				3F4759651F0CC50C00B82645 /* TRCNotificationSettingViewController.xib in Resources */,
 				3F4759191F0BA87500B82645 /* TRCForgotPasswordEmailInputViewController.xib in Resources */,
 				3FB411521EFB7CC0008720A6 /* TRCLoginViewController.xib in Resources */,
+				3F47596B1F0CC50C00B82645 /* TRCUserLeaveCompleteViewController.xib in Resources */,
 				3F47590D1F0BA0D500B82645 /* TRCAccountInfoInputViewController.xib in Resources */,
 				3FB4114A1EFB7C17008720A6 /* Info.plist in Resources */,
 				3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */,
@@ -550,28 +669,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F4758F11F0BA02400B82645 /* TRCAccountInfoInputViewController.swift in Sources */,
+				3F47594F1F0CC46000B82645 /* TRCUserLeaveViewController.swift in Sources */,
 				3FB4116F1EFCF09C008720A6 /* TRCLoginAPIController.swift in Sources */,
 				3FB4116C1EFBBEF6008720A6 /* Alert.swift in Sources */,
 				3FB411771F00988A008720A6 /* TRCAPIKeyContant.swift in Sources */,
+				3F4759471F0CC44000B82645 /* TRCThemeColorSettingViewController.swift in Sources */,
 				3F47591C1F0C7DA100B82645 /* Image.swift in Sources */,
 				3F4758F51F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift in Sources */,
+				3F47593B1F0CC40000B82645 /* TRCPasscodeLockSettingViewController.swift in Sources */,
+				3F4759331F0CC3DF00B82645 /* TRCEmailChangeCompleteViewController.swift in Sources */,
+				3F4759371F0CC3EA00B82645 /* TRCPasswordChangeViewController.swift in Sources */,
 				3FB411AD1F09F2AA008720A6 /* TRCRegisterViewController.swift in Sources */,
 				3F4758FD1F0BA08100B82645 /* TRCPharmacySearchViewController.swift in Sources */,
+				3F47592B1F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift in Sources */,
 				3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */,
+				3F47594B1F0CC45000B82645 /* TRCAboutAppViewController.swift in Sources */,
 				3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */,
 				3FB411901F04F884008720A6 /* Button.swift in Sources */,
 				3FB4119E1F063819008720A6 /* View.swift in Sources */,
 				3FB411791F00B05A008720A6 /* Connectivity.swift in Sources */,
 				3FB4114F1EFB7CA7008720A6 /* TRCLoginViewController.swift in Sources */,
+				3F4759431F0CC42F00B82645 /* TRCNotificationSettingViewController.swift in Sources */,
 				3FB4116A1EFBBAC2008720A6 /* TRCStringConstant.swift in Sources */,
+				3F4759231F0CC37B00B82645 /* TRCSettingViewController.swift in Sources */,
 				3FB411541EFB7ED3008720A6 /* TRCObject.swift in Sources */,
 				3FB411991F05F988008720A6 /* TRCHomeViewController.swift in Sources */,
+				3F4759531F0CC46E00B82645 /* TRCUserLeaveCompleteViewController.swift in Sources */,
 				3FB411561EFB9DD2008720A6 /* HexColor.swift in Sources */,
+				3F47592F1F0CC3CC00B82645 /* TRCLinkedServicesViewController.swift in Sources */,
 				3FB411A51F09E13E008720A6 /* TRCPreLoginViewController.swift in Sources */,
 				3F4758F91F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift in Sources */,
+				3F4759281F0CC3AD00B82645 /* TRCLogoutViewController.swift in Sources */,
 				3FB4119C1F05FB8B008720A6 /* Textfield.swift in Sources */,
 				3F4759051F0BA0A700B82645 /* TRCUserRegistCompleteViewController.swift in Sources */,
 				3FB4118E1F0122D0008720A6 /* UserDefaults.swift in Sources */,
+				3F47593F1F0CC40F00B82645 /* TRCPasscodeLockInputViewController.swift in Sources */,
 				3F4759161F0BA86C00B82645 /* TRCForgotPasswordSentViewController.swift in Sources */,
 				3FB411731EFD0DDA008720A6 /* TRCBaseAPIController.swift in Sources */,
 				3FB411921F05F7B9008720A6 /* Label.swift in Sources */,
