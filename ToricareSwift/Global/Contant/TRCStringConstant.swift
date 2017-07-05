@@ -83,6 +83,12 @@ let kConfirm =                          Localizable(value: "Confirm")
 let kBackToMyPage =                     Localizable(value: "Back to MyPage")
 //change pass
 let kChangePass =                       Localizable(value: "Change password")
+let kCurrentPassword =                  Localizable(value: "Current password")
+let kCurrentPasswordPH =                Localizable(value: "Enter current password...")
+let kNewPassword =                      Localizable(value: "New password")
+let kNewPasswordPH =                    Localizable(value: "Enter new password...")
+let kConfirmNewPassword =               Localizable(value: "Confirm new password")
+let kConfirmNewPasswordPH =             Localizable(value: "Re-enter new password...")
 //linked service
 let kLinkedService =                    Localizable(value: "Linked Services")
 //notification

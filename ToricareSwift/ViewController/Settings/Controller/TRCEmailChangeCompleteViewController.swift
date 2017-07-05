@@ -35,7 +35,7 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnBackToMyPage(_ sender: Any) {
-        let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+        let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
         let backItem = UIBarButtonItem()
         backItem.title = kBackButton
         navigationItem.backBarButtonItem = backItem
