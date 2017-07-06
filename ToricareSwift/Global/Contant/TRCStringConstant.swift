@@ -91,6 +91,8 @@ let kConfirmNewPassword =               Localizable(value: "Confirm new password
 let kConfirmNewPasswordPH =             Localizable(value: "Re-enter new password...")
 //linked service
 let kLinkedService =                    Localizable(value: "Linked Services")
+let kHealthManagement =                 Localizable(value: "Health Management")
+let kOtherService =                     Localizable(value: "Other Services")
 //notification
 let kNotification =                     Localizable(value: "Notification")
 //passcode
