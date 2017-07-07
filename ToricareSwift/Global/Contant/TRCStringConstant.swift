@@ -18,6 +18,12 @@ let kBackButton =                       Localizable(value: "BacK")
 let kDone =                             Localizable(value: "Done")
 let kCancel =                           Localizable(value: "Cancel")
 
+//MARK: Tabbar
+let kTab1 =                             Localizable(value: "Home1")
+let kTab2 =                             Localizable(value: "Home2")
+let kTab3 =                             Localizable(value: "Home3")
+let kTab4 =                             Localizable(value: "Home4")
+let kTab5 =                             Localizable(value: "My Page")
 
 //MARK: PreLoginViewController
 let kBtnRegister =                      Localizable(value: "Register")

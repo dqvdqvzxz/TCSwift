@@ -22,11 +22,8 @@ class TRCBaseViewController: UIViewController {
         let currentColor = UserDefaults.kGetValue(THEME_COLOR) as! String
         self.navigationController?.navigationBar.barTintColor = UIColor.init(hexString: currentColor)
         self.navigationController?.navigationBar.tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
-        
-        //save color
-        let color = MAIN_COLOR
-        UserDefaults.kSetValue(color, THEME_COLOR)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
+
     }
 
     override func didReceiveMemoryWarning() {

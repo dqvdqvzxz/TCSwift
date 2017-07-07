@@ -10,10 +10,8 @@ import UIKit
 
 class TRCHomeViewController: TRCBaseViewController {
     
-    @IBOutlet weak var tabBar: UITabBar!
     
-    @IBOutlet weak var tabSetting: UITabBarItem!
-    
+    //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,27 +42,6 @@ class TRCHomeViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-//        self.navigationController?.navigationBar.topItem?.title = kTitleHome
-//        self.navigationController?.navigationBar.backItem?.title = kBackButton
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
         self.navigationItem.title = kTitleHome
-        
-        tabBar.barTintColor = UIColor.init(hexString: MAIN_COLOR)
-        tabBar.tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
-        
-        tabSetting.title = "Setting"
-    }
-}
-
-
-extension TRCHomeViewController: UITabBarDelegate{
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if(item.tag == 5){
-            let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
-            navigationItem.backBarButtonItem = backItem
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
     }
 }

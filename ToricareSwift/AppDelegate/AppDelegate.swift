@@ -20,19 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //first view when run app
-        window = UIWindow(frame: UIScreen.main.bounds)
-        if(UserDefaults.kGetValue(FB_TOKEN) != nil){
-            let mainVC = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-            let navController = UINavigationController(rootViewController: mainVC)
-            window?.rootViewController = navController
-            window?.makeKeyAndVisible()
-        }else{
-            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-            let navController = UINavigationController(rootViewController: mainVC)
-            window?.rootViewController = navController
-            window?.makeKeyAndVisible()
-        }
+        configUI()
         
         //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
@@ -68,8 +56,90 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url as URL!, sourceApplication: sourceApplication, annotation: annotation)
     }
-
-
+    
+    //MARK: Config UI
+    func configUI(){
+        //init window
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        //init root view controller
+        let vc1 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+        let vc2 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+        let vc3 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+        let vc4 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+        let vc5 = TRCMyPageViewController(nibName: "TRCMyPageViewController", bundle: nil)
+        
+        //init root nav controller
+        let nc1 = UINavigationController()
+        let nc2 = UINavigationController()
+        let nc3 = UINavigationController()
+        let nc4 = UINavigationController()
+        let nc5 = UINavigationController()
+        
+        //init tabbar
+        nc1.viewControllers = [vc1]
+        nc2.viewControllers = [vc2]
+        nc3.viewControllers = [vc3]
+        nc4.viewControllers = [vc4]
+        nc5.viewControllers = [vc5]
+        let tabController = UITabBarController()
+        tabController.viewControllers = [nc1, nc2, nc3, nc4, nc5]
+        
+        //set default tab
+        tabController.selectedIndex = 0
+        
+        //set item for tabbar item
+        let item1 = tabController.tabBar.items?[0]
+        let item2 = tabController.tabBar.items?[1]
+        let item3 = tabController.tabBar.items?[2]
+        let item4 = tabController.tabBar.items?[3]
+        let item5 = tabController.tabBar.items?[4]
+        
+        //set title for tab item
+        item1?.title = kTab1
+        item2?.title = kTab2
+        item3?.title = kTab3
+        item4?.title = kTab4
+        item5?.title = kTab5
+        
+//        //set icon for tab item
+//        item1?.image = UIImage(named: "")
+//        item2?.image = UIImage(named: "")
+//        item3?.image = UIImage(named: "")
+//        item4?.image = UIImage(named: "")
+//        item5?.image = UIImage(named: "")
+//        
+//        //set selected icon for tab item
+//        item1?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
+//        item2?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
+//        item3?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
+//        item4?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
+//        item5?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
+        
+        //set style
+        let currentTheme = UserDefaults.kGetValue(THEME_COLOR) as! String
+        if(currentTheme != ""){
+            UINavigationBar.appearance().barTintColor = UIColor.init(hexString: currentTheme)
+            UITabBar.appearance().barTintColor = UIColor.init(hexString: currentTheme)
+            
+        }else{
+            UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
+            UITabBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
+        }
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: BUTTON_TITLE_COLOR], for: .highlighted)
+        
+        
+        //set root view
+        if(UserDefaults.kGetValue(FB_TOKEN) != nil){
+            window?.rootViewController = tabController
+        }else{
+            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: mainVC)
+            window?.rootViewController = navController
+        }
+        window?.makeKeyAndVisible()
+    }
 }
 
 extension UIApplication {
