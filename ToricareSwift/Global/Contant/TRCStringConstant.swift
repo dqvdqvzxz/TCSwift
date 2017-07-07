@@ -99,6 +99,10 @@ let kNotification =                     Localizable(value: "Notification")
 let kPasscode =                         Localizable(value: "Passcode")
 //theme
 let kTheme =                            Localizable(value: "Theme")
+let kMainColor =                        Localizable(value: "Color 1")
+let kMainColor2 =                       Localizable(value: "Color 2")
+let kMainColor3 =                       Localizable(value: "Color 3")
+let kMainColor4 =                       Localizable(value: "Color 4")
 //about app
 let kAboutApp =                         Localizable(value: "About App")
 //user leave

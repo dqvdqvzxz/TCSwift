@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
         UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
         
+        //save color
+        let color = MAIN_COLOR
+        UserDefaults.kSetValue(color, THEME_COLOR)
+        
         //first view when run app
         window = UIWindow(frame: UIScreen.main.bounds)
         if(UserDefaults.kGetValue(FB_TOKEN) != nil){
@@ -39,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
         }
         
-        //get device id
+        //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         UserDefaults.kSetValue(deviceID, DEVICE_ID)
 
