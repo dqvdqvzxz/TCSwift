@@ -53,6 +53,9 @@ let SCREEN_MIN_LENGTH = min(SCREEN_WIDTH, SCREEN_HEIGHT)
 
 //MARK: Color
 let MAIN_COLOR = "0caa7d"
+let MAIN_COLOR_2 = "2196f3"
+let MAIN_COLOR_3 = "8e24aa"
+let MAIN_COLOR_4 = "f44336"
 
 //button
 let BUTTON_TITLE_COLOR = "fafafa"

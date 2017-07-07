@@ -10,26 +10,88 @@ import UIKit
 
 class TRCThemeColorSettingViewController: TRCBaseViewController {
 
+    @IBOutlet weak var tblTheme: UITableView!
+    
+    var listTitleColors: [String]?
+    var listColors: [String]?
+    
+    //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    //MARK: Config ui
+    func configUI(){
+        //navigation
+        self.navigationItem.title = kTheme
+        
+        //table view
+        tblTheme.dataSource = self
+        tblTheme.delegate = self
+        tblTheme.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        listTitleColors = [kMainColor, kMainColor2, kMainColor3, kMainColor4]
+        
+        listColors = [MAIN_COLOR, MAIN_COLOR_2, MAIN_COLOR_3, MAIN_COLOR_4]
+        
+        tblTheme.tableFooterView = UIView()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+}
 
+extension TRCThemeColorSettingViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = self.listTitleColors?[indexPath.row]
+        
+        //checkmark state with current color
+        let currentColor = UserDefaults.kGetValue(THEME_COLOR) as! String
+        if(self.listColors?[indexPath.row] == currentColor){
+            cell.accessoryType = .checkmark;
+        }else{
+            cell.accessoryType = .none;
+        }
+
+        return cell
+    }
+}
+
+extension TRCThemeColorSettingViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tblTheme.cellForRow(at: indexPath)
+        cell?.accessoryType = .checkmark
+        
+        //save new color instead old color
+        let newColor = self.listColors![indexPath.row]
+        UserDefaults.kSetValue(newColor, THEME_COLOR)
+        tblTheme.reloadData()
+        
+        //set new color for navigation bar
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(hexString: newColor)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tblTheme.cellForRow(at: indexPath)
+        cell?.accessoryType = .none
+    }
 }

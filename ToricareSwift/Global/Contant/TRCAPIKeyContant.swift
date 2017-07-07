@@ -18,6 +18,7 @@ let URL_LOGIN = "login"
 //MARK: UserDefaults
 let DEVICE_ID = "deviceID"
 let FB_TOKEN = "facebookToken"
+let THEME_COLOR = "themeColor"
 
 //MARK: Http method
 let HTTP_POST = "POST"
