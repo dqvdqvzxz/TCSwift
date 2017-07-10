@@ -70,11 +70,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc5 = TRCMyPageViewController(nibName: "TRCMyPageViewController", bundle: nil)
         
         //init root nav controller
-        let nc1 = UINavigationController()
-        let nc2 = UINavigationController()
-        let nc3 = UINavigationController()
-        let nc4 = UINavigationController()
-        let nc5 = UINavigationController()
+        let nc1 = Singleton.shared.nc1
+        let nc2 = Singleton.shared.nc2
+        let nc3 = Singleton.shared.nc3
+        let nc4 = Singleton.shared.nc4
+        let nc5 = Singleton.shared.nc5
         
         //init tabbar
         nc1.viewControllers = [vc1]
@@ -121,11 +121,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(currentTheme != ""){
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: currentTheme)
             UITabBar.appearance().barTintColor = UIColor.init(hexString: currentTheme)
-            
         }else{
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
             UITabBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
         }
+
+        UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
+        
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: BUTTON_TITLE_COLOR], for: .highlighted)
         
@@ -139,11 +142,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = navController
         }
         window?.makeKeyAndVisible()
-    }
-}
-
-extension UIApplication {
-    var statusBarView: UIView? {
-        return value(forKey: "statusBar") as? UIView
     }
 }

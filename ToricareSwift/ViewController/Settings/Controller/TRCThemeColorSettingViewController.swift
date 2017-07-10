@@ -82,12 +82,20 @@ extension TRCThemeColorSettingViewController: UITableViewDelegate{
         cell?.accessoryType = .checkmark
         
         //save new color instead old color
-        let newColor = self.listColors![indexPath.row]
-        UserDefaults.kSetValue(newColor, THEME_COLOR)
+        let newTheme = self.listColors![indexPath.row]
+        UserDefaults.kSetValue(newTheme, THEME_COLOR)
         tblTheme.reloadData()
         
         //set new color for navigation bar
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(hexString: newColor)
+        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        Singleton.shared.nc1.navigationBar.barTintColor = UIColor.init(hexString: newTheme)
+        Singleton.shared.nc2.navigationBar.barTintColor = UIColor.init(hexString: newTheme)
+        Singleton.shared.nc3.navigationBar.barTintColor = UIColor.init(hexString: newTheme)
+        Singleton.shared.nc4.navigationBar.barTintColor = UIColor.init(hexString: newTheme)
+        Singleton.shared.nc5.navigationBar.barTintColor = UIColor.init(hexString: newTheme)
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(hexString: newTheme)
+        self.tabBarController?.tabBar.barTintColor = UIColor.init(hexString: newTheme)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
