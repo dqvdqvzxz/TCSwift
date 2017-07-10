@@ -1,0 +1,20 @@
+//
+//  TRCObject.swift
+//  ToricareSwift
+//
+//  Created by Mèo Béo on 6/22/17.
+//  Copyright © 2017 Mèo Béo. All rights reserved.
+//
+
+import UIKit
+
+final class Singleton{
+    static let shared = Singleton()
+
+    var nc1 = UINavigationController()
+    var nc2 = UINavigationController()
+    var nc3 = UINavigationController()
+    var nc4 = UINavigationController()
+    var nc5 = UINavigationController()
+}
+
