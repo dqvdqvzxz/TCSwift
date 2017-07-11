@@ -10,14 +10,27 @@ import UIKit
 
 class TRCMyPageViewController: UIViewController {
 
+    @IBOutlet weak var viewInfo: UIView!
+    
+    @IBOutlet weak var imgUser: UIImageView!
+    
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblTarget: UILabel!
+    @IBOutlet weak var lblPharmacist: UILabel!
+    
+    @IBOutlet weak var clvMyPage: UICollectionView!
+    
+    //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = false
+        
+        _obj.nc5.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,24 +38,123 @@ class TRCMyPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func sdg(_ sender: Any) {
+    //MARK: Config UI
+    func configUI(){
+        //UI of outlet
+        viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
-        let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
-        navigationItem.backBarButtonItem = backItem
-//        self.navigationController?.pushViewController(vc, animated: true)
-        _obj.nc5.pushViewController(vc, animated: true)
+        lblName.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblTarget.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblPharmacist.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        
+        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
+        
+        imgUser.makeCircle()
+        
+        //collection view
+        clvMyPage.dataSource = self
+        clvMyPage.delegate = self
+        clvMyPage.register(UINib(nibName: "TRCMyPageCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
+
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+}
+extension TRCMyPageViewController: UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TRCMyPageCell
+        
+        //style
+        cell.backgroundColor = UIColor.init(hexString: COLLECTION_CELL_COLOR)
+        
+        //item of collection
+        switch (indexPath.item) {
+        case 0:
+            break
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        case 4:
+            break
+        case 5:
+            break
+        case 6:
+            cell.lblTitle.text = kTitleSetting
+        case 7:
+            cell.viewImg.isHidden = true
+            cell.imgIcon.isHidden = true
+            cell.lblTitle.isHidden = true
+        case 8:
+            cell.viewImg.isHidden = true
+            cell.imgIcon.isHidden = true
+            cell.lblTitle.isHidden = true
+        default:
+            break
+        }
+        
+        return cell
+    }
+}
 
+extension TRCMyPageViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch (indexPath.item) {
+        case 0:
+            break
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        case 4:
+            break
+        case 5:
+            break
+        case 6:
+            let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = kBackButton
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
+        default:
+            break
+        }
+    }
+}
+
+extension TRCMyPageViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width - 2.6
+        let cellWidth = screenWidth / 3.0
+        let size = CGSize(width: cellWidth, height: cellWidth)
+
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0, 0, 0, 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: 0, height: 50)
+    }
 }

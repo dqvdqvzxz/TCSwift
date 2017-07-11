@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImageView{
-    func makeCircle(){
+    override func makeCircle(){
         let radius = self.frame.width / 2
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true

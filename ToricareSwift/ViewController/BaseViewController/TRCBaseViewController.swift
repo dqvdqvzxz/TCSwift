@@ -20,6 +20,13 @@ class TRCBaseViewController: UIViewController {
         
         //hide tabbar
         _obj.tabController.tabBar.isHidden = true
+        
+        //navigation
+        _obj.nc1.navigationBar.isHidden = false
+        _obj.nc2.navigationBar.isHidden = false
+        _obj.nc3.navigationBar.isHidden = false
+        _obj.nc4.navigationBar.isHidden = false
+        _obj.nc5.navigationBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
