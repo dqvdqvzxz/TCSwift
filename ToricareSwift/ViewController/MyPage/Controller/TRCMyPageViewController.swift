@@ -15,6 +15,10 @@ class TRCMyPageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = false
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

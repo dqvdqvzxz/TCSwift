@@ -70,11 +70,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc5 = TRCMyPageViewController(nibName: "TRCMyPageViewController", bundle: nil)
         
         //init root nav controller
-        let nc1 = Singleton.shared.nc1
-        let nc2 = Singleton.shared.nc2
-        let nc3 = Singleton.shared.nc3
-        let nc4 = Singleton.shared.nc4
-        let nc5 = Singleton.shared.nc5
+        let nc1 = _obj.nc1
+        let nc2 = _obj.nc2
+        let nc3 = _obj.nc3
+        let nc4 = _obj.nc4
+        let nc5 = _obj.nc5
         
         //init tabbar
         nc1.viewControllers = [vc1]
@@ -82,18 +82,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nc3.viewControllers = [vc3]
         nc4.viewControllers = [vc4]
         nc5.viewControllers = [vc5]
-        let tabController = UITabBarController()
-        tabController.viewControllers = [nc1, nc2, nc3, nc4, nc5]
+        _obj.tabController.viewControllers = [nc1, nc2, nc3, nc4, nc5]
+        
         
         //set default tab
-        tabController.selectedIndex = 0
+        _obj.tabController.selectedIndex = 0
         
         //set item for tabbar item
-        let item1 = tabController.tabBar.items?[0]
-        let item2 = tabController.tabBar.items?[1]
-        let item3 = tabController.tabBar.items?[2]
-        let item4 = tabController.tabBar.items?[3]
-        let item5 = tabController.tabBar.items?[4]
+        let item1 = _obj.tabController.tabBar.items?[0]
+        let item2 = _obj.tabController.tabBar.items?[1]
+        let item3 = _obj.tabController.tabBar.items?[2]
+        let item4 = _obj.tabController.tabBar.items?[3]
+        let item5 = _obj.tabController.tabBar.items?[4]
         
         //set title for tab item
         item1?.title = kTab1
@@ -116,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        item4?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
 //        item5?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
         
-        //set style
+        //set theme style
         let currentTheme = UserDefaults.kGetValue(THEME_COLOR) as! String
         if(currentTheme != ""){
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: currentTheme)
@@ -135,7 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set root view
         if(UserDefaults.kGetValue(FB_TOKEN) != nil){
-            window?.rootViewController = tabController
+            window?.rootViewController = _obj.tabController
         }else{
             let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)

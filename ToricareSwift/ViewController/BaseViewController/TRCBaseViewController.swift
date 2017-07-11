@@ -17,6 +17,9 @@ class TRCBaseViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
+        //hide tabbar
+        _obj.tabController.tabBar.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {

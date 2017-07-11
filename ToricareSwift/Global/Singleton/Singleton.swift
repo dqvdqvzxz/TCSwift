@@ -11,10 +11,14 @@ import UIKit
 final class Singleton{
     static let shared = Singleton()
 
+    //navigation
     var nc1 = UINavigationController()
     var nc2 = UINavigationController()
     var nc3 = UINavigationController()
     var nc4 = UINavigationController()
     var nc5 = UINavigationController()
+    
+    //tabbar
+    var tabController = UITabBarController()
 }
 

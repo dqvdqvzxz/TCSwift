@@ -54,6 +54,8 @@
 		3F475A601F0F9F0300B82645 /* TRCMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A5C1F0F9F0300B82645 /* TRCMyPageViewController.swift */; };
 		3F475A611F0F9F0300B82645 /* TRCMyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A5F1F0F9F0300B82645 /* TRCMyPageViewController.xib */; };
 		3F475A641F132AC800B82645 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A631F132AC800B82645 /* Singleton.swift */; };
+		3F475A671F14687F00B82645 /* TRCAboutAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A651F14687F00B82645 /* TRCAboutAppCell.swift */; };
+		3F475A6A1F14698E00B82645 /* TRCAboutAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A691F14698E00B82645 /* TRCAboutAppCell.xib */; };
 		3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411301EFB6221008720A6 /* AppDelegate.swift */; };
 		3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411391EFB6221008720A6 /* Assets.xcassets */; };
 		3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */; };
@@ -131,6 +133,8 @@
 		3F475A5C1F0F9F0300B82645 /* TRCMyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCMyPageViewController.swift; sourceTree = "<group>"; };
 		3F475A5F1F0F9F0300B82645 /* TRCMyPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCMyPageViewController.xib; sourceTree = "<group>"; };
 		3F475A631F132AC800B82645 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		3F475A651F14687F00B82645 /* TRCAboutAppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCAboutAppCell.swift; sourceTree = "<group>"; };
+		3F475A691F14698E00B82645 /* TRCAboutAppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCAboutAppCell.xib; sourceTree = "<group>"; };
 		3FB4111A1EFB607C008720A6 /* ToricareSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB411301EFB6221008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FB411391EFB6221008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				3F4759511F0CC46E00B82645 /* TRCUserLeaveCompleteViewController.swift */,
 				3F4759271F0CC3AD00B82645 /* TRCLogoutViewController.swift */,
 				3F4759731F0DE72A00B82645 /* TRCLinkedServiceCell.swift */,
+				3F475A651F14687F00B82645 /* TRCAboutAppCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				3F4759601F0CC50C00B82645 /* TRCUserLeaveViewController.xib */,
 				3F47595F1F0CC50C00B82645 /* TRCUserLeaveCompleteViewController.xib */,
 				3F4759771F0DE74400B82645 /* TRCLinkedServiceCell.xib */,
+				3F475A691F14698E00B82645 /* TRCAboutAppCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +648,7 @@
 				3F4759641F0CC50C00B82645 /* TRCLinkedServicesViewController.xib in Resources */,
 				3F4759631F0CC50C00B82645 /* TRCEmailChangeInputViewController.xib in Resources */,
 				3F4759111F0BA0D500B82645 /* TRCPharmacySearchViewController.xib in Resources */,
+				3F475A6A1F14698E00B82645 /* TRCAboutAppCell.xib in Resources */,
 				3F4759661F0CC50C00B82645 /* TRCPasscodeLockInputViewController.xib in Resources */,
 				3F4759121F0BA0D500B82645 /* TRCUserRegistCompleteViewController.xib in Resources */,
 				3F4759681F0CC50C00B82645 /* TRCPasswordChangeViewController.xib in Resources */,
@@ -718,6 +725,7 @@
 				3F47594F1F0CC46000B82645 /* TRCUserLeaveViewController.swift in Sources */,
 				3FB4116F1EFCF09C008720A6 /* TRCLoginAPIController.swift in Sources */,
 				3FB4116C1EFBBEF6008720A6 /* Alert.swift in Sources */,
+				3F475A671F14687F00B82645 /* TRCAboutAppCell.swift in Sources */,
 				3FB411771F00988A008720A6 /* TRCAPIKeyContant.swift in Sources */,
 				3F4759471F0CC44000B82645 /* TRCThemeColorSettingViewController.swift in Sources */,
 				3F47591C1F0C7DA100B82645 /* Image.swift in Sources */,

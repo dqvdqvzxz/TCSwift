@@ -10,10 +10,13 @@ import UIKit
 
 class TRCAboutAppViewController: TRCBaseViewController {
 
+    @IBOutlet weak var tblAboutApp: UITableView!
+    
+    //MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +24,58 @@ class TRCAboutAppViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Config UI
+    func configUI(){
+        //navigation
+        self.navigationItem.title = kAboutApp
+        
+        //table view
+        tblAboutApp.dataSource = self
+        tblAboutApp.delegate = self
+        tblAboutApp.register(UINib(nibName: "TRCAboutAppCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        tblAboutApp.tableFooterView = UIView()
     }
-    */
+}
 
+extension TRCAboutAppViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCAboutAppCell
+        
+        switch (indexPath.row) {
+        case 0:
+            cell.lblVersion.text = "1.0.1"
+        case 1:
+            cell.lblVersion.isHidden = true
+        case 2:
+            cell.lblVersion.isHidden = true
+        case 3:
+            cell.lblVersion.isHidden = true
+        case 4:
+            cell.lblVersion.isHidden = true
+        default:
+            break
+        }
+        
+        return cell
+
+    }
+}
+
+extension TRCAboutAppViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //
+    }
 }
