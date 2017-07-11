@@ -117,10 +117,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        item5?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
         
         //set theme style
-        let currentTheme = UserDefaults.kGetValue(THEME_COLOR) as! String
-        if(currentTheme != ""){
-            UINavigationBar.appearance().barTintColor = UIColor.init(hexString: currentTheme)
-            UITabBar.appearance().barTintColor = UIColor.init(hexString: currentTheme)
+        let currentTheme = UserDefaults.kGetValue(THEME_COLOR)
+        if(currentTheme != nil){
+            UINavigationBar.appearance().barTintColor = UIColor.init(hexString: currentTheme as! String)
+            UITabBar.appearance().barTintColor = UIColor.init(hexString: currentTheme as! String)
         }else{
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
             UITabBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
@@ -135,7 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set root view
         if(UserDefaults.kGetValue(FB_TOKEN) != nil){
-            window?.rootViewController = _obj.tabController
+//            window?.rootViewController = _obj.tabController
         }else{
             let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
