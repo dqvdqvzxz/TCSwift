@@ -7,6 +7,8 @@
 //
 import UIKit
 
+//MARK: Singleton
+let _obj = Singleton.shared
 
 //MARK: Localize String
 func Localizable(value: String) -> String {

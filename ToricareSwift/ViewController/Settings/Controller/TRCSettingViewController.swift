@@ -19,6 +19,10 @@ class TRCSettingViewController: TRCBaseViewController {
         super.viewDidLoad()
 
         configUI()
+        
+        let numbers = Singleton.shared.nc5.viewControllers.count
+        
+        print(numbers)
     }
 
     override func didReceiveMemoryWarning() {

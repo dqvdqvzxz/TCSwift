@@ -27,7 +27,8 @@ class TRCMyPageViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = kBackButton
         navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        _obj.nc5.pushViewController(vc, animated: true)
     }
 
     /*
