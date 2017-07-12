@@ -31,11 +31,17 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     @IBOutlet weak var tfGender: UITextField!
     
     @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnUploadImage: UIButton!
+    
+    var pickerController = UIImagePickerController()
+    var imgView = UIImage()
     
     let datePicker = UIDatePicker()
     
     var dataGender = ["", kMale, kFemale]
     var genderPicker = UIPickerView()
+    
+    var editMode = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +56,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Config UI
     func configUI(){
-        //navigation
-        self.navigationItem.title = kTitleAccountInfoInput
-        self.navigationItem.hidesBackButton = true
-        
         //UI of outlet
         lblFirstName.labelStyle(title: kFirstName, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         lblLastName.labelStyle(title: kLastName, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
@@ -69,7 +71,18 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         tfDateOfBirth.textFieldStyle(placeHolder: kDateOfBirthPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         tfGender.textFieldStyle(placeHolder: kGenderPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         
-        btnNext.buttonStyle(title: kNext, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        if(editMode == true){
+            self.navigationItem.title = kUserInfo
+            self.navigationItem.hidesBackButton = false
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
+            
+            btnNext.isHidden = true
+        }else{
+            self.navigationItem.title = kTitleAccountInfoInput
+            
+            btnNext.buttonStyle(title: kNext, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+            self.navigationItem.hidesBackButton = true
+        }
         
         //make image circle
         imgUser.makeCircle()
@@ -142,6 +155,29 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         self.view.endEditing(true)
     }
     
+    //MARL: Take photo
+    func openCamera(){
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            pickerController.delegate = self
+            pickerController.modalPresentationStyle = .currentContext
+            pickerController.sourceType = .camera
+            pickerController.allowsEditing = true
+            self.present(self.pickerController, animated: true, completion: nil)
+            pickerController.view.layoutIfNeeded()
+        }else{
+            Alert2(title: kWarning, message: kWarningCamera)
+        }
+    }
+    
+    func openGallery(){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            pickerController.delegate = self
+            pickerController.sourceType = .photoLibrary
+            pickerController.allowsEditing = true
+            self.present(self.pickerController, animated: true, completion: nil)
+        }
+    }
+    
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
 //        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
@@ -150,6 +186,35 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         backItem.title = kBackButton
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func tapBtnUploadImage(_ sender: Any) {
+        //create the AlertController
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        //create Cancel action
+        let cancelAction = UIAlertAction(title: kCancel, style: .cancel) { action -> Void in
+            //dismiss action sheet
+        }
+        //take picture in camera
+        let takePhotoCamera = UIAlertAction(title: kTakePhotoCamera, style: .default) { action -> Void in
+            self.openCamera()
+        }
+        //take picture from gallery
+        let takePhotoGallery = UIAlertAction(title: kTakePhotoGallery, style: .default) { action -> Void in
+            self.openGallery()
+        }
+        
+        //add action to sheet
+        actionSheetController.addAction(cancelAction)
+        actionSheetController.addAction(takePhotoCamera)
+        actionSheetController.addAction(takePhotoGallery)
+        
+        //provide a popover sourceView when using it on iPad
+        actionSheetController.popoverPresentationController?.sourceView = sender as? UIView
+        
+        //present the AlertController
+        self.present(actionSheetController, animated: true, completion: nil)
     }
 }
 
@@ -170,5 +235,18 @@ extension TRCAccountInfoInputViewController: UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dataGender[row]
+    }
+}
+
+extension TRCAccountInfoInputViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imgView = info[UIImagePickerControllerEditedImage] as! UIImage
+        imgUser.contentMode = .scaleAspectFit
+        imgUser.image = imgView
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }

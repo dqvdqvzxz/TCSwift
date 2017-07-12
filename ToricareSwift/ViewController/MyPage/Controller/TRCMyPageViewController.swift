@@ -109,7 +109,12 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch (indexPath.item) {
         case 0:
-            break
+            let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+            vc.editMode = true
+            let backItem = UIBarButtonItem()
+            backItem.title = kBackButton
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
         case 1:
             break
         case 2:

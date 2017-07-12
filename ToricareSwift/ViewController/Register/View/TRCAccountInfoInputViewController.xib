@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCAccountInfoInputViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
                 <outlet property="btnNext" destination="yxA-DY-szf" id="Jz6-4R-8lI"/>
+                <outlet property="btnUploadImage" destination="A83-dy-JcO" id="VcQ-Sd-DAK"/>
                 <outlet property="imgUser" destination="Qxe-TD-YGz" id="kdJ-z5-4tr"/>
                 <outlet property="lblDateOfBirth" destination="yTJ-BX-iV7" id="V8t-Q9-UuT"/>
                 <outlet property="lblFirstName" destination="gzK-ls-Dwi" id="9ow-wO-kCK"/>
@@ -44,6 +45,17 @@
                         <constraint firstAttribute="width" constant="150" id="hIg-kc-Gal"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A83-dy-JcO" userLabel="btnUploadImage">
+                    <rect key="frame" x="172.5" y="194" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Nvj-es-BdI"/>
+                        <constraint firstAttribute="width" constant="30" id="pOg-mw-3jq"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="tapBtnUploadImage:" destination="-1" eventType="touchUpInside" id="mLM-DH-RDP"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xA-En-gQO" userLabel="viewLeft">
                     <rect key="frame" x="0.0" y="234" width="187.5" height="130"/>
                     <subviews>
@@ -235,9 +247,11 @@
                 <constraint firstAttribute="trailing" secondItem="yxA-DY-szf" secondAttribute="trailing" constant="10" id="T90-Xu-SvA"/>
                 <constraint firstItem="QJL-8d-PIv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:2" id="VKm-L1-FYe"/>
                 <constraint firstItem="yxA-DY-szf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="ZZV-PC-Sst"/>
+                <constraint firstItem="uYC-z7-GXS" firstAttribute="top" secondItem="A83-dy-JcO" secondAttribute="bottom" constant="10" id="eYy-OC-4tz"/>
                 <constraint firstAttribute="trailing" secondItem="sJK-Lb-0g5" secondAttribute="trailing" constant="10" id="ogX-oo-E26"/>
                 <constraint firstItem="yTJ-BX-iV7" firstAttribute="top" secondItem="4xA-En-gQO" secondAttribute="bottom" constant="10" id="qJe-lF-gyu"/>
                 <constraint firstItem="Qxe-TD-YGz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="sMz-8u-S6S"/>
+                <constraint firstItem="A83-dy-JcO" firstAttribute="centerX" secondItem="Qxe-TD-YGz" secondAttribute="centerX" id="sTO-Bn-LDI"/>
                 <constraint firstAttribute="trailing" secondItem="yTJ-BX-iV7" secondAttribute="trailing" constant="10" id="tEc-k7-ECm"/>
                 <constraint firstItem="4xA-En-gQO" firstAttribute="top" secondItem="Qxe-TD-YGz" secondAttribute="bottom" constant="10" id="tqg-41-r4d"/>
                 <constraint firstItem="uYC-z7-GXS" firstAttribute="top" secondItem="Qxe-TD-YGz" secondAttribute="bottom" constant="10" id="vas-Ug-yQ3"/>

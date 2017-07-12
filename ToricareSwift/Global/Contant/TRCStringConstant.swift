@@ -11,6 +11,7 @@
 let kAlertOk =                          Localizable(value: "OK")
 let kNetworkDisable =                   Localizable(value: "Please check your network connection !")
 let kParamInvalid =                     Localizable(value: "Please check again your source !")
+let kWarning =                          Localizable(value: "Warning")
 
 
 //MARK: Navigation 
@@ -75,6 +76,12 @@ let kBackToHome =                       Localizable(value: "Back To Home")
 //MARK: Home
 let kTitleHome =                        Localizable(value: "Home")
 
+//MARK: MyPage
+let kUserInfo =                         Localizable(value: "User Information")
+//profile
+let kTakePhotoCamera =                  Localizable(value: "Take photo with camera")
+let kTakePhotoGallery =                 Localizable(value: "Take photo from gallery")
+let kWarningCamera =                    Localizable(value: "You don't have camera !")
 
 //MARK: Settings
 let kTitleSetting =                     Localizable(value: "Setting")
