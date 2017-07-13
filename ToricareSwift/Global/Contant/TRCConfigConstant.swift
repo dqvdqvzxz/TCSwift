@@ -61,10 +61,10 @@ let MAIN_COLOR_4 = "f44336"
 
 //button
 let BUTTON_TITLE_COLOR = "fafafa"
-var BUTTON_FONT_SIZE: CGFloat? = 14
+var BUTTON_FONT_SIZE: CGFloat? = 16
 var BUTTON_RADIUS: CGFloat? = 5
-var BUTTON_BORDER_WIDTH: CGFloat? = 0.5
-let BUTTON_BORDER_COLOR = "212121"
+var BUTTON_BORDER_WIDTH: CGFloat? = 1
+let BUTTON_BORDER_COLOR = "0caa7d"
 
 //label
 var LABEL_FONT_SIZE: CGFloat? = 16
