@@ -59,7 +59,7 @@
 		3F475A741F14B05A00B82645 /* TRCMyPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A721F14B05A00B82645 /* TRCMyPageCell.swift */; };
 		3F475A771F14C2A800B82645 /* TRCMyPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A761F14C2A800B82645 /* TRCMyPageCell.xib */; };
 		3F475A7A1F16155200B82645 /* TRCWalkingGoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A781F16155100B82645 /* TRCWalkingGoalDetailViewController.swift */; };
-		3F475A7B1F16155200B82645 /* TRCWalkingGoalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A791F16155100B82645 /* TRCWalkingGoalDetailViewController.xib */; };
+		3F475A7D1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A7C1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib */; };
 		3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411301EFB6221008720A6 /* AppDelegate.swift */; };
 		3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411391EFB6221008720A6 /* Assets.xcassets */; };
 		3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */; };
@@ -142,7 +142,7 @@
 		3F475A721F14B05A00B82645 /* TRCMyPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCMyPageCell.swift; sourceTree = "<group>"; };
 		3F475A761F14C2A800B82645 /* TRCMyPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCMyPageCell.xib; sourceTree = "<group>"; };
 		3F475A781F16155100B82645 /* TRCWalkingGoalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCWalkingGoalDetailViewController.swift; sourceTree = "<group>"; };
-		3F475A791F16155100B82645 /* TRCWalkingGoalDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCWalkingGoalDetailViewController.xib; sourceTree = "<group>"; };
+		3F475A7C1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCWalkingGoalDetailViewController.xib; sourceTree = "<group>"; };
 		3FB4111A1EFB607C008720A6 /* ToricareSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB411301EFB6221008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FB411391EFB6221008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -261,9 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				3F475A5C1F0F9F0300B82645 /* TRCMyPageViewController.swift */,
-				3F475A721F14B05A00B82645 /* TRCMyPageCell.swift */,
 				3F475A781F16155100B82645 /* TRCWalkingGoalDetailViewController.swift */,
-				3F475A791F16155100B82645 /* TRCWalkingGoalDetailViewController.xib */,
+				3F475A721F14B05A00B82645 /* TRCMyPageCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				3F475A5F1F0F9F0300B82645 /* TRCMyPageViewController.xib */,
+				3F475A7C1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib */,
 				3F475A761F14C2A800B82645 /* TRCMyPageCell.xib */,
 			);
 			path = View;
@@ -647,7 +647,7 @@
 			files = (
 				3F47590F1F0BA0D500B82645 /* TRCPharmacyDetailViewController.xib in Resources */,
 				3FB411A61F09E13E008720A6 /* TRCPreLoginViewController.xib in Resources */,
-				3F475A7B1F16155200B82645 /* TRCWalkingGoalDetailViewController.xib in Resources */,
+				3F475A7D1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib in Resources */,
 				3F4759611F0CC50C00B82645 /* TRCAboutAppViewController.xib in Resources */,
 				3F4759691F0CC50C00B82645 /* TRCSettingViewController.xib in Resources */,
 				3FB411B01F09F2C2008720A6 /* TRCRegisterViewController.xib in Resources */,

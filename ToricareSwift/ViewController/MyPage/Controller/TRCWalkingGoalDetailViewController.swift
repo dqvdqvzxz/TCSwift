@@ -52,15 +52,11 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
 
 extension TRCWalkingGoalDetailViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(component == 0){
             return pickerData.count
-        }else{
-            return 1
-        }
     }
 }
 
@@ -70,7 +66,6 @@ extension TRCWalkingGoalDetailViewController: UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        if(component == 0){
             var pickerLabel: UILabel? = (view as? UILabel)
             if pickerLabel == nil {
                 pickerLabel = UILabel()
@@ -81,32 +76,13 @@ extension TRCWalkingGoalDetailViewController: UIPickerViewDelegate{
             pickerLabel?.textColor = UIColor.init(hexString: MAIN_COLOR)
             
             return pickerLabel!
-        }else{
-            var pickerLabel: UILabel? = (view as? UILabel)
-            if pickerLabel == nil {
-                pickerLabel = UILabel()
-                pickerLabel?.font = UIFont.systemFont(ofSize: 12)
-                pickerLabel?.textAlignment = .left
-            }
-            pickerLabel?.text = "Steps"
-
-            return pickerLabel!
-        }
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        if(component == 0){
-            return 90
-        }else{
-            return 30
-        }
+        return 90
     }
     
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        if(component == 0){
-            return 170
-        }else{
-            return 50
-        }
-    }
+//    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+////        return 190
+//    }
 }
