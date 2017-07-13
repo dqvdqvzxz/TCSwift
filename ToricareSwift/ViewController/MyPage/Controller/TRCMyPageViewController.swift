@@ -75,11 +75,11 @@ extension TRCMyPageViewController: UICollectionViewDataSource{
         
         //item of collection
         switch (indexPath.item) {
-        case 0:
+        case 0: //account info input
             break
-        case 1:
+        case 1: //my pharmacy detail
             break
-        case 2:
+        case 2: //walking goal detail
             break
         case 3:
             break
@@ -116,7 +116,12 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 1:
-            break
+            let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
+            vc.mode = "MyPage"
+            let backItem = UIBarButtonItem()
+            backItem.title = kBackButton
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCWalkingGoalDetailViewController(nibName: "TRCWalkingGoalDetailViewController", bundle: nil)
             let backItem = UIBarButtonItem()

@@ -8,28 +8,81 @@
 
 import UIKit
 
-class TRCMyPharmacyDetailViewController: UIViewController {
-
+class TRCMyPharmacyDetailViewController: TRCBaseViewController {
+    
+    @IBOutlet weak var lblPharmacyName: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lblAddressResult: UILabel!
+    @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var lblPhoneResult: UILabel!
+    @IBOutlet weak var lblWorkSchedule: UILabel!
+    @IBOutlet weak var lblWorkScheduleResult: UILabel!
+    @IBOutlet weak var lblWorkScheduleDayOffResult: UILabel!
+    @IBOutlet weak var lblDayOff: UILabel!
+    @IBOutlet weak var lblDayOffResult: UILabel!
+    @IBOutlet weak var lblWebsite: UILabel!
+    @IBOutlet weak var lblWebsiteResult: UILabel!
+    
+    @IBOutlet weak var viewGallery: UIView!
+    @IBOutlet weak var viewInformation: UIView!
+    
+    @IBOutlet weak var btnQRCode: UIButton!
+    @IBOutlet weak var btnPharmacy: UIButton!
+    
+    var mode = String()
+    
+    //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Config UI
+    func configUI(){
+        //navigation 
+        self.navigationItem.title = kMyPharmcy
+        
+        //UI of outlet
+        lblAddress.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblPhone.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblWorkSchedule.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblDayOff.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblWebsite.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        
+        configMode()
     }
-    */
-
+    
+    func configMode(){
+        if(mode == "Register"){
+            btnQRCode.buttonStyle(title: kQRCode, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+            btnPharmacy.buttonStyle(title: kChangePharmacy, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        }else if(mode == "MyPage"){
+            btnQRCode.isHidden = true
+            btnPharmacy.buttonStyle(title: kRegisterPharmacy, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        }
+    }
+    
+    //MARK: Config Data
+    func configData(){
+        lblPharmacyName.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblAddressResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblPhoneResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblWorkScheduleResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblWorkScheduleDayOffResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblDayOffResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblWebsiteResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+    }
+    
+    //MARK: Button Action
+    @IBAction func tapBtnQRCode(_ sender: Any) {
+    }
+    
+    @IBAction func tapBtnPharmacy(_ sender: Any) {
+    }
 }

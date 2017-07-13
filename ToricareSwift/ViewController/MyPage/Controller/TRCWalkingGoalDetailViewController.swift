@@ -11,6 +11,7 @@ import UIKit
 class TRCWalkingGoalDetailViewController: TRCBaseViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblSteps: UILabel!
     
     @IBOutlet weak var pickerTarget: UIPickerView!
     
@@ -37,6 +38,7 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
         
         //UI of outlet
         lblTitle.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblSteps.labelStyle(title: kSteps, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         
         btnSave.buttonStyle(title: nil, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
         
