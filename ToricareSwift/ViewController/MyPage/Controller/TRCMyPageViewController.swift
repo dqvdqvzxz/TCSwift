@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCMyPageViewController: UIViewController {
+class TRCMyPageViewController: TRCBaseViewController {
 
     @IBOutlet weak var viewInfo: UIView!
     
@@ -118,7 +118,11 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
         case 1:
             break
         case 2:
-            break
+            let vc = TRCWalkingGoalDetailViewController(nibName: "TRCWalkingGoalDetailViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = kBackButton
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             break
         case 4:
