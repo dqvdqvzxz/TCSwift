@@ -87,6 +87,7 @@ let kMyPharmcy =                        Localizable(value: "My Pharmacy")
 let kQRCode =                           Localizable(value: "Scan QR Code")
 let kChangePharmacy =                   Localizable(value: "Change Pharmacy")
 let kRegisterPharmacy =                 Localizable(value: "Register Pharmacy")
+let kSearch =                           Localizable(value: "Search")
 //WalkingGoalDetail
 let kSteps =                            Localizable(value: "Steps")
 //Point

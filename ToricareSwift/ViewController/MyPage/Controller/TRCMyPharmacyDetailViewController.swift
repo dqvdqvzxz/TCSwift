@@ -59,10 +59,10 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     func configMode(){
-        if(mode == "Register"){
+        if(mode == "MyPage"){
             btnQRCode.buttonStyle(title: kQRCode, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
             btnPharmacy.buttonStyle(title: kChangePharmacy, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
-        }else if(mode == "MyPage"){
+        }else if(mode == "Register"){
             btnQRCode.isHidden = true
             btnPharmacy.buttonStyle(title: kRegisterPharmacy, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
         }
@@ -84,5 +84,14 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnPharmacy(_ sender: Any) {
+        if(mode == "MyPage"){
+            //
+        }else if(mode == "Register"){
+            let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = kBackButton
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
