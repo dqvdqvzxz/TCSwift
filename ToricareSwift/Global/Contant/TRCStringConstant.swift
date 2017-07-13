@@ -95,6 +95,8 @@ let kStoragePoint =                     Localizable(value: "Storage Point")
 let kHistoryPoint =                     Localizable(value: "History Point")
 let kUsedPoint =                        Localizable(value: "Used Point")
 let kPointPolicy =                      Localizable(value: "Point Policy")
+let kPointHistory =                     Localizable(value: "Point History")
+let kPointUnit =                        Localizable(value: "pt")
 
 //MARK: Settings
 let kTitleSetting =                     Localizable(value: "Setting")

@@ -64,6 +64,10 @@
 		3F475A831F17157100B82645 /* TRCMyPharmacyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A821F17157100B82645 /* TRCMyPharmacyDetailViewController.xib */; };
 		3F475A861F172A2000B82645 /* TRCPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A841F172A2000B82645 /* TRCPointViewController.swift */; };
 		3F475A891F172A6600B82645 /* TRCPointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A881F172A6600B82645 /* TRCPointViewController.xib */; };
+		3F475A8C1F1753E600B82645 /* TRCPointDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A8A1F1753E600B82645 /* TRCPointDetailViewController.swift */; };
+		3F475A901F1753FD00B82645 /* TRCPointDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A8E1F1753FD00B82645 /* TRCPointDetailCell.swift */; };
+		3F475A941F175EEA00B82645 /* TRCPointDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A921F175EEA00B82645 /* TRCPointDetailCell.xib */; };
+		3F475A951F175EEA00B82645 /* TRCPointDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A931F175EEA00B82645 /* TRCPointDetailViewController.xib */; };
 		3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411301EFB6221008720A6 /* AppDelegate.swift */; };
 		3FB411461EFB6221008720A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411391EFB6221008720A6 /* Assets.xcassets */; };
 		3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */; };
@@ -151,6 +155,10 @@
 		3F475A821F17157100B82645 /* TRCMyPharmacyDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCMyPharmacyDetailViewController.xib; sourceTree = "<group>"; };
 		3F475A841F172A2000B82645 /* TRCPointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPointViewController.swift; sourceTree = "<group>"; };
 		3F475A881F172A6600B82645 /* TRCPointViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPointViewController.xib; sourceTree = "<group>"; };
+		3F475A8A1F1753E600B82645 /* TRCPointDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPointDetailViewController.swift; sourceTree = "<group>"; };
+		3F475A8E1F1753FD00B82645 /* TRCPointDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPointDetailCell.swift; sourceTree = "<group>"; };
+		3F475A921F175EEA00B82645 /* TRCPointDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPointDetailCell.xib; sourceTree = "<group>"; };
+		3F475A931F175EEA00B82645 /* TRCPointDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPointDetailViewController.xib; sourceTree = "<group>"; };
 		3FB4111A1EFB607C008720A6 /* ToricareSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB411301EFB6221008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FB411391EFB6221008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -272,7 +280,9 @@
 				3F475A7E1F17155E00B82645 /* TRCMyPharmacyDetailViewController.swift */,
 				3F475A781F16155100B82645 /* TRCWalkingGoalDetailViewController.swift */,
 				3F475A841F172A2000B82645 /* TRCPointViewController.swift */,
+				3F475A8A1F1753E600B82645 /* TRCPointDetailViewController.swift */,
 				3F475A721F14B05A00B82645 /* TRCMyPageCell.swift */,
+				3F475A8E1F1753FD00B82645 /* TRCPointDetailCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,7 +301,9 @@
 				3F475A821F17157100B82645 /* TRCMyPharmacyDetailViewController.xib */,
 				3F475A7C1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib */,
 				3F475A881F172A6600B82645 /* TRCPointViewController.xib */,
+				3F475A931F175EEA00B82645 /* TRCPointDetailViewController.xib */,
 				3F475A761F14C2A800B82645 /* TRCMyPageCell.xib */,
+				3F475A921F175EEA00B82645 /* TRCPointDetailCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -657,6 +669,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F475A951F175EEA00B82645 /* TRCPointDetailViewController.xib in Resources */,
 				3F47590F1F0BA0D500B82645 /* TRCPharmacyDetailViewController.xib in Resources */,
 				3FB411A61F09E13E008720A6 /* TRCPreLoginViewController.xib in Resources */,
 				3F475A7D1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib in Resources */,
@@ -670,6 +683,7 @@
 				3F47596C1F0CC50C00B82645 /* TRCUserLeaveViewController.xib in Resources */,
 				3F47596A1F0CC50C00B82645 /* TRCThemeColorSettingViewController.xib in Resources */,
 				3F475A611F0F9F0300B82645 /* TRCMyPageViewController.xib in Resources */,
+				3F475A941F175EEA00B82645 /* TRCPointDetailCell.xib in Resources */,
 				3F4759101F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib in Resources */,
 				3F4759621F0CC50C00B82645 /* TRCEmailChangeCompleteViewController.xib in Resources */,
 				3F4759641F0CC50C00B82645 /* TRCLinkedServicesViewController.xib in Resources */,
@@ -767,6 +781,7 @@
 				3F4758FD1F0BA08100B82645 /* TRCPharmacySearchViewController.swift in Sources */,
 				3F47592B1F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift in Sources */,
 				3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */,
+				3F475A901F1753FD00B82645 /* TRCPointDetailCell.swift in Sources */,
 				3F47594B1F0CC45000B82645 /* TRCAboutAppViewController.swift in Sources */,
 				3F475A641F132AC800B82645 /* Singleton.swift in Sources */,
 				3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */,
@@ -785,6 +800,7 @@
 				3F47592F1F0CC3CC00B82645 /* TRCLinkedServicesViewController.swift in Sources */,
 				3FB411A51F09E13E008720A6 /* TRCPreLoginViewController.swift in Sources */,
 				3F4758F91F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift in Sources */,
+				3F475A8C1F1753E600B82645 /* TRCPointDetailViewController.swift in Sources */,
 				3F4759281F0CC3AD00B82645 /* TRCLogoutViewController.swift in Sources */,
 				3FB4119C1F05FB8B008720A6 /* Textfield.swift in Sources */,
 				3F4759051F0BA0A700B82645 /* TRCUserRegistCompleteViewController.swift in Sources */,

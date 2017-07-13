@@ -79,6 +79,17 @@ extension TRCPointViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        switch (indexPath.row) {
+        case 0:
+            break
+        case 1:
+            let vc = TRCPointDetailViewController(nibName: "TRCPointDetailViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = kBackButton
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
 }
