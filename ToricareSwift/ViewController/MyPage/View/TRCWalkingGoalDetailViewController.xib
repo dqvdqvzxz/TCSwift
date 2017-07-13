@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCWalkingGoalDetailViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
                 <outlet property="btnSave" destination="mYK-Ry-lbV" id="MLW-Gw-Kie"/>
+                <outlet property="lblSteps" destination="6eh-EK-ER5" id="Tmk-iV-JZb"/>
                 <outlet property="lblTitle" destination="v2W-Hf-xWL" id="ipJ-zg-KrJ"/>
                 <outlet property="pickerTarget" destination="d1W-0L-IYV" id="WLP-C0-74x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,7 +45,7 @@
                         <action selector="tapBtnSave:" destination="-1" eventType="touchUpInside" id="1Ve-gQ-YSX"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eh-EK-ER5">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eh-EK-ER5" userLabel="lblSteps">
                     <rect key="frame" x="296" y="343" width="50" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="AU9-fi-Msa"/>

@@ -78,10 +78,26 @@ let kTitleHome =                        Localizable(value: "Home")
 
 //MARK: MyPage
 let kUserInfo =                         Localizable(value: "User Information")
-//profile
+//UserInfoInput
 let kTakePhotoCamera =                  Localizable(value: "Take photo with camera")
 let kTakePhotoGallery =                 Localizable(value: "Take photo from gallery")
 let kWarningCamera =                    Localizable(value: "You don't have camera !")
+//MyPharmacyDetail
+let kMyPharmcy =                        Localizable(value: "My Pharmacy")
+let kQRCode =                           Localizable(value: "Scan QR Code")
+let kChangePharmacy =                   Localizable(value: "Change Pharmacy")
+let kRegisterPharmacy =                 Localizable(value: "Register Pharmacy")
+let kSearch =                           Localizable(value: "Search")
+//WalkingGoalDetail
+let kSteps =                            Localizable(value: "Steps")
+//Point
+let kPoint =                            Localizable(value: "Point")
+let kStoragePoint =                     Localizable(value: "Storage Point")
+let kHistoryPoint =                     Localizable(value: "History Point")
+let kUsedPoint =                        Localizable(value: "Used Point")
+let kPointPolicy =                      Localizable(value: "Point Policy")
+let kPointHistory =                     Localizable(value: "Point History")
+let kPointUnit =                        Localizable(value: "pt")
 
 //MARK: Settings
 let kTitleSetting =                     Localizable(value: "Setting")

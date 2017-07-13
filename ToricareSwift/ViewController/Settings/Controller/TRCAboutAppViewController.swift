@@ -66,7 +66,6 @@ extension TRCAboutAppViewController: UITableViewDataSource{
         }
         
         return cell
-
     }
 }
 
