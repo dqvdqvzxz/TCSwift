@@ -95,6 +95,7 @@
 		3FB411AD1F09F2AA008720A6 /* TRCRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411AB1F09F2AA008720A6 /* TRCRegisterViewController.swift */; };
 		3FB411B01F09F2C2008720A6 /* TRCRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411AF1F09F2C2008720A6 /* TRCRegisterViewController.xib */; };
 		57C6E70B6D71631356703859 /* Pods_ToricareSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */; };
+		C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00CF8F11F17284800B6A5A5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,6 +190,8 @@
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00CF8F01F17284800B6A5A5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C00CF8F21F17285400B6A5A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,6 +424,7 @@
 			children = (
 				3FB4113B1EFB6221008720A6 /* Info.plist */,
 				3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */,
+				C00CF8F11F17284800B6A5A5 /* Localizable.strings */,
 			);
 			path = "Supporting File";
 			sourceTree = "<group>";
@@ -648,10 +652,11 @@
 			};
 			buildConfigurationList = 3FB411151EFB607C008720A6 /* Build configuration list for PBXProject "ToricareSwift" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = Japanese;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 				Base,
 			);
 			mainGroup = 3FB411111EFB607C008720A6;
@@ -685,6 +690,7 @@
 				3F475A941F175EEA00B82645 /* TRCPointDetailCell.xib in Resources */,
 				3F4759101F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib in Resources */,
 				3F4759621F0CC50C00B82645 /* TRCEmailChangeCompleteViewController.xib in Resources */,
+				C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */,
 				3F4759641F0CC50C00B82645 /* TRCLinkedServicesViewController.xib in Resources */,
 				3F4759631F0CC50C00B82645 /* TRCEmailChangeInputViewController.xib in Resources */,
 				3F4759111F0BA0D500B82645 /* TRCPharmacySearchViewController.xib in Resources */,
@@ -818,6 +824,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C00CF8F11F17284800B6A5A5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C00CF8F01F17284800B6A5A5 /* ja */,
+				C00CF8F21F17285400B6A5A5 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3FB4112A1EFB607C008720A6 /* Debug */ = {

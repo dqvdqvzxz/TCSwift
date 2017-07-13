@@ -41,6 +41,16 @@
                         <action selector="tapBtnLogin:" destination="-1" eventType="touchUpInside" id="rWW-Vy-VQz"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アプリの説明" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckW-Qx-GPs">
+                    <rect key="frame" x="16" y="323" width="343" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="343" id="2YG-hd-WOb"/>
+                        <constraint firstAttribute="height" constant="21" id="Vcr-PQ-0W6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="19"/>
+                    <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -49,10 +59,13 @@
                 <constraint firstAttribute="trailing" secondItem="H51-Tb-RSO" secondAttribute="trailing" constant="10" id="GSw-0G-8oW"/>
                 <constraint firstAttribute="trailing" secondItem="2pe-xW-eh2" secondAttribute="trailing" constant="10" id="H6L-bu-dJr"/>
                 <constraint firstItem="H51-Tb-RSO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mci-NF-7I6"/>
+                <constraint firstItem="ckW-Qx-GPs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NUB-4p-jVm"/>
                 <constraint firstAttribute="bottom" secondItem="2pe-xW-eh2" secondAttribute="bottom" constant="10" id="b3P-zZ-tdA"/>
                 <constraint firstItem="2pe-xW-eh2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fFs-Gb-J2g"/>
                 <constraint firstItem="H51-Tb-RSO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="rAQ-nF-gR1"/>
+                <constraint firstItem="ckW-Qx-GPs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sAv-4V-b6K"/>
             </constraints>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
         </view>
     </objects>
 </document>

@@ -15,9 +15,9 @@ let kWarning =                          Localizable(value: "Warning")
 
 
 //MARK: Navigation 
-let kBackButton =                       Localizable(value: "BacK")
-let kDone =                             Localizable(value: "Done")
-let kCancel =                           Localizable(value: "Cancel")
+let kBackButton =                       Localizable(value: "back")
+let kDone =                             Localizable(value: "done")
+let kCancel =                           Localizable(value: "cancel")
 
 //MARK: Tabbar
 let kTab1 =                             Localizable(value: "Home1")
@@ -27,8 +27,8 @@ let kTab4 =                             Localizable(value: "Home4")
 let kTab5 =                             Localizable(value: "My Page")
 
 //MARK: PreLoginViewController
-let kBtnRegister =                      Localizable(value: "Register")
-let kBtnLogin =                         Localizable(value: "Login")
+let kBtnRegister =                      Localizable(value: "member_register")
+let kBtnLogin =                         Localizable(value: "do_login")
 
 
 //MARK: RegisterViewController
