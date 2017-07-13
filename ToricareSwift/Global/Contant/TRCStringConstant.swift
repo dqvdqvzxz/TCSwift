@@ -89,6 +89,12 @@ let kChangePharmacy =                   Localizable(value: "Change Pharmacy")
 let kRegisterPharmacy =                 Localizable(value: "Register Pharmacy")
 //WalkingGoalDetail
 let kSteps =                            Localizable(value: "Steps")
+//Point
+let kPoint =                            Localizable(value: "Point")
+let kStoragePoint =                     Localizable(value: "Storage Point")
+let kHistoryPoint =                     Localizable(value: "History Point")
+let kUsedPoint =                        Localizable(value: "Used Point")
+let kPointPolicy =                      Localizable(value: "Point Policy")
 
 //MARK: Settings
 let kTitleSetting =                     Localizable(value: "Setting")

@@ -129,7 +129,11 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
-            break
+            let vc = TRCPointViewController(nibName: "TRCPointViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = kBackButton
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
         case 4:
             break
         case 5:
