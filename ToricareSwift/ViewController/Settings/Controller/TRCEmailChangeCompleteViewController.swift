@@ -27,17 +27,17 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kChangeEmail
+        self.navigationItem.title = STRING_SETTING_EMAIL_CHANGE
         
         //UI of outlet
-        btnBackToMyPage.buttonStyle(title: kBackToMyPage, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnBackToMyPage.buttonStyle(title: Localizable(value: "back_to_top"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
     }
     
     //MARK: Button Action
     @IBAction func tapBtnBackToMyPage(_ sender: Any) {
         let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
         let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
+        backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }

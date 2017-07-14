@@ -7,118 +7,162 @@
 */
 
 //MARK: Alert message
-"OK" = "はい";
-"check_network_message" = "ネットワークをチェックしてください";
-"check_input_data_message" = "データを確認してください";
-"warning" = "注意";
+"OK"                                    = "はい";
+"check_network_message"                 = "ネットワークをチェックしてください";
+"check_input_data_message"              = "データを確認してください";
+"warning"                               = "注意";
 
 //MARK: Navigation
-"back" = "戻る";
-"done" = "完了";
-"cancel" = "キャンセル";
+"back"                                  = "戻る";
+"done"                                  = "完了";
+"cancel"                                = "キャンセル";
 
-////MARK: Tabbar
-//let kTab1 =                             Localizable(value: "Home1")
-//let kTab2 =                             Localizable(value: "Home2")
-//let kTab3 =                             Localizable(value: "Home3")
-//let kTab4 =                             Localizable(value: "Home4")
-//let kTab5 =                             Localizable(value: "My Page")
+//MARK: Tabbar
+"tab_home"                              = "ホーム";
+"tab_nutrition"                         = "栄養管理";
+"tab_exercise"                          = "運動管理";
+"tab_medicine"                          = "お薬管理";
+"tab_mypage"                            = "マイページ";
 
 //MARK: PreLoginViewController
-"member_register" = "会員登録";
-"do_login" = "ログインする";
+"do_login"                              = "ログインする";
 
+//MARK: RegisterViewController
+"register_title"                        = "会員登録";
+"mail_address"                          = "メールアドレス";
 
-////MARK: RegisterViewController
-//let kTitleRegister =                    Localizable(value: "Register")
-//let kLblUsername =                      Localizable(value: "Username")
-//let kTfUsernamePH =                     Localizable(value: "test@tricare.com")
-//let kLblPassword =                      Localizable(value: "Password")
-//let kTfPasswordPH =                     Localizable(value: "Please enter the password...")
-//let kLblRePassword =                    Localizable(value: "Re-enter password")
-//let kTfRePasswordPH =                   Localizable(value: "Please re-enter the password...")
-//let kBtnRegisterWithFB =                Localizable(value: "Register with Facebook")
-//let kLblOr =                            Localizable(value: "Or")
-////AccountInfoInput
-//let kTitleAccountInfoInput =            Localizable(value: "Register member")
-//let kFirstName =                        Localizable(value: "First Name")
-//let kFirstNamePH =                      Localizable(value: "Your first name...")
-//let kLastName =                         Localizable(value: "Last Name")
-//let kLastNamePH =                       Localizable(value: "Your last name...")
-//let kFirstNameKata =                    Localizable(value: "First Name (Kata)")
-//let kFirstNameKataPH =                  Localizable(value: "Your first kata name...")
-//let kLastNameKata =                     Localizable(value: "Last Name (Kata)")
-//let kLastNameKataPH =                   Localizable(value: "Your last kata name...")
-//let kDateOfBirth =                      Localizable(value: "Date of Birth")
-//let kDateOfBirthPH =                    Localizable(value: "Enter the date of birth...")
-//let kGender =                           Localizable(value: "Gender")
-//let kGenderPH =                         Localizable(value: "Pick gender...")
-//let kMale =                             Localizable(value: "Male")
-//let kFemale =                           Localizable(value: "Female")
-//let kNext =                             Localizable(value: "Next")
-//
-//
-////MARK: LoginViewController
-//let kTitleLogin =                       Localizable(value: "Login")
-//let kForgotPassword =                   Localizable(value: "Forgot password")
-////ForgotPasswordEmailInput
-//let kPolicy =                           Localizable(value: "Enter the email address you used to create the account")
-//let kEmail =                            Localizable(value: "Email")
-//let kSendEmail =                        Localizable(value: "Send Email")
-////ForgotPasswordSent
-//let kInform1 =                          Localizable(value: "Link setup new password was sent to your email ")
-//let kInform2 =                          Localizable(value: "Please check your email to setup new password")
-//let kBackToHome =                       Localizable(value: "Back To Home")
-//
-//
-////MARK: Home
-//let kTitleHome =                        Localizable(value: "Home")
-//
-////MARK: MyPage
-//let kUserInfo =                         Localizable(value: "User Information")
-////profile
-//let kTakePhotoCamera =                  Localizable(value: "Take photo with camera")
-//let kTakePhotoGallery =                 Localizable(value: "Take photo from gallery")
-//let kWarningCamera =                    Localizable(value: "You don't have camera !")
-//
-////MARK: Settings
-//let kTitleSetting =                     Localizable(value: "Setting")
-////change email
-//let kChangeEmail =                      Localizable(value: "Change email")
-//let kCurrentEmail =                     Localizable(value: "Your current email")
-//let kNewEmail =                         Localizable(value: "New email")
-//let kNewEmailPH =                       Localizable(value: "Enter the new email...")
-//let kConfirmNewEmail =                  Localizable(value: "Confirm new email")
-//let kConfirmNewEmailPH =                Localizable(value: "Re-etner the new email...")
-//let kConfirm =                          Localizable(value: "Confirm")
-//let kBackToMyPage =                     Localizable(value: "Back to MyPage")
-////change pass
-//let kChangePass =                       Localizable(value: "Change password")
-//let kCurrentPassword =                  Localizable(value: "Current password")
-//let kCurrentPasswordPH =                Localizable(value: "Enter current password...")
-//let kNewPassword =                      Localizable(value: "New password")
-//let kNewPasswordPH =                    Localizable(value: "Enter new password...")
-//let kConfirmNewPassword =               Localizable(value: "Confirm new password")
-//let kConfirmNewPasswordPH =             Localizable(value: "Re-enter new password...")
-////linked service
-//let kLinkedService =                    Localizable(value: "Linked Services")
-//let kHealthManagement =                 Localizable(value: "Health Management")
-//let kOtherService =                     Localizable(value: "Other Services")
-////notification
-//let kNotification =                     Localizable(value: "Notification")
-////passcode
-//let kPasscode =                         Localizable(value: "Passcode")
-////theme
-//let kTheme =                            Localizable(value: "Theme")
-//let kMainColor =                        Localizable(value: "Color 1")
-//let kMainColor2 =                       Localizable(value: "Color 2")
-//let kMainColor3 =                       Localizable(value: "Color 3")
-//let kMainColor4 =                       Localizable(value: "Color 4")
-////about app
-//let kAboutApp =                         Localizable(value: "About App")
-////user leave
-//let kUserLeave =                        Localizable(value: "Deactive User")
-////logout
-//let kLogout =                           Localizable(value: "Log out")
-//
+"password"                              = "パスワード";
+"password_confirm"                      = "パスワード（確認）";
+"register_mail"                         = "メールアドレスで登録";
+"register_fb"                           = "Facebookアカウントで登録";
+"or"                                    = "または";
 
+//AccountInfoInput
+"first_name"                            = "氏名（姓）";
+"last_name"                             = "氏名（名）";
+"first_name_kata"                       = "氏名カナ（姓）";
+"last_name_kata"                        = "氏名カナ（名）";
+"birth_date"                            = "生年月日";
+"gender"                                = "性別";
+"male"                                  = "男性";
+"female"                                = "女性";
+"next_button"                           = "次へ";
+
+//MARK: LoginViewController
+"login_title"                           = "ログイン";
+"forgot_password_title"                 = "パスワードをお忘れの方";
+"login_fb"                              = "Facebookアカウントでログイン";
+
+//ForgotPasswordEmailInput
+"forgot_password_input_mail"            = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";
+"send_title"                            = "送信する";
+
+//ForgotPasswordSent
+"forgot_passsword_sent"                 = "ご入力いただいたメールアドレス宛に、パスワード再設定の案内メールを送信しました。";
+"forgot_password_check"                 = "メールの内容をご確認いただき、パスワードの再設定を行ってください。";
+"back_to_top"                           = "アプリトップへ";
+
+//Setting Profile
+"take_photo_camera"                     = "カメラを起動する";
+"take_photo_gallery"                    = "ライブラリから選ぶ";
+"camera_warning"                        = "カメラの問題が発生されました";
+
+//MARK: Settings
+"setting"                               = "設定";
+"setting_email_change"                  = "メールアドレス変更";
+"setting_password_change"               = "パスワード変更";
+"setting_other_services"                = "他サービス連携";
+"setting_notify"                        = "お知らせ通知";
+"setting_passcode"                      = "パスコードロック";
+"setting_theme"                         = "カラーテーマ";
+"about_app"                             = "このアプリについて";
+"resign"                                = "退会";
+"logout"                                = "ログアウト";
+
+//MARK: Change email
+"current_email"                         = "現在のメールアドレス";
+"new_mail"                              = "新しいメールアドレス";
+"new_mail_confirm"                      = "新しいメールアドレス（確認）";
+"change_button"                         = "変更する";
+
+"mail_sent_message1"                    = "確認メールを送信しました。";
+"mail_sent_message2"                    = "ご入力いただきました新しいメールアドレス宛にメールアドレス変更手続きの確認メールを送信いたしました。メール内のURLをクリックして変更手続きを完了させてください。";
+"mail_sent_message3"                    = "※メールに記載されたURLをクリックしないまま24時間が経過した場合、ご変更依頼が無効となってしまいますのでご注意ください。\n※フリーメールアドレスをご利用の場合は迷惑メールフォルダやゴミ箱に振り分けられてしまうことがありますのでご注意ください。\n※入力されたメールアドレスに誤りがあるとメールが届きません。\n※確認メールが届かない場合や確認メールの有効期限が切れてしまった場合は、再度、変更手続きを行ってください。";
+
+//Change pass
+"current_password"                      = "現在のパスワード";
+"new_password"                          = "新しいパスワード";
+"new_password_confirm"                  = "新しいパスワード（確認）";
+
+//Linked service
+"health_manager_feature"                = "健康管理機能";
+"service_health_care"                   = "ヘルスケア";
+"service_tanita"                        = "TANITA体組成計";
+"service_exercise"                      = "活動量計";
+"service_other"                         = "その他サービス";
+"service_facebook"                      = "Facebook";
+
+//Notification
+"receive"                               = "プッシュ通知を受け取る";
+"notify_from_phamarcy"                  = "薬局からのお知らせ";
+"notify_from_tricare"                   = "トリケアからのお知らせ";
+"weight"                                = "体重";
+"breakfast"                             = "朝食";
+"lunch"                                 = "昼食";
+"dinner"                                = "夕食";
+"snack"                                 = "間食";
+
+//Passcode Setting
+"enable_passcode"                       = "パスコードロックを有効にする";
+"change_passcode"                       = "パスコード変更する";
+
+"passcode_input"                        = "パスコードロックを入力してください。";
+"passcode_input"                        = "パスコードロックを入力してください。（確認）";
+
+//Color theme
+"setting_color_theme"                   = "カラーテーマ設定";
+"green"                                 = "グリーン（デフォルト）";
+"pink"                                  = "ピンク";
+"blue"                                  = "ブルー";
+"brown"                                 = "ブラウン";
+
+//About app
+"app_version"                           = "バージョン情報";
+"term_of_service"                       = "利用規約";
+"policy"                                = "プライバシーポリシー";
+"faq"                                   = "よくあるご質問";
+"question"                              = "お問い合わせ";
+
+//Resign account
+"resign_confirm"                        = "退会される前に必ずご確認ください。";
+"resign_agree_message"                  = "以上の注意事項について、ご同意いただいた上で、以下手続きへと進んでください。";
+"resign_agree"                          = "同意します。";
+"resign_button"                         = "退会する";
+"resign_complete"                       = "退会処理を完了しました。\nご利用ありがとうございました。";
+
+//Logout
+"logout_confirm_title"                  = "本当にログアウトしますか？";
+"logout_confirm_message"                = "ログアウト後はログイン画面より再度ログインしてください。";
+
+////Pharmacy Setting
+//"my_pharmacy_setting"                   = "My薬局設定";
+//"read_qrcode"                           = "QRコードを読み取る";
+//"register_my_pharmacy"                  = "My薬局に登録する";
+//
+//"point"                                 = "ポイント";
+//"search"                                = "検索";
+//"point_reference"                       = "ポイント照会";
+//"point_own"                             = "所持ポイント";
+//"point_history"                         = "ポイント履歴";
+//"point_use"                             = "ポイントを利用する";
+//"point_about"                           = "ポイントサービスについて";
+//
+////Reset pass
+//"reset_password"                        = "パスワード再設定";
+//"reset_password_input"                  = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";
+//"send_reset_password_mail"              = "ご入力いただいたメールアドレス宛に、パスワード再設定の案内メールを送信しました。";
+//"please_check_mail"                     = "メールの内容をご確認いただき、パスワードの再設定を行ってください。";
+//"setting_target"                        = "目標設定";
+//"walking_per_day"                       = "歩数（1日）";
+//"walking"                               = "歩";
+//"save"                                  = "保存";

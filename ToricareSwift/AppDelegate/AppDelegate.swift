@@ -96,11 +96,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let item5 = _obj.tabController.tabBar.items?[4]
         
         //set title for tab item
-        item1?.title = kTab1
-        item2?.title = kTab2
-        item3?.title = kTab3
-        item4?.title = kTab4
-        item5?.title = kTab5
+        item1?.title = STRING_TAB_HOME
+        item2?.title = STRING_TAB_NUTRITION
+        item3?.title = STRING_TAB_EXERCISE
+        item4?.title = STRING_TAB_MEDICINE
+        item5?.title = STRING_TAB_MYPAGE
         
 //        //set icon for tab item
 //        item1?.image = UIImage(named: "")

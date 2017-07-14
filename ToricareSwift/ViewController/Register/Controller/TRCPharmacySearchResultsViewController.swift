@@ -32,7 +32,7 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kMyPharmcy
+        self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //table view
         tblSearchResult.dataSource = self
@@ -66,9 +66,9 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
-        vc.mode = "Register"
+        vc.mode = MODE_REGISTER
         let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
+        backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }

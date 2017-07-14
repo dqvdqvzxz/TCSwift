@@ -46,6 +46,6 @@ class TRCHomeViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kTitleHome
+        self.navigationItem.title = STRING_TAB_HOME
     }
 }

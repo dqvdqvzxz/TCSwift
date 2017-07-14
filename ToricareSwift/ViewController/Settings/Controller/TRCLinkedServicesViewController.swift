@@ -27,7 +27,7 @@ class TRCLinkedServicesViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kLinkedService
+        self.navigationItem.title = STRING_SETTING_OTHER_SERIVCES
         
         //table view
         tblLinked.dataSource = self
@@ -58,9 +58,9 @@ extension TRCLinkedServicesViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch (section) {
         case 0:
-            return kHealthManagement
+            return Localizable(value: "health_manager_feature")
         case 1:
-            return kOtherService
+            return Localizable(value: "service_other")
         default:
             break
         }

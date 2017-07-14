@@ -38,7 +38,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     let datePicker = UIDatePicker()
     
-    var dataGender = ["", kMale, kFemale]
+    var dataGender = ["", Localizable(value: "male"), Localizable(value: "female")]
     var genderPicker = UIPickerView()
     
     var editMode = Bool()
@@ -57,30 +57,30 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //UI of outlet
-        lblFirstName.labelStyle(title: kFirstName, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblLastName.labelStyle(title: kLastName, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblFirstNameKata.labelStyle(title: kFirstNameKata, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblLastNameKata.labelStyle(title: kLastNameKata, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblDateOfBirth.labelStyle(title: kDateOfBirth, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblGender.labelStyle(title: kGender, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblFirstName.labelStyle(title: Localizable(value: "first_name"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblLastName.labelStyle(title: Localizable(value: "last_name"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblFirstNameKata.labelStyle(title: Localizable(value: "first_name_kata"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblLastNameKata.labelStyle(title: Localizable(value: "last_name_kata"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblDateOfBirth.labelStyle(title: Localizable(value: "birth_date"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblGender.labelStyle(title: Localizable(value: "gender"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         
-        tfFirstName.textFieldStyle(placeHolder: kFirstNamePH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfLastName.textFieldStyle(placeHolder: kLastNamePH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfFirstNameKata.textFieldStyle(placeHolder: kFirstNameKataPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfLastNameKata.textFieldStyle(placeHolder: kLastNameKataPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfDateOfBirth.textFieldStyle(placeHolder: kDateOfBirthPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfGender.textFieldStyle(placeHolder: kGenderPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfFirstName.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfLastName.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfFirstNameKata.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfLastNameKata.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfDateOfBirth.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfGender.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         
         if(editMode == true){
-            self.navigationItem.title = kUserInfo
+            self.navigationItem.title = Localizable(value: "register_title")
             self.navigationItem.hidesBackButton = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
             
             btnNext.isHidden = true
         }else{
-            self.navigationItem.title = kTitleAccountInfoInput
+            self.navigationItem.title = Localizable(value: "register_title")
             
-            btnNext.buttonStyle(title: kNext, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+            btnNext.buttonStyle(title: STRING_NEXT, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
             self.navigationItem.hidesBackButton = true
         }
         
@@ -104,7 +104,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         toolbar.sizeToFit()
         
         //done button & cancel button
-        let doneButton = UIBarButtonItem(title: kDone, style: .plain, target: self, action: #selector(doneGenderPicker))
+        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
@@ -129,9 +129,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         toolbar.sizeToFit()
         
         //done button & cancel button
-        let doneButton = UIBarButtonItem(title: kDone, style: .plain, target: self, action: #selector(donedatePicker))
+        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(donedatePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: kCancel, style: .plain, target: self, action: #selector(cancelDatePicker))
+        let cancelButton = UIBarButtonItem(title: STRING_CANCEL, style: .plain, target: self, action: #selector(cancelDatePicker))
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
@@ -165,7 +165,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             self.present(self.pickerController, animated: true, completion: nil)
             pickerController.view.layoutIfNeeded()
         }else{
-            Alert2(title: kWarning, message: kWarningCamera)
+            Alert2(title: STRING_WARNING, message: Localizable(value: "camera_warning"))
         }
     }
     
@@ -182,7 +182,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     @IBAction func tapBtnNext(_ sender: Any) {
         let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
         let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
+        backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -192,15 +192,15 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         //create Cancel action
-        let cancelAction = UIAlertAction(title: kCancel, style: .cancel) { action -> Void in
+        let cancelAction = UIAlertAction(title: STRING_CANCEL, style: .cancel) { action -> Void in
             //dismiss action sheet
         }
         //take picture in camera
-        let takePhotoCamera = UIAlertAction(title: kTakePhotoCamera, style: .default) { action -> Void in
+        let takePhotoCamera = UIAlertAction(title: STRING_TAKE_PHOTO_CAMERA, style: .default) { action -> Void in
             self.openCamera()
         }
         //take picture from gallery
-        let takePhotoGallery = UIAlertAction(title: kTakePhotoGallery, style: .default) { action -> Void in
+        let takePhotoGallery = UIAlertAction(title: STRING_TAKE_PHOTO_GALLERY, style: .default) { action -> Void in
             self.openGallery()
         }
         

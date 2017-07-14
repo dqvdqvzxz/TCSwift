@@ -8,143 +8,63 @@
 
 
 //MARK: Alert message
-let kAlertOk =                          Localizable(value: "OK")
-let kNetworkDisable =                   Localizable(value: "Please check your network connection !")
-let kParamInvalid =                     Localizable(value: "Please check again your source !")
-let kWarning =                          Localizable(value: "Warning")
-
+let STRING_OK =                         Localizable(value: "OK")
+let STRING_CHECK_NETWORK =              Localizable(value: "check_network_message")
+let STRING_CHECK_INPUT_DATA =           Localizable(value: "check_input_data_message")
+let STRING_WARNING =                    Localizable(value: "warning")
 
 //MARK: Navigation 
-let kBackButton =                       Localizable(value: "back")
-let kDone =                             Localizable(value: "done")
-let kCancel =                           Localizable(value: "cancel")
+let STRING_BACK =                       Localizable(value: "back")
+let STRING_DONE =                       Localizable(value: "done")
+let STRING_CANCEL =                     Localizable(value: "cancel")
+let STRING_NEXT =                       Localizable(value: "next_button")
+let STRING_SEND =                       Localizable(value: "send_title")
+let STRING_CHANGE =                     Localizable(value: "change_button")
+let STRING_SEARCH =                     Localizable(value: "search")
 
 //MARK: Tabbar
-let kTab1 =                             Localizable(value: "Home1")
-let kTab2 =                             Localizable(value: "Home2")
-let kTab3 =                             Localizable(value: "Home3")
-let kTab4 =                             Localizable(value: "Home4")
-let kTab5 =                             Localizable(value: "My Page")
+let STRING_TAB_HOME =                   Localizable(value: "tab_home")
+let STRING_TAB_NUTRITION =              Localizable(value: "tab_nutrition")
+let STRING_TAB_EXERCISE =               Localizable(value: "tab_exercise")
+let STRING_TAB_MEDICINE =               Localizable(value: "tab_medicine")
+let STRING_TAB_MYPAGE =                 Localizable(value: "tab_mypage")
 
 //MARK: PreLoginViewController
-let kBtnRegister =                      Localizable(value: "member_register")
-let kBtnLogin =                         Localizable(value: "do_login")
-
+let STRING_DO_LOGIN =                   Localizable(value: "do_login")
 
 //MARK: RegisterViewController
-let kTitleRegister =                    Localizable(value: "Register")
-let kLblUsername =                      Localizable(value: "Username")
-let kTfUsernamePH =                     Localizable(value: "test@tricare.com")
-let kLblPassword =                      Localizable(value: "Password")
-let kTfPasswordPH =                     Localizable(value: "Please enter the password...")
-let kLblRePassword =                    Localizable(value: "Re-enter password")
-let kTfRePasswordPH =                   Localizable(value: "Please re-enter the password...")
-let kBtnRegisterWithFB =                Localizable(value: "Register with Facebook")
-let kLblOr =                            Localizable(value: "Or")
-//AccountInfoInput
-let kTitleAccountInfoInput =            Localizable(value: "Register member")
-let kFirstName =                        Localizable(value: "First Name")
-let kFirstNamePH =                      Localizable(value: "Your first name...")
-let kLastName =                         Localizable(value: "Last Name")
-let kLastNamePH =                       Localizable(value: "Your last name...")
-let kFirstNameKata =                    Localizable(value: "First Name (Kata)")
-let kFirstNameKataPH =                  Localizable(value: "Your first kata name...")
-let kLastNameKata =                     Localizable(value: "Last Name (Kata)")
-let kLastNameKataPH =                   Localizable(value: "Your last kata name...")
-let kDateOfBirth =                      Localizable(value: "Date of Birth")
-let kDateOfBirthPH =                    Localizable(value: "Enter the date of birth...")
-let kGender =                           Localizable(value: "Gender")
-let kGenderPH =                         Localizable(value: "Pick gender...")
-let kMale =                             Localizable(value: "Male")
-let kFemale =                           Localizable(value: "Female")
-let kNext =                             Localizable(value: "Next")
-
+let STRING_REGISTER =                   Localizable(value: "register_title")
+let STRING_MAIL_ADDRESS =               Localizable(value: "mail_address")
+let STRING_PASSWORD =                   Localizable(value: "password")
 
 //MARK: LoginViewController
-let kTitleLogin =                       Localizable(value: "Login")
-let kForgotPassword =                   Localizable(value: "Forgot password")
-//ForgotPasswordEmailInput
-let kPolicy =                           Localizable(value: "Enter the email address you used to create the account")
-let kEmail =                            Localizable(value: "Email")
-let kSendEmail =                        Localizable(value: "Send Email")
-//ForgotPasswordSent
-let kInform1 =                          Localizable(value: "Link setup new password was sent to your email ")
-let kInform2 =                          Localizable(value: "Please check your email to setup new password")
-let kBackToHome =                       Localizable(value: "Back To Home")
+let STRING_LOGIN =                      Localizable(value: "login_title")
 
-
-//MARK: Home
-let kTitleHome =                        Localizable(value: "Home")
-
-//MARK: MyPage
-let kUserInfo =                         Localizable(value: "User Information")
-//UserInfoInput
-let kTakePhotoCamera =                  Localizable(value: "Take photo with camera")
-let kTakePhotoGallery =                 Localizable(value: "Take photo from gallery")
-let kWarningCamera =                    Localizable(value: "You don't have camera !")
-//MyPharmacyDetail
-let kMyPharmcy =                        Localizable(value: "My Pharmacy")
-let kQRCode =                           Localizable(value: "Scan QR Code")
-let kChangePharmacy =                   Localizable(value: "Change Pharmacy")
-let kRegisterPharmacy =                 Localizable(value: "Register Pharmacy")
-let kSearch =                           Localizable(value: "Search")
-//WalkingGoalDetail
-let kSteps =                            Localizable(value: "Steps")
-//Point
-let kPoint =                            Localizable(value: "Point")
-let kStoragePoint =                     Localizable(value: "Storage Point")
-let kHistoryPoint =                     Localizable(value: "History Point")
-let kUsedPoint =                        Localizable(value: "Used Point")
-let kPointPolicy =                      Localizable(value: "Point Policy")
-let kPointHistory =                     Localizable(value: "Point History")
-let kPointUnit =                        Localizable(value: "pt")
+//Setting Profile
+let STRING_TAKE_PHOTO_CAMERA =          Localizable(value: "take_photo_camera")
+let STRING_TAKE_PHOTO_GALLERY =         Localizable(value: "take_photo_gallery")
 
 //MARK: Settings
-let kTitleSetting =                     Localizable(value: "Setting")
-//change email
-let kChangeEmail =                      Localizable(value: "Change email")
-let kCurrentEmail =                     Localizable(value: "Your current email")
-let kNewEmail =                         Localizable(value: "New email")
-let kNewEmailPH =                       Localizable(value: "Enter the new email...")
-let kConfirmNewEmail =                  Localizable(value: "Confirm new email")
-let kConfirmNewEmailPH =                Localizable(value: "Re-etner the new email...")
-let kConfirm =                          Localizable(value: "Confirm")
-let kBackToMyPage =                     Localizable(value: "Back to MyPage")
-//change pass
-let kChangePass =                       Localizable(value: "Change password")
-let kCurrentPassword =                  Localizable(value: "Current password")
-let kCurrentPasswordPH =                Localizable(value: "Enter current password...")
-let kNewPassword =                      Localizable(value: "New password")
-let kNewPasswordPH =                    Localizable(value: "Enter new password...")
-let kConfirmNewPassword =               Localizable(value: "Confirm new password")
-let kConfirmNewPasswordPH =             Localizable(value: "Re-enter new password...")
-//linked service
-let kLinkedService =                    Localizable(value: "Linked Services")
-let kHealthManagement =                 Localizable(value: "Health Management")
-let kOtherService =                     Localizable(value: "Other Services")
-//notification
-let kNotification =                     Localizable(value: "Notification")
-//passcode
-let kPasscode =                         Localizable(value: "Passcode")
-//theme
-let kTheme =                            Localizable(value: "Theme")
-let kMainColor =                        Localizable(value: "Color 1")
-let kMainColor2 =                       Localizable(value: "Color 2")
-let kMainColor3 =                       Localizable(value: "Color 3")
-let kMainColor4 =                       Localizable(value: "Color 4")
-//about app
-let kAboutApp =                         Localizable(value: "About App")
-//user leave
-let kUserLeave =                        Localizable(value: "Deactive User")
-//logout
-let kLogout =                           Localizable(value: "Log out")
+let STRING_SETTING =                    Localizable(value: "setting")
+let STRING_SETTING_EMAIL_CHANGE =       Localizable(value: "setting_email_change")
+let STRING_SETTING_PASSWORD_CHANGE =    Localizable(value: "setting_password_chage")
+let STRING_SETTING_OTHER_SERIVCES =     Localizable(value: "setting_other_services")
+let STRING_SETTING_NOTIFY =             Localizable(value: "setting_notify")
+let STRING_SETTING_PASSCODE =           Localizable(value: "setting_passcode")
+let STRING_SETTING_THEME =              Localizable(value: "setting_theme")
+let STRING_SETTING_ABOUT_APP =          Localizable(value: "about_app")
+let STRING_SETTING_RESIGN =             Localizable(value: "resign")
+let STRING_SETTING_LOGOUT =             Localizable(value: "logout")
 
+//Notification
+let STRING_WEIGHT =                     Localizable(value: "weight")
+let STRING_BREAKFAST =                  Localizable(value: "breakfast")
+let STRING_LUNCH =                      Localizable(value: "lunch")
+let STRING_DINNER =                     Localizable(value: "dinner")
+let STRING_SNACK =                      Localizable(value: "snack")
 
-
-
-
-
-
-
+//Pharmacy Mode
+let MODE_MYPAGE =                       "MODE_MYPAGE"
+let MODE_REGISTER =                     "MODE_REGISTER"
 
 

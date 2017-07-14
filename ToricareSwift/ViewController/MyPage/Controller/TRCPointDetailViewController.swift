@@ -27,7 +27,7 @@ class TRCPointDetailViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kPointHistory
+        self.navigationItem.title = Localizable(value: "point_history")
         
         //table view
         tblPointHistory.dataSource = self

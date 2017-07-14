@@ -27,7 +27,7 @@ class TRCPointViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kPoint
+        self.navigationItem.title = Localizable(value: "point_reference")
         
         //table view
         tblPoint.dataSource = self
@@ -54,16 +54,16 @@ extension TRCPointViewController: UITableViewDataSource{
         
         switch (indexPath.row) {
         case 0: //storage point
-            cell.lblTitle.text = kStoragePoint
+            cell.lblTitle.text = Localizable(value: "point_own")
             cell.accessoryType = .none
         case 1: //history point
-            cell.lblTitle.text = kHistoryPoint
+            cell.lblTitle.text = Localizable(value: "point_history")
             cell.lblVersion.isHidden = true
         case 2: //used point
-            cell.lblTitle.text = kUsedPoint
+            cell.lblTitle.text = Localizable(value: "point_use")
             cell.lblVersion.isHidden = true
         case 3: //point policy
-            cell.lblTitle.text = kPointPolicy
+            cell.lblTitle.text = Localizable(value: "point_about")
             cell.lblVersion.isHidden = true
         default:
             break
@@ -85,7 +85,7 @@ extension TRCPointViewController: UITableViewDelegate{
         case 1:
             let vc = TRCPointDetailViewController(nibName: "TRCPointDetailViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         default:

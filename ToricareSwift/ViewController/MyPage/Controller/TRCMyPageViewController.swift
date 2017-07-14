@@ -88,7 +88,7 @@ extension TRCMyPageViewController: UICollectionViewDataSource{
         case 5:
             break
         case 6:
-            cell.lblTitle.text = kTitleSetting
+            cell.lblTitle.text = STRING_SETTING
         case 7:
             cell.viewImg.isHidden = true
             cell.imgIcon.isHidden = true
@@ -112,26 +112,26 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
             vc.editMode = true
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 1:
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
-            vc.mode = "MyPage"
+            vc.mode = MODE_MYPAGE
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCWalkingGoalDetailViewController(nibName: "TRCWalkingGoalDetailViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCPointViewController(nibName: "TRCPointViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 4:
@@ -141,7 +141,7 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
         case 6:
             let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         default:

@@ -14,7 +14,7 @@ class TRCBaseAPIController{
     class func callAPI(_ params: Dictionary<String, String>, atPath path:String, withMethod httpMethod:String, blockCompletion completion:@escaping (_ data: NSDictionary?) -> (), blockFailed failed:@escaping ()->()){
     
         if Connectivity.isConnectToNetwork() == false{
-            failed(Alert(title: kNetworkDisable))
+            failed(Alert(title: STRING_CHECK_NETWORK))
         }else{
 //            let urls = "\(APP_DOMAIN)\(path)"
             let urls = "http://private-855d6c-ilovestayadmin.apiary-mock.com/getReport?room_id=123456"
@@ -77,7 +77,7 @@ class TRCBaseAPIController{
                     }
                 }
             }else{
-                failed(Alert(title: kParamInvalid))
+                failed(Alert(title: STRING_CHECK_INPUT_DATA))
             }
         }
     }
