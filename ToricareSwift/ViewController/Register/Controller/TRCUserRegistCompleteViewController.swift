@@ -10,6 +10,10 @@ import UIKit
 
 class TRCUserRegistCompleteViewController: TRCBaseViewController {
 
+    @IBOutlet weak var btnQRCode: UIButton!
+    @IBOutlet weak var btnUsingApp: UIButton!
+    
+    //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +25,20 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Config UI 
+    func configUI(){
+        
     }
-    */
-
+    
+    //MARK: Button Action
+    @IBAction func tapBtnQRCode(_ sender: Any) {
+    }
+    
+    @IBAction func tapBtnUsingApp(_ sender: Any) {
+        let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = kBackButton
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

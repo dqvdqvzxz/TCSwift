@@ -135,7 +135,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set root view
         if(UserDefaults.kGetValue(FB_TOKEN) != nil){
-            window?.rootViewController = _obj.tabController
+            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: mainVC)
+            window?.rootViewController = navController
+//            window?.rootViewController = _obj.tabController
         }else{
             let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)

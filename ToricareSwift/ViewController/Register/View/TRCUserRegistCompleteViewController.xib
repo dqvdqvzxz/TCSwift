@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCUserRegistCompleteViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCUserRegistCompleteViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="btnQRCode" destination="PPo-z6-uUj" id="dVD-Bk-MCP"/>
+                <outlet property="btnUsingApp" destination="O0W-xS-nWd" id="a0k-MP-Xv0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +20,37 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPo-z6-uUj" userLabel="btnQRCode">
+                    <rect key="frame" x="10" y="559" width="355" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="N0f-re-8B9"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="tapBtnQRCode:" destination="-1" eventType="touchUpInside" id="sre-6i-omN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0W-xS-nWd" userLabel="btnUsingApp">
+                    <rect key="frame" x="10" y="613" width="355" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="3JV-cD-pxg"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="tapBtnUsingApp:" destination="-1" eventType="touchUpInside" id="sxl-63-8qm"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="O0W-xS-nWd" secondAttribute="trailing" constant="10" id="Jdu-6w-qKR"/>
+                <constraint firstItem="O0W-xS-nWd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="NMj-pS-iv7"/>
+                <constraint firstItem="PPo-z6-uUj" firstAttribute="bottom" secondItem="O0W-xS-nWd" secondAttribute="top" constant="-10" id="ZfX-rJ-yJj"/>
+                <constraint firstAttribute="bottom" secondItem="O0W-xS-nWd" secondAttribute="bottom" constant="10" id="oc7-oB-plk"/>
+                <constraint firstItem="PPo-z6-uUj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="qZP-ki-fBZ"/>
+                <constraint firstAttribute="trailing" secondItem="PPo-z6-uUj" secondAttribute="trailing" constant="10" id="wqH-zE-Huo"/>
+            </constraints>
         </view>
     </objects>
 </document>
