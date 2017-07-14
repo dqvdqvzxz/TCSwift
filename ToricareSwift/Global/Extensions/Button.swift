@@ -9,7 +9,13 @@
 import UIKit
 
 extension UIButton{
-    func buttonStyle(title: String?, fontSize: CGFloat?,titleColor: String?, borderWidth: CGFloat?, borderColor: String?, radius: CGFloat?, backgroundColor: String?){
+    func buttonStyle(title: String?,
+                     fontSize: CGFloat? = BUTTON_FONT_SIZE,
+                     titleColor: String? = BUTTON_TITLE_COLOR,
+                     borderWidth: CGFloat? = BUTTON_BORDER_WIDTH,
+                     borderColor: String? = BUTTON_BORDER_COLOR,
+                     radius: CGFloat? = BUTTON_RADIUS,
+                     backgroundColor: String? = MAIN_COLOR) {
         let button = self
         if(title != nil){
             button.setTitle(title, for: UIControlState.normal)

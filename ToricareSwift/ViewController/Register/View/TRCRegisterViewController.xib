@@ -143,6 +143,7 @@
                 <constraint firstItem="emo-oJ-zVE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="z1Z-OW-h62"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <point key="canvasLocation" x="-85" y="51"/>
         </view>
     </objects>
 </document>

@@ -42,8 +42,8 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
         //UI of outlet
         lblCurrentEmail.labelStyle(title: Localizable(value: "current_email"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         lblCurrentEmailResult.labelStyle(title: "test@tricare.com", fontSize: LABEL_FONT_SIZE, textColor: MAIN_COLOR)
-        lblNewEmail.labelStyle(title: Localizable(value: "new_email"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblConfirmNewEmail.labelStyle(title: Localizable(value: "new_email_confirm"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblNewEmail.labelStyle(title: Localizable(value: "new_mail"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblConfirmNewEmail.labelStyle(title: Localizable(value: "new_mail_confirm"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         
         tfNewEmail.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         tfConfirmNewEmail.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)

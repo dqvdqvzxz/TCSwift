@@ -47,7 +47,7 @@ let STRING_TAKE_PHOTO_GALLERY =         Localizable(value: "take_photo_gallery")
 //MARK: Settings
 let STRING_SETTING =                    Localizable(value: "setting")
 let STRING_SETTING_EMAIL_CHANGE =       Localizable(value: "setting_email_change")
-let STRING_SETTING_PASSWORD_CHANGE =    Localizable(value: "setting_password_chage")
+let STRING_SETTING_PASSWORD_CHANGE =    Localizable(value: "setting_password_change")
 let STRING_SETTING_OTHER_SERIVCES =     Localizable(value: "setting_other_services")
 let STRING_SETTING_NOTIFY =             Localizable(value: "setting_notify")
 let STRING_SETTING_PASSCODE =           Localizable(value: "setting_passcode")

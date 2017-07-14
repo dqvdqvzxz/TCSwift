@@ -145,24 +145,24 @@
 "logout_confirm_message"                = "ログアウト後はログイン画面より再度ログインしてください。";
 
 ////Pharmacy Setting
-//"my_pharmacy_setting"                   = "My薬局設定";
-//"read_qrcode"                           = "QRコードを読み取る";
-//"register_my_pharmacy"                  = "My薬局に登録する";
-//
-//"point"                                 = "ポイント";
-//"search"                                = "検索";
-//"point_reference"                       = "ポイント照会";
-//"point_own"                             = "所持ポイント";
-//"point_history"                         = "ポイント履歴";
-//"point_use"                             = "ポイントを利用する";
-//"point_about"                           = "ポイントサービスについて";
-//
-////Reset pass
-//"reset_password"                        = "パスワード再設定";
-//"reset_password_input"                  = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";
-//"send_reset_password_mail"              = "ご入力いただいたメールアドレス宛に、パスワード再設定の案内メールを送信しました。";
-//"please_check_mail"                     = "メールの内容をご確認いただき、パスワードの再設定を行ってください。";
-//"setting_target"                        = "目標設定";
-//"walking_per_day"                       = "歩数（1日）";
-//"walking"                               = "歩";
-//"save"                                  = "保存";
+"my_pharmacy_setting"                   = "My薬局設定";
+"read_qrcode"                           = "QRコードを読み取る";
+"register_my_pharmacy"                  = "My薬局に登録する";
+
+"point"                                 = "ポイント";
+"search"                                = "検索";
+"point_reference"                       = "ポイント照会";
+"point_own"                             = "所持ポイント";
+"point_history"                         = "ポイント履歴";
+"point_use"                             = "ポイントを利用する";
+"point_about"                           = "ポイントサービスについて";
+
+//Reset pass
+"reset_password"                        = "パスワード再設定";
+"reset_password_input"                  = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";
+"send_reset_password_mail"              = "ご入力いただいたメールアドレス宛に、パスワード再設定の案内メールを送信しました。";
+"please_check_mail"                     = "メールの内容をご確認いただき、パスワードの再設定を行ってください。";
+"setting_target"                        = "目標設定";
+"walking_per_day"                       = "歩数（1日）";
+"walking"                               = "歩";
+"save"                                  = "保存";
