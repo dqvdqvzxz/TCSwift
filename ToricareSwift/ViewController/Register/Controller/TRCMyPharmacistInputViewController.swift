@@ -43,17 +43,17 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kMyPharmcy
+        self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //UI of outlet
-        btnPharmacistInput.buttonStyle(title: kMyPharmcy, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnPharmacistInput.buttonStyle(title: Localizable(value: "my_pharmacy_setting"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
     }
     
     //MARK: Button Action
     @IBAction func tapBtnPharmacistInput(_ sender: Any) {
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
         let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
+        backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }

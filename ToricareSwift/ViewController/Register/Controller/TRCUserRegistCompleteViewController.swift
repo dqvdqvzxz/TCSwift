@@ -37,7 +37,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     @IBAction func tapBtnUsingApp(_ sender: Any) {
         let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
         let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
+        backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }
