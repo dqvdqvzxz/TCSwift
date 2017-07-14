@@ -71,13 +71,13 @@
 //MARK: Settings
 "setting"                               = "設定";
 "setting_email_change"                  = "メールアドレス変更";
-"setting_password_chage"                = "パスワード変更";
+"setting_password_change"               = "パスワード変更";
 "setting_other_services"                = "他サービス連携";
 "setting_notify"                        = "お知らせ通知";
 "setting_passcode"                      = "パスコードロック";
 "setting_theme"                         = "カラーテーマ";
 "about_app"                             = "このアプリについて";
-"delete_account"                        = "退会";
+"resign"                                = "退会";
 "logout"                                = "ログアウト";
 
 //MARK: Change email
@@ -104,21 +104,52 @@
 "service_facebook"                      = "Facebook";
 
 //Notification
+"receive"                               = "プッシュ通知を受け取る";
+"notify_from_phamarcy"                  = "薬局からのお知らせ";
+"notify_from_tricare"                   = "トリケアからのお知らせ";
+"weight"                                = "体重";
+"breakfast"                             = "朝食";
+"lunch"                                 = "昼食";
+"dinner"                                = "夕食";
+"snack"                                 = "間食";
 
-//let kNotification =                     Localizable(value: "Notification")
-////passcode
-//let kPasscode =                         Localizable(value: "Passcode")
-////theme
-//let kTheme =                            Localizable(value: "Theme")
-//let kMainColor =                        Localizable(value: "Color 1")
-//let kMainColor2 =                       Localizable(value: "Color 2")
-//let kMainColor3 =                       Localizable(value: "Color 3")
-//let kMainColor4 =                       Localizable(value: "Color 4")
-////about app
-//let kAboutApp =                         Localizable(value: "About App")
-////user leave
-//let kUserLeave =                        Localizable(value: "Deactive User")
-////logout
-//let kLogout =                           Localizable(value: "Log out")
-//
+//Passcode Setting
+"enable_passcode"                       = "パスコードロックを有効にする";
+"change_passcode"                       = "パスコード変更する";
 
+"passcode_input"                        = "パスコードロックを入力してください。";
+"passcode_input"                        = "パスコードロックを入力してください。（確認）";
+
+//Color theme
+"setting_color_theme"                   = "カラーテーマ設定";
+"green"                                 = "グリーン（デフォルト）";
+"pink"                                  = "ピンク";
+"blue"                                  = "ブルー";
+"brown"                                 = "ブラウン";
+
+//About app
+"app_version"                           = "バージョン情報";
+"term_of_service"                       = "利用規約";
+"policy"                                = "プライバシーポリシー";
+"faq"                                   = "よくあるご質問";
+"question"                              = "お問い合わせ";
+
+//Resign account
+"resign_confirm"                        = "退会される前に必ずご確認ください。";
+"resign_agree_message"                  = "以上の注意事項について、ご同意いただいた上で、以下手続きへと進んでください。";
+"resign_agree"                          = "同意します。";
+"resign_button"                         = "退会する";
+"resign_complete"                       = "退会処理を完了しました。\nご利用ありがとうございました。";
+
+//Logout
+"logout_confirm_title"                  = "本当にログアウトしますか？";
+"logout_confirm_message"                = "ログアウト後はログイン画面より再度ログインしてください。";
+
+""                                 = "";
+""                                 = "";
+""                                 = "";
+""                                 = "";
+""                                 = "";
+""                                 = "";
+""                                 = "";
+""                                 = "";
