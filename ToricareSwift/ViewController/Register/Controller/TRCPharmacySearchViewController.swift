@@ -27,17 +27,17 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kMyPharmcy
+        self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //UI of outlet
-        btnSearch.buttonStyle(title: kSearch, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnSearch.buttonStyle(title: STRING_SEARCH, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
     }
 
     //Button Action
     @IBAction func tapBtnSearch(_ sender: Any) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
         let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
+        backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -7,25 +7,24 @@
 */
 
 //MARK: Alert message
-"OK" = "OK";
-"check_network_message" = "Please check network connection";
-"check_input_data_message" = "Please check data input";
-"warning" = "注意";
+"OK"                                    = "OK";
+"check_network_message"                 = "Please check network connection";
+"check_input_data_message"              = "Please check data input";
+"warning"                               = "注意";
 
 //MARK: Navigation
-"back" = "Back";
-"done" = "Done";
-"cancel" = "Cancel";
+"back"                                  = "Back";
+"done"                                  = "Done";
+"cancel"                                = "Cancel";
 
 //MARK: Tabbar
-"tab_home"                              = "Home";
-"tab_nutrition"                         = "Nutrition";
-"tab_exercise"                          = "Exercise";
-"tab_medicine"                          = "Medicine;
-"tab_mypage"                            = "My Page";
+"tab_home"                              = "ホーム";
+"tab_nutrition"                         = "栄養管理";
+"tab_exercise"                          = "運動管理";
+"tab_medicine"                          = "お薬管理";
+"tab_mypage"                            = "マイページ";
 
 //MARK: PreLoginViewController
-"member_register" = "Register";
 "do_login" = "Login";
 
 //MARK: RegisterViewController
@@ -45,7 +44,7 @@
 "last_name_kata"                        = "Last Name Kana";
 "birth_date"                            = "Birth Date";
 "gender"                                = "Gender";
-"male"                                  = "Male"";
+"male"                                  = "Male";
 "female"                                = "Female";
 "next_button"                           = "Next";
 
@@ -87,8 +86,8 @@
 "change_button"                         = "Change";
 
 "mail_sent_message1"                    = "確認メールを送信しました。";
-"mail_sent_message2"                    = "ご入力いただきました新しいメールアドレス宛にメールアドレス変更手続きの確認メールを送信いたしました。メール内のURLをクリック          して変更手続きを完了させてください。";
-"mail_sent_message3"                    = "※メールに記載されたURLをクリックしないまま24時間が経過した場合、ご変更依頼が無効となってしまいますのでご注意ください。\n※フリーメールアドレスをご利用の場合は 迷惑メールフォルダやゴミ箱に振り分けられてしまうことがありますのでご注意ください。\n※入力されたメールアドレスに誤りがあるとメールが届きません。\n※確認メールが届かない場合や確認メールの有効期限が切れてしまった場合は、再度、変更手続きを行ってください。";
+"mail_sent_message2"                    = "ご入力いただきました新しいメールアドレス宛にメールアドレス変更手続きの確認メールを送信いたしました。メール内のURLをクリックして変更手続きを完了させてください。";
+"mail_sent_message3"                    = "※メールに記載されたURLをクリックしないまま24時間が経過した場合、ご変更依頼が無効となってしまいますのでご注意ください。\n※フリーメールアドレスをご利用の場合は迷惑メールフォルダやゴミ箱に振り分けられてしまうことがありますのでご注意ください。\n※入力されたメールアドレスに誤りがあるとメールが届きません。\n※確認メールが届かない場合や確認メールの有効期限が切れてしまった場合は、再度、変更手続きを行ってください。";
 
 //Change pass
 "current_password"                      = "Current Password";
@@ -110,7 +109,7 @@
 "weight"                                = "Weight";
 "breakfast"                             = "Breakfast";
 "lunch"                                 = "Lunch";
-"dinner"                                = "Dinner"";
+"dinner"                                = "Dinner";
 "snack"                                 = "Snack";
 
 //Passcode Setting
@@ -145,11 +144,25 @@
 "logout_confirm_title"                  = "本当にログアウトしますか？";
 "logout_confirm_message"                = "ログアウト後はログイン画面より再度ログインしてください。";
 
-""                                 = "";
-""                                 = "";
-""                                 = "";
-""                                 = "";
-""                                 = "";
-""                                 = "";
-""                                 = "";
-""                                 = "";
+//Pharmacy Setting
+"my_pharmacy_setting"                   = "My Pharmacy Setting";
+"read_qrcode"                           = "Read QR Code";
+"register_my_pharmacy"                  = "Register My Pharmacy";
+
+"point"                                 = "Point";
+"search"                                = "Search";
+"point_reference"                       = "Point Reference";
+"point_own"                             = "Point Own";
+"point_history"                         = "Point History";
+"point_use"                             = "Point Use";
+"point_about"                           = "Point About";
+
+//Reset pass
+"reset_password"                        = "Reset Password";
+"reset_password_input"                  = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";
+"send_reset_password_mail"              = "ご入力いただいたメールアドレス宛に、パスワード再設定の案内メールを送信しました。";
+"please_check_mail"                     = "メールの内容をご確認いただき、パスワードの再設定を行ってください。";
+"setting_target"                        = "Target Setting";
+"walking_per_day"                       = "Target Per Day";
+"walking"                               = "Steps";
+"save"                                  = "Save";

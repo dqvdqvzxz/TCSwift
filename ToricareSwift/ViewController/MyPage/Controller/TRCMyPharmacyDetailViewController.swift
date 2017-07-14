@@ -46,7 +46,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation 
-        self.navigationItem.title = kMyPharmcy
+        self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //UI of outlet
         lblAddress.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
@@ -59,12 +59,12 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     func configMode(){
-        if(mode == "MyPage"){
-            btnQRCode.buttonStyle(title: kQRCode, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
-            btnPharmacy.buttonStyle(title: kChangePharmacy, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
-        }else if(mode == "Register"){
+        if(mode == MODE_MYPAGE){
+            btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+            btnPharmacy.buttonStyle(title: STRING_CHANGE, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        }else if(mode == MODE_REGISTER){
             btnQRCode.isHidden = true
-            btnPharmacy.buttonStyle(title: kRegisterPharmacy, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+            btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
         }
     }
     
@@ -84,12 +84,12 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnPharmacy(_ sender: Any) {
-        if(mode == "MyPage"){
+        if(mode == MODE_MYPAGE){
             //
-        }else if(mode == "Register"){
+        }else if(mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         }

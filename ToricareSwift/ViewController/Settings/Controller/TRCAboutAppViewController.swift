@@ -27,7 +27,7 @@ class TRCAboutAppViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kAboutApp
+        self.navigationItem.title = STRING_SETTING_ABOUT_APP
         
         //table view
         tblAboutApp.dataSource = self

@@ -20,16 +20,16 @@ let STRING_CANCEL =                     Localizable(value: "cancel")
 let STRING_NEXT =                       Localizable(value: "next_button")
 let STRING_SEND =                       Localizable(value: "send_title")
 let STRING_CHANGE =                     Localizable(value: "change_button")
+let STRING_SEARCH =                     Localizable(value: "search")
 
 //MARK: Tabbar
-let STRING_TAB_HOME_ =                  Localizable(value: "tab_home")
+let STRING_TAB_HOME =                   Localizable(value: "tab_home")
 let STRING_TAB_NUTRITION =              Localizable(value: "tab_nutrition")
 let STRING_TAB_EXERCISE =               Localizable(value: "tab_exercise")
 let STRING_TAB_MEDICINE =               Localizable(value: "tab_medicine")
 let STRING_TAB_MYPAGE =                 Localizable(value: "tab_mypage")
 
 //MARK: PreLoginViewController
-let STRING_MEMBER_REGISTER =            Localizable(value: "member_register")
 let STRING_DO_LOGIN =                   Localizable(value: "do_login")
 
 //MARK: RegisterViewController
@@ -63,7 +63,8 @@ let STRING_LUNCH =                      Localizable(value: "lunch")
 let STRING_DINNER =                     Localizable(value: "dinner")
 let STRING_SNACK =                      Localizable(value: "snack")
 
-
-
+//Pharmacy Mode
+let MODE_MYPAGE =                       "MODE_MYPAGE"
+let MODE_REGISTER =                     "MODE_REGISTER"
 
 

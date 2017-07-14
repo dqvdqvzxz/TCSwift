@@ -27,7 +27,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kNotification
+        self.navigationItem.title = STRING_SETTING_NOTIFY
         
         //table view
         tblNotify.dataSource = self

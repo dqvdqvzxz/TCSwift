@@ -30,14 +30,14 @@ class TRCThemeColorSettingViewController: TRCBaseViewController {
     //MARK: Config ui
     func configUI(){
         //navigation
-        self.navigationItem.title = kTheme
+        self.navigationItem.title = STRING_SETTING_THEME
         
         //table view
         tblTheme.dataSource = self
         tblTheme.delegate = self
         tblTheme.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        listTitleColors = [kMainColor, kMainColor2, kMainColor3, kMainColor4]
+        listTitleColors = [Localizable(value: "green"), Localizable(value: "pink"), Localizable(value: "blue"), Localizable(value: "brown")]
         
         listColors = [MAIN_COLOR, MAIN_COLOR_2, MAIN_COLOR_3, MAIN_COLOR_4]
         

@@ -35,25 +35,25 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = kChangePass
+        self.navigationItem.title = STRING_SETTING_PASSWORD_CHANGE
         
         //UI of outlet
-        lblCurrentPassword.labelStyle(title: kCurrentPassword, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblNewPassword.labelStyle(title: kNewPassword, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblConfirmNewPassword.labelStyle(title: kConfirmNewPassword, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblCurrentPassword.labelStyle(title: Localizable(value: "current_password"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblNewPassword.labelStyle(title: Localizable(value: "new_password"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblConfirmNewPassword.labelStyle(title: Localizable(value: "new_password_confirm"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         
-        tfCurrentPassword.textFieldStyle(placeHolder: kCurrentPasswordPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfNewPassword.textFieldStyle(placeHolder: kNewPasswordPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfConfirmNewPassword.textFieldStyle(placeHolder: kConfirmNewPasswordPH, fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfCurrentPassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfNewPassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfConfirmNewPassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         
-        btnConfirm.buttonStyle(title: kConfirm, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnConfirm.buttonStyle(title: STRING_CHANGE, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
     }
     
     //MARK: Button Action
     @IBAction func tapBtnConfirm(_ sender: Any) {
         let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
         let backItem = UIBarButtonItem()
-        backItem.title = kBackButton
+        backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }

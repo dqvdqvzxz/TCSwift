@@ -21,7 +21,7 @@ class TRCPointDetailCell: UITableViewCell {
         lblTitle.labelStyle(title: nil, fontSize: LABEL_FONT_CELL_TITLE_SIZE, textColor: LABEL_FONT_COLOR)
         lblSubTitle.labelStyle(title: nil, fontSize: LABEL_FONT_CELL_SUBTITLE_SIZE, textColor: LABEL_FONT_COLOR)
         lblPoint.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblPointUnit.labelStyle(title: kPointUnit, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblPointUnit.labelStyle(title: Localizable(value: "point"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

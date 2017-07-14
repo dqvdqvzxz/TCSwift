@@ -34,11 +34,11 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = ""
+        self.navigationItem.title = Localizable(value: "setting_target")
         
         //UI of outlet
-        lblTitle.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblSteps.labelStyle(title: kSteps, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblTitle.labelStyle(title: Localizable(value: "walking_per_day"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblSteps.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         
         btnSave.buttonStyle(title: nil, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
         

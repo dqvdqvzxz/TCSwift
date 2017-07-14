@@ -14,14 +14,14 @@ private func presentViewController(alert: UIAlertController, animated flag: Bool
 
 func Alert(title: String){
     let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
-    let action = UIAlertAction(title: kAlertOk, style: .default, handler: nil)
+    let action = UIAlertAction(title: STRING_OK, style: .default, handler: nil)
     alert.addAction(action)
     presentViewController(alert: alert, animated: true, completion: nil)
 }
 
 func Alert2(title: String, message: String){
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let action = UIAlertAction(title: kAlertOk, style: .default, handler: nil)
+    let action = UIAlertAction(title: STRING_OK, style: .default, handler: nil)
     alert.addAction(action)
     presentViewController(alert: alert, animated: true, completion: nil)
 }

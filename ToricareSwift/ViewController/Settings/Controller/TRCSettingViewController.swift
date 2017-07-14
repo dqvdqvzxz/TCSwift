@@ -33,14 +33,16 @@ class TRCSettingViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation 
-        self.navigationItem.title = kTitleSetting
+        self.navigationItem.title = STRING_SETTING
         
         //table view
         tblSetting.dataSource = self
         tblSetting.delegate = self
         tblSetting.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        listItems = [kChangeEmail, kChangePass, kLinkedService, kNotification, kPasscode, kTheme, kAboutApp, kUserLeave, kLogout]
+        listItems = [STRING_SETTING_EMAIL_CHANGE, STRING_SETTING_PASSWORD_CHANGE, STRING_SETTING_OTHER_SERIVCES,
+                     STRING_SETTING_NOTIFY, STRING_SETTING_PASSCODE, STRING_SETTING_THEME,
+                     STRING_SETTING_ABOUT_APP, STRING_SETTING_RESIGN, STRING_SETTING_LOGOUT]
         
         tblSetting.tableFooterView = UIView()
     }
@@ -71,49 +73,49 @@ extension TRCSettingViewController: UITableViewDelegate{
         case 0:
             let vc = TRCEmailChangeInputViewController(nibName: "TRCEmailChangeInputViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
             let vc = TRCPasswordChangeViewController(nibName: "TRCPasswordChangeViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCLinkedServicesViewController(nibName: "TRCLinkedServicesViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCNotificationSettingViewController(nibName: "TRCNotificationSettingViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
             let vc = TRCPasscodeLockSettingViewController(nibName: "TRCPasscodeLockSettingViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 5:
             let vc = TRCThemeColorSettingViewController(nibName: "TRCThemeColorSettingViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 6:
             let vc = TRCAboutAppViewController(nibName: "TRCAboutAppViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 7:
             let vc = TRCUserLeaveViewController(nibName: "TRCUserLeaveViewController", bundle: nil)
             let backItem = UIBarButtonItem()
-            backItem.title = kBackButton
+            backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 8:
