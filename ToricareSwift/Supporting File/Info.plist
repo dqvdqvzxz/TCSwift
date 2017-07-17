@@ -61,7 +61,13 @@
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) camera use</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>$(PRODUCT_NAME) heath share use</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>$(PRODUCT_NAME) heath update use</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>{human-readable reason for photo access}</string>
+	<string>$(PRODUCT_NAME) photo use</string>
 </dict>
 </plist>

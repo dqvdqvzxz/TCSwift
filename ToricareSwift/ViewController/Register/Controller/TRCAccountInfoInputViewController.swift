@@ -38,7 +38,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     let datePicker = UIDatePicker()
     
-    var dataGender = ["", Localizable(value: "male"), Localizable(value: "female")]
+    var dataGender = [Localizable(value: "male"), Localizable(value: "female")]
     var genderPicker = UIPickerView()
     
     var editMode = Bool()
@@ -71,22 +71,22 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         tfDateOfBirth.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         tfGender.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
         
+        self.navigationItem.title = Localizable(value: "register_title")
+
         if(editMode == true){
-            self.navigationItem.title = Localizable(value: "register_title")
             self.navigationItem.hidesBackButton = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
             
             btnNext.isHidden = true
         }else{
-            self.navigationItem.title = Localizable(value: "register_title")
-            
             btnNext.buttonStyle(title: STRING_NEXT, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
             self.navigationItem.hidesBackButton = true
         }
         
         //make image circle
-        imgUser.makeCircle()
-        
+        //imgUser.makeCircle()
+        // make border image
+        imgUser.makeBorder()
         //date of birth
         showDatePicker()
         
@@ -144,7 +144,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     func donedatePicker(){
         //For date formate
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "yyyy年MM月dd日"
         tfDateOfBirth.text = formatter.string(from: datePicker.date)
         //dismiss date picker dialog
         self.view.endEditing(true)
