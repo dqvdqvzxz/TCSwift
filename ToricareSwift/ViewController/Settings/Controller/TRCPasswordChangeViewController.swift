@@ -38,15 +38,15 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_SETTING_PASSWORD_CHANGE
         
         //UI of outlet
-        lblCurrentPassword.labelStyle(title: Localizable(value: "current_password"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblNewPassword.labelStyle(title: Localizable(value: "new_password"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblConfirmNewPassword.labelStyle(title: Localizable(value: "new_password_confirm"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblCurrentPassword.labelStyle(title: Localizable(value: "current_password"))
+        lblNewPassword.labelStyle(title: Localizable(value: "new_password"))
+        lblConfirmNewPassword.labelStyle(title: Localizable(value: "new_password_confirm"))
         
-        tfCurrentPassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfNewPassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfConfirmNewPassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfCurrentPassword.textFieldStyle(placeHolder: "")
+        tfNewPassword.textFieldStyle(placeHolder: "")
+        tfConfirmNewPassword.textFieldStyle(placeHolder: "")
         
-        btnConfirm.buttonStyle(title: STRING_CHANGE, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnConfirm.buttonStyle(title: STRING_CHANGE)
     }
     
     //MARK: Button Action

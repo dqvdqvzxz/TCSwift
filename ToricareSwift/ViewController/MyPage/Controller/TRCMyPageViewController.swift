@@ -43,9 +43,9 @@ class TRCMyPageViewController: TRCBaseViewController {
         //UI of outlet
         viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
-        lblName.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblTarget.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblPharmacist.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblName.labelStyle(title: nil)
+        lblTarget.labelStyle(title: nil)
+        lblPharmacist.labelStyle(title: nil)
         
         clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
         

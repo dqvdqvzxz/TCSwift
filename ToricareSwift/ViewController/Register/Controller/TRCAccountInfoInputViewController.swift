@@ -57,19 +57,19 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //UI of outlet
-        lblFirstName.labelStyle(title: Localizable(value: "first_name"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblLastName.labelStyle(title: Localizable(value: "last_name"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblFirstNameKata.labelStyle(title: Localizable(value: "first_name_kata"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblLastNameKata.labelStyle(title: Localizable(value: "last_name_kata"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblDateOfBirth.labelStyle(title: Localizable(value: "birth_date"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblGender.labelStyle(title: Localizable(value: "gender"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblFirstName.labelStyle(title: Localizable(value: "first_name"))
+        lblLastName.labelStyle(title: Localizable(value: "last_name"))
+        lblFirstNameKata.labelStyle(title: Localizable(value: "first_name_kata"))
+        lblLastNameKata.labelStyle(title: Localizable(value: "last_name_kata"))
+        lblDateOfBirth.labelStyle(title: Localizable(value: "birth_date"))
+        lblGender.labelStyle(title: Localizable(value: "gender"))
         
-        tfFirstName.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfLastName.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfFirstNameKata.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfLastNameKata.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfDateOfBirth.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfGender.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfFirstName.textFieldStyle(placeHolder: "")
+        tfLastName.textFieldStyle(placeHolder: "")
+        tfFirstNameKata.textFieldStyle(placeHolder: "")
+        tfLastNameKata.textFieldStyle(placeHolder: "")
+        tfDateOfBirth.textFieldStyle(placeHolder: "")
+        tfGender.textFieldStyle(placeHolder: "")
         
         if(editMode == true){
             self.navigationItem.title = Localizable(value: "register_title")
@@ -80,7 +80,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         }else{
             self.navigationItem.title = Localizable(value: "register_title")
             
-            btnNext.buttonStyle(title: STRING_NEXT, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+            btnNext.buttonStyle(title: STRING_NEXT)
             self.navigationItem.hidesBackButton = true
         }
         

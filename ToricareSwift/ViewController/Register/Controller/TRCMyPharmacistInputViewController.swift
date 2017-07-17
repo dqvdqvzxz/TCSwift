@@ -46,7 +46,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //UI of outlet
-        btnPharmacistInput.buttonStyle(title: Localizable(value: "my_pharmacy_setting"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnPharmacistInput.buttonStyle(title: Localizable(value: "my_pharmacy_setting"))
     }
     
     //MARK: Button Action

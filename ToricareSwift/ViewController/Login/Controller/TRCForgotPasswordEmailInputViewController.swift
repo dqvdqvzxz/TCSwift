@@ -34,12 +34,12 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "reset_password")
         
         //UI of outlet
-        lblPolicy.labelStyle(title: Localizable(value: "reset_password_input"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblEmail.labelStyle(title: STRING_MAIL_ADDRESS, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblPolicy.labelStyle(title: Localizable(value: "reset_password_input"))
+        lblEmail.labelStyle(title: STRING_MAIL_ADDRESS)
         
-        tfEmail.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfEmail.textFieldStyle(placeHolder: "")
         
-        btnSendEmail.buttonStyle(title: STRING_SEND, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnSendEmail.buttonStyle(title: STRING_SEND)
     }
     
     //MARK: Button Action

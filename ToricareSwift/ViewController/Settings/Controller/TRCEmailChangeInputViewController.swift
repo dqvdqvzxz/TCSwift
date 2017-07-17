@@ -40,15 +40,15 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_SETTING_EMAIL_CHANGE
         
         //UI of outlet
-        lblCurrentEmail.labelStyle(title: Localizable(value: "current_email"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblCurrentEmail.labelStyle(title: Localizable(value: "current_email"))
         lblCurrentEmailResult.labelStyle(title: "test@tricare.com", fontSize: LABEL_FONT_SIZE, textColor: MAIN_COLOR)
-        lblNewEmail.labelStyle(title: Localizable(value: "new_mail"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblConfirmNewEmail.labelStyle(title: Localizable(value: "new_mail_confirm"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblNewEmail.labelStyle(title: Localizable(value: "new_mail"))
+        lblConfirmNewEmail.labelStyle(title: Localizable(value: "new_mail_confirm"))
         
-        tfNewEmail.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfConfirmNewEmail.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfNewEmail.textFieldStyle(placeHolder: "")
+        tfConfirmNewEmail.textFieldStyle(placeHolder: "")
         
-        btnConfirm.buttonStyle(title: STRING_CHANGE, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnConfirm.buttonStyle(title: STRING_CHANGE)
     }
     
     //MARK: Button Action
