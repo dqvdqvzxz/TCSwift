@@ -9,7 +9,13 @@
 import UIKit
 
 extension UITextField{
-    func textFieldStyle(placeHolder: String?, fontSize: CGFloat?, textColor: String?, borderWidth: CGFloat?, borderColor: String?, radius: CGFloat?, backgroundColor: String?){
+    func textFieldStyle(placeHolder: String?,
+                        fontSize: CGFloat? = TEXTFIELD_FONT_SIZE,
+                        textColor: String? = TEXTFIELD_FONT_COLOR,
+                        borderWidth: CGFloat? = TEXTFIELD_BORDER_WIDTH,
+                        borderColor: String? = TEXTFIELD_BORDER_COLOR,
+                        radius: CGFloat? = TEXTFIELD_RADIUS,
+                        backgroundColor: String? = TEXTFIELD_BACKGROUND){
         let textField = self
         if(placeHolder != nil){
             textField.placeholder = placeHolder!
