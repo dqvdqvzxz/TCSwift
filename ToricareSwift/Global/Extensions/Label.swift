@@ -15,7 +15,7 @@ extension UILabel{
             label.text = title
         }
         if(fontSize != nil){
-            label.font = label.font.withSize(fontSize!)
+            label.font = UIFont.init(name: "HiraginoSans-W3", size: fontSize!)//label.font.withSize(fontSize!)
         }
         if(textColor != nil){
             label.textColor = UIColor.init(hexString: textColor!)
