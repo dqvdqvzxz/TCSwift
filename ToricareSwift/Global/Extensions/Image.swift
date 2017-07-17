@@ -14,4 +14,9 @@ extension UIImageView{
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
     }
+    
+    func makeBorder(){
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = UIColor.lightGray.cgColor
+    }
 }

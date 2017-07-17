@@ -27,6 +27,7 @@ class TRCBaseViewController: UIViewController {
         _obj.nc3.navigationBar.isHidden = false
         _obj.nc4.navigationBar.isHidden = false
         _obj.nc5.navigationBar.isHidden = false
+        self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
     }
     
     override func didReceiveMemoryWarning() {
