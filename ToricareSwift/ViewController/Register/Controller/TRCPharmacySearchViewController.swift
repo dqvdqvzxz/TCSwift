@@ -23,7 +23,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     @IBOutlet weak var btnSearchLocation: UIButton!
     @IBOutlet weak var btnSearchCurrentLocation: UIButton!
     
-    let pageViewController = UIPageViewController()
+    let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     var pageSelectedButton = UIButton()
     
@@ -58,15 +58,21 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     }
     
     func configPageView(){
+        //page view
         pageViewController.dataSource = self
         
         pageViewController.setViewControllers([pageContentViewController.first!], direction: .forward, animated: true, completion: nil)
         pageViewController.view.frame = viewContent.bounds
+        pageViewController.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        
+        viewContent.layer.borderWidth = 1
         
         viewContent.addSubview(pageViewController.view)
         
-        btnSearchLocation.addTarget(self, action: #selector(tapBtnSearch(_:)), for: .touchUpInside)
-        btnSearchCurrentLocation.addTarget(self, action: #selector(tapBtnSearch(_:)), for: .touchUpInside)
+        //page button
+        btnSearchLocation.addTarget(self, action: #selector(tapPageButton(_:)), for: .touchUpInside)
+        pageSelectedButton = btnSearchLocation
+        btnSearchCurrentLocation.addTarget(self, action: #selector(tapPageButton(_:)), for: .touchUpInside)
         
         self.automaticallyAdjustsScrollViewInsets = true
     }
