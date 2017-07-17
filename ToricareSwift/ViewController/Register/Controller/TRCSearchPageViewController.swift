@@ -29,10 +29,6 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         self.setDataSource(newDataSource: self)
         self.setDelegate(newDelegate: self)
         
-        self.padding = 10
-        self.leadingPadding = 10
-        self.trailingPadding = 10
-        
         //default page
         self.defaultDisplayPageIndex = 0
         
@@ -40,8 +36,9 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         self.tabAnimationType = GLTabAnimationType.GLTabAnimationType_WhileScrolling
         self.indicatorColor = UIColor.init(hexString: MAIN_COLOR)
         
+        //size of t
         self.supportArabic = false
-        self.fixTabWidth = false
+        self.tabWidth = view.frame.size.width / 2
         
         //init view
         self.viewControllers = [
@@ -61,11 +58,14 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDataSource{
     }
     
     func viewForTabIndex(_ viewPager: GLViewPagerViewController, index: Int) -> UIView {
+        //init label
         let label:UILabel = UILabel.init()
         label.text = self.tabTitles.object(at: index) as? String
+        
+        //style for label
         label.textColor = UIColor.init(colorLiteralRed: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
         label.textAlignment = NSTextAlignment.center
-        label.transform = CGAffineTransform.init(scaleX: 0.9, y: 0.9)
+                                                                                         
         return label
     }
     
@@ -78,8 +78,7 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
     func didChangeTabToIndex(_ viewPager: GLViewPagerViewController, index: Int, fromTabIndex: Int) {
         let prevLabel:UILabel = viewPager.tabViewAtIndex(index: fromTabIndex) as! UILabel
         let currentLabel:UILabel = viewPager.tabViewAtIndex(index: index) as! UILabel
-        prevLabel.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
-        currentLabel.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
+
         prevLabel.textColor = UIColor.init(colorLiteralRed: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
         currentLabel.textColor = UIColor.init(colorLiteralRed: 0.5, green: 0.0, blue: 0.5, alpha: 1.0)
     }
@@ -89,21 +88,9 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
             return;
         }
         
-        let prevLabel:UILabel = viewPager.tabViewAtIndex(index: fromTabIndex) as! UILabel
-        let currentLabel:UILabel = viewPager.tabViewAtIndex(index: index) as! UILabel
-        prevLabel.transform = CGAffineTransform.identity.scaledBy(x: 1.0 - (0.1 * progress), y: 1.0 - (0.1 * progress))
-        currentLabel.transform = CGAffineTransform.identity.scaledBy(x: 0.9 + (0.1 * progress), y: 0.9 + (0.1 * progress))
-        currentLabel.textColor =  UIColor.init(colorLiteralRed: Float(0.3 + 0.2 * progress), green: Float(0.3 - 0.3 * progress), blue: Float(0.3 + 0.2 * progress), alpha: 1.0)
-        prevLabel.textColor = UIColor.init(colorLiteralRed: Float(0.5 - 0.2 * progress), green: Float(0.0 + 0.3 * progress), blue: Float(0.5 - 0.2 * progress), alpha: 1.0)
     }
     
     func widthForTabIndex(_ viewPager: GLViewPagerViewController, index: Int) -> CGFloat {
-//        let prototypeLabel:UILabel = UILabel.init()
-//        prototypeLabel.text = self.tabTitles.object(at: index) as? String
-//        prototypeLabel.textAlignment = NSTextAlignment.center
-//        prototypeLabel.font = UIFont.systemFont(ofSize: 16.0)
-        print(view.frame.size.width)
-        print(view.frame.size.width/2)
         return (view.frame.size.width / 2)
     }
 }
