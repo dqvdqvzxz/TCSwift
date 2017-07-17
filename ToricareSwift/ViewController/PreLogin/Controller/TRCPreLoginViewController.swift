@@ -34,10 +34,10 @@ class TRCPreLoginViewController: TRCBaseViewController {
     
     //MARK: Congig UI
     func configUI(){
-        btnRegister.buttonStyle(title: STRING_REGISTER, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnRegister.buttonStyle(title: STRING_REGISTER)
         
-        btnLogin.buttonStyle(title: STRING_DO_LOGIN, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
-            }
+        btnLogin.buttonStyle(title: STRING_DO_LOGIN)
+    }
 
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {

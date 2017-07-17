@@ -49,34 +49,34 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //UI of outlet
-        lblAddress.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblPhone.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblWorkSchedule.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblDayOff.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblWebsite.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblAddress.labelStyle(title: nil)
+        lblPhone.labelStyle(title: nil)
+        lblWorkSchedule.labelStyle(title: nil)
+        lblDayOff.labelStyle(title: nil)
+        lblWebsite.labelStyle(title: nil)
         
         configMode()
     }
     
     func configMode(){
         if(mode == MODE_MYPAGE){
-            btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
-            btnPharmacy.buttonStyle(title: STRING_CHANGE, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+            btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
+            btnPharmacy.buttonStyle(title: STRING_CHANGE)
         }else if(mode == MODE_REGISTER){
             btnQRCode.isHidden = true
-            btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+            btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }
     }
     
     //MARK: Config Data
     func configData(){
-        lblPharmacyName.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblAddressResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblPhoneResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblWorkScheduleResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblWorkScheduleDayOffResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblDayOffResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
-        lblWebsiteResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        lblPharmacyName.labelStyle(title: nil)
+        lblAddressResult.labelStyle(title: nil)
+        lblPhoneResult.labelStyle(title: nil)
+        lblWorkScheduleResult.labelStyle(title: nil)
+        lblWorkScheduleDayOffResult.labelStyle(title: nil)
+        lblDayOffResult.labelStyle(title: nil)
+        lblWebsiteResult.labelStyle(title: nil)
         
         // Test data
         lblPharmacyName.text = "東京都世田谷区3-24-4";

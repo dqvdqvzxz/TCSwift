@@ -34,10 +34,10 @@ class TRCForgotPasswordSentViewController: TRCBaseViewController {
         self.navigationItem.hidesBackButton = true
         
         //UI of outlet
-        lblInform1.labelStyle(title: Localizable(value: "send_reset_password_mail"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblInform2.labelStyle(title: Localizable(value: "please_check_mail"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblInform1.labelStyle(title: Localizable(value: "send_reset_password_mail"))
+        lblInform2.labelStyle(title: Localizable(value: "please_check_mail"))
         
-        btnBackToHome.buttonStyle(title: Localizable(value: "back_to_top"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnBackToHome.buttonStyle(title: Localizable(value: "back_to_top"))
     }
     
     //MARK: Button Action

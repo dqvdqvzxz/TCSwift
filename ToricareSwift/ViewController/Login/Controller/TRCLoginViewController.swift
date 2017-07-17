@@ -45,17 +45,18 @@ class TRCLoginViewController: TRCBaseViewController {
 
         
         //UI of outlet
-        lblUsername.labelStyle(title: STRING_MAIL_ADDRESS, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblPassword.labelStyle(title: STRING_PASSWORD, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblUsername.labelStyle(title: STRING_MAIL_ADDRESS)
+        lblPassword.labelStyle(title: STRING_PASSWORD)
         lblForgotPassword.labelStyle(title: Localizable(value: "forgot_password_title"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FORGOT_PASSWORD_FONT_COLOR)
         lblForgotPassword.attributedText = NSAttributedString(string: Localizable(value: "forgot_password_title"), attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
-        lblOr.labelStyle(title: Localizable(value: "or"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblOr.labelStyle(title: Localizable(value: "or"))
         
-        tfUsername.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfPassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfUsername.textFieldStyle(placeHolder: "")
+        tfPassword.textFieldStyle(placeHolder: "")
         
-        btnLogin.buttonStyle(title: STRING_DO_LOGIN, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
-        btnLoginWithFB.buttonStyle(title: Localizable(value: "login_fb"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_REGISTER_FB_BORDER, radius: BUTTON_RADIUS, backgroundColor: BUTTON_REGISTER_FB)
+        btnLogin.buttonStyle(title: STRING_DO_LOGIN)
+        btnLoginWithFB.buttonStyle(title: Localizable(value: "login_fb"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BUTTON_REGISTER_FB)
+
 
         //add target action
         btnLoginWithFB.addTarget(self, action: #selector(loginFB), for: .touchUpInside)

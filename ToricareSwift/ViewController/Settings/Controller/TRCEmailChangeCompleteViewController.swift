@@ -30,7 +30,7 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_SETTING_EMAIL_CHANGE
         
         //UI of outlet
-        btnBackToMyPage.buttonStyle(title: Localizable(value: "back_to_top"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnBackToMyPage.buttonStyle(title: Localizable(value: "back_to_top"))
     }
     
     //MARK: Button Action

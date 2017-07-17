@@ -41,17 +41,17 @@ class TRCRegisterViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_REGISTER
         
         //UI of outlet
-        lblUsername.labelStyle(title: STRING_MAIL_ADDRESS, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblPassword.labelStyle(title: STRING_PASSWORD, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblRePassword.labelStyle(title: Localizable(value: "password_confirm"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
-        lblOr.labelStyle(title: Localizable(value: "or"), fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        lblUsername.labelStyle(title: STRING_MAIL_ADDRESS)
+        lblPassword.labelStyle(title: STRING_PASSWORD)
+        lblRePassword.labelStyle(title: Localizable(value: "password_confirm"))
+        lblOr.labelStyle(title: Localizable(value: "or"))
         
-        tfUsername.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfPassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
-        tfRePassword.textFieldStyle(placeHolder: "", fontSize: TEXTFIELD_FONT_SIZE, textColor: TEXTFIELD_FONT_COLOR, borderWidth: TEXTFIELD_BORDER_WIDTH, borderColor: TEXTFIELD_BORDER_COLOR, radius: TEXTFIELD_RADIUS, backgroundColor: nil)
+        tfUsername.textFieldStyle(placeHolder: "")
+        tfPassword.textFieldStyle(placeHolder: "")
+        tfRePassword.textFieldStyle(placeHolder: "")
         
-        btnRegister.buttonStyle(title: Localizable(value: "register_mail"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
-        btnRegisterWithFB.buttonStyle(title: Localizable(value: "register_fb"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_REGISTER_FB_BORDER, radius: BUTTON_RADIUS, backgroundColor: BUTTON_REGISTER_FB)
+        btnRegister.buttonStyle(title: Localizable(value: "register_mail"))
+        btnRegisterWithFB.buttonStyle(title: Localizable(value: "register_fb"))
     }
     
     //MARK: Button Action
