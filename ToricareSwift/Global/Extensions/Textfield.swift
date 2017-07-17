@@ -17,11 +17,12 @@ extension UITextField{
                         radius: CGFloat? = TEXTFIELD_RADIUS,
                         backgroundColor: String? = TEXTFIELD_BACKGROUND){
         let textField = self
+        
         if(placeHolder != nil){
             textField.placeholder = placeHolder!
         }
         if(fontSize != nil){
-            textField.font = textField.font?.withSize(fontSize!)
+            textField.font = UIFont.init(name: "HiraginoSans-W3", size: fontSize!)// textField.font?.withSize(fontSize!)
         }
         if(textColor != nil){
             textField.textColor = UIColor.init(hexString: textColor!)

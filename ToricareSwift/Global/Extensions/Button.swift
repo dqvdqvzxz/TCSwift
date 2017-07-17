@@ -21,7 +21,7 @@ extension UIButton{
             button.setTitle(title, for: UIControlState.normal)
         }
         if(fontSize != nil){
-            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: fontSize!)
+            button.titleLabel?.font = UIFont.init(name: "HiraginoSans-W6", size: fontSize!)//UIFont.boldSystemFont(ofSize: fontSize!)
         }
         if(titleColor != nil){
             button.setTitleColor(UIColor.init(hexString: titleColor!), for: UIControlState.normal)
