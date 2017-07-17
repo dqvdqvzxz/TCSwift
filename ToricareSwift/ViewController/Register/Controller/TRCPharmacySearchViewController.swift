@@ -15,23 +15,8 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     @IBOutlet weak var tfSearch: UITextField!
     
     @IBOutlet weak var viewPage: UIView!
-    @IBOutlet weak var viewBtnSearchLocation: UIView!
-    @IBOutlet weak var viewBtnSearchCurrentLocation: UIView!
-    @IBOutlet weak var viewContent: UIView!
     
     @IBOutlet weak var btnSearch: UIButton!
-    @IBOutlet weak var btnSearchLocation: UIButton!
-    @IBOutlet weak var btnSearchCurrentLocation: UIButton!
-    
-    let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-    
-    var pageSelectedButton = UIButton()
-    
-    let pageContentViewController = [
-        UIViewController(nibName: "TRCSearchLocationPageView", bundle: nil),
-        UIViewController(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
-    ]
-
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -55,40 +40,14 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         
         //set up page view
         configPageView()
+        
     }
     
     func configPageView(){
-        //page view
-        pageViewController.dataSource = self
-        
-        pageViewController.setViewControllers([pageContentViewController.first!], direction: .forward, animated: true, completion: nil)
-        pageViewController.view.frame = viewContent.bounds
-        pageViewController.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-        
-        viewContent.layer.borderWidth = 1
-        
-        viewContent.addSubview(pageViewController.view)
-        
-        //page button
-        btnSearchLocation.addTarget(self, action: #selector(tapPageButton(_:)), for: .touchUpInside)
-        pageSelectedButton = btnSearchLocation
-        btnSearchCurrentLocation.addTarget(self, action: #selector(tapPageButton(_:)), for: .touchUpInside)
-        
-        self.automaticallyAdjustsScrollViewInsets = true
-    }
-    
-    //MARK: Action
-    func tapPageButton(_ button: UIButton){
-        let selectedButtonIndex: NSInteger!
-        pageSelectedButton = button
-        
-        if(button == btnSearchLocation){
-            selectedButtonIndex = 0
-        }else{
-            selectedButtonIndex = 1
-        }
-        
-        pageViewController.setViewControllers([pageContentViewController[selectedButtonIndex]], direction: .forward, animated: true, completion: nil)
+        let testVC =  TRCSearchPageViewController(nibName: "TRCSearchPageViewController", bundle: nil)
+        testVC.view.frame = viewPage.bounds
+        viewPage.layer.borderWidth = 1
+        viewPage.addSubview(testVC.view)
     }
 
     //Button Action
@@ -98,27 +57,5 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-extension TRCPharmacySearchViewController: UIPageViewControllerDataSource{
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return pageContentViewController.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 0
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let currentIndex = pageContentViewController.index(of: viewController)!
-        let previousIndex = abs((currentIndex - 1) % pageContentViewController.count)
-        return pageContentViewController[previousIndex]
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let currentIndex = pageContentViewController.index(of: viewController)!
-        let nextIndex = abs((currentIndex + 1) % pageContentViewController.count)
-        return pageContentViewController[nextIndex]
     }
 }

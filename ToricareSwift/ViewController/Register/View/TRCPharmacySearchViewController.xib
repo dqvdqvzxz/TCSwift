@@ -6,22 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCPharmacySearchViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
                 <outlet property="btnSearch" destination="IXp-Sd-Wh6" id="LdB-p5-Tlf"/>
-                <outlet property="btnSearchCurrentLocation" destination="bnN-XG-yho" id="x5v-1Y-ya3"/>
-                <outlet property="btnSearchLocation" destination="1jo-pP-XAg" id="OBd-LA-a0u"/>
                 <outlet property="lblInform" destination="ylI-el-MrL" id="l5n-TS-9D3"/>
                 <outlet property="tfSearch" destination="bH1-uF-8Ll" id="FoR-jf-fnD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="viewBtnSearchCurrentLocation" destination="uW5-fz-Tg9" id="zho-n3-BRu"/>
-                <outlet property="viewBtnSearchLocation" destination="JQ6-nA-osa" id="5V6-wq-NcH"/>
-                <outlet property="viewContent" destination="t8Q-Rt-VDd" id="hQm-Bb-1hX"/>
-                <outlet property="viewPage" destination="uW5-fz-Tg9" id="dB4-wq-zgL"/>
+                <outlet property="viewPage" destination="yP4-SQ-1hu" id="RCp-MG-9dl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -49,59 +43,7 @@
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yP4-SQ-1hu" userLabel="viewPage">
                     <rect key="frame" x="0.0" y="198" width="375" height="405"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQ6-nA-osa" userLabel="viewBtnSearchLocation">
-                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jo-pP-XAg" userLabel="btnSearchLocation">
-                                    <rect key="frame" x="10" y="0.0" width="167.5" height="44"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="1jo-pP-XAg" firstAttribute="top" secondItem="JQ6-nA-osa" secondAttribute="top" id="5U1-G6-BUe"/>
-                                <constraint firstItem="1jo-pP-XAg" firstAttribute="leading" secondItem="JQ6-nA-osa" secondAttribute="leading" constant="10" id="BKp-6l-izb"/>
-                                <constraint firstAttribute="bottom" secondItem="1jo-pP-XAg" secondAttribute="bottom" id="Mgu-UW-DuR"/>
-                                <constraint firstAttribute="height" constant="44" id="r7L-Ku-Kxj"/>
-                                <constraint firstAttribute="trailing" secondItem="1jo-pP-XAg" secondAttribute="trailing" constant="10" id="yfV-yr-svb"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uW5-fz-Tg9" userLabel="viewBtnSearchCurrentLocation">
-                            <rect key="frame" x="177.5" y="0.0" width="187.5" height="44"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnN-XG-yho" userLabel="btnSearchCurrentLocation">
-                                    <rect key="frame" x="10" y="0.0" width="167.5" height="44"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="bnN-XG-yho" firstAttribute="leading" secondItem="uW5-fz-Tg9" secondAttribute="leading" constant="10" id="160-xB-tTH"/>
-                                <constraint firstAttribute="trailing" secondItem="bnN-XG-yho" secondAttribute="trailing" constant="10" id="3US-zC-00L"/>
-                                <constraint firstAttribute="bottom" secondItem="bnN-XG-yho" secondAttribute="bottom" id="Kib-9F-9GC"/>
-                                <constraint firstItem="bnN-XG-yho" firstAttribute="top" secondItem="uW5-fz-Tg9" secondAttribute="top" id="PrD-MU-9eB"/>
-                                <constraint firstAttribute="height" constant="44" id="XD8-7q-zUZ"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8Q-Rt-VDd" userLabel="viewContent">
-                            <rect key="frame" x="0.0" y="44" width="375" height="361"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="uW5-fz-Tg9" firstAttribute="width" secondItem="yP4-SQ-1hu" secondAttribute="width" multiplier="1:2" id="2JF-xP-9iN"/>
-                        <constraint firstItem="JQ6-nA-osa" firstAttribute="leading" secondItem="yP4-SQ-1hu" secondAttribute="leading" id="F8s-pW-Ngn"/>
-                        <constraint firstItem="JQ6-nA-osa" firstAttribute="width" secondItem="yP4-SQ-1hu" secondAttribute="width" multiplier="1:2" id="UWt-mf-tod"/>
-                        <constraint firstAttribute="trailing" secondItem="uW5-fz-Tg9" secondAttribute="trailing" constant="10" id="Vyc-Pq-pgI"/>
-                        <constraint firstItem="t8Q-Rt-VDd" firstAttribute="leading" secondItem="yP4-SQ-1hu" secondAttribute="leading" id="a3y-Mu-axD"/>
-                        <constraint firstAttribute="bottom" secondItem="t8Q-Rt-VDd" secondAttribute="bottom" id="aCQ-Bf-Jgh"/>
-                        <constraint firstItem="JQ6-nA-osa" firstAttribute="top" secondItem="yP4-SQ-1hu" secondAttribute="top" id="cG9-Ws-kY9"/>
-                        <constraint firstItem="t8Q-Rt-VDd" firstAttribute="top" secondItem="JQ6-nA-osa" secondAttribute="bottom" id="d5B-Aq-jWc"/>
-                        <constraint firstItem="uW5-fz-Tg9" firstAttribute="top" secondItem="yP4-SQ-1hu" secondAttribute="top" id="qrt-pj-Wsd"/>
-                        <constraint firstAttribute="trailing" secondItem="t8Q-Rt-VDd" secondAttribute="trailing" id="xen-LC-YDn"/>
-                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXp-Sd-Wh6">
                     <rect key="frame" x="10" y="613" width="355" height="44"/>
