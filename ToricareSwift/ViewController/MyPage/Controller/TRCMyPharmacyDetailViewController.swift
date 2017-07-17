@@ -77,6 +77,14 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblWorkScheduleDayOffResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
         lblDayOffResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
         lblWebsiteResult.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: BUTTON_TITLE_COLOR)
+        
+        // Test data
+        lblPharmacyName.text = "東京都世田谷区3-24-4";
+        lblPhoneResult.text = "033321****";
+        lblWorkScheduleResult.text = "平日：09:30-19:00";
+        lblWorkScheduleDayOffResult.text = "休日：10:30-19:00";
+        lblDayOffResult.text = "日・祝日";
+        lblWebsiteResult.text = "http://www.aaaa.jp";
     }
     
     //MARK: Button Action
