@@ -51,8 +51,8 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     }
     
     func configPageView(){
-        let testVC =  TRCSearchPageViewController(nibName: "TRCSearchPageViewController", bundle: nil)
-        viewPage.addSubview(testVC.view)
+        let pageVC =  TRCSearchPageViewController(nibName: "TRCSearchPageViewController", bundle: nil)
+        viewPage.addSubview(pageVC.view)
     }
 
     //Button Action

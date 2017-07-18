@@ -9,30 +9,58 @@
 import UIKit
 
 
-class TRCSearchCurrentLocationPageView: TRCBaseViewController {
+class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegate {
 
     @IBOutlet var mapView: GMSMapView!
+    
+    var locationManager = CLLocationManager()
+    
+    let marker = GMSMarker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        // A minimum distance a device must move before update event generated
+        locationManager.distanceFilter = 500
+        // Request permission to use location service
+        locationManager.requestWhenInUseAuthorization()
+        // Request permission to use location service when the app is run
+        locationManager.requestAlwaysAuthorization()
+        // Start the update of user's location
+        locationManager.startUpdatingLocation()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+extension TRCSearchCurrentLocationPageView: CLLocationManagerDelegate {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if (status == .authorizedWhenInUse)
+        {
+            mapView.isMyLocationEnabled = true
+        }
     }
-    */
-
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            print(location.coordinate)
+            
+            marker.position = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            
+            marker.title = "You are here !"
+            marker.map = mapView
+            
+            locationManager.stopUpdatingLocation()
+            
+        }
+    }
 }

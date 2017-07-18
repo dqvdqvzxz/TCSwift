@@ -38,7 +38,7 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         self.tabAnimationType = GLTabAnimationType.GLTabAnimationType_WhileScrolling
         self.indicatorColor = UIColor.init(hexString: MAIN_COLOR)
         
-        //size of t
+        //size of tab
         self.supportArabic = false
         self.tabWidth = view.frame.size.width / 2
         
