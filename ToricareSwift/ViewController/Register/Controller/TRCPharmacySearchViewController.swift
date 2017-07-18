@@ -38,6 +38,11 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         //UI of outlet
         btnSearch.buttonStyle(title: STRING_SEARCH)
         
+        tfSearch.textFieldStyle(placeHolder: "")
+        tfSearch.addRightImage(#imageLiteral(resourceName: "ic_search"))
+        
+        viewPage.clipsToBounds = true
+        
         //set up page view
         configPageView()
         
@@ -46,7 +51,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     func configPageView(){
         let testVC =  TRCSearchPageViewController(nibName: "TRCSearchPageViewController", bundle: nil)
         testVC.view.frame = viewPage.bounds
-        viewPage.layer.borderWidth = 1
         viewPage.addSubview(testVC.view)
     }
 
