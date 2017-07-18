@@ -11,6 +11,8 @@ import UIKit
 import Alamofire
 import FacebookCore
 import FBSDKLoginKit
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,11 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //config UI
         configUI()
         
         //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         UserDefaults.kSetValue(deviceID, DEVICE_ID)
+        
+        //google key
+        GMSPlacesClient.provideAPIKey("AIzaSyB2m6vLyb-OvTw1PvmxZH1de0TVa_d93HQ")
+        GMSServices.provideAPIKey("AIzaSyCHXTHWzz5Lqz1u-9TLhCM8DKcl8ogp4ZQ")
 
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
