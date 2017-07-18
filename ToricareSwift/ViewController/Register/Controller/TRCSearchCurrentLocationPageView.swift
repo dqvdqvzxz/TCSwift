@@ -52,9 +52,9 @@ extension TRCSearchCurrentLocationPageView: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            print(location.coordinate)
             
             marker.position = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            DLog("Current latitude: \(location.coordinate.latitude) \n Current longitude: \(location.coordinate.longitude)")
             
             marker.title = "You are here !"
             marker.map = mapView
