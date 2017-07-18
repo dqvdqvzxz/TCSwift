@@ -102,7 +102,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         genderPicker.dataSource = self
         genderPicker.delegate = self
         
-        //ToolBar
+        //toolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
         
@@ -158,7 +158,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         self.view.endEditing(true)
     }
     
-    //MARL: Take photo
+    //MARK: Take photo
     func openCamera(){
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             pickerController.delegate = self
