@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCSearchCurrentLocationPageView: UIViewController {
+class TRCSearchCurrentLocationPageView: TRCBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

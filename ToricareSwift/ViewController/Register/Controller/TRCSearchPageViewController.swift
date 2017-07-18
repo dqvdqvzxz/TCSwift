@@ -15,7 +15,9 @@ class TRCSearchPageViewController: GLViewPagerViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        
         configPageView()
     }
 
@@ -42,8 +44,8 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         
         //init view
         self.viewControllers = [
-            UIViewController(nibName: "TRCSearchLocationPageView", bundle: nil),
-            UIViewController(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
+            TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil),
+            TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
         ]
         
         //init title
@@ -65,7 +67,7 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDataSource{
         //style for label
         label.textColor = UIColor.init(colorLiteralRed: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
         label.textAlignment = NSTextAlignment.center
-                                                                                         
+        
         return label
     }
     

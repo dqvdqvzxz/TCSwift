@@ -36,6 +36,8 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //UI of outlet
+        lblInform.labelStyle(title: "")
+        
         btnSearch.buttonStyle(title: STRING_SEARCH)
         
         tfSearch.textFieldStyle(placeHolder: "")
@@ -50,7 +52,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     
     func configPageView(){
         let testVC =  TRCSearchPageViewController(nibName: "TRCSearchPageViewController", bundle: nil)
-        testVC.view.frame = viewPage.bounds
         viewPage.addSubview(testVC.view)
     }
 
