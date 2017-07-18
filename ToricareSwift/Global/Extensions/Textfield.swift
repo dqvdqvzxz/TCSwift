@@ -46,8 +46,9 @@ extension UITextField{
         let textField = self
 
         textField.leftViewMode = UITextFieldViewMode.always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
         imageView.image = image
+        imageView.contentMode = .center
         textField.leftView = imageView
     }
     
@@ -57,6 +58,7 @@ extension UITextField{
         textField.rightViewMode = UITextFieldViewMode.always
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         imageView.image = image
+        imageView.contentMode = .center
         textField.rightView = imageView
     }
 }
