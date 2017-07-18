@@ -41,4 +41,22 @@ extension UITextField{
             textField.backgroundColor = UIColor.init(hexString: backgroundColor!)
         }
     }
+    
+    func addLeftImage(_ image: UIImage){
+        let textField = self
+
+        textField.leftViewMode = UITextFieldViewMode.always
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        imageView.image = image
+        textField.leftView = imageView
+    }
+    
+    func addRightImage(_ image: UIImage){
+        let textField = self
+        
+        textField.rightViewMode = UITextFieldViewMode.always
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        imageView.image = image
+        textField.rightView = imageView
+    }
 }
