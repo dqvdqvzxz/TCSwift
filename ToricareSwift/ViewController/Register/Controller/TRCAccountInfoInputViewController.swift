@@ -89,10 +89,17 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             self.navigationItem.hidesBackButton = true
         }
         
+        tfDateOfBirth.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
+        tfGender.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
+        
+        tfGender.text = dataGender[0]
+        
         //make image circle
         //imgUser.makeCircle()
+        
         // make border image
         imgUser.makeBorder()
+        
         //date of birth
         showDatePicker()
         
@@ -117,6 +124,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         // add toolbar to textField
         tfGender.inputAccessoryView = toolbar
+        
         // add datepicker to textField
         tfGender.inputView = genderPicker
     }
@@ -186,7 +194,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
-        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+//        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+        let vc = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
