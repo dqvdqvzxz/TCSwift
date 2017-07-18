@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCSearchLocationPageView" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="lblAddress" destination="5vu-az-sV8" id="C3S-Qh-zog"/>
+                <outlet property="lblSubAddress" destination="M5D-nA-YaF" id="64I-gs-dVc"/>
+                <outlet property="tfAddress" destination="63a-uC-qxj" id="olJ-nb-EAi"/>
+                <outlet property="tfSubAddress" destination="CMh-jR-PQq" id="9Qv-SX-gYP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vu-az-sV8">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vu-az-sV8" userLabel="lblAddress">
                     <rect key="frame" x="10" y="0.0" width="355" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="zxd-da-lr2"/>
@@ -28,7 +32,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63a-uC-qxj">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63a-uC-qxj" userLabel="tfAddress">
                     <rect key="frame" x="10" y="30" width="355" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="K1P-3h-PbS"/>
@@ -37,7 +41,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5D-nA-YaF">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5D-nA-YaF" userLabel="lblSubAddress">
                     <rect key="frame" x="10" y="84" width="355" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="1Xe-cz-bAC"/>
@@ -46,7 +50,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CMh-jR-PQq">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CMh-jR-PQq" userLabel="tfSubAddress">
                     <rect key="frame" x="10" y="114" width="355" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="HaU-KP-ETR"/>
