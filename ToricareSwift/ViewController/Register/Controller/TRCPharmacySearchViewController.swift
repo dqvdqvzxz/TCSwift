@@ -36,11 +36,11 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //UI of outlet
-        lblInform.labelStyle(title: "")
+        lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacy"))
         
         btnSearch.buttonStyle(title: STRING_SEARCH)
         
-        tfSearch.textFieldStyle(placeHolder: "")
+        tfSearch.textFieldStyle(placeHolder: Localizable(value: "hint_search_by_name"))
         tfSearch.addRightImage(#imageLiteral(resourceName: "ic_search"))
         
         viewPage.clipsToBounds = true
