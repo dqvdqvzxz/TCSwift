@@ -37,8 +37,8 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //UI of outlet
-        lblAddress.labelStyle(title: "")
-        lblSubAddress.labelStyle(title: "")
+        lblAddress.labelStyle(title: Localizable(value: "prefecture"))
+        lblSubAddress.labelStyle(title: Localizable(value: "town"))
         
         tfAddress.textFieldStyle(placeHolder: "")
         tfSubAddress.textFieldStyle(placeHolder: "")

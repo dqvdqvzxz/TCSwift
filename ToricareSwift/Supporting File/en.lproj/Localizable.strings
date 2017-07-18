@@ -166,3 +166,72 @@
 "walking_per_day"                       = "Target Per Day";
 "walking"                               = "Steps";
 "save"                                  = "Save";
+
+//MARK: Pharmacy Detail
+"address"                               = "Address";
+"phone_number"                          = "Phone";
+"business_time"                         = "Business Time";
+"day_off"                               = "Days Off";
+"website"                               = "Website";
+
+//MARK: Pharmacy Search Result
+"search_by_name"                        = "薬局名で検索";
+"keyword"                               = "キーワード";
+
+//MARK: Pharmacy Search
+"please_register_your_pharmacy"         = "Please register your pharmacy.";
+"hint_search_by_name"                   = "Search By Name";
+"search_by_prefecture"                  = "Search By Prefecture";
+"search_by_current_location"            = "Search By Current Location";
+"prefecture"                            = "Prefecture";
+"town"                                  = "Town";
+
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";

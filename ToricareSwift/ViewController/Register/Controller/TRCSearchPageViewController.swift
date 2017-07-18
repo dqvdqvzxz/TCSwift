@@ -49,7 +49,7 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         ]
         
         //init title
-        self.tabTitles = [ "Button 1", "Button 2"]
+        self.tabTitles = [Localizable(value: "search_by_prefecture"), Localizable(value: "search_by_current_location")]
 
     }
 }
