@@ -69,5 +69,14 @@
 	<string>$(PRODUCT_NAME) heath update use</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) photo use</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>googlechromes</string>
+        <string>comgooglemaps</string>
+    </array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use Location</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Use Location</string>
 </dict>
 </plist>
