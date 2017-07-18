@@ -166,3 +166,14 @@
 "walking_per_day"                       = "Target Per Day";
 "walking"                               = "Steps";
 "save"                                  = "Save";
+
+//MARK: Pharmacy Detail
+"address"                               = "Address";
+"phone_number"                          = "Phone";
+"business_time"                         = "Business Time";
+"day_off"                               = "Days Off";
+"website"                               = "Website";
+
+//MARK: Pharmacy Search Result
+"search_by_name"                        = "薬局名で検索";
+"keyword"                               = "キーワード";

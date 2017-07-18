@@ -49,11 +49,11 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
         //UI of outlet
-        lblAddress.labelStyle(title: nil)
-        lblPhone.labelStyle(title: nil)
-        lblWorkSchedule.labelStyle(title: nil)
-        lblDayOff.labelStyle(title: nil)
-        lblWebsite.labelStyle(title: nil)
+        lblAddress.labelStyle(title: Localizable(value: "address"))
+        lblPhone.labelStyle(title: Localizable(value: "phone_number"))
+        lblWorkSchedule.labelStyle(title: Localizable(value: "business_time"))
+        lblDayOff.labelStyle(title: Localizable(value: "day_off"))
+        lblWebsite.labelStyle(title: Localizable(value: "website"))
         
         configMode()
         configData()
