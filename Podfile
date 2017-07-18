@@ -16,6 +16,9 @@ pod 'FBSDKCoreKit', '~> 4.22.1'
 pod 'FBSDKLoginKit', '~> 4.22.1'
 pod 'FBSDKShareKit', '~> 4.22.1'
 
+#pod 'GooglePlaces'
+pod 'GoogleMaps'
+
 #pod 'Firebase/Core'
 #pod 'Firebase/Messaging'
 #

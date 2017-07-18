@@ -25,6 +25,11 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.22.1):
     - FBSDKCoreKit
+  - GoogleMaps (2.3.1):
+    - GoogleMaps/Maps (= 2.3.1)
+  - GoogleMaps/Base (2.3.1)
+  - GoogleMaps/Maps (2.3.1):
+    - GoogleMaps/Base
 
 DEPENDENCIES:
   - Alamofire
@@ -34,6 +39,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.22.1)
   - FBSDKLoginKit (~> 4.22.1)
   - FBSDKShareKit (~> 4.22.1)
+  - GoogleMaps
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -44,7 +50,8 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 9c2daf0162214d6d2e21cf8208a9c6c2a2e42b9c
   FBSDKLoginKit: 00cf28916b9f0169763a3d61985d745b579fe304
   FBSDKShareKit: 1cbd0fdc2bb3277dd3522512855dcf1f4088f734
+  GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
 
-PODFILE CHECKSUM: 8a16a1423abdaa35883cc1679f684c6b296dafb2
+PODFILE CHECKSUM: d3d42910dea1b911478ebc5cc82ad278e0db25fa
 
 COCOAPODS: 1.1.1
