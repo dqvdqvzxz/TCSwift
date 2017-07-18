@@ -194,8 +194,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
-//        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-        let vc = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
+        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem

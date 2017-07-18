@@ -174,6 +174,7 @@
 		3F57F6EA1F1CD39E00CC079C /* TRCSearchCurrentLocationPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCSearchCurrentLocationPageView.xib; sourceTree = "<group>"; };
 		3F57F6EB1F1CD39E00CC079C /* TRCSearchLocationPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCSearchLocationPageView.xib; sourceTree = "<group>"; };
 		3F57F6EC1F1CD39E00CC079C /* TRCSearchPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCSearchPageViewController.xib; sourceTree = "<group>"; };
+		3F57F6F01F1DF43E00CC079C /* ToricareSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToricareSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FB4111A1EFB607C008720A6 /* ToricareSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB411301EFB6221008720A6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FB411391EFB6221008720A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -448,6 +449,7 @@
 				3FB4113B1EFB6221008720A6 /* Info.plist */,
 				3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */,
 				C00CF8F11F17284800B6A5A5 /* Localizable.strings */,
+				3F57F6F01F1DF43E00CC079C /* ToricareSwift-Bridging-Header.h */,
 			);
 			path = "Supporting File";
 			sourceTree = "<group>";
@@ -983,6 +985,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.meobeo.ToricareSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG_LEVEL_1;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1001,6 +1004,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meobeo.ToricareSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

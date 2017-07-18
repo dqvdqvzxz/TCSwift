@@ -8,8 +8,11 @@
 
 import UIKit
 
+
 class TRCSearchCurrentLocationPageView: TRCBaseViewController {
 
+    @IBOutlet var mapView: GMSMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
