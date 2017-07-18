@@ -56,6 +56,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblWebsite.labelStyle(title: nil)
         
         configMode()
+        configData()
     }
     
     func configMode(){
@@ -77,6 +78,15 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblWorkScheduleDayOffResult.labelStyle(title: nil)
         lblDayOffResult.labelStyle(title: nil)
         lblWebsiteResult.labelStyle(title: nil)
+        
+        // Test data
+        lblAddressResult.text = "東京都世田谷区3-24-4";
+        lblPhoneResult.text = "033321****";
+        lblWorkScheduleResult.text = "平日：09:30-19:00";
+        lblWorkScheduleDayOffResult.text = "休日：10:30-19:00";
+        lblDayOffResult.text = "日・祝日";
+        lblWebsiteResult.text = "http://www.aaaa.jp";
+        
     }
     
     //MARK: Button Action
