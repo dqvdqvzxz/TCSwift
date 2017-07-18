@@ -54,7 +54,7 @@ extension TRCSearchCurrentLocationPageView: CLLocationManagerDelegate {
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             
             marker.position = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-            DLog("Current latitude: \(location.coordinate.latitude) \n Current longitude: \(location.coordinate.longitude)")
+            DLog("\nCurrent latitude: \(location.coordinate.latitude) \nCurrent longitude: \(location.coordinate.longitude)")
             
             marker.title = "You are here !"
             marker.map = mapView
