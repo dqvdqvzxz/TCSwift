@@ -10,6 +10,8 @@ import UIKit
 
 class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var lblPharmacyName: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblAddressResult: UILabel!
@@ -23,6 +25,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     @IBOutlet weak var lblWebsite: UILabel!
     @IBOutlet weak var lblWebsiteResult: UILabel!
     
+    @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var viewGallery: UIView!
     @IBOutlet weak var viewInformation: UIView!
     

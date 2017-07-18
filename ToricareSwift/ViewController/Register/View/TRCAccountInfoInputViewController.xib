@@ -21,6 +21,7 @@
                 <outlet property="lblGender" destination="zjE-5C-ETd" id="Hdx-cY-8Ht"/>
                 <outlet property="lblLastName" destination="kLU-Mv-qSW" id="ahm-sU-eNC"/>
                 <outlet property="lblLastNameKata" destination="MY1-w1-b6o" id="WkB-79-eJa"/>
+                <outlet property="scrollView" destination="T8T-LH-fJi" id="xEw-SZ-JpS"/>
                 <outlet property="tfDateOfBirth" destination="sJK-Lb-0g5" id="L3O-LA-pYE"/>
                 <outlet property="tfFirstName" destination="ulf-bB-OSd" id="MYb-74-not"/>
                 <outlet property="tfFirstNameKata" destination="quJ-F5-Tmd" id="B9x-g4-CtZ"/>
@@ -30,6 +31,7 @@
                 <outlet property="view" destination="FXY-tx-k1V" id="LRO-8i-95k"/>
                 <outlet property="viewGender" destination="QJL-8d-PIv" id="0eb-30-ts8"/>
                 <outlet property="viewLeft" destination="4xA-En-gQO" id="Snw-cJ-TLe"/>
+                <outlet property="viewMain" destination="iRj-rn-iAi" id="Fr9-aw-p3B"/>
                 <outlet property="viewRight" destination="uYC-z7-GXS" id="n9y-qC-eOc"/>
             </connections>
         </placeholder>

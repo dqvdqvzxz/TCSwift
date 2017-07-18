@@ -12,6 +12,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
     @IBOutlet weak var imgUser: UIImageView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var viewLeft: UIView!
     @IBOutlet weak var viewRight: UIView!
     @IBOutlet weak var viewGender: UIView!
