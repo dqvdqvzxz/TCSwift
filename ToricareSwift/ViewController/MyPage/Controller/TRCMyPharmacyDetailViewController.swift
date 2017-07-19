@@ -53,6 +53,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         //navigation 
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+        
         //UI of outlet
         lblAddress.labelStyle(title: Localizable(value: "address"))
         lblPhone.labelStyle(title: Localizable(value: "phone_number"))
@@ -93,6 +95,13 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblDayOffResult.text = "日・祝日";
         lblWebsiteResult.text = "http://www.aaaa.jp";
         
+    }
+    
+    //MARK: Action
+    func skipAction(){
+        let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.keyWindow?.rootViewController = navController
     }
     
     //MARK: Button Action
