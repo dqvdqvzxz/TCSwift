@@ -79,6 +79,7 @@ class TRCLoginViewController: TRCBaseViewController {
             case .cancelled:
                 DLog("User cancelled login.")
             case .success: //let grantedPermissions, let declinedPermissions, let accessToken
+                //get token
                 let token = FBSDKAccessToken.current().tokenString
                 DLog("Access Token: \(String(describing: token!))")
                 
@@ -87,10 +88,31 @@ class TRCLoginViewController: TRCBaseViewController {
                 
                 //upload token into server
                 
+                //get profile
+                let fbFirstName = FBSDKProfile.current().firstName
+                let fbMiddleName = FBSDKProfile.current().middleName
+                let fbLastName = FBSDKProfile.current().lastName
+                let fbName = FBSDKProfile.current().name
+                let fbUserID = FBSDKProfile.current().userID
+                
+                _obj.dicFacebookInfo.updateValue(fbFirstName!, forKey: FB_FIRSTNAME)
+                _obj.dicFacebookInfo.updateValue(fbMiddleName!, forKey: FB_MIDDLENAME)
+                _obj.dicFacebookInfo.updateValue(fbLastName!, forKey: FB_LASTNAME)
+                _obj.dicFacebookInfo.updateValue(fbName!, forKey: FB_NAME)
+                _obj.dicFacebookInfo.updateValue(fbUserID!, forKey: FB_USERID)
+                
+                print(_obj.dicFacebookInfo)
+                
+                let a = _obj.dicFacebookInfo[FB_USERID]
+                print(a)
+                
                 
                 //process after login
-                let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-                self.present(vc, animated: true, completion: nil)
+                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                    UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                }, completion: { completed in
+                    // maybe do something here
+                })
             }
         }
     }
