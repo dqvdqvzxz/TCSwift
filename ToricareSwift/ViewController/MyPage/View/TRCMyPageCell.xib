@@ -22,19 +22,17 @@
                         <rect key="frame" x="17.5" y="10" width="70" height="70"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zzA-4t-Ppi">
-                                <rect key="frame" x="15" y="15" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="OE1-T8-IaB"/>
-                                    <constraint firstAttribute="width" constant="40" id="zsF-kQ-DYD"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zzA-4t-Ppi" firstAttribute="centerY" secondItem="Ldm-PW-Qjo" secondAttribute="centerY" id="91t-Iv-wms"/>
+                            <constraint firstItem="zzA-4t-Ppi" firstAttribute="top" secondItem="Ldm-PW-Qjo" secondAttribute="top" id="DwN-Zm-Pis"/>
+                            <constraint firstItem="zzA-4t-Ppi" firstAttribute="leading" secondItem="Ldm-PW-Qjo" secondAttribute="leading" id="F5f-mq-jL9"/>
                             <constraint firstAttribute="width" constant="70" id="Ib4-0u-5XE"/>
                             <constraint firstAttribute="height" constant="70" id="Lfh-on-EGE"/>
-                            <constraint firstItem="zzA-4t-Ppi" firstAttribute="centerX" secondItem="Ldm-PW-Qjo" secondAttribute="centerX" id="w0t-nr-eJZ"/>
+                            <constraint firstAttribute="bottom" secondItem="zzA-4t-Ppi" secondAttribute="bottom" id="Qge-7a-CAF"/>
+                            <constraint firstAttribute="trailing" secondItem="zzA-4t-Ppi" secondAttribute="trailing" id="aAk-UJ-1wx"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfF-3C-LfD">

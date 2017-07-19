@@ -76,18 +76,19 @@ extension TRCMyPageViewController: UICollectionViewDataSource{
         //item of collection
         switch (indexPath.item) {
         case 0: //account info input
-            break
+            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_profile")
         case 1: //my pharmacy detail
-            break
+            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_pharmacy")
         case 2: //walking goal detail
-            break
-        case 3:
-            break
-        case 4:
-            break
-        case 5:
-            break
-        case 6:
+            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_target")
+        case 3: //point
+            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_point")
+        case 4: //message
+            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_message")
+        case 5: //set calendar
+            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_setcalendar")
+        case 6: //settings
+            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_settings")
             cell.lblTitle.text = STRING_SETTING
         case 7:
             cell.viewImg.isHidden = true
