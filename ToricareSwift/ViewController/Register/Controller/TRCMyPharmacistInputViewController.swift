@@ -45,8 +45,17 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+        
         //UI of outlet
         btnPharmacistInput.buttonStyle(title: Localizable(value: "my_pharmacy_setting"))
+    }
+    
+    //MARK: Action
+    func skipAction(){
+        let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.keyWindow?.rootViewController = navController
     }
     
     //MARK: Button Action
