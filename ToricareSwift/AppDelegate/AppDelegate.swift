@@ -9,7 +9,6 @@
 import UIKit
 
 import Alamofire
-import FacebookCore
 import FBSDKLoginKit
 import GoogleMaps
 import GooglePlaces
@@ -33,8 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        GMSPlacesClient.provideAPIKey("AIzaSyB2m6vLyb-OvTw1PvmxZH1de0TVa_d93HQ")
         GMSServices.provideAPIKey("AIzaSyBvfVsig1-BAp25H8SEObaUGfZYFxGMdWY")
 
-        
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        //facebook
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        FBSDKProfile.enableUpdates(onAccessTokenChange: true)
+
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -53,16 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        AppEventsLogger.activate(application)
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url as URL!, sourceApplication: sourceApplication, annotation: annotation)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        return handled
     }
+
     
     //MARK: Config UI
     func configUI(){
