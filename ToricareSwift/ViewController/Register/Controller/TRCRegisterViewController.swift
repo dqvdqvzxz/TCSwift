@@ -27,7 +27,7 @@ class TRCRegisterViewController: TRCBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configUI()
     }
 
@@ -62,6 +62,7 @@ class TRCRegisterViewController: TRCBaseViewController {
         let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
         vc.editMode = MODE_REGISTER
         self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.viewControllers.remove(at: 1)
     }
     
     @IBAction func tapBtnRegisterWithFB(_ sender: Any) {
