@@ -47,10 +47,10 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnUsingApp(_ sender: Any) {
-        let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+        }, completion: { completed in
+            // maybe do something here
+        })
     }
 }
