@@ -187,16 +187,19 @@
 "prefecture"                            = "都道府県";
 "town"                                  = "市区町村";
 
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
+//MARK: Pharmacist Input
+"please_register_your_pharmacist"       = "よく相談する薬剤師がいる場合、薬剤師の名前と連絡先を登録してください。";
+"pharmacist_name"                       = "薬剤師の名前";
+"pharmacist_phone"                      = "連絡先電話番号";
+"pharmacist_mail_address"               = "連絡先メールアドレス";
+"pharmacist_note"                       = "メモ";
+
+//MARK: Register Complete
+"register_complete_title"               = "会員登録完了";
+"register_member_complete"              = "会員登録が完了しました。";
+"my_pharmacy_register_not_done"         = "まだMy薬局の登録は完了していません。";
+"take_qrcode_label"                     = "My薬局として登録した薬局の店舗にあるQRコードを読み取ることでMy薬局の登録が完了となります。";
+"use_app"                               = "アプリを使ってみる";
 ""                              = "";
 ""                              = "";
 ""                              = "";

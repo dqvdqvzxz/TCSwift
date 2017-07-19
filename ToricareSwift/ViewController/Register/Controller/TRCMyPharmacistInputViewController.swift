@@ -49,6 +49,13 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         
         //UI of outlet
         btnPharmacistInput.buttonStyle(title: Localizable(value: "my_pharmacy_setting"))
+        
+        lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
+        lblName.labelStyle(title: Localizable(value: "pharmacist_name"))
+        lblPhone.labelStyle(title: Localizable(value: "pharmacist_phone"))
+        lblEmail.labelStyle(title: Localizable(value: "pharmacist_mail_address"))
+        lblNote.labelStyle(title: Localizable(value: "pharmacist_note"))
+
     }
     
     //MARK: Action

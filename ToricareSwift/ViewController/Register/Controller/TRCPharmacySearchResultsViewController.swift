@@ -17,11 +17,15 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     
     @IBOutlet weak var tblSearchResult: UITableView!
     
+    var keywordString = "赤堤"
+    var arrayResults = NSMutableArray()
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configUI()
+        createTestData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,22 +37,47 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     func configUI(){
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
+                navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+        //UI of outlet
+        lblInform.labelStyle(title: Localizable(value: "search_by_name"))
+        lblKeyword.labelStyle(title: Localizable(value: "キーワード") + "：" + keywordString)
         
         //table view
         tblSearchResult.dataSource = self
         tblSearchResult.delegate = self
         tblSearchResult.register(UINib(nibName: "TRCSearchResultCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        
         tblSearchResult.tableFooterView = UIView()
     }
     
+
     //MARK: Action
     func skipAction(){
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
         let navController = UINavigationController(rootViewController: vc)
         UIApplication.shared.keyWindow?.rootViewController = navController
+    }
+
+    func createTestData() {
+        let firstObject = TRCPharmacyObject()
+        firstObject.pharmacyAddress = "東京都世田谷区3-24-4"
+        firstObject.pharmacyName = "サンドラッグ赤堤薬局"
+        
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
+        arrayResults.add(firstObject)
     }
 }
 
@@ -58,12 +87,13 @@ extension TRCPharmacySearchResultsViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return arrayResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCSearchResultCell
-        
+        let pharmacyDataObject = arrayResults.object(at: indexPath.row)
+        cell.fillData(pharmacyObject: pharmacyDataObject as? TRCPharmacyObject)
         return cell
     }
 }
@@ -74,6 +104,7 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
         vc.mode = MODE_REGISTER
         let backItem = UIBarButtonItem()

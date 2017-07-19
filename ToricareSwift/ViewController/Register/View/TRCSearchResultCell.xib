@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="teh-di-r3U" userLabel="imgPharmacy">
@@ -43,8 +43,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_next" translatesAutoresizingMaskIntoConstraints="NO" id="esx-Rb-S2L">
+                        <rect key="frame" x="288" y="29" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="XKk-yJ-zDN"/>
+                            <constraint firstAttribute="height" constant="32" id="cm1-pU-ZYQ"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="esx-Rb-S2L" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3OG-e0-KQH"/>
+                    <constraint firstAttribute="trailing" secondItem="esx-Rb-S2L" secondAttribute="trailing" id="6cs-yw-2eb"/>
                     <constraint firstAttribute="bottom" secondItem="Mtc-XB-u1A" secondAttribute="bottom" constant="10" id="BK3-YG-7BE"/>
                     <constraint firstItem="teh-di-r3U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="FfG-GO-ErC"/>
                     <constraint firstAttribute="trailing" secondItem="Mtc-XB-u1A" secondAttribute="trailing" constant="10" id="PQh-Fz-cdJ"/>
@@ -55,6 +64,14 @@
                     <constraint firstItem="Mtc-XB-u1A" firstAttribute="leading" secondItem="teh-di-r3U" secondAttribute="trailing" constant="10" id="yBJ-pR-2yu"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="imgPharmacy" destination="teh-di-r3U" id="ZO2-ou-FB5"/>
+                <outlet property="lblAddress" destination="Mtc-XB-u1A" id="RrW-3y-aqF"/>
+                <outlet property="lblName" destination="qKw-3C-EFP" id="6hU-UO-Daf"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_next" width="48" height="48"/>
+    </resources>
 </document>
