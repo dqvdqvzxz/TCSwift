@@ -17,7 +17,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +27,8 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     
     //MARK: Config UI 
     func configUI(){
-        
+        //navigation
+        self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
     }
     
     //MARK: Button Action

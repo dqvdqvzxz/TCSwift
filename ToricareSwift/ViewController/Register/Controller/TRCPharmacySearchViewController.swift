@@ -35,6 +35,8 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: STRING_SKIP, style: .plain, target: self, action: #selector(skipAction))
+        
         //UI of outlet
         lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacy"))
         
@@ -54,8 +56,15 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         let pageVC =  TRCSearchPageViewController(nibName: "TRCSearchPageViewController", bundle: nil)
         viewPage.addSubview(pageVC.view)
     }
+    
+    //MARK: Action
+    func skipAction(){
+        let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.keyWindow?.rootViewController = navController
+    }
 
-    //Button Action
+    //MARK: Button Action
     @IBAction func tapBtnSearch(_ sender: Any) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
         let backItem = UIBarButtonItem()
