@@ -14,6 +14,9 @@ import FBSDKLoginKit
 
 class TRCLoginViewController: TRCBaseViewController {
     
+    @IBOutlet weak var viewLineLeft: UIView!
+    @IBOutlet weak var viewLineRight: UIView!
+    
     @IBOutlet weak var lblUsername: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var lblForgotPassword: UILabel!

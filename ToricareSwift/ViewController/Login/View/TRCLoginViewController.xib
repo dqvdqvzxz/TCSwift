@@ -20,6 +20,8 @@
                 <outlet property="tfPassword" destination="7RK-xH-zt2" id="S2G-vF-qZb"/>
                 <outlet property="tfUsername" destination="yZp-Uu-1Ls" id="4ZA-1U-tR4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewLineLeft" destination="pOP-Og-NLw" id="oNL-u4-nEi"/>
+                <outlet property="viewLineRight" destination="XbD-tI-XRr" id="lOE-0G-rTh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -99,14 +101,14 @@
                     </constraints>
                     <state key="normal" title="Login with Facebook"/>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOP-Og-NLw">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOP-Og-NLw" userLabel="viewLineLeft">
                     <rect key="frame" x="20" y="351" width="134.5" height="1"/>
                     <color key="backgroundColor" red="0.77151884191176467" green="0.77151884191176467" blue="0.77151884191176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="4La-Ln-cqh"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbD-tI-XRr">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbD-tI-XRr" userLabel="viewLineRight">
                     <rect key="frame" x="219.5" y="351" width="135.5" height="1"/>
                     <color key="backgroundColor" red="0.77151884191176467" green="0.77151884191176467" blue="0.77151884191176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>

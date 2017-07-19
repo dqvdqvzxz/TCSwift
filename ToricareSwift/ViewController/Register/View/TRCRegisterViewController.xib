@@ -21,6 +21,8 @@
                 <outlet property="tfRePassword" destination="cON-df-md1" id="ZGe-d2-YHT"/>
                 <outlet property="tfUsername" destination="5fK-GN-LkQ" id="ffw-cr-tSg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewLineLeft" destination="6p4-IQ-EQV" id="qwi-Ji-lXA"/>
+                <outlet property="viewLineRight" destination="LT0-Fo-1xd" id="YA4-WC-ogk"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -102,14 +104,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6p4-IQ-EQV">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6p4-IQ-EQV" userLabel="viewLineLeft">
                     <rect key="frame" x="20" y="404" width="138" height="1"/>
                     <color key="backgroundColor" red="0.77151884189999997" green="0.77151884189999997" blue="0.77151884189999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="sE2-0r-c7W"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LT0-Fo-1xd">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LT0-Fo-1xd" userLabel="viewLineRight">
                     <rect key="frame" x="215.5" y="404" width="139" height="1"/>
                     <color key="backgroundColor" red="0.77151884189999997" green="0.77151884189999997" blue="0.77151884189999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>

@@ -22,6 +22,9 @@ class TRCRegisterViewController: TRCBaseViewController {
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var btnRegisterWithFB: UIButton!
     
+    @IBOutlet weak var viewLineLeft: UIView!
+    @IBOutlet weak var viewLineRight: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
