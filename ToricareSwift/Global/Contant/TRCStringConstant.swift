@@ -21,7 +21,6 @@ let STRING_NEXT =                       Localizable(value: "next_button")
 let STRING_SEND =                       Localizable(value: "send_title")
 let STRING_CHANGE =                     Localizable(value: "change_button")
 let STRING_SEARCH =                     Localizable(value: "search")
-let STRING_SKIP =                       Localizable(value: "skip")
 
 //MARK: Tabbar
 let STRING_TAB_HOME =                   Localizable(value: "tab_home")

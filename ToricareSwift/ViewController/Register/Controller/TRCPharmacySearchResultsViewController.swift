@@ -34,12 +34,21 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+        
         //table view
         tblSearchResult.dataSource = self
         tblSearchResult.delegate = self
         tblSearchResult.register(UINib(nibName: "TRCSearchResultCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         tblSearchResult.tableFooterView = UIView()
+    }
+    
+    //MARK: Action
+    func skipAction(){
+        let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        UIApplication.shared.keyWindow?.rootViewController = navController
     }
 }
 

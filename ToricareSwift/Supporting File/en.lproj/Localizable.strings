@@ -16,7 +16,6 @@
 "back"                                  = "Back";
 "done"                                  = "Done";
 "cancel"                                = "Cancel";
-"skip"                                  = "Skip";
 
 //MARK: Tabbar
 "tab_home"                              = "ホーム";

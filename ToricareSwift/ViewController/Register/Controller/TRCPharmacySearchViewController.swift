@@ -35,7 +35,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: STRING_SKIP, style: .plain, target: self, action: #selector(skipAction))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
         
         //UI of outlet
         lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacy"))
