@@ -193,6 +193,12 @@
 "pharmacist_mail_address"               = "Email";
 "pharmacist_note"                       = "Note";
 
+//MARK: Register Complete
+"register_complete_title"               = "Register Complete";
+"register_member_complete"              = "会員登録が完了しました。";
+"my_pharmacy_register_not_done"         = "まだMy薬局の登録は完了していません。";
+"take_qrcode_label"                     = "My薬局として登録した薬局の店舗にあるQRコードを読み取ることでMy薬局の登録が完了となります。";
+"use_app"                               = "アプリを使ってみる";
 ""                              = "";
 ""                              = "";
 ""                              = "";

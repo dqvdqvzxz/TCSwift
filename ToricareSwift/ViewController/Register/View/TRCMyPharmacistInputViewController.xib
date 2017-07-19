@@ -116,6 +116,7 @@
                                         <constraint firstAttribute="height" constant="184" id="sbj-Ix-edC"/>
                                     </constraints>
                                     <string key="text">パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。</string>
+                                    <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
