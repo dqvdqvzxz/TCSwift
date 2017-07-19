@@ -20,5 +20,8 @@ final class Singleton{
     
     //tabbar
     var tabController = UITabBarController()
+    
+    //dictionary
+    var dicFacebookInfo = [String:String]()
 }
 
