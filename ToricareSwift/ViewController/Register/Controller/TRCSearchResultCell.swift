@@ -10,6 +10,9 @@ import UIKit
 
 class TRCSearchResultCell: UITableViewCell {
 
+    @IBOutlet weak var imgPharmacy: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +24,11 @@ class TRCSearchResultCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func fillData(pharmacyObject: TRCPharmacyObject?) {
+        if pharmacyObject != nil {
+            imgPharmacy.image = pharmacyObject!.pharmacyImage
+            lblName.text = pharmacyObject!.pharmacyName
+            lblAddress.text = pharmacyObject!.pharmacyAddress
+        }
+    }    
 }
