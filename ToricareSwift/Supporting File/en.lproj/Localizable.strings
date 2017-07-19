@@ -177,6 +177,7 @@
 //MARK: Pharmacy Search Result
 "search_by_name"                        = "薬局名で検索";
 "keyword"                               = "キーワード";
+"skip"                                  = "スキップ";
 
 //MARK: Pharmacy Search
 "please_register_your_pharmacy"         = "Please register your pharmacy.";

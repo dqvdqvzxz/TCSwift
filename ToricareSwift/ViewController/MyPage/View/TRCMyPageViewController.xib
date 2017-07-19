@@ -26,17 +26,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czy-wp-DsU" userLabel="viewInfo">
-                    <rect key="frame" x="0.0" y="20" width="375" height="230"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_test" translatesAutoresizingMaskIntoConstraints="NO" id="S8g-dd-Rc4">
-                            <rect key="frame" x="127.5" y="20" width="120" height="120"/>
+                            <rect key="frame" x="127.5" y="40" width="120" height="120"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="120" id="Ci4-Vb-BGe"/>
                                 <constraint firstAttribute="width" constant="120" id="n18-u1-6W3"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SE-eI-Wqv" userLabel="lblName">
-                            <rect key="frame" x="10" y="140" width="355" height="30"/>
+                            <rect key="frame" x="10" y="160" width="355" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="E02-TT-uJ6"/>
                             </constraints>
@@ -45,7 +45,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyP-L4-nLs" userLabel="lblTarget">
-                            <rect key="frame" x="10" y="170" width="355" height="30"/>
+                            <rect key="frame" x="10" y="190" width="355" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="vvv-R4-PWC"/>
                             </constraints>
@@ -54,7 +54,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FI-3u-wF4" userLabel="lblPharmacist">
-                            <rect key="frame" x="10" y="200" width="355" height="30"/>
+                            <rect key="frame" x="10" y="220" width="355" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="JDt-cn-ySg"/>
                             </constraints>
@@ -69,8 +69,8 @@
                         <constraint firstItem="5SE-eI-Wqv" firstAttribute="top" secondItem="S8g-dd-Rc4" secondAttribute="bottom" id="755-2w-HRB"/>
                         <constraint firstItem="EyP-L4-nLs" firstAttribute="top" secondItem="5SE-eI-Wqv" secondAttribute="bottom" id="7WC-90-ry5"/>
                         <constraint firstItem="S8g-dd-Rc4" firstAttribute="centerX" secondItem="Czy-wp-DsU" secondAttribute="centerX" id="840-0s-aiV"/>
-                        <constraint firstAttribute="height" constant="230" id="8Rh-xx-5MT"/>
-                        <constraint firstItem="S8g-dd-Rc4" firstAttribute="top" secondItem="Czy-wp-DsU" secondAttribute="top" constant="20" id="Edd-3P-e5Y"/>
+                        <constraint firstAttribute="height" constant="250" id="8Rh-xx-5MT"/>
+                        <constraint firstItem="S8g-dd-Rc4" firstAttribute="top" secondItem="Czy-wp-DsU" secondAttribute="top" constant="40" id="Edd-3P-e5Y"/>
                         <constraint firstAttribute="trailing" secondItem="5SE-eI-Wqv" secondAttribute="trailing" constant="10" id="JoB-b6-aNW"/>
                         <constraint firstItem="2FI-3u-wF4" firstAttribute="leading" secondItem="Czy-wp-DsU" secondAttribute="leading" constant="10" id="L8V-b3-cdk"/>
                         <constraint firstAttribute="trailing" secondItem="2FI-3u-wF4" secondAttribute="trailing" constant="10" id="e5s-Pt-4yI"/>
@@ -93,7 +93,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Czy-wp-DsU" secondAttribute="trailing" id="81G-7V-mvp"/>
-                <constraint firstItem="Czy-wp-DsU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="FeE-GN-aJ1"/>
+                <constraint firstItem="Czy-wp-DsU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FeE-GN-aJ1"/>
                 <constraint firstItem="gpy-mP-wMO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GEh-YM-qgA"/>
                 <constraint firstItem="Czy-wp-DsU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="I4s-Au-cbn"/>
                 <constraint firstAttribute="bottom" secondItem="gpy-mP-wMO" secondAttribute="bottom" id="LsK-w9-Flh"/>
