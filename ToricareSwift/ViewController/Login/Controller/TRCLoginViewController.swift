@@ -105,13 +105,11 @@ class TRCLoginViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnLogin(_ sender: Any) {
-//        let vc = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-//                let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
-//        let backItem = UIBarButtonItem()
-//        backItem.title = STRING_BACK
-//        navigationItem.backBarButtonItem = backItem
-//        self.navigationController?.pushViewController(_obj.tabController, animated: true)
-        UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+        }, completion: { completed in
+            // maybe do something here
+        })
     }
 }
 
