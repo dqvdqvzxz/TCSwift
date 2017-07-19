@@ -57,6 +57,7 @@ class TRCRegisterViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
         let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+        vc.editMode = MODE_REGISTER
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

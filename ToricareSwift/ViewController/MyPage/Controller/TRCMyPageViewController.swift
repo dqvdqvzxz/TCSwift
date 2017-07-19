@@ -110,7 +110,7 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
         switch (indexPath.item) {
         case 0:
             let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-            vc.editMode = true
+            vc.editMode = MODE_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem

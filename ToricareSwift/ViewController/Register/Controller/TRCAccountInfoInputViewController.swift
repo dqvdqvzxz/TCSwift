@@ -44,7 +44,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     var dataGender = [Localizable(value: "male"), Localizable(value: "female")]
     var genderPicker = UIPickerView()
     
-    var editMode = Bool()
+    var editMode = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,12 +76,12 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         self.navigationItem.title = Localizable(value: "register_title")
 
-        if(editMode == true){
+        if(editMode == MODE_MYPAGE){
             self.navigationItem.hidesBackButton = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
             
             btnNext.isHidden = true
-        }else{
+        }else if(editMode == MODE_REGISTER){
             self.navigationItem.title = Localizable(value: "register_title")
             
             btnNext.buttonStyle(title: STRING_NEXT)
