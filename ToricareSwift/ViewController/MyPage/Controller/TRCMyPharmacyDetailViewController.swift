@@ -32,6 +32,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     @IBOutlet weak var btnQRCode: UIButton!
     @IBOutlet weak var btnPharmacy: UIButton!
     
+    @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
+    
     var mode = String()
     
     //MARK: View controller
@@ -68,6 +70,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             btnPharmacy.buttonStyle(title: STRING_CHANGE)
         }else if(mode == MODE_REGISTER){
             btnQRCode.isHidden = true
+            contraintBottomScrollView.constant = 54
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }
     }
