@@ -20,6 +20,14 @@ let DEVICE_ID = "deviceID"
 let FB_TOKEN = "facebookToken"
 let THEME_COLOR = "themeColor"
 
+//MARK: Dictionary
+//dicFacebookInfo
+let FB_FIRSTNAME = "fbFirstName"
+let FB_MIDDLENAME = "fbMiddleName"
+let FB_LASTNAME = "fbLastName"
+let FB_NAME = "fbName"
+let FB_USERID = "fbUserID"
+
 //MARK: Http method
 let HTTP_POST = "POST"
 let HTTP_PUT = "PUT"
