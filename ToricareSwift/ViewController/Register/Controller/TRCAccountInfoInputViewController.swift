@@ -35,6 +35,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnUploadImage: UIButton!
+    @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
     
     var pickerController = UIImagePickerController()
     var imgView = UIImage()
@@ -79,6 +80,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         if(editMode == MODE_MYPAGE){
             self.navigationItem.hidesBackButton = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
+            
+            contraintBottomScrollView.constant = 0
             
             btnNext.isHidden = true
         }else if(editMode == MODE_REGISTER){

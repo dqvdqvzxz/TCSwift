@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="btnNext" destination="yxA-DY-szf" id="Jz6-4R-8lI"/>
                 <outlet property="btnUploadImage" destination="A83-dy-JcO" id="VcQ-Sd-DAK"/>
+                <outlet property="contraintBottomScrollView" destination="vmg-mz-nhX" id="wXb-4y-OXH"/>
                 <outlet property="imgUser" destination="Qxe-TD-YGz" id="kdJ-z5-4tr"/>
                 <outlet property="lblDateOfBirth" destination="yTJ-BX-iV7" id="V8t-Q9-UuT"/>
                 <outlet property="lblFirstName" destination="gzK-ls-Dwi" id="9ow-wO-kCK"/>
@@ -286,7 +287,7 @@
                 <constraint firstAttribute="trailing" secondItem="T8T-LH-fJi" secondAttribute="trailing" id="cQA-M9-4Uf"/>
                 <constraint firstItem="yxA-DY-szf" firstAttribute="leading" secondItem="FXY-tx-k1V" secondAttribute="leading" constant="10" id="ibp-JE-eXN"/>
                 <constraint firstItem="T8T-LH-fJi" firstAttribute="top" secondItem="FXY-tx-k1V" secondAttribute="top" id="lh6-cm-kRn"/>
-                <constraint firstItem="T8T-LH-fJi" firstAttribute="bottom" secondItem="yxA-DY-szf" secondAttribute="top" constant="-10" id="q5q-en-Zz9"/>
+                <constraint firstAttribute="bottom" secondItem="T8T-LH-fJi" secondAttribute="bottom" constant="64" id="vmg-mz-nhX"/>
                 <constraint firstAttribute="bottom" secondItem="yxA-DY-szf" secondAttribute="bottom" constant="10" id="yDK-f2-SlT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
