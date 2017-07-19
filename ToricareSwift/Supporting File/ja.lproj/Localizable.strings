@@ -187,11 +187,12 @@
 "prefecture"                            = "都道府県";
 "town"                                  = "市区町村";
 
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
+//MARK: Pharmacist Input
+"please_register_your_pharmacist"       = "よく相談する薬剤師がいる場合、薬剤師の名前と連絡先を登録してください。";
+"pharmacist_name"                       = "薬剤師の名前";
+"pharmacist_phone"                      = "連絡先電話番号";
+"pharmacist_mail_address"               = "連絡先メールアドレス";
+"pharmacist_note"                       = "メモ";
 ""                              = "";
 ""                              = "";
 ""                              = "";

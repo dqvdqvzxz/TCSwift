@@ -47,7 +47,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdF-Hx-NPR" userLabel="lblName">
-                                    <rect key="frame" x="10" y="70" width="355" height="30"/>
+                                    <rect key="frame" x="10" y="60" width="355" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="S8q-bd-pKb"/>
                                     </constraints>
@@ -56,7 +56,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djk-bm-kbd" userLabel="tfName">
-                                    <rect key="frame" x="10" y="100" width="355" height="44"/>
+                                    <rect key="frame" x="10" y="90" width="355" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="1lC-Lp-QPe"/>
                                     </constraints>
@@ -65,7 +65,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEM-ez-75W" userLabel="lblPhone">
-                                    <rect key="frame" x="10" y="154" width="355" height="30"/>
+                                    <rect key="frame" x="10" y="144" width="355" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Xl2-th-hAQ"/>
                                     </constraints>
@@ -74,7 +74,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-Hb-eoy" userLabel="tfPhone">
-                                    <rect key="frame" x="10" y="184" width="355" height="44"/>
+                                    <rect key="frame" x="10" y="174" width="355" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="smU-10-iNs"/>
                                     </constraints>
@@ -83,7 +83,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lr5-cv-xp0" userLabel="lblEmail">
-                                    <rect key="frame" x="10" y="238" width="355" height="30"/>
+                                    <rect key="frame" x="10" y="228" width="355" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Fr8-bI-crD"/>
                                     </constraints>
@@ -92,7 +92,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nyY-35-w91" userLabel="tfEmail">
-                                    <rect key="frame" x="10" y="268" width="355" height="44"/>
+                                    <rect key="frame" x="10" y="258" width="355" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="veM-vb-lY5"/>
                                     </constraints>
@@ -101,7 +101,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bff-2o-DRE" userLabel="lblNote">
-                                    <rect key="frame" x="10" y="322" width="355" height="30"/>
+                                    <rect key="frame" x="10" y="312" width="355" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="8aS-Yp-zXM"/>
                                     </constraints>
@@ -110,13 +110,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6sF-fE-Nop" userLabel="tvNote">
-                                    <rect key="frame" x="10" y="352" width="355" height="184"/>
+                                    <rect key="frame" x="10" y="342" width="355" height="184"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="184" id="sbj-Ix-edC"/>
                                     </constraints>
-                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <string key="text">パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。</string>
+                                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                             </subviews>
@@ -134,7 +134,7 @@
                                 <constraint firstAttribute="trailing" secondItem="tEM-ez-75W" secondAttribute="trailing" constant="10" id="Mhl-wJ-EwB"/>
                                 <constraint firstAttribute="trailing" secondItem="djk-bm-kbd" secondAttribute="trailing" constant="10" id="NTS-Vm-P0V"/>
                                 <constraint firstItem="6sF-fE-Nop" firstAttribute="top" secondItem="bff-2o-DRE" secondAttribute="bottom" id="Q5S-5Q-eSS"/>
-                                <constraint firstItem="qdF-Hx-NPR" firstAttribute="top" secondItem="0oU-aS-e36" secondAttribute="bottom" constant="10" id="QPt-fR-S9L"/>
+                                <constraint firstItem="qdF-Hx-NPR" firstAttribute="top" secondItem="0oU-aS-e36" secondAttribute="bottom" id="QPt-fR-S9L"/>
                                 <constraint firstItem="qdF-Hx-NPR" firstAttribute="leading" secondItem="Et8-B7-JAj" secondAttribute="leading" constant="10" id="Tyg-ne-u65"/>
                                 <constraint firstItem="zPb-Hb-eoy" firstAttribute="leading" secondItem="Et8-B7-JAj" secondAttribute="leading" constant="10" id="WIx-GV-xRC"/>
                                 <constraint firstItem="zPb-Hb-eoy" firstAttribute="top" secondItem="tEM-ez-75W" secondAttribute="bottom" id="XWH-er-WCB"/>

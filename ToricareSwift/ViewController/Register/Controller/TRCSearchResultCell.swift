@@ -27,7 +27,8 @@ class TRCSearchResultCell: UITableViewCell {
     func fillData(pharmacyObject: TRCPharmacyObject?) {
         if pharmacyObject != nil {
             imgPharmacy.image = pharmacyObject!.pharmacyImage
-            lblName.text = pharmacyObject!.pharmacyName
+            lblName.labelStyle(title: pharmacyObject!.pharmacyName, fontSize: LABEL_FONT_SIZE! + 2, isBold: true, textColor: LABEL_FONT_COLOR)
+            lblAddress.labelStyle(title: pharmacyObject!.pharmacyAddress, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
             lblAddress.text = pharmacyObject!.pharmacyAddress
         }
     }    

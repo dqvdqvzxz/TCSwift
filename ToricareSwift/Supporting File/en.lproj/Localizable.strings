@@ -186,6 +186,13 @@
 "prefecture"                            = "Prefecture";
 "town"                                  = "Town";
 
+//MARK: Pharmacist Input
+"please_register_your_pharmacist"       = "よく相談する薬剤師がいる場合、薬剤師の名前と連絡先を登録してください。";
+"pharmacist_name"                       = "Name";
+"pharmacist_phone"                      = "Phone";
+"pharmacist_mail_address"               = "Email";
+"pharmacist_note"                       = "Note";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";
