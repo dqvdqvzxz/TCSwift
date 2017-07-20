@@ -152,7 +152,7 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
 extension TRCMyPageViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenRect = UIScreen.main.bounds
-        let screenWidth = screenRect.size.width - 4
+        let screenWidth = screenRect.size.width - 2.4
         let cellWidth = screenWidth / 3.0
         let size = CGSize(width: cellWidth, height: cellWidth)
 
@@ -164,7 +164,7 @@ extension TRCMyPageViewController: UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 1.2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
