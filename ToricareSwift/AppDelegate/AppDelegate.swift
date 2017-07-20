@@ -145,21 +145,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         item5?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
         item5?.setTitleTextAttributes(selectedItem, for: .selected)
-
-
-//        //set icon for tab item
-//        item1?.image = UIImage(named: "")
-//        item2?.image = UIImage(named: "")
-//        item3?.image = UIImage(named: "")
-//        item4?.image = UIImage(named: "")
-//        item5?.image = UIImage(named: "")
-//        
-//        //set selected icon for tab item
-//        item1?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
-//        item2?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
-//        item3?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
-//        item4?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
-//        item5?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
         
         //set theme style
 //        UITabBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
