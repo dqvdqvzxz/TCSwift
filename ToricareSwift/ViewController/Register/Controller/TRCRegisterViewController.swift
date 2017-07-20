@@ -123,7 +123,19 @@ class TRCRegisterViewController: TRCBaseViewController {
                         }
                         
                         
-                        
+                        //process after login
+                        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                            //change UI of view
+                            self.viewLineLeft.isHidden = true
+                            self.lblOr.isHidden = true
+                            self.viewLineRight.isHidden = true
+                            self.btnRegisterWithFB.isHidden = true
+                            DLog(_obj.dicFacebookInfo)
+                            
+                            //fill data to form register
+                            self.tfUsername.text = _obj.dicFacebookInfo[FB_EMAIL]
+                            self.tfUsername.isUserInteractionEnabled = false
+                        })
                     }
                 })
             }
