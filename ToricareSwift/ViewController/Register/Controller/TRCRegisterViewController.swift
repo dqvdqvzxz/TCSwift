@@ -64,8 +64,10 @@ class TRCRegisterViewController: TRCBaseViewController {
     @IBAction func tapBtnRegister(_ sender: Any) {
         let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
         vc.editMode = MODE_REGISTER
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
-        self.navigationController?.viewControllers.remove(at: 1)
     }
     
     @IBAction func tapBtnRegisterWithFB(_ sender: Any) {
@@ -89,18 +91,32 @@ class TRCRegisterViewController: TRCBaseViewController {
                 //get profile
                 if let fbFirstName = FBSDKProfile.current().firstName{
                     _obj.dicFacebookInfo.updateValue(fbFirstName, forKey: FB_FIRSTNAME)
+                }else{
+                    _obj.dicFacebookInfo.updateValue("", forKey: FB_FIRSTNAME)
                 }
+                
                 if let fbMiddleName = FBSDKProfile.current().middleName{
                     _obj.dicFacebookInfo.updateValue(fbMiddleName, forKey: FB_MIDDLENAME)
+                }else{
+                    _obj.dicFacebookInfo.updateValue("", forKey: FB_MIDDLENAME)
                 }
+                
                 if let fbLastName = FBSDKProfile.current().lastName{
                     _obj.dicFacebookInfo.updateValue(fbLastName, forKey: FB_LASTNAME)
+                }else{
+                    _obj.dicFacebookInfo.updateValue("", forKey: FB_LASTNAME)
                 }
+                
                 if let fbName = FBSDKProfile.current().name{
                     _obj.dicFacebookInfo.updateValue(fbName, forKey: FB_NAME)
+                }else{
+                    _obj.dicFacebookInfo.updateValue("", forKey: FB_NAME)
                 }
+                
                 if let fbUserID = FBSDKProfile.current().userID{
                     _obj.dicFacebookInfo.updateValue(fbUserID, forKey: FB_USERID)
+                }else{
+                    _obj.dicFacebookInfo.updateValue("", forKey: FB_USERID)
                 }
                 
                 //get email, avatar
@@ -111,15 +127,22 @@ class TRCRegisterViewController: TRCBaseViewController {
                     }else{
                         let data:[String:AnyObject] = result as! [String : AnyObject]
                         
+                        //get avatar, email
                         let picture = data["picture"]
                         let avatar = picture?.object(forKey: "data")
                         let avatarURL = (avatar as AnyObject).object(forKey: "url")
 
                         if let fbEmail = data["email"]{
                             _obj.dicFacebookInfo.updateValue(fbEmail as! String, forKey: FB_EMAIL)
+                        }else{
+                            _obj.dicFacebookInfo.updateValue("", forKey: FB_EMAIL)
                         }
+                        
                         if let fbAvatar = avatarURL{
                             _obj.dicFacebookInfo.updateValue(fbAvatar as! String, forKey: FB_AVATAR)
+                        }
+                        else{
+                            _obj.dicFacebookInfo.updateValue("", forKey: FB_AVATAR)
                         }
                         
                         
