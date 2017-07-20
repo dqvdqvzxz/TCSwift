@@ -73,6 +73,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         lblDateOfBirth.labelStyle(title: Localizable(value: "birth_date"))
         lblGender.labelStyle(title: Localizable(value: "gender"))
         
+        tfFirstName.textFieldStyle(placeHolder: "")
+        tfLastName.textFieldStyle(placeHolder: "")
         tfFirstNameKata.textFieldStyle(placeHolder: "")
         tfLastNameKata.textFieldStyle(placeHolder: "")
         
@@ -83,15 +85,11 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         if(_obj.dicFacebookInfo[FB_FIRSTNAME] != nil){
             tfFirstName.text = _obj.dicFacebookInfo[FB_FIRSTNAME]
             tfFirstName.isUserInteractionEnabled = false
-        }else{
-            tfFirstName.textFieldStyle(placeHolder: "")
         }
         
         if(_obj.dicFacebookInfo[FB_MIDDLENAME] != nil || _obj.dicFacebookInfo[FB_LASTNAME] != nil){
             tfLastName.text = _obj.dicFacebookInfo[FB_MIDDLENAME]! + _obj.dicFacebookInfo[FB_LASTNAME]!
             tfLastName.isUserInteractionEnabled = false
-        }else{
-            tfLastName.textFieldStyle(placeHolder: "")
         }
         
         if(_obj.dicFacebookInfo[FB_AVATAR] != nil){
