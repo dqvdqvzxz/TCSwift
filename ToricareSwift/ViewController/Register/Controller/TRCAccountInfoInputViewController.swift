@@ -94,7 +94,13 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             tfLastName.textFieldStyle(placeHolder: "")
         }
         
-        
+        if(_obj.dicFacebookInfo[FB_AVATAR] != nil){
+            let url = URL(string: _obj.dicFacebookInfo[FB_AVATAR]!)
+//            let placeholderImage = UIImage(named: "")!
+            imgUser.af_setImage(withURL: url!, placeholderImage: nil)
+        }else{
+            //default image
+        }
 
         //config mode
         if(editMode == MODE_MYPAGE){
