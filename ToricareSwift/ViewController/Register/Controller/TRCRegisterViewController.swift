@@ -8,6 +8,10 @@
 
 import UIKit
 
+import FacebookLogin
+import FacebookCore
+import FBSDKLoginKit
+
 class TRCRegisterViewController: TRCBaseViewController {
     
     @IBOutlet weak var lblUsername: UILabel!
@@ -35,7 +39,6 @@ class TRCRegisterViewController: TRCBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     
     //MARK: Config UI
@@ -66,6 +69,26 @@ class TRCRegisterViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnRegisterWithFB(_ sender: Any) {
+        let loginManager = LoginManager()
+        loginManager.logIn([ .publicProfile, .email, .userFriends ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                ELog(error as! String)
+            case .cancelled:
+                DLog("User cancelled login.")
+            case .success: //let grantedPermissions, let declinedPermissions, let accessToken
+                //get token
+                let token = FBSDKAccessToken.current().tokenString
+                DLog("Access Token: \(String(describing: token!))")
+                
+                //save facebook token to UserDefaults
+                UserDefaults.kSetValue(token, FB_TOKEN)
+                
+                //upload token into server
+                
+                            }
+        }
+        
     }
     
 }
