@@ -113,6 +113,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         item4?.title = STRING_TAB_MEDICINE
         item5?.title = STRING_TAB_MYPAGE
         
+        item1?.image = #imageLiteral(resourceName: "home")
+        item1?.selectedImage = #imageLiteral(resourceName: "home_hl")
+        
+        item2?.image = #imageLiteral(resourceName: "nutrition")
+        item2?.selectedImage = #imageLiteral(resourceName: "nutrition_hl")
+
+        item3?.image = #imageLiteral(resourceName: "run")
+        item3?.selectedImage = #imageLiteral(resourceName: "run_hl")
+
+        item4?.image = #imageLiteral(resourceName: "pill")
+        item4?.selectedImage = #imageLiteral(resourceName: "pill_hl")
+
+        item5?.image = #imageLiteral(resourceName: "profile")
+        item5?.selectedImage = #imageLiteral(resourceName: "profile_hl")
+
+        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)]
+        let uhnSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: LABEL_FONT_GREY_COLOR)]
+
+        item1?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+        item1?.setTitleTextAttributes(selectedItem, for: .selected)
+        
+        item2?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+        item2?.setTitleTextAttributes(selectedItem, for: .selected)
+        
+        item3?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+        item3?.setTitleTextAttributes(selectedItem, for: .selected)
+        
+        item4?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+        item4?.setTitleTextAttributes(selectedItem, for: .selected)
+
+        item5?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+        item5?.setTitleTextAttributes(selectedItem, for: .selected)
+
+
 //        //set icon for tab item
 //        item1?.image = UIImage(named: "")
 //        item2?.image = UIImage(named: "")
@@ -128,13 +162,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        item5?.selectedImage = UIImage(named: "")?.withRenderingMode(.alwaysOriginal)
         
         //set theme style
+//        UITabBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
+        
         let currentTheme = UserDefaults.kGetValue(THEME_COLOR)
-        if(currentTheme != nil){
+        if (currentTheme != nil) {
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: currentTheme as! String)
-            UITabBar.appearance().barTintColor = UIColor.init(hexString: currentTheme as! String)
-        }else{
+        } else {
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
-            UITabBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
         }
 
         UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
@@ -162,4 +196,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         window?.makeKeyAndVisible()
     }
+    
 }

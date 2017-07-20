@@ -15,7 +15,6 @@ class TRCMyPageViewController: TRCBaseViewController {
     @IBOutlet weak var imgUser: UIImageView!
     
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblTarget: UILabel!
     @IBOutlet weak var lblPharmacist: UILabel!
     
     @IBOutlet weak var clvMyPage: UICollectionView!
@@ -43,13 +42,15 @@ class TRCMyPageViewController: TRCBaseViewController {
         //UI of outlet
         viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
-        lblName.labelStyle(title: nil)
-        lblTarget.labelStyle(title: nil)
-        lblPharmacist.labelStyle(title: nil)
+        lblName.labelStyle(title: "山田 花子 さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
+        lblPharmacist.labelStyle(title: Localizable(value: "my_pharmacy") + "：サンドラッグ赤堤薬局", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
         
-        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
+//        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
         
-        imgUser.makeCircle()
+//        imgUser.makeCircle()
+        // make border image
+        imgUser.makeBorder()
+
         
         //collection view
         clvMyPage.dataSource = self
@@ -64,7 +65,7 @@ extension TRCMyPageViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,24 +78,24 @@ extension TRCMyPageViewController: UICollectionViewDataSource{
         switch (indexPath.item) {
         case 0: //account info input
             cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_profile")
+            cell.lblTitle.labelStyle(title: Localizable(value: "profile"))
+
         case 1: //my pharmacy detail
             cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_pharmacy")
+            cell.lblTitle.labelStyle(title: Localizable(value: "my_pharmacy"))
+
         case 2: //walking goal detail
             cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_target")
-        case 3: //point
-            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_point")
-        case 4: //message
+            cell.lblTitle.labelStyle(title: Localizable(value: "setting_target"))
+
+        case 3: //message
             cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_message")
-        case 5: //set calendar
-            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_setcalendar")
-        case 6: //settings
+            cell.lblTitle.labelStyle(title: Localizable(value: "message"))
+
+        case 4: //settings
             cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_settings")
-            cell.lblTitle.text = STRING_SETTING
-        case 7:
-            cell.viewImg.isHidden = true
-            cell.imgIcon.isHidden = true
-            cell.lblTitle.isHidden = true
-        case 8:
+            cell.lblTitle.labelStyle(title: STRING_SETTING)
+        case 5:
             cell.viewImg.isHidden = true
             cell.imgIcon.isHidden = true
             cell.lblTitle.isHidden = true
@@ -130,16 +131,13 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
-            let vc = TRCPointViewController(nibName: "TRCPointViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
-            _obj.nc5.pushViewController(vc, animated: true)
+            break
+//            let vc = TRCPointViewController(nibName: "TRCPointViewController", bundle: nil)
+//            let backItem = UIBarButtonItem()
+//            backItem.title = STRING_BACK
+//            navigationItem.backBarButtonItem = backItem
+//            _obj.nc5.pushViewController(vc, animated: true)
         case 4:
-            break
-        case 5:
-            break
-        case 6:
             let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
@@ -154,7 +152,7 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
 extension TRCMyPageViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenRect = UIScreen.main.bounds
-        let screenWidth = screenRect.size.width - 2.6
+        let screenWidth = screenRect.size.width - 4
         let cellWidth = screenWidth / 3.0
         let size = CGSize(width: cellWidth, height: cellWidth)
 
