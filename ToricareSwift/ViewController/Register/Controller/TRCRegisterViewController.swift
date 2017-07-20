@@ -86,7 +86,25 @@ class TRCRegisterViewController: TRCBaseViewController {
                 
                 //upload token into server
                 
-                            }
+                //get profile
+                if let fbFirstName = FBSDKProfile.current().firstName{
+                    _obj.dicFacebookInfo.updateValue(fbFirstName, forKey: FB_FIRSTNAME)
+                }
+                if let fbMiddleName = FBSDKProfile.current().middleName{
+                    _obj.dicFacebookInfo.updateValue(fbMiddleName, forKey: FB_MIDDLENAME)
+                }
+                if let fbLastName = FBSDKProfile.current().lastName{
+                    _obj.dicFacebookInfo.updateValue(fbLastName, forKey: FB_LASTNAME)
+                }
+                if let fbName = FBSDKProfile.current().name{
+                    _obj.dicFacebookInfo.updateValue(fbName, forKey: FB_NAME)
+                }
+                if let fbUserID = FBSDKProfile.current().userID{
+                    _obj.dicFacebookInfo.updateValue(fbUserID, forKey: FB_USERID)
+                }
+                
+                
+            }
         }
         
     }
