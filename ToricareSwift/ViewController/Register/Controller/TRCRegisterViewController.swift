@@ -103,7 +103,29 @@ class TRCRegisterViewController: TRCBaseViewController {
                     _obj.dicFacebookInfo.updateValue(fbUserID, forKey: FB_USERID)
                 }
                 
-                
+                //get email, avatar
+                let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email, picture.type(large)"])
+                graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+                    if ((error) != nil){
+                        ELog("Error: \(String(describing: error))")
+                    }else{
+                        let data:[String:AnyObject] = result as! [String : AnyObject]
+                        
+                        let picture = data["picture"]
+                        let avatar = picture?.object(forKey: "data")
+                        let avatarURL = (avatar as AnyObject).object(forKey: "url")
+
+                        if let fbEmail = data["email"]{
+                            _obj.dicFacebookInfo.updateValue(fbEmail as! String, forKey: FB_EMAIL)
+                        }
+                        if let fbAvatar = avatarURL{
+                            _obj.dicFacebookInfo.updateValue(fbAvatar as! String, forKey: FB_AVATAR)
+                        }
+                        
+                        
+                        
+                    }
+                })
             }
         }
         
