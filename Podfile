@@ -8,6 +8,7 @@ target 'ToricareSwift' do
   # Pods for ToricareSwift
 
 pod 'Alamofire'
+pod 'AlamofireImage'
 
 pod 'FacebookCore', '~> 0.2'
 pod 'FacebookLogin', '~> 0.2'
