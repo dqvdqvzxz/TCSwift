@@ -10,7 +10,53 @@ import UIKit
 
 class TRCHomeViewController: TRCBaseViewController {
     
+    @IBOutlet weak var viewMain: UIView!
     
+    @IBOutlet weak var viewNotification: UIView!
+    @IBOutlet weak var lblTitleGroupNotification: UILabel!
+    @IBOutlet weak var viewImageNotification1: UIView!
+    @IBOutlet weak var lblTitleNotification1: UILabel!
+    @IBOutlet weak var viewImageNotification2: UIView!
+    @IBOutlet weak var lblTitleNotification2: UILabel!
+    @IBOutlet weak var lblMoreNotification: UILabel!
+    
+    @IBOutlet weak var viewSummary: UIView!
+    @IBOutlet weak var lblTitleGroupSummary: UILabel!
+    @IBOutlet weak var lblStep: UILabel!
+    @IBOutlet weak var lblStepUnit: UILabel!
+    @IBOutlet weak var viewImageSummary: UIView!
+    @IBOutlet weak var viewBorderInformSummary: UIView!
+    @IBOutlet weak var lblInformSummary: UILabel!
+    
+    @IBOutlet weak var viewBorderExerciseKcal: UIView!
+    @IBOutlet weak var viewExerciseKcal: UIView!
+    @IBOutlet weak var viewBorderTitleExerciseKcal: UIView!
+    @IBOutlet weak var viewBorderImageExerciseKcal: UIView!
+    @IBOutlet weak var viewImageExerciseKcal: UIView!
+    @IBOutlet weak var viewBorderLblTitleExerciseKcal: UIView!
+    @IBOutlet weak var lblTitleExerciseKcal: UILabel!
+    @IBOutlet weak var viewBorderContentExerciseKcal: UIView!
+    @IBOutlet weak var lblContentExerciseKcal: UILabel!
+    @IBOutlet weak var lblContentExerciseKcalUnit: UILabel!
+    
+    @IBOutlet weak var viewBorderFoodKcal: UIView!
+    @IBOutlet weak var viewFoodKcal: UIView!
+    @IBOutlet weak var viewBorderTitleFoodKcal: UIView!
+    @IBOutlet weak var viewBorderImageFoodKcal: UIView!
+    @IBOutlet weak var viewImageFoodKcal: UIView!
+    @IBOutlet weak var viewBorderLblTitleFoodKcal: UIView!
+    @IBOutlet weak var lblTitleFoodKcal: UILabel!
+    @IBOutlet weak var viewBorderContentFoodKcal: UIView!
+    @IBOutlet weak var lblContentFoodKcal: UILabel!
+    @IBOutlet weak var lblContentFoodKcalUnit: UILabel!
+    
+    @IBOutlet weak var viewWeight: UIView!
+    
+    @IBOutlet weak var viewBorderBanner1: UIView!
+    @IBOutlet weak var viewImageBanner1: UIView!
+    @IBOutlet weak var viewBorderBanner2: UIView!
+    @IBOutlet weak var viewImageBanner2: UIView!
+
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,5 +93,13 @@ class TRCHomeViewController: TRCBaseViewController {
     func configUI(){
         //navigation
         self.navigationItem.title = STRING_TAB_HOME
+
+        
+        //UI of outlet
+    }
+    
+    //MARK: Action
+    func action(){
+        //
     }
 }
