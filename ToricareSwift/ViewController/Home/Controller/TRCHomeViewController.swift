@@ -93,7 +93,8 @@ class TRCHomeViewController: TRCBaseViewController {
     func configUI(){
         //navigation
         self.navigationItem.title = STRING_TAB_HOME
-
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Btn1", style: .plain, target: self, action: #selector(action))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Btn2", style: .plain, target: self, action: #selector(action))
         
         //UI of outlet
     }
