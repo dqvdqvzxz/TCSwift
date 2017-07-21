@@ -122,7 +122,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         //imgUser.makeCircle()
         
         // make border image
-        imgUser.makeBorder()
+        imgUser.makeBorder(color: UIColor.lightGray)
         
         //date of birth
         showDatePicker()

@@ -15,8 +15,8 @@ extension UIImageView{
         self.layer.masksToBounds = true
     }
     
-    func makeBorder(){
+    func makeBorder(color:UIColor){
         self.layer.borderWidth = 1;
-        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderColor = color.cgColor
     }
 }
