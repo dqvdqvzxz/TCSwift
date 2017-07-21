@@ -24,7 +24,7 @@ pod 'GoogleMaps'
 #pod 'Firebase/Messaging'
 #
 #pod 'Charts'
-#
-#pod 'ZXingObjC', '~> 3.2.1'
+
+pod 'ZXingObjC', '~> 3.2.1'
 
 end

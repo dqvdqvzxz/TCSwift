@@ -44,6 +44,11 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnQRCode(_ sender: Any) {
+        let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func tapBtnUsingApp(_ sender: Any) {

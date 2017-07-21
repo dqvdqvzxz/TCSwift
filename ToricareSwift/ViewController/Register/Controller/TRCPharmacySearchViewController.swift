@@ -50,11 +50,18 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         //set up page view
         configPageView()
         
+        //set up tutorial view
+        configTutorialView()
     }
     
     func configPageView(){
         let pageVC =  TRCSearchPageViewController(nibName: "TRCSearchPageViewController", bundle: nil)
         viewPage.addSubview(pageVC.view)
+    }
+    
+    func configTutorialView(){
+        let tutorialVC =  TRCTutorialSearchViewController(nibName: "TRCTutorialSearchViewController", bundle: nil)
+        self.view.addSubview(tutorialVC.view)
     }
     
     //MARK: Action
@@ -73,3 +80,4 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+

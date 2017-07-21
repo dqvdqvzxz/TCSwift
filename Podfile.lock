@@ -34,10 +34,13 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.3.1):
     - GoogleMaps/Base (= 2.3.1)
+  - ZXingObjC (3.2.1):
+    - ZXingObjC/All (= 3.2.1)
+  - ZXingObjC/All (3.2.1)
 
 DEPENDENCIES:
   - Alamofire
-  - AlamofireImage (~> 3.1)
+  - AlamofireImage
   - FacebookCore (~> 0.2)
   - FacebookLogin (~> 0.2)
   - FacebookShare (~> 0.2)
@@ -46,6 +49,7 @@ DEPENDENCIES:
   - FBSDKShareKit (~> 4.24.0)
   - GoogleMaps
   - GooglePlaces
+  - ZXingObjC (~> 3.2.1)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -59,7 +63,8 @@ SPEC CHECKSUMS:
   FBSDKShareKit: a2ed9d7781a4eda9ac20d7404305e795b10251ac
   GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
+  ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: 68a154d1c4dc6104268246f5201e2080d985dafe
+PODFILE CHECKSUM: 20baaca8bfb27faf76d89a3dc4b9a856daaa3d5c
 
 COCOAPODS: 1.1.1
