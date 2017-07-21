@@ -72,6 +72,8 @@
 	<string>$(PRODUCT_NAME) heath update use</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) photo use</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>$(PRODUCT_NAME) microphone use</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Use Location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
