@@ -49,7 +49,7 @@ class TRCMyPageViewController: TRCBaseViewController {
         
 //        imgUser.makeCircle()
         // make border image
-        imgUser.makeBorder()
+        imgUser.makeBorder(color: UIColor.white)
 
         
         //collection view
