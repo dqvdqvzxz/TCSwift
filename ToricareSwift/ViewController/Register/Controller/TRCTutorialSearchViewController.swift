@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCTutorialSeachViewController: UIViewController, removeView{
+class TRCTutorialSearchViewController: UIViewController{
 
     @IBOutlet weak var viewMain: UIView!
     
