@@ -18,8 +18,8 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var lblTitleNotification1: UILabel!
     @IBOutlet weak var viewImageNotification2: UIView!
     @IBOutlet weak var lblTitleNotification2: UILabel!
-    @IBOutlet weak var lblMoreNotification: UILabel!
     
+    @IBOutlet weak var btnMore: UIButton!
     @IBOutlet weak var viewSummary: UIView!
     @IBOutlet weak var lblTitleGroupSummary: UILabel!
     @IBOutlet weak var lblStep: UILabel!
@@ -57,6 +57,7 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var viewBorderBanner2: UIView!
     @IBOutlet weak var viewImageBanner2: UIView!
 
+    @IBOutlet weak var lblRegisterTodayWeight: UILabel!
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +98,28 @@ class TRCHomeViewController: TRCBaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Btn2", style: .plain, target: self, action: #selector(action))
         
         //UI of outlet
+        lblTitleGroupNotification.labelStyle(title: Localizable(value: "notify_from_tricare_pharmacy"), fontSize: LABEL_FONT_SIZE! + 2, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblTitleNotification1.labelStyle(title: "6/25(日) 第７回ウォークラリー開催")
+        lblTitleNotification2.labelStyle(title: "6/07(水) 毎月第一水曜日健康フェア開催")
+        btnMore.titleLabel?.text = Localizable(value: "view_more")
+//        btnMore.buttonStyle(title: Localizable(value: "view_more"), fontSize: BUTTON_FONT_SIZE! - 2, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        
+        //
+        lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblStep.labelStyle(title: "5000", fontSize: LABEL_FONT_SIZE! + 10, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 4, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblInformSummary.labelStyle(title: Localizable(value: "sucess_percent"), fontSize: LABEL_FONT_SIZE! + 5, isBold: false, textColor: LABEL_FONT_COLOR)
+        
+        //
+        lblTitleExerciseKcal.labelStyle(title: Localizable(value: "exercise"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblContentExerciseKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblContentExerciseKcalUnit.labelStyle(title: "Kcal")
+        
+        lblTitleFoodKcal.labelStyle(title: Localizable(value: "meal"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblContentFoodKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblContentFoodKcalUnit.labelStyle(title: "Kcal")
+        
+        lblRegisterTodayWeight.labelStyle(title: Localizable(value: "register_today_weight"))
     }
     
     //MARK: Action

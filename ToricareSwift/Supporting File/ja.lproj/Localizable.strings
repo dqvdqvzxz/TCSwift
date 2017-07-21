@@ -205,16 +205,15 @@
 "my_pharmacy"                           = "My薬局";
 "profile"                               = "プロフィール";
 "message"                               = "メッセージ";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
+
+//MARK: Home
+"notify_from_tricare_pharmacy"          = "とりけあ薬局からのお知らせ";
+"view_more"                             = "もっと見る";
+"today_step"                            = "今日の歩数";
+"sucess_percent"                        = "80％達成！あと少し！";
+"exercise"                              = "活動";
+"meal"                                  = "食事";
+"register_today_weight"                 = "今日の体重を記録する";
 ""                              = "";
 ""                              = "";
 ""                              = "";
