@@ -8,6 +8,8 @@
 
 import UIKit
 
+import AlamofireImage
+
 class TRCAccountInfoInputViewController: TRCBaseViewController {
 
     @IBOutlet weak var imgUser: UIImageView!
@@ -60,6 +62,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Config UI
     func configUI(){
+        //navigation
+        self.navigationItem.title = Localizable(value: "register_title")
+        
         //UI of outlet
         lblFirstName.labelStyle(title: Localizable(value: "first_name"))
         lblLastName.labelStyle(title: Localizable(value: "last_name"))
@@ -72,29 +77,45 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         tfLastName.textFieldStyle(placeHolder: "")
         tfFirstNameKata.textFieldStyle(placeHolder: "")
         tfLastNameKata.textFieldStyle(placeHolder: "")
+        
         tfDateOfBirth.textFieldStyle(placeHolder: "")
         tfGender.textFieldStyle(placeHolder: "")
         
-        self.navigationItem.title = Localizable(value: "register_title")
+        //fill data if register with Facebook
+        if(_obj.dicFacebookInfo[FB_FIRSTNAME] != nil){
+            tfFirstName.text = _obj.dicFacebookInfo[FB_FIRSTNAME]
+            tfFirstName.isUserInteractionEnabled = false
+        }
+        
+        if(_obj.dicFacebookInfo[FB_MIDDLENAME] != nil || _obj.dicFacebookInfo[FB_LASTNAME] != nil){
+            tfLastName.text = _obj.dicFacebookInfo[FB_MIDDLENAME]! + _obj.dicFacebookInfo[FB_LASTNAME]!
+            tfLastName.isUserInteractionEnabled = false
+        }
+        
+        if(_obj.dicFacebookInfo[FB_AVATAR] != nil){
+            let url = URL(string: _obj.dicFacebookInfo[FB_AVATAR]!)
+//            let placeholderImage = UIImage(named: "")!
+            imgUser.af_setImage(withURL: url!, placeholderImage: nil)
+        }else{
+            //default image
+        }
 
+        //config mode
         if(editMode == MODE_MYPAGE){
             self.navigationItem.hidesBackButton = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
-            
             contraintBottomScrollView.constant = 0
-            
             btnNext.isHidden = true
         }else if(editMode == MODE_REGISTER){
             self.navigationItem.title = Localizable(value: "register_title")
-            
             btnNext.buttonStyle(title: STRING_NEXT)
-
-            self.navigationItem.hidesBackButton = true
         }
         
+        //add image to text field
         tfDateOfBirth.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
         tfGender.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
         
+        //set default value of gender picker
         tfGender.text = dataGender[0]
         
         //make image circle

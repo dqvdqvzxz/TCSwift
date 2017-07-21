@@ -27,6 +27,8 @@ let FB_MIDDLENAME = "fbMiddleName"
 let FB_LASTNAME = "fbLastName"
 let FB_NAME = "fbName"
 let FB_USERID = "fbUserID"
+let FB_EMAIL = "fbEmail"
+let FB_AVATAR = "fbAvatar"
 
 //MARK: Http method
 let HTTP_POST = "POST"
