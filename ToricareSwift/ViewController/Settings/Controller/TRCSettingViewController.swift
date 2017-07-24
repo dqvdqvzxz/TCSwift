@@ -119,8 +119,12 @@ extension TRCSettingViewController: UITableViewDelegate{
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         case 8:
-            //logout
-            break
+            let vc = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+            UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            }, completion: { completed in
+                // maybe do something here
+            })
         default:
             break
         }
