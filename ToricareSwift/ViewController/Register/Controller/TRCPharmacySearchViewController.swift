@@ -18,11 +18,25 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnSearch: UIButton!
     
+    //sub view tutorial
+    @IBOutlet var viewParentTutorial: UIView!
+    @IBOutlet weak var viewTutorial: UIView!
+    @IBOutlet weak var viewMain: UIView!
+    @IBOutlet weak var viewContent: UIView!
+
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var btnCancel: UIButton!
+    @IBOutlet weak var btnReaded: UIButton!
+
+
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configUI()
+        
+//        vc.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,8 +74,14 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     }
     
     func configTutorialView(){
-        let tutorialVC =  TRCTutorialSearchViewController(nibName: "TRCTutorialSearchViewController", bundle: nil)
-        self.view.addSubview(tutorialVC.view)
+        //UI
+        btnCancel.setTitle("", for: .normal)
+        btnReaded.buttonStyle(title: "")
+        
+        viewParentTutorial.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
+        
+        //add to self view
+        self.view.addSubview(viewParentTutorial)
     }
     
     //MARK: Action
@@ -79,5 +99,12 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func tapBtnCancel(_ sender: Any) {
+        viewParentTutorial.removeFromSuperview()
+    }
+    
+    @IBAction func tapBtnReaded(_ sender: Any) {
+        viewParentTutorial.removeFromSuperview()
+    }
 }
-

@@ -11,11 +11,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCPharmacySearchViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="btnCancel" destination="TE9-IC-VV0" id="4fx-ZS-KZy"/>
+                <outlet property="btnReaded" destination="osB-Bj-UfL" id="flG-QB-u6E"/>
                 <outlet property="btnSearch" destination="IXp-Sd-Wh6" id="LdB-p5-Tlf"/>
                 <outlet property="lblInform" destination="ylI-el-MrL" id="l5n-TS-9D3"/>
+                <outlet property="scrollView" destination="Sub-IO-1Ik" id="ez8-vh-Ghn"/>
                 <outlet property="tfSearch" destination="bH1-uF-8Ll" id="FoR-jf-fnD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewContent" destination="xZN-FI-r5W" id="bTb-vC-6zt"/>
+                <outlet property="viewMain" destination="fHh-nm-a72" id="2Mj-tb-x2u"/>
                 <outlet property="viewPage" destination="yP4-SQ-1hu" id="RCp-MG-9dl"/>
+                <outlet property="viewParentTutorial" destination="Q7g-wY-YUz" id="mgF-ow-qRZ"/>
+                <outlet property="viewTutorial" destination="Hgl-Ek-RYK" id="ajm-Tl-afR"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -74,5 +81,88 @@
             </constraints>
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Q7g-wY-YUz">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgl-Ek-RYK">
+                    <rect key="frame" x="10" y="74" width="355" height="539"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TE9-IC-VV0">
+                            <rect key="frame" x="315" y="10" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="PTc-vs-Cld"/>
+                                <constraint firstAttribute="height" constant="30" id="v3W-LU-wCZ"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="ic_cancel"/>
+                            <connections>
+                                <action selector="tapBtnCancel:" destination="-1" eventType="touchUpInside" id="33t-kB-eZt"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHh-nm-a72">
+                            <rect key="frame" x="10" y="45" width="335" height="435"/>
+                            <subviews>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sub-IO-1Ik" userLabel="scollView">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="435"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZN-FI-r5W">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="435"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xZN-FI-r5W" firstAttribute="leading" secondItem="Sub-IO-1Ik" secondAttribute="leading" id="dZX-15-g3p"/>
+                                        <constraint firstItem="xZN-FI-r5W" firstAttribute="top" secondItem="Sub-IO-1Ik" secondAttribute="top" id="ipn-Ho-9U6"/>
+                                        <constraint firstAttribute="trailing" secondItem="xZN-FI-r5W" secondAttribute="trailing" id="nwn-oy-MIl"/>
+                                        <constraint firstAttribute="bottom" secondItem="xZN-FI-r5W" secondAttribute="bottom" id="xH1-aZ-dqT"/>
+                                    </constraints>
+                                </scrollView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Sub-IO-1Ik" firstAttribute="top" secondItem="fHh-nm-a72" secondAttribute="top" id="0Lm-CK-NX3"/>
+                                <constraint firstItem="Sub-IO-1Ik" firstAttribute="leading" secondItem="fHh-nm-a72" secondAttribute="leading" id="1SF-Ih-Qoh"/>
+                                <constraint firstItem="xZN-FI-r5W" firstAttribute="height" secondItem="fHh-nm-a72" secondAttribute="height" id="A8i-Ni-g3r"/>
+                                <constraint firstItem="xZN-FI-r5W" firstAttribute="width" secondItem="fHh-nm-a72" secondAttribute="width" id="V79-Uz-HVR"/>
+                                <constraint firstAttribute="bottom" secondItem="Sub-IO-1Ik" secondAttribute="bottom" id="wTo-2s-qCr"/>
+                                <constraint firstAttribute="trailing" secondItem="Sub-IO-1Ik" secondAttribute="trailing" id="xhd-jT-oJz"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osB-Bj-UfL">
+                            <rect key="frame" x="10" y="485" width="335" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="yLy-Q6-VrP"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="tapBtnReaded:" destination="-1" eventType="touchUpInside" id="x4X-w9-ZtO"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TE9-IC-VV0" firstAttribute="top" secondItem="Hgl-Ek-RYK" secondAttribute="top" constant="10" id="ETN-5A-YpX"/>
+                        <constraint firstAttribute="trailing" secondItem="osB-Bj-UfL" secondAttribute="trailing" constant="10" id="Gbn-SM-9Py"/>
+                        <constraint firstItem="osB-Bj-UfL" firstAttribute="leading" secondItem="Hgl-Ek-RYK" secondAttribute="leading" constant="10" id="HML-KI-HzJ"/>
+                        <constraint firstAttribute="trailing" secondItem="TE9-IC-VV0" secondAttribute="trailing" constant="10" id="HgO-3I-k7P"/>
+                        <constraint firstAttribute="trailing" secondItem="fHh-nm-a72" secondAttribute="trailing" constant="10" id="NWi-0X-UYD"/>
+                        <constraint firstItem="fHh-nm-a72" firstAttribute="top" secondItem="TE9-IC-VV0" secondAttribute="bottom" constant="5" id="TLm-z0-D1e"/>
+                        <constraint firstItem="fHh-nm-a72" firstAttribute="bottom" secondItem="osB-Bj-UfL" secondAttribute="top" constant="-5" id="bcm-vt-8Nn"/>
+                        <constraint firstItem="fHh-nm-a72" firstAttribute="leading" secondItem="Hgl-Ek-RYK" secondAttribute="leading" constant="10" id="kIB-cn-EXs"/>
+                        <constraint firstAttribute="bottom" secondItem="osB-Bj-UfL" secondAttribute="bottom" constant="10" id="pcv-qw-Qh9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Hgl-Ek-RYK" firstAttribute="top" secondItem="Q7g-wY-YUz" secondAttribute="top" constant="74" id="1z8-Ij-Cr1"/>
+                <constraint firstAttribute="trailing" secondItem="Hgl-Ek-RYK" secondAttribute="trailing" constant="10" id="aPf-Bv-u90"/>
+                <constraint firstAttribute="bottom" secondItem="Hgl-Ek-RYK" secondAttribute="bottom" constant="54" id="iC3-h5-aPJ"/>
+                <constraint firstItem="Hgl-Ek-RYK" firstAttribute="leading" secondItem="Q7g-wY-YUz" secondAttribute="leading" constant="10" id="k4q-yK-PXi"/>
+            </constraints>
+            <point key="canvasLocation" x="626" y="78"/>
+        </view>
     </objects>
+    <resources>
+        <image name="ic_cancel" width="16" height="16"/>
+    </resources>
 </document>
