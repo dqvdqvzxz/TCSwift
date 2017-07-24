@@ -10,10 +10,23 @@ import UIKit
 
 class TRCUserLeaveViewController: TRCBaseViewController {
 
+    @IBOutlet weak var lblTitleUserLeave: UILabel!
+    @IBOutlet weak var lblConfirm: UILabel!
+    @IBOutlet weak var lblCheckBox: UILabel!
+    
+    @IBOutlet weak var viewContent: UIView!
+    @IBOutlet weak var viewCheckBox: UIView!
+    @IBOutlet weak var viewBtnCheckBox: UIView!
+    @IBOutlet weak var viewLblCheckBox: UIView!
+    
+    @IBOutlet weak var btnCheckBox: UIButton!
+    @IBOutlet weak var btnLeave: UIButton!
+    
+    //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +34,36 @@ class TRCUserLeaveViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Config UI
+    func configUI(){
+        //navigation
+        self.navigationItem.title = ""
+        
+        //UI
+        btnLeave.isEnabled = false
+        btnLeave.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        
+        //add action tap check box for button check box and view check box
+        btnCheckBox.addTarget(self, action: #selector(tapCheckBox), for: .touchUpInside)
+        
+        let gestureViewCheckBox = UITapGestureRecognizer(target: self, action: #selector(tapCheckBox))
+        viewCheckBox.addGestureRecognizer(gestureViewCheckBox)
     }
-    */
-
+    
+    //MARK: Action
+    func tapCheckBox(){
+        btnCheckBox.isSelected = !btnCheckBox.isSelected
+        if(btnCheckBox.isSelected){
+            btnLeave.isEnabled = true
+            btnLeave.backgroundColor = UIColor.init(hexString: MAIN_COLOR)
+        }else if(!btnCheckBox.isSelected){
+            btnLeave.isEnabled = false
+            btnLeave.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        }
+    }
+    
+    //MARK: Button Action
+    @IBAction func tapBtnLeave(_ sender: Any) {
+ 
+    }
 }
