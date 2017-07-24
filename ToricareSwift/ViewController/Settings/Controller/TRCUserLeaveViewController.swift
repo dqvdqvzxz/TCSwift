@@ -64,6 +64,10 @@ class TRCUserLeaveViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnLeave(_ sender: Any) {
- 
+        let vc = TRCUserLeaveCompleteViewController(nibName: "TRCUserLeaveCompleteViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
