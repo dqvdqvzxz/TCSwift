@@ -34,7 +34,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
     
-    var mode = String()
+    var mode : String = MODE_MYPAGE
     
     //MARK: View controller
     override func viewDidLoad() {

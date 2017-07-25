@@ -118,8 +118,8 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 1:
-            let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
-            vc.mode = MODE_MYPAGE
+            let vc = TRCMyPharmacyDetailPageViewController(nibName: "TRCMyPharmacyDetailPageViewController", bundle: nil)
+//            vc.mode = MODE_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
