@@ -94,8 +94,20 @@ class TRCHomeViewController: TRCBaseViewController {
     func configUI(){
         //navigation
         self.navigationItem.title = STRING_TAB_HOME
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Btn1", style: .plain, target: self, action: #selector(pushToMessageList))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Btn2", style: .plain, target: self, action: #selector(action))
+        
+        let leftButton =  UIButton()
+        leftButton.setImage(UIImage(named: "ic_home_message"), for: .normal)
+        leftButton.addTarget(self, action: #selector(pushToMessageList), for: .touchUpInside)
+        leftButton.frame = CGRect(x: 7, y: 10, width: 30, height: 30)
+        let leftBarButton = UIBarButtonItem(customView: leftButton)
+        navigationItem.leftBarButtonItem = leftBarButton
+        
+        let rightButton =  UIButton()
+        rightButton.setImage(UIImage(named: "ic_calendar"), for: .normal)
+        rightButton.addTarget(self, action: #selector(action), for: .touchUpInside)
+        rightButton.frame = CGRect(x: 7, y: 10, width: 30, height: 30)
+        let rightBarButton = UIBarButtonItem(customView: rightButton)
+        navigationItem.rightBarButtonItem = rightBarButton
         
         //UI of outlet
         lblTitleGroupNotification.labelStyle(title: Localizable(value:  "notify_from_tricare_pharmacy"), fontSize: LABEL_FONT_SIZE! + 2, isBold: true, textColor: LABEL_FONT_COLOR)
