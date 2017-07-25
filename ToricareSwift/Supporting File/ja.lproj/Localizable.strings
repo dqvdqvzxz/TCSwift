@@ -224,9 +224,10 @@
 "input_again"                           = "もう一度入力してください。";
 "input_current_passcode"                = "現在のパスコードを入力してください。 ";
 "input_new_passcode"                    = "新しいパスコードを入力してください。";
+"change_passcode_title"                 = "パスコード変更";
 
-""                              = "";
-""                              = "";
+"message_list"                          = "メッセージ一覧";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";

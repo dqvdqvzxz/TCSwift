@@ -27,7 +27,7 @@ class TRCMessageListViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = ""
+        self.navigationItem.title = Localizable(value: "message_list")
         
         //table view
         tblMessage.dataSource = self
@@ -51,8 +51,9 @@ extension TRCMessageListViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
         
         //style for cell
-        cell.imgView.image = UIImage(named: "ic_mail")
-        
+        cell.imgView.image = #imageLiteral(resourceName: "message_new")
+        cell.lblTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
+        cell.lblSubTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
         return cell
     }
 }
@@ -67,7 +68,7 @@ extension TRCMessageListViewController: UITableViewDelegate{
         
         let currentCell = tableView.cellForRow(at: indexPath!) as! TRCMessageListCell
         
-        currentCell.imgView.image = UIImage(named: "ic_mail_readed")
+        currentCell.imgView.image = #imageLiteral(resourceName: "message_read")
         currentCell.lblTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
         currentCell.lblSubTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
     }
