@@ -67,4 +67,9 @@ let STRING_SNACK =                      Localizable(value: "snack")
 let MODE_MYPAGE =                       "MODE_MYPAGE"
 let MODE_REGISTER =                     "MODE_REGISTER"
 
+//Passcode Mode
+let MODE_LOGIN =                        "MODE_LOGIN"
+let MODE_SETUP =                        "MODE_SETUP"
+let MODE_CONFIRM =                      "MODE_CONFIRM"
+let MODE_CHANGE =                       "MODE_CHANGE"
 
