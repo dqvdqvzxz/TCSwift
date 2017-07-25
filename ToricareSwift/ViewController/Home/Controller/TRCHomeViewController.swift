@@ -94,7 +94,7 @@ class TRCHomeViewController: TRCBaseViewController {
     func configUI(){
         //navigation
         self.navigationItem.title = STRING_TAB_HOME
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Btn1", style: .plain, target: self, action: #selector(action))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Btn1", style: .plain, target: self, action: #selector(pushToMessageList))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Btn2", style: .plain, target: self, action: #selector(action))
         
         //UI of outlet
@@ -123,11 +123,15 @@ class TRCHomeViewController: TRCBaseViewController {
     }
     
     //MARK: Action
-    func action(){
+    func pushToMessageList(){
         let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func action(){
+        //
     }
 }

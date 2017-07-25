@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCMessageListViewController: UIViewController {
+class TRCMessageListViewController: TRCBaseViewController {
 
     @IBOutlet weak var tblMessage: UITableView!
     
