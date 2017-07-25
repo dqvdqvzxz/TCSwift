@@ -118,17 +118,17 @@ class TRCHomeViewController: TRCBaseViewController {
         
         //
         lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblStep.labelStyle(title: "5000", fontSize: LABEL_FONT_SIZE! + 10, isBold: true, textColor: LABEL_FONT_COLOR)
-        lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 4, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblStep.labelStyle(title: "5000", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 2, isBold: false, textColor: LABEL_FONT_COLOR)
         lblInformSummary.labelStyle(title: Localizable(value: "sucess_percent"), fontSize: LABEL_FONT_SIZE! + 5, isBold: false, textColor: LABEL_FONT_COLOR)
         
         //
         lblTitleExerciseKcal.labelStyle(title: Localizable(value: "exercise"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblContentExerciseKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblContentExerciseKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
         lblContentExerciseKcalUnit.labelStyle(title: "Kcal")
         
         lblTitleFoodKcal.labelStyle(title: Localizable(value: "meal"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblContentFoodKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblContentFoodKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
         lblContentFoodKcalUnit.labelStyle(title: "Kcal")
         
         lblRegisterTodayWeight.labelStyle(title: Localizable(value: "register_today_weight"))
