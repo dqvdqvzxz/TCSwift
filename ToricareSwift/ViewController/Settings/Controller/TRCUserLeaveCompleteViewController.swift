@@ -10,6 +10,12 @@ import UIKit
 
 class TRCUserLeaveCompleteViewController: TRCBaseViewController {
 
+    @IBOutlet weak var lblTitle1: UILabel!
+    @IBOutlet weak var lblTitle2: UILabel!
+    
+    @IBOutlet weak var imgView: UIImageView!
+    
+    //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +27,8 @@ class TRCUserLeaveCompleteViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Config UI
+    func configUI(){
+        
     }
-    */
-
 }
