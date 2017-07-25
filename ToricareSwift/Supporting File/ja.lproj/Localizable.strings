@@ -214,13 +214,17 @@
 "exercise"                              = "活動";
 "meal"                                  = "食事";
 "register_today_weight"                 = "今日の体重を記録する";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
+
+//MARK: Setting Passcode
+"enable_passcode"                       = "パスコードロックを有効にする";
+"change_passcode"                       = "パスコード変更する";
+"input_passcode"                        = "パスコードロックを入力してください。";
+"confirm_passcode"                      = "確認のためもう一度入力してください。";
+"passcode_not_match"                    = "パスコードが一致しません。";
+"input_again"                           = "もう一度入力してください。";
+"input_current_passcode"                = "現在のパスコードを入力してください。 ";
+"input_new_passcode"                    = "新しいパスコードを入力してください。";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";
