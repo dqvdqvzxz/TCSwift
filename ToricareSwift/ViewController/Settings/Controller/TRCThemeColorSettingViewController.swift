@@ -61,12 +61,12 @@ extension TRCThemeColorSettingViewController: UITableViewDataSource{
         cell.textLabel?.text = self.listTitleColors?[indexPath.row]
         
         //checkmark state with current color
-        let currentColor = UserDefaults.kGetValue(THEME_COLOR) as! String
-        if(self.listColors?[indexPath.row] == currentColor){
-            cell.accessoryType = .checkmark;
-        }else{
-            cell.accessoryType = .none;
-        }
+//        let currentColor = UserDefaults.kGetValue(THEME_COLOR) as! String
+//        if(self.listColors?[indexPath.row] == currentColor){
+//            cell.accessoryType = .checkmark;
+//        }else{
+//            cell.accessoryType = .none;
+//        }
 
         return cell
     }
