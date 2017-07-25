@@ -32,8 +32,13 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_SETTING_PASSCODE
         
         //UI
-        btnPasscode.isEnabled = false
-        btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
+        if(UserDefaults.kGetValue(PASSCODE) != nil){
+            btnPasscode.isEnabled = true
+            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
+        }else{
+            btnPasscode.isEnabled = false
+            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
+        }
         
         //table view
         tblPasscode.dataSource = self
@@ -47,6 +52,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnPasscode(_ sender: Any) {
         let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+        vc.mode = MODE_SETUP
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
@@ -68,7 +74,11 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
         
         cell.lblTitle.text = Localizable(value: "enable_passcode")
         cell.lblTime.isHidden = true
-        cell.switchCell.isOn = false
+        if(UserDefaults.kGetValue(PASSCODE) != nil){
+            cell.switchCell.isOn = true
+        }else{
+            cell.switchCell.isOn = false
+        }
         cell.switchCell.addTarget(self, action: #selector(stateChanged(switchState:)), for: .valueChanged)
         
         return cell

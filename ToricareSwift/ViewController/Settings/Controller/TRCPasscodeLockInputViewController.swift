@@ -94,7 +94,36 @@ class TRCPasscodeLockInputViewController: UIViewController {
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_circle")
             
+            let passcodeString = tfPasscode.text
+            print(passcodeString)
             
+            switch (mode) {
+            case MODE_LOGIN:
+                break
+            case MODE_SETUP:
+                //save to dic
+                _obj.dicPasscode.updateValue(passcodeString!, forKey: DIC_PASSCODE)
+                
+                //push to confirm
+                let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+                vc.mode = MODE_CONFIRM
+                let backItem = UIBarButtonItem()
+                backItem.title = STRING_BACK
+                navigationItem.backBarButtonItem = backItem
+                self.navigationController?.pushViewController(vc, animated: true)
+            case MODE_CONFIRM:
+                            case MODE_CHANGE:
+                //remove old passcode in dic
+                
+                //compare passcode with userdefault
+                
+                //save new passcode to dic
+                
+                //push to confirm
+                
+                break
+            default:
+                break
             }
         default:
             imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
