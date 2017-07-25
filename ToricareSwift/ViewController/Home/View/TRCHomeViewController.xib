@@ -13,12 +13,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCHomeViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
                 <outlet property="btnMore" destination="Zsk-H9-TLX" id="SGp-Bo-ZZL"/>
+                <outlet property="imgViewWeight" destination="vuP-AO-dEN" id="zQD-QT-9t8"/>
                 <outlet property="lblContentExerciseKcal" destination="8fX-8W-XqD" id="YpQ-fG-x9S"/>
                 <outlet property="lblContentExerciseKcalUnit" destination="bvf-7o-f7E" id="SwM-R8-FsT"/>
                 <outlet property="lblContentFoodKcal" destination="nZC-Yi-Wiz" id="X8u-5X-MPx"/>
                 <outlet property="lblContentFoodKcalUnit" destination="807-eg-qDw" id="3ml-CZ-ual"/>
                 <outlet property="lblInformSummary" destination="jwj-qe-EAE" id="HhK-8g-Vif"/>
-                <outlet property="lblRegisterTodayWeight" destination="hR4-KE-xwB" id="oOH-CI-7OW"/>
+                <outlet property="lblRegisterTodayWeight" destination="hR4-KE-xwB" id="d14-VR-eqi"/>
                 <outlet property="lblStep" destination="KpU-cC-M73" id="bQB-WF-AL2"/>
                 <outlet property="lblStepUnit" destination="hu3-fM-Qeh" id="Ihi-ec-wZr"/>
                 <outlet property="lblTitleExerciseKcal" destination="f95-Jk-Xcz" id="T5S-wI-10d"/>
@@ -33,11 +34,13 @@
                 <outlet property="viewBorderContentExerciseKcal" destination="4zk-C7-Y2d" id="Q7Y-fq-ylV"/>
                 <outlet property="viewBorderContentFoodKcal" destination="s3v-v3-rks" id="njt-7G-BV7"/>
                 <outlet property="viewBorderFoodKcal" destination="KjF-sA-oYf" id="jtz-Px-e7s"/>
+                <outlet property="viewBorderImage" destination="myP-0Z-Fc5" id="Sa6-YN-9kO"/>
                 <outlet property="viewBorderImageExerciseKcal" destination="inW-W8-qy5" id="RqP-0B-IHx"/>
                 <outlet property="viewBorderImageFoodKcal" destination="rre-gc-HG7" id="h2x-ZZ-nQY"/>
                 <outlet property="viewBorderInformSummary" destination="92f-64-ZkR" id="95d-YL-ZfQ"/>
                 <outlet property="viewBorderLblTitleExerciseKcal" destination="zgN-Mp-Ksj" id="Q3i-xY-UWI"/>
                 <outlet property="viewBorderLblTitleFoodKcal" destination="09j-7X-O09" id="mch-US-4lo"/>
+                <outlet property="viewBorderTitle" destination="hrq-Zh-hi5" id="o6Z-Jv-dKm"/>
                 <outlet property="viewBorderTitleExerciseKcal" destination="Uc9-8X-SM3" id="9uV-5J-ncU"/>
                 <outlet property="viewExerciseKcal" destination="MRr-He-G5f" id="ICY-0v-tXb"/>
                 <outlet property="viewFoodKcal" destination="pgf-Wq-aI0" id="H8i-dG-tH9"/>
@@ -467,19 +470,53 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZH9-ev-g4p" userLabel="viewWeight">
                             <rect key="frame" x="5" y="408" width="365" height="44.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR4-KE-xwB">
-                                    <rect key="frame" x="55" y="0.0" width="310" height="45"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notepad" translatesAutoresizingMaskIntoConstraints="NO" id="vuP-AO-dEN">
-                                    <rect key="frame" x="10" y="5" width="35" height="35"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myP-0Z-Fc5">
+                                    <rect key="frame" x="0.0" y="0.0" width="73" height="44.5"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notepad" translatesAutoresizingMaskIntoConstraints="NO" id="vuP-AO-dEN">
+                                            <rect key="frame" x="19" y="4" width="35.5" height="35.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="vuP-AO-dEN" secondAttribute="height" multiplier="1:1" id="Hzs-7S-jNG"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="vuP-AO-dEN" firstAttribute="centerY" secondItem="myP-0Z-Fc5" secondAttribute="centerY" id="N6F-1j-aVH"/>
+                                        <constraint firstItem="vuP-AO-dEN" firstAttribute="height" secondItem="myP-0Z-Fc5" secondAttribute="height" multiplier="80%" id="jZr-bV-Ddy"/>
+                                        <constraint firstItem="vuP-AO-dEN" firstAttribute="centerX" secondItem="myP-0Z-Fc5" secondAttribute="centerX" id="lPR-Gy-Wos"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrq-Zh-hi5">
+                                    <rect key="frame" x="73" y="0.0" width="292" height="44.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR4-KE-xwB">
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="hR4-KE-xwB" firstAttribute="top" secondItem="hrq-Zh-hi5" secondAttribute="top" id="8Bc-VC-j4Z"/>
+                                        <constraint firstAttribute="bottom" secondItem="hR4-KE-xwB" secondAttribute="bottom" id="D3Y-sB-7Gw"/>
+                                        <constraint firstItem="hR4-KE-xwB" firstAttribute="leading" secondItem="hrq-Zh-hi5" secondAttribute="leading" id="dlk-cc-8a0"/>
+                                        <constraint firstAttribute="trailing" secondItem="hR4-KE-xwB" secondAttribute="trailing" id="tsh-3r-o1u"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="myP-0Z-Fc5" firstAttribute="width" secondItem="ZH9-ev-g4p" secondAttribute="width" multiplier="20%" id="5Mm-tE-Bc5"/>
+                                <constraint firstItem="hrq-Zh-hi5" firstAttribute="top" secondItem="ZH9-ev-g4p" secondAttribute="top" id="DEe-pW-Yq5"/>
+                                <constraint firstItem="hrq-Zh-hi5" firstAttribute="width" secondItem="ZH9-ev-g4p" secondAttribute="width" multiplier="80%" id="L8m-4S-UzY"/>
+                                <constraint firstAttribute="bottom" secondItem="myP-0Z-Fc5" secondAttribute="bottom" id="OFt-Tp-Mwn"/>
+                                <constraint firstItem="myP-0Z-Fc5" firstAttribute="top" secondItem="ZH9-ev-g4p" secondAttribute="top" id="QL1-bq-ipo"/>
+                                <constraint firstAttribute="bottom" secondItem="hrq-Zh-hi5" secondAttribute="bottom" id="Uae-ox-8zU"/>
+                                <constraint firstItem="myP-0Z-Fc5" firstAttribute="leading" secondItem="ZH9-ev-g4p" secondAttribute="leading" id="Ueb-rh-xPa"/>
+                                <constraint firstAttribute="trailing" secondItem="hrq-Zh-hi5" secondAttribute="trailing" id="d9p-fD-mOT"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jm-Go-GQ9" userLabel="viewBorderBanner1">
                             <rect key="frame" x="0.0" y="457.5" width="187.5" height="91.5"/>

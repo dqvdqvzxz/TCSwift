@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCMessageListViewController: UIViewController {
+class TRCMessageListViewController: TRCBaseViewController {
 
     @IBOutlet weak var tblMessage: UITableView!
     
@@ -50,6 +50,9 @@ extension TRCMessageListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
         
+        //style for cell
+        cell.imgView.image = UIImage(named: "ic_mail")
+        
         return cell
     }
 }
@@ -60,6 +63,12 @@ extension TRCMessageListViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        let indexPath = tableView.indexPathForSelectedRow
+        
+        let currentCell = tableView.cellForRow(at: indexPath!) as! TRCMessageListCell
+        
+        currentCell.imgView.image = UIImage(named: "ic_mail_readed")
+        currentCell.lblTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        currentCell.lblSubTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
     }
 }
