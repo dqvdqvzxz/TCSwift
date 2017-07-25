@@ -98,7 +98,7 @@ class TRCHomeViewController: TRCBaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Btn2", style: .plain, target: self, action: #selector(action))
         
         //UI of outlet
-        lblTitleGroupNotification.labelStyle(title: Localizable(value: "notify_from_tricare_pharmacy"), fontSize: LABEL_FONT_SIZE! + 2, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblTitleGroupNotification.labelStyle(title: Localizable(value:  "notify_from_tricare_pharmacy"), fontSize: LABEL_FONT_SIZE! + 2, isBold: true, textColor: LABEL_FONT_COLOR)
         lblTitleNotification1.labelStyle(title: "6/25(日) 第７回ウォークラリー開催")
         lblTitleNotification2.labelStyle(title: "6/07(水) 毎月第一水曜日健康フェア開催")
         btnMore.titleLabel?.text = Localizable(value: "view_more")
@@ -124,6 +124,10 @@ class TRCHomeViewController: TRCBaseViewController {
     
     //MARK: Action
     func action(){
-        //
+        let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
