@@ -51,13 +51,16 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var lblContentFoodKcalUnit: UILabel!
     
     @IBOutlet weak var viewWeight: UIView!
+    @IBOutlet weak var viewBorderImage: UIView!
+    @IBOutlet weak var viewBorderTitle: UIView!
+    @IBOutlet weak var imgViewWeight: UIImageView!
+    @IBOutlet weak var lblRegisterTodayWeight: UILabel!
     
     @IBOutlet weak var viewBorderBanner1: UIView!
     @IBOutlet weak var viewImageBanner1: UIView!
     @IBOutlet weak var viewBorderBanner2: UIView!
     @IBOutlet weak var viewImageBanner2: UIView!
-
-    @IBOutlet weak var lblRegisterTodayWeight: UILabel!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
