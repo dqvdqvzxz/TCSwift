@@ -21,6 +21,9 @@ class TRCLinkedServiceCell: UITableViewCell {
         
         lblTitle.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         lblTime.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        
+        switchCell.isEnabled = false
+        switchCell.isOn = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
