@@ -19,6 +19,7 @@ let URL_LOGIN = "login"
 let DEVICE_ID = "deviceID"
 let FB_TOKEN = "facebookToken"
 let THEME_COLOR = "themeColor"
+let PASSCODE = "passCode"
 
 //MARK: Dictionary
 //dicFacebookInfo
@@ -29,6 +30,9 @@ let FB_NAME = "fbName"
 let FB_USERID = "fbUserID"
 let FB_EMAIL = "fbEmail"
 let FB_AVATAR = "fbAvatar"
+
+//dicPasscode
+let DIC_PASSCODE = "dicPassCode"
 
 //MARK: Http method
 let HTTP_POST = "POST"
