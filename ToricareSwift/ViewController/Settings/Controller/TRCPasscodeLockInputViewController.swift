@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCPasscodeLockInputViewController: TRCBaseViewController {
+class TRCPasscodeLockInputViewController: UIViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblError: UILabel!
@@ -46,46 +46,61 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = ""
+        self.navigationItem.title = Localizable(value: "change_passcode_title")
         
         //UI
+        self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        viewMain.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        viewLeft.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        viewImage1.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        viewImage2.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        viewRight.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        viewImage3.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        viewImage4.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+
+        
         imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
         imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
         imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
         imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
         
         tfPasscode.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        tfPasscode.becomeFirstResponder()
     }
     
     //MARK: Action
     func textFieldDidChange(_ textField: UITextField){
         print(tfPasscode.text?.characters.count)
         
-        if(tfPasscode.text?.characters.count == 0){
-            imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
-            imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
-            imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
-            imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
-        }else if(tfPasscode.text?.characters.count == 1){
+        switch (tfPasscode.text?.characters.count as! Int) {
+        case 1:
             imgView1.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
-        }else if(tfPasscode.text?.characters.count == 2){
+        case 2:
             imgView1.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView2.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
-        }else if(tfPasscode.text?.characters.count == 3){
+        case 3:
             imgView1.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView2.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
-        }else if(tfPasscode.text?.characters.count == 4){
+        case 4:
             imgView1.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView2.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_circle")
+            
+            
+            }
+        default:
+            imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
+            imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
+            imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
+            imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
         }
     }
 }
