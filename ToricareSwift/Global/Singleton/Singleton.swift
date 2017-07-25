@@ -23,5 +23,7 @@ final class Singleton{
     
     //dictionary
     var dicFacebookInfo = [String:String]()
+    
+    var dicPasscode = [String:String]()
 }
 
