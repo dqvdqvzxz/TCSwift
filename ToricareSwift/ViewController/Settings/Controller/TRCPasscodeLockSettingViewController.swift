@@ -46,7 +46,11 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnPasscode(_ sender: Any) {
-        
+        let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -64,8 +68,20 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
         
         cell.lblTitle.text = Localizable(value: "enable_passcode")
         cell.lblTime.isHidden = true
+        cell.switchCell.isOn = false
+        cell.switchCell.addTarget(self, action: #selector(stateChanged(switchState:)), for: .valueChanged)
         
         return cell
+    }
+    
+    func stateChanged(switchState: UISwitch) {
+        if switchState.isOn {
+            btnPasscode.isEnabled = true
+            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
+        } else {
+            btnPasscode.isEnabled = false
+            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
+        }
     }
 }
 
