@@ -10,9 +10,23 @@ import UIKit
 
 class TRCBaseViewController: UIViewController {
 
+    //MARK: View contorller
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configGlobalUI()
+        
+        print(self.navigationController?.viewControllers)
+        print(self.navigationController?.viewControllers.count)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Config UI
+    func configGlobalUI(){
         //tap to cancel keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -28,20 +42,13 @@ class TRCBaseViewController: UIViewController {
         _obj.nc4.navigationBar.isHidden = false
         _obj.nc5.navigationBar.isHidden = false
         self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
-        
-        print(self.navigationController?.viewControllers)
-        print(self.navigationController?.viewControllers.count)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
+    //MARK: Action
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
     }
-
+    
     //call this function when the tap is recognized
     func dismissKeyboard(){
         view.endEditing(true)
