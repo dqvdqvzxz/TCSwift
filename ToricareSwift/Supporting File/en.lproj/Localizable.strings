@@ -241,8 +241,11 @@
 "agree"                                 = "同意します。";
 "leave"                                 = "退会する";
 
-""                              = "";
-""                              = "";
+"leave_complete"                        = "退会処理を完了しました。";
+"thank_you"                             = "ご利用ありがとうございました。";
+
+"leave_confirm"                         = "退会確認";
+"really_want_leave_message"             = "本当に退会しますか？";
 ""                              = "";
 ""                              = "";
 ""                              = "";

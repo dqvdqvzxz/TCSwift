@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBE-SB-qdq" userLabel="lblTitle">
-                        <rect key="frame" x="10" y="7" width="206" height="30"/>
+                        <rect key="frame" x="10" y="7" width="42" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="UeI-1n-9RV"/>
                         </constraints>
@@ -26,10 +26,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So4-Yj-THr" userLabel="lblTime">
-                        <rect key="frame" x="216" y="7" width="45" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So4-Yj-THr" userLabel="lblTime">
+                        <rect key="frame" x="191" y="7" width="60" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="45" id="2PQ-bK-zCt"/>
+                            <constraint firstAttribute="width" constant="60" id="2PQ-bK-zCt"/>
                             <constraint firstAttribute="height" constant="30" id="jNt-Pk-9K1"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -45,11 +45,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Jvk-Jd-jIu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="6dw-97-oqA"/>
-                    <constraint firstItem="GBE-SB-qdq" firstAttribute="trailing" secondItem="So4-Yj-THr" secondAttribute="leading" id="Agp-yz-pt7"/>
                     <constraint firstItem="GBE-SB-qdq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="CS4-ET-Vtn"/>
                     <constraint firstItem="GBE-SB-qdq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="GUt-y5-lRE"/>
                     <constraint firstItem="So4-Yj-THr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="Oln-ST-7zJ"/>
-                    <constraint firstItem="So4-Yj-THr" firstAttribute="trailing" secondItem="Jvk-Jd-jIu" secondAttribute="leading" id="cfz-To-Lmy"/>
+                    <constraint firstItem="So4-Yj-THr" firstAttribute="trailing" secondItem="Jvk-Jd-jIu" secondAttribute="leading" constant="-10" id="cfz-To-Lmy"/>
                     <constraint firstAttribute="trailing" secondItem="Jvk-Jd-jIu" secondAttribute="trailing" constant="10" id="rHg-nR-O22"/>
                 </constraints>
             </tableViewCellContentView>
