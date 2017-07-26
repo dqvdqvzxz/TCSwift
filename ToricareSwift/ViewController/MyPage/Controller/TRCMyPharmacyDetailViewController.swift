@@ -63,6 +63,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblWebsite.labelStyle(title: Localizable(value: "website"))
         
         configMode()
+        
         configData()
     }
     

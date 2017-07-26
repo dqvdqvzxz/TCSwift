@@ -19,6 +19,8 @@ class TRCMyPharmacyDetailPageViewController: GLViewPagerViewController {
 
         self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
         
+        _obj.tabController.tabBar.isHidden = true
+        
         configPageView()
     }
 
@@ -50,8 +52,7 @@ class TRCMyPharmacyDetailPageViewController: GLViewPagerViewController {
         ]
         
         //init title
-        self.tabTitles = ["My薬局", "My薬剤師"]
-        
+        self.tabTitles = ["My薬局", "My薬剤師"]  
     }
 }
 
