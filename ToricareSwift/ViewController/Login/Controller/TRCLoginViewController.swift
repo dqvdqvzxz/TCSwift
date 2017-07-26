@@ -86,6 +86,8 @@ class TRCLoginViewController: TRCBaseViewController {
     @IBAction func tapBtnLogin(_ sender: Any) {
         UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
             UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+            
+            _obj.tabController.selectedIndex = 0
         }, completion: { completed in
             // maybe do something here
         })

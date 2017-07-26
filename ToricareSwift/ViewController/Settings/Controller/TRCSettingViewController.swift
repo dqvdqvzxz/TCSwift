@@ -121,8 +121,9 @@ extension TRCSettingViewController: UITableViewDelegate{
         case 8:
             UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 UserDefaults.standard.removeObject(forKey: PASSCODE)
-                let vc = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
+                let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+                let navController = UINavigationController(rootViewController: mainVC)
+                UIApplication.shared.keyWindow?.rootViewController = navController
             }, completion: { completed in
                 // maybe do something here
             })
