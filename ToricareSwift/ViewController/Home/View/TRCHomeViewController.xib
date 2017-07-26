@@ -471,10 +471,10 @@
                             <rect key="frame" x="5" y="408" width="365" height="44.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myP-0Z-Fc5">
-                                    <rect key="frame" x="0.0" y="0.0" width="73" height="44.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="55" height="44.5"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notepad" translatesAutoresizingMaskIntoConstraints="NO" id="vuP-AO-dEN">
-                                            <rect key="frame" x="19" y="4" width="35.5" height="35.5"/>
+                                            <rect key="frame" x="10" y="4" width="35.5" height="35.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="vuP-AO-dEN" secondAttribute="height" multiplier="1:1" id="Hzs-7S-jNG"/>
                                             </constraints>
@@ -488,10 +488,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrq-Zh-hi5">
-                                    <rect key="frame" x="73" y="0.0" width="292" height="44.5"/>
+                                    <rect key="frame" x="55" y="0.0" width="310" height="44.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR4-KE-xwB">
-                                            <rect key="frame" x="0.0" y="0.0" width="292" height="44"/>
+                                            <rect key="frame" x="0.5" y="0.0" width="310" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -508,9 +508,9 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="myP-0Z-Fc5" firstAttribute="width" secondItem="ZH9-ev-g4p" secondAttribute="width" multiplier="20%" id="5Mm-tE-Bc5"/>
+                                <constraint firstItem="myP-0Z-Fc5" firstAttribute="width" secondItem="ZH9-ev-g4p" secondAttribute="width" multiplier="15%" id="5Mm-tE-Bc5"/>
                                 <constraint firstItem="hrq-Zh-hi5" firstAttribute="top" secondItem="ZH9-ev-g4p" secondAttribute="top" id="DEe-pW-Yq5"/>
-                                <constraint firstItem="hrq-Zh-hi5" firstAttribute="width" secondItem="ZH9-ev-g4p" secondAttribute="width" multiplier="80%" id="L8m-4S-UzY"/>
+                                <constraint firstItem="hrq-Zh-hi5" firstAttribute="width" secondItem="ZH9-ev-g4p" secondAttribute="width" multiplier="85%" id="L8m-4S-UzY"/>
                                 <constraint firstAttribute="bottom" secondItem="myP-0Z-Fc5" secondAttribute="bottom" id="OFt-Tp-Mwn"/>
                                 <constraint firstItem="myP-0Z-Fc5" firstAttribute="top" secondItem="ZH9-ev-g4p" secondAttribute="top" id="QL1-bq-ipo"/>
                                 <constraint firstAttribute="bottom" secondItem="hrq-Zh-hi5" secondAttribute="bottom" id="Uae-ox-8zU"/>
