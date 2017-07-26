@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,24 +54,24 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6u-4g-CED" userLabel="viewGallery">
-                                    <rect key="frame" x="0.0" y="50" width="375" height="220"/>
+                                    <rect key="frame" x="0.0" y="50" width="375" height="200"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pharmacy_image" translatesAutoresizingMaskIntoConstraints="NO" id="keC-s3-mte">
-                                            <rect key="frame" x="77" y="0.0" width="220" height="220"/>
+                                            <rect key="frame" x="87" y="0.0" width="200" height="200"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="220" id="Lld-gf-Jzq"/>
-                                                <constraint firstAttribute="width" constant="220" id="p3K-5v-V74"/>
+                                                <constraint firstAttribute="height" constant="200" id="Lld-gf-Jzq"/>
+                                                <constraint firstAttribute="width" constant="200" id="p3K-5v-V74"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back" translatesAutoresizingMaskIntoConstraints="NO" id="jo9-52-xI5">
-                                            <rect key="frame" x="0.0" y="86" width="48" height="48"/>
+                                            <rect key="frame" x="0.0" y="76" width="48" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="48" id="aFJ-LE-hJv"/>
                                                 <constraint firstAttribute="height" constant="48" id="ujy-RW-v7M"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_next" translatesAutoresizingMaskIntoConstraints="NO" id="8qX-xM-oX4">
-                                            <rect key="frame" x="327" y="86" width="48" height="48"/>
+                                            <rect key="frame" x="327" y="76" width="48" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="48" id="2m4-KU-yqe"/>
                                                 <constraint firstAttribute="height" constant="48" id="ECh-hB-vmP"/>
@@ -81,17 +80,16 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="keC-s3-mte" firstAttribute="centerY" secondItem="W6u-4g-CED" secondAttribute="centerY" id="2K8-0h-bcN"/>
-                                        <constraint firstAttribute="height" constant="220" id="OZJ-Sq-Mgp"/>
+                                        <constraint firstAttribute="height" constant="200" id="OZJ-Sq-Mgp"/>
                                         <constraint firstItem="keC-s3-mte" firstAttribute="centerX" secondItem="W6u-4g-CED" secondAttribute="centerX" id="eYD-Wz-oaQ"/>
                                         <constraint firstAttribute="trailing" secondItem="8qX-xM-oX4" secondAttribute="trailing" id="i24-8U-rUm"/>
                                         <constraint firstItem="8qX-xM-oX4" firstAttribute="centerY" secondItem="W6u-4g-CED" secondAttribute="centerY" id="mxN-Ev-lL8"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="pN0-cO-cjg"/>
                                         <constraint firstItem="jo9-52-xI5" firstAttribute="centerY" secondItem="W6u-4g-CED" secondAttribute="centerY" id="rTe-Mb-NyN"/>
                                         <constraint firstItem="jo9-52-xI5" firstAttribute="leading" secondItem="W6u-4g-CED" secondAttribute="leading" id="uqY-lb-7yi"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiV-LP-9hy" userLabel="viewInformation">
-                                    <rect key="frame" x="10" y="280" width="365" height="180"/>
+                                    <rect key="frame" x="10" y="260" width="365" height="180"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-IX-DCo" userLabel="lblAddress">
                                             <rect key="frame" x="0.0" y="0.0" width="121.5" height="30"/>

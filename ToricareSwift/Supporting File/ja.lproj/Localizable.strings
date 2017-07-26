@@ -225,11 +225,12 @@
 "input_current_passcode"                = "現在のパスコードを入力してください。 ";
 "input_new_passcode"                    = "新しいパスコードを入力してください。";
 "change_passcode_title"                 = "パスコード変更";
+"input_passcode_title" = "パスコード入力";
 
 "message_list"                          = "メッセージ一覧";
 
-""                              = "";
-""                              = "";
+"name"                              = "名前 ";
+"memo"                              = "メモ";
 ""                              = "";
 ""                              = "";
 ""                              = "";
