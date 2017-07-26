@@ -72,4 +72,6 @@ let MODE_LOGIN =                        "MODE_LOGIN"
 let MODE_SETUP =                        "MODE_SETUP"
 let MODE_CONFIRM =                      "MODE_CONFIRM"
 let MODE_CHANGE =                       "MODE_CHANGE"
+let MODE_REMOVE =                       "MODE_REMOVE"
+let MODE_SETUP_NEW =                    "MODE_SETUP_NEW"
 
