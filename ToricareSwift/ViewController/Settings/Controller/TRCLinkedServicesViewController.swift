@@ -46,7 +46,7 @@ extension TRCLinkedServicesViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {
         case 0:
-            return 3
+            return 1
         case 1:
             return 1
         default:
@@ -67,8 +67,35 @@ extension TRCLinkedServicesViewController: UITableViewDataSource{
         return ""
     }
     
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 300, height: 30))
+//        
+//        switch (section) {
+//        case 0:
+//            headerLabel.labelStyle(title: Localizable(value: "health_manager_feature"))
+//            break
+//        case 1:
+//            headerLabel.labelStyle(title: Localizable(value: "service_other"))
+//            break
+//        default:
+//            break
+//        }
+//        headerLabel.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+//        return headerLabel
+//    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCLinkedServiceCell
+        
+        if (indexPath.section == 0) {
+            cell.lblTitle.labelStyle(title: Localizable(value: "service_health_care"))
+        } else if (indexPath.section == 1) {
+            cell.lblTitle.labelStyle(title: Localizable(value: "service_facebook"))
+        }
         
         cell.lblTime.isHidden = true
         

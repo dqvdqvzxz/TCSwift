@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,18 +61,18 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NeL-RJ-nWl" userLabel="tfNewEmail">
-                    <rect key="frame" x="10" y="180" width="355" height="30"/>
+                    <rect key="frame" x="10" y="180" width="355" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="xI8-Aa-Rrp"/>
+                        <constraint firstAttribute="height" constant="44" id="xI8-Aa-Rrp"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YIc-iQ-5i1" userLabel="tfConfirmNewEmail">
-                    <rect key="frame" x="10" y="250" width="355" height="30"/>
+                    <rect key="frame" x="10" y="264" width="355" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="CRL-80-t7y"/>
+                        <constraint firstAttribute="height" constant="44" id="CRL-80-t7y"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -90,7 +89,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJv-7Y-Y4C" userLabel="lblConfirmNewEmail">
-                    <rect key="frame" x="10" y="220" width="355" height="30"/>
+                    <rect key="frame" x="10" y="234" width="355" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="zd0-Pl-5bW"/>
                     </constraints>

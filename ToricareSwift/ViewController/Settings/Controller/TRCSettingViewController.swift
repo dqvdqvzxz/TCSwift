@@ -130,5 +130,6 @@ extension TRCSettingViewController: UITableViewDelegate{
         default:
             break
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

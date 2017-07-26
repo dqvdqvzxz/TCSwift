@@ -64,6 +64,58 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCLinkedServiceCell
         
+        switch (indexPath.section) {
+        case 0:
+            cell.lblTitle.labelStyle(title: Localizable(value: "receive"))
+            cell.lblTime.labelStyle()
+            break
+        case 1:
+            switch indexPath.row {
+            case 0:
+                cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_phamarcy"))
+                cell.lblTime.labelStyle()
+                break
+            case 1:
+                cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_tricare"))
+                cell.lblTime.labelStyle()
+                break
+
+            default:
+                break
+            }
+            break
+        case 2:
+            switch indexPath.row {
+            case 0:
+                cell.lblTitle.labelStyle(title: Localizable(value: "weight"))
+                cell.lblTime.labelStyle(title: "7:00")
+                break
+            case 1:
+                cell.lblTitle.labelStyle(title: Localizable(value: "breakfast"))
+                cell.lblTime.labelStyle(title: "8:00")
+                break
+            case 2:
+                cell.lblTitle.labelStyle(title: Localizable(value: "lunch"))
+                cell.lblTime.labelStyle(title: "12:00")
+                break
+            case 3:
+                cell.lblTitle.labelStyle(title: Localizable(value: "dinner"))
+                cell.lblTime.labelStyle(title: "18:00")
+                break
+            case 4:
+                cell.lblTitle.labelStyle(title: Localizable(value: "snack"))
+                cell.lblTime.labelStyle(title: "15:00")
+                break
+      
+            default:
+                break
+            }
+            break
+
+        default:
+            break
+        }
+        
         return cell
     }
 }
