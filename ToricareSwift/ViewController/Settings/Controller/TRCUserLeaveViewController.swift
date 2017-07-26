@@ -37,15 +37,21 @@ class TRCUserLeaveViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = ""
+        self.navigationItem.title = STRING_SETTING_RESIGN
         
         //UI
+        lblTitleUserLeave.text = Localizable(value: "confirm_before_leave")
+        lblConfirm.text = Localizable(value: "agree_leave_message")
+        lblCheckBox.text = Localizable(value: "agree")
+        
+        btnLeave.buttonStyle(title: Localizable(value: "leave"))
         btnLeave.isEnabled = false
         btnLeave.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
         
         //add action tap check box for button check box and view check box
         btnCheckBox.addTarget(self, action: #selector(tapCheckBox), for: .touchUpInside)
         
+        viewCheckBox.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
         let gestureViewCheckBox = UITapGestureRecognizer(target: self, action: #selector(tapCheckBox))
         viewCheckBox.addGestureRecognizer(gestureViewCheckBox)
     }
@@ -64,10 +70,21 @@ class TRCUserLeaveViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnLeave(_ sender: Any) {
-        let vc = TRCUserLeaveCompleteViewController(nibName: "TRCUserLeaveCompleteViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        let alert = UIAlertController(title: Localizable(value: "leave_confirm"),
+                                      message: Localizable(value: "really_want_leave_message"),
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add the action
+        alert.addAction(UIAlertAction(title: Localizable(value: "cancel"),
+                                      style: UIAlertActionStyle.cancel,
+                                      handler: nil))
+        alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                      style: UIAlertActionStyle.default,
+                                      handler: { action in
+                                        let vc = TRCUserLeaveCompleteViewController(nibName: "TRCUserLeaveCompleteViewController", bundle: nil)
+                                        self.navigationController?.pushViewController(vc, animated: true)
+        }))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
 }
