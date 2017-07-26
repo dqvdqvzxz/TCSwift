@@ -82,7 +82,7 @@ class TRCUserLeaveViewController: TRCBaseViewController {
                                       style: UIAlertActionStyle.default,
                                       handler: { action in
                                         let vc = TRCUserLeaveCompleteViewController(nibName: "TRCUserLeaveCompleteViewController", bundle: nil)
-                                        self.navigationController?.pushViewController(vc, animated: true)
+                                        _obj.nc5.pushViewController(vc, animated: true)
         }))
         // show the alert
         self.present(alert, animated: true, completion: nil)
