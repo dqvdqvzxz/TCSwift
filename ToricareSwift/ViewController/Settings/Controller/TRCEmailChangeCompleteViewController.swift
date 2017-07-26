@@ -51,7 +51,7 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers
         for descView in viewControllers {
             if(descView is TRCSettingViewController){
-                self.navigationController!.popToViewController(descView, animated: true)
+                _obj.nc5.popToViewController(descView, animated: true)
             }
         }    }
 
