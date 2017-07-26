@@ -175,7 +175,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                     UserDefaults.kSetValue(passcodeString, PASSCODE)
                     
                     //pop to setting passcode
-                    let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+                    let viewControllers: [UIViewController] = _obj.nc5.viewControllers
                     for descView in viewControllers {
                         if(descView is TRCPasscodeLockSettingViewController){
                             _obj.nc5.popToViewController(descView, animated: true)
@@ -227,7 +227,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                     UserDefaults.standard.removeObject(forKey: PASSCODE)
                     
                     //pop to setting passcode
-                    let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+                    let viewControllers: [UIViewController] = _obj.nc5.viewControllers
                     for descView in viewControllers {
                         if(descView is TRCPasscodeLockSettingViewController){
                             _obj.nc5.popToViewController(descView, animated: true)
