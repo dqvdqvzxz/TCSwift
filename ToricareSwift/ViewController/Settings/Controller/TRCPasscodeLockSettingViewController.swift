@@ -42,7 +42,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
         }else{
             btnPasscode.isEnabled = false
-            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
+            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
         }
         
         //table view
