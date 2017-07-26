@@ -109,8 +109,6 @@ class TRCPasscodeLockInputViewController: UIViewController {
     
     //MARK: Action
     func textFieldDidChange(_ textField: UITextField){
-        print(tfPasscode.text?.characters.count)
-        
         switch (tfPasscode.text?.characters.count as! Int) {
         case 1:
             imgView1.image = #imageLiteral(resourceName: "ic_passcode_circle")
