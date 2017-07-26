@@ -121,7 +121,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDelegate{
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
-            self.navigationController?.pushViewController(vc, animated: true)
+            _obj.nc5.pushViewController(vc, animated: true)
         }else{
             btnPasscode.isEnabled = false
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
@@ -131,7 +131,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDelegate{
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
-            self.navigationController?.pushViewController(vc, animated: true)
+            _obj.nc5.pushViewController(vc, animated: true)
         }
     }
 }
