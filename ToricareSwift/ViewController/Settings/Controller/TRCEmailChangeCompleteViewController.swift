@@ -48,11 +48,11 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnBackToMyPage(_ sender: Any) {
-        let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+        for descView in viewControllers {
+            if(descView is TRCSettingViewController){
+                self.navigationController!.popToViewController(descView, animated: true)
+            }
+        }    }
 
 }
