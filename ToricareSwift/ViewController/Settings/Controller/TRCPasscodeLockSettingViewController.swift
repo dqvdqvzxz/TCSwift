@@ -20,6 +20,11 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
 
         configUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configUI()
+        tblPasscode.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,7 +57,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnPasscode(_ sender: Any) {
         let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
-        vc.mode = MODE_SETUP
+        vc.mode = MODE_CHANGE
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
@@ -110,9 +115,23 @@ extension TRCPasscodeLockSettingViewController: UITableViewDelegate{
         if(currentCell.switchCell.isOn){
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
             btnPasscode.isEnabled = true
+            
+            let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+            vc.mode = MODE_SETUP
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
         }else{
             btnPasscode.isEnabled = false
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
+            
+            let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+            vc.mode = MODE_REMOVE
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
