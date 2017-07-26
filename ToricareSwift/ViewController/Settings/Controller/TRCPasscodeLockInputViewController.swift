@@ -101,7 +101,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
         case MODE_REMOVE:
             self.navigationItem.title = Localizable(value: STRING_SETTING_PASSCODE)
 
-            self.navigationItem.title = Localizable(value: "input_passcode")
+            lblTitle.labelStyle(title: Localizable(value: "input_passcode"))
         default:
             break
         }
