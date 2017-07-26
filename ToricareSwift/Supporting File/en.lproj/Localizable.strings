@@ -231,6 +231,10 @@
 
 "name"                              = "名前 ";
 "memo"                              = "メモ";
+
+//MARK: SKIP
+"please_register_pharmacy_later"        = "My薬局とMy薬剤師の登録はマイページで行ってください。 ";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";
