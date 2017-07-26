@@ -66,6 +66,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
         
         tfPasscode.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tfPasscode.becomeFirstResponder()
+        tfPasscode.isHidden = true
     }
     
     //MARK: Action
@@ -112,7 +113,23 @@ class TRCPasscodeLockInputViewController: UIViewController {
                 navigationItem.backBarButtonItem = backItem
                 self.navigationController?.pushViewController(vc, animated: true)
             case MODE_CONFIRM:
-                            case MODE_CHANGE:
+                //compare passcode
+                if(passcodeString == _obj.dicPasscode[DIC_PASSCODE]){
+                    
+                    //save to userdefault
+                    UserDefaults.kSetValue(passcodeString, PASSCODE)
+                    
+                    //pop to setting passcode
+                    let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+                    for descView in viewControllers {
+                        if(descView is TRCPasscodeLockSettingViewController){
+                            self.navigationController!.popToViewController(descView, animated: true)
+                        }
+                    }
+                }else{
+                    //error handle
+                }
+            case MODE_CHANGE:
                 //remove old passcode in dic
                 
                 //compare passcode with userdefault
