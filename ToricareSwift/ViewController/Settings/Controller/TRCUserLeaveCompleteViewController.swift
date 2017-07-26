@@ -19,7 +19,7 @@ class TRCUserLeaveCompleteViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +29,14 @@ class TRCUserLeaveCompleteViewController: TRCBaseViewController {
     
     //MARK: Config UI
     func configUI(){
+        //navigation
+        self.navigationItem.title = STRING_SETTING_RESIGN
+        self.navigationItem.hidesBackButton = true
         
+        //UI
+        lblTitle1.text = Localizable(value: "leave_complete")
+        lblTitle2.text = Localizable(value: "thank_you")
+        
+        imgView.image = #imageLiteral(resourceName: "img_user_test")
     }
 }
