@@ -75,3 +75,6 @@ let MODE_CHANGE =                       "MODE_CHANGE"
 let MODE_REMOVE =                       "MODE_REMOVE"
 let MODE_SETUP_NEW =                    "MODE_SETUP_NEW"
 
+//UserRegistComplete
+let MODE_SKIP =                         "MODE_SKIP"
+
