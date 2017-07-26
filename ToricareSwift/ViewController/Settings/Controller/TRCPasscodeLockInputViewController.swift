@@ -166,7 +166,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                 let backItem = UIBarButtonItem()
                 backItem.title = STRING_BACK
                 navigationItem.backBarButtonItem = backItem
-                self.navigationController?.pushViewController(vc, animated: true)
+                _obj.nc5.pushViewController(vc, animated: true)
             case MODE_CONFIRM:
                 //compare passcode
                 if(passcodeString == _obj.dicPasscode[DIC_PASSCODE]){
@@ -178,7 +178,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                     let viewControllers: [UIViewController] = self.navigationController!.viewControllers
                     for descView in viewControllers {
                         if(descView is TRCPasscodeLockSettingViewController){
-                            self.navigationController!.popToViewController(descView, animated: true)
+                            _obj.nc5.popToViewController(descView, animated: true)
                         }
                     }
                 }else{
@@ -205,7 +205,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                     let backItem = UIBarButtonItem()
                     backItem.title = STRING_BACK
                     navigationItem.backBarButtonItem = backItem
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    _obj.nc5.pushViewController(vc, animated: true)
                 }else{
                     lblError.isHidden = false
                     lblError2.isHidden = false
@@ -230,7 +230,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                     let viewControllers: [UIViewController] = self.navigationController!.viewControllers
                     for descView in viewControllers {
                         if(descView is TRCPasscodeLockSettingViewController){
-                            self.navigationController!.popToViewController(descView, animated: true)
+                            _obj.nc5.popToViewController(descView, animated: true)
                         }
                     }
                 }else{
