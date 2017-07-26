@@ -54,7 +54,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if(UserDefaults.kGetValue(PASSCODE) != nil){
+            let mainVC = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+            mainVC.mode = MODE_LOGIN
+            let navController = UINavigationController(rootViewController: mainVC)
+            window?.rootViewController = navController
+        }
+        
+        
         FBSDKAppEvents.activateApp()
     }
 
