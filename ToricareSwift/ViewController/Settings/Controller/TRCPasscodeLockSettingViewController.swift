@@ -61,7 +61,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        _obj.nc5.pushViewController(vc, animated: true)
     }
 }
 
