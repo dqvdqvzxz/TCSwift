@@ -225,13 +225,22 @@
 "input_current_passcode"                = "現在のパスコードを入力してください。 ";
 "input_new_passcode"                    = "新しいパスコードを入力してください。";
 "change_passcode_title"                 = "パスコード変更";
+"input_passcode_title" = "パスコード入力";
 
 "message_list"                          = "メッセージ一覧";
 
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
+"name"                                  = "名前 ";
+"memo"                                  = "メモ";
+
+//MARK: SKIP
+"please_register_pharmacy_later"        = "My薬局とMy薬剤師の登録はマイページで行ってください。 ";
+
+//MARK: TAIKAI
+"confirm_before_leave"                  = "退会される前に必ずご確認ください。";
+"agree_leave_message"                   = "以上の注意事項について、ご同意いただいた上で、以下手続きへと進んでください。";
+"agree"                                 = "同意します。";
+"leave"                                 = "退会する";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";
