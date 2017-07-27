@@ -17,4 +17,9 @@ extension UserDefaults{
     class func kGetValue(_ key: String) -> Any? {
         return UserDefaults.standard.value(forKey: key)
     }
+    
+    class func kRemoveValue(_ key: String){
+        UserDefaults.standard.removeObject(forKey: key)
+        UserDefaults.standard.synchronize()
+    }
 }
