@@ -55,8 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         if(UserDefaults.kGetValue(PASSCODE) != nil){
-            let mainVC = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
-            mainVC.mode = MODE_LOGIN
+            let mainVC = TRCPasscodeLockLoginInputViewController(nibName: "TRCPasscodeLockLoginInputViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
             window?.rootViewController = navController
         }
