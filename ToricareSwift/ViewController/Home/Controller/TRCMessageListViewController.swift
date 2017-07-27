@@ -12,6 +12,8 @@ class TRCMessageListViewController: TRCBaseViewController {
 
     @IBOutlet weak var tblMessage: UITableView!
     
+    var refreshControl = UIRefreshControl()
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,18 @@ class TRCMessageListViewController: TRCBaseViewController {
         tblMessage.register(UINib(nibName: "TRCMessageListCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         tblMessage.tableFooterView = UIView()
+        
+        configRefresh()
+    }
+    
+    func configRefresh(){
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        tblMessage.addSubview(refreshControl)
+    }
+    
+    func refresh(sender: AnyObject){
+        tblMessage.reloadData()
+        refreshControl.endRefreshing()
     }
 }
 
