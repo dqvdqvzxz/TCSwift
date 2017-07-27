@@ -14,6 +14,8 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     var turnOn: String = "TurnOnSwitch"
     
+    var section = 3
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,22 +45,10 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     func switchReceiveAll(switchState: UISwitch){
         if(switchState.isOn){
             UserDefaults.kSetValue(turnOn, NOTIF_ALL)
-            UserDefaults.kSetValue(turnOn, NOTIF_PHARMACY)
-            UserDefaults.kSetValue(turnOn, NOTIF_TRICARE)
-            UserDefaults.kSetValue(turnOn, NOTIF_WEIGHT)
-            UserDefaults.kSetValue(turnOn, NOTIF_BREAKFAST)
-            UserDefaults.kSetValue(turnOn, NOTIF_LUNCH)
-            UserDefaults.kSetValue(turnOn, NOTIF_DINNER)
-            UserDefaults.kSetValue(turnOn, NOTIF_SNACK)
+            section = 3
         }else{
             UserDefaults.kRemoveValue(NOTIF_ALL)
-            UserDefaults.kRemoveValue(NOTIF_PHARMACY)
-            UserDefaults.kRemoveValue(NOTIF_TRICARE)
-            UserDefaults.kRemoveValue(NOTIF_WEIGHT)
-            UserDefaults.kRemoveValue(NOTIF_BREAKFAST)
-            UserDefaults.kRemoveValue(NOTIF_LUNCH)
-            UserDefaults.kRemoveValue(NOTIF_DINNER)
-            UserDefaults.kRemoveValue(NOTIF_SNACK)
+            section = 1
         }
         tblNotify.reloadData()
     }
@@ -129,7 +119,11 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
 
 extension TRCNotificationSettingViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        if(UserDefaults.kGetValue(NOTIF_ALL) != nil){
+            return section
+        }else{
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
