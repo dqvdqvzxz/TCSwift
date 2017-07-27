@@ -12,6 +12,8 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
 
     @IBOutlet weak var tblNotify: UITableView!
     
+    var turnOn: String = "TurnOnSwitch"
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,93 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         tblNotify.register(UINib(nibName: "TRCLinkedServiceCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         tblNotify.tableFooterView = UIView()
+    }
+    
+    //MARK: Action
+    func switchReceiveAll(switchState: UISwitch){
+        if(switchState.isOn){
+            UserDefaults.kSetValue(turnOn, NOTIF_ALL)
+            UserDefaults.kSetValue(turnOn, NOTIF_PHARMACY)
+            UserDefaults.kSetValue(turnOn, NOTIF_TRICARE)
+            UserDefaults.kSetValue(turnOn, NOTIF_WEIGHT)
+            UserDefaults.kSetValue(turnOn, NOTIF_BREAKFAST)
+            UserDefaults.kSetValue(turnOn, NOTIF_LUNCH)
+            UserDefaults.kSetValue(turnOn, NOTIF_DINNER)
+            UserDefaults.kSetValue(turnOn, NOTIF_SNACK)
+        }else{
+            UserDefaults.kRemoveValue(NOTIF_ALL)
+            UserDefaults.kRemoveValue(NOTIF_PHARMACY)
+            UserDefaults.kRemoveValue(NOTIF_TRICARE)
+            UserDefaults.kRemoveValue(NOTIF_WEIGHT)
+            UserDefaults.kRemoveValue(NOTIF_BREAKFAST)
+            UserDefaults.kRemoveValue(NOTIF_LUNCH)
+            UserDefaults.kRemoveValue(NOTIF_DINNER)
+            UserDefaults.kRemoveValue(NOTIF_SNACK)
+        }
+        tblNotify.reloadData()
+    }
+    
+    func switchReceivePharmacy(switchState: UISwitch){
+        if(switchState.isOn){
+            UserDefaults.kSetValue(turnOn, NOTIF_PHARMACY)
+        }else{
+            UserDefaults.kRemoveValue(NOTIF_PHARMACY)
+        }
+        tblNotify.reloadData()
+    }
+    
+    func switchReceiveTricare(switchState: UISwitch){
+        if(switchState.isOn){
+            UserDefaults.kSetValue(turnOn, NOTIF_TRICARE)
+        }else{
+            UserDefaults.kRemoveValue(NOTIF_TRICARE)
+        }
+        tblNotify.reloadData()
+    }
+    
+    func switchReceiveWeight(switchState: UISwitch){
+        if(switchState.isOn){
+            UserDefaults.kSetValue(turnOn, NOTIF_WEIGHT)
+        }else{
+            UserDefaults.kRemoveValue(NOTIF_WEIGHT)
+        }
+        tblNotify.reloadData()
+    }
+    
+    func switchReceiveBreakfast(switchState: UISwitch){
+        if(switchState.isOn){
+            UserDefaults.kSetValue(turnOn, NOTIF_BREAKFAST)
+        }else{
+            UserDefaults.kRemoveValue(NOTIF_BREAKFAST)
+        }
+        tblNotify.reloadData()
+    }
+    
+    func switchReceiveLunch(switchState: UISwitch){
+        if(switchState.isOn){
+            UserDefaults.kSetValue(turnOn, NOTIF_LUNCH)
+        }else{
+            UserDefaults.kRemoveValue(NOTIF_LUNCH)
+        }
+        tblNotify.reloadData()
+    }
+    
+    func switchReceiveDinner(switchState: UISwitch){
+        if(switchState.isOn){
+            UserDefaults.kSetValue(turnOn, NOTIF_DINNER)
+        }else{
+            UserDefaults.kRemoveValue(NOTIF_DINNER)
+        }
+        tblNotify.reloadData()
+    }
+    
+    func switchReceiveSnack(switchState: UISwitch){
+        if(switchState.isOn){
+            UserDefaults.kSetValue(turnOn, NOTIF_SNACK)
+        }else{
+            UserDefaults.kRemoveValue(NOTIF_SNACK)
+        }
+        tblNotify.reloadData()
     }
 }
 
@@ -68,50 +157,101 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
         case 0:
             cell.lblTitle.labelStyle(title: Localizable(value: "receive"))
             cell.lblTime.labelStyle()
-            break
+            
+            if(UserDefaults.kGetValue(NOTIF_ALL) != nil){
+                cell.switchCell.isOn = true
+            }else{
+                cell.switchCell.isOn = false
+            }
+            
+            cell.switchCell.addTarget(self, action: #selector(switchReceiveAll(switchState:)), for: .valueChanged)
         case 1:
             switch indexPath.row {
             case 0:
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_phamarcy"))
                 cell.lblTime.labelStyle()
-                break
+                
+                if(UserDefaults.kGetValue(NOTIF_PHARMACY) != nil){
+                    cell.switchCell.isOn = true
+                }else{
+                    cell.switchCell.isOn = false
+                }
+                
+                cell.switchCell.addTarget(self, action: #selector(switchReceivePharmacy(switchState:)), for: .valueChanged)
             case 1:
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_tricare"))
                 cell.lblTime.labelStyle()
-                break
-
+                
+                if(UserDefaults.kGetValue(NOTIF_TRICARE) != nil){
+                    cell.switchCell.isOn = true
+                }else{
+                    cell.switchCell.isOn = false
+                }
+                
+                cell.switchCell.addTarget(self, action: #selector(switchReceiveTricare(switchState:)), for: .valueChanged)
             default:
                 break
             }
-            break
         case 2:
-            switch indexPath.row {
+            switch (indexPath.row){
             case 0:
                 cell.lblTitle.labelStyle(title: Localizable(value: "weight"))
                 cell.lblTime.labelStyle(title: "7:00")
-                break
+                
+                if(UserDefaults.kGetValue(NOTIF_WEIGHT) != nil){
+                    cell.switchCell.isOn = true
+                }else{
+                    cell.switchCell.isOn = false
+                }
+                
+                cell.switchCell.addTarget(self, action: #selector(switchReceiveWeight(switchState:)), for: .valueChanged)
             case 1:
                 cell.lblTitle.labelStyle(title: Localizable(value: "breakfast"))
                 cell.lblTime.labelStyle(title: "8:00")
-                break
+                
+                if(UserDefaults.kGetValue(NOTIF_BREAKFAST) != nil){
+                    cell.switchCell.isOn = true
+                }else{
+                    cell.switchCell.isOn = false
+                }
+                
+                cell.switchCell.addTarget(self, action: #selector(switchReceiveBreakfast(switchState:)), for: .valueChanged)
             case 2:
                 cell.lblTitle.labelStyle(title: Localizable(value: "lunch"))
                 cell.lblTime.labelStyle(title: "12:00")
-                break
+                
+                if(UserDefaults.kGetValue(NOTIF_LUNCH) != nil){
+                    cell.switchCell.isOn = true
+                }else{
+                    cell.switchCell.isOn = false
+                }
+                
+                cell.switchCell.addTarget(self, action: #selector(switchReceiveLunch(switchState:)), for: .valueChanged)
             case 3:
                 cell.lblTitle.labelStyle(title: Localizable(value: "dinner"))
                 cell.lblTime.labelStyle(title: "18:00")
-                break
+                
+                if(UserDefaults.kGetValue(NOTIF_DINNER) != nil){
+                    cell.switchCell.isOn = true
+                }else{
+                    cell.switchCell.isOn = false
+                }
+                
+                cell.switchCell.addTarget(self, action: #selector(switchReceiveDinner(switchState:)), for: .valueChanged)
             case 4:
                 cell.lblTitle.labelStyle(title: Localizable(value: "snack"))
                 cell.lblTime.labelStyle(title: "15:00")
-                break
-      
+                
+                if(UserDefaults.kGetValue(NOTIF_SNACK) != nil){
+                    cell.switchCell.isOn = true
+                }else{
+                    cell.switchCell.isOn = false
+                }
+                
+                cell.switchCell.addTarget(self, action: #selector(switchReceiveSnack(switchState:)), for: .valueChanged)
             default:
                 break
             }
-            break
-
         default:
             break
         }
