@@ -224,7 +224,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                 let oldPasscode = UserDefaults.kGetValue(PASSCODE) as! String
                 if(passcodeString == oldPasscode){
                     //remove from userdefault
-                    UserDefaults.kRemoveValue(forKey: PASSCODE)
+                    UserDefaults.kRemoveValue(PASSCODE)
                     
                     //pop to setting passcode
                     let viewControllers: [UIViewController] = _obj.nc5.viewControllers
