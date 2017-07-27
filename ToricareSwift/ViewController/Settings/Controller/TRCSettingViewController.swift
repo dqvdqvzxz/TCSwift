@@ -41,8 +41,7 @@ class TRCSettingViewController: TRCBaseViewController {
         tblSetting.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         listItems = [STRING_SETTING_EMAIL_CHANGE, STRING_SETTING_PASSWORD_CHANGE, STRING_SETTING_OTHER_SERIVCES,
-                     STRING_SETTING_NOTIFY, STRING_SETTING_PASSCODE, STRING_SETTING_THEME,
-                     STRING_SETTING_ABOUT_APP, STRING_SETTING_RESIGN, STRING_SETTING_LOGOUT]
+                     STRING_SETTING_NOTIFY, STRING_SETTING_PASSCODE, STRING_SETTING_ABOUT_APP, STRING_SETTING_RESIGN, STRING_SETTING_LOGOUT]
         
         tblSetting.tableFooterView = UIView()
     }
@@ -54,7 +53,7 @@ extension TRCSettingViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,25 +99,25 @@ extension TRCSettingViewController: UITableViewDelegate{
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
+//        case 5:
+//            let vc = TRCThemeColorSettingViewController(nibName: "TRCThemeColorSettingViewController", bundle: nil)
+//            let backItem = UIBarButtonItem()
+//            backItem.title = STRING_BACK
+//            navigationItem.backBarButtonItem = backItem
+//            _obj.nc5.pushViewController(vc, animated: true)
         case 5:
-            let vc = TRCThemeColorSettingViewController(nibName: "TRCThemeColorSettingViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
-            _obj.nc5.pushViewController(vc, animated: true)
-        case 6:
             let vc = TRCAboutAppViewController(nibName: "TRCAboutAppViewController", bundle: nil)
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
-        case 7:
+        case 6:
             let vc = TRCUserLeaveViewController(nibName: "TRCUserLeaveViewController", bundle: nil)
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
-        case 8:
+        case 7:
             UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 UserDefaults.standard.removeObject(forKey: PASSCODE)
                 let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
