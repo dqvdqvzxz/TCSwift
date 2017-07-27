@@ -21,6 +21,16 @@ let FB_TOKEN = "facebookToken"
 let THEME_COLOR = "themeColor"
 let PASSCODE = "passCode"
 
+//notification - setting
+let NOTIF_ALL = "notifAll"
+let NOTIF_PHARMACY = "notifPharmacy"
+let NOTIF_TRICARE = "notifTricare"
+let NOTIF_WEIGHT = "notifWeight"
+let NOTIF_BREAKFAST = "notifBreakfast"
+let NOTIF_LUNCH = "notifLunch"
+let NOTIF_DINNER = "notifDinner"
+let NOTIF_SNACK = "notifSnack"
+
 //MARK: Dictionary
 //dicFacebookInfo
 let FB_FIRSTNAME = "fbFirstName"
