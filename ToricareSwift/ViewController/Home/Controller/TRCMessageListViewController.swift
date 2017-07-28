@@ -85,5 +85,12 @@ extension TRCMessageListViewController: UITableViewDelegate{
         currentCell.imgView.image = #imageLiteral(resourceName: "message_read")
         currentCell.lblTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
         currentCell.lblSubTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        currentCell.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        
+        let vc = TRCDetailMessageViewController(nibName: "TRCDetailMessageViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        navigationItem.backBarButtonItem = backItem
+        _obj.nc1.pushViewController(vc, animated: true)
     }
 }
