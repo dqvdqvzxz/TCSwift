@@ -53,6 +53,7 @@ class TRCMyPharmacistDetailViewController: UIViewController {
     //MARK: Button Action
     @IBAction func tapBtnChange(_ sender: Any) {
         let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
+        vc.mode = "MyPage"
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem

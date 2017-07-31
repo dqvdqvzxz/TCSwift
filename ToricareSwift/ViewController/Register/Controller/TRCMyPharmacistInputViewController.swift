@@ -28,6 +28,8 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnPharmacistInput: UIButton!
     
+    var mode = String()
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +47,35 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+        if(mode == "MyPage"){
+            lblInform.labelStyle()
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 5
+            
+            let attrs1 = [NSForegroundColorAttributeName : UIColor.init(hexString: LABEL_FONT_COLOR)]
+            let attrs2 = [NSForegroundColorAttributeName : UIColor.init(hexString: LABEL_FONT_GREY_COLOR)]
+            
+            let attributedString1 = NSMutableAttributedString(string:"薬局 \nサンドラッグ赤堤薬局 ", attributes:attrs1)
+            let attributedString2 = NSMutableAttributedString(string:"\n※変更できません。", attributes:attrs2)
+            
+            attributedString1.append(attributedString2)
+            attributedString1.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString1.length))
+            
+            lblInform.attributedText = attributedString1
+        }else{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+            
+            lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
+        }
+        
+        lblInform.lineBreakMode = .byWordWrapping
+        lblInform.numberOfLines = 0
+    
         
         //UI of outlet
         btnPharmacistInput.buttonStyle(title: Localizable(value: "my_pharmacy_setting"))
         
-        lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
         lblName.labelStyle(title: Localizable(value: "pharmacist_name"))
         lblPhone.labelStyle(title: Localizable(value: "pharmacist_phone"))
         lblEmail.labelStyle(title: Localizable(value: "pharmacist_mail_address"))
