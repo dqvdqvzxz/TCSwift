@@ -63,7 +63,7 @@ class TRCRegisterViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
         let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-        vc.editMode = MODE_REGISTER
+        vc.mode = MODE_REGISTER
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
