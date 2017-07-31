@@ -68,6 +68,8 @@
 		3F475A951F175EEA00B82645 /* TRCPointDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475A931F175EEA00B82645 /* TRCPointDetailViewController.xib */; };
 		3F475A981F1763AE00B82645 /* TRCSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A961F1763AE00B82645 /* TRCSearchResultCell.swift */; };
 		3F475AAA1F176A3E00B82645 /* TRCSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F475AA91F176A3E00B82645 /* TRCSearchResultCell.xib */; };
+		3F55B5091F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B5071F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift */; };
+		3F55B50C1F2EE9840086EDB4 /* TRCLoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F55B50B1F2EE9840086EDB4 /* TRCLoadMoreCell.xib */; };
 		3F57F6DB1F1C618800CC079C /* TRCSearchLocationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F6D91F1C618800CC079C /* TRCSearchLocationPageView.swift */; };
 		3F57F6DF1F1C619E00CC079C /* TRCSearchCurrentLocationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F6DD1F1C619E00CC079C /* TRCSearchCurrentLocationPageView.swift */; };
 		3F57F6E31F1CC19800CC079C /* GLViewPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F6E21F1CC19800CC079C /* GLViewPagerViewController.swift */; };
@@ -189,6 +191,8 @@
 		3F475A931F175EEA00B82645 /* TRCPointDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPointDetailViewController.xib; sourceTree = "<group>"; };
 		3F475A961F1763AE00B82645 /* TRCSearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSearchResultCell.swift; sourceTree = "<group>"; };
 		3F475AA91F176A3E00B82645 /* TRCSearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCSearchResultCell.xib; sourceTree = "<group>"; };
+		3F55B5071F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCLoadMoreCell.swift; sourceTree = "<group>"; };
+		3F55B50B1F2EE9840086EDB4 /* TRCLoadMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCLoadMoreCell.xib; sourceTree = "<group>"; };
 		3F57F6D91F1C618800CC079C /* TRCSearchLocationPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSearchLocationPageView.swift; sourceTree = "<group>"; };
 		3F57F6DD1F1C619E00CC079C /* TRCSearchCurrentLocationPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSearchCurrentLocationPageView.swift; sourceTree = "<group>"; };
 		3F57F6E21F1CC19800CC079C /* GLViewPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLViewPagerViewController.swift; sourceTree = "<group>"; };
@@ -591,8 +595,9 @@
 			children = (
 				3FB411951F05F988008720A6 /* TRCHomeViewController.swift */,
 				3F57F7311F25F78800CC079C /* TRCMessageListViewController.swift */,
-				3F57F7351F25F7C100CC079C /* TRCMessageListCell.swift */,
 				3F57F7561F2AD06000CC079C /* TRCDetailMessageViewController.swift */,
+				3F57F7351F25F7C100CC079C /* TRCMessageListCell.swift */,
+				3F55B5071F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				3F57F73A1F26DBAC00CC079C /* TRCMessageListViewController.xib */,
 				3F57F75A1F2ADBB200CC079C /* TRCDetailMessageViewController.xib */,
 				3F57F7391F26DBAC00CC079C /* TRCMessageListCell.xib */,
+				3F55B50B1F2EE9840086EDB4 /* TRCLoadMoreCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -824,6 +830,7 @@
 				3F47591A1F0BA87500B82645 /* TRCForgotPasswordSentViewController.xib in Resources */,
 				3F57F6EF1F1CD39E00CC079C /* TRCSearchPageViewController.xib in Resources */,
 				3F47590E1F0BA0D500B82645 /* TRCMyPharmacistInputViewController.xib in Resources */,
+				3F55B50C1F2EE9840086EDB4 /* TRCLoadMoreCell.xib in Resources */,
 				3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */,
 				3F475AAA1F176A3E00B82645 /* TRCSearchResultCell.xib in Resources */,
 				3FB4119A1F05F988008720A6 /* TRCHomeViewController.xib in Resources */,
@@ -951,6 +958,7 @@
 				3F57F6DF1F1C619E00CC079C /* TRCSearchCurrentLocationPageView.swift in Sources */,
 				3F475A7A1F16155200B82645 /* TRCWalkingGoalDetailViewController.swift in Sources */,
 				3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */,
+				3F55B5091F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift in Sources */,
 				3F57F7371F25F7C100CC079C /* TRCMessageListCell.swift in Sources */,
 				3F57F7291F21DDEA00CC079C /* TRCQRCodeViewController.swift in Sources */,
 				3F4759151F0BA86C00B82645 /* TRCForgotPasswordEmailInputViewController.swift in Sources */,

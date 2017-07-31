@@ -13,12 +13,18 @@ class TRCMessageListViewController: TRCBaseViewController {
     @IBOutlet weak var tblMessage: UITableView!
     
     var refreshControl = UIRefreshControl()
+    var dataList = NSMutableArray()
+    
+    var loadNumber = 0
+    var newFetchBool = 0
     
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configUI()
+        
+        fetchDataFromServer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,12 +41,49 @@ class TRCMessageListViewController: TRCBaseViewController {
         tblMessage.dataSource = self
         tblMessage.delegate = self
         tblMessage.register(UINib(nibName: "TRCMessageListCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        tblMessage.register(UINib(nibName: "TRCLoadMoreCell", bundle: nil), forCellReuseIdentifier: "LoadMoreCell")
         
         tblMessage.tableFooterView = UIView()
         
         configRefresh()
     }
     
+    //MARK: Get data
+    func fetchDataFromServer()
+    {
+        loadNumber += 1
+        let urlStr = String(format: "https://jsonplaceholder.typicode.com/posts/\(loadNumber)/comments")
+        let url = URL(string: urlStr)
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, reponse, error) in
+            if(data != nil)
+            {
+                do
+                {
+                    let jsonData = try JSONSerialization.jsonObject(with: data!, options:.mutableContainers) as! NSMutableArray
+                    for item in jsonData
+                    {
+                        self.dataList.add(item)
+                    }
+                    print(jsonData)
+                    DispatchQueue.main.async(execute: {
+                        self.tblMessage.reloadData()
+                    })
+                }
+                catch{
+                    print("Error in catch block")
+                }
+            }
+            else{
+                
+            }
+        }
+        task.resume()
+    }
+
+    
+    
+    //MARK: Action
     func configRefresh(){
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         tblMessage.addSubview(refreshControl)
@@ -53,44 +96,84 @@ class TRCMessageListViewController: TRCBaseViewController {
 }
 
 extension TRCMessageListViewController: UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dataList.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
-        
-        //style for cell
-        cell.imgView.image = #imageLiteral(resourceName: "message_new")
-        cell.lblTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
-        cell.lblSubTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
-        return cell
+        if(indexPath.row < dataList.count){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
+            
+            //style for cell
+            cell.imgView.image = #imageLiteral(resourceName: "message_new")
+            cell.lblTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
+            cell.lblSubTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+            
+            return cell
+        }else{
+            //load more cell
+            let loadMoreCell = tableView.dequeueReusableCell(withIdentifier: "LoadMoreCell") as! TRCLoadMoreCell
+    
+            loadMoreCell.startStopLoading(false)
+            
+            return loadMoreCell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        newFetchBool = 0
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        newFetchBool += 1
+        print("Call me \(newFetchBool)")
     }
 }
 
 extension TRCMessageListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 66
+        if(indexPath.row < dataList.count){
+            return 66
+        }else{
+            return 44
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
         
-        let currentCell = tableView.cellForRow(at: indexPath!) as! TRCMessageListCell
-        
-        currentCell.imgView.image = #imageLiteral(resourceName: "message_read")
-        currentCell.lblTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
-        currentCell.lblSubTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
-        currentCell.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
-        
-        let vc = TRCDetailMessageViewController(nibName: "TRCDetailMessageViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        _obj.nc1.pushViewController(vc, animated: true)
+        if(indexPath!.row < dataList.count){
+            let currentCell = tableView.cellForRow(at: indexPath!) as! TRCMessageListCell
+            
+            currentCell.imgView.image = #imageLiteral(resourceName: "message_read")
+            currentCell.lblTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
+            currentCell.lblSubTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
+            currentCell.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+            
+            let vc = TRCDetailMessageViewController(nibName: "TRCDetailMessageViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc1.pushViewController(vc, animated: true)
+        }else{
+            let loadMoreCell = tableView.cellForRow(at: indexPath!) as! TRCLoadMoreCell
+            loadMoreCell.isUserInteractionEnabled = false
+        }
+    }
+}
+
+extension TRCMessageListViewController: UIScrollViewDelegate{
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        print("Scroll \(newFetchBool)")
+        if(decelerate && newFetchBool >= 2 && scrollView.contentOffset.y >= 0){
+            let tv =  scrollView as! UITableView
+            let lastCellIndexPath = IndexPath(row:dataList.count , section: 0)
+            let refreshCell = tv.cellForRow(at: lastCellIndexPath) as! TRCLoadMoreCell
+            refreshCell.startStopLoading(true)
+            self.fetchDataFromServer()
+            newFetchBool = 0
+        }else if(!decelerate){
+            newFetchBool = 0
+        }
     }
 }
