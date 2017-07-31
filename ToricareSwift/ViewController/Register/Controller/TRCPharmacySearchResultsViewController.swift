@@ -17,6 +17,8 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     
     @IBOutlet weak var tblSearchResult: UITableView!
     
+    var mode = String()
+    
     var keywordString = "赤堤"
     var arrayResults = NSMutableArray()
     
@@ -36,8 +38,12 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
+        if(mode == MODE_REGISTER){
+            self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
                 navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+        }else if(mode == MODE_MYPAGE){
+            //
+        }
         
         //UI of outlet
         lblInform.labelStyle(title: Localizable(value: "search_by_name"))
@@ -106,11 +112,20 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
-        vc.mode = MODE_REGISTER
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(mode == MODE_REGISTER){
+            let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(mode == MODE_MYPAGE){
+            let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
+        }
     }
 }
