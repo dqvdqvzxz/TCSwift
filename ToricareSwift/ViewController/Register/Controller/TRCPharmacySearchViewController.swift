@@ -29,6 +29,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnReaded: UIButton!
 
+    var mode = String()
 
     //MARK: View controller
     override func viewDidLoad() {
@@ -65,7 +66,11 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         configPageView()
         
         //set up tutorial view
-        configTutorialView()
+        if(mode == "OffTutorial"){
+            //hide tutorial
+        }else{
+            configTutorialView()
+        }
     }
     
     func configPageView(){

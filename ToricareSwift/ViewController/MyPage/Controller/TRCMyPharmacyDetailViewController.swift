@@ -69,7 +69,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     func configMode(){
         if(mode == MODE_MYPAGE){
-            btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
+            btnQRCode.isHidden = true
+            contraintBottomScrollView.constant = 54
             btnPharmacy.buttonStyle(title: STRING_CHANGE)
         }else if(mode == MODE_REGISTER){
             btnQRCode.isHidden = true
@@ -111,7 +112,27 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     @IBAction func tapBtnPharmacy(_ sender: Any) {
         if(mode == MODE_MYPAGE){
-            //
+            let alert = UIAlertController(title: nil,
+                                          message: "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            // add the action
+            alert.addAction(UIAlertAction(title: Localizable(value: "cancel"),
+                                          style: UIAlertActionStyle.cancel,
+                                          handler: nil))
+            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                          style: UIAlertActionStyle.default,
+                                          handler: { action in
+                                            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+                                            vc.mode = "OffTutorial"
+                                            let backItem = UIBarButtonItem()
+                                            backItem.title = STRING_BACK
+                                            self.navigationItem.backBarButtonItem = backItem
+                                            _obj.nc5.pushViewController(vc, animated: true)
+            }))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
         }else if(mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             let backItem = UIBarButtonItem()
