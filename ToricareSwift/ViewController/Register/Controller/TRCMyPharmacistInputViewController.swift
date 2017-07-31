@@ -47,7 +47,11 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
-        if(mode == "MyPage"){
+        if(mode == MODE_REGISTER){
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+            
+            lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
+        }else if(mode == MODE_MYPAGE){
             lblInform.labelStyle()
             
             let paragraphStyle = NSMutableParagraphStyle()
@@ -63,10 +67,6 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             attributedString1.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString1.length))
             
             lblInform.attributedText = attributedString1
-        }else{
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
-            
-            lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
         }
         
         lblInform.lineBreakMode = .byWordWrapping
