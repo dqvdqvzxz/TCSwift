@@ -156,6 +156,10 @@ class TRCRegisterViewController: TRCBaseViewController {
                             DLog(_obj.dicFacebookInfo)
                             
                             //fill data to form register
+                            self.lblUsername.text = "Facebookとの連携が完了しました。\nとりけあのログイン用パスワードを設定してください。"
+                            self.lblUsername.lineBreakMode = .byWordWrapping
+                            self.lblUsername.numberOfLines = 0
+                            
                             self.tfUsername.text = _obj.dicFacebookInfo[FB_EMAIL]
                             self.tfUsername.isUserInteractionEnabled = false
                         })
