@@ -44,7 +44,7 @@ class TRCForgotPasswordSentViewController: TRCBaseViewController {
     @IBAction func tapBtnBackToHome(_ sender: Any) {
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers
         for descView in viewControllers {
-            if(descView is TRCLoginViewController){
+            if(descView is TRCPreLoginViewController){
                 self.navigationController!.popToViewController(descView, animated: true)
             }
         }
