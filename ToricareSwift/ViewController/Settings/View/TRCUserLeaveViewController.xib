@@ -76,7 +76,7 @@
                                     <state key="selected" backgroundImage="ic_check_box"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="85u-ur-QUV" firstAttribute="top" secondItem="wto-4M-ikk" secondAttribute="top" constant="7" id="Fl9-DA-9Nr"/>
                                 <constraint firstAttribute="bottom" secondItem="85u-ur-QUV" secondAttribute="bottom" constant="7" id="PG7-rg-1jW"/>
@@ -93,7 +93,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="SvN-mt-KLZ" secondAttribute="bottom" id="Fse-Nc-JsR"/>
                                 <constraint firstAttribute="trailing" secondItem="SvN-mt-KLZ" secondAttribute="trailing" id="eL9-PX-zq8"/>
@@ -102,6 +102,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="wto-4M-ikk" firstAttribute="width" secondItem="dUy-pd-QQy" secondAttribute="width" multiplier="40%" id="10x-y2-iyY"/>
                         <constraint firstItem="HgR-O4-U7b" firstAttribute="width" secondItem="dUy-pd-QQy" secondAttribute="width" multiplier="60%" id="6IK-Oh-Jd3"/>

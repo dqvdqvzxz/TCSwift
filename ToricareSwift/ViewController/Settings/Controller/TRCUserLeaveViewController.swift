@@ -44,14 +44,15 @@ class TRCUserLeaveViewController: TRCBaseViewController {
         lblConfirm.text = Localizable(value: "agree_leave_message")
         lblCheckBox.text = Localizable(value: "agree")
         
-        btnLeave.buttonStyle(title: Localizable(value: "leave"))
+        //btnLeave.buttonStyle(title: Localizable(value: "leave"))
         btnLeave.isEnabled = false
-        btnLeave.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        //btnLeave.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        btnLeave.buttonStyle(title: Localizable(value: "leave"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
         
         //add action tap check box for button check box and view check box
         btnCheckBox.addTarget(self, action: #selector(tapCheckBox), for: .touchUpInside)
         
-        viewCheckBox.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        ///viewCheckBox.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
         let gestureViewCheckBox = UITapGestureRecognizer(target: self, action: #selector(tapCheckBox))
         viewCheckBox.addGestureRecognizer(gestureViewCheckBox)
     }
@@ -61,10 +62,10 @@ class TRCUserLeaveViewController: TRCBaseViewController {
         btnCheckBox.isSelected = !btnCheckBox.isSelected
         if(btnCheckBox.isSelected){
             btnLeave.isEnabled = true
-            btnLeave.backgroundColor = UIColor.init(hexString: MAIN_COLOR)
+            btnLeave.buttonStyle(title: Localizable(value: "leave"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: MAIN_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
         }else if(!btnCheckBox.isSelected){
             btnLeave.isEnabled = false
-            btnLeave.backgroundColor = UIColor.init(hexString: BACKGROUND_COLOR)
+            btnLeave.buttonStyle(title: Localizable(value: "leave"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
         }
     }
     

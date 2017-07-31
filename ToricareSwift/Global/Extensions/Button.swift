@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton{
-    func buttonStyle(title: String?,
+    func buttonStyle(title: String? = "",
                      fontSize: CGFloat? = BUTTON_FONT_SIZE,
                      titleColor: String? = BUTTON_TITLE_COLOR,
                      borderWidth: CGFloat? = BUTTON_BORDER_WIDTH,
