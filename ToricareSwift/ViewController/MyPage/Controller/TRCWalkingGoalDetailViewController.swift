@@ -44,6 +44,8 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
         
         pickerTarget.dataSource = self
         pickerTarget.delegate = self
+        
+        pickerTarget.selectRow(7, inComponent: 0, animated: true)
     }
 
     //MARK: Button Action
@@ -58,7 +60,7 @@ extension TRCWalkingGoalDetailViewController: UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return pickerData.count
+        return pickerData.count
     }
 }
 
@@ -83,6 +85,7 @@ extension TRCWalkingGoalDetailViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 90
     }
+    
     
 //    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
 ////        return 190
