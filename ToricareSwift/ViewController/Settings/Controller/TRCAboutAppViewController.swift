@@ -52,14 +52,20 @@ extension TRCAboutAppViewController: UITableViewDataSource{
         
         switch (indexPath.row) {
         case 0:
+            cell.lblTitle.labelStyle(title: Localizable(value: "app_version"))
+            cell.lblVersion.isHidden = false
             cell.lblVersion.text = "1.0.1"
         case 1:
+            cell.lblTitle.labelStyle(title: Localizable(value: "term_of_service"))
             cell.lblVersion.isHidden = true
         case 2:
+            cell.lblTitle.labelStyle(title: Localizable(value: "policy"))
             cell.lblVersion.isHidden = true
         case 3:
+            cell.lblTitle.labelStyle(title: Localizable(value: "faq"))
             cell.lblVersion.isHidden = true
         case 4:
+            cell.lblTitle.labelStyle(title: Localizable(value: "question"))
             cell.lblVersion.isHidden = true
         default:
             break
@@ -76,5 +82,6 @@ extension TRCAboutAppViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

@@ -86,7 +86,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         }else{
             UserDefaults.kRemoveValue(NOTIF_BREAKFAST)
         }
-        tblNotify.reloadData()
+        ///tblNotify.reloadData()
     }
     
     func switchReceiveLunch(switchState: UISwitch){
@@ -95,7 +95,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         }else{
             UserDefaults.kRemoveValue(NOTIF_LUNCH)
         }
-        tblNotify.reloadData()
+        //tblNotify.reloadData()
     }
     
     func switchReceiveDinner(switchState: UISwitch){
@@ -104,7 +104,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         }else{
             UserDefaults.kRemoveValue(NOTIF_DINNER)
         }
-        tblNotify.reloadData()
+        //tblNotify.reloadData()
     }
     
     func switchReceiveSnack(switchState: UISwitch){
@@ -113,7 +113,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         }else{
             UserDefaults.kRemoveValue(NOTIF_SNACK)
         }
-        tblNotify.reloadData()
+        //tblNotify.reloadData()
     }
 }
 
