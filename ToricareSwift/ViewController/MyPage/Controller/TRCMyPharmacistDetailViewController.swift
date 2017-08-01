@@ -21,7 +21,7 @@ class TRCMyPharmacistDetailViewController: UIViewController {
     
     @IBOutlet weak var btnChange: UIButton!
     
-    var mode = String()
+    var mode : String = MODE_MYPAGE
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -62,7 +62,7 @@ class TRCMyPharmacistDetailViewController: UIViewController {
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
-            let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+            let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
