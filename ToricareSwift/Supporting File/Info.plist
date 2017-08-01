@@ -41,7 +41,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -78,5 +77,19 @@
 	<string>Use Location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Use Location</string>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>861707fd98b6061c60b37b68e21ee5584238e6a0</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict/>
+                <key>KitName</key>
+                <string>Crashlytics</string>
+            </dict>
+        </array>
+    </dict>
 </dict>
 </plist>
