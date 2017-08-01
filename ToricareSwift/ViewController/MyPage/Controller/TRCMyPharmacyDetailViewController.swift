@@ -34,7 +34,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
     
-    var mode : String = MODE_REGISTER
+    var mode : String = MODE_MYPAGE
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -60,6 +60,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblDayOff.labelStyle(title: Localizable(value: "day_off"))
         lblWebsite.labelStyle(title: Localizable(value: "website"))
         
+        btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
+        
         configMode()
         
         configData()
@@ -69,13 +71,10 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             btnQRCode.isHidden = true
             contraintBottomScrollView.constant = 54
-            btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
-            
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
         }else if(mode == MODE_MYPAGE){
             btnQRCode.isHidden = true
             contraintBottomScrollView.constant = 54
-            btnPharmacy.buttonStyle(title: STRING_CHANGE)
         }
     }
     
