@@ -93,10 +93,30 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnPharmacistInput(_ sender: Any) {
-        let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(mode == MODE_REGISTER){
+            let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(mode == MODE_MYPAGE){
+            let alert = UIAlertController(title: nil,
+                                          message: "プロフィールを更新しました",
+                                          preferredStyle: .alert)
+            // add the action
+            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                          style: UIAlertActionStyle.default,
+                                          handler: { action in
+                                            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                                            for descView in viewControllers {
+                                                if(descView is TRCMyPageViewController){
+                                                    _obj.nc5.popToViewController(descView, animated: true)
+                                                }
+                                            }
+            }))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

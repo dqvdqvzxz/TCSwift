@@ -125,6 +125,12 @@
 		3FB411AD1F09F2AA008720A6 /* TRCRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411AB1F09F2AA008720A6 /* TRCRegisterViewController.swift */; };
 		3FB411B01F09F2C2008720A6 /* TRCRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411AF1F09F2C2008720A6 /* TRCRegisterViewController.xib */; };
 		57C6E70B6D71631356703859 /* Pods_ToricareSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */; };
+		684095AA1F303B2A009F16EA /* TRCTab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095A81F303B2A009F16EA /* TRCTab2ViewController.swift */; };
+		684095AB1F303B2A009F16EA /* TRCTab2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 684095A91F303B2A009F16EA /* TRCTab2ViewController.xib */; };
+		684095AE1F303B36009F16EA /* TRCTab3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095AC1F303B36009F16EA /* TRCTab3ViewController.swift */; };
+		684095AF1F303B36009F16EA /* TRCTab3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 684095AD1F303B36009F16EA /* TRCTab3ViewController.xib */; };
+		684095B21F303B43009F16EA /* TRCTab4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095B01F303B43009F16EA /* TRCTab4ViewController.swift */; };
+		684095B31F303B43009F16EA /* TRCTab4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 684095B11F303B43009F16EA /* TRCTab4ViewController.xib */; };
 		C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00CF8F11F17284800B6A5A5 /* Localizable.strings */; };
 		C05B9ABF1F1F03A30069B903 /* TRCPharmacyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B9ABE1F1F03A30069B903 /* TRCPharmacyObject.swift */; };
 /* End PBXBuildFile section */
@@ -249,6 +255,12 @@
 		3FB411A41F09E13E008720A6 /* TRCPreLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPreLoginViewController.xib; sourceTree = "<group>"; };
 		3FB411AB1F09F2AA008720A6 /* TRCRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCRegisterViewController.swift; sourceTree = "<group>"; };
 		3FB411AF1F09F2C2008720A6 /* TRCRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCRegisterViewController.xib; sourceTree = "<group>"; };
+		684095A81F303B2A009F16EA /* TRCTab2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCTab2ViewController.swift; sourceTree = "<group>"; };
+		684095A91F303B2A009F16EA /* TRCTab2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCTab2ViewController.xib; sourceTree = "<group>"; };
+		684095AC1F303B36009F16EA /* TRCTab3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCTab3ViewController.swift; sourceTree = "<group>"; };
+		684095AD1F303B36009F16EA /* TRCTab3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCTab3ViewController.xib; sourceTree = "<group>"; };
+		684095B01F303B43009F16EA /* TRCTab4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCTab4ViewController.swift; sourceTree = "<group>"; };
+		684095B11F303B43009F16EA /* TRCTab4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCTab4ViewController.xib; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -530,6 +542,12 @@
 				3F475A5A1F0F9F0300B82645 /* MyPage */,
 				3F47591D1F0CC0F400B82645 /* Settings */,
 				3F57F73D1F26DCCC00CC079C /* WebView */,
+				684095A81F303B2A009F16EA /* TRCTab2ViewController.swift */,
+				684095A91F303B2A009F16EA /* TRCTab2ViewController.xib */,
+				684095AC1F303B36009F16EA /* TRCTab3ViewController.swift */,
+				684095AD1F303B36009F16EA /* TRCTab3ViewController.xib */,
+				684095B01F303B43009F16EA /* TRCTab4ViewController.swift */,
+				684095B11F303B43009F16EA /* TRCTab4ViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -790,8 +808,10 @@
 				3FB411A61F09E13E008720A6 /* TRCPreLoginViewController.xib in Resources */,
 				3F475A7D1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib in Resources */,
 				3F57F74E1F26F21600CC079C /* TRCMyPharmacistDetailViewController.xib in Resources */,
+				684095B31F303B43009F16EA /* TRCTab4ViewController.xib in Resources */,
 				3F4759611F0CC50C00B82645 /* TRCAboutAppViewController.xib in Resources */,
 				3F475A831F17157100B82645 /* TRCMyPharmacyDetailViewController.xib in Resources */,
+				684095AB1F303B2A009F16EA /* TRCTab2ViewController.xib in Resources */,
 				3F4759691F0CC50C00B82645 /* TRCSettingViewController.xib in Resources */,
 				3FB411B01F09F2C2008720A6 /* TRCRegisterViewController.xib in Resources */,
 				3F57F72C1F21E1E700CC079C /* TRCQRCodeViewController.xib in Resources */,
@@ -834,6 +854,7 @@
 				3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */,
 				3F475AAA1F176A3E00B82645 /* TRCSearchResultCell.xib in Resources */,
 				3FB4119A1F05F988008720A6 /* TRCHomeViewController.xib in Resources */,
+				684095AF1F303B36009F16EA /* TRCTab3ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,6 +913,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684095AE1F303B36009F16EA /* TRCTab3ViewController.swift in Sources */,
 				3F57F7521F298C3600CC079C /* TRCPasscodeLockLoginInputViewController.swift in Sources */,
 				3F475A741F14B05A00B82645 /* TRCMyPageCell.swift in Sources */,
 				3F4758F11F0BA02400B82645 /* TRCAccountInfoInputViewController.swift in Sources */,
@@ -908,6 +930,7 @@
 				3F4759471F0CC44000B82645 /* TRCThemeColorSettingViewController.swift in Sources */,
 				3F47591C1F0C7DA100B82645 /* Image.swift in Sources */,
 				3F4758F51F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift in Sources */,
+				684095AA1F303B2A009F16EA /* TRCTab2ViewController.swift in Sources */,
 				3F57F7331F25F78800CC079C /* TRCMessageListViewController.swift in Sources */,
 				3F47593B1F0CC40000B82645 /* TRCPasscodeLockSettingViewController.swift in Sources */,
 				3F4759331F0CC3DF00B82645 /* TRCEmailChangeCompleteViewController.swift in Sources */,
@@ -947,6 +970,7 @@
 				3F57F6FB1F1F034800CC079C /* example4.swift in Sources */,
 				3FB4119C1F05FB8B008720A6 /* Textfield.swift in Sources */,
 				3F4759051F0BA0A700B82645 /* TRCUserRegistCompleteViewController.swift in Sources */,
+				684095B21F303B43009F16EA /* TRCTab4ViewController.swift in Sources */,
 				3F57F6F91F1F032C00CC079C /* example3.swift in Sources */,
 				3FB4118E1F0122D0008720A6 /* UserDefaults.swift in Sources */,
 				3F47593F1F0CC40F00B82645 /* TRCPasscodeLockInputViewController.swift in Sources */,

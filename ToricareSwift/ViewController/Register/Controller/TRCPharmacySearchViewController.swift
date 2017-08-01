@@ -100,12 +100,22 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 
     //MARK: Button Action
     @IBAction func tapBtnSearch(_ sender: Any) {
-        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-        vc.mode = MODE_REGISTER
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(mode == MODE_REGISTER){
+            let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(mode == MODE_MYPAGE){
+            let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+            vc.mode = MODE_MYPAGE
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }
     }
     
     @IBAction func tapBtnCancel(_ sender: Any) {

@@ -80,9 +80,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //init root view controller
         let vc1 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-        let vc2 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-        let vc3 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-        let vc4 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+        let vc2 = TRCTab2ViewController(nibName: "TRCTab2ViewController", bundle: nil)
+        let vc3 = TRCTab3ViewController(nibName: "TRCTab3ViewController", bundle: nil)
+        let vc4 = TRCTab4ViewController(nibName: "TRCTab4ViewController", bundle: nil)
         let vc5 = TRCMyPageViewController(nibName: "TRCMyPageViewController", bundle: nil)
         
         //init root nav controller

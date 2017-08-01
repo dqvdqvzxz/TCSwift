@@ -34,7 +34,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
     
-    var mode : String = MODE_REGISTER
+    var mode : String = MODE_MYPAGE
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -60,22 +60,21 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblDayOff.labelStyle(title: Localizable(value: "day_off"))
         lblWebsite.labelStyle(title: Localizable(value: "website"))
         
+        btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
+        
         configMode()
         
         configData()
     }
     
     func configMode(){
-        if(mode == MODE_REGISTER){
+        if(mode == MODE_REGISTER || mode == MODE_REGISTER_MYPAGE){
             btnQRCode.isHidden = true
             contraintBottomScrollView.constant = 54
-            btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
-            
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
         }else if(mode == MODE_MYPAGE){
             btnQRCode.isHidden = true
             contraintBottomScrollView.constant = 54
-            btnPharmacy.buttonStyle(title: STRING_CHANGE)
         }
     }
     
@@ -114,6 +113,13 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(mode == MODE_REGISTER_MYPAGE){
+            let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+            vc.mode = MODE_REGISTER_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem

@@ -66,6 +66,7 @@ let STRING_SNACK =                      Localizable(value: "snack")
 //Pharmacy Mode
 let MODE_MYPAGE =                       "MODE_MYPAGE"
 let MODE_REGISTER =                     "MODE_REGISTER"
+let MODE_REGISTER_MYPAGE =              "MODE_REGISTER_MYPAGE"
 
 //Passcode Mode
 let MODE_LOGIN =                        "MODE_LOGIN"
