@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         UserDefaults.kSetValue(deviceID, DEVICE_ID)
+        print(deviceID)
         
         //google key
 //        GMSPlacesClient.provideAPIKey("AIzaSyB2m6vLyb-OvTw1PvmxZH1de0TVa_d93HQ")
@@ -58,9 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let mainVC = TRCPasscodeLockLoginInputViewController(nibName: "TRCPasscodeLockLoginInputViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
             window?.rootViewController = navController
-        }
-        
-        
+        } 
         FBSDKAppEvents.activateApp()
     }
 
