@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         UserDefaults.kSetValue(deviceID, DEVICE_ID)
-        print(deviceID)
         
         //google key
 //        GMSPlacesClient.provideAPIKey("AIzaSyB2m6vLyb-OvTw1PvmxZH1de0TVa_d93HQ")

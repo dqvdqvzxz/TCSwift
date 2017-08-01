@@ -16,8 +16,7 @@ class TRCBaseAPIController{
         if Connectivity.isConnectToNetwork() == false{
             failed(Alert(title: STRING_CHECK_NETWORK))
         }else{
-//            let urls = "\(APP_DOMAIN)\(path)"
-            let urls = "http://private-855d6c-ilovestayadmin.apiary-mock.com/getReport?room_id=123456"
+            let urls = "\(APP_DOMAIN)\(path)"
             if(path == ""){
                 failed(ELog("URL is not exist !"))
             }
@@ -70,8 +69,11 @@ class TRCBaseAPIController{
                     case .failure(_):
                         if let statusCode = response.response?.statusCode{
                             failed(ELog("Status code: \(statusCode)"))
-                            if statusCode == 400{
-                                //handle
+                            switch (statusCode){
+                            case 404:
+                                print("Client error")
+                            default:
+                                break
                             }
                         }
                     }

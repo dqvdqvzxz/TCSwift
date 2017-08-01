@@ -84,13 +84,22 @@ class TRCLoginViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnLogin(_ sender: Any) {
-        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+        TRCLoginAPIController().Login(tfUsername.text!, tfPassword.text!, completion: {
+            //xu ly hien thi du lieu khi pass
+            DLog("1")
             
-            _obj.tabController.selectedIndex = 0
-        }, completion: { completed in
-            // maybe do something here
-        })
+            UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                
+                _obj.tabController.selectedIndex = 0
+            }, completion: { completed in
+                // maybe do something here
+            })
+
+        }) { (String) in
+            //khi fail
+            DLog("2")
+        }
     }
 }
 

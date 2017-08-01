@@ -498,8 +498,8 @@
 		3FB411341EFB6221008720A6 /* ServerAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				3FB4116E1EFCF09C008720A6 /* TRCLoginAPIController.swift */,
 				3FB411721EFD0DDA008720A6 /* TRCBaseAPIController.swift */,
+				3FB4116E1EFCF09C008720A6 /* TRCLoginAPIController.swift */,
 			);
 			path = ServerAdapter;
 			sourceTree = "<group>";
