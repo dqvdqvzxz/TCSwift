@@ -46,6 +46,9 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     func configMode(){
         if(mode == MODE_SKIP){
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "please_register_pharmacy_later"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
+            lblPharmacyNotDone.lineBreakMode = .byWordWrapping
+            lblPharmacyNotDone.numberOfLines = 0
+            
             lblTakeQRCode.isHidden = true
             
             btnQRCode.isHidden = true

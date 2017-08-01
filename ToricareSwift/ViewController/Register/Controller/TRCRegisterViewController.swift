@@ -63,7 +63,7 @@ class TRCRegisterViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
         let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-        vc.editMode = MODE_REGISTER
+        vc.mode = MODE_REGISTER
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
@@ -156,6 +156,10 @@ class TRCRegisterViewController: TRCBaseViewController {
                             DLog(_obj.dicFacebookInfo)
                             
                             //fill data to form register
+                            self.lblUsername.text = "Facebookとの連携が完了しました。\nとりけあのログイン用パスワードを設定してください。"
+                            self.lblUsername.lineBreakMode = .byWordWrapping
+                            self.lblUsername.numberOfLines = 0
+                            
                             self.tfUsername.text = _obj.dicFacebookInfo[FB_EMAIL]
                             self.tfUsername.isUserInteractionEnabled = false
                         })

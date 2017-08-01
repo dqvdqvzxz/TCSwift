@@ -34,8 +34,8 @@ class TRCUserLeaveCompleteViewController: TRCBaseViewController {
         self.navigationItem.hidesBackButton = true
         
         //UI
-        lblTitle1.text = Localizable(value: "leave_complete")
-        lblTitle2.text = Localizable(value: "thank_you")
+        lblTitle1.labelStyle(title: Localizable(value: "leave_complete"))
+        lblTitle2.labelStyle(title: Localizable(value: "thank_you"))
         
         imgView.image = #imageLiteral(resourceName: "img_user_test")
     }

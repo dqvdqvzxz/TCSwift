@@ -34,7 +34,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
     
-    var mode : String = MODE_MYPAGE
+    var mode : String = MODE_REGISTER
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -53,8 +53,6 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         //navigation 
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
-        
         //UI of outlet
         lblAddress.labelStyle(title: Localizable(value: "address"))
         lblPhone.labelStyle(title: Localizable(value: "phone_number"))
@@ -68,13 +66,16 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     func configMode(){
-        if(mode == MODE_MYPAGE){
-            btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
-            btnPharmacy.buttonStyle(title: STRING_CHANGE)
-        }else if(mode == MODE_REGISTER){
+        if(mode == MODE_REGISTER){
             btnQRCode.isHidden = true
             contraintBottomScrollView.constant = 54
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+        }else if(mode == MODE_MYPAGE){
+            btnQRCode.isHidden = true
+            contraintBottomScrollView.constant = 54
+            btnPharmacy.buttonStyle(title: STRING_CHANGE)
         }
     }
     
@@ -110,14 +111,35 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnPharmacy(_ sender: Any) {
-        if(mode == MODE_MYPAGE){
-            //
-        }else if(mode == MODE_REGISTER){
+        if(mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
-            _obj.nc5.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(mode == MODE_MYPAGE){
+            let alert = UIAlertController(title: nil,
+                                          message: "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            // add the action
+            alert.addAction(UIAlertAction(title: Localizable(value: "cancel"),
+                                          style: UIAlertActionStyle.cancel,
+                                          handler: nil))
+            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                          style: UIAlertActionStyle.default,
+                                          handler: { action in
+                                            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+                                            vc.mode = MODE_MYPAGE
+                                            let backItem = UIBarButtonItem()
+                                            backItem.title = STRING_BACK
+                                            self.navigationItem.backBarButtonItem = backItem
+                                            _obj.nc5.pushViewController(vc, animated: true)
+            }))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

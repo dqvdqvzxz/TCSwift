@@ -47,7 +47,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     var dataGender = [Localizable(value: "male"), Localizable(value: "female")]
     var genderPicker = UIPickerView()
     
-    var editMode = String()
+    var mode = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,15 +101,14 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         }
 
         //config mode
-        if(editMode == MODE_MYPAGE){
-            self.navigationItem.hidesBackButton = false
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
-            contraintBottomScrollView.constant = 0
-            btnNext.isHidden = true
-        }else if(editMode == MODE_REGISTER){
+        if(mode == MODE_REGISTER){
             self.navigationItem.title = Localizable(value: "register_title")
             btnNext.buttonStyle(title: STRING_NEXT)
+        }else if(mode == MODE_MYPAGE){
+            self.navigationItem.hidesBackButton = false
+            btnNext.buttonStyle(title: "変更を保存")
         }
+        
         
         //add image to text field
         tfDateOfBirth.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
@@ -218,11 +217,21 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
-        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(mode == MODE_REGISTER){
+            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(mode == MODE_MYPAGE){
+            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func tapBtnUploadImage(_ sender: Any) {

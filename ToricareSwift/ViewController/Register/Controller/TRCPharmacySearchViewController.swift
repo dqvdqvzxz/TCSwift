@@ -29,6 +29,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnReaded: UIButton!
 
+    var mode = String()
 
     //MARK: View controller
     override func viewDidLoad() {
@@ -49,7 +50,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
         
         //UI of outlet
         lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacy"))
@@ -65,7 +65,13 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         configPageView()
         
         //set up tutorial view
-        configTutorialView()
+        if(mode == MODE_MYPAGE){
+            //hide tutorial
+        }else if(mode == MODE_REGISTER){
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+            
+            configTutorialView()
+        }
     }
     
     func configPageView(){
@@ -95,6 +101,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnSearch(_ sender: Any) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        vc.mode = MODE_REGISTER
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem
