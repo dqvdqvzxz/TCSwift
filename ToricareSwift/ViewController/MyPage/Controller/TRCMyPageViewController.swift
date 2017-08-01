@@ -131,11 +131,11 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             break
-//            let vc = TRCPointViewController(nibName: "TRCPointViewController", bundle: nil)
-//            let backItem = UIBarButtonItem()
-//            backItem.title = STRING_BACK
-//            navigationItem.backBarButtonItem = backItem
-//            _obj.nc5.pushViewController(vc, animated: true)
+            let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
         case 4:
             let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
             let backItem = UIBarButtonItem()
