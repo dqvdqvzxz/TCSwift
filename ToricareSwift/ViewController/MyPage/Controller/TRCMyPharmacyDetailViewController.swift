@@ -68,7 +68,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     func configMode(){
-        if(mode == MODE_REGISTER){
+        if(mode == MODE_REGISTER || mode == MODE_REGISTER_MYPAGE){
             btnQRCode.isHidden = true
             contraintBottomScrollView.constant = 54
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
@@ -113,6 +113,13 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(mode == MODE_REGISTER_MYPAGE){
+            let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+            vc.mode = MODE_REGISTER_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
