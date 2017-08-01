@@ -10,9 +10,11 @@ import UIKit
 
 import ZXingObjC
 
-class TRCQRCodeViewController: UIViewController {
+class TRCQRCodeViewController: TRCBaseViewController {
 
     @IBOutlet weak var imgView: UIView!
+    @IBOutlet weak var lblGuide: UILabel!
+    @IBOutlet weak var btnCancel: UIButton!
     
     var capture = ZXCapture()
     var _captureSizeTransform = CGAffineTransform()
@@ -20,7 +22,8 @@ class TRCQRCodeViewController: UIViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configUI()
         configScanCodeView()
     }
 
@@ -29,17 +32,30 @@ class TRCQRCodeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     //MARK: Config UI
+
+    func configUI() {
+        self.navigationItem.title = Localizable(value: "qr_title")
+
+        lblGuide.labelStyle(title: Localizable(value: "guide_qr_code"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
+        btnCancel.buttonStyle(title: STRING_CANCEL, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: ERROR_COLOR, radius: BUTTON_RADIUS, backgroundColor: ERROR_COLOR)
+        
+        btnCancel.addTarget(self, action: #selector(btnCancelDidTap), for: UIControlEvents.touchUpInside)
+    }
+    
     
     //MARK: Config scan code view
     func configScanCodeView(){
         capture.delegate = self
         capture.camera = capture.back()
         capture.focusMode = .continuousAutoFocus
-        capture.layer.frame = self.view.frame
+//        capture.layer.frame = self.view.bounds
+        capture.layer.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
+
         
         self.view.layer.addSublayer(capture.layer)
+        self.view.bringSubview(toFront: lblGuide)
+        self.view.bringSubview(toFront: btnCancel)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -76,7 +92,7 @@ class TRCQRCodeViewController: UIViewController {
         let transform = CGAffineTransform(rotationAngle: (CGFloat)(captureRotation / 180 * .pi))
         capture.transform = transform
         capture.rotation = CGFloat(scanRectRotation)
-        capture.layer.frame = view.frame
+        capture.layer.frame = view.bounds
     }
     
     
@@ -107,10 +123,22 @@ class TRCQRCodeViewController: UIViewController {
         }
         capture.scanRect = transformedVideoRect.applying(_captureSizeTransform)
     }
+    
+    func btnCancelDidTap() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension TRCQRCodeViewController: ZXCaptureDelegate{
     func captureResult(_ capture: ZXCapture!, result: ZXResult!) {
         print(result)
+        if ((result.text) != nil) {
+            let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+            capture.hard_stop()
+        }
     }
 }

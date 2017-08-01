@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCQRCodeViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="btnCancel" destination="WGE-M0-kxn" id="npw-y1-0hl"/>
                 <outlet property="imgView" destination="nkR-0K-68G" id="QKX-kT-prw"/>
+                <outlet property="lblGuide" destination="xVg-vt-8VE" id="cVp-p3-9QT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,9 +26,33 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGE-M0-kxn">
+                    <rect key="frame" x="10" y="613" width="355" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="hWY-lB-0Ya"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="薬局の店頭にあるＱＲコードを読み込んでください。読み取りがうまくいかない場合、平らな明るい場所でお試しください。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVg-vt-8VE">
+                    <rect key="frame" x="10" y="532" width="355" height="71"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="GtP-0F-LdB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="32.5" y="96.5"/>
+            <constraints>
+                <constraint firstItem="xVg-vt-8VE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="NyD-f2-fwh"/>
+                <constraint firstAttribute="trailing" secondItem="WGE-M0-kxn" secondAttribute="trailing" constant="10" id="TYF-IE-Oho"/>
+                <constraint firstAttribute="trailing" secondItem="xVg-vt-8VE" secondAttribute="trailing" constant="10" id="W5g-z3-kfl"/>
+                <constraint firstItem="WGE-M0-kxn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="cRm-Fy-Flz"/>
+                <constraint firstItem="WGE-M0-kxn" firstAttribute="top" secondItem="xVg-vt-8VE" secondAttribute="bottom" constant="10" id="hb1-DG-nIq"/>
+                <constraint firstAttribute="bottom" secondItem="WGE-M0-kxn" secondAttribute="bottom" constant="10" id="tW0-9R-GtK"/>
+            </constraints>
+            <point key="canvasLocation" x="-392" y="63"/>
         </view>
     </objects>
 </document>
