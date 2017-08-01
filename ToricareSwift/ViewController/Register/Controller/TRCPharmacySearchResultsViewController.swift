@@ -123,7 +123,7 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
-            vc.mode = MODE_MYPAGE
+            vc.mode = MODE_REGISTER_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
