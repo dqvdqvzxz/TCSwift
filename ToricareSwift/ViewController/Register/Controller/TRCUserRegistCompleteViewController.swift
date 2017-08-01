@@ -38,8 +38,6 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
         //UI of outlet
         lblRegisterDone.labelStyle(title: Localizable(value: "register_member_complete"))
         
-        btnUsingApp.buttonStyle(title: Localizable(value: "use_app"))
-        
         configMode()
     }
     
@@ -52,11 +50,19 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
             lblTakeQRCode.isHidden = true
             
             btnQRCode.isHidden = true
+            btnUsingApp.buttonStyle(title: Localizable(value: "use_app"))
+        }else if(mode == MODE_REGISTER_MYPAGE){
+            lblPharmacyNotDone.labelStyle(title: Localizable(value: "my_pharmacy_register_not_done"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
+            lblTakeQRCode.labelStyle(title: Localizable(value: "take_qrcode_label"))
+            
+            btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
+            btnUsingApp.buttonStyle(title: "マイページトップへ")
         }else{
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "my_pharmacy_register_not_done"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
             lblTakeQRCode.labelStyle(title: Localizable(value: "take_qrcode_label"))
             
             btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
+            btnUsingApp.buttonStyle(title: Localizable(value: "use_app"))
         }
     }
     
@@ -70,10 +76,19 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnUsingApp(_ sender: Any) {
-        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-        }, completion: { completed in
-            // maybe do something here
-        })
+        if(mode == MODE_REGISTER_MYPAGE){
+            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+            for descView in viewControllers {
+                if(descView is TRCMyPageViewController){
+                    _obj.nc5.popToViewController(descView, animated: true)
+                }
+            }
+        }else{
+            UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+            }, completion: { completed in
+                // maybe do something here
+            })
+        }
     }
 }
