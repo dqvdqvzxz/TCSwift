@@ -9,9 +9,14 @@
 import UIKit
 
 import Alamofire
+
 import FBSDKLoginKit
+
 import GoogleMaps
 import GooglePlaces
+
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FBSDKProfile.enableUpdates(onAccessTokenChange: true)
 
+        //fabric
+        Fabric.with([Crashlytics.self])
+        
         return true
     }
 
