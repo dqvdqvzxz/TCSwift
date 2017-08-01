@@ -39,11 +39,13 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     func configUI(){
         //navigation
         if(mode == MODE_REGISTER){
-            self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
-                navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
         }else if(mode == MODE_MYPAGE){
             //
         }
+        
+        self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
+
         
         //UI of outlet
         lblInform.labelStyle(title: Localizable(value: "search_by_name"))
@@ -121,7 +123,7 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
+            vc.mode = MODE_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
