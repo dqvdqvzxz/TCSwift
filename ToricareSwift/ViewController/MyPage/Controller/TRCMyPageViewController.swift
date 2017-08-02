@@ -23,15 +23,20 @@ class TRCMyPageViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        _obj.tabController.tabBar.isHidden = false
+        
         configUI()
-        
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = false
         
         _obj.nc5.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

@@ -66,6 +66,8 @@ class TRCHomeViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        _obj.tabController.tabBar.isHidden = false
+        
         // Do any additional setup after loading the view.
         
 //        testBtn.buttonStyle(title: "Test BTN", fontSize: 7, titleColor: "0caa7d", borderWidth: 1, borderColor: "nil", radius: nil, backgroundColor: nil)
@@ -86,6 +88,10 @@ class TRCHomeViewController: TRCBaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = false
     }
 
