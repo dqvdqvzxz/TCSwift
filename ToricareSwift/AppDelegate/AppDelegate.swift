@@ -9,9 +9,14 @@
 import UIKit
 
 import Alamofire
+
 import FBSDKLoginKit
+
 import GoogleMaps
 import GooglePlaces
+
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         UserDefaults.kSetValue(deviceID, DEVICE_ID)
-        print(deviceID)
         
         //google key
 //        GMSPlacesClient.provideAPIKey("AIzaSyB2m6vLyb-OvTw1PvmxZH1de0TVa_d93HQ")
@@ -37,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FBSDKProfile.enableUpdates(onAccessTokenChange: true)
 
+        //fabric
+        Fabric.with([Crashlytics.self])
+        
         return true
     }
 

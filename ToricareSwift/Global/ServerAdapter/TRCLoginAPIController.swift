@@ -10,24 +10,29 @@ import UIKit
 
 
 class TRCLoginAPIController: NSObject {
-    func Login(_ mailAddress: String, _ password: String, completion: @escaping()->(), failed: @escaping()->()){
+    func Login(_ mailAddress: String, _ password: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ resultFailed: NSDictionary?)->()){
         
         var parameters = Dictionary <String, String>()
-        parameters["mail_address"] = "minhthaind@gmail.com"
-        parameters["password"] = "123456"
-        parameters["device_id"] = "21323232323232fdfdfdfdddd1111"
+        parameters["mail_address"] = mailAddress
+        parameters["password"] = password
+        parameters["device_id"] = UserDefaults.kGetValue(DEVICE_ID) as? String
         parameters["device_token"] = "232321423423414514141414143423dfdfdfdfderererere232323232"
         parameters["device_type"] = "1"
         
-        TRCBaseAPIController.callAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_GET, blockCompletion: { (data) in
+        TRCBaseAPIController.callAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_POST, blockCompletion: { (data) in
             DLog("Process success")
-            print(data!)
+            
+            print("Parameter: \(parameters)")
+//            print(data!)
             
             //parse data from model
-            completion()
+            completion(data)
             
-        }) { () in
-            failed(ELog("Process failed"))
+        }) { (dataFailed) in
+            
+//            print("Parameter: \(dataFailed!)")
+            
+            failed(dataFailed)
             
         }
     }

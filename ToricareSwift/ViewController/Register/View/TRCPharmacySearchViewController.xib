@@ -151,7 +151,7 @@ My薬剤師の説明</string>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="yLy-Q6-VrP"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="閉じる"/>
                             <connections>
                                 <action selector="tapBtnReaded:" destination="-1" eventType="touchUpInside" id="x4X-w9-ZtO"/>
                             </connections>
