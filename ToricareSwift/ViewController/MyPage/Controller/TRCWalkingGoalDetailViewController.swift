@@ -16,13 +16,15 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
     @IBOutlet weak var pickerTarget: UIPickerView!
     
     @IBOutlet weak var btnSave: UIButton!
-
-    let pickerData = ["1000", "2000", "3000", "4000", "5000", "6000", "7000", "8000", "9000", "10000"]
+    
+    var pickerData = Array<Int>()
     
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initValuePicker()
+        
         configUI()
     }
 
@@ -40,12 +42,19 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
         lblTitle.labelStyle(title: Localizable(value: "walking_per_day"))
         lblSteps.labelStyle(title: Localizable(value: "walking"))
         
-        btnSave.buttonStyle(title: nil)
+        btnSave.buttonStyle(title: Localizable(value: "save_change"))
         
         pickerTarget.dataSource = self
         pickerTarget.delegate = self
         
         pickerTarget.selectRow(7, inComponent: 0, animated: true)
+    }
+    
+    //MARK: Function
+    func initValuePicker(){
+        for i in stride(from: 1000, to: 51000, by: 1000){
+            pickerData.append(i)
+        }
     }
 
     //MARK: Button Action
@@ -66,7 +75,7 @@ extension TRCWalkingGoalDetailViewController: UIPickerViewDataSource{
 
 extension TRCWalkingGoalDetailViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        lblTitle.text = pickerData[row]
+//        lblTitle.text = pickerData[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -76,7 +85,7 @@ extension TRCWalkingGoalDetailViewController: UIPickerViewDelegate{
                 pickerLabel?.font = UIFont.systemFont(ofSize: 60)
                 pickerLabel?.textAlignment = .center
             }
-            pickerLabel?.text = pickerData[row]
+            pickerLabel?.text = pickerData[row].description
             pickerLabel?.textColor = UIColor.init(hexString: MAIN_COLOR)
             
             return pickerLabel!

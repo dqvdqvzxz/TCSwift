@@ -137,8 +137,7 @@ class TRCHomeViewController: TRCBaseViewController {
         
         //
         lblRegisterTodayWeight.labelStyle(title: Localizable(value: "register_today_weight"))
-        imgViewAccessory.image = #imageLiteral(resourceName: "ic_back")
-        imgViewAccessory.transform = imgViewAccessory.transform.rotated(by: 135)
+        imgViewAccessory.image = #imageLiteral(resourceName: "ic_next")
     }
     
     //MARK: Action
