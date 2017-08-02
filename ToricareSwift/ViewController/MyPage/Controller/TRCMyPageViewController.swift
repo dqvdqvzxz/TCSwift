@@ -130,7 +130,6 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
-            break
             let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
