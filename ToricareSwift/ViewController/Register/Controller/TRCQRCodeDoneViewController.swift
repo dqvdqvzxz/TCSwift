@@ -24,7 +24,11 @@ class TRCQRCodeDoneViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationItem.setLeftBarButton(nil, animated: false)
+        self.navigationItem.setLeftBarButton(nil, animated: false)
+    }
     /*
     // MARK: - Navigation
 

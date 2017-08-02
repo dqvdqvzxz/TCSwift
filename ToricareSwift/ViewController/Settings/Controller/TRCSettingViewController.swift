@@ -120,8 +120,14 @@ extension TRCSettingViewController: UITableViewDelegate{
         case 7:
             UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 UserDefaults.kRemoveValue(PASSCODE)
+                
                 let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                 let navController = UINavigationController(rootViewController: mainVC)
+                
+                // Back to Home
+                self.navigationController?.popToRootViewController(animated: false)
+                _obj.tabController.selectedIndex = 0
+
                 UIApplication.shared.keyWindow?.rootViewController = navController
             }, completion: { completed in
                 // maybe do something here

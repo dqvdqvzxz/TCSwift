@@ -16,6 +16,7 @@ class TRCQRCodeViewController: TRCBaseViewController {
     @IBOutlet weak var lblGuide: UILabel!
     @IBOutlet weak var btnCancel: UIButton!
     
+    var hasScannedResult = false
     var capture = ZXCapture()
     var _captureSizeTransform = CGAffineTransform()
     
@@ -32,6 +33,9 @@ class TRCQRCodeViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     //MARK: Config UI
 
     func configUI() {
@@ -43,16 +47,13 @@ class TRCQRCodeViewController: TRCBaseViewController {
         btnCancel.addTarget(self, action: #selector(btnCancelDidTap), for: UIControlEvents.touchUpInside)
     }
     
-    
     //MARK: Config scan code view
     func configScanCodeView(){
         capture.delegate = self
         capture.camera = capture.back()
         capture.focusMode = .continuousAutoFocus
-//        capture.layer.frame = self.view.bounds
         capture.layer.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
 
-        
         self.view.layer.addSublayer(capture.layer)
         self.view.bringSubview(toFront: lblGuide)
         self.view.bringSubview(toFront: btnCancel)
@@ -131,14 +132,16 @@ class TRCQRCodeViewController: TRCBaseViewController {
 
 extension TRCQRCodeViewController: ZXCaptureDelegate{
     func captureResult(_ capture: ZXCapture!, result: ZXResult!) {
-        print(result)
-        if ((result.text) != nil) {
-            let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
-            self.navigationController?.pushViewController(vc, animated: true)
-            capture.hard_stop()
+        if (!hasScannedResult) {
+            hasScannedResult = true
+            capture.stop()
+            DLog("result capture !!!")
+            DLog(result.text)
+            if ((result.text) != nil) {
+                let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
+                let navController = UINavigationController(rootViewController: vc)
+                UIApplication.shared.keyWindow?.rootViewController = navController
+            }
         }
     }
 }
