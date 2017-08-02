@@ -16,6 +16,7 @@
 "back"                                  = "戻る";
 "done"                                  = "完了";
 "cancel"                                = "キャンセル";
+"close"                                 = "閉じる";
 
 //MARK: Tabbar
 "tab_home"                              = "ホーム";

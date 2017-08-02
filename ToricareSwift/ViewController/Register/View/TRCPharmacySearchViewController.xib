@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +13,7 @@
                 <outlet property="btnCancel" destination="TE9-IC-VV0" id="4fx-ZS-KZy"/>
                 <outlet property="btnReaded" destination="osB-Bj-UfL" id="flG-QB-u6E"/>
                 <outlet property="btnSearch" destination="IXp-Sd-Wh6" id="LdB-p5-Tlf"/>
+                <outlet property="lblGuide" destination="1PS-v3-A7L" id="fO6-QN-axF"/>
                 <outlet property="lblInform" destination="ylI-el-MrL" id="l5n-TS-9D3"/>
                 <outlet property="scrollView" destination="Sub-IO-1Ik" id="ez8-vh-Ghn"/>
                 <outlet property="tfSearch" destination="bH1-uF-8Ll" id="FoR-jf-fnD"/>
@@ -86,7 +86,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgl-Ek-RYK">
-                    <rect key="frame" x="10" y="74" width="355" height="539"/>
+                    <rect key="frame" x="10" y="74" width="355" height="583"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TE9-IC-VV0">
                             <rect key="frame" x="315" y="10" width="30" height="30"/>
@@ -94,20 +94,38 @@
                                 <constraint firstAttribute="width" constant="30" id="PTc-vs-Cld"/>
                                 <constraint firstAttribute="height" constant="30" id="v3W-LU-wCZ"/>
                             </constraints>
-                            <state key="normal" backgroundImage="ic_cancel"/>
+                            <state key="normal" backgroundImage="ic_close_black"/>
                             <connections>
                                 <action selector="tapBtnCancel:" destination="-1" eventType="touchUpInside" id="33t-kB-eZt"/>
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHh-nm-a72">
-                            <rect key="frame" x="10" y="45" width="335" height="435"/>
+                            <rect key="frame" x="10" y="45" width="335" height="479"/>
                             <subviews>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sub-IO-1Ik" userLabel="scollView">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="435"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="479"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZN-FI-r5W">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="435"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="479"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PS-v3-A7L">
+                                                    <rect key="frame" x="52" y="197" width="231" height="84"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="84" id="EIE-bs-W7Y"/>
+                                                        <constraint firstAttribute="width" constant="231" id="NcB-v3-wJB"/>
+                                                    </constraints>
+                                                    <string key="text">My薬局、
+My薬剤師の説明</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="1PS-v3-A7L" firstAttribute="centerY" secondItem="xZN-FI-r5W" secondAttribute="centerY" id="Hw3-Xx-kK1"/>
+                                                <constraint firstItem="1PS-v3-A7L" firstAttribute="centerX" secondItem="xZN-FI-r5W" secondAttribute="centerX" id="q60-cR-Qvx"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -129,7 +147,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osB-Bj-UfL">
-                            <rect key="frame" x="10" y="485" width="335" height="44"/>
+                            <rect key="frame" x="10" y="529" width="335" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="yLy-Q6-VrP"/>
                             </constraints>
@@ -156,13 +174,13 @@
             <constraints>
                 <constraint firstItem="Hgl-Ek-RYK" firstAttribute="top" secondItem="Q7g-wY-YUz" secondAttribute="top" constant="74" id="1z8-Ij-Cr1"/>
                 <constraint firstAttribute="trailing" secondItem="Hgl-Ek-RYK" secondAttribute="trailing" constant="10" id="aPf-Bv-u90"/>
-                <constraint firstAttribute="bottom" secondItem="Hgl-Ek-RYK" secondAttribute="bottom" constant="54" id="iC3-h5-aPJ"/>
+                <constraint firstAttribute="bottom" secondItem="Hgl-Ek-RYK" secondAttribute="bottom" constant="10" id="iC3-h5-aPJ"/>
                 <constraint firstItem="Hgl-Ek-RYK" firstAttribute="leading" secondItem="Q7g-wY-YUz" secondAttribute="leading" constant="10" id="k4q-yK-PXi"/>
             </constraints>
-            <point key="canvasLocation" x="626" y="78"/>
+            <point key="canvasLocation" x="625.5" y="77.5"/>
         </view>
     </objects>
     <resources>
-        <image name="ic_cancel" width="16" height="16"/>
+        <image name="ic_close_black" width="32" height="32"/>
     </resources>
 </document>

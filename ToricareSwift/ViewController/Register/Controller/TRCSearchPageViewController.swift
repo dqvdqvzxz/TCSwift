@@ -81,7 +81,7 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
         let currentLabel:UILabel = viewPager.tabViewAtIndex(index: index) as! UILabel
 
         prevLabel.textColor = UIColor.init(colorLiteralRed: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
-        currentLabel.textColor = UIColor.init(colorLiteralRed: 0.5, green: 0.0, blue: 0.5, alpha: 1.0)
+        currentLabel.textColor = UIColor.init(hexString: MAIN_COLOR)
     }
     
     func willChangeTabToIndex(_ viewPager: GLViewPagerViewController, index: Int, fromTabIndex: Int, progress: CGFloat) {
