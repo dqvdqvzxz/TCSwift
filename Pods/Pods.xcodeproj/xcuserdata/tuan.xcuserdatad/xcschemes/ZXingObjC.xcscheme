@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '93EE05D256220ACFC0F643CAA5BF0A5A'
-               BlueprintName = 'Pods-ToricareSwift'
+               BlueprintIdentifier = '60EC33EAC25BD8BDC741C94591A3368D'
+               BlueprintName = 'ZXingObjC'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-ToricareSwift.framework'>
+               BuildableName = 'ZXingObjC.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

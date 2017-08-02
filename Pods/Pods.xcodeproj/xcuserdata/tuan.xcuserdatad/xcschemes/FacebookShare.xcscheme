@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '93EE05D256220ACFC0F643CAA5BF0A5A'
-               BlueprintName = 'Pods-ToricareSwift'
+               BlueprintIdentifier = 'A7FEAA14E89971698ACA148F7F7202F2'
+               BlueprintName = 'FacebookShare'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-ToricareSwift.framework'>
+               BuildableName = 'FacebookShare.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
