@@ -78,7 +78,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         }else if(mode == MODE_MYPAGE){
             btnQRCode.isHidden = true
             contraintBottomScrollView.constant = 54
-            btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
+            btnPharmacy.buttonStyle(title: Localizable(value: "change_button"))
         }
     }
     
