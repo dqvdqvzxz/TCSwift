@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="65.5" height="65.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2nP-oS-d1X" userLabel="imgView">
-                                <rect key="frame" x="10" y="10" width="45.5" height="45.5"/>
+                                <rect key="frame" x="15" y="15" width="35.5" height="35.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2nP-oS-d1X" secondAttribute="height" multiplier="1:1" id="i1Y-7J-1os"/>
                                 </constraints>
@@ -31,9 +31,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Kzy-k3-xb0" secondAttribute="height" multiplier="1:1" id="2k0-Hk-Iaf"/>
-                            <constraint firstItem="2nP-oS-d1X" firstAttribute="leading" secondItem="Kzy-k3-xb0" secondAttribute="leading" constant="10" id="OoT-mV-b0o"/>
-                            <constraint firstAttribute="bottom" secondItem="2nP-oS-d1X" secondAttribute="bottom" constant="10" id="hyM-08-F0c"/>
-                            <constraint firstItem="2nP-oS-d1X" firstAttribute="top" secondItem="Kzy-k3-xb0" secondAttribute="top" constant="10" id="xdr-8G-huL"/>
+                            <constraint firstItem="2nP-oS-d1X" firstAttribute="leading" secondItem="Kzy-k3-xb0" secondAttribute="leading" constant="15" id="OoT-mV-b0o"/>
+                            <constraint firstAttribute="bottom" secondItem="2nP-oS-d1X" secondAttribute="bottom" constant="15" id="hyM-08-F0c"/>
+                            <constraint firstItem="2nP-oS-d1X" firstAttribute="top" secondItem="Kzy-k3-xb0" secondAttribute="top" constant="15" id="xdr-8G-huL"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVz-ch-oSn" userLabel="viewContent">

@@ -30,13 +30,14 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.24.0):
     - FBSDKCoreKit
-  - GoogleMaps (2.3.1):
-    - GoogleMaps/Maps (= 2.3.1)
-  - GoogleMaps/Base (2.3.1)
-  - GoogleMaps/Maps (2.3.1):
+  - GoogleMaps (2.4.0):
+    - GoogleMaps/Maps (= 2.4.0)
+  - GoogleMaps/Base (2.4.0)
+  - GoogleMaps/Maps (2.4.0):
     - GoogleMaps/Base
-  - GooglePlaces (2.3.1):
-    - GoogleMaps/Base (= 2.3.1)
+  - GooglePlaces (2.4.0):
+    - GoogleMaps/Base (= 2.4.0)
+  - IQKeyboardManagerSwift (4.0.11)
   - ZXingObjC (3.2.1):
     - ZXingObjC/All (= 3.2.1)
   - ZXingObjC/All (3.2.1)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - FBSDKShareKit (~> 4.24.0)
   - GoogleMaps
   - GooglePlaces
+  - IQKeyboardManagerSwift
   - ZXingObjC (~> 3.2.1)
 
 SPEC CHECKSUMS:
@@ -68,10 +70,11 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: f8c9eb0dd34a9cd277c7b60da4b32226d142502d
   FBSDKLoginKit: 1214c6d5a1c4995b694d8db8a9ba6910c6028acf
   FBSDKShareKit: a2ed9d7781a4eda9ac20d7404305e795b10251ac
-  GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
-  GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
+  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
+  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
+  IQKeyboardManagerSwift: 10f0a6b8ea2904c8943c0e1a116c99f5b8ad83af
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: 11be893609c59ecab9a9e25fc8087bab512261b0
+PODFILE CHECKSUM: cf21cbe6b41282ae90cf7816326f45daf12f0435
 
 COCOAPODS: 1.2.1

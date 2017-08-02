@@ -55,6 +55,7 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var viewBorderTitle: UIView!
     @IBOutlet weak var imgViewWeight: UIImageView!
     @IBOutlet weak var lblRegisterTodayWeight: UILabel!
+    @IBOutlet weak var imgViewAccessory: UIImageView!
     
     @IBOutlet weak var viewBorderBanner1: UIView!
     @IBOutlet weak var viewImageBanner1: UIView!
@@ -134,7 +135,10 @@ class TRCHomeViewController: TRCBaseViewController {
         lblContentFoodKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
         lblContentFoodKcalUnit.labelStyle(title: "Kcal")
         
+        //
         lblRegisterTodayWeight.labelStyle(title: Localizable(value: "register_today_weight"))
+        imgViewAccessory.image = #imageLiteral(resourceName: "ic_back")
+        imgViewAccessory.transform = imgViewAccessory.transform.rotated(by: 135)
     }
     
     //MARK: Action

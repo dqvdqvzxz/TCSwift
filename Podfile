@@ -30,4 +30,6 @@ pod 'ZXingObjC', '~> 3.2.1'
 pod 'Fabric'
 pod 'Crashlytics'
 
+pod 'IQKeyboardManagerSwift'
+
 end

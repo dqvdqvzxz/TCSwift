@@ -780,7 +780,7 @@
 				TargetAttributes = {
 					3FB411191EFB607C008720A6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = YGNMNF9TX2;
+						DevelopmentTeam = 2L8CWRYK58;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -1129,7 +1129,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Le Anh Tuan (34TT9NLLE7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = YGNMNF9TX2;
+				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = "$(SRCROOT)/ToricareSwift/Supporting File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1153,7 +1153,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Le Anh Tuan (34TT9NLLE7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = YGNMNF9TX2;
+				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/ToricareSwift/Supporting File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

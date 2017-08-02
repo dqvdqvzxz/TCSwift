@@ -24,7 +24,7 @@ class TRCMessageListViewController: TRCBaseViewController {
 
         configUI()
         
-        fetchDataFromServer()
+//        fetchDataFromServer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +41,7 @@ class TRCMessageListViewController: TRCBaseViewController {
         tblMessage.dataSource = self
         tblMessage.delegate = self
         tblMessage.register(UINib(nibName: "TRCMessageListCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        tblMessage.register(UINib(nibName: "TRCLoadMoreCell", bundle: nil), forCellReuseIdentifier: "LoadMoreCell")
+//        tblMessage.register(UINib(nibName: "TRCLoadMoreCell", bundle: nil), forCellReuseIdentifier: "LoadMoreCell")
         
         tblMessage.tableFooterView = UIView()
         
@@ -97,11 +97,12 @@ class TRCMessageListViewController: TRCBaseViewController {
 
 extension TRCMessageListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataList.count + 1
+//        return dataList.count + 1
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if(indexPath.row < dataList.count){
+//        if(indexPath.row < dataList.count){
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
             
             //style for cell
@@ -110,39 +111,39 @@ extension TRCMessageListViewController: UITableViewDataSource{
             cell.lblSubTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
             
             return cell
-        }else{
-            //load more cell
-            let loadMoreCell = tableView.dequeueReusableCell(withIdentifier: "LoadMoreCell") as! TRCLoadMoreCell
-    
-            loadMoreCell.startStopLoading(false)
-            
-            return loadMoreCell
-        }
+//        }else{
+//            //load more cell
+//            let loadMoreCell = tableView.dequeueReusableCell(withIdentifier: "LoadMoreCell") as! TRCLoadMoreCell
+//    
+//            loadMoreCell.startStopLoading(false)
+//            
+//            return loadMoreCell
+//        }
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        newFetchBool = 0
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        newFetchBool += 1
-        print("Call me \(newFetchBool)")
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        newFetchBool = 0
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        newFetchBool += 1
+//        print("Call me \(newFetchBool)")
+//    }
 }
 
 extension TRCMessageListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if(indexPath.row < dataList.count){
+//        if(indexPath.row < dataList.count){
             return 66
-        }else{
-            return 44
-        }
+//        }else{
+//            return 44
+//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
         
-        if(indexPath!.row < dataList.count){
+//        if(indexPath!.row < dataList.count){
             let currentCell = tableView.cellForRow(at: indexPath!) as! TRCMessageListCell
             
             currentCell.imgView.image = #imageLiteral(resourceName: "message_read")
@@ -154,26 +155,26 @@ extension TRCMessageListViewController: UITableViewDelegate{
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
-            _obj.nc1.pushViewController(vc, animated: true)
-        }else{
-            let loadMoreCell = tableView.cellForRow(at: indexPath!) as! TRCLoadMoreCell
-            loadMoreCell.isUserInteractionEnabled = false
-        }
+            self.navigationController?.pushViewController(vc, animated: true)
+//        }else{
+//            let loadMoreCell = tableView.cellForRow(at: indexPath!) as! TRCLoadMoreCell
+//            loadMoreCell.isUserInteractionEnabled = false
+//        }
     }
 }
 
-extension TRCMessageListViewController: UIScrollViewDelegate{
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        print("Scroll \(newFetchBool)")
-        if(decelerate && newFetchBool >= 2 && scrollView.contentOffset.y >= 0){
-            let tv =  scrollView as! UITableView
-            let lastCellIndexPath = IndexPath(row:dataList.count , section: 0)
-            let refreshCell = tv.cellForRow(at: lastCellIndexPath) as! TRCLoadMoreCell
-            refreshCell.startStopLoading(true)
-            self.fetchDataFromServer()
-            newFetchBool = 0
-        }else if(!decelerate){
-            newFetchBool = 0
-        }
-    }
-}
+//extension TRCMessageListViewController: UIScrollViewDelegate{
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        print("Scroll \(newFetchBool)")
+//        if(decelerate && newFetchBool >= 2 && scrollView.contentOffset.y >= 0){
+//            let tv =  scrollView as! UITableView
+//            let lastCellIndexPath = IndexPath(row:dataList.count , section: 0)
+//            let refreshCell = tv.cellForRow(at: lastCellIndexPath) as! TRCLoadMoreCell
+//            refreshCell.startStopLoading(true)
+//            self.fetchDataFromServer()
+//            newFetchBool = 0
+//        }else if(!decelerate){
+//            newFetchBool = 0
+//        }
+//    }
+//}
