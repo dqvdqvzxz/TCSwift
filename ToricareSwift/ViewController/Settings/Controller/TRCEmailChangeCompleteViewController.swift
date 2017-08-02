@@ -53,6 +53,7 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
             if(descView is TRCSettingViewController){
                 _obj.nc5.popToViewController(descView, animated: true)
             }
-        }    }
+        }
+    }
 
 }

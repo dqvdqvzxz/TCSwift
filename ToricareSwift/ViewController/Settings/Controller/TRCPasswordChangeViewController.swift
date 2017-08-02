@@ -51,10 +51,11 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnConfirm(_ sender: Any) {
-        let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        _obj.nc5.pushViewController(vc, animated: true)
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+        for descView in viewControllers {
+            if(descView is TRCSettingViewController){
+                _obj.nc5.popToViewController(descView, animated: true)
+            }
+        }
     }
 }
