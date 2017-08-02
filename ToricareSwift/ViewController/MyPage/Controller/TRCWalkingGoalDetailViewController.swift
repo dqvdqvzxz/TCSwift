@@ -59,7 +59,12 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
 
     //MARK: Button Action
     @IBAction func tapBtnSave(_ sender: Any) {
-        
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+        for descView in viewControllers {
+            if(descView is TRCMyPageViewController){
+                _obj.nc5.popToViewController(descView, animated: true)
+            }
+        }
     }
 }
 
