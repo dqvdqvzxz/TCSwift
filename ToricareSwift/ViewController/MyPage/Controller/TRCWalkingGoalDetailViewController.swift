@@ -25,7 +25,7 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
 
         initValuePicker()
         
-        configUI()
+        configUI()        
     }
 
     override func didReceiveMemoryWarning() {

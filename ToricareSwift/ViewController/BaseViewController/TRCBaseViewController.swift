@@ -36,12 +36,22 @@ class TRCBaseViewController: UIViewController {
         _obj.tabController.tabBar.isHidden = true
         
         //navigation
-        _obj.nc1.navigationBar.isHidden = false
-        _obj.nc2.navigationBar.isHidden = false
-        _obj.nc3.navigationBar.isHidden = false
-        _obj.nc4.navigationBar.isHidden = false
-        _obj.nc5.navigationBar.isHidden = false
+        _obj.nc1.setNavigationBarHidden(false, animated: true)
+        _obj.nc2.setNavigationBarHidden(false, animated: true)
+        _obj.nc3.setNavigationBarHidden(false, animated: true)
+        _obj.nc4.setNavigationBarHidden(false, animated: true)
+        _obj.nc5.setNavigationBarHidden(false, animated: true)
         self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = true
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = true
+        
     }
 
     //MARK: Action
