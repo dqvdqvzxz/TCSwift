@@ -56,7 +56,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
             lblTakeQRCode.labelStyle(title: Localizable(value: "take_qrcode_label"))
             
             btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
-            btnUsingApp.buttonStyle(title: "マイページトップへ")
+            btnUsingApp.buttonStyle(title: Localizable(value: "back_to_mypage"))
         }else{
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "my_pharmacy_register_not_done"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
             lblTakeQRCode.labelStyle(title: Localizable(value: "take_qrcode_label"))
@@ -69,6 +69,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnQRCode(_ sender: Any) {
         let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+        vc.mode = mode
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         navigationItem.backBarButtonItem = backItem

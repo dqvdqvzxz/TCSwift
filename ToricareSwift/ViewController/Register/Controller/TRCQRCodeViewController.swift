@@ -19,7 +19,8 @@ class TRCQRCodeViewController: TRCBaseViewController {
     var hasScannedResult = false
     var capture = ZXCapture()
     var _captureSizeTransform = CGAffineTransform()
-    
+    var mode = String()
+
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,8 +140,11 @@ extension TRCQRCodeViewController: ZXCaptureDelegate{
             DLog(result.text)
             if ((result.text) != nil) {
                 let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
-                let navController = UINavigationController(rootViewController: vc)
-                UIApplication.shared.keyWindow?.rootViewController = navController
+                vc.mode = mode
+                self.navigationController?.pushViewController(vc, animated: true)
+//                let navController = UINavigationController(rootViewController: vc)
+                
+//                UIApplication.shared.keyWindow?.rootViewController = navController
             }
         }
     }
