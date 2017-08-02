@@ -52,7 +52,7 @@ class TRCMyPharmacyDetailPageViewController: GLViewPagerViewController {
         ]
         
         //init title
-        self.tabTitles = ["My薬局", "My薬剤師"]  
+        self.tabTitles = [Localizable(value: "my_pharmacy"), Localizable(value: "my_pharmacist")]
     }
 }
 

@@ -226,7 +226,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
             let alert = UIAlertController(title: nil,
-                                          message: "プロフィールを更新しました",
+                                          message: Localizable(value: "profile_updated"),
                                           preferredStyle: .alert)
             // add the action
             alert.addAction(UIAlertAction(title: Localizable(value: "OK"),

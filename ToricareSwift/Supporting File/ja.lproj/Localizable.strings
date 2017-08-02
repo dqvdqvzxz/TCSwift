@@ -149,7 +149,7 @@
 "my_pharmacy_setting"                   = "My薬局設定";
 "read_qrcode"                           = "QRコードを読み取る";
 "register_my_pharmacy"                  = "My薬局に登録する";
-
+"register_my_pharmacist"                = "My薬剤師に登録する";
 "point"                                 = "ポイント";
 "search"                                = "検索";
 "point_reference"                       = "ポイント照会";
@@ -204,6 +204,9 @@
 
 //MARK: My Page
 "my_pharmacy"                           = "My薬局";
+"my_pharmacist"                         = "My薬剤師";
+"my_pharmacist_setting"                 = "My薬剤師設定";
+
 "profile"                               = "プロフィール";
 "message"                               = "メッセージ";
 
@@ -252,7 +255,7 @@
 "qr_title"                              = "QRコード読取り";
 
 "register_my_pharmacy_done"             = "My薬局の登録が完了しました。";
-""                              = "";
+"profile_updated"                       = "プロフィールを更新しました。";
 ""                              = "";
 ""                              = "";
 ""                              = "";

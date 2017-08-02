@@ -45,7 +45,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
+        self.navigationItem.title = Localizable(value: "my_pharmacist_setting")
         
         if(mode == MODE_REGISTER){
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
@@ -74,7 +74,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     
         
         //UI of outlet
-        btnPharmacistInput.buttonStyle(title: Localizable(value: "my_pharmacy_setting"))
+        btnPharmacistInput.buttonStyle(title: Localizable(value: "register_my_pharmacist"))
         
         lblName.labelStyle(title: Localizable(value: "pharmacist_name"))
         lblPhone.labelStyle(title: Localizable(value: "pharmacist_phone"))
@@ -101,22 +101,29 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
-            let alert = UIAlertController(title: nil,
-                                          message: "プロフィールを更新しました",
-                                          preferredStyle: .alert)
-            // add the action
-            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
-                                          style: UIAlertActionStyle.default,
-                                          handler: { action in
-                                            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-                                            for descView in viewControllers {
-                                                if(descView is TRCMyPageViewController){
-                                                    _obj.nc5.popToViewController(descView, animated: true)
-                                                }
-                                            }
-            }))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
+            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+            for descView in viewControllers {
+                if(descView is TRCMyPageViewController){
+                    _obj.nc5.popToViewController(descView, animated: true)
+                }
+            }
+
+//            let alert = UIAlertController(title: nil,
+//                                          message: "プロフィールを更新しました",
+//                                          preferredStyle: .alert)
+//            // add the action
+//            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+//                                          style: UIAlertActionStyle.default,
+//                                          handler: { action in
+//                                            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+//                                            for descView in viewControllers {
+//                                                if(descView is TRCMyPageViewController){
+//                                                    _obj.nc5.popToViewController(descView, animated: true)
+//                                                }
+//                                            }
+//            }))
+//            // show the alert
+//            self.present(alert, animated: true, completion: nil)
         }
     }
 }
