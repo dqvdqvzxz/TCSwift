@@ -12,7 +12,6 @@ import ZXingObjC
 
 class TRCQRCodeViewController: TRCBaseViewController {
 
-    @IBOutlet weak var imgView: UIView!
     @IBOutlet weak var lblGuide: UILabel!
     @IBOutlet weak var btnCancel: UIButton!
     
@@ -50,14 +49,17 @@ class TRCQRCodeViewController: TRCBaseViewController {
     
     //MARK: Config scan code view
     func configScanCodeView(){
-        capture.delegate = self
-        capture.camera = capture.back()
-        capture.focusMode = .continuousAutoFocus
-        capture.layer.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
-
-        self.view.layer.addSublayer(capture.layer)
-        self.view.bringSubview(toFront: lblGuide)
-        self.view.bringSubview(toFront: btnCancel)
+        DispatchQueue.global(qos: .userInitiated).async { // 1
+            self.capture.delegate = self
+            self.capture.camera = self.capture.back()
+            self.capture.focusMode = .continuousAutoFocus
+            DispatchQueue.main.async { // 2
+                self.capture.layer.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
+                self.view.layer.addSublayer(self.capture.layer)
+                self.view.bringSubview(toFront: self.lblGuide)
+                self.view.bringSubview(toFront: self.btnCancel)
+            }
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -90,41 +92,12 @@ class TRCQRCodeViewController: TRCBaseViewController {
             scanRectRotation = 90
         }
         
-        applyRectOfInterest(orientation)
         let transform = CGAffineTransform(rotationAngle: (CGFloat)(captureRotation / 180 * .pi))
         capture.transform = transform
         capture.rotation = CGFloat(scanRectRotation)
         capture.layer.frame = view.bounds
     }
     
-    
-    func applyRectOfInterest(_ orientation: UIInterfaceOrientation) {
-        var scaleVideo: CGFloat
-        var scaleVideoX: CGFloat
-        var scaleVideoY: CGFloat
-        var videoSizeX: CGFloat
-        var videoSizeY: CGFloat
-        var transformedVideoRect: CGRect = imgView.frame
-        if (capture.sessionPreset == AVCaptureSessionPreset1920x1080) {
-            videoSizeX = 1080
-            videoSizeY = 1920
-        }else {
-            videoSizeX = 720
-            videoSizeY = 1280
-        }
-        if UIInterfaceOrientationIsPortrait(orientation) {
-            scaleVideoX = view.frame.size.width / videoSizeX
-            scaleVideoY = view.frame.size.height / videoSizeY
-            scaleVideo = max(scaleVideoX, scaleVideoY)
-            if scaleVideoX > scaleVideoY {
-                transformedVideoRect.origin.y += (scaleVideo * videoSizeY - view.frame.size.height) / 2
-            }else {
-                transformedVideoRect.origin.x += (scaleVideo * videoSizeX - view.frame.size.width) / 2
-            }
-            _captureSizeTransform = CGAffineTransform(scaleX: 1 / scaleVideo, y: 1 / scaleVideo)
-        }
-        capture.scanRect = transformedVideoRect.applying(_captureSizeTransform)
-    }
     
     func btnCancelDidTap() {
         self.navigationController?.popViewController(animated: true)
@@ -142,9 +115,6 @@ extension TRCQRCodeViewController: ZXCaptureDelegate{
                 let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
                 vc.mode = mode
                 self.navigationController?.pushViewController(vc, animated: true)
-//                let navController = UINavigationController(rootViewController: vc)
-                
-//                UIApplication.shared.keyWindow?.rootViewController = navController
             }
         }
     }
