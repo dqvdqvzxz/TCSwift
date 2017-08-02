@@ -11,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCQRCodeViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
                 <outlet property="btnCancel" destination="WGE-M0-kxn" id="npw-y1-0hl"/>
-                <outlet property="imgView" destination="nkR-0K-68G" id="QKX-kT-prw"/>
                 <outlet property="lblGuide" destination="xVg-vt-8VE" id="cVp-p3-9QT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,11 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkR-0K-68G">
-                    <rect key="frame" x="33" y="140" width="320" height="254"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGE-M0-kxn">
                     <rect key="frame" x="10" y="613" width="355" height="44"/>
                     <constraints>
@@ -43,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="xVg-vt-8VE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="NyD-f2-fwh"/>
                 <constraint firstAttribute="trailing" secondItem="WGE-M0-kxn" secondAttribute="trailing" constant="10" id="TYF-IE-Oho"/>
