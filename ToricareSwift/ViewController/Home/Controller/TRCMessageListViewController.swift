@@ -155,7 +155,7 @@ extension TRCMessageListViewController: UITableViewDelegate{
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
-            _obj.nc1.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
 //        }else{
 //            let loadMoreCell = tableView.cellForRow(at: indexPath!) as! TRCLoadMoreCell
 //            loadMoreCell.isUserInteractionEnabled = false
