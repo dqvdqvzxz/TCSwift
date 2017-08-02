@@ -23,7 +23,7 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         // A minimum distance a device must move before update event generated
-        locationManager.distanceFilter = 500
+        locationManager.distanceFilter = 1000
         // Request permission to use location service
         locationManager.requestWhenInUseAuthorization()
         // Request permission to use location service when the app is run
@@ -52,7 +52,6 @@ extension TRCSearchCurrentLocationPageView: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            
             marker.position = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
             DLog("\nCurrent latitude: \(location.coordinate.latitude) \nCurrent longitude: \(location.coordinate.longitude)")
             

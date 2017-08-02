@@ -29,6 +29,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnReaded: UIButton!
 
+    @IBOutlet weak var lblGuide: UILabel!
     var mode = String()
 
     //MARK: View controller
@@ -72,6 +73,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
             
             configTutorialView()
         }
+        
     }
     
     func configPageView(){
@@ -81,9 +83,11 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     
     func configTutorialView(){
         //UI
+        lblGuide.labelStyle(title: "My薬局、\nMy薬剤師の説明")
+        btnReaded.buttonStyle()
+        btnReaded.setTitle(Localizable(value: "close"), for: UIControlState.normal)
+
         btnCancel.setTitle("", for: .normal)
-        btnReaded.buttonStyle(title: "")
-        
         viewParentTutorial.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
         
         //add to self view
