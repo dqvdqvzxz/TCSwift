@@ -13,6 +13,8 @@ class TRCQRCodeDoneViewController: TRCBaseViewController {
     @IBOutlet weak var lblSucceed: UILabel!
     @IBOutlet weak var lblPharmacyName: UILabel!
     @IBOutlet weak var btnBackToTop: UIButton!
+    var mode = String()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -26,8 +28,10 @@ class TRCQRCodeDoneViewController: TRCBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationItem.setLeftBarButton(nil, animated: false)
-        self.navigationItem.setLeftBarButton(nil, animated: false)
+        self.navigationItem.setHidesBackButton(true, animated:true);
+
+//        self.navigationController?.navigationItem.setLeftBarButton(nil, animated: false)
+//        self.navigationItem.setLeftBarButton(nil, animated: false)
     }
     /*
     // MARK: - Navigation
@@ -43,17 +47,26 @@ class TRCQRCodeDoneViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "qr_title")
 
         lblSucceed.labelStyle(title: Localizable(value: "register_my_pharmacy_done"))
-        btnBackToTop.buttonStyle(title: Localizable(value: "back_to_top"))
         
+        btnBackToTop.buttonStyle(title: mode == MODE_REGISTER_MYPAGE ? Localizable(value: "back_to_mypage") : Localizable(value: "back_to_top"))
         btnBackToTop.addTarget(self, action: #selector(btnBackToTopDidTap), for: UIControlEvents.touchUpInside)
-
+        
     }
     
     func btnBackToTopDidTap() {
-        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-        }, completion: { completed in
-            // maybe do something here
-        })
+        if (mode == MODE_REGISTER_MYPAGE) {
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+            for descView in viewControllers {
+                if(descView is TRCMyPageViewController){
+                    _obj.nc5.popToViewController(descView, animated: true)
+                }
+            }
+        } else {
+            UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+            }, completion: { completed in
+                // maybe do something here
+            })
+        }
     }
 }

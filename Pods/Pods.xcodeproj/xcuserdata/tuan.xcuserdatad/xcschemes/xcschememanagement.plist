@@ -67,6 +67,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>Pods-ToricareSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -114,6 +119,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7CA938F250600183168CD35345CF4366</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
@@ -129,7 +139,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A2F58D0145CD84D2689F607375DD1D4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A7FEAA14E89971698ACA148F7F7202F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C235F77E101E742652CCF98FFDFA5182</key>
 		<dict>
 			<key>primary</key>
 			<true/>

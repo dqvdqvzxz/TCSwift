@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToricareSwift/ViewController/MyPage/Controller/TRCMyPharmacyDetailViewController.swift"
-            timestampString = "523349015.863046"
+            filePath = "ToricareSwift/ViewController/MyPage/Controller/TRCMyPharmacistDetailViewController.swift"
+            timestampString = "523349026.169574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "tapBtnPharmacy(_:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "tapBtnChange(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToricareSwift/ViewController/MyPage/Controller/TRCMyPharmacistDetailViewController.swift"
-            timestampString = "523349026.169574"
+            filePath = "ToricareSwift/ViewController/Register/Controller/TRCQRCodeDoneViewController.swift"
+            timestampString = "523351482.764756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "tapBtnChange(_:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "btnBackToTopDidTap()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
