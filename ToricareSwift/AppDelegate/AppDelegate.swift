@@ -18,6 +18,8 @@ import GooglePlaces
 import Fabric
 import Crashlytics
 
+import IQKeyboardManagerSwift
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -43,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //fabric
         Fabric.with([Crashlytics.self])
+        
+        //IQKeyboard
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
     }
