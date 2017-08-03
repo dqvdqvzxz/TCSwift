@@ -17,7 +17,7 @@ class TRCLoginAPIController: NSObject {
         parameters["password"] = "12345678" //password
         parameters["device_id"] = UserDefaults.kGetValue(DEVICE_ID) as? String
         parameters["device_token"] = "232321423423414514141414143423dfdfdfdfderererere232323232"
-        parameters["device_type"] = "2"
+        parameters["device_type"] = DEVICE_TYPE
         
         TRCBaseAPIController.callAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_POST, blockCompletion: { (data) in
             //parse data from model
