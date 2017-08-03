@@ -93,7 +93,7 @@ class TRCLoginViewController: TRCBaseViewController {
                 // maybe do something here
             })
         }) { (error) in
-            DLog(error)
+            ELog(error)
         }
     }
 }

@@ -47,6 +47,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     var dataGender = [Localizable(value: "male"), Localizable(value: "female")]
     var genderPicker = UIPickerView()
     
+    var userName = String()
+    var passWord = String()
+    
     var mode = String()
     
     override func viewDidLoad() {
@@ -218,12 +221,17 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
         if(mode == MODE_REGISTER){
-            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
-            self.navigationController?.pushViewController(vc, animated: true)
+            let registerType = "1"
+            TRCRegisterAPIController().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, "", "", registerType, completion: { (data) in
+                let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+                vc.mode = MODE_REGISTER
+                let backItem = UIBarButtonItem()
+                backItem.title = STRING_BACK
+                self.navigationItem.backBarButtonItem = backItem
+                self.navigationController?.pushViewController(vc, animated: true)
+            }) { (error) in
+                ELog(error)
+            }
         }else if(mode == MODE_MYPAGE){
             let alert = UIAlertController(title: nil,
                                           message: Localizable(value: "profile_updated"),
