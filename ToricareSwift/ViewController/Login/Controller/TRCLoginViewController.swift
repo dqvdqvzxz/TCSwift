@@ -33,7 +33,6 @@ class TRCLoginViewController: TRCBaseViewController {
         super.viewDidLoad()
         
         configUI()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,13 +83,7 @@ class TRCLoginViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnLogin(_ sender: Any) {
-        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-            
-            _obj.tabController.selectedIndex = 0
-        }, completion: { completed in
-            // maybe do something here
-        })
+        validate()
         
 //        TRCLoginAPIController().Login(tfUsername.text!, tfPassword.text!, completion: {(data) in
 //            //xu ly hien thi du lieu khi pass
@@ -112,6 +105,38 @@ class TRCLoginViewController: TRCBaseViewController {
 //
 //            DLog("2")
 //        }
+    }
+    
+    func validate() {
+        if (tfUsername.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_mail"))
+            return
+        }
+        
+        if !((tfUsername.text?.isEmail)!) {
+            self.showAlert(Localizable(value: "please_input_validate_mail"))
+            return
+        }
+        
+        if (tfPassword.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_password"))
+            return
+        }
+
+        doLogin()
+    }
+    
+    func doLogin() {
+        // ****
+        // Login fail then show : self.showAlert(Localizable(value: "please_login_again"))
+        
+        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+            
+            _obj.tabController.selectedIndex = 0
+        }, completion: { completed in
+            // maybe do something here
+        })
     }
 }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1706DBA81F307C9400188510 /* TRCQRCodeDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706DBA61F307C9400188510 /* TRCQRCodeDoneViewController.swift */; };
 		1706DBAB1F307CB600188510 /* TRCQRCodeDoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1706DBAA1F307CB600188510 /* TRCQRCodeDoneViewController.xib */; };
+		17D3384C1F32C98D00F4B254 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3384B1F32C98D00F4B254 /* String.swift */; };
 		3F4758F11F0BA02400B82645 /* TRCAccountInfoInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758EF1F0BA02400B82645 /* TRCAccountInfoInputViewController.swift */; };
 		3F4758F51F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758F31F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift */; };
 		3F4758F91F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758F71F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift */; };
@@ -140,6 +141,7 @@
 /* Begin PBXFileReference section */
 		1706DBA61F307C9400188510 /* TRCQRCodeDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCQRCodeDoneViewController.swift; sourceTree = "<group>"; };
 		1706DBAA1F307CB600188510 /* TRCQRCodeDoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCQRCodeDoneViewController.xib; sourceTree = "<group>"; };
+		17D3384B1F32C98D00F4B254 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3F4758EF1F0BA02400B82645 /* TRCAccountInfoInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCAccountInfoInputViewController.swift; sourceTree = "<group>"; };
 		3F4758F31F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacySearchResultsViewController.swift; sourceTree = "<group>"; };
 		3F4758F71F0BA05F00B82645 /* TRCMyPharmacistInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCMyPharmacistInputViewController.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 				3FB4119B1F05FB8B008720A6 /* Textfield.swift */,
 				3FB4119D1F063819008720A6 /* View.swift */,
 				3F47591B1F0C7DA100B82645 /* Image.swift */,
+				17D3384B1F32C98D00F4B254 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -976,6 +979,7 @@
 				3FB4114F1EFB7CA7008720A6 /* TRCLoginViewController.swift in Sources */,
 				3F57F7581F2AD06000CC079C /* TRCDetailMessageViewController.swift in Sources */,
 				3F4759431F0CC42F00B82645 /* TRCNotificationSettingViewController.swift in Sources */,
+				17D3384C1F32C98D00F4B254 /* String.swift in Sources */,
 				1706DBA81F307C9400188510 /* TRCQRCodeDoneViewController.swift in Sources */,
 				3FB4116A1EFBBAC2008720A6 /* TRCStringConstant.swift in Sources */,
 				3F4759231F0CC37B00B82645 /* TRCSettingViewController.swift in Sources */,

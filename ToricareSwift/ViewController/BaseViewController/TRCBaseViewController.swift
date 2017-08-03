@@ -76,4 +76,10 @@ extension UIViewController {
     func hideHUD() {
         MBProgressHUD.hide(for: self.view, animated: true)
     }
+    
+    func showAlert(_ message: String, _ title: String = Localizable(value: "error")) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: Localizable(value: "ok"), style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

@@ -7,10 +7,12 @@
 */
 
 //MARK: Alert message
-"OK"                                    = "はい";
+"ok"                                    = "OK";
+"yes"                                   = "はい";
 "check_network_message"                 = "ネットワークをチェックしてください";
 "check_input_data_message"              = "データを確認してください";
 "warning"                               = "注意";
+"error"                                 = "エラー";
 
 //MARK: Navigation
 "back"                                  = "戻る";
@@ -256,14 +258,48 @@
 
 "register_my_pharmacy_done"             = "My薬局の登録が完了しました。";
 "profile_updated"                       = "プロフィールを更新しました。";
-"back_to_mypage"                              = "マイページトップへ";
-"save_change"                              = "変更を保存";
+"back_to_mypage"                        = "マイページトップへ";
+"save_change"                           = "変更を保存";
 
-"loading"                              = "読み込み中...";
+"loading"                               = "読み込み中...";
 
+//MARK: VALIDATE MESSAGE
+"please_input_mail"                     = "メールアドレスを入力してください。";
+"please_input_validate_mail"            = "正しいメールアドレスを入力してください。";
+"please_input_password"                 = "パスワードを入力してください。";
+"please_login_again"                    = "ログインできません｡メールアドレスとパスワードを確認してもう一度ログインしてください。";
+"email_not_exist"                       = "該当のメールアドレスは登録されておりません。";
+
+"please_input_new_password"             = "新しいパスワードを入力してください。";
+"please_input_new_password_confirm"     = "新しいパスワード（確認）を入力してください。";
+"please_input_alphanumeric"             = "半角英数で入力してください。";
+"password_did_not_match"                = "入力したパスワードと確認用のパスワードが一致しません。";
+"please_input_letter_number"            = "パスワードはアルファベットと数字を混合で入力してください。";
+"please_input_more_8_letter"            = "パスワードは8文字以上で入力してください｡";
+"please_input_below_32_letter"          = "パスワードは32文字以内で入力してください｡";
+
+"email_can_not_use"                     = "そのメールアドレスは既に使用されています。";
+"please_input_password_alphanumeric"    = "パスワードは半角英数で入力してください。";
+"please_input_password_confirm"         = "パスワード（確認）を入力してください。";
 ""                              = "";
 ""                              = "";
 ""                              = "";
 ""                              = "";
 ""                              = "";
 ""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+""                              = "";
+
