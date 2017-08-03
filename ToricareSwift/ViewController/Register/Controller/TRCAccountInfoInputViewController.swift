@@ -44,7 +44,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     let datePicker = UIDatePicker()
     
-    var dataGender = [Localizable(value: "male"), Localizable(value: "female")]
+    var dataGender = [Localizable(value: "male"), Localizable(value: "female"), Localizable(value: "other")]
     var genderPicker = UIPickerView()
     
     var mode = String()
@@ -80,7 +80,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         tfDateOfBirth.textFieldStyle(placeHolder: "")
         tfGender.textFieldStyle(placeHolder: "")
-        
+        tfGender.text = Localizable(value: "male")
         //fill data if register with Facebook
         if(_obj.dicFacebookInfo[FB_FIRSTNAME] != nil){
             tfFirstName.text = _obj.dicFacebookInfo[FB_FIRSTNAME]
@@ -217,31 +217,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
-        if(mode == MODE_REGISTER){
-            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else if(mode == MODE_MYPAGE){
-            let alert = UIAlertController(title: nil,
-                                          message: Localizable(value: "profile_updated"),
-                                          preferredStyle: .alert)
-            // add the action
-            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
-                                          style: UIAlertActionStyle.default,
-                                          handler: { action in
-                                            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-                                            for descView in viewControllers {
-                                                if(descView is TRCMyPageViewController){
-                                                    _obj.nc5.popToViewController(descView, animated: true)
-                                                }
-                                            }
-            }))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
+        validate()
     }
     
     @IBAction func tapBtnUploadImage(_ sender: Any) {
@@ -271,6 +247,66 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         //present the AlertController
         self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func validate() {
+//        @IBOutlet weak var tfFirstName: UITextField!
+//        @IBOutlet weak var tfLastName: UITextField!
+//        @IBOutlet weak var tfFirstNameKata: UITextField!
+//        @IBOutlet weak var tfLastNameKata: UITextField!
+//        @IBOutlet weak var tfDateOfBirth: UITextField!
+
+        if (tfFirstName.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_first_name"))
+            return
+        }
+        
+        if (tfLastName.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_last_name"))
+            return
+        }
+        
+        if (tfFirstNameKata.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_first_name_kana"))
+            return
+        }
+        
+        if (tfLastNameKata.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_last_name_kana"))
+            return
+        }
+        
+
+        
+        doNext()
+    }
+    
+    func doNext() {
+        if(mode == MODE_REGISTER){
+            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(mode == MODE_MYPAGE){
+            let alert = UIAlertController(title: nil,
+                                          message: Localizable(value: "profile_updated"),
+                                          preferredStyle: .alert)
+            // add the action
+            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                          style: UIAlertActionStyle.default,
+                                          handler: { action in
+                                            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                                            for descView in viewControllers {
+                                                if(descView is TRCMyPageViewController){
+                                                    _obj.nc5.popToViewController(descView, animated: true)
+                                                }
+                                            }
+            }))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 
@@ -304,5 +340,13 @@ extension TRCAccountInfoInputViewController: UIImagePickerControllerDelegate, UI
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension TRCAccountInfoInputViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= 255 // Bool
     }
 }
