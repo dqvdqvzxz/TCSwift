@@ -64,9 +64,11 @@ class TRCRegisterViewController: TRCBaseViewController {
     @IBAction func tapBtnRegister(_ sender: Any) {
         let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
         vc.mode = MODE_REGISTER
+        vc.userName = tfUsername.text!
+        vc.passWord = tfRePassword.text!
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
+        self.navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
