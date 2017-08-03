@@ -10,30 +10,20 @@ import UIKit
 
 
 class TRCLoginAPIController: NSObject {
-    func Login(_ mailAddress: String, _ password: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ resultFailed: NSDictionary?)->()){
+    func Login(_ mailAddress: String, _ password: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
-        parameters["mail_address"] = mailAddress
-        parameters["password"] = password
+        parameters["email"] = "minhthaind@gmail.com" //mailAddress
+        parameters["password"] = "12345678" //password
         parameters["device_id"] = UserDefaults.kGetValue(DEVICE_ID) as? String
         parameters["device_token"] = "232321423423414514141414143423dfdfdfdfderererere232323232"
-        parameters["device_type"] = "1"
+        parameters["device_type"] = "2"
         
         TRCBaseAPIController.callAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_POST, blockCompletion: { (data) in
-            DLog("Process success")
-            
-            print("Parameter: \(parameters)")
-//            print(data!)
-            
             //parse data from model
             completion(data)
-            
-        }) { (dataFailed) in
-            
-//            print("Parameter: \(dataFailed!)")
-            
-            failed(dataFailed)
-            
+        }) { (error) in
+            failed(error!)
         }
     }
 }

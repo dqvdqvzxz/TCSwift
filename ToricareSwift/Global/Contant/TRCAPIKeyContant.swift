@@ -10,10 +10,11 @@ import UIKit
 
 //MARK: API
 let HEADER_AUTHORIZATION = "Basic dG9yaV9hcHBfaW9zX3Rlc3Q6MmY1YzY5Njc4Mzg4NGIwMmEwNjkxNjNlOWI2ODAzMTI="
+let HEADER_CONTENT_TYPE = "application/x-www-form-urlencoded"
 
 let APP_DOMAIN = "http://172.16.210.122/api/"
 
-let URL_LOGIN = "member"
+let URL_LOGIN = "auth/tokens"
 
 //MARK: UserDefaults
 let DEVICE_ID = "deviceID"
