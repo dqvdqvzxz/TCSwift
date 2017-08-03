@@ -15,9 +15,11 @@ let HEADER_CONTENT_TYPE = "application/x-www-form-urlencoded"
 let APP_DOMAIN = "http://172.16.210.122/api/"
 
 let URL_LOGIN = "auth/tokens"
+let URL_REGISTER = "members"
 
 //MARK: UserDefaults
 let DEVICE_ID = "deviceID"
+let DEVICE_TYPE = "2"
 let FB_TOKEN = "facebookToken"
 let THEME_COLOR = "themeColor"
 let PASSCODE = "passCode"
