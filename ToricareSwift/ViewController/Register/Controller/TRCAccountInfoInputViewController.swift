@@ -223,7 +223,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             self.showHUD()
             let registerType = "1"
-            TRCRegisterAPIController().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, "", "", registerType, completion: { (data) in
+            TRCRegisterAPIController().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, tfGender.text!, tfDateOfBirth.text!, registerType, completion: { (data) in
                 self.hideHUD()
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
                 vc.mode = MODE_REGISTER
