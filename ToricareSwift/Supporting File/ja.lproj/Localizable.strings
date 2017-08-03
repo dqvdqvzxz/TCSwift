@@ -272,14 +272,14 @@
 
 "please_input_new_password"             = "新しいパスワードを入力してください。";
 "please_input_new_password_confirm"     = "新しいパスワード（確認）を入力してください。";
-"please_input_alphanumeric"             = "半角英数で入力してください。";
+"please_input_half_width"               = "半角英数で入力してください。";
 "password_did_not_match"                = "入力したパスワードと確認用のパスワードが一致しません。";
 "please_input_letter_number"            = "パスワードはアルファベットと数字を混合で入力してください。";
 "please_input_more_8_letter"            = "パスワードは8文字以上で入力してください｡";
 "please_input_below_32_letter"          = "パスワードは32文字以内で入力してください｡";
 
 "email_can_not_use"                     = "そのメールアドレスは既に使用されています。";
-"please_input_password_alphanumeric"    = "パスワードは半角英数で入力してください。";
+"please_input_password_half_width"      = "パスワードは半角英数で入力してください。";
 "please_input_password_confirm"         = "パスワード（確認）を入力してください。";
 ""                              = "";
 ""                              = "";

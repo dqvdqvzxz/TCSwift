@@ -11,7 +11,7 @@ import Foundation
 extension String {
     
     //To check text field or String is blank or not
-    var isBlank: Bool! {
+    var isBlank: Bool {
         get {
             let trimmed = trimmingCharacters(in: CharacterSet.whitespaces)
             return trimmed.isEmpty
@@ -19,7 +19,7 @@ extension String {
     }
     
     //Validate Email
-    var isEmail: Bool! {
+    var isEmail: Bool {
         do {
             let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
             return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) != nil
@@ -29,21 +29,24 @@ extension String {
     }
     
     //Validate Alpha Numeric
-    var isAlphanumeric: Bool! {
+    var isAlphanumeric: Bool {
         return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
     }
     
+    var isLengthBelow7: Bool {
+        return self.characters.count <= 7
+    }
+    
+    var isLengthOver33: Bool {
+        return self.characters.count >= 32
+    }
+    
     //validate Password
-    var isValidPassword: Bool! {
+    var isValidPassword: Bool {
         do {
-            let regex = try NSRegularExpression(pattern: "^[a-zA-Z_0-9\\-_,;.:#+*?=!§$%&/()@]+$", options: .caseInsensitive)
+            let regex = try NSRegularExpression(pattern: "^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$", options: .caseInsensitive)
             if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) != nil){
-                
-                if(self.characters.count>=6 && self.characters.count<=20){
-                    return true
-                }else{
-                    return false
-                }
+                return true
             }else{
                 return false
             }
@@ -51,4 +54,9 @@ extension String {
             return false
         }
     }
+    
+    var containsChineseCharacters: Bool {
+        return self.range(of: "\\p{Han}", options: .regularExpression) != nil
+    }
+
 }
