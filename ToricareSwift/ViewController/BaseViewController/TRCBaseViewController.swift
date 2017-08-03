@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class TRCBaseViewController: UIViewController {
 
@@ -62,5 +63,17 @@ class TRCBaseViewController: UIViewController {
     //call this function when the tap is recognized
     func dismissKeyboard(){
         view.endEditing(true)
+    }
+}
+
+extension UIViewController {
+    func showHUD(_ message: String = Localizable(value: "loading")) {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = message
+        hud.isUserInteractionEnabled = false
+    }
+    
+    func hideHUD() {
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }

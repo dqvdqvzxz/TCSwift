@@ -23,7 +23,7 @@ class TRCQRCodeViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.showHUD()
         configUI()
         configScanCodeView()
     }
@@ -58,6 +58,7 @@ class TRCQRCodeViewController: TRCBaseViewController {
                 self.view.layer.addSublayer(self.capture.layer)
                 self.view.bringSubview(toFront: self.lblGuide)
                 self.view.bringSubview(toFront: self.btnCancel)
+                self.hideHUD()
             }
         }
     }

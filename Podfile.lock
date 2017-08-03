@@ -38,6 +38,7 @@ PODS:
   - GooglePlaces (2.4.0):
     - GoogleMaps/Base (= 2.4.0)
   - IQKeyboardManagerSwift (4.0.11)
+  - MBProgressHUD (1.0.0)
   - ZXingObjC (3.2.1):
     - ZXingObjC/All (= 3.2.1)
   - ZXingObjC/All (3.2.1)
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManagerSwift
+  - MBProgressHUD (~> 1.0.0)
   - ZXingObjC (~> 3.2.1)
 
 SPEC CHECKSUMS:
@@ -73,8 +75,9 @@ SPEC CHECKSUMS:
   GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
   GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
   IQKeyboardManagerSwift: 10f0a6b8ea2904c8943c0e1a116c99f5b8ad83af
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: cf21cbe6b41282ae90cf7816326f45daf12f0435
+PODFILE CHECKSUM: 184484cd29823162386b724ca9e7114b2daf1303
 
 COCOAPODS: 1.2.1
