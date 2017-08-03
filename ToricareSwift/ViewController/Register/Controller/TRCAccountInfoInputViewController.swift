@@ -221,8 +221,10 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
         if(mode == MODE_REGISTER){
+            self.showHUD()
             let registerType = "1"
             TRCRegisterAPIController().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, "", "", registerType, completion: { (data) in
+                self.hideHUD()
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
                 vc.mode = MODE_REGISTER
                 let backItem = UIBarButtonItem()
@@ -230,6 +232,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 self.navigationItem.backBarButtonItem = backItem
                 self.navigationController?.pushViewController(vc, animated: true)
             }) { (error) in
+                self.hideHUD()
                 ELog(error)
             }
         }else if(mode == MODE_MYPAGE){
