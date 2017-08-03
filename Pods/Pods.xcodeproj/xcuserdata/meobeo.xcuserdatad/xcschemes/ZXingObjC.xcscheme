@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7CA938F250600183168CD35345CF4366'
+               BlueprintIdentifier = 'B01EF31B81392D49A19DBC5689E3FA32'
                BlueprintName = 'ZXingObjC'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ZXingObjC.framework'>
