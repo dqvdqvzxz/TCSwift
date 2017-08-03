@@ -127,7 +127,7 @@ class TRCLoginViewController: TRCBaseViewController {
     }
     
     func doLogin() {
-        // ****
+        // *Message*
         // Login fail then show : self.showAlert(Localizable(value: "please_login_again"))
         
         UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {

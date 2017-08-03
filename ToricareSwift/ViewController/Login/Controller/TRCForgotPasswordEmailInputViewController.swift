@@ -44,6 +44,27 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnSendEmail(_ sender: Any) {
+        validate()
+    }
+    
+    func validate() {
+        if (tfEmail.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_mail"))
+            return
+        }
+        
+        if !((tfEmail.text?.isEmail)!) {
+            self.showAlert(Localizable(value: "please_input_validate_mail"))
+            return
+        }
+        
+        doForgot()
+    }
+
+    func doForgot() {
+        // *Message*
+        // Forgot fail then show : self.showAlert(Localizable(value: "email_not_exist"))
+        
         let vc = TRCForgotPasswordSentViewController(nibName: "TRCForgotPasswordSentViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
         self.navigationController?.viewControllers.remove(at: 2)
