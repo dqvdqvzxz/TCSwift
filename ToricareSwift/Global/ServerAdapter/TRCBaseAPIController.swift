@@ -46,6 +46,8 @@ class TRCBaseAPIController{
                     Alamofire.request(encodedURLRequest).responseJSON { (response) in
                         let data = response.result.value as? NSDictionary
                         
+                        DLog(data)
+                        
                         //handle result success
                         if let resultSuccess = data?.object(forKey: "data"){
                             completion(resultSuccess as! NSDictionary)
