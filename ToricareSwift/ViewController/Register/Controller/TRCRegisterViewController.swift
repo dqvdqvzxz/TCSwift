@@ -62,6 +62,10 @@ class TRCRegisterViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
+        validate()
+    }
+    
+    func doRegister() {
         let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
         vc.mode = MODE_REGISTER
         vc.userName = tfUsername.text!
@@ -172,4 +176,53 @@ class TRCRegisterViewController: TRCBaseViewController {
         
     }
     
+    // MARK: Validate
+    func validate() {
+        if (tfUsername.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_mail"))
+            return
+        }
+        
+        if !((tfUsername.text?.isEmail)!) {
+            self.showAlert(Localizable(value: "please_input_validate_mail"))
+            return
+        }
+        
+        if (tfPassword.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_password"))
+            return
+        }
+        
+        if (tfPassword.text?.isLengthBelow7)! {
+            self.showAlert(Localizable(value: "please_input_more_8_letter"))
+            return
+        }
+
+        if (tfPassword.text?.isLengthOver33)! {
+            self.showAlert(Localizable(value: "please_input_below_32_letter"))
+            return
+        }
+        
+        if (tfPassword.text?.containsChineseCharacters)! {
+            self.showAlert(Localizable(value: "please_input_password_half_width"))
+            return
+        }
+        
+        if !(tfPassword.text?.isValidPassword)! {
+            self.showAlert(Localizable(value: "please_input_letter_number"))
+            return
+        }
+        
+        if (tfRePassword.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_password_confirm"))
+            return
+        }
+        
+        if (tfPassword.text != tfRePassword.text) {
+            self.showAlert(Localizable(value: "password_did_not_match"))
+            return
+        }
+
+        doRegister()
+    }    
 }
