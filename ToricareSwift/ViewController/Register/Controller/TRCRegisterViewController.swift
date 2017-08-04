@@ -203,7 +203,7 @@ class TRCRegisterViewController: TRCBaseViewController {
             return
         }
         
-        if (tfPassword.text?.containsChineseCharacters)! {
+        if !(tfPassword.text?.isAlphanumeric)! {
             self.showAlert(Localizable(value: "please_input_password_half_width"))
             return
         }

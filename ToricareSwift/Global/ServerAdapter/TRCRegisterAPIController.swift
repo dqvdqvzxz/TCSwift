@@ -33,5 +33,6 @@ class TRCRegisterAPIController: NSObject {
         }) { (error) in
             failed(error!)
         }
+        
     }
 }

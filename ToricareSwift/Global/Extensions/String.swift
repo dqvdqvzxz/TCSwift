@@ -55,8 +55,17 @@ extension String {
         }
     }
     
-    var containsChineseCharacters: Bool {
-        return self.range(of: "\\p{Han}", options: .regularExpression) != nil
-    }
+//    var containsHankakuCharacters: Bool {
+//        do {
+//            let regex = try NSRegularExpression(pattern: "[^A-Za-z0-9]+", options: .caseInsensitive)
+//            if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) != nil){
+//                return true
+//            }else{
+//                return false
+//            }
+//        } catch {
+//            return false
+//        }
+//    }
 
 }
