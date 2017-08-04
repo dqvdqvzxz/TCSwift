@@ -49,6 +49,7 @@
 "gender"                                = "性別";
 "male"                                  = "男性";
 "female"                                = "女性";
+"other"                                 = "その他";
 "next_button"                           = "次へ";
 
 //MARK: LoginViewController
@@ -263,7 +264,7 @@
 
 "loading"                               = "読み込み中...";
 
-//MARK: VALIDATE MESSAGE
+//MARK: VALIDATE LOGIN REGISTER
 "please_input_mail"                     = "メールアドレスを入力してください。";
 "please_input_validate_mail"            = "正しいメールアドレスを入力してください。";
 "please_input_password"                 = "パスワードを入力してください。";
@@ -281,13 +282,16 @@
 "email_can_not_use"                     = "そのメールアドレスは既に使用されています。";
 "please_input_password_half_width"      = "パスワードは半角英数で入力してください。";
 "please_input_password_confirm"         = "パスワード（確認）を入力してください。";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
+
+//MARK: VALIDATE PROFILE
+"please_input_first_name"               = "氏名（姓）を入力してください。";
+"please_input_last_name"                = "氏名（名）を入力してください。";
+"please_input_first_name_kana"          = "カナ（姓）を入力してください。";
+"please_input_last_name_kana"           = "カナ（名）を入力してください。";
+"please_input_first_name_katakana_half_width"       = "カナ（姓）は全角カタカナで入力してください。";
+"please_input_last_name_katakana_half_width"        = "カナ（名）は全角カタカナで入力してください。";
+"please_input_birthday"                             = "生年月日を入力してください。";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";

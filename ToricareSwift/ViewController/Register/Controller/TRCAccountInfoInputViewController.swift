@@ -44,7 +44,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     let datePicker = UIDatePicker()
     
-    var dataGender = [Localizable(value: "male"), Localizable(value: "female")]
+    var dataGender = [Localizable(value: "male"), Localizable(value: "female"), Localizable(value: "other")]
     var genderPicker = UIPickerView()
     
     var userName = String()
@@ -83,7 +83,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         tfDateOfBirth.textFieldStyle(placeHolder: "")
         tfGender.textFieldStyle(placeHolder: "")
-        
+        tfGender.text = Localizable(value: "male")
         //fill data if register with Facebook
         if(_obj.dicFacebookInfo[FB_FIRSTNAME] != nil){
             tfFirstName.text = _obj.dicFacebookInfo[FB_FIRSTNAME]
@@ -220,6 +220,63 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
+        validate()
+    }
+    
+    @IBAction func tapBtnUploadImage(_ sender: Any) {
+        //create the AlertController
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        //create Cancel action
+        let cancelAction = UIAlertAction(title: STRING_CANCEL, style: .cancel) { action -> Void in
+            //dismiss action sheet
+        }
+        //take picture in camera
+        let takePhotoCamera = UIAlertAction(title: STRING_TAKE_PHOTO_CAMERA, style: .default) { action -> Void in
+            self.openCamera()
+        }
+        //take picture from gallery
+        let takePhotoGallery = UIAlertAction(title: STRING_TAKE_PHOTO_GALLERY, style: .default) { action -> Void in
+            self.openGallery()
+        }
+        
+        //add action to sheet
+        actionSheetController.addAction(cancelAction)
+        actionSheetController.addAction(takePhotoCamera)
+        actionSheetController.addAction(takePhotoGallery)
+        
+        //provide a popover sourceView when using it on iPad
+        actionSheetController.popoverPresentationController?.sourceView = sender as? UIView
+        
+        //present the AlertController
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func validate() {
+        if (tfFirstName.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_first_name"))
+            return
+        }
+        
+        if (tfLastName.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_last_name"))
+            return
+        }
+        
+        if (tfFirstNameKata.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_first_name_kana"))
+            return
+        }
+        
+        if (tfLastNameKata.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_last_name_kana"))
+            return
+        }
+        
+        doRegister()
+    }
+    
+    func doRegister() {
         if(mode == MODE_REGISTER){
             self.showHUD()
             let registerType = "1"
@@ -254,35 +311,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    @IBAction func tapBtnUploadImage(_ sender: Any) {
-        //create the AlertController
-        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        //create Cancel action
-        let cancelAction = UIAlertAction(title: STRING_CANCEL, style: .cancel) { action -> Void in
-            //dismiss action sheet
-        }
-        //take picture in camera
-        let takePhotoCamera = UIAlertAction(title: STRING_TAKE_PHOTO_CAMERA, style: .default) { action -> Void in
-            self.openCamera()
-        }
-        //take picture from gallery
-        let takePhotoGallery = UIAlertAction(title: STRING_TAKE_PHOTO_GALLERY, style: .default) { action -> Void in
-            self.openGallery()
-        }
-        
-        //add action to sheet
-        actionSheetController.addAction(cancelAction)
-        actionSheetController.addAction(takePhotoCamera)
-        actionSheetController.addAction(takePhotoGallery)
-        
-        //provide a popover sourceView when using it on iPad
-        actionSheetController.popoverPresentationController?.sourceView = sender as? UIView
-        
-        //present the AlertController
-        self.present(actionSheetController, animated: true, completion: nil)
-    }
 }
 
 extension TRCAccountInfoInputViewController: UIPickerViewDataSource{
@@ -315,5 +343,13 @@ extension TRCAccountInfoInputViewController: UIImagePickerControllerDelegate, UI
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension TRCAccountInfoInputViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= 255 // Bool
     }
 }

@@ -282,6 +282,15 @@
 "please_input_password_alphanumeric"    = "パスワードは半角英数で入力してください。";
 "please_input_password_confirm"         = "パスワード（確認）を入力してください。";
 
+//MARK: VALIDATE PROFILE
+"please_input_first_name"               = "氏名（姓）を入力してください。";
+"please_input_last_name"                = "氏名（名）を入力してください。";
+"please_input_first_name_kana"          = "カナ（姓）を入力してください。";
+"please_input_last_name_kana"           = "カナ（名）を入力してください。";
+"please_input_first_name_katakana_half_width"       = "カナ（姓）は全角カタカナで入力してください。";
+"please_input_last_name_katakana_half_width"        = "カナ（名）は全角カタカナで入力してください。";
+"please_input_birthday"                             = "生年月日を入力してください。";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";
