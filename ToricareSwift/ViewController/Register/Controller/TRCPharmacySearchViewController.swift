@@ -31,13 +31,12 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 
     @IBOutlet weak var lblGuide: UILabel!
     var mode = String()
-
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configUI()
-        loadPrefectures()
         
 //        vc.delegate = self
     }
@@ -74,7 +73,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
             
             configTutorialView()
         }
-        
     }
     
     func configPageView(){
@@ -92,7 +90,8 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         viewParentTutorial.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
         
         //add to self view
-        self.view.addSubview(viewParentTutorial)
+        // comment it out 
+//        self.view.addSubview(viewParentTutorial)
     }
     
     //MARK: Action
@@ -129,16 +128,5 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     
     @IBAction func tapBtnReaded(_ sender: Any) {
         viewParentTutorial.removeFromSuperview()
-    }
-    
-    //MARK: API
-    func loadPrefectures() {
-        self.showHUD()
-        TRCPrefecturesRequest().getPrefectures(completion: { (data) in
-            let prefectureArray = data?.object(forKey: DATA)
-        }) { (error) in
-            self.hideHUD()
-            self.showAlert(error)
-        }
     }
 }

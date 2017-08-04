@@ -19,6 +19,8 @@ let APP_DOMAIN = "http://172.16.210.122/api/"
 let URL_LOGIN =                     "auth/tokens"
 let URL_REGISTER =                  "members"
 let URL_PREFECTURES =               "prefectures"
+let URL_CITIES =                    "cities"
+let URL_SHOPS =                     "shops"
 
 //MARK: UserDefaults
 let DEVICE_ID =                     "deviceID"
@@ -33,6 +35,10 @@ let REFRESH_ACCESS_TOKEN =          "refresh_access_token"
 let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
+let STATUS =                          "status"
+let CITY_ID =                 "city_id"
+let CITY_CODE =                 "city_code"
+let SHOP_NAME =                 "shop_name"
 
 //notification - setting
 let NOTIF_ALL = "notifAll"

@@ -8,16 +8,17 @@
 
 import UIKit
 
+
 class TRCSearchPageViewController: GLViewPagerViewController {
 
     var viewControllers: NSArray = NSArray()
     var tabTitles: NSArray = NSArray()
-    
+    var isSearchByPrefectures = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
-        
         configPageView()
     }
 
@@ -43,9 +44,12 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         self.tabWidth = view.frame.size.width / 2
         
         //init view
+        let searchPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
+        searchPageView.delegate = self
+        let searchCurrentLocationPageView = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
         self.viewControllers = [
-            TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil),
-            TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
+            searchPageView,
+            searchCurrentLocationPageView
         ]
         
         //init title
@@ -77,6 +81,11 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDataSource{
 
 extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
     func didChangeTabToIndex(_ viewPager: GLViewPagerViewController, index: Int, fromTabIndex: Int) {
+        if index == 1 {
+            isSearchByPrefectures = false
+        } else {
+            isSearchByPrefectures = true
+        }
         let prevLabel:UILabel = viewPager.tabViewAtIndex(index: fromTabIndex) as! UILabel
         let currentLabel:UILabel = viewPager.tabViewAtIndex(index: index) as! UILabel
 
@@ -93,5 +102,15 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
     
     func widthForTabIndex(_ viewPager: GLViewPagerViewController, index: Int) -> CGFloat {
         return (view.frame.size.width / 2)
+    }
+}
+
+extension TRCSearchPageViewController: TRCSearchLocationPageViewDelegate {
+    func openLoading() {
+        self.showHUD()
+    }
+    
+    func closeLoading() {
+        self.hideHUD()
     }
 }

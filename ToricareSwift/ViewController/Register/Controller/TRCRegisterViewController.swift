@@ -62,6 +62,10 @@ class TRCRegisterViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
+        if (DEBUG_REMOVE_API) {
+            doRegister()
+            return
+        }
         validate()
     }
     

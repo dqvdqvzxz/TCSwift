@@ -21,11 +21,11 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     
     var keywordString = "赤堤"
     var arrayResults = NSMutableArray()
-    
+    var pharmacySearchData: TRCPharmacySearchData!
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DLog(pharmacySearchData)
         configUI()
         createTestData()
     }
@@ -46,7 +46,6 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
 
-        
         //UI of outlet
         lblInform.labelStyle(title: Localizable(value: "search_by_name"))
         lblKeyword.labelStyle(title: Localizable(value: "キーワード") + "：" + keywordString)
@@ -58,7 +57,6 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         tblSearchResult.tableFooterView = UIView()
     }
     
-
     //MARK: Action
     func skipAction(){
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
@@ -72,21 +70,26 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         firstObject.pharmacyAddress = "東京都世田谷区3-24-4"
         firstObject.pharmacyName = "サンドラッグ赤堤薬局"
         
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
-        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+//        arrayResults.add(firstObject)
+        
+        let searchDataTest = TRCPharmacySearchData()
+        searchDataTest.shopName = "3"
+        
+        
     }
 }
 

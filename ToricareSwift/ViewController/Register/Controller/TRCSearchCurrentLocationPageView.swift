@@ -16,6 +16,7 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
     var locationManager = CLLocationManager()
     
     let marker = GMSMarker()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -24,6 +24,18 @@ class Global: NSObject {
         return nil
     }
     
+//    func saveCustomUD(_ object: Any?, _ key: String?) {
+//        let userDefaults = UserDefaults.standard //returns shared defaults object.
+//        userDefaults.setValue(NSKeyedArchiver.archivedData(withRootObject: object!), forKey: key!)
+//        userDefaults.synchronize()
+//    }
+//    
+//    func getCustomUD(_ key: String?) -> Any? {
+//        let userDefaults = UserDefaults.standard //returns shared defaults object.
+//        return NSKeyedUnarchiver.unarchiveObjectWithData(userDefaults.objectForKey(key!) as! 
+//    }
+
+    
     func isNotNull(_ aValue: Any?) -> Bool {
         let convertedObject = convertObjectToString(aValue)
         return !convertedObject.isBlank

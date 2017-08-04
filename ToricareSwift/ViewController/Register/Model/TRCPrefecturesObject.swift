@@ -17,8 +17,12 @@ class TRCPrefecturesObject: NSObject {
         if (data != nil) {
             for dataDict in data! {
                 let object = TRCPrefecturesObject()
-                object.name = (dataDict as! NSDictionary).object(forKey: NAME) as! String
-                object.prefectureId = (dataDict as! NSDictionary).object(forKey: PREFECTURE_ID) as! String
+                if (Global().isNotNull((dataDict as! NSDictionary).object(forKey: NAME))) {
+                    object.name = (dataDict as! NSDictionary).object(forKey: NAME) as! String
+                }
+                if (Global().isNotNull((dataDict as! NSDictionary).object(forKey: PREFECTURE_ID))) {
+                    object.prefectureId = Global().convertObjectToString((dataDict as! NSDictionary).object(forKey: PREFECTURE_ID))
+                }
                 prefectureArray.add(object)
             }
         }

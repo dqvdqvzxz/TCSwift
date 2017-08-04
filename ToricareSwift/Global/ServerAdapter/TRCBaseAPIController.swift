@@ -54,11 +54,6 @@ class TRCBaseAPIController{
                         
                         DLog(data)
                         
-                        //handle result success
-                        if let resultSuccess = data?.object(forKey: "data"){
-                            completion(resultSuccess as? NSDictionary)
-                        }
-                        
                         //handle result fail
                         if let resultFail = data?.object(forKey: "errors") as? NSArray{
                             print("Call me fail")
@@ -66,8 +61,20 @@ class TRCBaseAPIController{
                                 let indexMessage = resultFail[index] as! NSDictionary
                                 let message = indexMessage["message"]
                                 failed(message as? String)
+                                return
                             }
                         }
+                        
+                        //handle result success
+                        if let resultSuccess = data?.object(forKey: STATUS) as? NSNumber {
+                            if (resultSuccess.intValue == 200) {
+                                completion(data)
+                            } else {
+                                failed("error")
+                                return
+                            }
+                        }
+                        
                     }
                 }catch{
                     //parameter fail

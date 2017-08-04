@@ -16,13 +16,14 @@ class TRCPrefecturesRequest: TRCBaseAPIController {
         }) { (error) in
             failed(error!)
         }
-        
-//        TRCBaseAPIController.callAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_POST, blockCompletion: { (data) in
-//            //parse data from model
-//            completion(data)
-//        }) { (error) in
-//            failed(error!)
-//        }
     }
-
+    
+    func getCity(_ city: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+        let cityPath = String(format: "%@/%@/%@", URL_PREFECTURES, city, URL_CITIES)
+        self.callAPI(Dictionary <String, String>(), atPath: cityPath, withMethod: HTTP_GET, blockCompletion: { (data) in
+            completion(data)
+        }) { (error) in
+            failed(error!)
+        }
+    }
 }

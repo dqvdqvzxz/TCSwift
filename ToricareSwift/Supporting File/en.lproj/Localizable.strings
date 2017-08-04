@@ -292,6 +292,7 @@
 "please_input_last_name_katakana_half_width"        = "カナ（名）は全角カタカナで入力してください。";
 "please_input_birthday"                             = "生年月日を入力してください。";
 
+"all" = "ALL";
 ""                              = "";
 ""                              = "";
 ""                              = "";
