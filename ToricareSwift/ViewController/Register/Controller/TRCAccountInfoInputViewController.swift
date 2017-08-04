@@ -277,6 +277,17 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     }
     
     func doRegister() {
+        // ** DEBUG NO API ** //
+        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+        vc.mode = MODE_REGISTER
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        self.navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(vc, animated: true)
+
+        return
+        // ** ** ** //
+
         if(mode == MODE_REGISTER){
             self.showHUD()
             let registerType = "1"

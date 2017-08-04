@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 
 class TRCBaseAPIController{
-    class func callAPI(_ params: Dictionary<String, String>, atPath path:String, withMethod httpMethod:String, blockCompletion completion:@escaping (_ data: NSDictionary?) -> (), blockFailed failed:@escaping (_ error: String?)->()){
+    func callAPI(_ params: Dictionary<String, String>, atPath path:String, withMethod httpMethod:String, blockCompletion completion:@escaping (_ data: NSDictionary?) -> (), blockFailed failed:@escaping (_ error: String?)->()){
     
         if Connectivity.isConnectToNetwork() == false{
             failed(STRING_CHECK_NETWORK)
@@ -39,6 +39,12 @@ class TRCBaseAPIController{
                 urlRequest.addValue(HEADER_AUTHORIZATION, forHTTPHeaderField: "Authorization")
                 urlRequest.addValue(HEADER_CONTENT_TYPE, forHTTPHeaderField: "Content-Type")
                 
+                // Add Access Token
+                if Global().isNotNull(Global().getUD(ACCESS_TOKEN)) {
+                    let accessToken = Global().getUD(ACCESS_TOKEN) as! String
+                    urlRequest.addValue(accessToken, forHTTPHeaderField: X_ACCESS_TOKEN)
+                }
+
                 do{
                     //parameter
                     let encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: params)
@@ -50,7 +56,7 @@ class TRCBaseAPIController{
                         
                         //handle result success
                         if let resultSuccess = data?.object(forKey: "data"){
-                            completion(resultSuccess as! NSDictionary)
+                            completion(resultSuccess as? NSDictionary)
                         }
                         
                         //handle result fail

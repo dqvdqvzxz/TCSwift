@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCRegisterAPIController: NSObject {
+class TRCRegisterAPIController: TRCBaseAPIController {
     func Register(_ mailAddress: String, _ password: String, _ firstName: String, _ lastName: String, _ firstNameKata: String, _ lastNameKata: String, _ genderType: String, _ birthDay: String, _ registerType: String,completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
@@ -27,7 +27,7 @@ class TRCRegisterAPIController: NSObject {
         parameters["facebook_id"] = ""
         parameters["facebook_token"] = ""
         
-        TRCBaseAPIController.callAPI(parameters, atPath: "\(URL_REGISTER)", withMethod: HTTP_POST, blockCompletion: { (data) in
+        self.callAPI(parameters, atPath: "\(URL_REGISTER)", withMethod: HTTP_POST, blockCompletion: { (data) in
             //parse data from model
             completion(data)
         }) { (error) in

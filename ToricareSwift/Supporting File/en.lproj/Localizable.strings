@@ -48,6 +48,7 @@
 "gender"                                = "Gender";
 "male"                                  = "Male";
 "female"                                = "Female";
+"other"                                 = "Other";
 "next_button"                           = "Next";
 
 //MARK: LoginViewController

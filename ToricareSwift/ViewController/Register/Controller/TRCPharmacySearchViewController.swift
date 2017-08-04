@@ -37,6 +37,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         super.viewDidLoad()
 
         configUI()
+        loadPrefectures()
         
 //        vc.delegate = self
     }
@@ -128,5 +129,16 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     
     @IBAction func tapBtnReaded(_ sender: Any) {
         viewParentTutorial.removeFromSuperview()
+    }
+    
+    //MARK: API
+    func loadPrefectures() {
+        self.showHUD()
+        TRCPrefecturesRequest().getPrefectures(completion: { (data) in
+            let prefectureArray = data?.object(forKey: DATA)
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+        }
     }
 }
