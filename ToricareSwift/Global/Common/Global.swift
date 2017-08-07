@@ -57,4 +57,17 @@ class Global: NSObject {
             }
         }
     }
+    
+    //Conver date <-> string
+    func dateFromString(string: String, format: String) -> NSDate {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.date(from: string)! as NSDate
+    }
+        
+    func stringFromDate(date: NSDate, format: String) -> String {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: date as Date)
+    }
 }
