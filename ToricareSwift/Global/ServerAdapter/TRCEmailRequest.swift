@@ -21,5 +21,4 @@ class TRCEmailRequest: TRCBaseAPIController {
             failed(error!)
         }
     }
-
 }

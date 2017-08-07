@@ -53,7 +53,6 @@ class TRCBaseAPIController{
                         
                         //handle result fail
                         if let resultFail = data?.object(forKey: "errors") as? NSArray{
-                            print("Call me fail")
                             for index in 0...resultFail.count-1{
                                 let indexMessage = resultFail[index] as! NSDictionary
                                 let message = indexMessage["message"]

@@ -26,6 +26,7 @@ let URL_CITIES =                    "cities"
 let URL_SHOPS =                     "shops"
 let URL_PASSWORD_CHANGE =           "members/passwords"
 let URL_EMAIL_CHANGE =              "members/emails"
+let URL_ACCOUNT_INFO =              "members/details"
 
 //MARK: API Parameters key
 //Login

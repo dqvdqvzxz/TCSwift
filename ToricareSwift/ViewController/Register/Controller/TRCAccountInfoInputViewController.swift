@@ -83,7 +83,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         tfDateOfBirth.textFieldStyle(placeHolder: "")
         tfGender.textFieldStyle(placeHolder: "")
-        tfGender.text = Localizable(value: "male")
+        
         //fill data if register with Facebook
         if(_obj.dicFacebookInfo[FB_FIRSTNAME] != nil){
             tfFirstName.text = _obj.dicFacebookInfo[FB_FIRSTNAME]
@@ -131,6 +131,44 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         //gender
         showGenderPicker()
+        
+        //get data
+        getData()
+    }
+    
+    //MARL: Config data
+    func getData(){
+        if(mode == MODE_MYPAGE){
+            TRCAccountInfoRequest().GetAccountInfo(completion: {(data) in
+                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                self.hideHUD()
+                
+                //fill data
+                self.tfFirstName.text = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME) as? String
+                self.tfLastName.text = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME) as? String
+                self.tfFirstNameKata.text = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME_KATA) as? String
+                self.tfLastNameKata.text = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME_KATA) as? String
+                
+                let genderData = dataResult.object(forKey: "sex")
+                switch (genderData as! Int){
+                case 0:
+                    self.tfGender.text = Localizable(value: "male")
+                    self.genderPicker.selectRow(0, inComponent: 0, animated: true)
+                case 1:
+                    self.tfGender.text = Localizable(value: "female")
+                    self.genderPicker.selectRow(1, inComponent: 0, animated: true)
+                case 2:
+                    self.tfGender.text = Localizable(value: "other")
+                    self.genderPicker.selectRow(2, inComponent: 0, animated: true)
+                default:
+                    break
+                }
+            }) { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+                ELog(error)
+            }
+        }
     }
     
     //MARK: Gender picker
