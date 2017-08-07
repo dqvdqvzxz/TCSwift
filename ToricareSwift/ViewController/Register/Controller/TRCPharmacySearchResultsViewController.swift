@@ -31,12 +31,20 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     }
 
     var pharmacySearchData: TRCPharmacySearchData!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
         pharmacySearchData = TRCPharmacySearchData()
-//        pharmacySearchData.shopName = "3"
         DLog(pharmacySearchData)
+        
+//        print(UserDefaults.getUD(SEARCH_TAB))
+//        print(UserDefaults.getUD(SEARCH_KEYWORD))
+//        print(UserDefaults.getUD(SEARCH_PREFECTURE))
+//        print(UserDefaults.getUD(SEARCH_TOWN))
+//        print(UserDefaults.getUD(SEARCH_LAT))
+//        print(UserDefaults.getUD(SEARCH_LON))
+
         
         configUI()
         requestPharmarcy()

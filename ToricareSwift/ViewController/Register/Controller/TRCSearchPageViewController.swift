@@ -85,13 +85,18 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
 
         prevLabel.textColor = UIColor.init(colorLiteralRed: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
         currentLabel.textColor = UIColor.init(hexString: MAIN_COLOR)
+        
+        if(index == 0){
+            UserDefaults.saveUD(index, SEARCH_TAB)
+        }else if(index == 1){
+            UserDefaults.saveUD(index, SEARCH_TAB)
+        }
     }
     
     func willChangeTabToIndex(_ viewPager: GLViewPagerViewController, index: Int, fromTabIndex: Int, progress: CGFloat) {
         if fromTabIndex == index {
             return;
         }
-        
     }
     
     func widthForTabIndex(_ viewPager: GLViewPagerViewController, index: Int) -> CGFloat {

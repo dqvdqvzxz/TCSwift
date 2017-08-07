@@ -32,9 +32,18 @@ let PASSCODE =                      "passCode"
 let ACCESS_TOKEN =                  "access_token"
 let REFRESH_ACCESS_TOKEN =          "refresh_access_token"
 
+//search data 
+let SEARCH_KEYWORD =                "search_keyword"
+let SEARCH_PREFECTURE =             "search_prefecture"
+let SEARCH_TOWN =                   "search_town"
+let SEARCH_LAT =                    "search_lat"
+let SEARCH_LON =                    "search_lon"
+let SEARCH_TAB =                    "search_tab"
+
 let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
+
 let STATUS =                          "status"
 let CITY_ID =                 "city_id"
 let CITY_CODE =                 "city_code"
