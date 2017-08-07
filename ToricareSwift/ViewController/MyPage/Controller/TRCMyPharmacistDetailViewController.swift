@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCMyPharmacistDetailViewController: UIViewController {
+class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblMail: UILabel!
