@@ -24,8 +24,8 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     var addressPicker = UIPickerView()
     var subAddressPicker = UIPickerView()
     
-    var dataAddress = NSMutableArray()
-    var dataSubAddress = NSMutableArray()
+    var dataAddress: [TRCPrefecture] = []
+    var dataSubAddress: [TRCCity] = []
     
     var addressId = ""
     var subAddressIndex = ""
@@ -38,7 +38,6 @@ class TRCSearchLocationPageView: TRCBaseViewController {
 
         configUI()
         loadPrefectures()
-        initData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,16 +45,18 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func initData() {
-        let firstObject = TRCPrefecturesObject()
-        firstObject.name = Localizable(value: "all")
+    func addFirstDataAddress() {
+        let firstObject = TRCPrefecture(name: Localizable(value: "all"), prefecture: NSNumber.init(value: -1))
         self.dataAddress.insert(firstObject, at: 0)
-
-        let firstObjectSub = TRCCityObject()
-        firstObjectSub.name = Localizable(value: "all")
-        self.dataSubAddress.insert(firstObjectSub, at: 0)
+        self.tfAddress.text = firstObject.name
     }
     
+    func addFirstDataSubAddress() {
+        let firstObject = TRCCity(name: Localizable(value: "all"), cityId: NSNumber.init(value: -1), cityCode: "")
+        self.dataSubAddress.insert(firstObject, at: 0)
+        self.tfSubAddress.text = firstObject.name
+    }
+
     //MARK: Config UI
     func configUI(){
         //UI of outlet
@@ -143,16 +144,18 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         self.showHUD()
         TRCPrefecturesRequest().getPrefectures(completion: { (data) in
             self.hideHUD()
-
-            let prefectureArray = data?.object(forKey: DATA)
-            self.dataAddress = NSMutableArray(array: TRCPrefecturesObject().parse(prefectureArray as? Array<Any>))
-            let firstObject = TRCPrefecturesObject()
-            firstObject.name = Localizable(value: "all")
-            self.dataAddress.insert(firstObject, at: 0)
-            
+            guard let data = data else { return }
+            guard let prefectureArray = data.object(forKey: DATA) else { return }
+            do {
+                self.dataAddress = try parseArray(prefectureArray as! [JSONObject])
+            }
+            catch
+            {
+                print("JSONParsin Error: \(error)")
+            }
+            // Add first value ALL
+            self.addFirstDataAddress()
             self.addressPicker.reloadAllComponents()
-            self.addressId = (self.dataAddress.object(at: 0) as! TRCPrefecturesObject).prefectureId
-            self.tfAddress.text = (self.dataAddress.object(at: 0) as! TRCPrefecturesObject).name
         }) { (error) in
             self.hideHUD()
             self.showAlert(error)
@@ -164,15 +167,18 @@ class TRCSearchLocationPageView: TRCBaseViewController {
 
         TRCPrefecturesRequest().getCity(addressId, completion: { (data) in
             self.hideHUD()
-            let cityArray = data?.object(forKey: DATA)
-            self.dataSubAddress = NSMutableArray(array: TRCCityObject().parse(cityArray as? Array<Any>))
-            let firstObject = TRCCityObject()
-            firstObject.name = Localizable(value: "all")
-            self.dataSubAddress.insert(firstObject, at: 0)
             
+            guard let data = data else { return }
+            guard let dataSubAddressArray = data.object(forKey: DATA) else { return }
+            do {
+                self.dataSubAddress = try parseArray(dataSubAddressArray as! [JSONObject])
+            }
+            catch
+            {
+                print("JSONParsin Error: \(error)")
+            }
+            self.addFirstDataSubAddress()
             self.subAddressPicker.reloadAllComponents()
-            self.subAddressIndex = (self.dataSubAddress.object(at: 0) as! TRCCityObject).cityId
-            self.tfSubAddress.text = (self.dataSubAddress.object(at: 0) as! TRCCityObject).name
         }, failed: { (error) in
             self.hideHUD()
             self.showAlert(error)
@@ -197,20 +203,26 @@ extension TRCSearchLocationPageView: UIPickerViewDataSource{
 
 extension TRCSearchLocationPageView: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if(pickerView.tag == 1){
-            return (dataAddress.object(at: row) as! TRCPrefecturesObject).name
-        }else{
-            return (dataSubAddress.object(at: row) as! TRCCityObject).name
+        if (pickerView.tag == 1) {
+            let dataPrefecture = dataAddress[row]
+            return dataPrefecture.name
+        } else {
+            let dataCity = dataSubAddress[row]
+            return dataCity.name
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(pickerView.tag == 1){
-            tfAddress.text = (dataAddress.object(at: row) as! TRCPrefecturesObject).name
-            addressId = (dataAddress.object(at: row) as! TRCPrefecturesObject).prefectureId
+            let dataPrefecture = dataAddress[row]
+            
+            tfAddress.text = dataPrefecture.name
+            addressId = dataPrefecture.prefectureId.stringValue
         }else{
-            tfSubAddress.text = (dataSubAddress.object(at: row) as! TRCCityObject).name
-            subAddressIndex = (dataSubAddress.object(at: row) as! TRCCityObject).cityId
+            let dataCity = dataSubAddress[row]
+
+            tfSubAddress.text = dataCity.name
+            subAddressIndex = dataCity.cityId.stringValue
         }
     }
 }
