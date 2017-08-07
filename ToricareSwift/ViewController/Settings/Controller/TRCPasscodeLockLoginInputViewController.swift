@@ -107,7 +107,7 @@ class TRCPasscodeLockLoginInputViewController: UIViewController {
             
             let passcodeString = tfPasscode.text
             
-            let oldPasscode = UserDefaults.kGetValue(PASSCODE) as! String
+            let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
             if(passcodeString == oldPasscode){
                 UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                     UIApplication.shared.keyWindow?.rootViewController = _obj.tabController

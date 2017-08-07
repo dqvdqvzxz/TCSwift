@@ -83,7 +83,7 @@ extension TRCThemeColorSettingViewController: UITableViewDelegate{
         
         //save new color instead old color
         let newTheme = self.listColors![indexPath.row]
-        UserDefaults.kSetValue(newTheme, THEME_COLOR)
+        UserDefaults.saveUD(newTheme, THEME_COLOR)
         tblTheme.reloadData()
         
         //set new color for navigation bar

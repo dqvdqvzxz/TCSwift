@@ -20,7 +20,7 @@ class TRCRegisterAPIController: TRCBaseAPIController {
         parameters["last_name_kana"] = lastNameKata
         parameters["gender_type"] = genderType
         parameters["birthday"] = birthDay
-        parameters["device_id"] = UserDefaults.kGetValue(DEVICE_ID) as? String
+        parameters["device_id"] = UserDefaults.getUD(DEVICE_ID) as? String
         parameters["device_type"] = DEVICE_TYPE
         parameters["device_token"] = "1501748135775"
         parameters["register_type"] = registerType

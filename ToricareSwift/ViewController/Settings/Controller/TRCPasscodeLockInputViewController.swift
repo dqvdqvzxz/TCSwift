@@ -135,7 +135,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
             
             switch (mode) {
             case MODE_LOGIN:
-                let oldPasscode = UserDefaults.kGetValue(PASSCODE) as! String
+                let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
                 if(passcodeString == oldPasscode){
                     UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                         UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
@@ -172,7 +172,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                 if(passcodeString == _obj.dicPasscode[DIC_PASSCODE]){
                     
                     //save to userdefault
-                    UserDefaults.kSetValue(passcodeString, PASSCODE)
+                    UserDefaults.saveUD(passcodeString, PASSCODE)
                     
                     //pop to setting passcode
                     let viewControllers: [UIViewController] = _obj.nc5.viewControllers
@@ -197,7 +197,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                 }
             case MODE_CHANGE:
                 //input old passcode
-                let oldPasscode = UserDefaults.kGetValue(PASSCODE) as! String
+                let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
                 if(passcodeString == oldPasscode){
                     let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
                     vc.mode = MODE_SETUP
@@ -221,10 +221,10 @@ class TRCPasscodeLockInputViewController: UIViewController {
                     imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
                 }
             case MODE_REMOVE:
-                let oldPasscode = UserDefaults.kGetValue(PASSCODE) as! String
+                let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
                 if(passcodeString == oldPasscode){
                     //remove from userdefault
-                    UserDefaults.kRemoveValue(PASSCODE)
+                    UserDefaults.removeUD(PASSCODE)
                     
                     //pop to setting passcode
                     let viewControllers: [UIViewController] = _obj.nc5.viewControllers

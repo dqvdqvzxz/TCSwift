@@ -119,7 +119,7 @@ extension TRCSettingViewController: UITableViewDelegate{
             _obj.nc5.pushViewController(vc, animated: true)
         case 7:
             UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                UserDefaults.kRemoveValue(PASSCODE)
+                UserDefaults.removeUD(PASSCODE)
                 
                 let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                 let navController = UINavigationController(rootViewController: mainVC)

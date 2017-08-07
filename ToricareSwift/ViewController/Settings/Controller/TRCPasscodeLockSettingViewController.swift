@@ -37,7 +37,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_SETTING_PASSCODE
         
         //UI
-        if(UserDefaults.kGetValue(PASSCODE) != nil){
+        if(UserDefaults.getUD(PASSCODE) != nil){
             btnPasscode.isEnabled = true
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
         }else{
@@ -79,7 +79,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
         
         cell.lblTitle.text = Localizable(value: "enable_passcode")
         cell.lblTime.isHidden = true
-        if(UserDefaults.kGetValue(PASSCODE) != nil){
+        if(UserDefaults.getUD(PASSCODE) != nil){
             cell.switchCell.isOn = true
         }else{
             cell.switchCell.isOn = false
