@@ -36,13 +36,10 @@ class TRCBaseAPIController{
                 }
 
                 //header
-                urlRequest.addValue(HEADER_AUTHORIZATION, forHTTPHeaderField: "Authorization")
-                urlRequest.addValue(HEADER_CONTENT_TYPE, forHTTPHeaderField: "Content-Type")
-                
-                // Add Access Token
-                if Global().isNotNull(Global().getUD(ACCESS_TOKEN)) {
-                    let accessToken = Global().getUD(ACCESS_TOKEN) as! String
-                    urlRequest.addValue(accessToken, forHTTPHeaderField: X_ACCESS_TOKEN)
+                urlRequest.addValue(HEADER_AUTHORIZATION, forHTTPHeaderField: AUTHORIZATION)
+                urlRequest.addValue(HEADER_CONTENT_TYPE, forHTTPHeaderField: CONTENT_TYPE)
+                if(UserDefaults.getUD(ACCESS_TOKEN) != nil){
+                    urlRequest.addValue(UserDefaults.getUD(ACCESS_TOKEN) as! String, forHTTPHeaderField: X_ACCESS_TOKEN)
                 }
 
                 do{
