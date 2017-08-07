@@ -15,9 +15,6 @@ class TRCPasswordRequest: TRCBaseAPIController {
         parameters[PASSWORD_PARAM_CHANGE_PASSWORD] = currentPassword
         parameters[PASSWORD_PARAM_CHANGE_NEW_PASSWORD] = newPassword
         
-        print("Params \(parameters)")
-        print("Token \(UserDefaults.getUD(ACCESS_TOKEN))")
-        
         self.callAPI(parameters, atPath: "\(URL_PASSWORD_CHANGE)", withMethod: HTTP_PUT, blockCompletion: { (data) in
             //parse data from model
             completion(data)

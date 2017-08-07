@@ -53,10 +53,19 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnConfirm(_ sender: Any) {
-        let vc = TRCEmailChangeCompleteViewController(nibName: "TRCEmailChangeCompleteViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
-        _obj.nc5.pushViewController(vc, animated: true)
+        self.showHUD()
+        TRCEmailRequest().EmailChange(tfConfirmNewEmail.text!, completion: {(data) in
+            self.hideHUD()
+            
+            let vc = TRCEmailChangeCompleteViewController(nibName: "TRCEmailChangeCompleteViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            self.navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+            ELog(error)
+        }
     }
 }

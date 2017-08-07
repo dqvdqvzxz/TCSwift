@@ -25,6 +25,7 @@ let URL_PREFECTURES =               "prefectures"
 let URL_CITIES =                    "cities"
 let URL_SHOPS =                     "shops"
 let URL_PASSWORD_CHANGE =           "members/passwords"
+let URL_EMAIL_CHANGE =              "members/emails"
 
 //MARK: API Parameters key
 //Login
@@ -49,6 +50,9 @@ let REGISTER_PARAM_DEVICE_TOKEN =   "device_token"
 let REGISTER_PARAM_REGISTER_TYPE =  "register_type"
 let REGISTER_PARAM_FACEBOOK_ID =    "facebook_id"
 let REGISTER_PARAM_FACEBOOK_TOKEN = "facebook_token"
+
+//Email change
+let EMAIL_PARAM_CHANGE =            "email"
 
 //Password change
 let PASSWORD_PARAM_CHANGE_PASSWORD =      "password"
