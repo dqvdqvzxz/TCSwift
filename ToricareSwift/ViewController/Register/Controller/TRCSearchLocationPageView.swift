@@ -27,8 +27,8 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     var dataAddress: [TRCPrefecture] = []
     var dataSubAddress: [TRCCity] = []
     
-    var addressId = ""
-    var subAddressIndex = ""
+    var prefectureId = ""
+    var cityId = ""
     
     var delegate:TRCSearchLocationPageViewDelegate?
 
@@ -217,12 +217,12 @@ extension TRCSearchLocationPageView: UIPickerViewDelegate{
             let dataPrefecture = dataAddress[row]
             
             tfAddress.text = dataPrefecture.name
-            addressId = dataPrefecture.prefectureId.stringValue
+            prefectureId = dataPrefecture.prefectureId.stringValue
         }else{
             let dataCity = dataSubAddress[row]
 
             tfSubAddress.text = dataCity.name
-            subAddressIndex = dataCity.cityId.stringValue
+            cityId = dataCity.cityId.stringValue
         }
     }
 }
