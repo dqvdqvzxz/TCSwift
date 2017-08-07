@@ -22,18 +22,27 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     var keywordString = "赤堤"
     var arrayResults = NSMutableArray()
     var pharmacySearchData: TRCPharmacySearchData!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
         DLog(pharmacySearchData)
         configUI()
         createTestData()
+        
+        print(UserDefaults.getUD(SEARCH_TAB))
+        print(UserDefaults.getUD(SEARCH_KEYWORD))
+        print(UserDefaults.getUD(SEARCH_PREFECTURE))
+        print(UserDefaults.getUD(SEARCH_TOWN))
+        print(UserDefaults.getUD(SEARCH_LAT))
+        print(UserDefaults.getUD(SEARCH_LON))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     //MARK: Config UI
     func configUI(){

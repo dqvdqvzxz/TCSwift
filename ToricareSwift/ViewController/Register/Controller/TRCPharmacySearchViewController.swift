@@ -107,6 +107,12 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
             vc.mode = MODE_REGISTER
+            //data search
+            if(self.tfSearch.text != nil){
+                UserDefaults.saveUD(self.tfSearch.text, SEARCH_KEYWORD)
+            }
+                
+            //back button
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem

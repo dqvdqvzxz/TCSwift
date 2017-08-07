@@ -56,6 +56,9 @@ extension TRCSearchCurrentLocationPageView: CLLocationManagerDelegate {
             marker.position = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
             DLog("\nCurrent latitude: \(location.coordinate.latitude) \nCurrent longitude: \(location.coordinate.longitude)")
             
+            UserDefaults.saveUD(location.coordinate.latitude, SEARCH_LAT)
+            UserDefaults.saveUD(location.coordinate.longitude, SEARCH_LON)
+            
             marker.title = "You are here !"
             marker.map = mapView
             

@@ -165,7 +165,7 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     func getCity() {
         self.showHUD()
 
-        TRCPrefecturesRequest().getCity(addressId, completion: { (data) in
+        TRCPrefecturesRequest().getCity(prefectureId, completion: { (data) in
             self.hideHUD()
             
             guard let data = data else { return }
@@ -218,11 +218,15 @@ extension TRCSearchLocationPageView: UIPickerViewDelegate{
             
             tfAddress.text = dataPrefecture.name
             prefectureId = dataPrefecture.prefectureId.stringValue
+            
+            UserDefaults.saveUD(dataPrefecture.name, SEARCH_PREFECTURE)
         }else{
             let dataCity = dataSubAddress[row]
 
             tfSubAddress.text = dataCity.name
             cityId = dataCity.cityId.stringValue
+            
+            UserDefaults.saveUD(dataCity.name, SEARCH_TOWN)
         }
     }
 }
