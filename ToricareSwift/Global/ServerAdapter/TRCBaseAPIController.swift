@@ -67,8 +67,9 @@ class TRCBaseAPIController{
                         
                         //handle result success
                         if let resultSuccess = data?.object(forKey: STATUS) as? NSNumber {
+                            let dataResult = data?.object(forKey: DATA) as! NSDictionary
                             if (resultSuccess.intValue == 200) {
-                                completion(data)
+                                completion(dataResult)
                             } else {
                                 failed("error")
                                 return

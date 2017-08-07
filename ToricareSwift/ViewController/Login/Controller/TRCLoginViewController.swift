@@ -111,16 +111,14 @@ class TRCLoginViewController: TRCBaseViewController {
         
         self.showHUD()
         TRCLoginAPIController().Login(tfUsername.text!, tfPassword.text!, completion: {(data) in
-            DLog(data)
-            let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
             // Save access token
-            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+            if (Global().isNotNull(data?.object(forKey: ACCESS_TOKEN))) {
+                Global().saveUD(data?.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
             }
             
-            if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+            if (Global().isNotNull(data?.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                Global().saveUD(data?.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
             }
             
             UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {

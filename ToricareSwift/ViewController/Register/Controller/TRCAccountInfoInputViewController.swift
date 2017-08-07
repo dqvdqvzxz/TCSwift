@@ -298,8 +298,27 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             self.showHUD()
             let registerType = "1"
-            TRCRegisterAPIController().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, tfGender.text!, tfDateOfBirth.text!, registerType, completion: { (data) in
+            var genderResult = ""
+            var birthdayResult = ""
+            
+            if(tfGender.text! == Localizable(value: "male")){
+                genderResult = "1"
+            }else{
+                genderResult = "2`"
+            }
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            birthdayResult = formatter.string(from: datePicker.date)
+            
+            TRCRegisterAPIController().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, genderResult, birthdayResult, registerType, completion: { (data) in
                 self.hideHUD()
+            
+                //save access token
+                if (Global().isNotNull(data?.object(forKey: ACCESS_TOKEN))) {
+                    UserDefaults.saveUD(data?.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                }
+                
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
                 vc.mode = MODE_REGISTER
                 let backItem = UIBarButtonItem()
@@ -308,6 +327,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             }) { (error) in
                 self.hideHUD()
+                self.showAlert(error)
                 ELog(error)
             }
         }else if(mode == MODE_MYPAGE){
