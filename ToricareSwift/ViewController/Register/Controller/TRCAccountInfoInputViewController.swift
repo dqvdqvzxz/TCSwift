@@ -315,8 +315,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 self.hideHUD()
             
                 //save access token
-                if (Global().isNotNull(data?.object(forKey: ACCESS_TOKEN))) {
-                    UserDefaults.saveUD(data?.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                    UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
                 }
                 
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)

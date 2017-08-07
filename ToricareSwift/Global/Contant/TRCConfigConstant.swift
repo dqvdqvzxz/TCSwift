@@ -8,7 +8,7 @@
 import UIKit
 
 //MARK: REMOVE_API
-let DEBUG_REMOVE_API = false
+let DEBUG_REMOVE_API = true
 
 //MARK: Singleton
 let _obj = Singleton.shared
