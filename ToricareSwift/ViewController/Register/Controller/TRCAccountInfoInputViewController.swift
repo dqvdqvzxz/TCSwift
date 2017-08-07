@@ -149,6 +149,11 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 self.tfFirstNameKata.text = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME_KATA) as? String
                 self.tfLastNameKata.text = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME_KATA) as? String
                 
+                let dateData = dataResult.object(forKey: REGISTER_PARAM_BIRTHDAY) as? String
+                let stringDate = Global().dateFromString(string: dateData!, format: "yyyy/MM/dd")
+                let dateConvert = Global().stringFromDate(date: stringDate, format: "yyyy年MM月dd日")
+                self.tfDateOfBirth.text = dateConvert
+                
                 let genderData = dataResult.object(forKey: "sex")
                 switch (genderData as! Int){
                 case 0:
