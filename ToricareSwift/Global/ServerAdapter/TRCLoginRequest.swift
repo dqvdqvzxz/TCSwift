@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TRCLoginAPIController: TRCBaseAPIController {
+class TRCLoginRequest: TRCBaseAPIController {
     func Login(_ mailAddress: String, _ password: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()

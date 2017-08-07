@@ -311,7 +311,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayResult = formatter.string(from: datePicker.date)
             
-            TRCRegisterAPIController().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, genderResult, birthdayResult, registerType, completion: { (data) in
+            TRCRegisterRequest().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, genderResult, birthdayResult, registerType, completion: { (data) in
                 self.hideHUD()
             
                 //save access token
