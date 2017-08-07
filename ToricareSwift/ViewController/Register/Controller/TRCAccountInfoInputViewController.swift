@@ -139,7 +139,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     //MARL: Config data
     func getData(){
         if(mode == MODE_MYPAGE){
-            TRCAccountInfoRequest().GetAccountInfo(completion: {(data) in
+            TRCAccountInfoRequest().AccountInfo(completion: {(data) in
                 let dataResult = data?.object(forKey: DATA) as! NSDictionary
                 self.hideHUD()
                 
@@ -300,6 +300,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
+    //MARK: Action
     func validate() {
         if (tfFirstName.text?.isBlank)! {
             self.showAlert(Localizable(value: "please_input_first_name"))
@@ -381,22 +382,44 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 ELog(error)
             }
         }else if(mode == MODE_MYPAGE){
-            let alert = UIAlertController(title: nil,
-                                          message: Localizable(value: "profile_updated"),
-                                          preferredStyle: .alert)
-            // add the action
-            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
-                                          style: UIAlertActionStyle.default,
-                                          handler: { action in
-                                            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-                                            for descView in viewControllers {
-                                                if(descView is TRCMyPageViewController){
-                                                    _obj.nc5.popToViewController(descView, animated: true)
+            self.showHUD()
+            var genderResult = ""
+            var birthdayResult = ""
+            
+            if(tfGender.text! == Localizable(value: "male")){
+                genderResult = GENDER_MALE
+            }else{
+                genderResult = GENDER_FEMALE
+            }
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            birthdayResult = formatter.string(from: datePicker.date)
+            
+            TRCAccountInfoRequest().AccountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
+                self.hideHUD()
+                
+                let alert = UIAlertController(title: nil,
+                                              message: Localizable(value: "profile_updated"),
+                                              preferredStyle: .alert)
+                // add the action
+                alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                              style: UIAlertActionStyle.default,
+                                              handler: { action in
+                                                let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                                                for descView in viewControllers {
+                                                    if(descView is TRCMyPageViewController){
+                                                        _obj.nc5.popToViewController(descView, animated: true)
+                                                    }
                                                 }
-                                            }
-            }))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
+                }))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }) { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+                ELog(error)
+            }
         }
     }
 }

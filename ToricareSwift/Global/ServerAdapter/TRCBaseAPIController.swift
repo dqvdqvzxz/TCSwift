@@ -73,7 +73,7 @@ class TRCBaseAPIController{
                         
                     }
                 }catch{
-                    //parameter fail
+                    failed("error")
                 }
             }else{
                 failed(STRING_CHECK_INPUT_DATA)
