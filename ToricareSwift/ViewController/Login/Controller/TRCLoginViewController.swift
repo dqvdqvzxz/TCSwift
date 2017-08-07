@@ -66,6 +66,11 @@ class TRCLoginViewController: TRCBaseViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(forgotPassword))
         lblForgotPassword.isUserInteractionEnabled = true
         lblForgotPassword.addGestureRecognizer(tap)
+
+        // test
+        tfUsername.text = "thanhggg@gmail.com"
+        tfPassword.text = "1234567a"
+
     }
     
     //MARK: Function

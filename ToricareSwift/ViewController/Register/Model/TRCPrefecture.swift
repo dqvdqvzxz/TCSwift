@@ -11,9 +11,9 @@ import Foundation
 struct TRCPrefecture
 {
     var name: String
-    var prefectureId: NSNumber
+    var prefectureId: String
     
-    init(name aName: String, prefecture aPrefecture: NSNumber) {
+    init(name aName: String, prefecture aPrefecture: String) {
         name = aName
         prefectureId = aPrefecture
     }

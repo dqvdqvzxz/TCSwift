@@ -14,6 +14,8 @@ class TRCPharmacyRequest: TRCBaseAPIController {
         parameters[PREFECTURE_ID] = pharmacySearchData.prefectureId
         parameters[CITY_ID] = pharmacySearchData.cityId
         parameters[SHOP_NAME] = pharmacySearchData.shopName
+        parameters[LAT] = pharmacySearchData.lat
+        parameters[LONG] = pharmacySearchData.long
 
         self.callAPI(parameters, atPath: "\(URL_SHOPS)", withMethod: HTTP_GET, blockCompletion: { (data) in
             completion(data)

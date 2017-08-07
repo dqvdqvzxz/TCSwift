@@ -39,6 +39,27 @@ let STATUS =                          "status"
 let CITY_ID =                 "city_id"
 let CITY_CODE =                 "city_code"
 let SHOP_NAME =                 "shop_name"
+let LAT =                 "lat"
+let LONG =                 "lon"
+//image
+let ORIGIN =                          "origin"
+let THUMB1 =                          "thumb1"
+
+//pharmacy
+let ID =                            "id"
+let SHOP_GROUP_ID =                 "shop_group_id"
+let POS_SHOP_ID =                   "pos_shop_id"
+let PHARMACY_CODE =                 "pharmacy_code"
+let POST_CODE1 =                    "post_code1"
+let POST_CODE2 =                    "post_code2"
+let ADDRESS1 =                      "address1"
+let ADDRESS2 =                      "address2"
+let LATLON =                        "latlon"
+let TEL =                           "tel"
+let BUSSINESS_HOURS =               "bussiness_hours"
+let HOLIDAY =                       "holiday"
+let URL_KEY =                           "url"
+let IMAGES =                        "images"
 
 //notification - setting
 let NOTIF_ALL = "notifAll"

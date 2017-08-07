@@ -20,19 +20,55 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     var mode = String()
     
     var keywordString = "赤堤"
-    var arrayResults = NSMutableArray()
+    var arrayResults: [TRCPharmacy] = []
+    {
+        didSet
+        {
+            DispatchQueue.main.async {
+                self.tblSearchResult.reloadData()
+            }
+        }
+    }
+
     var pharmacySearchData: TRCPharmacySearchData!
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
+        pharmacySearchData = TRCPharmacySearchData()
+//        pharmacySearchData.shopName = "3"
         DLog(pharmacySearchData)
+        
         configUI()
-        createTestData()
+        requestPharmarcy()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func requestPharmarcy() {
+        guard let pharmacySearchData = pharmacySearchData else {
+            return
+        }
+        self.showHUD()
+        TRCPharmacyRequest().searchPharmacy(pharmacySearchData, completion: { (data) in
+            self.hideHUD()
+            
+            guard let data = data else { return }
+            guard let pharmacyArray = data.object(forKey: DATA) else { return }
+            do {
+                self.arrayResults = try parseArray(pharmacyArray as! [JSONObject])
+            }
+            catch
+            {
+                print("JSONParsin Error: \(error)")
+            }
+           
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+        }
     }
     
     //MARK: Config UI
@@ -64,33 +100,6 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         let navController = UINavigationController(rootViewController: vc)
         UIApplication.shared.keyWindow?.rootViewController = navController
     }
-
-    func createTestData() {
-        let firstObject = TRCPharmacyObject()
-        firstObject.pharmacyAddress = "東京都世田谷区3-24-4"
-        firstObject.pharmacyName = "サンドラッグ赤堤薬局"
-        
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-        
-        let searchDataTest = TRCPharmacySearchData()
-        searchDataTest.shopName = "3"
-        
-        
-    }
 }
 
 extension TRCPharmacySearchResultsViewController: UITableViewDataSource{
@@ -104,8 +113,8 @@ extension TRCPharmacySearchResultsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCSearchResultCell
-        let pharmacyDataObject = arrayResults.object(at: indexPath.row)
-        cell.fillData(pharmacyObject: pharmacyDataObject as? TRCPharmacyObject)
+        let pharmacyDataObject = arrayResults[indexPath.row]
+        cell.fillData(pharmacyObject: pharmacyDataObject)
         return cell
     }
 }
