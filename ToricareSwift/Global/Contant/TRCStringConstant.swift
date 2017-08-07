@@ -78,3 +78,9 @@ let MODE_SETUP_NEW =                    "MODE_SETUP_NEW"
 
 //UserRegistComplete
 let MODE_SKIP =                         "MODE_SKIP"
+
+//Register type 
+let REGISTER_TYPE_NORMAL =              "1"
+let REGISTER_TYPE_FACEBOOK =            "2"
+let GENDER_MALE =                       "1"
+let GENDER_FEMALE =                       "2"

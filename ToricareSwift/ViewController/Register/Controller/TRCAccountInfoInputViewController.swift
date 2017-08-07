@@ -297,14 +297,20 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
         if(mode == MODE_REGISTER){
             self.showHUD()
-            let registerType = "1"
             var genderResult = ""
             var birthdayResult = ""
+            var registerType = ""
             
             if(tfGender.text! == Localizable(value: "male")){
-                genderResult = "1"
+                genderResult = GENDER_MALE
             }else{
-                genderResult = "2`"
+                genderResult = GENDER_FEMALE
+            }
+            
+            if(UserDefaults.getUD(FB_TOKEN) != nil){
+                registerType = REGISTER_TYPE_FACEBOOK
+            }else{
+                registerType = REGISTER_TYPE_NORMAL
             }
             
             let formatter = DateFormatter()

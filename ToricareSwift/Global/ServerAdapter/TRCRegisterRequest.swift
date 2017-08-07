@@ -27,8 +27,6 @@ class TRCRegisterRequest: TRCBaseAPIController {
         parameters["facebook_id"] = ""
         parameters["facebook_token"] = ""
         
-        DLog("Param register: \(parameters)")
-        
         self.callAPI(parameters, atPath: "\(URL_REGISTER)", withMethod: HTTP_POST, blockCompletion: { (data) in
             //parse data from model
             completion(data)
