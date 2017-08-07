@@ -9,16 +9,16 @@
 import UIKit
 
 extension UserDefaults{
-    class func kSetValue(_ value: Any?, _ forKey: String){
+    class func saveUD(_ value: Any?, _ forKey: String){
         UserDefaults.standard.setValue(value, forKey: forKey)
         UserDefaults.standard.synchronize()
     }
     
-    class func kGetValue(_ key: String) -> Any? {
+    class func getUD(_ key: String) -> Any? {
         return UserDefaults.standard.value(forKey: key)
     }
     
-    class func kRemoveValue(_ key: String){
+    class func removeUD(_ key: String){
         UserDefaults.standard.removeObject(forKey: key)
         UserDefaults.standard.synchronize()
     }

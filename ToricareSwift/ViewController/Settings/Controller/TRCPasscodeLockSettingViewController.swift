@@ -37,7 +37,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_SETTING_PASSCODE
         
         //UI
-        if(UserDefaults.kGetValue(PASSCODE) != nil){
+        if(UserDefaults.getUD(PASSCODE) != nil){
             btnPasscode.isEnabled = true
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
         }else{
@@ -79,7 +79,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
         
         cell.lblTitle.text = Localizable(value: "enable_passcode")
         cell.lblTime.isHidden = true
-        if(UserDefaults.kGetValue(PASSCODE) != nil){
+        if(UserDefaults.getUD(PASSCODE) != nil){
             cell.switchCell.isOn = true
         }else{
             cell.switchCell.isOn = false
@@ -93,6 +93,12 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
         if switchState.isOn {
             btnPasscode.isEnabled = true
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
+            let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+            vc.mode = MODE_SETUP
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            navigationItem.backBarButtonItem = backItem
+            _obj.nc5.pushViewController(vc, animated: true)
         } else {
             btnPasscode.isEnabled = false
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)

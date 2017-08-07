@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
-        UserDefaults.kSetValue(deviceID, DEVICE_ID)
+        UserDefaults.saveUD(deviceID, DEVICE_ID)
         
         //google key
 //        GMSPlacesClient.provideAPIKey("AIzaSyB2m6vLyb-OvTw1PvmxZH1de0TVa_d93HQ")
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        if(UserDefaults.kGetValue(PASSCODE) != nil){
+        if(UserDefaults.getUD(PASSCODE) != nil){
             let mainVC = TRCPasscodeLockLoginInputViewController(nibName: "TRCPasscodeLockLoginInputViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
             window?.rootViewController = navController
@@ -166,7 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set theme style
 //        UITabBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
         
-        let currentTheme = UserDefaults.kGetValue(THEME_COLOR)
+        let currentTheme = UserDefaults.getUD(THEME_COLOR)
         if (currentTheme != nil) {
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: currentTheme as! String)
         } else {
@@ -181,7 +181,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //set root view
-        if(UserDefaults.kGetValue(FB_TOKEN) != nil){
+        if(UserDefaults.getUD(FB_TOKEN) != nil){
             let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
             window?.rootViewController = navController

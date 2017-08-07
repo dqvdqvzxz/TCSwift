@@ -15,7 +15,7 @@ class TRCLoginAPIController: TRCBaseAPIController {
         var parameters = Dictionary <String, String>()
         parameters["email"] = mailAddress
         parameters["password"] = password
-        parameters["device_id"] = UserDefaults.kGetValue(DEVICE_ID) as? String
+        parameters["device_id"] = UserDefaults.getUD(DEVICE_ID) as? String
         parameters["device_token"] = "232321423423414514141414143423dfdfdfdfderererere232323232"
         parameters["device_type"] = DEVICE_TYPE
         
