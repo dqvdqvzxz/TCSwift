@@ -22,4 +22,19 @@ extension UserDefaults{
         UserDefaults.standard.removeObject(forKey: key)
         UserDefaults.standard.synchronize()
     }
+    
+    class func resetCommonValue() {
+        for key in Array(UserDefaults.standard.dictionaryRepresentation().keys) {
+            if (key != ACCESS_TOKEN && key != FB_TOKEN) {
+                UserDefaults.standard.removeObject(forKey: key)
+            }
+        }
+        UserDefaults.standard.synchronize()
+    }
+    
+    class func removeAllKey() {
+        let appDomain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: appDomain)
+        UserDefaults.standard.synchronize()
+    }
 }

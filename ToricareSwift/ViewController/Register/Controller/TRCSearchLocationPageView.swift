@@ -218,12 +218,12 @@ extension TRCSearchLocationPageView: UIPickerViewDelegate{
             
             tfAddress.text = dataPrefecture.name
             prefectureId = dataPrefecture.prefectureId
-            UserDefaults.saveUD(dataPrefecture.name, SEARCH_PREFECTURE)
+            UserDefaults.saveUD(prefectureId, SEARCH_PREFECTURE)
         }else{
             let dataCity = dataSubAddress[row]
             tfSubAddress.text = dataCity.name
             cityId = dataCity.cityId
-            UserDefaults.saveUD(dataCity.name, SEARCH_TOWN)
+            UserDefaults.saveUD(cityId, SEARCH_TOWN)
         }
     }
 }

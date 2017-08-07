@@ -186,6 +186,9 @@
 //MARK: Pharmacy Search
 "please_register_your_pharmacy"         = "Please register your pharmacy.";
 "hint_search_by_name"                   = "Search By Name";
+"search_by_prefecture"                  = "Search By Prefecture";
+"search_by_location"                    = "Search By Location";
+
 "search_by_prefecture"                  = "Prefecture";
 "search_by_current_location"            = "Current Location";
 "prefecture"                            = "Prefecture";

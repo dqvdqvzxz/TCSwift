@@ -36,7 +36,7 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
-        prepairSearchData()        
+        prepairSearchData()
         requestPharmarcy()
     }
 
@@ -49,37 +49,78 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         pharmacySearchData = TRCPharmacySearchData()
         DLog(pharmacySearchData)
         
-        if (UserDefaults.getUD(SEARCH_KEYWORD) != nil) {
+        if (UserDefaults.getUD(SEARCH_KEYWORD) != nil && !(UserDefaults.getUD(SEARCH_KEYWORD) as! String).isBlank) {
             let shopName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_KEYWORD))
             if (!shopName.isBlank) {
                 pharmacySearchData.shopName = shopName
             }
+            lblInform.text = Localizable(value: "search_by_name")
+            lblKeyword.text = Localizable(value: "キーワード") + "：" + shopName
             return
-        } else if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
-            let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
-            if (!prefecture.isBlank) {
-                pharmacySearchData.prefectureId = prefecture
-            }
-            if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
-                let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
-                if (!city.isBlank) {
-                    pharmacySearchData.cityId = city
+            //SEARCH_TAB
+        } else if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "0") {
+            if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
+                let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
+                if (!prefecture.isBlank) {
+                    pharmacySearchData.prefectureId = prefecture
+                    lblKeyword.text = prefecture
                 }
-            }
-            
-            return
-        } else if (UserDefaults.getUD(SEARCH_LAT) != nil) {
-            let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
-            if (!latValue.isBlank) {
-                pharmacySearchData.lat = latValue
-            }
-            if (UserDefaults.getUD(SEARCH_LON) != nil) {
-                let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
-                if (!longValue.isBlank) {
-                    pharmacySearchData.long = longValue
+                if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
+                    let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
+                    if (!city.isBlank) {
+                        pharmacySearchData.cityId = city
+                        lblKeyword.text = prefecture + "/" + city
+                    }
                 }
+                lblInform.text = Localizable(value: "search_by_prefecture")
+                
+                return
+            }
+        } else if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "1") {
+            if (UserDefaults.getUD(SEARCH_LAT) != nil) {
+                let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
+                if (!latValue.isBlank) {
+                    pharmacySearchData.lat = latValue
+                }
+                if (UserDefaults.getUD(SEARCH_LON) != nil) {
+                    let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
+                    if (!longValue.isBlank) {
+                        pharmacySearchData.long = longValue
+                    }
+                }
+                lblInform.text = Localizable(value: "search_by_current_location")
             }
         }
+        
+//        } else if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
+//            let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
+//            if (!prefecture.isBlank) {
+//                pharmacySearchData.prefectureId = prefecture
+//                lblKeyword.text = prefecture
+//            }
+//            if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
+//                let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
+//                if (!city.isBlank) {
+//                    pharmacySearchData.cityId = city
+//                    lblKeyword.text = prefecture + "/" + city
+//                }
+//            }
+//            lblInform.text = Localizable(value: "search_by_prefecture")
+//
+//            return
+//        } else if (UserDefaults.getUD(SEARCH_LAT) != nil) {
+//            let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
+//            if (!latValue.isBlank) {
+//                pharmacySearchData.lat = latValue
+//            }
+//            if (UserDefaults.getUD(SEARCH_LON) != nil) {
+//                let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
+//                if (!longValue.isBlank) {
+//                    pharmacySearchData.long = longValue
+//                }
+//            }
+//            lblInform.text = Localizable(value: "search_by_current_location")
+//        }
     }
     
     func requestPharmarcy() {
@@ -118,8 +159,8 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
 
         //UI of outlet
-        lblInform.labelStyle(title: Localizable(value: "search_by_name"))
-        lblKeyword.labelStyle(title: Localizable(value: "キーワード") + "：" + keywordString)
+        lblInform.labelStyle()//title: Localizable(value: "search_by_name"))
+        lblKeyword.labelStyle()//title: Localizable(value: "キーワード") + "：" + keywordString)
         
         //table view
         tblSearchResult.dataSource = self
