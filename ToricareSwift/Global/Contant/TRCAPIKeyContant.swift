@@ -12,6 +12,9 @@ import UIKit
 let HEADER_AUTHORIZATION = "Basic dG9yaV9hcHBfaW9zX3Rlc3Q6MmY1YzY5Njc4Mzg4NGIwMmEwNjkxNjNlOWI2ODAzMTI="
 let HEADER_CONTENT_TYPE = "application/x-www-form-urlencoded"
 
+let AUTHORIZATION = "Authorization"
+let CONTENT_TYPE = "Content-Type"
+
 let X_ACCESS_TOKEN =                "X-Access-Token"
 
 let APP_DOMAIN = "http://172.16.210.122/api/"
@@ -21,8 +24,37 @@ let URL_REGISTER =                  "members"
 let URL_PREFECTURES =               "prefectures"
 let URL_CITIES =                    "cities"
 let URL_SHOPS =                     "shops"
+let URL_PASSWORD_CHANGE =           "members/passwords"
 
-//MARK: UserDefaults
+//MARK: API Parameters key
+//Login
+let LOGIN_PARAM_EMAIL =             "email"
+let LOGIN_PARAM_PASSWORD =          "password"
+let LOGIN_PARAM_DEVICE_ID =         "device_id"
+let LOGIN_PARAM_DEVICE_TOKEN =      "device_token"
+let LOGIN_PARAM_DEVICE_TYPE =       "device_type"
+
+//Register
+let REGISTER_PARAM_EMAIL =          "email"
+let REGISTER_PARAM_PASSWORD =       "password"
+let REGISTER_PARAM_FIRST_NAME =     "first_name"
+let REGISTER_PARAM_LAST_NAME =      "last_name"
+let REGISTER_PARAM_FIRST_NAME_KATA = "first_name_kana"
+let REGISTER_PARAM_LAST_NAME_KATA = "last_name_kana"
+let REGISTER_PARAM_GENDER_TYPE =    "gender_type"
+let REGISTER_PARAM_BIRTHDAY =       "birthday"
+let REGISTER_PARAM_DEVICE_ID =      "device_id"
+let REGISTER_PARAM_DEVICE_TYPE =    "device_type"
+let REGISTER_PARAM_DEVICE_TOKEN =   "device_token"
+let REGISTER_PARAM_REGISTER_TYPE =  "register_type"
+let REGISTER_PARAM_FACEBOOK_ID =    "facebook_id"
+let REGISTER_PARAM_FACEBOOK_TOKEN = "facebook_token"
+
+//Password change
+let PASSWORD_PARAM_CHANGE_PASSWORD =      "password"
+let PASSWORD_PARAM_CHANGE_NEW_PASSWORD =  "new_password"
+
+//MARK: UserDefaultsb
 let DEVICE_ID =                     "deviceID"
 let DEVICE_TYPE =                   "2"
 let FB_TOKEN =                      "facebookToken"
