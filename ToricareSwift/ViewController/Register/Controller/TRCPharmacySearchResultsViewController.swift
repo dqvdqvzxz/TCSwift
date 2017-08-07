@@ -35,24 +35,51 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        pharmacySearchData = TRCPharmacySearchData()
-        DLog(pharmacySearchData)
-        
-//        print(UserDefaults.getUD(SEARCH_TAB))
-//        print(UserDefaults.getUD(SEARCH_KEYWORD))
-//        print(UserDefaults.getUD(SEARCH_PREFECTURE))
-//        print(UserDefaults.getUD(SEARCH_TOWN))
-//        print(UserDefaults.getUD(SEARCH_LAT))
-//        print(UserDefaults.getUD(SEARCH_LON))
-
-        
         configUI()
+        prepairSearchData()        
         requestPharmarcy()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func prepairSearchData() {
+        pharmacySearchData = TRCPharmacySearchData()
+        DLog(pharmacySearchData)
+        
+        if (UserDefaults.getUD(SEARCH_KEYWORD) != nil) {
+            let shopName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_KEYWORD))
+            if (!shopName.isBlank) {
+                pharmacySearchData.shopName = shopName
+            }
+            return
+        } else if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
+            let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
+            if (!prefecture.isBlank) {
+                pharmacySearchData.prefectureId = prefecture
+            }
+            if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
+                let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
+                if (!city.isBlank) {
+                    pharmacySearchData.cityId = city
+                }
+            }
+            
+            return
+        } else if (UserDefaults.getUD(SEARCH_LAT) != nil) {
+            let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
+            if (!latValue.isBlank) {
+                pharmacySearchData.lat = latValue
+            }
+            if (UserDefaults.getUD(SEARCH_LON) != nil) {
+                let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
+                if (!longValue.isBlank) {
+                    pharmacySearchData.long = longValue
+                }
+            }
+        }
     }
     
     func requestPharmarcy() {
