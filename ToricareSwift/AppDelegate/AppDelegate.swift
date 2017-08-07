@@ -181,16 +181,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //set root view
-        if(UserDefaults.getUD(FB_TOKEN) != nil){
-            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-            let navController = UINavigationController(rootViewController: mainVC)
-            window?.rootViewController = navController
-//            window?.rootViewController = _obj.tabController
-//            UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-//                UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-//            }, completion: { completed in
-//                // maybe do something here
-//            })
+        if(UserDefaults.getUD(FB_TOKEN) != nil || UserDefaults.getUD(ACCESS_TOKEN) != nil){
+//            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+//            let navController = UINavigationController(rootViewController: mainVC)
+//            window?.rootViewController = navController
+            window?.rootViewController = _obj.tabController
+            UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+            }, completion: { completed in
+                // maybe do something here
+            })
         }else{
             let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
