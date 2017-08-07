@@ -11,10 +11,10 @@ import Foundation
 struct TRCCity
 {
     var name: String
-    var cityId: NSNumber
+    var cityId: String
     var cityCode: String
     
-    init(name aName: String, cityId aCityId: NSNumber, cityCode aCityCode: String) {
+    init(name aName: String, cityId aCityId: String, cityCode aCityCode: String) {
         name = aName
         cityId = aCityId
         cityCode = aCityCode

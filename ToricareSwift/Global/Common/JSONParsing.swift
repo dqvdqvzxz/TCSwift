@@ -33,13 +33,16 @@ class JSONDecoder
     guard let value = jsonObject[key] else {
       throw JSONParsingError.missingKey(key: key)
     }
-    if (value is NSNull) {
-        return "" as! T
+    
+    var finalValue:Any
+    
+    if (value is NSNull || value is NSNumber) {
+        finalValue = Global().convertObjectToString(value)
+    } else {
+        finalValue = value
     }
-    guard let finalValue = value as? T else {
-      throw JSONParsingError.typeMismatch(key: key)
-    }
-    return finalValue
+
+    return finalValue as! T
   }
   
   static let defaultDateFormat = "dd/MM/yyyy HH:mm:ss"
@@ -54,6 +57,24 @@ class JSONDecoder
     }
     return returnValue
   }
+    
+    func valueImages(forKey key: String) throws -> [TRCImage]
+    {
+        var imagesArray: [TRCImage] = []
+        let imagesValue: NSArray = try value(forKey: key)
+        
+        do {
+            imagesArray = try parseArray(imagesValue as! [JSONObject])
+        }
+        catch
+        {
+            print("JSONParsin Error: \(error)")
+        }
+        
+        return imagesArray
+    }
+    
+
 }
 
 func parseArray<T>(_ objects: [JSONObject]) throws -> [T] where T: JSONDecodable

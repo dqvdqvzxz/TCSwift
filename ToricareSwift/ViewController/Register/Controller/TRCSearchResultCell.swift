@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TRCSearchResultCell: UITableViewCell {
 
@@ -24,12 +25,20 @@ class TRCSearchResultCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fillData(pharmacyObject: TRCPharmacyObject?) {
-        if pharmacyObject != nil {
-            imgPharmacy.image = pharmacyObject!.pharmacyImage
-            lblName.labelStyle(title: pharmacyObject!.pharmacyName, fontSize: LABEL_FONT_SIZE! + 2, isBold: true, textColor: LABEL_FONT_COLOR)
-            lblAddress.labelStyle(title: pharmacyObject!.pharmacyAddress, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
-            lblAddress.text = pharmacyObject!.pharmacyAddress
+    func fillData(pharmacyObject: TRCPharmacy) {
+        lblName.labelStyle(title: pharmacyObject.name,
+                           fontSize: LABEL_FONT_SIZE! + 2,
+                           isBold: true,
+                           textColor: LABEL_FONT_COLOR)
+        
+        lblAddress.labelStyle(title: pharmacyObject.address1 + " " + pharmacyObject.address2,
+                              fontSize: LABEL_FONT_SIZE,
+                              isBold: false,
+                              textColor: LABEL_FONT_GREY_COLOR)
+
+        if (pharmacyObject.images.count > 0) {
+            guard let url = URL(string: pharmacyObject.images[0].origin) else { return }
+            imgPharmacy.af_setImage(withURL: url, placeholderImage: nil)
         }
-    }    
+    }
 }

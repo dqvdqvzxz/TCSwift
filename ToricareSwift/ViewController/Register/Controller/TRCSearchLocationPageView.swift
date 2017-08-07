@@ -46,13 +46,13 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     }
     
     func addFirstDataAddress() {
-        let firstObject = TRCPrefecture(name: Localizable(value: "all"), prefecture: NSNumber.init(value: -1))
+        let firstObject = TRCPrefecture(name: Localizable(value: "all"), prefecture: "")
         self.dataAddress.insert(firstObject, at: 0)
         self.tfAddress.text = firstObject.name
     }
     
     func addFirstDataSubAddress() {
-        let firstObject = TRCCity(name: Localizable(value: "all"), cityId: NSNumber.init(value: -1), cityCode: "")
+        let firstObject = TRCCity(name: Localizable(value: "all"), cityId: "", cityCode: "")
         self.dataSubAddress.insert(firstObject, at: 0)
         self.tfSubAddress.text = firstObject.name
     }
@@ -217,16 +217,13 @@ extension TRCSearchLocationPageView: UIPickerViewDelegate{
             let dataPrefecture = dataAddress[row]
             
             tfAddress.text = dataPrefecture.name
-            prefectureId = dataPrefecture.prefectureId.stringValue
-            
-            UserDefaults.saveUD(dataPrefecture.name, SEARCH_PREFECTURE)
+            prefectureId = dataPrefecture.prefectureId
+            UserDefaults.saveUD(prefectureId, SEARCH_PREFECTURE)
         }else{
             let dataCity = dataSubAddress[row]
-
             tfSubAddress.text = dataCity.name
-            cityId = dataCity.cityId.stringValue
-            
-            UserDefaults.saveUD(dataCity.name, SEARCH_TOWN)
+            cityId = dataCity.cityId
+            UserDefaults.saveUD(cityId, SEARCH_TOWN)
         }
     }
 }

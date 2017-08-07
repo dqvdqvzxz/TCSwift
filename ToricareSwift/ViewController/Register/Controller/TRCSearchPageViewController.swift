@@ -87,9 +87,9 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
         currentLabel.textColor = UIColor.init(hexString: MAIN_COLOR)
         
         if(index == 0){
-            UserDefaults.saveUD(index, SEARCH_TAB)
+            UserDefaults.saveUD("0", SEARCH_TAB)
         }else if(index == 1){
-            UserDefaults.saveUD(index, SEARCH_TAB)
+            UserDefaults.saveUD("1", SEARCH_TAB)
         }
     }
     

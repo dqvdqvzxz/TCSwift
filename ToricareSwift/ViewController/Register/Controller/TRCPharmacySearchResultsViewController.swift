@@ -20,22 +20,24 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     var mode = String()
     
     var keywordString = "赤堤"
-    var arrayResults = NSMutableArray()
+    var arrayResults: [TRCPharmacy] = []
+    {
+        didSet
+        {
+            DispatchQueue.main.async {
+                self.tblSearchResult.reloadData()
+            }
+        }
+    }
+
     var pharmacySearchData: TRCPharmacySearchData!
     
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        DLog(pharmacySearchData)
         configUI()
-        createTestData()
-        
-        print(UserDefaults.getUD(SEARCH_TAB))
-        print(UserDefaults.getUD(SEARCH_KEYWORD))
-        print(UserDefaults.getUD(SEARCH_PREFECTURE))
-        print(UserDefaults.getUD(SEARCH_TOWN))
-        print(UserDefaults.getUD(SEARCH_LAT))
-        print(UserDefaults.getUD(SEARCH_LON))
+        prepairSearchData()
+        requestPharmarcy()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +45,107 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func prepairSearchData() {
+        pharmacySearchData = TRCPharmacySearchData()
+        DLog(pharmacySearchData)
+        
+        if (UserDefaults.getUD(SEARCH_KEYWORD) != nil && !(UserDefaults.getUD(SEARCH_KEYWORD) as! String).isBlank) {
+            let shopName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_KEYWORD))
+            if (!shopName.isBlank) {
+                pharmacySearchData.shopName = shopName
+            }
+            lblInform.text = Localizable(value: "search_by_name")
+            lblKeyword.text = Localizable(value: "キーワード") + "：" + shopName
+            return
+            //SEARCH_TAB
+        } else if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "0") {
+            if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
+                let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
+                if (!prefecture.isBlank) {
+                    pharmacySearchData.prefectureId = prefecture
+                    lblKeyword.text = prefecture
+                }
+                if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
+                    let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
+                    if (!city.isBlank) {
+                        pharmacySearchData.cityId = city
+                        lblKeyword.text = prefecture + "/" + city
+                    }
+                }
+                lblInform.text = Localizable(value: "search_by_prefecture")
+                
+                return
+            }
+        } else if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "1") {
+            if (UserDefaults.getUD(SEARCH_LAT) != nil) {
+                let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
+                if (!latValue.isBlank) {
+                    pharmacySearchData.lat = latValue
+                }
+                if (UserDefaults.getUD(SEARCH_LON) != nil) {
+                    let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
+                    if (!longValue.isBlank) {
+                        pharmacySearchData.long = longValue
+                    }
+                }
+                lblInform.text = Localizable(value: "search_by_current_location")
+            }
+        }
+        
+//        } else if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
+//            let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
+//            if (!prefecture.isBlank) {
+//                pharmacySearchData.prefectureId = prefecture
+//                lblKeyword.text = prefecture
+//            }
+//            if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
+//                let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
+//                if (!city.isBlank) {
+//                    pharmacySearchData.cityId = city
+//                    lblKeyword.text = prefecture + "/" + city
+//                }
+//            }
+//            lblInform.text = Localizable(value: "search_by_prefecture")
+//
+//            return
+//        } else if (UserDefaults.getUD(SEARCH_LAT) != nil) {
+//            let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
+//            if (!latValue.isBlank) {
+//                pharmacySearchData.lat = latValue
+//            }
+//            if (UserDefaults.getUD(SEARCH_LON) != nil) {
+//                let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
+//                if (!longValue.isBlank) {
+//                    pharmacySearchData.long = longValue
+//                }
+//            }
+//            lblInform.text = Localizable(value: "search_by_current_location")
+//        }
+    }
+    
+    func requestPharmarcy() {
+        guard let pharmacySearchData = pharmacySearchData else {
+            return
+        }
+        self.showHUD()
+        TRCPharmacyRequest().searchPharmacy(pharmacySearchData, completion: { (data) in
+            self.hideHUD()
+            
+            guard let data = data else { return }
+            guard let pharmacyArray = data.object(forKey: DATA) else { return }
+            do {
+                self.arrayResults = try parseArray(pharmacyArray as! [JSONObject])
+            }
+            catch
+            {
+                print("JSONParsin Error: \(error)")
+            }
+           
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+        }
+    }
     
     //MARK: Config UI
     func configUI(){
@@ -56,8 +159,8 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
 
         //UI of outlet
-        lblInform.labelStyle(title: Localizable(value: "search_by_name"))
-        lblKeyword.labelStyle(title: Localizable(value: "キーワード") + "：" + keywordString)
+        lblInform.labelStyle()//title: Localizable(value: "search_by_name"))
+        lblKeyword.labelStyle()//title: Localizable(value: "キーワード") + "：" + keywordString)
         
         //table view
         tblSearchResult.dataSource = self
@@ -73,33 +176,6 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         let navController = UINavigationController(rootViewController: vc)
         UIApplication.shared.keyWindow?.rootViewController = navController
     }
-
-    func createTestData() {
-        let firstObject = TRCPharmacyObject()
-        firstObject.pharmacyAddress = "東京都世田谷区3-24-4"
-        firstObject.pharmacyName = "サンドラッグ赤堤薬局"
-        
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-//        arrayResults.add(firstObject)
-        
-        let searchDataTest = TRCPharmacySearchData()
-        searchDataTest.shopName = "3"
-        
-        
-    }
 }
 
 extension TRCPharmacySearchResultsViewController: UITableViewDataSource{
@@ -113,8 +189,8 @@ extension TRCPharmacySearchResultsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCSearchResultCell
-        let pharmacyDataObject = arrayResults.object(at: indexPath.row)
-        cell.fillData(pharmacyObject: pharmacyDataObject as? TRCPharmacyObject)
+        let pharmacyDataObject = arrayResults[indexPath.row]
+        cell.fillData(pharmacyObject: pharmacyDataObject)
         return cell
     }
 }
