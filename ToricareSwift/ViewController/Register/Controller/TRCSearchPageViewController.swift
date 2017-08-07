@@ -13,7 +13,6 @@ class TRCSearchPageViewController: GLViewPagerViewController {
 
     var viewControllers: NSArray = NSArray()
     var tabTitles: NSArray = NSArray()
-    var isSearchByPrefectures = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,11 +80,6 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDataSource{
 
 extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
     func didChangeTabToIndex(_ viewPager: GLViewPagerViewController, index: Int, fromTabIndex: Int) {
-        if index == 1 {
-            isSearchByPrefectures = false
-        } else {
-            isSearchByPrefectures = true
-        }
         let prevLabel:UILabel = viewPager.tabViewAtIndex(index: fromTabIndex) as! UILabel
         let currentLabel:UILabel = viewPager.tabViewAtIndex(index: index) as! UILabel
 

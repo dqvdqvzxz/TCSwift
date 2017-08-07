@@ -14,7 +14,6 @@ class TRCPharmacySearchData: NSObject {
     var cityId = ""
     var lat = ""
     var long = ""
-    var searchByPrefectures = true
     
 //    required init(coder decoder: NSCoder) {
 //        self.shopName = decoder.decodeObject(forKey: "shopName") as? String ?? ""
