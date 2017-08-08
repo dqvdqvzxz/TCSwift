@@ -119,6 +119,14 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     
     //MARK: Action
     func donePickerAddress() {
+        if (prefectureId.isBlank) {
+            cityId = ""
+            tfSubAddress.text = ""
+            self.view.endEditing(true)
+
+            return
+        }
+
         getCity()
         self.view.endEditing(true)
     }
@@ -213,17 +221,35 @@ extension TRCSearchLocationPageView: UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (row == 0) {
+            
+        }
         if(pickerView.tag == 1){
             let dataPrefecture = dataAddress[row]
-            
             tfAddress.text = dataPrefecture.name
+            if (row == 0) {
+                prefectureId = ""
+                UserDefaults.removeUD(SEARCH_PREFECTURE)
+                UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
+                return
+            }
+
             prefectureId = dataPrefecture.prefectureId
             UserDefaults.saveUD(prefectureId, SEARCH_PREFECTURE)
+            UserDefaults.saveUD(dataPrefecture.name, SEARCH_PREFECTURE_NAME)
         }else{
             let dataCity = dataSubAddress[row]
             tfSubAddress.text = dataCity.name
+            if (row == 0) {
+                cityId = ""
+                UserDefaults.removeUD(SEARCH_TOWN)
+                UserDefaults.removeUD(SEARCH_TOWN_NAME)
+                return
+            }
+
             cityId = dataCity.cityId
             UserDefaults.saveUD(cityId, SEARCH_TOWN)
+            UserDefaults.saveUD(dataCity.name, SEARCH_TOWN_NAME)
         }
     }
 }

@@ -78,20 +78,25 @@ let SEARCH_TOWN =                   "search_town"
 let SEARCH_LAT =                    "search_lat"
 let SEARCH_LON =                    "search_lon"
 let SEARCH_TAB =                    "search_tab"
+let SEARCH_PREFECTURE_NAME =        "search_prefecture_name"
+let SEARCH_TOWN_NAME =              "search_town_name"
 
 let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
 
-let STATUS =                          "status"
-let CITY_ID =                 "city_id"
-let CITY_CODE =                 "city_code"
-let SHOP_NAME =                 "shop_name"
-let LAT =                 "lat"
-let LONG =                 "lon"
+let STATUS =                        "status"
+let CITY_ID =                       "city_id"
+let CITY_CODE =                     "city_code"
+let SHOP_NAME =                     "shop_name"
+let LAT =                           "lat"
+let LONG =                          "lon"
+
+
+
 //image
-let ORIGIN =                          "origin"
-let THUMB1 =                          "thumb1"
+let ORIGIN =                        "origin"
+let THUMB1 =                        "thumb1"
 
 //pharmacy
 let ID =                            "id"
