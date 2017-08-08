@@ -93,12 +93,10 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
             self.view.addSubview(self.viewHadData)
 
             //fill data
-            
-            self.lblNameValue.labelStyle(title: "鈴木太郎")
-            self.lblPhoneValue.labelStyle(title: "03-1111-2222")
-            self.lblMailValue.labelStyle(title: "suzuki@xxx.co.jp")
-            self.lblMemoValue.labelStyle(title: "月曜日休暇")
-
+            self.lblNameValue.labelStyle(title: dataResult.object(forKey: "name") as? String)
+            self.lblPhoneValue.labelStyle(title: dataResult.object(forKey: "tel") as? String)
+            self.lblMailValue.labelStyle(title: dataResult.object(forKey: "email") as? String)
+            self.lblMemoValue.labelStyle(title: dataResult.object(forKey: "note") as? String)
         }) { (error) in
             self.hideHUD()
             ELog(error)
