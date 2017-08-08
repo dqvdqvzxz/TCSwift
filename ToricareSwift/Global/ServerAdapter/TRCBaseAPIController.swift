@@ -51,6 +51,12 @@ class TRCBaseAPIController{
                         
                         DLog(data)
                         
+                        //handle status code
+                        let statusCode = response.response?.statusCode
+                        if(statusCode == 204){
+                            failed("No data")
+                        }
+                        
                         //handle result fail
                         if let resultFail = data?.object(forKey: "errors") as? NSArray{
                             for index in 0...resultFail.count-1{
