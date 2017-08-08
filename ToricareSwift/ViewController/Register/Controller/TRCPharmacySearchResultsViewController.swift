@@ -56,23 +56,26 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
             }
             lblInform.text = Localizable(value: "search_by_name")
             lblKeyword.text = Localizable(value: "キーワード") + "：" + shopName
-            return
             //SEARCH_TAB
-        } else if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "0") {
+        }
+        
+        if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "0") {
             if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
                 let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
+                let prefectureName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE_NAME))
                 if (!prefecture.isBlank) {
                     pharmacySearchData.prefectureId = prefecture
-                    lblKeyword.text = prefecture
+                    lblKeyword.text = prefectureName
                 }
                 if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
                     let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
                     if (!city.isBlank) {
                         pharmacySearchData.cityId = city
-                        lblKeyword.text = prefecture + "/" + city
+                        let cityName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN_NAME))
+                        lblKeyword.text = prefectureName + " / " + cityName
                     }
                 }
-                lblInform.text = Localizable(value: "search_by_prefecture")
+                lblInform.text = pharmacySearchData.shopName.isBlank ? Localizable(value: "search_by_prefecture") : Localizable(value: "キーワード") + "：" + pharmacySearchData.shopName
                 
                 return
             }
@@ -88,7 +91,10 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
                         pharmacySearchData.long = longValue
                     }
                 }
-                lblInform.text = Localizable(value: "search_by_current_location")
+                lblInform.text = pharmacySearchData.shopName.isBlank ? Localizable(value: "search_by_current_location") : Localizable(value: "キーワード") + "：" + pharmacySearchData.shopName
+                lblKeyword.text = Localizable(value: "gps_1km_pharmacy")
+                
+                return
             }
         }
         
