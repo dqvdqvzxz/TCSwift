@@ -30,6 +30,8 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     
     var mode = String()
     
+    var dataResult = NSDictionary()
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +69,13 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             attributedString1.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString1.length))
             
             lblInform.attributedText = attributedString1
+            
+            if(dataResult != nil){
+                tfName.textFieldStyle(placeHolder: dataResult.object(forKey: "name") as? String)
+                tfPhone.textFieldStyle(placeHolder: dataResult.object(forKey: "tel") as? String)
+                tfEmail.textFieldStyle(placeHolder: dataResult.object(forKey: "email") as? String)
+                tvNote.text = dataResult.object(forKey: "note") as? String
+            }
         }
         
         lblInform.lineBreakMode = .byWordWrapping
@@ -101,8 +110,23 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
+            if(dataResult != nil){
+                TRCPharmacistRequest().PharmacistInfoChange(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
+                    self.hideHUD()
+                    
+                    let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                    for descView in viewControllers {
+                        if(descView is TRCMyPageViewController){
+                            _obj.nc5.popToViewController(descView, animated: true)
+                        }
+                    }
+                }) { (error) in
+                    self.hideHUD()
+                    ELog(error)
+                    self.showAlert(error)
+                }
+            }
             TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
-                let dataResult = data?.object(forKey: DATA) as! NSDictionary
                 self.hideHUD()
                 
                 let viewControllers: [UIViewController] = _obj.nc5.viewControllers
