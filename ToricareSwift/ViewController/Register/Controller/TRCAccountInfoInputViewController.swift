@@ -139,6 +139,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     //MARL: Config data
     func getData(){
         if(mode == MODE_MYPAGE){
+            self.showHUD()
             TRCAccountInfoRequest().AccountInfo(completion: {(data) in
                 let dataResult = data?.object(forKey: DATA) as! NSDictionary
                 self.hideHUD()
