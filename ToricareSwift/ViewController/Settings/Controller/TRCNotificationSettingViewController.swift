@@ -14,7 +14,8 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnSave: UIButton!
     
-    var turnOn: String = "TurnOnSwitch"
+    var turnOn: String = "1"
+    var turnOff: String = "0"
     
     var section = 3
     
@@ -69,7 +70,21 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     //MARK: Button action
     @IBAction func tapBtnSave(_ sender: Any) {
-        
+//        self.showHUD()
+//        TRCNotificationRequest().NotificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as? String, UserDefaults.getUD(NOTIF_PHARMACY) as? String, UserDefaults.getUD(NOTIF_TRICARE) as? String, UserDefaults.getUD(NOTIF_WEIGHT) as? String, UserDefaults.getUD(NOTIF_BREAKFAST) as? String, UserDefaults.getUD(NOTIF_LUNCH) as? String, UserDefaults.getUD(NOTIF_DINNER) as? String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as? String, <#T##weightTime: String##String#>, <#T##breakfastTime: String##String#>, <#T##lunchTime: String##String#>, <#T##dinnerTime: String##String#>, <#T##snackTime: String##String#>, completion: {(data) in
+//            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+//            self.hideHUD()
+//            
+//            //set result to dic
+//            self.dataResult = dataResult
+//            
+//            self.configUI()
+//            
+//        }) { (error) in
+//            self.hideHUD()
+//            ELog(error)
+//            self.showAlert(error)
+//        }
     }
     
     //MARK: Action
@@ -78,7 +93,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
             UserDefaults.saveUD(turnOn, NOTIF_ALL)
             section = 3
         }else{
-            UserDefaults.removeUD(NOTIF_ALL)
+            UserDefaults.saveUD(turnOff, NOTIF_ALL)
             section = 1
         }
         tblNotify.reloadData()
@@ -88,7 +103,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         if(switchState.isOn){
             UserDefaults.saveUD(turnOn, NOTIF_PHARMACY)
         }else{
-            UserDefaults.removeUD(NOTIF_PHARMACY)
+            UserDefaults.saveUD(turnOff, NOTIF_PHARMACY)
         }
     }
     
@@ -96,7 +111,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         if(switchState.isOn){
             UserDefaults.saveUD(turnOn, NOTIF_TRICARE)
         }else{
-            UserDefaults.removeUD(NOTIF_TRICARE)
+            UserDefaults.saveUD(turnOff, NOTIF_TRICARE)
         }
     }
     
@@ -104,7 +119,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         if(switchState.isOn){
             UserDefaults.saveUD(turnOn, NOTIF_WEIGHT)
         }else{
-            UserDefaults.removeUD(NOTIF_WEIGHT)
+            UserDefaults.saveUD(turnOff, NOTIF_WEIGHT)
         }
     }
     
@@ -112,7 +127,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         if(switchState.isOn){
             UserDefaults.saveUD(turnOn, NOTIF_BREAKFAST)
         }else{
-            UserDefaults.removeUD(NOTIF_BREAKFAST)
+            UserDefaults.saveUD(turnOff, NOTIF_BREAKFAST)
         }
     }
     
@@ -120,7 +135,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         if(switchState.isOn){
             UserDefaults.saveUD(turnOn, NOTIF_LUNCH)
         }else{
-            UserDefaults.removeUD(NOTIF_LUNCH)
+            UserDefaults.saveUD(turnOff, NOTIF_LUNCH)
         }
     }
     
@@ -128,7 +143,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         if(switchState.isOn){
             UserDefaults.saveUD(turnOn, NOTIF_DINNER)
         }else{
-            UserDefaults.removeUD(NOTIF_DINNER)
+            UserDefaults.saveUD(turnOff, NOTIF_DINNER)
         }
     }
     
@@ -136,7 +151,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         if(switchState.isOn){
             UserDefaults.saveUD(turnOn, NOTIF_SNACK)
         }else{
-            UserDefaults.removeUD(NOTIF_SNACK)
+            UserDefaults.saveUD(turnOff, NOTIF_SNACK)
         }
     }
 }
@@ -178,8 +193,10 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
             
             if(dataResult.object(forKey: "is_pushed") as? Int == 1){
                 cell.switchCell.isOn = true
+                UserDefaults.saveUD(turnOn, NOTIF_ALL)
             }else{
                 cell.switchCell.isOn = false
+                UserDefaults.saveUD(turnOff, NOTIF_ALL)
             }
             
             cell.switchCell.addTarget(self, action: #selector(switchReceiveAll(switchState:)), for: .valueChanged)
@@ -191,8 +208,10 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 
                 if(dataResult.object(forKey: "is_received_shop") as? Int == 1){
                     cell.switchCell.isOn = true
+                    UserDefaults.saveUD(turnOn, NOTIF_PHARMACY)
                 }else{
                     cell.switchCell.isOn = false
+                    UserDefaults.saveUD(turnOff, NOTIF_PHARMACY)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceivePharmacy(switchState:)), for: .valueChanged)
@@ -200,10 +219,12 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_tricare"))
                 cell.lblTime.labelStyle()
                 
-                if(dataResult.object(forKey: "is_receive_operator") as? Int == 1){
+                if(dataResult.object(forKey: "is_received_operator") as? Int == 1){
                     cell.switchCell.isOn = true
+                    UserDefaults.saveUD(turnOn, NOTIF_TRICARE)
                 }else{
                     cell.switchCell.isOn = false
+                    UserDefaults.saveUD(turnOff, NOTIF_TRICARE)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveTricare(switchState:)), for: .valueChanged)
@@ -216,10 +237,12 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "weight"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "weight_time") as? String)
                 
-                if(dataResult.object(forKey: "is_receive_weight") as? Int == 1){
+                if(dataResult.object(forKey: "is_received_weight") as? Int == 1){
                     cell.switchCell.isOn = true
+                    UserDefaults.saveUD(turnOn, NOTIF_WEIGHT)
                 }else{
                     cell.switchCell.isOn = false
+                    UserDefaults.saveUD(turnOff, NOTIF_WEIGHT)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveWeight(switchState:)), for: .valueChanged)
@@ -227,10 +250,12 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "breakfast"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "breakfast_time") as? String)
                 
-                if(dataResult.object(forKey: "is_receive_breakfast") as? Int == 1){
+                if(dataResult.object(forKey: "is_received_breakfast") as? Int == 1){
                     cell.switchCell.isOn = true
+                    UserDefaults.saveUD(turnOn, NOTIF_BREAKFAST)
                 }else{
                     cell.switchCell.isOn = false
+                    UserDefaults.saveUD(turnOff, NOTIF_BREAKFAST)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveBreakfast(switchState:)), for: .valueChanged)
@@ -238,10 +263,12 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "lunch"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "lunch_time") as? String)
                 
-                if(dataResult.object(forKey: "is_receive_lunch") as? Int == 1){
+                if(dataResult.object(forKey: "is_received_lunch") as? Int == 1){
                     cell.switchCell.isOn = true
+                    UserDefaults.saveUD(turnOn, NOTIF_LUNCH)
                 }else{
                     cell.switchCell.isOn = false
+                    UserDefaults.saveUD(turnOff, NOTIF_LUNCH)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveLunch(switchState:)), for: .valueChanged)
@@ -249,10 +276,12 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "dinner"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "dinner_time") as? String)
                 
-                if(dataResult.object(forKey: "is_receive_dinner") as? Int == 1){
+                if(dataResult.object(forKey: "is_received_dinner") as? Int == 1){
                     cell.switchCell.isOn = true
+                    UserDefaults.saveUD(turnOn, NOTIF_DINNER)
                 }else{
                     cell.switchCell.isOn = false
+                    UserDefaults.saveUD(turnOff, NOTIF_DINNER)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveDinner(switchState:)), for: .valueChanged)
@@ -260,10 +289,12 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "snack"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "snack_time") as? String)
                 
-                if(dataResult.object(forKey: "is_receive_snack") as? Int == 1){
+                if(dataResult.object(forKey: "is_received_snack") as? Int == 1){
                     cell.switchCell.isOn = true
+                    UserDefaults.saveUD(turnOn, NOTIF_SNACK)
                 }else{
                     cell.switchCell.isOn = false
+                    UserDefaults.saveUD(turnOff, NOTIF_SNACK)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveSnack(switchState:)), for: .valueChanged)
@@ -284,7 +315,15 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
-        tableView.deselectRow(at: indexPath, animated: false)
+        switch (indexPath.row) {
+        case 0:
+            tableView.deselectRow(at: indexPath, animated: false)
+        case 1:
+            tableView.deselectRow(at: indexPath, animated: false)
+        case 2:
+            tableView.deselectRow(at: indexPath, animated: false)
+        default:
+            break
+        }
     }
 }
