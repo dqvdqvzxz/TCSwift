@@ -28,6 +28,7 @@ let URL_PASSWORD_CHANGE =           "members/passwords"
 let URL_EMAIL_CHANGE =              "members/emails"
 let URL_ACCOUNT_INFO =              "members/details"
 let URL_PHARMACIST_INFO =           "members/pharmacists"
+let URL_MEMBERS_SHOPS =             "members/shops"
 
 //MARK: API Parameters key
 //Login
@@ -92,13 +93,13 @@ let LAT =                           "lat"
 let LONG =                          "lon"
 
 
-
 //image
 let ORIGIN =                        "origin"
 let THUMB1 =                        "thumb1"
 
 //pharmacy
 let ID =                            "id"
+let SHOP_ID =                       "shop_id"
 let SHOP_GROUP_ID =                 "shop_group_id"
 let POS_SHOP_ID =                   "pos_shop_id"
 let PHARMACY_CODE =                 "pharmacy_code"

@@ -94,15 +94,22 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnPharmacistInput(_ sender: Any) {
         if(mode == MODE_REGISTER){
-            let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
-            self.navigationController?.pushViewController(vc, animated: true)
+            TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
+                self.hideHUD()
+                let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+                vc.mode = MODE_REGISTER
+                let backItem = UIBarButtonItem()
+                backItem.title = STRING_BACK
+                self.navigationItem.backBarButtonItem = backItem
+                self.navigationController?.pushViewController(vc, animated: true)
+            }) { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+            }
+
         }else if(mode == MODE_MYPAGE){
             TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
-                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+//                let dataResult = data?.object(forKey: DATA) as! NSDictionary
                 self.hideHUD()
                 
                 let viewControllers: [UIViewController] = _obj.nc5.viewControllers
