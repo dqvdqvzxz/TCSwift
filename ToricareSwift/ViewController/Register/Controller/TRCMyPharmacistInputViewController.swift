@@ -102,6 +102,24 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnPharmacistInput(_ sender: Any) {
+        validate()
+    }
+    
+    func validate() {
+        if (lblName.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_pharmacist_name"))
+            return
+        }
+        
+        if (lblEmail.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_validate_mail"))
+            return
+        }
+        
+        doRegister()
+    }
+    
+    func doRegister() {
         if(mode == MODE_REGISTER){
             TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                 self.hideHUD()
@@ -115,7 +133,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
                 self.hideHUD()
                 self.showAlert(error)
             }
-
+            
         }else if(mode == MODE_MYPAGE){
             if(dataResult != nil){
                 TRCPharmacistRequest().PharmacistInfoChange(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
@@ -147,24 +165,6 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
                 ELog(error)
                 self.showAlert(error)
             }
-            
-            
-//            let alert = UIAlertController(title: nil,
-//                                          message: "プロフィールを更新しました",
-//                                          preferredStyle: .alert)
-//            // add the action
-//            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
-//                                          style: UIAlertActionStyle.default,
-//                                          handler: { action in
-//                                            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-//                                            for descView in viewControllers {
-//                                                if(descView is TRCMyPageViewController){
-//                                                    _obj.nc5.popToViewController(descView, animated: true)
-//                                                }
-//                                            }
-//            }))
-//            // show the alert
-//            self.present(alert, animated: true, completion: nil)
         }
     }
 }
