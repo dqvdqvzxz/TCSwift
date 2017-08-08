@@ -34,6 +34,8 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnChange: UIButton!
     
+    var dicPharmacist = NSDictionary()
+    
     var mode : String = MODE_MYPAGE
     
     //MARK: View controller
@@ -97,6 +99,9 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
             self.lblPhoneValue.labelStyle(title: dataResult.object(forKey: "tel") as? String)
             self.lblMailValue.labelStyle(title: dataResult.object(forKey: "email") as? String)
             self.lblMemoValue.labelStyle(title: dataResult.object(forKey: "note") as? String)
+            
+            //set result to dic
+            self.dicPharmacist = dataResult
         }) { (error) in
             self.hideHUD()
             ELog(error)
@@ -122,6 +127,7 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
         }else if(mode == MODE_MYPAGE){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_MYPAGE
+            vc.dataResult = dicPharmacist
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem

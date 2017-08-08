@@ -29,6 +29,7 @@ let URL_EMAIL_CHANGE =              "members/emails"
 let URL_ACCOUNT_INFO =              "members/details"
 let URL_PHARMACIST_INFO =           "members/pharmacists"
 let URL_MEMBERS_SHOPS =             "members/shops"
+let URL_NOTIFICATION =              "members/settings/notices"
 
 //MARK: API Parameters key
 //Login
