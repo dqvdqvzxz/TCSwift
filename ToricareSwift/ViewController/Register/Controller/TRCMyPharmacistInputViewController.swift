@@ -101,13 +101,23 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
-            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-            for descView in viewControllers {
-                if(descView is TRCMyPageViewController){
-                    _obj.nc5.popToViewController(descView, animated: true)
+            TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
+                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                self.hideHUD()
+                
+                let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                for descView in viewControllers {
+                    if(descView is TRCMyPageViewController){
+                        _obj.nc5.popToViewController(descView, animated: true)
+                    }
                 }
+            }) { (error) in
+                self.hideHUD()
+                ELog(error)
+                self.showAlert(error)
             }
-
+            
+            
 //            let alert = UIAlertController(title: nil,
 //                                          message: "プロフィールを更新しました",
 //                                          preferredStyle: .alert)
