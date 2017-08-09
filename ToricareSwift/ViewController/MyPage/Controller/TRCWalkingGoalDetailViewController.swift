@@ -37,6 +37,14 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = true
+        
+        if(_obj.newStep != ""){
+            self.pickerTarget.selectRow(((Int(_obj.newStep)! / 1000) - 1), inComponent: 0, animated: true)
+        }
+    }
+    
     //MARK: Config UI
     func configUI(){
         //navigation
@@ -92,12 +100,12 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
 
     //MARK: Button Action
     @IBAction func tapBtnSave(_ sender: Any) {
-        print((pickerTarget.selectedRow(inComponent: 0) + 1) * 1000)
-        let abc = Global().convertObjectToString((pickerTarget.selectedRow(inComponent: 0) + 1) * 1000)
-        print(abc)
+        _obj.newStep = Global().convertObjectToString((pickerTarget.selectedRow(inComponent: 0) + 1) * 1000)
         self.showHUD()
-        TRCGoalRequest().goalStepsChange(abc, completion: {(data) in
+        TRCGoalRequest().goalStepsChange(_obj.newStep, completion: {(data) in
             self.hideHUD()
+            
+            _obj.objectGoal.steps = _obj.newStep
             
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers
             for descView in viewControllers {

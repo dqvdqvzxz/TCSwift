@@ -29,5 +29,7 @@ final class Singleton{
     var objectAccountInfo = TRCAccountInfo()
     
     var objectGoal = TRCGoal()
+    
+    var newStep = ""
 }
 

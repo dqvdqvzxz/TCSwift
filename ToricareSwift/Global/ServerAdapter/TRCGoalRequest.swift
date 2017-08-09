@@ -27,8 +27,6 @@ class TRCGoalRequest: TRCBaseAPIController {
         parameters[GOAL_STEP] = steps
         parameters[GOAL_WEIGHT] = _obj.objectGoal.weight
         
-        print(parameters)
-        
         self.callAPI(parameters, atPath: "\(URL_GOAL)", withMethod: HTTP_PUT, blockCompletion: { (data) in
             //parse data from model
             completion(data)
