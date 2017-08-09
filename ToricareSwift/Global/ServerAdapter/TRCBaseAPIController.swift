@@ -84,4 +84,44 @@ class TRCBaseAPIController{
             }
         }
     }
+    
+    // import Alamofire
+    func uploadImage(_ image: UIImage, atPath path:String, blockCompletion completion:@escaping (_ data: NSDictionary?) -> (), blockFailed failed:@escaping (_ error: String?)->()){
+        let urls = "\(APP_DOMAIN)\(path)"
+
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            if let imageData = UIImageJPEGRepresentation(image, 1) {
+                multipartFormData.append(imageData, withName: AVATAR, fileName: "file.png", mimeType: "image/png")
+            }
+            
+        }, to: urls, method: .post, headers: [AUTHORIZATION: HEADER_AUTHORIZATION, CONTENT_TYPE: HEADER_CONTENT_TYPE, X_ACCESS_TOKEN: UserDefaults.getUD(ACCESS_TOKEN) as! String],
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .success(let upload, _, _):
+                        upload.responseJSON { response in
+                            debugPrint(response)
+                            let statusCode = response.response?.statusCode
+                            let resultData = response.result.value as? NSDictionary
+
+                            if (statusCode == STATUS_CODE_SUCCESS) {
+                                completion(resultData)
+                            } else {
+                                if let resultFail = resultData?.object(forKey: "errors") as? NSArray{
+                                    for index in 0...resultFail.count-1{
+                                        let indexMessage = resultFail[index] as! NSDictionary
+                                        let message = indexMessage["message"]
+                                        failed(message as? String)
+                                        return
+                                    }
+                                }
+                            }
+                        }
+                        break
+                    case .failure(let encodingError):
+                        print(encodingError)
+                        failed(RESULT_FAIL)
+                        break
+                    }
+        })
+    }
 }

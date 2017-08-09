@@ -33,6 +33,7 @@ let URL_PHARMACIST_INFO =           "members/pharmacists"
 let URL_MEMBERS_SHOPS =             "members/shops"
 let URL_NOTIFICATION =              "members/settings/notices"
 let URL_GOAL =                      "members/goals"
+let URL_MEMBERS_IMAGES =            "members/images"
 
 //MARK: API Parameters key
 //Login
@@ -115,6 +116,7 @@ let SEARCH_TOWN_NAME =              "search_town_name"
 let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
+let MESSAGE =                          "message"
 
 let STATUS =                        "status"
 let CITY_ID =                       "city_id"
@@ -127,7 +129,7 @@ let LONG =                          "lon"
 //image
 let ORIGIN =                        "origin"
 let THUMB1 =                        "thumb1"
-
+let AVATAR =                        "avatar"
 //pharmacy
 let ID =                            "id"
 let SHOP_ID =                       "shop_id"
@@ -176,6 +178,8 @@ let HTTP_DELETE = "DELETE"
 
 //MARK: RESULT CONSTANT
 let RESULT_NO_DATA = "RESULT_NO_DATA"
+let RESULT_SUCCESS = "RESULT_SUCCESS"
+let RESULT_FAIL = "RESULT_FAIL"
 
 //MARK: STATUS CODE
 let STATUS_CODE_SUCCESS = 200

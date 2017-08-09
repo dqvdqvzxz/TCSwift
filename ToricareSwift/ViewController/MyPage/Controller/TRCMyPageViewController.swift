@@ -58,10 +58,9 @@ class TRCMyPageViewController: TRCBaseViewController {
         
 //        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
         
-//        imgUser.makeCircle()
         // make border image
         imgUser.makeBorder(color: UIColor.white)
-
+        imgUser.makeCircle()
         
         //collection view
         clvMyPage.dataSource = self
