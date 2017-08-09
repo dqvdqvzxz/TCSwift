@@ -14,12 +14,15 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnSave: UIButton!
     
-    var turnOn: String = "1"
-    var turnOff: String = "0"
+    var turnOn: String = NOTIF_TURNON
+    var turnOff: String = NOTIF_TURNOFF
     
     var section = 3
     
     var dataResult = NSDictionary()
+    
+    var dataGender = [Localizable(value: "male"), Localizable(value: "female"), Localizable(value: "other")]
+    var genderPicker = UIPickerView()
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -52,7 +55,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: Get data
     func getData(){
         self.showHUD()
-        TRCNotificationRequest().NotificationInfo(completion: {(data) in
+        TRCNotificationRequest().notificationInfo(completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
             
@@ -70,21 +73,25 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     //MARK: Button action
     @IBAction func tapBtnSave(_ sender: Any) {
-//        self.showHUD()
-//        TRCNotificationRequest().NotificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as? String, UserDefaults.getUD(NOTIF_PHARMACY) as? String, UserDefaults.getUD(NOTIF_TRICARE) as? String, UserDefaults.getUD(NOTIF_WEIGHT) as? String, UserDefaults.getUD(NOTIF_BREAKFAST) as? String, UserDefaults.getUD(NOTIF_LUNCH) as? String, UserDefaults.getUD(NOTIF_DINNER) as? String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as? String, <#T##weightTime: String##String#>, <#T##breakfastTime: String##String#>, <#T##lunchTime: String##String#>, <#T##dinnerTime: String##String#>, <#T##snackTime: String##String#>, completion: {(data) in
-//            let dataResult = data?.object(forKey: DATA) as! NSDictionary
-//            self.hideHUD()
-//            
-//            //set result to dic
-//            self.dataResult = dataResult
-//            
-//            self.configUI()
-//            
-//        }) { (error) in
-//            self.hideHUD()
-//            ELog(error)
-//            self.showAlert(error)
-//        }
+        self.showHUD()
+        TRCNotificationRequest().notificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, "10:00", "10:00", "10:00", "10:00", "10:00", completion: {(data) in
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            self.hideHUD()
+            
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+            for descView in viewControllers {
+                if(descView is TRCSettingViewController){
+                    _obj.nc5.popToViewController(descView, animated: true)
+                }
+            }
+            
+            self.configUI()
+            
+        }) { (error) in
+            self.hideHUD()
+            ELog(error)
+            self.showAlert(error)
+        }
     }
     
     //MARK: Action
@@ -158,7 +165,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
 
 extension TRCNotificationSettingViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        if(dataResult.object(forKey: "is_pushed") as? Int == 1){
+        if(dataResult.object(forKey: NOTIF_PARAM_PUSHED) as? Int == 1){
             return section
         }else{
             return 1
@@ -191,7 +198,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
             cell.lblTitle.labelStyle(title: Localizable(value: "receive"))
             cell.lblTime.labelStyle()
             
-            if(dataResult.object(forKey: "is_pushed") as? Int == 1){
+            if(dataResult.object(forKey: NOTIF_PARAM_PUSHED) as? Int == 1){
                 cell.switchCell.isOn = true
                 UserDefaults.saveUD(turnOn, NOTIF_ALL)
             }else{
@@ -206,7 +213,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_phamarcy"))
                 cell.lblTime.labelStyle()
                 
-                if(dataResult.object(forKey: "is_received_shop") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_SHOP) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_PHARMACY)
                 }else{
@@ -219,7 +226,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_tricare"))
                 cell.lblTime.labelStyle()
                 
-                if(dataResult.object(forKey: "is_received_operator") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_OPERATOR) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_TRICARE)
                 }else{
@@ -237,7 +244,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "weight"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "weight_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_weight") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_WEIGHT) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_WEIGHT)
                 }else{
@@ -250,7 +257,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "breakfast"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "breakfast_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_breakfast") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_BREAKFAST) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_BREAKFAST)
                 }else{
@@ -263,7 +270,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "lunch"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "lunch_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_lunch") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_LUNCH) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_LUNCH)
                 }else{
@@ -276,7 +283,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "dinner"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "dinner_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_dinner") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_DINNER) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_DINNER)
                 }else{
@@ -289,7 +296,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "snack"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "snack_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_snack") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_SNACK) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_SNACK)
                 }else{
@@ -315,15 +322,63 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch (indexPath.row) {
-        case 0:
-            tableView.deselectRow(at: indexPath, animated: false)
-        case 1:
-            tableView.deselectRow(at: indexPath, animated: false)
-        case 2:
-            tableView.deselectRow(at: indexPath, animated: false)
-        default:
-            break
-        }
+//        let currentCell = tableView.cellForRow(at: indexPath) as! TRCLinkedServiceCell
+//        
+//        switch (indexPath.row) {
+//        case 0:
+//            tableView.deselectRow(at: indexPath, animated: false)
+//        case 1:
+//            tableView.deselectRow(at: indexPath, animated: false)
+//        case 2:
+//            tableView.deselectRow(at: indexPath, animated: false)
+//        default:
+//            self.genderPicker.dataSource = self
+//            self.genderPicker.delegate = self
+//            
+//            //toolBar
+//            let toolbar = UIToolbar();
+//            toolbar.sizeToFit()
+//            
+//            //done button & cancel button
+//            let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
+//            let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//            let cancelButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//            toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+//            
+////            currentCell.inputAccessoryView = toolbar
+//            genderPicker.frame = CGRect(x: 0, y: 100, width: 320, height: 320)
+//            genderPicker.addSubview(toolbar)
+//            
+////            currentCell.addSubview(genderPicker)
+//            self.view.addSubview(genderPicker)
+//            self.view.bringSubview(toFront: genderPicker)
+//            
+////            currentCell.inputView = genderPicker
+//            // add toolbar to textField
+//            //        tfGender.inputAccessoryView = toolbar
+//            //
+//            //        // add datepicker to textField
+//            //        tfGender.inputView = genderPicker
+//        }
+    }
+}
+
+extension TRCNotificationSettingViewController: UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dataGender.count
+    }
+}
+
+extension TRCNotificationSettingViewController: UIPickerViewDelegate{
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        tfGender.text = dataGender[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dataGender[row]
     }
 }

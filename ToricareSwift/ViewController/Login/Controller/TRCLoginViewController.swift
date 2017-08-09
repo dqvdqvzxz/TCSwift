@@ -68,8 +68,8 @@ class TRCLoginViewController: TRCBaseViewController {
         lblForgotPassword.addGestureRecognizer(tap)
 
         // test
-        tfUsername.text = "thanhggg@gmail.com"
-        tfPassword.text = "1234567a"
+        tfUsername.text = "test05@gmail.com"
+        tfPassword.text = "abcd1234"
 
     }
     

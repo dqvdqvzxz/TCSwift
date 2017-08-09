@@ -138,41 +138,32 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     //MARL: Config data
     func getData(){
         if(mode == MODE_MYPAGE){
-            self.showHUD()
-            TRCAccountInfoRequest().AccountInfo(completion: {(data) in
-                let dataResult = data?.object(forKey: DATA) as! NSDictionary
-                self.hideHUD()
-                
-                //fill data
-                self.tfFirstName.text = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME) as? String
-                self.tfLastName.text = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME) as? String
-                self.tfFirstNameKata.text = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME_KATA) as? String
-                self.tfLastNameKata.text = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME_KATA) as? String
-                
-                let dateData = dataResult.object(forKey: REGISTER_PARAM_BIRTHDAY) as? String
-                let stringDate = Global().dateFromString(string: dateData!, format: "yyyy/MM/dd")
-                let dateConvert = Global().stringFromDate(date: stringDate, format: "yyyy年MM月dd日")
-                self.tfDateOfBirth.text = dateConvert
-                
-                let genderData = dataResult.object(forKey: "sex")
-                switch (genderData as! Int){
-                case 0:
-                    self.tfGender.text = Localizable(value: "male")
-                    self.genderPicker.selectRow(0, inComponent: 0, animated: true)
-                case 1:
-                    self.tfGender.text = Localizable(value: "female")
-                    self.genderPicker.selectRow(1, inComponent: 0, animated: true)
-                case 2:
-                    self.tfGender.text = Localizable(value: "other")
-                    self.genderPicker.selectRow(2, inComponent: 0, animated: true)
-                default:
-                    break
-                }
-            }) { (error) in
-                self.hideHUD()
-                self.showAlert(error)
-                ELog(error)
+            //fill data
+            self.tfFirstName.text = _obj.objectAccountInfo.firstName
+            self.tfLastName.text = _obj.objectAccountInfo.lastName
+            self.tfFirstNameKata.text = _obj.objectAccountInfo.firstNameKata
+            self.tfLastNameKata.text = _obj.objectAccountInfo.firstNameKata
+            
+            let dateData = _obj.objectAccountInfo.birthDay
+            let stringDate = Global().dateFromString(string: dateData, format: "yyyy/MM/dd")
+            let dateConvert = Global().stringFromDate(date: stringDate, format: "yyyy年MM月dd日")
+            self.tfDateOfBirth.text = dateConvert
+            
+            let genderData = _obj.objectAccountInfo.sex
+            switch (genderData){
+            case "0":
+                self.tfGender.text = Localizable(value: "male")
+                self.genderPicker.selectRow(0, inComponent: 0, animated: true)
+            case "1":
+                self.tfGender.text = Localizable(value: "female")
+                self.genderPicker.selectRow(1, inComponent: 0, animated: true)
+            case "2":
+                self.tfGender.text = Localizable(value: "other")
+                self.genderPicker.selectRow(2, inComponent: 0, animated: true)
+            default:
+                break
             }
+
         }
     }
     
@@ -361,7 +352,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayResult = formatter.string(from: datePicker.date)
             
-            TRCRegisterRequest().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, genderResult, birthdayResult, registerType, completion: { (data) in
+            TRCRegisterRequest().register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, genderResult, birthdayResult, registerType, completion: { (data) in
                 self.hideHUD()
             
                 //save access token
@@ -396,7 +387,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayResult = formatter.string(from: datePicker.date)
             
-            TRCAccountInfoRequest().AccountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
+            TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
                 self.hideHUD()
                 
                 let alert = UIAlertController(title: nil,

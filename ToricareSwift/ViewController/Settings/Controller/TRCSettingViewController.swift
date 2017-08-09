@@ -121,6 +121,9 @@ extension TRCSettingViewController: UITableViewDelegate{
             UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 UserDefaults.removeUD(PASSCODE)
                 
+                UserDefaults.removeUD(ACCESS_TOKEN)
+                UserDefaults.removeUD(FB_TOKEN)
+                
                 // NEED REMOVE ALL UD HERE || temporary remove search params
                 UserDefaults.removeUD(SEARCH_PREFECTURE)
                 UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)

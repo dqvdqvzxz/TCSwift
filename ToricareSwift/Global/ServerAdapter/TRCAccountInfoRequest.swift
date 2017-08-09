@@ -9,7 +9,7 @@
 import UIKit
 
 class TRCAccountInfoRequest: TRCBaseAPIController {
-    func AccountInfo(completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func accountInfo(completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         let parameters = Dictionary <String, String>()
         
@@ -21,7 +21,7 @@ class TRCAccountInfoRequest: TRCBaseAPIController {
         }
     }
     
-    func AccountInfoChange(_ firstName: String, _ lastName: String, _ firstNameKata: String, _ lastNameKata: String, _ birthDay: String, _ gender: String,completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func accountInfoChange(_ firstName: String, _ lastName: String, _ firstNameKata: String, _ lastNameKata: String, _ birthDay: String, _ gender: String,completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
         parameters[REGISTER_PARAM_FIRST_NAME] = firstName

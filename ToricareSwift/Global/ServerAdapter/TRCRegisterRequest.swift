@@ -9,7 +9,7 @@
 import UIKit
 
 class TRCRegisterRequest: TRCBaseAPIController {
-    func Register(_ mailAddress: String, _ password: String, _ firstName: String, _ lastName: String, _ firstNameKata: String, _ lastNameKata: String, _ genderType: String, _ birthDay: String, _ registerType: String,completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func register(_ mailAddress: String, _ password: String, _ firstName: String, _ lastName: String, _ firstNameKata: String, _ lastNameKata: String, _ genderType: String, _ birthDay: String, _ registerType: String,completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
         parameters[REGISTER_PARAM_EMAIL] = mailAddress

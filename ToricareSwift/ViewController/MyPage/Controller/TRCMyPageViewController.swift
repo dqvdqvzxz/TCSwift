@@ -19,6 +19,8 @@ class TRCMyPageViewController: TRCBaseViewController {
     
     @IBOutlet weak var clvMyPage: UICollectionView!
     
+    var accountInfo: TRCAccountInfo!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class TRCMyPageViewController: TRCBaseViewController {
         _obj.tabController.tabBar.isHidden = false
         
         configUI()
+        
+        getData()
 
     }
     
@@ -62,6 +66,26 @@ class TRCMyPageViewController: TRCBaseViewController {
         clvMyPage.dataSource = self
         clvMyPage.delegate = self
         clvMyPage.register(UINib(nibName: "TRCMyPageCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
+
+    }
+    
+    //MARK: Get data
+    func getData(){
+        self.showHUD()
+        TRCAccountInfoRequest().accountInfo(completion: {(data) in
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            self.hideHUD()
+                do {
+                    self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
+                    _obj.objectAccountInfo = self.accountInfo
+                } catch {
+                    print("JSONParsin Error: \(error)")
+                }
+            }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+            ELog(error)
+        }
 
     }
 }

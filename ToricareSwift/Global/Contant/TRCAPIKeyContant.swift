@@ -46,7 +46,7 @@ let REGISTER_PARAM_FIRST_NAME =     "first_name"
 let REGISTER_PARAM_LAST_NAME =      "last_name"
 let REGISTER_PARAM_FIRST_NAME_KATA = "first_name_kana"
 let REGISTER_PARAM_LAST_NAME_KATA = "last_name_kana"
-let REGISTER_PARAM_GENDER_TYPE =    "gender_type"
+let REGISTER_PARAM_GENDER_TYPE =    "sex"
 let REGISTER_PARAM_BIRTHDAY =       "birthday"
 let REGISTER_PARAM_DEVICE_ID =      "device_id"
 let REGISTER_PARAM_DEVICE_TYPE =    "device_type"
@@ -54,6 +54,8 @@ let REGISTER_PARAM_DEVICE_TOKEN =   "device_token"
 let REGISTER_PARAM_REGISTER_TYPE =  "register_type"
 let REGISTER_PARAM_FACEBOOK_ID =    "facebook_id"
 let REGISTER_PARAM_FACEBOOK_TOKEN = "facebook_token"
+let REGISTER_PARAM_SHOP_ID =        "shop_id"
+let REGISTER_PARAM_IMAGE_PATH =     "image_path"
 
 //Email change
 let EMAIL_PARAM_CHANGE =            "email"
@@ -61,6 +63,27 @@ let EMAIL_PARAM_CHANGE =            "email"
 //Password change
 let PASSWORD_PARAM_CHANGE_PASSWORD =      "password"
 let PASSWORD_PARAM_CHANGE_NEW_PASSWORD =  "new_password"
+
+//Notification setting
+let NOTIF_TURNON =                  "1"
+let NOTIF_TURNOFF =                 "2"
+let NOTIF_PARAM_PUSHED =            "is_pushed"
+let NOTIF_PARAM_SHOP =              "is_received_shop"
+let NOTIF_PARAM_OPERATOR =          "is_received_operator"
+let NOTIF_PARAM_WEIGHT =            "is_received_weight"
+let NOTIF_PARAM_BREAKFAST =         "is_received_breakfast"
+let NOTIF_PARAM_LUNCH =             "is_received_lunch"
+let NOTIF_PARAM_DINNER =            "is_received_dinner"
+let NOTIF_PARAM_SNACK =             "is_received_snack"
+let NOTIF_PARAM_TIME_WEIGHT =       "weight_time"
+let NOTIF_PARAM_TIME_BREAKFAST =    "breakfast_time"
+let NOTIF_PARAM_TIME_LUNCH =        "lunch_time"
+let NOTIF_PARAM_TIME_DINNER =       "dinner_time"
+let NOTIF_PARAM_TIME_SNACK =        "snack_time"
+
+
+
+
 
 //MARK: UserDefaultsb
 let DEVICE_ID =                     "deviceID"
