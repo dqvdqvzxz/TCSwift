@@ -73,8 +73,6 @@ class JSONDecoder
         
         return imagesArray
     }
-    
-
 }
 
 func parseArray<T>(_ objects: [JSONObject]) throws -> [T] where T: JSONDecodable

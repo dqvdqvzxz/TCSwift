@@ -62,8 +62,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     func getData() {
         self.showHUD()
 //        pharmacyData.pharmacyId
-        // 3 fpr test
-        TRCPharmacyRequest().getPharmacy("3", completion: { (data) in
+        // for test
+        TRCPharmacyRequest().getPharmacy("1", completion: { (data) in
             self.hideHUD()
             guard let data = data else { return }
             guard let pharmacyDict = data.object(forKey: DATA) else { return }
