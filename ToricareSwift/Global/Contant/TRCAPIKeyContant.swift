@@ -20,6 +20,7 @@ let X_ACCESS_TOKEN =                "X-Access-Token"
 let APP_DOMAIN = "http://172.16.210.122/api/"
 
 let URL_LOGIN =                     "auth/tokens"
+let URL_LOGIN_FACEBOOK =            "auth/tokens/facebooks"
 let URL_REGISTER =                  "members"
 let URL_PREFECTURES =               "prefectures"
 let URL_CITIES =                    "cities"

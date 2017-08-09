@@ -27,14 +27,11 @@ class TRCRegisterRequest: TRCBaseAPIController {
         parameters[REGISTER_PARAM_FACEBOOK_ID] = _obj.dicFacebookInfo[FB_USERID]
         parameters[REGISTER_PARAM_FACEBOOK_TOKEN] = UserDefaults.getUD(FB_TOKEN) as? String
         
-        print(parameters)
-        
         self.callAPI(parameters, atPath: "\(URL_REGISTER)", withMethod: HTTP_POST, blockCompletion: { (data) in
             //parse data from model
             completion(data)
         }) { (error) in
             failed(error!)
         }
-        
     }
 }
