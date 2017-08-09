@@ -26,6 +26,8 @@ class TRCMyPageViewController: TRCBaseViewController {
         _obj.tabController.tabBar.isHidden = false
         
         configUI()
+        
+        getData()
 
     }
     
@@ -63,6 +65,31 @@ class TRCMyPageViewController: TRCBaseViewController {
         clvMyPage.dataSource = self
         clvMyPage.delegate = self
         clvMyPage.register(UINib(nibName: "TRCMyPageCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
+
+    }
+    
+    //MARK: Get data
+    func getData(){
+        self.showHUD()
+        TRCAccountInfoRequest().accountInfo(completion: {(data) in
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            self.hideHUD()
+            
+            _obj.objectAccountInfo.email = dataResult.object(forKey: REGISTER_PARAM_EMAIL) as! String
+            _obj.objectAccountInfo.firstName = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME) as! String
+            _obj.objectAccountInfo.lastName = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME) as! String
+            _obj.objectAccountInfo.firstNameKata = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME_KATA) as! String
+            _obj.objectAccountInfo.lastNameKata = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME_KATA) as! String
+            _obj.objectAccountInfo.sex = Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_GENDER_TYPE))
+            _obj.objectAccountInfo.birthDay = dataResult.object(forKey: REGISTER_PARAM_BIRTHDAY) as! String
+            _obj.objectAccountInfo.shopId = Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_SHOP_ID))
+            _obj.objectAccountInfo.imagePath = dataResult.object(forKey: REGISTER_PARAM_IMAGE_PATH) as! String
+            
+            }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+            ELog(error)
+        }
 
     }
 }
