@@ -52,6 +52,10 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
             
+            tfName.textFieldStyle()
+            tfPhone.textFieldStyle()
+            tfEmail.textFieldStyle()
+
             lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
         }else if(mode == MODE_MYPAGE){
             lblInform.labelStyle()
@@ -90,6 +94,9 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         lblEmail.labelStyle(title: Localizable(value: "pharmacist_mail_address"))
         lblNote.labelStyle(title: Localizable(value: "pharmacist_note"))
 
+        tvNote.layer.borderWidth = tfName.layer.borderWidth
+        tvNote.layer.borderColor = tfName.layer.borderColor
+        tvNote.layer.cornerRadius = tfName.layer.cornerRadius
     }
     
     //MARK: Action
@@ -106,12 +113,17 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     }
     
     func validate() {
-        if (lblName.text?.isBlank)! {
+        if (tfName.text?.isBlank)! {
             self.showAlert(Localizable(value: "please_input_pharmacist_name"))
             return
         }
         
-        if (lblEmail.text?.isBlank)! {
+        if (tfEmail.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_mail"))
+            return
+        }
+        
+        if !(tfEmail.text?.isEmail)! {
             self.showAlert(Localizable(value: "please_input_validate_mail"))
             return
         }

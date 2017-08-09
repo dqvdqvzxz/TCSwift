@@ -121,6 +121,12 @@ extension TRCSettingViewController: UITableViewDelegate{
             UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 UserDefaults.removeUD(PASSCODE)
                 
+                // NEED REMOVE ALL UD HERE || temporary remove search params
+                UserDefaults.removeUD(SEARCH_PREFECTURE)
+                UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
+                UserDefaults.removeUD(SEARCH_TOWN)
+                UserDefaults.removeUD(SEARCH_TOWN_NAME)
+                
                 let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                 let navController = UINavigationController(rootViewController: mainVC)
                 
