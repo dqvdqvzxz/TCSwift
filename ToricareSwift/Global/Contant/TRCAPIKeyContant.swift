@@ -53,6 +53,8 @@ let REGISTER_PARAM_DEVICE_TOKEN =   "device_token"
 let REGISTER_PARAM_REGISTER_TYPE =  "register_type"
 let REGISTER_PARAM_FACEBOOK_ID =    "facebook_id"
 let REGISTER_PARAM_FACEBOOK_TOKEN = "facebook_token"
+let REGISTER_PARAM_SHOP_ID =        "shop_id"
+let REGISTER_PARAM_IMAGE_PATH =     "image_path"
 
 //Email change
 let EMAIL_PARAM_CHANGE =            "email"
