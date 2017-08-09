@@ -19,13 +19,17 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
     
     var pickerData = Array<Int>()
     
+    var goalInfo: TRCGoal!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initValuePicker()
         
-        configUI()        
+        configUI()
+        
+        getData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,8 +50,37 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
         
         pickerTarget.dataSource = self
         pickerTarget.delegate = self
-        
-        pickerTarget.selectRow(7, inComponent: 0, animated: true)
+    }
+    
+    //MARK: Get data
+    func getData(){
+        if(_obj.objectGoal.steps == ""){
+            self.showHUD()
+            TRCGoalRequest().goalInfo(completion: {(data) in
+                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                self.hideHUD()
+                do {
+                    self.goalInfo = try parseDict(dataResult as! JSONObject) as TRCGoal
+                    _obj.objectGoal = self.goalInfo
+                } catch {
+                    print("JSONParsin Error: \(error)")
+                }
+                
+                for i in stride(from: 1000, to: 51000, by: 1000){
+                    if(i == Int(self.goalInfo.steps)){
+                        self.pickerTarget.selectRow(((i / 1000) - 1) , inComponent: 0, animated: true)
+                    }
+                }
+                
+                
+            }) { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+                ELog(error)
+            }
+        }else{
+            self.pickerTarget.selectRow(7, inComponent: 0, animated: true)
+        }
     }
     
     //MARK: Function
@@ -59,11 +92,23 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
 
     //MARK: Button Action
     @IBAction func tapBtnSave(_ sender: Any) {
-        let viewControllers: [UIViewController] = self.navigationController!.viewControllers
-        for descView in viewControllers {
-            if(descView is TRCMyPageViewController){
-                _obj.nc5.popToViewController(descView, animated: true)
+        print((pickerTarget.selectedRow(inComponent: 0) + 1) * 1000)
+        let abc = Global().convertObjectToString((pickerTarget.selectedRow(inComponent: 0) + 1) * 1000)
+        print(abc)
+        self.showHUD()
+        TRCGoalRequest().goalStepsChange(abc, completion: {(data) in
+            self.hideHUD()
+            
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+            for descView in viewControllers {
+                if(descView is TRCMyPageViewController){
+                    _obj.nc5.popToViewController(descView, animated: true)
+                }
             }
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+            ELog(error)
         }
     }
 }

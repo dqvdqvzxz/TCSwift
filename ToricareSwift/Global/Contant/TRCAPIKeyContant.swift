@@ -25,11 +25,13 @@ let URL_PREFECTURES =               "prefectures"
 let URL_CITIES =                    "cities"
 let URL_SHOPS =                     "shops"
 let URL_PASSWORD_CHANGE =           "members/passwords"
+let URL_PASSWORD_FORGOT =           "members/passwords/reset"
 let URL_EMAIL_CHANGE =              "members/emails"
 let URL_ACCOUNT_INFO =              "members/details"
 let URL_PHARMACIST_INFO =           "members/pharmacists"
 let URL_MEMBERS_SHOPS =             "members/shops"
 let URL_NOTIFICATION =              "members/settings/notices"
+let URL_GOAL =                      "members/goals"
 
 //MARK: API Parameters key
 //Login
@@ -81,7 +83,11 @@ let NOTIF_PARAM_TIME_LUNCH =        "lunch_time"
 let NOTIF_PARAM_TIME_DINNER =       "dinner_time"
 let NOTIF_PARAM_TIME_SNACK =        "snack_time"
 
-
+//Goal
+let GOAL_ID =                       "id"
+let GOAL_WEIGHT =                   "weight"
+let GOAL_STEPS =                    "steps"
+let GOAL_STEP =                     "step"
 
 
 

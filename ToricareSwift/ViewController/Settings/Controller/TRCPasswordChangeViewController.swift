@@ -52,7 +52,7 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnConfirm(_ sender: Any) {
         self.showHUD()
-        TRCPasswordRequest().PasswordChange(tfCurrentPassword.text!, tfConfirmNewPassword.text!, completion: {(data) in
+        TRCPasswordRequest().passwordChange(tfCurrentPassword.text!, tfConfirmNewPassword.text!, completion: {(data) in
             self.hideHUD()
             
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers

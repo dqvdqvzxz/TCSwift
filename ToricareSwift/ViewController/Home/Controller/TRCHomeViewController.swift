@@ -62,6 +62,8 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var viewBorderBanner2: UIView!
     @IBOutlet weak var viewImageBanner2: UIView!
     
+    var goalInfo: TRCGoal!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,6 +146,22 @@ class TRCHomeViewController: TRCBaseViewController {
         //
         lblRegisterTodayWeight.labelStyle(title: Localizable(value: "register_today_weight"))
         imgViewAccessory.image = #imageLiteral(resourceName: "ic_next")
+    }
+    
+    //MARK: Get data()
+    func getData(){
+        //get goal
+        TRCGoalRequest().goalInfo(completion: {(data) in
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            do {
+                self.goalInfo = try parseDict(dataResult as! JSONObject) as TRCGoal
+                _obj.objectGoal = self.goalInfo
+            } catch {
+                print("JSONParsin Error: \(error)")
+            }
+        }) { (error) in
+            ELog(error)
+        }
     }
     
     //MARK: Action

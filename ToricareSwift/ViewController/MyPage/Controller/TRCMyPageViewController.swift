@@ -87,7 +87,6 @@ class TRCMyPageViewController: TRCBaseViewController {
             self.showAlert(error)
             ELog(error)
         }
-
     }
 }
 extension TRCMyPageViewController: UICollectionViewDataSource{
