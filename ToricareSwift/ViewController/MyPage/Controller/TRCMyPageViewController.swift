@@ -19,6 +19,8 @@ class TRCMyPageViewController: TRCBaseViewController {
     
     @IBOutlet weak var clvMyPage: UICollectionView!
     
+    var accountInfo: TRCAccountInfo!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,17 +76,12 @@ class TRCMyPageViewController: TRCBaseViewController {
         TRCAccountInfoRequest().accountInfo(completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
-            
-            _obj.objectAccountInfo.email = dataResult.object(forKey: REGISTER_PARAM_EMAIL) as! String
-            _obj.objectAccountInfo.firstName = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME) as! String
-            _obj.objectAccountInfo.lastName = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME) as! String
-            _obj.objectAccountInfo.firstNameKata = dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME_KATA) as! String
-            _obj.objectAccountInfo.lastNameKata = dataResult.object(forKey: REGISTER_PARAM_LAST_NAME_KATA) as! String
-            _obj.objectAccountInfo.sex = Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_GENDER_TYPE))
-            _obj.objectAccountInfo.birthDay = dataResult.object(forKey: REGISTER_PARAM_BIRTHDAY) as! String
-            _obj.objectAccountInfo.shopId = Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_SHOP_ID))
-            _obj.objectAccountInfo.imagePath = dataResult.object(forKey: REGISTER_PARAM_IMAGE_PATH) as! String
-            
+                do {
+                    self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
+                    _obj.objectAccountInfo = self.accountInfo
+                } catch {
+                    print("JSONParsin Error: \(error)")
+                }
             }) { (error) in
             self.hideHUD()
             self.showAlert(error)
