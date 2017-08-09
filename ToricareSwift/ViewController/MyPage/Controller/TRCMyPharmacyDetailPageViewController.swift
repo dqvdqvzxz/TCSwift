@@ -36,7 +36,6 @@ class TRCMyPharmacyDetailPageViewController: GLViewPagerViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = true
-        
     }
     
     

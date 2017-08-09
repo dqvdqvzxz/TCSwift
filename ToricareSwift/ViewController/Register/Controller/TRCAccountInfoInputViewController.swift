@@ -121,10 +121,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         tfGender.text = dataGender[0]
         
         //make image circle
-        //imgUser.makeCircle()
-        
-        // make border image
         imgUser.makeBorder(color: UIColor.lightGray)
+//        imgUser.makeCircle()        
+        // make border image
         
         //date of birth
         showDatePicker()

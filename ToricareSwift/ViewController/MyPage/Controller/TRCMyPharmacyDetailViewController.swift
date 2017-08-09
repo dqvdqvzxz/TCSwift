@@ -53,6 +53,10 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
 
         configUI()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
