@@ -52,6 +52,10 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
             
+            tfName.textFieldStyle()
+            tfPhone.textFieldStyle()
+            tfEmail.textFieldStyle()
+
             lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
         }else if(mode == MODE_MYPAGE){
             lblInform.labelStyle()
@@ -90,6 +94,9 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         lblEmail.labelStyle(title: Localizable(value: "pharmacist_mail_address"))
         lblNote.labelStyle(title: Localizable(value: "pharmacist_note"))
 
+        tvNote.layer.borderWidth = tfName.layer.borderWidth
+        tvNote.layer.borderColor = tfName.layer.borderColor
+        tvNote.layer.cornerRadius = tfName.layer.cornerRadius
     }
     
     //MARK: Action
@@ -102,13 +109,43 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnPharmacistInput(_ sender: Any) {
+        validate()
+    }
+    
+    func validate() {
+        if (tfName.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_pharmacist_name"))
+            return
+        }
+        
+        if (tfEmail.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_mail"))
+            return
+        }
+        
+        if !(tfEmail.text?.isEmail)! {
+            self.showAlert(Localizable(value: "please_input_validate_mail"))
+            return
+        }
+        
+        doRegister()
+    }
+    
+    func doRegister() {
         if(mode == MODE_REGISTER){
-            let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
-            self.navigationController?.pushViewController(vc, animated: true)
+            TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
+                self.hideHUD()
+                let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+                vc.mode = MODE_REGISTER
+                let backItem = UIBarButtonItem()
+                backItem.title = STRING_BACK
+                self.navigationItem.backBarButtonItem = backItem
+                self.navigationController?.pushViewController(vc, animated: true)
+            }) { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+            }
+            
         }else if(mode == MODE_MYPAGE){
             if(dataResult != nil){
                 TRCPharmacistRequest().PharmacistInfoChange(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
@@ -140,24 +177,6 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
                 ELog(error)
                 self.showAlert(error)
             }
-            
-            
-//            let alert = UIAlertController(title: nil,
-//                                          message: "プロフィールを更新しました",
-//                                          preferredStyle: .alert)
-//            // add the action
-//            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
-//                                          style: UIAlertActionStyle.default,
-//                                          handler: { action in
-//                                            let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-//                                            for descView in viewControllers {
-//                                                if(descView is TRCMyPageViewController){
-//                                                    _obj.nc5.popToViewController(descView, animated: true)
-//                                                }
-//                                            }
-//            }))
-//            // show the alert
-//            self.present(alert, animated: true, completion: nil)
         }
     }
 }

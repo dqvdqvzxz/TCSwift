@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
@@ -33,19 +34,59 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     @IBOutlet weak var btnPharmacy: UIButton!
     
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
+    @IBOutlet weak var imgPharmacyView: UIImageView!
+    
+    @IBOutlet weak var imgNext: UIImageView!
+    @IBOutlet weak var imgBack: UIImageView!
+    @IBOutlet weak var lblEmpty: UILabel!
     
     var mode : String = MODE_MYPAGE
+    var pharmacyData: TRCPharmacy!
+    var indexImg = 0
     
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if(mode == MODE_MYPAGE) {
+            getData()
+        }
+
         configUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getData() {
+        self.showHUD()
+//        pharmacyData.pharmacyId
+        // for test
+        TRCPharmacyRequest().getPharmacy("1", completion: { (data) in
+            self.hideHUD()
+            guard let data = data else { return }
+            guard let pharmacyDict = data.object(forKey: DATA) else { return }
+            do {
+                self.pharmacyData = try parseDict(pharmacyDict as! JSONObject) as TRCPharmacy
+                self.configData()
+            }
+            catch
+            {
+                print("JSONParsin Error: \(error)")
+            }
+
+        }) { (error) in
+            self.hideHUD()
+            if (error == RESULT_NO_DATA) {
+                self.lblEmpty.isHidden = false
+                self.scrollView.isHidden = true
+                self.btnQRCode.isHidden = true
+                self.btnPharmacy.isHidden = true
+            } else {
+                self.showAlert(error)
+            }
+        }
     }
 
     //MARK: Config UI
@@ -60,8 +101,9 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblDayOff.labelStyle(title: Localizable(value: "day_off"))
         lblWebsite.labelStyle(title: Localizable(value: "website"))
         
+        lblEmpty.labelStyle(title: Localizable(value: "pharmacy_not_set"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblEmpty.isHidden = true
         configMode()
-        
         configData()
     }
     
@@ -84,25 +126,58 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     //MARK: Config Data
     func configData(){
-        lblPharmacyName.labelStyle(title: nil)
-        lblAddressResult.labelStyle(title: nil)
-        lblPhoneResult.labelStyle(title: nil)
-        lblWorkScheduleResult.labelStyle(title: nil)
-        lblWorkScheduleDayOffResult.labelStyle(title: nil)
-        lblDayOffResult.labelStyle(title: nil)
-        lblWebsiteResult.labelStyle(title: nil)
-        
-        // Test data
-        lblAddressResult.text = "東京都世田谷区3-24-4"
-        lblPhoneResult.text = "033321****"
-        lblWorkScheduleResult.text = "平日：09:30-19:00"
-        lblWorkScheduleDayOffResult.text = "休日：10:30-19:00"
-        lblDayOffResult.text = "日・祝日"
-        lblWebsiteResult.text = "http://www.aaaa.jp"
-        
+        if (pharmacyData != nil) {
+            let gestureNext = UITapGestureRecognizer(target: self, action: #selector(nextImg))
+            imgNext.isUserInteractionEnabled = true
+            imgNext.addGestureRecognizer(gestureNext)
+            
+            let gestureBack = UITapGestureRecognizer(target: self, action: #selector(backImg))
+            imgBack.isUserInteractionEnabled = true
+            imgBack.addGestureRecognizer(gestureBack)
+            
+            lblPharmacyName.labelStyle(title: nil)
+            lblAddressResult.labelStyle(title: nil)
+            lblPhoneResult.labelStyle(title: nil)
+            lblWorkScheduleResult.labelStyle(title: nil)
+            lblWorkScheduleDayOffResult.labelStyle(title: nil)
+            lblDayOffResult.labelStyle(title: nil)
+            lblWebsiteResult.labelStyle(title: nil)
+            
+            lblAddressResult.text = pharmacyData.address1 + " " + pharmacyData.address2
+            lblPhoneResult.text = pharmacyData.tel
+            lblWorkScheduleResult.text = pharmacyData.businessHours
+            lblWorkScheduleDayOffResult.text = pharmacyData.holiday
+            lblDayOffResult.text = pharmacyData.holiday
+            lblWebsiteResult.text = pharmacyData.url
+            let imageCount = pharmacyData.images.count
+            if (imageCount > 0) {
+                setPharmacyImage(urlString: pharmacyData.images[0].origin)
+            }
+        } else {
+            
+        }
+    }
+    
+    func setPharmacyImage(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        imgPharmacyView.af_setImage(withURL: url, placeholderImage: nil)
     }
     
     //MARK: Action
+    func nextImg() {
+        let imageCount = pharmacyData.images.count
+        if (indexImg < imageCount - 1) {
+            setPharmacyImage(urlString: pharmacyData.images[indexImg].origin)
+        }
+    }
+    
+    func backImg() {
+        if (indexImg > 0) {
+            indexImg -= 1
+            setPharmacyImage(urlString: pharmacyData.images[indexImg].origin)
+        }
+    }
+    
     func skipAction(){
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
         let navController = UINavigationController(rootViewController: vc)
@@ -114,6 +189,21 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnPharmacy(_ sender: Any) {
+        self.registerPharmacy()
+    }
+    
+    func registerPharmacy() {
+        self.showHUD()
+        TRCPharmacyRequest().registerPharmacy(pharmacyData.pharmacyId, completion: { (data) in
+            self.hideHUD()
+            self.goNext()
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+        }
+    }
+    
+    func goNext() {
         if(mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_REGISTER
@@ -151,5 +241,6 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             // show the alert
             self.present(alert, animated: true, completion: nil)
         }
+
     }
 }

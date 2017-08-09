@@ -24,12 +24,16 @@ class TRCBaseAPIController{
                 switch httpMethod {
                 case HTTP_POST:
                     urlRequest.httpMethod = HTTP_POST
+                    break
                 case HTTP_PUT:
                     urlRequest.httpMethod = HTTP_PUT
+                    break
                 case HTTP_GET:
                     urlRequest.httpMethod = HTTP_GET
+                    break
                 case HTTP_DELETE:
                     urlRequest.httpMethod = HTTP_DELETE
+                    break
                 default:
                     failed("Method is invalid !")
                     break
@@ -53,30 +57,24 @@ class TRCBaseAPIController{
                         
                         //handle status code
                         let statusCode = response.response?.statusCode
-                        if(statusCode == 204){
-                            failed("No data")
-                        }
                         
-                        //handle result fail
-                        if let resultFail = data?.object(forKey: "errors") as? NSArray{
-                            for index in 0...resultFail.count-1{
-                                let indexMessage = resultFail[index] as! NSDictionary
-                                let message = indexMessage["message"]
-                                failed(message as? String)
-                                return
+                        if (statusCode == STATUS_CODE_NO_CONTENT) {
+                            failed(RESULT_NO_DATA)
+                            return
+                        } else if (statusCode == STATUS_CODE_SUCCESS) {
+                            completion(data)
+                            return
+                        } else {
+                            //handle result fail
+                            if let resultFail = data?.object(forKey: "errors") as? NSArray{
+                                for index in 0...resultFail.count-1{
+                                    let indexMessage = resultFail[index] as! NSDictionary
+                                    let message = indexMessage["message"]
+                                    failed(message as? String)
+                                    return
+                                }
                             }
                         }
-                        
-                        //handle result success
-                        if let resultSuccess = data?.object(forKey: STATUS) as? NSNumber {
-                            if (resultSuccess.intValue == 200) {
-                                completion(data)
-                            } else {
-                                failed("error")
-                                return
-                            }
-                        }
-                        
                     }
                 }catch{
                     failed("error")

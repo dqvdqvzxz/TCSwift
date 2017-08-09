@@ -14,7 +14,8 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     
     @IBOutlet weak var lblInform: UILabel!
     @IBOutlet weak var lblKeyword: UILabel!
-    
+    @IBOutlet weak var lblEmpty: UILabel!
+
     @IBOutlet weak var tblSearchResult: UITableView!
     
     var mode = String()
@@ -146,10 +147,18 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
             {
                 print("JSONParsin Error: \(error)")
             }
-           
+            if (self.arrayResults.count == 0) {
+                self.tblSearchResult.isHidden = true
+                self.lblEmpty.isHidden = false
+            }
         }) { (error) in
             self.hideHUD()
-            self.showAlert(error)
+            if (error == RESULT_NO_DATA) {
+                self.tblSearchResult.isHidden = true
+                self.lblEmpty.isHidden = false
+            } else {
+                self.showAlert(error)
+            }
         }
     }
     
@@ -173,6 +182,9 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         tblSearchResult.delegate = self
         tblSearchResult.register(UINib(nibName: "TRCSearchResultCell", bundle: nil), forCellReuseIdentifier: "Cell")
         tblSearchResult.tableFooterView = UIView()
+        
+        lblEmpty.labelStyle(title: Localizable(value: "empty_pharmacy_search"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblEmpty.isHidden = true
     }
     
     //MARK: Action
@@ -210,6 +222,7 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         if(mode == MODE_REGISTER){
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
+            vc.pharmacyData = arrayResults[indexPath.row]
             vc.mode = MODE_REGISTER
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
@@ -217,6 +230,7 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
+            vc.pharmacyData = arrayResults[indexPath.row]
             vc.mode = MODE_REGISTER_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK

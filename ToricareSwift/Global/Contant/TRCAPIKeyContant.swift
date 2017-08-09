@@ -28,6 +28,7 @@ let URL_PASSWORD_CHANGE =           "members/passwords"
 let URL_EMAIL_CHANGE =              "members/emails"
 let URL_ACCOUNT_INFO =              "members/details"
 let URL_PHARMACIST_INFO =           "members/pharmacists"
+let URL_MEMBERS_SHOPS =             "members/shops"
 let URL_NOTIFICATION =              "members/settings/notices"
 
 //MARK: API Parameters key
@@ -116,13 +117,13 @@ let LAT =                           "lat"
 let LONG =                          "lon"
 
 
-
 //image
 let ORIGIN =                        "origin"
 let THUMB1 =                        "thumb1"
 
 //pharmacy
 let ID =                            "id"
+let SHOP_ID =                       "shop_id"
 let SHOP_GROUP_ID =                 "shop_group_id"
 let POS_SHOP_ID =                   "pos_shop_id"
 let PHARMACY_CODE =                 "pharmacy_code"
@@ -165,3 +166,13 @@ let HTTP_POST = "POST"
 let HTTP_PUT = "PUT"
 let HTTP_GET = "GET"
 let HTTP_DELETE = "DELETE"
+
+//MARK: RESULT CONSTANT
+let RESULT_NO_DATA = "RESULT_NO_DATA"
+
+//MARK: STATUS CODE
+let STATUS_CODE_SUCCESS = 200
+let STATUS_CODE_NO_CONTENT = 204
+let STATUS_CODE_BAD_REQUEST = 400
+let STATUS_CODE_UNAUTHORIZED = 401
+let STATUS_CODE_NOT_FOUND = 404
