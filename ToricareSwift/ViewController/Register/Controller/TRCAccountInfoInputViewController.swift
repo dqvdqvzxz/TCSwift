@@ -51,6 +51,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     var passWord = String()
     
     var mode = String()
+    var isHasNewAvatar = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +97,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         }
         
         if(_obj.dicFacebookInfo[FB_AVATAR] != nil){
+            isHasNewAvatar = true
             let url = URL(string: _obj.dicFacebookInfo[FB_AVATAR]!)
 //            let placeholderImage = UIImage(named: "")!
             imgUser.af_setImage(withURL: url!, placeholderImage: nil)
@@ -313,7 +315,26 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             return
         }
         
-        doRegister()
+        if (isHasNewAvatar) {
+            uploadAvatar()
+        } else {
+            doRegister()
+        }
+    }
+    
+    func uploadAvatar() {
+        guard let avatar = imgUser.image else {
+            return
+        }
+        self.showHUD()
+        TRCAccountInfoRequest().uploadAvatar(avatar, completion: { (resultString) in
+            if (resultString == RESULT_SUCCESS) {
+                self.doRegister()
+            }
+        }) { (error) in
+            self.showAlert(error)
+            self.doRegister()
+        }
     }
     
     func doRegister() {
@@ -329,9 +350,11 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             return
         }
         // ** ** ** //
+        if (!isHasNewAvatar) {
+            self.showHUD()
+        }
 
         if(mode == MODE_REGISTER){
-            self.showHUD()
             var genderResult = ""
             var birthdayResult = ""
             var registerType = ""
@@ -373,7 +396,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 ELog(error)
             }
         }else if(mode == MODE_MYPAGE){
-            self.showHUD()
             var genderResult = ""
             var birthdayResult = ""
             
@@ -437,6 +459,7 @@ extension TRCAccountInfoInputViewController: UIPickerViewDelegate{
 
 extension TRCAccountInfoInputViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        isHasNewAvatar = true
         imgView = info[UIImagePickerControllerEditedImage] as! UIImage
         imgUser.contentMode = .scaleAspectFit
         imgUser.image = imgView

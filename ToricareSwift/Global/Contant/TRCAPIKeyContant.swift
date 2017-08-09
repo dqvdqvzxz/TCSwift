@@ -109,6 +109,7 @@ let SEARCH_TOWN_NAME =              "search_town_name"
 let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
+let MESSAGE =                          "message"
 
 let STATUS =                        "status"
 let CITY_ID =                       "city_id"

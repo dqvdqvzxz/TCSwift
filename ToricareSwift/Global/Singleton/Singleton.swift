@@ -26,6 +26,6 @@ final class Singleton{
     
     var dicPasscode = [String:String]()
     
-    var objectAccountInfo = TRCAccountInfo()
+    var objectAccountInfo: TRCAccountInfo!
 }
 

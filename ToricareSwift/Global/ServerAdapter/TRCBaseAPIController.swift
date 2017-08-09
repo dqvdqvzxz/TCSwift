@@ -106,7 +106,14 @@ class TRCBaseAPIController{
                             if (statusCode == STATUS_CODE_SUCCESS) {
                                 completion(resultData)
                             } else {
-                                failed(RESULT_FAIL)
+                                if let resultFail = resultData?.object(forKey: "errors") as? NSArray{
+                                    for index in 0...resultFail.count-1{
+                                        let indexMessage = resultFail[index] as! NSDictionary
+                                        let message = indexMessage["message"]
+                                        failed(message as? String)
+                                        return
+                                    }
+                                }
                             }
                         }
                         break
