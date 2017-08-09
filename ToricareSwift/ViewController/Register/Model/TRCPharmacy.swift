@@ -57,6 +57,5 @@ extension TRCPharmacy: JSONDecodable
         self.holiday = try decoder.value(forKey: HOLIDAY)
         self.url = try decoder.value(forKey: URL_KEY)
         self.images = try decoder.valueImages(forKey: IMAGES)
-//        self.images = try decoder.value(forKey: IMAGES)
     }
 }

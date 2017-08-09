@@ -86,7 +86,8 @@ func parseArray<T>(_ objects: [JSONObject]) throws -> [T] where T: JSONDecodable
 
 func parseDict<T>(_ object: JSONObject) throws -> T where T: JSONDecodable
 {
-    return try T.init(JSONDecoder(object))
+    let jsonObject: JSONObject = object
+    return try T.init(JSONDecoder(jsonObject))
 }
 
 func deserialize(_ data: Data) throws -> [JSONObject]

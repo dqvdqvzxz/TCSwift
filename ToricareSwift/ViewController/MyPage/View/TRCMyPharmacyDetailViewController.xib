@@ -21,6 +21,7 @@
                 <outlet property="lblAddressResult" destination="dax-w5-mM5" id="iGF-OM-rLl"/>
                 <outlet property="lblDayOff" destination="ABY-3a-mw3" id="KFR-ca-aLw"/>
                 <outlet property="lblDayOffResult" destination="gm4-uM-ThD" id="Dcq-xR-8q6"/>
+                <outlet property="lblEmpty" destination="ueh-LN-TrC" id="XOg-Ik-LjA"/>
                 <outlet property="lblPharmacyName" destination="tzX-UU-bLg" id="jeJ-jW-Qpe"/>
                 <outlet property="lblPhone" destination="ZVR-ij-WoP" id="lmW-zE-Fuk"/>
                 <outlet property="lblPhoneResult" destination="gnW-WM-Iyc" id="VCe-Wf-ZBl"/>
@@ -41,6 +42,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueh-LN-TrC">
+                    <rect key="frame" x="0.0" y="10" width="375" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="59F-or-vqj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9An-qp-z44" userLabel="scrollView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="492"/>
                     <subviews>
@@ -285,8 +295,11 @@
                 <constraint firstItem="9An-qp-z44" firstAttribute="leading" secondItem="qsf-DO-NPb" secondAttribute="leading" id="K2c-dY-C3p"/>
                 <constraint firstAttribute="trailing" secondItem="QWR-Ne-jvt" secondAttribute="trailing" constant="10" id="Pkc-IJ-ycP"/>
                 <constraint firstItem="cb1-ac-zZ4" firstAttribute="height" secondItem="qsf-DO-NPb" secondAttribute="height" id="USU-q2-GuP"/>
+                <constraint firstItem="ueh-LN-TrC" firstAttribute="top" secondItem="qsf-DO-NPb" secondAttribute="top" constant="10" id="WxI-io-AtM"/>
                 <constraint firstAttribute="bottom" secondItem="QWR-Ne-jvt" secondAttribute="bottom" constant="10" id="bZc-Zh-q6G"/>
                 <constraint firstAttribute="bottom" secondItem="9An-qp-z44" secondAttribute="bottom" constant="108" id="h4p-9u-yxm"/>
+                <constraint firstItem="ueh-LN-TrC" firstAttribute="leading" secondItem="qsf-DO-NPb" secondAttribute="leading" id="qy2-Cb-ZNY"/>
+                <constraint firstAttribute="trailing" secondItem="ueh-LN-TrC" secondAttribute="trailing" id="rQC-3W-Epq"/>
                 <constraint firstAttribute="trailing" secondItem="9An-qp-z44" secondAttribute="trailing" id="tZA-0y-G6d"/>
                 <constraint firstItem="Xwy-j1-c13" firstAttribute="bottom" secondItem="QWR-Ne-jvt" secondAttribute="top" constant="-10" id="vh8-g0-QfZ"/>
             </constraints>

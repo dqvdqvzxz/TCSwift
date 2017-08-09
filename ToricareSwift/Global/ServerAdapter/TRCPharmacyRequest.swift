@@ -35,4 +35,15 @@ class TRCPharmacyRequest: TRCBaseAPIController {
         }
     }
 
+    func getPharmacy(_ shopId: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+        var parameters = Dictionary <String, String>()
+        parameters[SHOP_ID] = shopId
+        
+        self.callAPI(parameters, atPath: URL_SHOPS + "/" + shopId , withMethod: HTTP_GET, blockCompletion: { (data) in
+            completion(data)
+        }) { (error) in
+            failed(error!)
+        }
+    }
+
 }

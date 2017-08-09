@@ -38,6 +38,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     @IBOutlet weak var imgNext: UIImageView!
     @IBOutlet weak var imgBack: UIImageView!
+    @IBOutlet weak var lblEmpty: UILabel!
     
     var mode : String = MODE_MYPAGE
     var pharmacyData: TRCPharmacy!
@@ -46,13 +47,46 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if(mode == MODE_MYPAGE) {
+            getData()
+        }
+
         configUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getData() {
+        self.showHUD()
+//        pharmacyData.pharmacyId
+        // 3 fpr test
+        TRCPharmacyRequest().getPharmacy("3", completion: { (data) in
+            self.hideHUD()
+            guard let data = data else { return }
+            guard let pharmacyDict = data.object(forKey: DATA) else { return }
+            do {
+                self.pharmacyData = try parseDict(pharmacyDict as! JSONObject) as TRCPharmacy
+                self.configData()
+            }
+            catch
+            {
+                print("JSONParsin Error: \(error)")
+            }
+
+        }) { (error) in
+            self.hideHUD()
+            if (error == RESULT_NO_DATA) {
+                self.lblEmpty.isHidden = false
+                self.scrollView.isHidden = true
+                self.btnQRCode.isHidden = true
+                self.btnPharmacy.isHidden = true
+            } else {
+                self.showAlert(error)
+            }
+        }
     }
 
     //MARK: Config UI
@@ -67,6 +101,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblDayOff.labelStyle(title: Localizable(value: "day_off"))
         lblWebsite.labelStyle(title: Localizable(value: "website"))
         
+        lblEmpty.labelStyle(title: Localizable(value: "pharmacy_not_set"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblEmpty.isHidden = true
         configMode()
         configData()
     }
@@ -90,23 +126,23 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     //MARK: Config Data
     func configData(){
-        let gestureNext = UITapGestureRecognizer(target: self, action: #selector(nextImg))
-        imgNext.isUserInteractionEnabled = true
-        imgNext.addGestureRecognizer(gestureNext)
-        
-        let gestureBack = UITapGestureRecognizer(target: self, action: #selector(backImg))
-        imgBack.isUserInteractionEnabled = true
-        imgBack.addGestureRecognizer(gestureBack)
-        
-        lblPharmacyName.labelStyle(title: nil)
-        lblAddressResult.labelStyle(title: nil)
-        lblPhoneResult.labelStyle(title: nil)
-        lblWorkScheduleResult.labelStyle(title: nil)
-        lblWorkScheduleDayOffResult.labelStyle(title: nil)
-        lblDayOffResult.labelStyle(title: nil)
-        lblWebsiteResult.labelStyle(title: nil)
-        
         if (pharmacyData != nil) {
+            let gestureNext = UITapGestureRecognizer(target: self, action: #selector(nextImg))
+            imgNext.isUserInteractionEnabled = true
+            imgNext.addGestureRecognizer(gestureNext)
+            
+            let gestureBack = UITapGestureRecognizer(target: self, action: #selector(backImg))
+            imgBack.isUserInteractionEnabled = true
+            imgBack.addGestureRecognizer(gestureBack)
+            
+            lblPharmacyName.labelStyle(title: nil)
+            lblAddressResult.labelStyle(title: nil)
+            lblPhoneResult.labelStyle(title: nil)
+            lblWorkScheduleResult.labelStyle(title: nil)
+            lblWorkScheduleDayOffResult.labelStyle(title: nil)
+            lblDayOffResult.labelStyle(title: nil)
+            lblWebsiteResult.labelStyle(title: nil)
+            
             lblAddressResult.text = pharmacyData.address1 + " " + pharmacyData.address2
             lblPhoneResult.text = pharmacyData.tel
             lblWorkScheduleResult.text = pharmacyData.businessHours
@@ -117,6 +153,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             if (imageCount > 0) {
                 setPharmacyImage(urlString: pharmacyData.images[0].origin)
             }
+        } else {
+            
         }
     }
     
