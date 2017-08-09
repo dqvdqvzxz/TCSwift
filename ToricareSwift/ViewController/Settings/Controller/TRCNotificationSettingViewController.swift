@@ -14,8 +14,8 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnSave: UIButton!
     
-    var turnOn: String = "1"
-    var turnOff: String = "2"
+    var turnOn: String = NOTIF_TURNON
+    var turnOff: String = NOTIF_TURNOFF
     
     var section = 3
     
@@ -55,7 +55,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: Get data
     func getData(){
         self.showHUD()
-        TRCNotificationRequest().NotificationInfo(completion: {(data) in
+        TRCNotificationRequest().notificationInfo(completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
             
@@ -74,7 +74,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: Button action
     @IBAction func tapBtnSave(_ sender: Any) {
         self.showHUD()
-        TRCNotificationRequest().NotificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, "10:00:00", "10:00:00", "10:00:00", "10:00:00", "10:00:00", completion: {(data) in
+        TRCNotificationRequest().notificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, "10:00", "10:00", "10:00", "10:00", "10:00", completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
             
@@ -165,7 +165,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
 
 extension TRCNotificationSettingViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        if(dataResult.object(forKey: "is_pushed") as? Int == 1){
+        if(dataResult.object(forKey: NOTIF_PARAM_PUSHED) as? Int == 1){
             return section
         }else{
             return 1
@@ -198,7 +198,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
             cell.lblTitle.labelStyle(title: Localizable(value: "receive"))
             cell.lblTime.labelStyle()
             
-            if(dataResult.object(forKey: "is_pushed") as? Int == 1){
+            if(dataResult.object(forKey: NOTIF_PARAM_PUSHED) as? Int == 1){
                 cell.switchCell.isOn = true
                 UserDefaults.saveUD(turnOn, NOTIF_ALL)
             }else{
@@ -213,7 +213,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_phamarcy"))
                 cell.lblTime.labelStyle()
                 
-                if(dataResult.object(forKey: "is_received_shop") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_SHOP) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_PHARMACY)
                 }else{
@@ -226,7 +226,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_tricare"))
                 cell.lblTime.labelStyle()
                 
-                if(dataResult.object(forKey: "is_received_operator") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_OPERATOR) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_TRICARE)
                 }else{
@@ -244,7 +244,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "weight"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "weight_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_weight") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_WEIGHT) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_WEIGHT)
                 }else{
@@ -257,7 +257,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "breakfast"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "breakfast_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_breakfast") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_BREAKFAST) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_BREAKFAST)
                 }else{
@@ -270,7 +270,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "lunch"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "lunch_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_lunch") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_LUNCH) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_LUNCH)
                 }else{
@@ -283,7 +283,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "dinner"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "dinner_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_dinner") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_DINNER) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_DINNER)
                 }else{
@@ -296,7 +296,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "snack"))
                 cell.lblTime.labelStyle(title: dataResult.object(forKey: "snack_time") as? String)
                 
-                if(dataResult.object(forKey: "is_received_snack") as? Int == 1){
+                if(dataResult.object(forKey: NOTIF_PARAM_SNACK) as? Int == 1){
                     cell.switchCell.isOn = true
                     UserDefaults.saveUD(turnOn, NOTIF_SNACK)
                 }else{

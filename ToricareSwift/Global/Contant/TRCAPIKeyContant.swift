@@ -61,6 +61,27 @@ let EMAIL_PARAM_CHANGE =            "email"
 let PASSWORD_PARAM_CHANGE_PASSWORD =      "password"
 let PASSWORD_PARAM_CHANGE_NEW_PASSWORD =  "new_password"
 
+//Notification setting
+let NOTIF_TURNON =                  "1"
+let NOTIF_TURNOFF =                 "2"
+let NOTIF_PARAM_PUSHED =            "is_pushed"
+let NOTIF_PARAM_SHOP =              "is_received_shop"
+let NOTIF_PARAM_OPERATOR =          "is_received_operator"
+let NOTIF_PARAM_WEIGHT =            "is_received_weight"
+let NOTIF_PARAM_BREAKFAST =         "is_received_breakfast"
+let NOTIF_PARAM_LUNCH =             "is_received_lunch"
+let NOTIF_PARAM_DINNER =            "is_received_dinner"
+let NOTIF_PARAM_SNACK =             "is_received_snack"
+let NOTIF_PARAM_TIME_WEIGHT =       "weight_time"
+let NOTIF_PARAM_TIME_BREAKFAST =    "breakfast_time"
+let NOTIF_PARAM_TIME_LUNCH =        "lunch_time"
+let NOTIF_PARAM_TIME_DINNER =       "dinner_time"
+let NOTIF_PARAM_TIME_SNACK =        "snack_time"
+
+
+
+
+
 //MARK: UserDefaultsb
 let DEVICE_ID =                     "deviceID"
 let DEVICE_TYPE =                   "2"
