@@ -140,7 +140,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     func getData(){
         if(mode == MODE_MYPAGE){
             self.showHUD()
-            TRCAccountInfoRequest().AccountInfo(completion: {(data) in
+            TRCAccountInfoRequest().accountInfo(completion: {(data) in
                 let dataResult = data?.object(forKey: DATA) as! NSDictionary
                 self.hideHUD()
                 
@@ -362,7 +362,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayResult = formatter.string(from: datePicker.date)
             
-            TRCRegisterRequest().Register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, genderResult, birthdayResult, registerType, completion: { (data) in
+            TRCRegisterRequest().register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, genderResult, birthdayResult, registerType, completion: { (data) in
                 self.hideHUD()
             
                 //save access token
@@ -397,7 +397,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayResult = formatter.string(from: datePicker.date)
             
-            TRCAccountInfoRequest().AccountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
+            TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
                 self.hideHUD()
                 
                 let alert = UIAlertController(title: nil,
