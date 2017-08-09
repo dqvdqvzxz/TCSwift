@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-            timestampString = "523520237.557601"
+            timestampString = "523942204.219162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "callAPI(_:atPath:withMethod:blockCompletion:blockFailed:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,11 +398,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Register/Controller/TRCPharmacySearchResultsViewController.swift"
-            timestampString = "523791385.857402"
+            timestampString = "523940201.433792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "prepairSearchData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -414,11 +414,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Register/Controller/TRCPharmacySearchResultsViewController.swift"
-            timestampString = "523873537.212205"
+            timestampString = "523940201.433792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "prepairSearchData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -468,6 +468,22 @@
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "validate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/ViewController/Register/Controller/TRCAccountInfoInputViewController.swift"
+            timestampString = "523939993.800061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
