@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.resetCommonValue()
         //config UI
         configUI()
-        
         //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         UserDefaults.saveUD(deviceID, DEVICE_ID)
