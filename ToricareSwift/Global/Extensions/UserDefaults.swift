@@ -25,7 +25,7 @@ extension UserDefaults{
     
     class func resetCommonValue() {
         for key in Array(UserDefaults.standard.dictionaryRepresentation().keys) {
-            if (key != ACCESS_TOKEN && key != FB_TOKEN) {
+            if (key != ACCESS_TOKEN && key != FB_TOKEN && key != REFRESH_ACCESS_TOKEN) {
                 UserDefaults.standard.removeObject(forKey: key)
             }
         }
