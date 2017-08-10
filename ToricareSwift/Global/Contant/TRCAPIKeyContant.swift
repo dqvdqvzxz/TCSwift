@@ -21,6 +21,7 @@ let X_ACCESS_TOKEN =                "X-Access-Token"
 
 let URL_LOGIN =                     "auth/tokens"
 let URL_LOGIN_FACEBOOK =            "auth/tokens/facebooks"
+let URL_REFRESH_TOKEN =             "auth/tokens/refresh"
 let URL_REGISTER =                  "members"
 let URL_PREFECTURES =               "prefectures"
 let URL_CITIES =                    "cities"
@@ -100,6 +101,7 @@ let PASSCODE =                      "passCode"
 
 let ACCESS_TOKEN =                  "access_token"
 let REFRESH_ACCESS_TOKEN =          "refresh_access_token"
+let REFRESH_TOKEN =                 "refresh_token"
 
 //search data 
 let SEARCH_KEYWORD =                "search_keyword"
@@ -178,6 +180,7 @@ let HTTP_DELETE =                   "DELETE"
 let RESULT_NO_DATA =                "RESULT_NO_DATA"
 let RESULT_SUCCESS =                "RESULT_SUCCESS"
 let RESULT_FAIL =                   "RESULT_FAIL"
+let RESULT_FAIL_REFRESH_TOKEN =     "RESULT_FAIL_REFRESH_TOKEN"
 
 //MARK: STATUS CODE
 let STATUS_CODE_SUCCESS =           200

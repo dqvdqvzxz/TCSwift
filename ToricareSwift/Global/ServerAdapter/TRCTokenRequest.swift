@@ -13,7 +13,9 @@ class TRCTokenRequest: TRCBaseAPIController {
         
         var parameters = Dictionary <String, String>()
         parameters[ACCESS_TOKEN] = accessToken
-        parameters[REFRESH_ACCESS_TOKEN] = refreshToken
+        parameters[REFRESH_TOKEN] = refreshToken
+        
+        DLog(parameters)
         
         self.callAPI(parameters, atPath: "\(URL_REFRESH_TOKEN)", withMethod: HTTP_POST, blockCompletion: { (data) in
             //parse data from model
