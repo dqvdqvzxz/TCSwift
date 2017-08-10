@@ -82,14 +82,9 @@ class TRCBaseAPIController{
                                     TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
                                         print("Call me")
                                         //push to pre login
-//                                        let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-//                                        let navController = UINavigationController(rootViewController: mainVC)
-//                                        
-//                                        // Back to Home
-//                                        self.navigationController?.popToRootViewController(animated: false)
-//                                        _obj.tabController.selectedIndex = 0
-//                                        
-//                                        UIApplication.shared.keyWindow?.rootViewController = navController
+                                        let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+                                        let navController = UINavigationController(rootViewController: mainVC)
+                                        UIApplication.shared.keyWindow?.rootViewController = navController
                                     }, failed: { (error) in
                                         failed(error)
                                     })
