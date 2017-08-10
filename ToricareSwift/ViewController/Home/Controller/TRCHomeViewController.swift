@@ -64,6 +64,8 @@ class TRCHomeViewController: TRCBaseViewController {
     
     var goalInfo: TRCGoal!
     
+    var summaryInfo: TRCSummary!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +88,11 @@ class TRCHomeViewController: TRCBaseViewController {
 //            //khi fail
 //            DLog("2")
 //        }
+        
         configUI()
+        
+        
+//        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -150,6 +156,19 @@ class TRCHomeViewController: TRCBaseViewController {
     
     //MARK: Get data()
     func getData(){
+        //get summary
+        TRCSummaryRequest().summaryInfo(completion: {(data) in
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            do {
+                self.summaryInfo = try parseDict(dataResult as! JSONObject) as TRCSummary
+                _obj.objectSummary = self.summaryInfo
+            } catch {
+                print("JSONParsin Error: \(error)")
+            }
+        }) { (error) in
+            ELog(error)
+        }
+        
         //get goal
         TRCGoalRequest().goalInfo(completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary

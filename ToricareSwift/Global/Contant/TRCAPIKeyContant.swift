@@ -35,6 +35,7 @@ let URL_MEMBERS_SHOPS =             "members/shops"
 let URL_NOTIFICATION =              "members/settings/notices"
 let URL_GOAL =                      "members/goals"
 let URL_MEMBERS_IMAGES =            "members/images"
+let URL_SUMMARY =                   "members/summaries"
 
 //MARK: API Parameters key
 //Login
@@ -91,6 +92,11 @@ let GOAL_ID =                       "id"
 let GOAL_WEIGHT =                   "weight"
 let GOAL_STEPS =                    "steps"
 let GOAL_STEP =                     "step"
+
+//Summary
+let SUMMARY_MEMBER_ID =             "member_id"
+let SUMMARY_STEP =                  "step"
+let SUMMARY_CALO =                  "calo"
 
 //MARK: UserDefaultsb
 let DEVICE_ID =                     "deviceID"

@@ -31,5 +31,7 @@ final class Singleton{
     var newStep = ""
     
     var objectAccountInfo: TRCAccountInfo!
+    
+    var objectSummary: TRCSummary!
 }
 

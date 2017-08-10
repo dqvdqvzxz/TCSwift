@@ -31,8 +31,6 @@ class TRCAccountInfoRequest: TRCBaseAPIController {
         parameters[REGISTER_PARAM_BIRTHDAY] = birthDay
         parameters[REGISTER_PARAM_GENDER_TYPE] = gender
         
-        print(parameters)
-        
         self.callAPI(parameters, atPath: "\(URL_ACCOUNT_INFO)", withMethod: HTTP_PUT, blockCompletion: { (data) in
             //parse data from model
             completion(data)

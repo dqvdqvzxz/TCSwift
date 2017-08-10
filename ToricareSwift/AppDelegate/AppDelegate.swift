@@ -180,7 +180,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //set root view
-        if(UserDefaults.getUD(FB_TOKEN) != nil || UserDefaults.getUD(ACCESS_TOKEN) != nil){
+        if(UserDefaults.getUD(ACCESS_TOKEN) != nil){
 //            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
 //            let navController = UINavigationController(rootViewController: mainVC)
 //            window?.rootViewController = navController
