@@ -62,7 +62,7 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
     
     //MARK: Get data
     func getData(){
-        if(_obj.objectGoal.steps == ""){
+        if(_obj.objectGoal == nil){
             self.showHUD()
             TRCGoalRequest().goalInfo(completion: {(data) in
                 let dataResult = data?.object(forKey: DATA) as! NSDictionary
