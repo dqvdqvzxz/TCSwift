@@ -204,9 +204,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         toolbar.sizeToFit()
         
         //done button & cancel button
-        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(donedatePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: STRING_CANCEL, style: .plain, target: self, action: #selector(cancelDatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(donedatePicker))
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
