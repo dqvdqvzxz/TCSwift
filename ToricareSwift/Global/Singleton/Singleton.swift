@@ -26,7 +26,7 @@ final class Singleton{
     
     var dicPasscode = [String:String]()
 
-    var objectGoal = TRCGoal()
+    var objectGoal: TRCGoal!
     
     var newStep = ""
     

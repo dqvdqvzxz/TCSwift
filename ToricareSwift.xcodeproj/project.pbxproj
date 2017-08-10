@@ -85,7 +85,7 @@
 		17C98F931F3BFAE8003AF863 /* TRCUserRegistCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759031F0BA0A700B82645 /* TRCUserRegistCompleteViewController.swift */; };
 		17C98F941F3BFAE8003AF863 /* TRCPharmacySearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B632031F347B46001A379E /* TRCPharmacySearchData.swift */; };
 		17C98F951F3BFAE8003AF863 /* TRCTab4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095B01F303B43009F16EA /* TRCTab4ViewController.swift */; };
-		17C98F961F3BFAE8003AF863 /* example3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F6F81F1F032C00CC079C /* example3.swift */; };
+		17C98F961F3BFAE8003AF863 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		17C98F971F3BFAE8003AF863 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D338521F341FF400F4B254 /* Global.swift */; };
 		17C98F981F3BFAE8003AF863 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4118D1F0122D0008720A6 /* UserDefaults.swift */; };
 		17C98F991F3BFAE8003AF863 /* TRCPrefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE0F1F37FFFE00778006 /* TRCPrefecture.swift */; };
@@ -1357,7 +1357,7 @@
 				17C98F931F3BFAE8003AF863 /* TRCUserRegistCompleteViewController.swift in Sources */,
 				17C98F941F3BFAE8003AF863 /* TRCPharmacySearchData.swift in Sources */,
 				17C98F951F3BFAE8003AF863 /* TRCTab4ViewController.swift in Sources */,
-				17C98F961F3BFAE8003AF863 /* example3.swift in Sources */,
+				17C98F961F3BFAE8003AF863 /* (null) in Sources */,
 				17C98F971F3BFAE8003AF863 /* Global.swift in Sources */,
 				17C98F981F3BFAE8003AF863 /* UserDefaults.swift in Sources */,
 				17C98F991F3BFAE8003AF863 /* TRCPrefecture.swift in Sources */,
@@ -1641,7 +1641,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Le Anh Tuan (34TT9NLLE7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2L8CWRYK58;
-				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=0";
 				INFOPLIST_FILE = "$(SRCROOT)/ToricareSwift/Supporting File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1666,6 +1666,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "";
 				INFOPLIST_FILE = "$(SRCROOT)/ToricareSwift/Supporting File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
