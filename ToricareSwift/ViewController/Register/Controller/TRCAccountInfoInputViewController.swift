@@ -165,7 +165,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             default:
                 break
             }
-
         }
     }
     

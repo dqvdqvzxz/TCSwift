@@ -25,6 +25,10 @@ final class Singleton{
     var dicFacebookInfo = [String:String]()
     
     var dicPasscode = [String:String]()
+
+    var objectGoal: TRCGoal!
+    
+    var newStep = ""
     
     var objectAccountInfo: TRCAccountInfo!
 }

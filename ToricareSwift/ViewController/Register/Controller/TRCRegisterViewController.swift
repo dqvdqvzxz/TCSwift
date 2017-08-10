@@ -177,7 +177,6 @@ class TRCRegisterViewController: TRCBaseViewController {
                 })
             }
         }
-        
     }
     
     // MARK: Validate

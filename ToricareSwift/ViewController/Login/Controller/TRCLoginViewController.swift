@@ -75,7 +75,54 @@ class TRCLoginViewController: TRCBaseViewController {
     
     //MARK: Function
     func loginFB(){
-        
+        let loginManager = LoginManager()
+        loginManager.logIn([ .publicProfile, .email, .userFriends ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                ELog(error as! String)
+            case .cancelled:
+                DLog("User cancelled login.")
+            case .success: //let grantedPermissions, let declinedPermissions, let accessToken
+                //get token
+                let token = FBSDKAccessToken.current().tokenString
+                
+                //get facebook id
+                let fbUserID = FBSDKProfile.current().userID
+                
+                //save facebook token to UserDefaults
+                UserDefaults.saveUD(token, FB_TOKEN)
+                
+//                process login
+                TRCLoginRequest().loginFB(fbUserID!, token!, completion: {(data) in
+                    let dataResult = data?.object(forKey: DATA) as! NSDictionary
+
+                    // Save access token
+                    if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                        Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                    }
+
+                    if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                        Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                    }
+
+                    UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                        UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                        _obj.tabController.selectedIndex = 0
+                    }, completion: { completed in
+                        // maybe do something here
+                    })
+                }) { (error) in
+                    self.showAlert(error)
+                    ELog(error)
+                    let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+                    for descView in viewControllers {
+                        if(descView is TRCPreLoginViewController){
+                            self.navigationController?.popToViewController(descView, animated: true)
+                        }
+                    }
+                }
+            }
+        }
     }
     
     func forgotPassword(sender: UITapGestureRecognizer){
@@ -115,7 +162,7 @@ class TRCLoginViewController: TRCBaseViewController {
         // Login fail then show : self.showAlert(Localizable(value: "please_login_again"))
         
         self.showHUD()
-        TRCLoginRequest().Login(tfUsername.text!, tfPassword.text!, completion: {(data) in
+        TRCLoginRequest().login(tfUsername.text!, tfPassword.text!, completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
             

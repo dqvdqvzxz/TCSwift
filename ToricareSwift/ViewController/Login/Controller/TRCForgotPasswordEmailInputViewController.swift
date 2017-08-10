@@ -65,8 +65,16 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
         // *Message*
         // Forgot fail then show : self.showAlert(Localizable(value: "email_not_exist"))
         
-        let vc = TRCForgotPasswordSentViewController(nibName: "TRCForgotPasswordSentViewController", bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
-        self.navigationController?.viewControllers.remove(at: 2)
+        self.showHUD()
+        TRCPasswordRequest().passwordForgot(tfEmail.text!, completion: {(data) in
+            self.hideHUD()
+            let vc = TRCForgotPasswordSentViewController(nibName: "TRCForgotPasswordSentViewController", bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.viewControllers.remove(at: 2)
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+            ELog(error)
+        }
     }
 }
