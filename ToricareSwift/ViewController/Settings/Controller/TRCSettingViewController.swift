@@ -118,28 +118,34 @@ extension TRCSettingViewController: UITableViewDelegate{
             navigationItem.backBarButtonItem = backItem
             _obj.nc5.pushViewController(vc, animated: true)
         case 7:
-            UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                UserDefaults.removeUD(PASSCODE)
-                
-                UserDefaults.removeUD(ACCESS_TOKEN)
-                UserDefaults.removeUD(FB_TOKEN)
-                
-                // NEED REMOVE ALL UD HERE || temporary remove search params
-                UserDefaults.removeUD(SEARCH_PREFECTURE)
-                UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
-                UserDefaults.removeUD(SEARCH_TOWN)
-                UserDefaults.removeUD(SEARCH_TOWN_NAME)
-                
-                let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-                let navController = UINavigationController(rootViewController: mainVC)
-                
-                // Back to Home
-                self.navigationController?.popToRootViewController(animated: false)
-                _obj.tabController.selectedIndex = 0
-
-                UIApplication.shared.keyWindow?.rootViewController = navController
-            }, completion: { completed in
-                // maybe do something here
+            TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
+                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                    UserDefaults.removeUD(PASSCODE)
+                    
+                    UserDefaults.removeUD(ACCESS_TOKEN)
+                    UserDefaults.removeUD(FB_TOKEN)
+                    
+                    // NEED REMOVE ALL UD HERE || temporary remove search params
+                    UserDefaults.removeUD(SEARCH_PREFECTURE)
+                    UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
+                    UserDefaults.removeUD(SEARCH_TOWN)
+                    UserDefaults.removeUD(SEARCH_TOWN_NAME)
+                    
+                    let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+                    let navController = UINavigationController(rootViewController: mainVC)
+                    
+                    // Back to Home
+                    self.navigationController?.popToRootViewController(animated: false)
+                    _obj.tabController.selectedIndex = 0
+                    
+                    UIApplication.shared.keyWindow?.rootViewController = navController
+                }, completion: { completed in
+                    // maybe do something here
+                })
+            }, failed: { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+                ELog(error)
             })
         default:
             break
