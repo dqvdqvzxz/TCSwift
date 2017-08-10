@@ -293,6 +293,8 @@
 		68BB9ED61F3AC69D009A8454 /* TRCAccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BB9ED51F3AC69D009A8454 /* TRCAccountInfo.swift */; };
 		68F07DA81F3AF05700E1934C /* TRCGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DA71F3AF05700E1934C /* TRCGoal.swift */; };
 		68F07DAA1F3AF1B200E1934C /* TRCGoalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DA91F3AF1B200E1934C /* TRCGoalRequest.swift */; };
+		68F07DAB1F3C05D300E1934C /* TRCGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DA71F3AF05700E1934C /* TRCGoal.swift */; };
+		68F07DAC1F3C061000E1934C /* TRCGoalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DA91F3AF1B200E1934C /* TRCGoalRequest.swift */; };
 		C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00CF8F11F17284800B6A5A5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -1288,6 +1290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F07DAC1F3C061000E1934C /* TRCGoalRequest.swift in Sources */,
+				68F07DAB1F3C05D300E1934C /* TRCGoal.swift in Sources */,
 				17C98F511F3BFAE8003AF863 /* TRCEmailRequest.swift in Sources */,
 				17C98F521F3BFAE8003AF863 /* TRCTab3ViewController.swift in Sources */,
 				17C98F531F3BFAE8003AF863 /* TRCPasscodeLockLoginInputViewController.swift in Sources */,
