@@ -295,6 +295,8 @@
 		68F07DAA1F3AF1B200E1934C /* TRCGoalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DA91F3AF1B200E1934C /* TRCGoalRequest.swift */; };
 		68F07DAB1F3C05D300E1934C /* TRCGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DA71F3AF05700E1934C /* TRCGoal.swift */; };
 		68F07DAC1F3C061000E1934C /* TRCGoalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DA91F3AF1B200E1934C /* TRCGoalRequest.swift */; };
+		68F07DAE1F3C088B00E1934C /* TRCTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DAD1F3C088B00E1934C /* TRCTokenRequest.swift */; };
+		68F07DAF1F3C09E000E1934C /* TRCTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DAD1F3C088B00E1934C /* TRCTokenRequest.swift */; };
 		C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00CF8F11F17284800B6A5A5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -445,6 +447,7 @@
 		68BB9ED51F3AC69D009A8454 /* TRCAccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCAccountInfo.swift; sourceTree = "<group>"; };
 		68F07DA71F3AF05700E1934C /* TRCGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCGoal.swift; sourceTree = "<group>"; };
 		68F07DA91F3AF1B200E1934C /* TRCGoalRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCGoalRequest.swift; sourceTree = "<group>"; };
+		68F07DAD1F3C088B00E1934C /* TRCTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCTokenRequest.swift; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -713,6 +716,7 @@
 				68BB9ED11F395B24009A8454 /* TRCPharmacistRequest.swift */,
 				68BB9ED31F39A519009A8454 /* TRCNotificationRequest.swift */,
 				68F07DA91F3AF1B200E1934C /* TRCGoalRequest.swift */,
+				68F07DAD1F3C088B00E1934C /* TRCTokenRequest.swift */,
 			);
 			path = ServerAdapter;
 			sourceTree = "<group>";
@@ -1290,6 +1294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F07DAF1F3C09E000E1934C /* TRCTokenRequest.swift in Sources */,
 				68F07DAC1F3C061000E1934C /* TRCGoalRequest.swift in Sources */,
 				68F07DAB1F3C05D300E1934C /* TRCGoal.swift in Sources */,
 				17C98F511F3BFAE8003AF863 /* TRCEmailRequest.swift in Sources */,
@@ -1467,6 +1472,7 @@
 				17B632061F34897E001A379E /* TRCPharmacyRequest.swift in Sources */,
 				3F57F6DB1F1C618800CC079C /* TRCSearchLocationPageView.swift in Sources */,
 				3FB411731EFD0DDA008720A6 /* TRCBaseAPIController.swift in Sources */,
+				68F07DAE1F3C088B00E1934C /* TRCTokenRequest.swift in Sources */,
 				3FB411921F05F7B9008720A6 /* Label.swift in Sources */,
 				3F57F6DF1F1C619E00CC079C /* TRCSearchCurrentLocationPageView.swift in Sources */,
 				3F475A7A1F16155200B82645 /* TRCWalkingGoalDetailViewController.swift in Sources */,

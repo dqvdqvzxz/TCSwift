@@ -61,7 +61,45 @@ class TRCBaseAPIController{
                         if (statusCode == STATUS_CODE_NO_CONTENT) {
                             failed(RESULT_NO_DATA)
                             return
-                        } else if (statusCode == STATUS_CODE_SUCCESS) {
+                        }else if(statusCode == STATUS_CODE_UNAUTHORIZED){
+                            //refresh token
+                            TRCTokenRequest().refreshToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, UserDefaults.getUD(REFRESH_ACCESS_TOKEN) as! String, completion: {(data) in
+                                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                                
+                                // Save access token
+                                if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                                    Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                                }
+                                
+                                if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                                    Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                                }
+                                
+                                //re-call API
+                                self.callAPI(params, atPath: path, withMethod: httpMethod, blockCompletion: { (data) in
+                                    completion(data)
+                                }, blockFailed: { (error) in
+                                    TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
+                                        print("Call me")
+                                        //push to pre login
+//                                        let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+//                                        let navController = UINavigationController(rootViewController: mainVC)
+//                                        
+//                                        // Back to Home
+//                                        self.navigationController?.popToRootViewController(animated: false)
+//                                        _obj.tabController.selectedIndex = 0
+//                                        
+//                                        UIApplication.shared.keyWindow?.rootViewController = navController
+                                    }, failed: { (error) in
+                                        failed(error)
+                                    })
+                                })
+                                
+                            }) { (error) in
+                                failed(RESULT_FAIL_REFRESH_TOKEN)
+                            }
+                            
+                        }else if (statusCode == STATUS_CODE_SUCCESS) {
                             completion(data)
                             return
                         } else {
