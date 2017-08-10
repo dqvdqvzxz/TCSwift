@@ -1014,6 +1014,7 @@
 				TargetAttributes = {
 					17C98F4E1F3BFAE8003AF863 = {
 						DevelopmentTeam = 2L8CWRYK58;
+						ProvisioningStyle = Automatic;
 					};
 					3FB411191EFB607C008720A6 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -1502,14 +1503,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Le Anh Tuan (34TT9NLLE7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Son Nguyen (ZFWYQ77AD6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = "ToricareSwift copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.icsol.tricareapp.test;
+				PRODUCT_BUNDLE_IDENTIFIER = cowell.tokai.tricare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1526,15 +1527,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Le Anh Tuan (34TT9NLLE7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Son Nguyen (ZFWYQ77AD6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "ToricareSwift copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.icsol.tricareapp.test;
+				PRODUCT_BUNDLE_IDENTIFIER = cowell.tokai.tricare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
