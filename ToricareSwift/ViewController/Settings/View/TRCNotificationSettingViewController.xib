@@ -5,14 +5,21 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCNotificationSettingViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="btnDone" destination="5kE-HI-Nwf" id="SiS-yc-O9q"/>
                 <outlet property="btnSave" destination="Chs-og-sZY" id="U2E-hN-rTl"/>
+                <outlet property="lblTitle" destination="FWa-ru-2PE" id="Tf9-y3-4uh"/>
                 <outlet property="tblNotify" destination="rRk-RR-yoA" id="FF5-xH-kF8"/>
+                <outlet property="timePicker" destination="b9L-sC-yaX" id="jjD-1k-SGl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewBorder" destination="tuR-Bk-UgE" id="W0U-AN-EQh"/>
+                <outlet property="viewTimePicker" destination="PN4-qq-aGd" id="muz-8U-U9s"/>
+                <outlet property="viewToolbar" destination="yXp-fw-lhF" id="ZQe-5Y-To5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -45,6 +52,73 @@
                 <constraint firstAttribute="bottom" secondItem="rRk-RR-yoA" secondAttribute="bottom" constant="64" id="p0d-NB-JsQ"/>
                 <constraint firstItem="rRk-RR-yoA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z9w-TA-Xi3"/>
             </constraints>
+        </view>
+        <view contentMode="scaleToFill" id="PN4-qq-aGd">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuR-Bk-UgE">
+                    <rect key="frame" x="0.0" y="400" width="375" height="267"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXp-fw-lhF">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-ru-2PE">
+                                    <rect key="frame" x="157" y="5" width="60" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="SBO-f2-s7R"/>
+                                        <constraint firstAttribute="width" constant="60" id="hdp-Bd-Ux9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kE-HI-Nwf">
+                                    <rect key="frame" x="315" y="0.0" width="60" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="sLk-OM-Gat"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="xga-GO-o5y"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="tapBtnDone:" destination="-1" eventType="touchUpInside" id="4s7-fy-SCl"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="FWa-ru-2PE" firstAttribute="centerY" secondItem="yXp-fw-lhF" secondAttribute="centerY" id="3NN-5l-WzI"/>
+                                <constraint firstAttribute="height" constant="40" id="Fu3-U7-tEA"/>
+                                <constraint firstItem="5kE-HI-Nwf" firstAttribute="top" secondItem="yXp-fw-lhF" secondAttribute="top" id="GEe-Xa-PhZ"/>
+                                <constraint firstAttribute="trailing" secondItem="5kE-HI-Nwf" secondAttribute="trailing" id="Wqm-At-cmp"/>
+                                <constraint firstItem="FWa-ru-2PE" firstAttribute="centerX" secondItem="yXp-fw-lhF" secondAttribute="centerX" id="aI2-FR-kLd"/>
+                                <constraint firstAttribute="bottom" secondItem="5kE-HI-Nwf" secondAttribute="bottom" id="pxH-7I-cYM"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="yXp-fw-lhF" firstAttribute="leading" secondItem="tuR-Bk-UgE" secondAttribute="leading" id="Ho7-EJ-c1V"/>
+                        <constraint firstAttribute="trailing" secondItem="yXp-fw-lhF" secondAttribute="trailing" id="HqO-ZI-fHM"/>
+                        <constraint firstItem="yXp-fw-lhF" firstAttribute="top" secondItem="tuR-Bk-UgE" secondAttribute="top" id="PE4-eR-B7j"/>
+                    </constraints>
+                </view>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9L-sC-yaX">
+                    <rect key="frame" x="0.0" y="440" width="375" height="227"/>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="b9L-sC-yaX" secondAttribute="bottom" id="3cy-q7-MRP"/>
+                <constraint firstAttribute="trailing" secondItem="b9L-sC-yaX" secondAttribute="trailing" id="Pfe-gH-iUP"/>
+                <constraint firstItem="b9L-sC-yaX" firstAttribute="leading" secondItem="PN4-qq-aGd" secondAttribute="leading" id="Qxz-7v-j5j"/>
+                <constraint firstItem="b9L-sC-yaX" firstAttribute="top" secondItem="yXp-fw-lhF" secondAttribute="bottom" id="Z4m-9b-clF"/>
+                <constraint firstItem="tuR-Bk-UgE" firstAttribute="leading" secondItem="PN4-qq-aGd" secondAttribute="leading" id="ZWq-eC-FcJ"/>
+                <constraint firstAttribute="trailing" secondItem="tuR-Bk-UgE" secondAttribute="trailing" id="dqa-9F-tRW"/>
+                <constraint firstItem="tuR-Bk-UgE" firstAttribute="height" secondItem="PN4-qq-aGd" secondAttribute="height" multiplier="40%" id="k9B-8p-glt"/>
+                <constraint firstAttribute="bottom" secondItem="tuR-Bk-UgE" secondAttribute="bottom" id="xg8-qP-Rw7"/>
+            </constraints>
+            <point key="canvasLocation" x="593" y="93"/>
         </view>
     </objects>
 </document>

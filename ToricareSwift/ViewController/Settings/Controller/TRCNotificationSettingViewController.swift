@@ -10,6 +10,13 @@ import UIKit
 
 class TRCNotificationSettingViewController: TRCBaseViewController {
 
+    @IBOutlet var viewTimePicker: UIView!
+    @IBOutlet weak var viewBorder: UIView!
+    @IBOutlet weak var viewToolbar: UIView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var btnDone: UIButton!
+    @IBOutlet weak var timePicker: UIPickerView!
+    
     @IBOutlet weak var tblNotify: UITableView!
     
     @IBOutlet weak var btnSave: UIButton!
@@ -21,7 +28,9 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     var dataResult = NSDictionary()
     
-    var dataGender = [Localizable(value: "male"), Localizable(value: "female"), Localizable(value: "other")]
+    var dataHours = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+    var dataMinutes = ["0", "30"]
+    
     var genderPicker = UIPickerView()
     
     //MARK: View controller
@@ -43,6 +52,12 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_SETTING_NOTIFY
         
         btnSave.buttonStyle(title: STRING_CHANGE)
+        
+        //UI of time picker view
+        viewTimePicker.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
+        viewToolbar.backgroundColor = UIColor.init(hexString: "ffffff", alpha: 0.7)
+        timePicker.backgroundColor = UIColor.init(hexString: "ffffff", alpha: 0.6)
+
         
         //table view
         tblNotify.dataSource = self
@@ -75,7 +90,6 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     @IBAction func tapBtnSave(_ sender: Any) {
         self.showHUD()
         TRCNotificationRequest().notificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, "10:00", "10:00", "10:00", "10:00", "10:00", completion: {(data) in
-            let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
             
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers
@@ -92,6 +106,10 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
             ELog(error)
             self.showAlert(error)
         }
+    }
+    
+    @IBAction func tapBtnDone(_ sender: Any) {
+        viewTimePicker.removeFromSuperview()
     }
     
     //MARK: Action
@@ -322,63 +340,54 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let currentCell = tableView.cellForRow(at: indexPath) as! TRCLinkedServiceCell
-//        
-//        switch (indexPath.row) {
-//        case 0:
-//            tableView.deselectRow(at: indexPath, animated: false)
-//        case 1:
-//            tableView.deselectRow(at: indexPath, animated: false)
-//        case 2:
-//            tableView.deselectRow(at: indexPath, animated: false)
-//        default:
-//            self.genderPicker.dataSource = self
-//            self.genderPicker.delegate = self
-//            
-//            //toolBar
-//            let toolbar = UIToolbar();
-//            toolbar.sizeToFit()
-//            
-//            //done button & cancel button
-//            let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
-//            let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-//            let cancelButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-//            toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-//            
-////            currentCell.inputAccessoryView = toolbar
-//            genderPicker.frame = CGRect(x: 0, y: 100, width: 320, height: 320)
-//            genderPicker.addSubview(toolbar)
-//            
-////            currentCell.addSubview(genderPicker)
-//            self.view.addSubview(genderPicker)
-//            self.view.bringSubview(toFront: genderPicker)
-//            
-////            currentCell.inputView = genderPicker
-//            // add toolbar to textField
-//            //        tfGender.inputAccessoryView = toolbar
-//            //
-//            //        // add datepicker to textField
-//            //        tfGender.inputView = genderPicker
-//        }
+        let currentCell = tableView.cellForRow(at: indexPath) as! TRCLinkedServiceCell
+
+        self.timePicker.dataSource = self
+        self.timePicker.delegate = self
+        
+        viewTimePicker.frame = self.view.bounds
+        viewTimePicker.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        self.view.addSubview(viewTimePicker)
+        
+        let hourResult =  timePicker.selectedRow(inComponent: 0)
+        let minuteResult = (timePicker.selectedRow(inComponent: 1) * 30)
+        
+        print(hourResult, minuteResult)
+        currentCell.lblTime.text = "\(hourResult) : \(minuteResult)"
     }
 }
 
 extension TRCNotificationSettingViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataGender.count
+        if(component == 0){
+            return dataHours.count
+        }else if(component == 1){
+            return dataMinutes.count
+        }
+        return 0
     }
 }
 
 extension TRCNotificationSettingViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        tfGender.text = dataGender[row]
+        //
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataGender[row]
+        if(component == 0){
+            return dataHours[row]
+        }else if(component == 1){
+            return dataMinutes[row]
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 60
     }
 }
