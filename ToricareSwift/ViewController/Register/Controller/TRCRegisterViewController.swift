@@ -88,6 +88,7 @@ class TRCRegisterViewController: TRCBaseViewController {
             }
             
             let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+            vc.mode = MODE_REGISTER
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             self.navigationItem.backBarButtonItem = backItem

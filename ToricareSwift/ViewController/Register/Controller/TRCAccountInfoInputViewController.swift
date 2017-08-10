@@ -370,22 +370,13 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
                 self.hideHUD()
                 
-                let alert = UIAlertController(title: nil,
-                                              message: Localizable(value: "profile_updated"),
-                                              preferredStyle: .alert)
-                // add the action
-                alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
-                                              style: UIAlertActionStyle.default,
-                                              handler: { action in
-                                                let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-                                                for descView in viewControllers {
-                                                    if(descView is TRCMyPageViewController){
-                                                        _obj.nc5.popToViewController(descView, animated: true)
-                                                    }
-                                                }
-                }))
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
+                let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+                vc.mode = MODE_REGISTER
+                let backItem = UIBarButtonItem()
+                backItem.title = STRING_BACK
+                self.navigationItem.backBarButtonItem = backItem
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             }) { (error) in
                 self.hideHUD()
                 self.showAlert(error)
