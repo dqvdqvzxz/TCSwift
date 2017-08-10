@@ -8,16 +8,16 @@
 
 import UIKit
 
-//MARK: API
-let HEADER_AUTHORIZATION = "Basic dG9yaV9hcHBfaW9zX3Rlc3Q6MmY1YzY5Njc4Mzg4NGIwMmEwNjkxNjNlOWI2ODAzMTI="
-let HEADER_CONTENT_TYPE = "application/x-www-form-urlencoded"
+let APP_DOMAIN =                    "http://172.16.210.122/api/"
 
-let AUTHORIZATION = "Authorization"
-let CONTENT_TYPE = "Content-Type"
+//MARK: API
+let HEADER_AUTHORIZATION =          "Basic dG9yaV9hcHBfaW9zX3Rlc3Q6MmY1YzY5Njc4Mzg4NGIwMmEwNjkxNjNlOWI2ODAzMTI="
+let HEADER_CONTENT_TYPE =           "application/x-www-form-urlencoded"
+
+let AUTHORIZATION =                 "Authorization"
+let CONTENT_TYPE =                  "Content-Type"
 
 let X_ACCESS_TOKEN =                "X-Access-Token"
-
-let APP_DOMAIN = "http://172.16.210.122/api/"
 
 let URL_LOGIN =                     "auth/tokens"
 let URL_REGISTER =                  "members"
@@ -82,10 +82,6 @@ let NOTIF_PARAM_TIME_LUNCH =        "lunch_time"
 let NOTIF_PARAM_TIME_DINNER =       "dinner_time"
 let NOTIF_PARAM_TIME_SNACK =        "snack_time"
 
-
-
-
-
 //MARK: UserDefaultsb
 let DEVICE_ID =                     "deviceID"
 let DEVICE_TYPE =                   "2"
@@ -109,7 +105,7 @@ let SEARCH_TOWN_NAME =              "search_town_name"
 let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
-let MESSAGE =                          "message"
+let MESSAGE =                       "message"
 
 let STATUS =                        "status"
 let CITY_ID =                       "city_id"
@@ -137,46 +133,46 @@ let LATLON =                        "latlon"
 let TEL =                           "tel"
 let BUSSINESS_HOURS =               "bussiness_hours"
 let HOLIDAY =                       "holiday"
-let URL_KEY =                           "url"
+let URL_KEY =                       "url"
 let IMAGES =                        "images"
 
 //notification - setting
-let NOTIF_ALL = "notifAll"
-let NOTIF_PHARMACY = "notifPharmacy"
-let NOTIF_TRICARE = "notifTricare"
-let NOTIF_WEIGHT = "notifWeight"
-let NOTIF_BREAKFAST = "notifBreakfast"
-let NOTIF_LUNCH = "notifLunch"
-let NOTIF_DINNER = "notifDinner"
-let NOTIF_SNACK = "notifSnack"
+let NOTIF_ALL =                     "notifAll"
+let NOTIF_PHARMACY =                "notifPharmacy"
+let NOTIF_TRICARE =                 "notifTricare"
+let NOTIF_WEIGHT =                  "notifWeight"
+let NOTIF_BREAKFAST =               "notifBreakfast"
+let NOTIF_LUNCH =                   "notifLunch"
+let NOTIF_DINNER =                  "notifDinner"
+let NOTIF_SNACK =                   "notifSnack"
 
 //MARK: Dictionary
 //dicFacebookInfo
-let FB_FIRSTNAME = "fbFirstName"
-let FB_MIDDLENAME = "fbMiddleName"
-let FB_LASTNAME = "fbLastName"
-let FB_NAME = "fbName"
-let FB_USERID = "fbUserID"
-let FB_EMAIL = "fbEmail"
-let FB_AVATAR = "fbAvatar"
+let FB_FIRSTNAME =                  "fbFirstName"
+let FB_MIDDLENAME =                 "fbMiddleName"
+let FB_LASTNAME =                   "fbLastName"
+let FB_NAME =                       "fbName"
+let FB_USERID =                     "fbUserID"
+let FB_EMAIL =                      "fbEmail"
+let FB_AVATAR =                     "fbAvatar"
 
 //dicPasscode
-let DIC_PASSCODE = "dicPassCode"
+let DIC_PASSCODE =                  "dicPassCode"
 
 //MARK: Http method
-let HTTP_POST = "POST"
-let HTTP_PUT = "PUT"
-let HTTP_GET = "GET"
-let HTTP_DELETE = "DELETE"
+let HTTP_POST =                     "POST"
+let HTTP_PUT =                      "PUT"
+let HTTP_GET =                      "GET"
+let HTTP_DELETE =                   "DELETE"
 
 //MARK: RESULT CONSTANT
-let RESULT_NO_DATA = "RESULT_NO_DATA"
-let RESULT_SUCCESS = "RESULT_SUCCESS"
-let RESULT_FAIL = "RESULT_FAIL"
+let RESULT_NO_DATA =                "RESULT_NO_DATA"
+let RESULT_SUCCESS =                "RESULT_SUCCESS"
+let RESULT_FAIL =                   "RESULT_FAIL"
 
 //MARK: STATUS CODE
-let STATUS_CODE_SUCCESS = 200
-let STATUS_CODE_NO_CONTENT = 204
-let STATUS_CODE_BAD_REQUEST = 400
-let STATUS_CODE_UNAUTHORIZED = 401
-let STATUS_CODE_NOT_FOUND = 404
+let STATUS_CODE_SUCCESS =           200
+let STATUS_CODE_NO_CONTENT =        204
+let STATUS_CODE_BAD_REQUEST =       400
+let STATUS_CODE_UNAUTHORIZED =      401
+let STATUS_CODE_NOT_FOUND =         404
