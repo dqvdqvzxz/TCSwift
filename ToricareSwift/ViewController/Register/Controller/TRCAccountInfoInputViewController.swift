@@ -356,7 +356,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             var genderResult = ""
             var birthdayResult = ""
-            var registerType = ""
             
             if(tfGender.text! == Localizable(value: "male")){
                 genderResult = GENDER_MALE
@@ -364,31 +363,29 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 genderResult = GENDER_FEMALE
             }
             
-            if(UserDefaults.getUD(FB_TOKEN) != nil){
-                registerType = REGISTER_TYPE_FACEBOOK
-            }else{
-                registerType = REGISTER_TYPE_NORMAL
-            }
-            
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayResult = formatter.string(from: datePicker.date)
             
-            TRCRegisterRequest().register(userName, passWord, tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, genderResult, birthdayResult, registerType, completion: { (data) in
+            TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
                 self.hideHUD()
-            
-                //save access token
-                let dataResult = data?.object(forKey: DATA) as! NSDictionary
-                if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                    UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
-                }
                 
-                let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-                vc.mode = MODE_REGISTER
-                let backItem = UIBarButtonItem()
-                backItem.title = STRING_BACK
-                self.navigationItem.backBarButtonItem = backItem
-                self.navigationController?.pushViewController(vc, animated: true)
+                let alert = UIAlertController(title: nil,
+                                              message: Localizable(value: "profile_updated"),
+                                              preferredStyle: .alert)
+                // add the action
+                alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                              style: UIAlertActionStyle.default,
+                                              handler: { action in
+                                                let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                                                for descView in viewControllers {
+                                                    if(descView is TRCMyPageViewController){
+                                                        _obj.nc5.popToViewController(descView, animated: true)
+                                                    }
+                                                }
+                }))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
             }) { (error) in
                 self.hideHUD()
                 self.showAlert(error)

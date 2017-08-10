@@ -19,6 +19,8 @@ class TRCLoginRequest: TRCBaseAPIController {
         parameters[LOGIN_PARAM_DEVICE_TOKEN] = "232321423423414514141414143423dfdfdfdfderererere232323232"
         parameters[LOGIN_PARAM_DEVICE_TYPE] = DEVICE_TYPE
         
+        DLog(parameters)
+        
         self.callAPI(parameters, atPath: "\(URL_LOGIN)", withMethod: HTTP_POST, blockCompletion: { (data) in
             //parse data from model
             completion(data)

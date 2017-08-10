@@ -70,14 +70,33 @@ class TRCRegisterViewController: TRCBaseViewController {
     }
     
     func doRegister() {
-        let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-        vc.mode = MODE_REGISTER
-        vc.userName = tfUsername.text!
-        vc.passWord = tfRePassword.text!
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        self.navigationItem.backBarButtonItem = backItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        var registerType = ""
+        
+        if(UserDefaults.getUD(FB_TOKEN) != nil){
+            registerType = REGISTER_TYPE_FACEBOOK
+        }else{
+            registerType = REGISTER_TYPE_NORMAL
+        }
+        
+        TRCRegisterRequest().register(tfUsername.text!, tfRePassword.text!, registerType, completion: { (data) in
+            self.hideHUD()
+            
+            //save access token
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+            }
+            
+            let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+            let backItem = UIBarButtonItem()
+            backItem.title = STRING_BACK
+            self.navigationItem.backBarButtonItem = backItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+            ELog(error)
+        }
     }
     
     @IBAction func tapBtnRegisterWithFB(_ sender: Any) {
