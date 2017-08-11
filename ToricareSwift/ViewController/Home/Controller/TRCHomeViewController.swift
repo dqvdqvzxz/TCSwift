@@ -66,6 +66,8 @@ class TRCHomeViewController: TRCBaseViewController {
     
     var summaryInfo: TRCSummary!
     
+    var accountInfo: TRCAccountInfo!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,9 +92,8 @@ class TRCHomeViewController: TRCBaseViewController {
 //        }
         
         configUI()
-        
-        
-//        getData()
+
+        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -179,6 +180,22 @@ class TRCHomeViewController: TRCBaseViewController {
                 print("JSONParsin Error: \(error)")
             }
         }) { (error) in
+            ELog(error)
+        }
+        
+        //get account info
+        TRCAccountInfoRequest().accountInfo(completion: {(data) in
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            self.hideHUD()
+            do {
+                self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
+                _obj.objectAccountInfo = self.accountInfo
+            } catch {
+                print("JSONParsin Error: \(error)")
+            }
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
             ELog(error)
         }
     }

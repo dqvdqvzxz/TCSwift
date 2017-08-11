@@ -29,7 +29,7 @@ class TRCMyPageViewController: TRCBaseViewController {
         
         configUI()
         
-        getData()
+//        getData()
 
     }
     
