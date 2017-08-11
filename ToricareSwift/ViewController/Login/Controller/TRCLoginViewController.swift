@@ -29,6 +29,8 @@ class TRCLoginViewController: TRCBaseViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnLoginWithFB: UIButton!
     
+    var accountInfo: TRCAccountInfo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,6 +78,41 @@ class TRCLoginViewController: TRCBaseViewController {
         TRCLoginRequest().loginFB(fbUserID!, UserDefaults.getUD(FB_TOKEN) as! String, completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             
+            //get account info
+            TRCAccountInfoRequest().accountInfo(completion: {(data) in
+                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                self.hideHUD()
+                do {
+                    self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
+                    _obj.objectAccountInfo = self.accountInfo
+                } catch {
+                    print("JSONParsin Error: \(error)")
+                }
+                
+                //push to home view
+                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                    UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                    _obj.tabController.selectedIndex = 0
+                }, completion: { completed in
+                    // maybe do something here
+                })
+            }) { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+                ELog(error)
+                
+                //push to AccountInfoInputView
+                let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+                mainVC.mode = MODE_REGISTER
+                let navController = UINavigationController(rootViewController: mainVC)
+                
+                // Back to Home
+                self.navigationController?.popToRootViewController(animated: false)
+                _obj.tabController.selectedIndex = 0
+                
+                UIApplication.shared.keyWindow?.rootViewController = navController
+            }
+            
             // Save access token
             if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
                 Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
@@ -84,13 +121,6 @@ class TRCLoginViewController: TRCBaseViewController {
             if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
                 Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
             }
-            
-            UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-                _obj.tabController.selectedIndex = 0
-            }, completion: { completed in
-                // maybe do something here
-            })
         }) { (error) in
             self.showAlert(error)
             ELog(error)
@@ -167,7 +197,42 @@ class TRCLoginViewController: TRCBaseViewController {
         self.showHUD()
         TRCLoginRequest().login(tfUsername.text!, tfPassword.text!, completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
-            self.hideHUD()
+            
+            
+            //get account info
+            TRCAccountInfoRequest().accountInfo(completion: {(data) in
+                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                self.hideHUD()
+                do {
+                    self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
+                    _obj.objectAccountInfo = self.accountInfo
+                } catch {
+                    print("JSONParsin Error: \(error)")
+                }
+                
+                //push to home view
+                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                    UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                    _obj.tabController.selectedIndex = 0
+                }, completion: { completed in
+                    // maybe do something here
+                })
+            }) { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+                ELog(error)
+                
+                //push to AccountInfoInputView
+                let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+                mainVC.mode = MODE_REGISTER
+                let navController = UINavigationController(rootViewController: mainVC)
+                
+                // Back to Home
+                self.navigationController?.popToRootViewController(animated: false)
+                _obj.tabController.selectedIndex = 0
+                
+                UIApplication.shared.keyWindow?.rootViewController = navController
+            }
             
             // Save access token
             if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
@@ -177,13 +242,6 @@ class TRCLoginViewController: TRCBaseViewController {
             if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
                 Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
             }
-            
-            UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-                _obj.tabController.selectedIndex = 0
-            }, completion: { completed in
-                // maybe do something here
-            })
         }) { (error) in
             self.hideHUD()
             self.showAlert(error)
