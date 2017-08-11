@@ -109,7 +109,7 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
         }) { (error) in
             self.hideHUD()
             ELog(error)
-            if(error == "No data"){
+            if(error == RESULT_NO_DATA){
                 self.viewNoData.frame = self.view.bounds
                 self.viewNoData.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                 self.view.addSubview(self.viewNoData)

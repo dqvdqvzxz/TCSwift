@@ -53,8 +53,8 @@ class TRCMyPageViewController: TRCBaseViewController {
         //UI of outlet
         viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
-        lblName.labelStyle(title: "山田 花子 さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
-        lblPharmacist.labelStyle(title: Localizable(value: "my_pharmacy") + "：サンドラッグ赤堤薬局", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
+        lblName.labelStyle(title: "\(_obj.objectAccountInfo.firstName)\(_obj.objectAccountInfo.lastName) さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
+        lblPharmacist.labelStyle(title: Localizable(value: "my_pharmacy") + "：\(_obj.objectAccountInfo.shopName)", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
         
 //        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
         
@@ -66,15 +66,15 @@ class TRCMyPageViewController: TRCBaseViewController {
         clvMyPage.dataSource = self
         clvMyPage.delegate = self
         clvMyPage.register(UINib(nibName: "TRCMyPageCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-
     }
     
     //MARK: Get data
     func getData(){
-        self.showHUD()
-        TRCAccountInfoRequest().accountInfo(completion: {(data) in
-            let dataResult = data?.object(forKey: DATA) as! NSDictionary
-            self.hideHUD()
+        if(_obj.objectAccountInfo == nil){
+            self.showHUD()
+            TRCAccountInfoRequest().accountInfo(completion: {(data) in
+                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                self.hideHUD()
                 do {
                     self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
                     _obj.objectAccountInfo = self.accountInfo
@@ -82,9 +82,10 @@ class TRCMyPageViewController: TRCBaseViewController {
                     print("JSONParsin Error: \(error)")
                 }
             }) { (error) in
-            self.hideHUD()
-            self.showAlert(error)
-            ELog(error)
+                self.hideHUD()
+                self.showAlert(error)
+                ELog(error)
+            }
         }
     }
 }
