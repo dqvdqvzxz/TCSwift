@@ -96,13 +96,14 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             tfLastName.isUserInteractionEnabled = false
         }
         
+        //image
         if(_obj.dicFacebookInfo[FB_AVATAR] != nil){
             isHasNewAvatar = true
             let url = URL(string: _obj.dicFacebookInfo[FB_AVATAR]!)
-//            let placeholderImage = UIImage(named: "")!
-            imgUser.af_setImage(withURL: url!, placeholderImage: nil)
-        }else{
-            //default image
+            imgUser.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_user"))
+        }
+        if(_obj.objectAccountInfo.imagePath.origin != ""){
+            imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!, placeholderImage: #imageLiteral(resourceName: "default_user"))
         }
 
         //config mode

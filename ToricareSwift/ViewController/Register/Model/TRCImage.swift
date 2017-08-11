@@ -10,7 +10,7 @@ import Foundation
 
 struct TRCImage
 {
-    var origin: String
+    var origin = ""
 //    var thumb1: String
 }
 

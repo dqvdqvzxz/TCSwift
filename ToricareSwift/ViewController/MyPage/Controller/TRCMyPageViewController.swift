@@ -58,7 +58,10 @@ class TRCMyPageViewController: TRCBaseViewController {
         
 //        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
         
-        // make border image
+        //image
+        if(_obj.objectAccountInfo.imagePath.origin != ""){
+            imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!, placeholderImage: #imageLiteral(resourceName: "default_user"))
+        }
         imgUser.makeBorder(color: UIColor.white)
         imgUser.makeCircle()
         
