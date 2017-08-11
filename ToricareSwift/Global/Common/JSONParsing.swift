@@ -44,19 +44,32 @@ class JSONDecoder
 
     return finalValue as! T
   }
+    
+    func isNull(forKey key: String) throws -> Bool
+    {
+        guard let value = jsonObject[key] else {
+            throw JSONParsingError.missingKey(key: key)
+        }
+        
+        if (value is NSNull) {
+            return true
+        }
+        
+        return false
+    }
   
   static let defaultDateFormat = "dd/MM/yyyy HH:mm:ss"
   private lazy var dateFormatter = DateFormatter()
   
-  func value(forKey key: String, format: String = JSONDecoder.defaultDateFormat) throws -> Date
-  {
-    let dateValue: String = try value(forKey: key)
-    dateFormatter.dateFormat = format
-    guard let returnValue = dateFormatter.date(from: dateValue) else {
-      throw JSONParsingError.typeMismatch(key: key)
-    }
-    return returnValue
-  }
+//  func value(forKey key: String, format: String = JSONDecoder.defaultDateFormat) throws -> Date
+//  {
+//    let dateValue: String = try value(forKey: key)
+//    dateFormatter.dateFormat = format
+//    guard let returnValue = dateFormatter.date(from: dateValue) else {
+//      throw JSONParsingError.typeMismatch(key: key)
+//    }
+//    return returnValue
+//  }
     
     func valueImages(forKey key: String) throws -> [TRCImage]
     {
