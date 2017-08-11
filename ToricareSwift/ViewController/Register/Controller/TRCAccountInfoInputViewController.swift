@@ -401,12 +401,12 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 self.hideHUD()
                 
                 //save new data 
-                _obj.objectAccountInfo.firstName = self.tfFirstName.text!//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME))
-                _obj.objectAccountInfo.lastName = self.tfLastName.text!//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_LAST_NAME))
-                _obj.objectAccountInfo.firstNameKata = self.tfFirstNameKata.text!//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME_KATA))
-                _obj.objectAccountInfo.lastNameKata = self.tfLastNameKata.text!//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_LAST_NAME_KATA))
-                _obj.objectAccountInfo.birthDay = birthdayResult//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_BIRTHDAY))
-                _obj.objectAccountInfo.sex = genderResult//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_GENDER_TYPE))
+                _obj.objectAccountInfo.firstName = self.tfFirstName.text!
+                _obj.objectAccountInfo.lastName = self.tfLastName.text!
+                _obj.objectAccountInfo.firstNameKata = self.tfFirstNameKata.text!
+                _obj.objectAccountInfo.lastNameKata = self.tfLastNameKata.text!
+                _obj.objectAccountInfo.birthDay = birthdayResult
+                _obj.objectAccountInfo.sex = genderResult
                 
                 let alert = UIAlertController(title: nil,
                                               message: Localizable(value: "profile_updated"),

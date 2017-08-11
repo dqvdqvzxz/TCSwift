@@ -55,6 +55,17 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
         TRCPasswordRequest().passwordChange(tfCurrentPassword.text!, tfConfirmNewPassword.text!, completion: {(data) in
             self.hideHUD()
             
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            
+            // Save access token
+            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+            }
+            
+            if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+            }
+            
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers
             for descView in viewControllers {
                 if(descView is TRCSettingViewController){

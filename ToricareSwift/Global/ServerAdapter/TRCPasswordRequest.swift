@@ -14,6 +14,8 @@ class TRCPasswordRequest: TRCBaseAPIController {
         var parameters = Dictionary <String, String>()
         parameters[PASSWORD_PARAM_CHANGE_PASSWORD] = currentPassword
         parameters[PASSWORD_PARAM_CHANGE_NEW_PASSWORD] = newPassword
+        parameters[LOGIN_PARAM_DEVICE_ID] = UserDefaults.getUD(DEVICE_ID) as? String
+        parameters[LOGIN_PARAM_DEVICE_TYPE] = DEVICE_TYPE
         
         self.callAPI(parameters, atPath: "\(URL_PASSWORD_CHANGE)", withMethod: HTTP_PUT, blockCompletion: { (data) in
             //parse data from model
