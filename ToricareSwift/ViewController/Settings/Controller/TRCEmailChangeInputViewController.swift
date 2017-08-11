@@ -41,7 +41,7 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
         
         //UI of outlet
         lblCurrentEmail.labelStyle(title: Localizable(value: "current_email"))
-        lblCurrentEmailResult.labelStyle(title: "test@tricare.com", fontSize: LABEL_FONT_SIZE, textColor: MAIN_COLOR)
+        lblCurrentEmailResult.labelStyle(title: _obj.objectAccountInfo.email, fontSize: LABEL_FONT_SIZE, textColor: MAIN_COLOR)
         lblNewEmail.labelStyle(title: Localizable(value: "new_mail"))
         lblConfirmNewEmail.labelStyle(title: Localizable(value: "new_mail_confirm"))
         
