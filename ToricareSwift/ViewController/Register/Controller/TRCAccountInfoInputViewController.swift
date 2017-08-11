@@ -397,7 +397,16 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             birthdayResult = formatter.string(from: datePicker.date)
             
             TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
+
                 self.hideHUD()
+                
+                //save new data 
+                _obj.objectAccountInfo.firstName = self.tfFirstName.text!//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME))
+                _obj.objectAccountInfo.lastName = self.tfLastName.text!//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_LAST_NAME))
+                _obj.objectAccountInfo.firstNameKata = self.tfFirstNameKata.text!//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_FIRST_NAME_KATA))
+                _obj.objectAccountInfo.lastNameKata = self.tfLastNameKata.text!//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_LAST_NAME_KATA))
+                _obj.objectAccountInfo.birthDay = birthdayResult//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_BIRTHDAY))
+                _obj.objectAccountInfo.sex = genderResult//Global().convertObjectToString(dataResult.object(forKey: REGISTER_PARAM_GENDER_TYPE))
                 
                 let alert = UIAlertController(title: nil,
                                               message: Localizable(value: "profile_updated"),
