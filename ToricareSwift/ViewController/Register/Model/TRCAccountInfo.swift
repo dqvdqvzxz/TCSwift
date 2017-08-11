@@ -16,8 +16,9 @@ struct TRCAccountInfo {
     var lastNameKata = ""
     var birthDay = ""
     var sex = ""
-//    var imagePath: TRCImage
+//    var imagePath: TRCImage!
     var shopId = ""
+    var shopName = ""
 }
 
 extension TRCAccountInfo: JSONDecodable
@@ -30,7 +31,12 @@ extension TRCAccountInfo: JSONDecodable
         self.lastNameKata = try decoder.value(forKey: REGISTER_PARAM_LAST_NAME_KATA)
         self.birthDay = try decoder.value(forKey: REGISTER_PARAM_BIRTHDAY)
         self.sex = try decoder.value(forKey: REGISTER_PARAM_GENDER_TYPE)
-//        self.imagePath = try parseDict(decoder.value(forKey: REGISTER_PARAM_IMAGE_PATH))
+//        if (try decoder.value(forKey: REGISTER_PARAM_GENDER_TYPE) == "") {
+//            self.imagePath = TRCImage(origin: "")
+//        }else {
+//            self.imagePath = try parseDict(decoder.value(forKey: REGISTER_PARAM_IMAGE_PATH))
+//        }
         self.shopId = try decoder.value(forKey: REGISTER_PARAM_SHOP_ID)
+        self.shopName = try decoder.value(forKey: REGISTER_PARAM_SHOP_NAME)
     }
 }
