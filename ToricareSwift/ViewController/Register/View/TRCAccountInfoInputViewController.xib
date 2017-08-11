@@ -46,7 +46,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRj-rn-iAi" userLabel="viewMain">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_test" translatesAutoresizingMaskIntoConstraints="NO" id="Qxe-TD-YGz" userLabel="imgUser">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user" translatesAutoresizingMaskIntoConstraints="NO" id="Qxe-TD-YGz" userLabel="imgUser">
                                     <rect key="frame" x="112" y="10" width="150" height="150"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="G1P-nO-stu"/>
@@ -300,7 +300,7 @@
         </view>
     </objects>
     <resources>
-        <image name="img_user_test" width="250" height="249"/>
+        <image name="default_user" width="128" height="128"/>
         <image name="photo-camera" width="64" height="64"/>
     </resources>
 </document>

@@ -37,6 +37,6 @@ class TRCUserLeaveCompleteViewController: TRCBaseViewController {
         lblTitle1.labelStyle(title: Localizable(value: "leave_complete"))
         lblTitle2.labelStyle(title: Localizable(value: "thank_you"))
         
-        imgView.image = #imageLiteral(resourceName: "img_user_test")
+        imgView.image = #imageLiteral(resourceName: "logo_car")
     }
 }
