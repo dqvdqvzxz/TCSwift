@@ -90,6 +90,9 @@ class TRCLoginViewController: TRCBaseViewController {
                 }
                 
                 //push to home view
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.configTabbar()
+                
                 UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                     UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
                     _obj.tabController.selectedIndex = 0
