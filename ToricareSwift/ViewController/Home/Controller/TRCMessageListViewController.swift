@@ -23,7 +23,7 @@ class TRCMessageListViewController: TRCBaseViewController {
         super.viewDidLoad()
 
         configUI()
-        
+        getData()
 //        fetchDataFromServer()
     }
 
@@ -49,39 +49,50 @@ class TRCMessageListViewController: TRCBaseViewController {
     }
     
     //MARK: Get data
-    func fetchDataFromServer()
-    {
-        loadNumber += 1
-        let urlStr = String(format: "https://jsonplaceholder.typicode.com/posts/\(loadNumber)/comments")
-        let url = URL(string: urlStr)
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, reponse, error) in
-            if(data != nil)
-            {
-                do
-                {
-                    let jsonData = try JSONSerialization.jsonObject(with: data!, options:.mutableContainers) as! NSMutableArray
-                    for item in jsonData
-                    {
-                        self.dataList.add(item)
-                    }
-                    print(jsonData)
-                    DispatchQueue.main.async(execute: {
-                        self.tblMessage.reloadData()
-                    })
-                }
-                catch{
-                    print("Error in catch block")
-                }
-            }
-            else{
-                
-            }
+    func getData() {
+        self.showHUD()
+        TRCMessageRequest().getMessage(completion: { (data) in
+            self.hideHUD()
+            DLog(data)
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
         }
-        task.resume()
     }
-
     
+    
+    
+//    func fetchDataFromServer()
+//    {
+//        loadNumber += 1
+//        let urlStr = String(format: "https://jsonplaceholder.typicode.com/posts/\(loadNumber)/comments")
+//        let url = URL(string: urlStr)
+//        
+//        let task = URLSession.shared.dataTask(with: url!) { (data, reponse, error) in
+//            if(data != nil)
+//            {
+//                do
+//                {
+//                    let jsonData = try JSONSerialization.jsonObject(with: data!, options:.mutableContainers) as! NSMutableArray
+//                    for item in jsonData
+//                    {
+//                        self.dataList.add(item)
+//                    }
+//                    print(jsonData)
+//                    DispatchQueue.main.async(execute: {
+//                        self.tblMessage.reloadData()
+//                    })
+//                }
+//                catch{
+//                    print("Error in catch block")
+//                }
+//            }
+//            else{
+//                
+//            }
+//        }
+//        task.resume()
+//    }
     
     //MARK: Action
     func configRefresh(){

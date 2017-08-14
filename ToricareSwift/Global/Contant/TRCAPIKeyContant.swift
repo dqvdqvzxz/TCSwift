@@ -36,6 +36,7 @@ let URL_NOTIFICATION =              "members/settings/notices"
 let URL_GOAL =                      "members/goals"
 let URL_MEMBERS_IMAGES =            "members/images"
 let URL_SUMMARY =                   "members/summaries"
+let URL_MEMBERS_MESSAGES =          "members/messages"
 
 //MARK: API Parameters key
 //Login
