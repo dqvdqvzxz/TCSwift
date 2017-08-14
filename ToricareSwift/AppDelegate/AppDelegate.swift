@@ -86,84 +86,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK: Config UI
     func configUI(){
+        
         //init window
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        //init root view controller
-        let vc1 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
-        let vc2 = TRCTab2ViewController(nibName: "TRCTab2ViewController", bundle: nil)
-        let vc3 = TRCTab3ViewController(nibName: "TRCTab3ViewController", bundle: nil)
-        let vc4 = TRCTab4ViewController(nibName: "TRCTab4ViewController", bundle: nil)
-        let vc5 = TRCMyPageViewController(nibName: "TRCMyPageViewController", bundle: nil)
-        
-        //init root nav controller
-        let nc1 = _obj.nc1
-        let nc2 = _obj.nc2
-        let nc3 = _obj.nc3
-        let nc4 = _obj.nc4
-        let nc5 = _obj.nc5
-        
-        //init tabbar
-        nc1.viewControllers = [vc1]
-        nc2.viewControllers = [vc2]
-        nc3.viewControllers = [vc3]
-        nc4.viewControllers = [vc4]
-        nc5.viewControllers = [vc5]
-        _obj.tabController.viewControllers = [nc1, nc2, nc3, nc4, nc5]
-        
-        
-        //set default tab
-        _obj.tabController.selectedIndex = 0
-        
-        //set item for tabbar item
-        let item1 = _obj.tabController.tabBar.items?[0]
-        let item2 = _obj.tabController.tabBar.items?[1]
-        let item3 = _obj.tabController.tabBar.items?[2]
-        let item4 = _obj.tabController.tabBar.items?[3]
-        let item5 = _obj.tabController.tabBar.items?[4]
-        
-        //set title for tab item
-        item1?.title = STRING_TAB_HOME
-        item2?.title = STRING_TAB_NUTRITION
-        item3?.title = STRING_TAB_EXERCISE
-        item4?.title = STRING_TAB_MEDICINE
-        item5?.title = STRING_TAB_MYPAGE
-        
-        item1?.image = #imageLiteral(resourceName: "home")
-        item1?.selectedImage = #imageLiteral(resourceName: "home_hl")
-        
-        item2?.image = #imageLiteral(resourceName: "nutrition")
-        item2?.selectedImage = #imageLiteral(resourceName: "nutrition_hl")
-
-        item3?.image = #imageLiteral(resourceName: "run")
-        item3?.selectedImage = #imageLiteral(resourceName: "run_hl")
-
-        item4?.image = #imageLiteral(resourceName: "pill")
-        item4?.selectedImage = #imageLiteral(resourceName: "pill_hl")
-
-        item5?.image = #imageLiteral(resourceName: "profile")
-        item5?.selectedImage = #imageLiteral(resourceName: "profile_hl")
-
-        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)]
-        let uhnSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: LABEL_FONT_GREY_COLOR)]
-
-        item1?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
-        item1?.setTitleTextAttributes(selectedItem, for: .selected)
-        
-        item2?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
-        item2?.setTitleTextAttributes(selectedItem, for: .selected)
-        
-        item3?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
-        item3?.setTitleTextAttributes(selectedItem, for: .selected)
-        
-        item4?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
-        item4?.setTitleTextAttributes(selectedItem, for: .selected)
-
-        item5?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
-        item5?.setTitleTextAttributes(selectedItem, for: .selected)
-        
         //set theme style
-//        UITabBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
+        //        UITabBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
         
         let currentTheme = UserDefaults.getUD(THEME_COLOR)
         if (currentTheme != nil) {
@@ -171,19 +99,94 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
         }
-
+        
         UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: BUTTON_TITLE_COLOR], for: .highlighted)
         
-        
         //set root view
         if(UserDefaults.getUD(ACCESS_TOKEN) != nil){
-//            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-//            let navController = UINavigationController(rootViewController: mainVC)
-//            window?.rootViewController = navController
+            //init tabbar
+
+            
+            //init root view controller
+            let vc1 = TRCHomeViewController(nibName: "TRCHomeViewController", bundle: nil)
+            let vc2 = TRCTab2ViewController(nibName: "TRCTab2ViewController", bundle: nil)
+            let vc3 = TRCTab3ViewController(nibName: "TRCTab3ViewController", bundle: nil)
+            let vc4 = TRCTab4ViewController(nibName: "TRCTab4ViewController", bundle: nil)
+            let vc5 = TRCMyPageViewController(nibName: "TRCMyPageViewController", bundle: nil)
+            
+            //init root nav controller
+            let nc1 = _obj.nc1
+            let nc2 = _obj.nc2
+            let nc3 = _obj.nc3
+            let nc4 = _obj.nc4
+            let nc5 = _obj.nc5
+            
+            //init tabbar
+            nc1.viewControllers = [vc1]
+            nc2.viewControllers = [vc2]
+            nc3.viewControllers = [vc3]
+            nc4.viewControllers = [vc4]
+            nc5.viewControllers = [vc5]
+            _obj.tabController.viewControllers = [nc1, nc2, nc3, nc4, nc5]
+            
+            
+            //set default tab
+            _obj.tabController.selectedIndex = 0
+            
+            //set item for tabbar item
+            let item1 = _obj.tabController.tabBar.items?[0]
+            let item2 = _obj.tabController.tabBar.items?[1]
+            let item3 = _obj.tabController.tabBar.items?[2]
+            let item4 = _obj.tabController.tabBar.items?[3]
+            let item5 = _obj.tabController.tabBar.items?[4]
+            
+            //set title for tab item
+            item1?.title = STRING_TAB_HOME
+            item2?.title = STRING_TAB_NUTRITION
+            item3?.title = STRING_TAB_EXERCISE
+            item4?.title = STRING_TAB_MEDICINE
+            item5?.title = STRING_TAB_MYPAGE
+            
+            item1?.image = #imageLiteral(resourceName: "home")
+            item1?.selectedImage = #imageLiteral(resourceName: "home_hl")
+            
+            item2?.image = #imageLiteral(resourceName: "nutrition")
+            item2?.selectedImage = #imageLiteral(resourceName: "nutrition_hl")
+            
+            item3?.image = #imageLiteral(resourceName: "run")
+            item3?.selectedImage = #imageLiteral(resourceName: "run_hl")
+            
+            item4?.image = #imageLiteral(resourceName: "pill")
+            item4?.selectedImage = #imageLiteral(resourceName: "pill_hl")
+            
+            item5?.image = #imageLiteral(resourceName: "profile")
+            item5?.selectedImage = #imageLiteral(resourceName: "profile_hl")
+            
+            let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)]
+            let uhnSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: LABEL_FONT_GREY_COLOR)]
+            
+            item1?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+            item1?.setTitleTextAttributes(selectedItem, for: .selected)
+            
+            item2?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+            item2?.setTitleTextAttributes(selectedItem, for: .selected)
+            
+            item3?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+            item3?.setTitleTextAttributes(selectedItem, for: .selected)
+            
+            item4?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+            item4?.setTitleTextAttributes(selectedItem, for: .selected)
+            
+            item5?.setTitleTextAttributes(uhnSelectedItem, for: .normal)
+            item5?.setTitleTextAttributes(selectedItem, for: .selected)
+            
+           
+            
+            //set rootview
             window?.rootViewController = _obj.tabController
             UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
