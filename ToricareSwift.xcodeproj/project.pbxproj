@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1706DBA81F307C9400188510 /* TRCQRCodeDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706DBA61F307C9400188510 /* TRCQRCodeDoneViewController.swift */; };
 		1706DBAB1F307CB600188510 /* TRCQRCodeDoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1706DBAA1F307CB600188510 /* TRCQRCodeDoneViewController.xib */; };
+		1757AF391F4151FA00F340D6 /* TRCMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */; };
+		1757AF3A1F4151FA00F340D6 /* TRCMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */; };
 		1788CE0E1F37FFC300778006 /* JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE0D1F37FFC300778006 /* JSONParsing.swift */; };
 		1788CE101F37FFFE00778006 /* TRCPrefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE0F1F37FFFE00778006 /* TRCPrefecture.swift */; };
 		1788CE121F38100B00778006 /* TRCCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE111F38100B00778006 /* TRCCity.swift */; };
@@ -307,6 +309,7 @@
 /* Begin PBXFileReference section */
 		1706DBA61F307C9400188510 /* TRCQRCodeDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCQRCodeDoneViewController.swift; sourceTree = "<group>"; };
 		1706DBAA1F307CB600188510 /* TRCQRCodeDoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCQRCodeDoneViewController.xib; sourceTree = "<group>"; };
+		1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCMessageRequest.swift; sourceTree = "<group>"; };
 		1788CE0D1F37FFC300778006 /* JSONParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsing.swift; sourceTree = "<group>"; };
 		1788CE0F1F37FFFE00778006 /* TRCPrefecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPrefecture.swift; sourceTree = "<group>"; };
 		1788CE111F38100B00778006 /* TRCCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCCity.swift; sourceTree = "<group>"; };
@@ -725,6 +728,7 @@
 				68F07DAD1F3C088B00E1934C /* TRCTokenRequest.swift */,
 				68F07DB21F3C418400E1934C /* TRCSummaryRequest.swift */,
 				68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */,
+				1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */,
 			);
 			path = ServerAdapter;
 			sourceTree = "<group>";
@@ -1320,6 +1324,7 @@
 				17C98F591F3BFAE8003AF863 /* TRCLoginRequest.swift in Sources */,
 				17C98F5A1F3BFAE8003AF863 /* GLViewPagerViewController.swift in Sources */,
 				17C98F5B1F3BFAE8003AF863 /* TRCMyPharmacistDetailViewController.swift in Sources */,
+				1757AF3A1F4151FA00F340D6 /* TRCMessageRequest.swift in Sources */,
 				17C98F5C1F3BFAE8003AF863 /* TRCCity.swift in Sources */,
 				17C98F5D1F3BFAE8003AF863 /* TRCSearchPageViewController.swift in Sources */,
 				17C98F5E1F3BFAE8003AF863 /* example2.swift in Sources */,
@@ -1489,6 +1494,7 @@
 				3FB411921F05F7B9008720A6 /* Label.swift in Sources */,
 				3F57F6DF1F1C619E00CC079C /* TRCSearchCurrentLocationPageView.swift in Sources */,
 				3F475A7A1F16155200B82645 /* TRCWalkingGoalDetailViewController.swift in Sources */,
+				1757AF391F4151FA00F340D6 /* TRCMessageRequest.swift in Sources */,
 				68BB9ED01F386E80009A8454 /* TRCAccountInfoRequest.swift in Sources */,
 				3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */,
 				68F07DA81F3AF05700E1934C /* TRCGoal.swift in Sources */,
