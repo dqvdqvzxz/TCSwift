@@ -111,9 +111,6 @@ let ACCESS_TOKEN =                  "access_token"
 let REFRESH_ACCESS_TOKEN =          "refresh_access_token"
 let REFRESH_TOKEN =                 "refresh_token"
 
-let CHECK_ACCOUNT_INFO =            "check_account_info"
-let CHECKED_INFO =                  "info_filled"
-
 //search data 
 let SEARCH_KEYWORD =                "search_keyword"
 let SEARCH_PREFECTURE =             "search_prefecture"

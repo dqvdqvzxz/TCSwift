@@ -82,6 +82,7 @@ class TRCLoginViewController: TRCBaseViewController {
             TRCAccountInfoRequest().accountInfo(completion: {(data) in
                 let dataResult = data?.object(forKey: DATA) as! NSDictionary
                 self.hideHUD()
+                
                 do {
                     self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
                     _obj.objectAccountInfo = self.accountInfo
@@ -89,40 +90,44 @@ class TRCLoginViewController: TRCBaseViewController {
                     print("JSONParsin Error: \(error)")
                 }
                 
-                //push to home view
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.configTabbar()
-                
-                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                    UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                //check info
+                if(_obj.objectAccountInfo.firstName == "" || _obj.objectAccountInfo.lastName == ""){
+                    //push to AccountInfoInputView
+                    let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+                    mainVC.mode = MODE_REGISTER
+                    let navController = UINavigationController(rootViewController: mainVC)
+                    
+                    // Back to Home
+                    self.navigationController?.popToRootViewController(animated: false)
                     _obj.tabController.selectedIndex = 0
-                }, completion: { completed in
-                    // maybe do something here
-                })
+                    
+                    UIApplication.shared.keyWindow?.rootViewController = navController
+                }else{
+                    // Save access token
+                    if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                        Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                    }
+                    
+                    if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                        Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                    }
+                    
+                    //init tabbar
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.configTabbar()
+                    
+                    //push to home view
+                    UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                        UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                        _obj.tabController.selectedIndex = 0
+                    }, completion: { completed in
+                        // maybe do something here
+                    })
+                }
             }) { (error) in
                 self.hideHUD()
                 self.showAlert(error)
                 ELog(error)
-                
-                //push to AccountInfoInputView
-                let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-                mainVC.mode = MODE_REGISTER
-                let navController = UINavigationController(rootViewController: mainVC)
-                
-                // Back to Home
-                self.navigationController?.popToRootViewController(animated: false)
-                _obj.tabController.selectedIndex = 0
-                
-                UIApplication.shared.keyWindow?.rootViewController = navController
-            }
-            
-            // Save access token
-            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
-            }
-            
-            if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
             }
         }) { (error) in
             self.showAlert(error)
@@ -201,6 +206,14 @@ class TRCLoginViewController: TRCBaseViewController {
         TRCLoginRequest().login(tfUsername.text!, tfPassword.text!, completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             
+            // Save access token
+            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+            }
+            
+            if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+            }
             
             //get account info
             TRCAccountInfoRequest().accountInfo(completion: {(data) in
@@ -213,40 +226,35 @@ class TRCLoginViewController: TRCBaseViewController {
                     print("JSONParsin Error: \(error)")
                 }
                 
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.configTabbar()
-                
-                //push to home view
-                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                    UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                //check info
+                if(_obj.objectAccountInfo.firstName == "" || _obj.objectAccountInfo.lastName == ""){
+                    //push to AccountInfoInputView
+                    let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+                    mainVC.mode = MODE_REGISTER
+                    let navController = UINavigationController(rootViewController: mainVC)
+                    
+                    // Back to Home
+                    self.navigationController?.popToRootViewController(animated: false)
                     _obj.tabController.selectedIndex = 0
-                }, completion: { completed in
-                    // maybe do something here
-                })
+                    
+                    UIApplication.shared.keyWindow?.rootViewController = navController
+                }else{
+                    //init tabbar
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.configTabbar()
+                    
+                    //push to home view
+                    UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                        UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                        _obj.tabController.selectedIndex = 0
+                    }, completion: { completed in
+                        // maybe do something here
+                    })
+                }
             }) { (error) in
                 self.hideHUD()
                 self.showAlert(error)
                 ELog(error)
-                
-                //push to AccountInfoInputView
-                let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-                mainVC.mode = MODE_REGISTER
-                let navController = UINavigationController(rootViewController: mainVC)
-                
-                // Back to Home
-                self.navigationController?.popToRootViewController(animated: false)
-                _obj.tabController.selectedIndex = 0
-                
-                UIApplication.shared.keyWindow?.rootViewController = navController
-            }
-            
-            // Save access token
-            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
-            }
-            
-            if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
             }
         }) { (error) in
             self.hideHUD()

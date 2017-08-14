@@ -81,13 +81,15 @@ class TRCRegisterViewController: TRCBaseViewController {
         TRCRegisterRequest().register(tfUsername.text!, tfRePassword.text!, registerType, completion: { (data) in
             self.hideHUD()
             
-            //save access token
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
-            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
-            }
             
             let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                vc.accessToken = Global().convertObjectToString(dataResult.object(forKey: ACCESS_TOKEN))
+            }
+            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                vc.refreshToken = Global().convertObjectToString(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))
+            }
             vc.mode = MODE_REGISTER
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
