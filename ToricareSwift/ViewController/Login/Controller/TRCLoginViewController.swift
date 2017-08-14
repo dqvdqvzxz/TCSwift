@@ -210,6 +210,9 @@ class TRCLoginViewController: TRCBaseViewController {
                     print("JSONParsin Error: \(error)")
                 }
                 
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.configTabbar()
+                
                 //push to home view
                 UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                     UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
