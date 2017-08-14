@@ -53,6 +53,7 @@ class TRCBaseAPIController{
                     Alamofire.request(encodedURLRequest).responseJSON { (response) in
                         let data = response.result.value as? NSDictionary
                         
+                        DLog(path)
                         DLog(data)
                         
                         //handle status code
@@ -80,7 +81,6 @@ class TRCBaseAPIController{
                                     completion(data)
                                 }, blockFailed: { (error) in
                                     TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
-                                        print("Call me")
                                         //push to pre login
                                         let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                                         let navController = UINavigationController(rootViewController: mainVC)

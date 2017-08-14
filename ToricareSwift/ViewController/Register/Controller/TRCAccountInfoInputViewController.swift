@@ -51,12 +51,18 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     var passWord = String()
     
     var mode = String()
+    
     var isHasNewAvatar = false
+    
+    var accessToken = ""
+    var refreshToken = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configUI()
+        
+        print("Mode \(mode)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -131,7 +137,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         //make image circle
         imgUser.makeBorder(color: UIColor.lightGray)
-        imgUser.makeCircle()        
+        imgUser.makeCircle()
         // make border image
         
         //date of birth
@@ -214,7 +220,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         let cancelButton = UIBarButtonItem(title: STRING_CANCEL, style: .plain, target: self, action: #selector(cancelDatePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(donedatePicker))
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         // add toolbar to textField
         tfDateOfBirth.inputAccessoryView = toolbar
@@ -379,6 +385,15 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
                 self.hideHUD()
                 
+                //save access token
+                if (Global().isNotNull(self.accessToken)) {
+                    UserDefaults.saveUD(self.accessToken, ACCESS_TOKEN)
+                }
+                if (Global().isNotNull(self.refreshToken)) {
+                    UserDefaults.saveUD(self.refreshToken, REFRESH_ACCESS_TOKEN)
+                }
+
+                //push view
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
                 vc.mode = MODE_REGISTER
                 let backItem = UIBarButtonItem()
