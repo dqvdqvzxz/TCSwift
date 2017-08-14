@@ -102,9 +102,15 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             let url = URL(string: _obj.dicFacebookInfo[FB_AVATAR]!)
             imgUser.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_user"))
         }
-        if(_obj.objectAccountInfo.imagePath.origin != ""){
-            imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!, placeholderImage: #imageLiteral(resourceName: "default_user"))
+        
+        if(Global().isNotNull(_obj.objectAccountInfo)){
+            if(_obj.objectAccountInfo.imagePath.origin != ""){
+                imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!, placeholderImage: #imageLiteral(resourceName: "default_user"))
+            }
+        }else{
+            imgUser.image = #imageLiteral(resourceName: "default_user")
         }
+        
 
         //config mode
         if(mode == MODE_REGISTER){
