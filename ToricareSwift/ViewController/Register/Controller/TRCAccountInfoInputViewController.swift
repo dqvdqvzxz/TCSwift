@@ -145,22 +145,22 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             self.tfFirstName.text = _obj.objectAccountInfo.firstName
             self.tfLastName.text = _obj.objectAccountInfo.lastName
             self.tfFirstNameKata.text = _obj.objectAccountInfo.firstNameKata
-            self.tfLastNameKata.text = _obj.objectAccountInfo.firstNameKata
+            self.tfLastNameKata.text = _obj.objectAccountInfo.lastNameKata
             
             let dateData = _obj.objectAccountInfo.birthDay
-            let stringDate = Global().dateFromString(string: dateData, format: "yyyy/MM/dd")
+            let stringDate = Global().dateFromString(string: dateData, format: "yyyy-MM-dd")
             let dateConvert = Global().stringFromDate(date: stringDate, format: "yyyy年MM月dd日")
             self.tfDateOfBirth.text = dateConvert
             
             let genderData = _obj.objectAccountInfo.sex
             switch (genderData){
-            case "0":
+            case "1":
                 self.tfGender.text = Localizable(value: "male")
                 self.genderPicker.selectRow(0, inComponent: 0, animated: true)
-            case "1":
+            case "2":
                 self.tfGender.text = Localizable(value: "female")
                 self.genderPicker.selectRow(1, inComponent: 0, animated: true)
-            case "2":
+            case "3":
                 self.tfGender.text = Localizable(value: "other")
                 self.genderPicker.selectRow(2, inComponent: 0, animated: true)
             default:
@@ -360,8 +360,10 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             
             if(tfGender.text! == Localizable(value: "male")){
                 genderResult = GENDER_MALE
-            }else{
+            }else if(tfGender.text! == Localizable(value: "female")){
                 genderResult = GENDER_FEMALE
+            }else if(tfGender.text! == Localizable(value: "other")){
+                genderResult = GENDER_OTHER
             }
             
             let formatter = DateFormatter()
@@ -389,8 +391,10 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             
             if(tfGender.text! == Localizable(value: "male")){
                 genderResult = GENDER_MALE
-            }else{
+            }else if(tfGender.text! == Localizable(value: "female")){
                 genderResult = GENDER_FEMALE
+            }else if(tfGender.text! == Localizable(value: "other")){
+                genderResult = GENDER_OTHER
             }
             
             let formatter = DateFormatter()

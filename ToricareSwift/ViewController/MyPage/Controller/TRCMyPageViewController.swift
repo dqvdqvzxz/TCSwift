@@ -37,6 +37,8 @@ class TRCMyPageViewController: TRCBaseViewController {
         _obj.tabController.tabBar.isHidden = false
         
         _obj.nc5.setNavigationBarHidden(true, animated: animated)
+        
+        configUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,7 +55,7 @@ class TRCMyPageViewController: TRCBaseViewController {
         //UI of outlet
         viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
-        lblName.labelStyle(title: "\(_obj.objectAccountInfo.firstName)\(_obj.objectAccountInfo.lastName) さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
+        lblName.labelStyle(title: "\(_obj.objectAccountInfo.firstName) \(_obj.objectAccountInfo.lastName) さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
         lblPharmacist.labelStyle(title: Localizable(value: "my_pharmacy") + "：\(_obj.objectAccountInfo.shopName)", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
         
 //        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
