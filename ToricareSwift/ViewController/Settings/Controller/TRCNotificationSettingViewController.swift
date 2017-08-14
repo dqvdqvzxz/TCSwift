@@ -9,13 +9,6 @@
 import UIKit
 
 class TRCNotificationSettingViewController: TRCBaseViewController {
-
-    @IBOutlet var viewTimePicker: UIView!
-    @IBOutlet weak var viewBorder: UIView!
-    @IBOutlet weak var viewToolbar: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var btnDone: UIButton!
-    @IBOutlet weak var timePicker: UIPickerView!
     
     @IBOutlet weak var tblNotify: UITableView!
     
@@ -26,12 +19,15 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     var section = 3
     
-    var dataResult = NSDictionary()
+    var dataResult = NSMutableDictionary()
     
     var dataHours = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
-    var dataMinutes = ["0", "30"]
     
-    var genderPicker = UIPickerView()
+    var dataMinutes = ["00", "30"]
+    
+    var cellChange: Int!
+    
+    var timePicker = UIPickerView()
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -53,12 +49,6 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         
         btnSave.buttonStyle(title: STRING_CHANGE)
         
-        //UI of time picker view
-        viewTimePicker.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
-        viewToolbar.backgroundColor = UIColor.init(hexString: "ffffff", alpha: 0.7)
-        timePicker.backgroundColor = UIColor.init(hexString: "ffffff", alpha: 0.6)
-
-        
         //table view
         tblNotify.dataSource = self
         tblNotify.delegate = self
@@ -75,7 +65,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
             self.hideHUD()
             
             //set result to dic
-            self.dataResult = dataResult
+            self.dataResult = NSMutableDictionary(dictionary: dataResult)  //dataResult as! NSMutableDictionary
             
             self.configUI()
 
@@ -106,10 +96,6 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
             ELog(error)
             self.showAlert(error)
         }
-    }
-    
-    @IBAction func tapBtnDone(_ sender: Any) {
-        viewTimePicker.removeFromSuperview()
     }
     
     //MARK: Action
@@ -339,22 +325,60 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
         return 44
     }
     
+    func doneGenderPicker(){
+        //get time
+        let hourResult =  timePicker.selectedRow(inComponent: 0)
+        let minuteResult = (timePicker.selectedRow(inComponent: 1) * 30)
+        let timeResult = "\(hourResult):\(minuteResult)"
+        
+        //set time to dataResult
+        switch (self.cellChange){
+        case 0:
+            self.dataResult["weight_time"] = timeResult
+        case 1:
+            self.dataResult["breakfast_time"] = timeResult
+        case 2:
+            self.dataResult["lunch_time"] = timeResult
+        case 3:
+            self.dataResult["dinner_time"] = timeResult
+        case 4:
+            self.dataResult["snack_time"] = timeResult
+        default:
+            break
+        }
+        
+        //reload cell
+        let indexPath = IndexPath(item: self.cellChange, section: 2)
+        self.tblNotify.reloadRows(at: [indexPath], with: .automatic)
+        
+        self.view.endEditing(true)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath) as! TRCLinkedServiceCell
 
         self.timePicker.dataSource = self
         self.timePicker.delegate = self
         
-        viewTimePicker.frame = self.view.bounds
-        viewTimePicker.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
-        self.view.addSubview(viewTimePicker)
+        //toolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
         
-        let hourResult =  timePicker.selectedRow(inComponent: 0)
-        let minuteResult = (timePicker.selectedRow(inComponent: 1) * 30)
+        //done button & cancel button
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let spaceButton2 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
+        toolbar.setItems([spaceButton,spaceButton2,doneButton], animated: false)
         
-        print(hourResult, minuteResult)
-        currentCell.lblTime.text = "\(hourResult) : \(minuteResult)"
+        // add toolbar to textField
+        currentCell.tfTime.inputAccessoryView = toolbar
+        
+        // add datepicker to textField
+        currentCell.tfTime.inputView = timePicker
+        
+        self.cellChange = indexPath.row
+        
+        currentCell.tfTime.becomeFirstResponder()
     }
 }
 

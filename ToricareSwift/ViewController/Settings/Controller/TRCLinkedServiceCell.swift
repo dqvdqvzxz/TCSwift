@@ -17,6 +17,8 @@ class TRCLinkedServiceCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     
+    @IBOutlet weak var tfTime: UITextField!
+    
     @IBOutlet weak var switchCell: UISwitch!
     
     override func awakeFromNib() {
@@ -25,6 +27,8 @@ class TRCLinkedServiceCell: UITableViewCell {
         
         lblTitle.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
         lblTime.labelStyle(title: nil, fontSize: LABEL_FONT_SIZE, textColor: LABEL_FONT_COLOR)
+        
+        tfTime.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
