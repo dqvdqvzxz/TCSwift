@@ -62,7 +62,7 @@ let REGISTER_PARAM_REGISTER_TYPE =  "register_type"
 let REGISTER_PARAM_FACEBOOK_ID =    "facebook_id"
 let REGISTER_PARAM_FACEBOOK_TOKEN = "facebook_token"
 let REGISTER_PARAM_SHOP_ID =        "shop_id"
-let REGISTER_PARAM_SHOP_NAME =        "shop_name"
+let REGISTER_PARAM_SHOP_NAME =      "shop_name"
 let REGISTER_PARAM_IMAGE_PATH =     "image_path"
 
 //Email change
@@ -110,6 +110,9 @@ let PASSCODE =                      "passCode"
 let ACCESS_TOKEN =                  "access_token"
 let REFRESH_ACCESS_TOKEN =          "refresh_access_token"
 let REFRESH_TOKEN =                 "refresh_token"
+
+let CHECK_ACCOUNT_INFO =            "check_account_info"
+let CHECKED_INFO =                  "info_filled"
 
 //search data 
 let SEARCH_KEYWORD =                "search_keyword"
