@@ -53,6 +53,7 @@ class TRCBaseAPIController{
                     Alamofire.request(encodedURLRequest).responseJSON { (response) in
                         let data = response.result.value as? NSDictionary
                         
+                        DLog(path)
                         DLog(data)
                         
                         //handle status code
