@@ -42,20 +42,31 @@
                             <constraint firstAttribute="height" constant="30" id="hIe-NU-OEa"/>
                         </constraints>
                     </switch>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0i-lh-x8y">
+                        <rect key="frame" x="0.0" y="0.0" width="251" height="43.5"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Jvk-Jd-jIu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="6dw-97-oqA"/>
+                    <constraint firstItem="I0i-lh-x8y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7pH-Ku-vbq"/>
                     <constraint firstItem="GBE-SB-qdq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="CS4-ET-Vtn"/>
+                    <constraint firstItem="I0i-lh-x8y" firstAttribute="trailing" secondItem="Jvk-Jd-jIu" secondAttribute="leading" constant="-10" id="GUo-7z-VRO"/>
                     <constraint firstItem="GBE-SB-qdq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="GUt-y5-lRE"/>
                     <constraint firstItem="So4-Yj-THr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="Oln-ST-7zJ"/>
                     <constraint firstItem="So4-Yj-THr" firstAttribute="trailing" secondItem="Jvk-Jd-jIu" secondAttribute="leading" constant="-10" id="cfz-To-Lmy"/>
+                    <constraint firstItem="I0i-lh-x8y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kqC-Jy-dME"/>
                     <constraint firstAttribute="trailing" secondItem="Jvk-Jd-jIu" secondAttribute="trailing" constant="10" id="rHg-nR-O22"/>
+                    <constraint firstAttribute="bottom" secondItem="I0i-lh-x8y" secondAttribute="bottom" id="tMP-kr-sV6"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="lblTime" destination="So4-Yj-THr" id="TWz-vS-sep"/>
                 <outlet property="lblTitle" destination="GBE-SB-qdq" id="cj3-If-ceg"/>
                 <outlet property="switchCell" destination="Jvk-Jd-jIu" id="4DR-Da-k0L"/>
+                <outlet property="tfTime" destination="I0i-lh-x8y" id="2Cw-1p-F12"/>
             </connections>
         </tableViewCell>
     </objects>
