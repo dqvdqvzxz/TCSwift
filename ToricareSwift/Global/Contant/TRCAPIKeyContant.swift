@@ -125,6 +125,8 @@ let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
 let MESSAGE =                       "message"
+let TITLE =                         "title"
+let SENDER =                        "sender"
 
 let STATUS =                        "status"
 let CITY_ID =                       "city_id"
@@ -154,6 +156,10 @@ let BUSSINESS_HOURS =               "bussiness_hours"
 let HOLIDAY =                       "holiday"
 let URL_KEY =                       "url"
 let IMAGES =                        "images"
+let CREATED_AT =                    "created_at"
+
+// Message
+let IS_READ =                       "is_read"
 
 //notification - setting
 let NOTIF_ALL =                     "notifAll"

@@ -13,8 +13,16 @@ class TRCMessageListViewController: TRCBaseViewController {
     @IBOutlet weak var tblMessage: UITableView!
     
     var refreshControl = UIRefreshControl()
-    var dataList = NSMutableArray()
-    
+    var dataList: [TRCMessage] = []
+    {
+        didSet
+        {
+            DispatchQueue.main.async {
+                self.tblMessage.reloadData()
+            }
+        }
+    }
+
     var loadNumber = 0
     var newFetchBool = 0
     
@@ -53,13 +61,20 @@ class TRCMessageListViewController: TRCBaseViewController {
         self.showHUD()
         TRCMessageRequest().getMessage(completion: { (data) in
             self.hideHUD()
-            DLog(data)
+            guard let data = data else { return }
+            guard let messageArray = data.object(forKey: DATA) else { return }
+            do {
+                self.dataList = try parseArray(messageArray as! [JSONObject])
+            }
+            catch
+            {
+                print("JSONParsin Error: \(error)")
+            }
         }) { (error) in
             self.hideHUD()
             self.showAlert(error)
         }
     }
-    
     
     
 //    func fetchDataFromServer()
@@ -108,20 +123,19 @@ class TRCMessageListViewController: TRCBaseViewController {
 
 extension TRCMessageListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return dataList.count + 1
-        return 5
+        return dataList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        if(indexPath.row < dataList.count){
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
-            
+            let messageData = dataList[indexPath.row] as TRCMessage
             //style for cell
-            cell.imgView.image = #imageLiteral(resourceName: "message_new")
-            cell.lblTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
-            cell.lblSubTitle.labelStyle(title: "明日10時お待ちしております", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
-            
-            return cell
+        cell.imgView.image = messageData.isRead == "0" ? #imageLiteral(resourceName: "message_new") : #imageLiteral(resourceName: "message_read")
+        cell.lblTitle.labelStyle(title: messageData.title, fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
+        cell.lblSubTitle.labelStyle(title: messageData.sender + " | " + messageData.createdAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        
+        return cell
 //        }else{
 //            //load more cell
 //            let loadMoreCell = tableView.dequeueReusableCell(withIdentifier: "LoadMoreCell") as! TRCLoadMoreCell
@@ -166,6 +180,7 @@ extension TRCMessageListViewController: UITableViewDelegate{
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
+            vc.messageData = dataList[(indexPath?.row)!]
             self.navigationController?.pushViewController(vc, animated: true)
 //        }else{
 //            let loadMoreCell = tableView.cellForRow(at: indexPath!) as! TRCLoadMoreCell
