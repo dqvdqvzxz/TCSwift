@@ -11,6 +11,8 @@
 		1706DBAB1F307CB600188510 /* TRCQRCodeDoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1706DBAA1F307CB600188510 /* TRCQRCodeDoneViewController.xib */; };
 		1757AF391F4151FA00F340D6 /* TRCMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */; };
 		1757AF3A1F4151FA00F340D6 /* TRCMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */; };
+		1757AF3C1F4177D200F340D6 /* TRCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757AF3B1F4177D200F340D6 /* TRCMessage.swift */; };
+		1757AF3D1F4177D200F340D6 /* TRCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757AF3B1F4177D200F340D6 /* TRCMessage.swift */; };
 		1788CE0E1F37FFC300778006 /* JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE0D1F37FFC300778006 /* JSONParsing.swift */; };
 		1788CE101F37FFFE00778006 /* TRCPrefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE0F1F37FFFE00778006 /* TRCPrefecture.swift */; };
 		1788CE121F38100B00778006 /* TRCCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE111F38100B00778006 /* TRCCity.swift */; };
@@ -310,6 +312,7 @@
 		1706DBA61F307C9400188510 /* TRCQRCodeDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCQRCodeDoneViewController.swift; sourceTree = "<group>"; };
 		1706DBAA1F307CB600188510 /* TRCQRCodeDoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCQRCodeDoneViewController.xib; sourceTree = "<group>"; };
 		1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCMessageRequest.swift; sourceTree = "<group>"; };
+		1757AF3B1F4177D200F340D6 /* TRCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCMessage.swift; sourceTree = "<group>"; };
 		1788CE0D1F37FFC300778006 /* JSONParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsing.swift; sourceTree = "<group>"; };
 		1788CE0F1F37FFFE00778006 /* TRCPrefecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPrefecture.swift; sourceTree = "<group>"; };
 		1788CE111F38100B00778006 /* TRCCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCCity.swift; sourceTree = "<group>"; };
@@ -853,6 +856,7 @@
 			isa = PBXGroup;
 			children = (
 				68F07DB01F3C40A000E1934C /* TRCSummary.swift */,
+				1757AF3B1F4177D200F340D6 /* TRCMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1364,6 +1368,7 @@
 				17C98F801F3BFAE8003AF863 /* TRCQRCodeDoneViewController.swift in Sources */,
 				17C98F811F3BFAE8003AF863 /* TRCStringConstant.swift in Sources */,
 				17C98F821F3BFAE8003AF863 /* TRCSettingViewController.swift in Sources */,
+				1757AF3D1F4177D200F340D6 /* TRCMessage.swift in Sources */,
 				17C98F831F3BFAE8003AF863 /* TRCPointViewController.swift in Sources */,
 				17C98F841F3BFAE8003AF863 /* TRCHomeViewController.swift in Sources */,
 				17C98F851F3BFAE8003AF863 /* TRCUserLeaveCompleteViewController.swift in Sources */,
@@ -1411,6 +1416,7 @@
 			files = (
 				68BB9ECE1F386B35009A8454 /* TRCEmailRequest.swift in Sources */,
 				684095AE1F303B36009F16EA /* TRCTab3ViewController.swift in Sources */,
+				1757AF3C1F4177D200F340D6 /* TRCMessage.swift in Sources */,
 				3F57F7521F298C3600CC079C /* TRCPasscodeLockLoginInputViewController.swift in Sources */,
 				3F475A741F14B05A00B82645 /* TRCMyPageCell.swift in Sources */,
 				3F4758F11F0BA02400B82645 /* TRCAccountInfoInputViewController.swift in Sources */,

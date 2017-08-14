@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,12 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCDetailMessageViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
-                <outlet property="lblContent" destination="vJO-g2-HOu" id="35i-ok-8cE"/>
                 <outlet property="lblLine" destination="mX1-4N-w17" id="1W2-nW-kh4"/>
                 <outlet property="lblSender" destination="e8G-nH-Msx" id="Nj1-Xe-Prm"/>
                 <outlet property="lblTimeSent" destination="waH-yx-Kcy" id="5BK-Ra-0hE"/>
                 <outlet property="lblTitleMessage" destination="icx-qv-Ran" id="ydZ-ZO-ry7"/>
                 <outlet property="scrollView" destination="Lng-Ji-ZKz" id="Gqy-aN-34g"/>
+                <outlet property="tvContent" destination="mTN-UC-PZ2" id="hCD-a8-1uv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewContentMessage" destination="aTu-b8-DDV" id="hEz-1R-TAc"/>
                 <outlet property="viewLine" destination="BtR-hM-hgC" id="VfA-Ak-gvE"/>
@@ -46,13 +46,13 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX1-4N-w17">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX1-4N-w17">
                             <rect key="frame" x="57" y="30" width="5.5" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waH-yx-Kcy">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waH-yx-Kcy">
                             <rect key="frame" x="67.5" y="30" width="42" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -92,18 +92,19 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTu-b8-DDV">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="511"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-g2-HOu">
-                                            <rect key="frame" x="10" y="10" width="355" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mTN-UC-PZ2">
+                                            <rect key="frame" x="10" y="10" width="355" height="491"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="vJO-g2-HOu" firstAttribute="top" secondItem="aTu-b8-DDV" secondAttribute="top" constant="10" id="Kpg-ll-whh"/>
-                                        <constraint firstAttribute="trailing" secondItem="vJO-g2-HOu" secondAttribute="trailing" constant="10" id="d76-Gb-VQg"/>
-                                        <constraint firstItem="vJO-g2-HOu" firstAttribute="leading" secondItem="aTu-b8-DDV" secondAttribute="leading" constant="10" id="ghd-XU-aaN"/>
+                                        <constraint firstItem="mTN-UC-PZ2" firstAttribute="leading" secondItem="aTu-b8-DDV" secondAttribute="leading" constant="10" id="NLn-7t-b5H"/>
+                                        <constraint firstAttribute="trailing" secondItem="mTN-UC-PZ2" secondAttribute="trailing" constant="10" id="mgd-JX-rc9"/>
+                                        <constraint firstAttribute="bottom" secondItem="mTN-UC-PZ2" secondAttribute="bottom" constant="10" id="plz-12-Kf2"/>
+                                        <constraint firstItem="mTN-UC-PZ2" firstAttribute="top" secondItem="aTu-b8-DDV" secondAttribute="top" constant="10" id="veX-MH-iWg"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -139,6 +140,7 @@
                 <constraint firstAttribute="trailing" secondItem="iya-HJ-npL" secondAttribute="trailing" id="tPI-qW-2Of"/>
                 <constraint firstAttribute="trailing" secondItem="BtR-hM-hgC" secondAttribute="trailing" constant="10" id="zyP-SG-D8n"/>
             </constraints>
+            <point key="canvasLocation" x="-282.5" y="-61.5"/>
         </view>
     </objects>
 </document>
