@@ -59,7 +59,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="icx-qv-Ran" firstAttribute="leading" secondItem="zdV-jB-pii" secondAttribute="leading" constant="10" id="7CU-zc-7rd"/>
                         <constraint firstItem="e8G-nH-Msx" firstAttribute="leading" secondItem="zdV-jB-pii" secondAttribute="leading" constant="10" id="7TI-Ro-yDm"/>
@@ -77,25 +77,26 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtR-hM-hgC">
-                    <rect key="frame" x="10" y="144" width="355" height="2"/>
+                    <rect key="frame" x="0.0" y="144" width="375" height="1"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="2" id="C9U-L2-GBM"/>
+                        <constraint firstAttribute="height" constant="1" id="C9U-L2-GBM"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iya-HJ-npL">
-                    <rect key="frame" x="0.0" y="156" width="375" height="511"/>
+                    <rect key="frame" x="0.0" y="155" width="375" height="512"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lng-Ji-ZKz">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="511"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="512"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTu-b8-DDV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="511"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="512"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mTN-UC-PZ2">
-                                            <rect key="frame" x="10" y="10" width="355" height="491"/>
+                                            <rect key="frame" x="10" y="0.0" width="355" height="512"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
@@ -103,8 +104,8 @@
                                     <constraints>
                                         <constraint firstItem="mTN-UC-PZ2" firstAttribute="leading" secondItem="aTu-b8-DDV" secondAttribute="leading" constant="10" id="NLn-7t-b5H"/>
                                         <constraint firstAttribute="trailing" secondItem="mTN-UC-PZ2" secondAttribute="trailing" constant="10" id="mgd-JX-rc9"/>
-                                        <constraint firstAttribute="bottom" secondItem="mTN-UC-PZ2" secondAttribute="bottom" constant="10" id="plz-12-Kf2"/>
-                                        <constraint firstItem="mTN-UC-PZ2" firstAttribute="top" secondItem="aTu-b8-DDV" secondAttribute="top" constant="10" id="veX-MH-iWg"/>
+                                        <constraint firstAttribute="bottom" secondItem="mTN-UC-PZ2" secondAttribute="bottom" id="plz-12-Kf2"/>
+                                        <constraint firstItem="mTN-UC-PZ2" firstAttribute="top" secondItem="aTu-b8-DDV" secondAttribute="top" id="veX-MH-iWg"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -130,7 +131,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="iya-HJ-npL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2Np-jD-S50"/>
-                <constraint firstItem="BtR-hM-hgC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Crt-ob-Ner"/>
+                <constraint firstItem="BtR-hM-hgC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Crt-ob-Ner"/>
                 <constraint firstAttribute="trailing" secondItem="zdV-jB-pii" secondAttribute="trailing" id="LdK-1D-PjR"/>
                 <constraint firstItem="iya-HJ-npL" firstAttribute="top" secondItem="BtR-hM-hgC" secondAttribute="bottom" constant="10" id="RBC-1t-dlG"/>
                 <constraint firstAttribute="bottom" secondItem="iya-HJ-npL" secondAttribute="bottom" id="UuO-Fs-JPx"/>
@@ -138,7 +139,7 @@
                 <constraint firstItem="BtR-hM-hgC" firstAttribute="top" secondItem="zdV-jB-pii" secondAttribute="bottom" constant="10" id="liF-6M-owb"/>
                 <constraint firstItem="zdV-jB-pii" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="p2E-MW-jMT"/>
                 <constraint firstAttribute="trailing" secondItem="iya-HJ-npL" secondAttribute="trailing" id="tPI-qW-2Of"/>
-                <constraint firstAttribute="trailing" secondItem="BtR-hM-hgC" secondAttribute="trailing" constant="10" id="zyP-SG-D8n"/>
+                <constraint firstAttribute="trailing" secondItem="BtR-hM-hgC" secondAttribute="trailing" id="zyP-SG-D8n"/>
             </constraints>
             <point key="canvasLocation" x="-282.5" y="-61.5"/>
         </view>
