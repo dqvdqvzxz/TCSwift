@@ -67,7 +67,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         self.showHUD()
 //        pharmacyData.pharmacyId
         // for test
-        TRCPharmacyRequest().getPharmacy("1", completion: { (data) in
+        TRCPharmacyRequest().getPharmacy(_obj.objectAccountInfo.shopId, completion: { (data) in
             self.hideHUD()
             guard let data = data else { return }
             guard let pharmacyDict = data.object(forKey: DATA) else { return }
@@ -147,6 +147,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             lblDayOffResult.labelStyle(title: nil)
             lblWebsiteResult.labelStyle(title: nil)
             
+            lblPharmacyName.text = pharmacyData.name
             lblAddressResult.text = pharmacyData.address1 + " " + pharmacyData.address2
             lblPhoneResult.text = pharmacyData.tel
             lblWorkScheduleResult.text = pharmacyData.businessHours

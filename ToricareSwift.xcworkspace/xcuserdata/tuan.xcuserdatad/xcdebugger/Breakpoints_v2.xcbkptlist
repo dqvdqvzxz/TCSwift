@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "loginFB()"
+            landmarkName = "onProfileUpdated()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -426,22 +426,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToricareSwift/ViewController/Register/Controller/TRCAccountInfoInputViewController.swift"
-            timestampString = "523962269.040276"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "getData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -650,7 +634,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
@@ -666,7 +650,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Register/Controller/TRCAccountInfoInputViewController.swift"
@@ -677,44 +661,12 @@
             endingLineNumber = "332"
             landmarkName = "uploadAvatar()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCAccountInfoInputViewController.(uploadAvatar () -&gt; ()).(closure #1)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Register/Controller/TRCAccountInfoInputViewController.swift"
-                  timestampString = "524132448.639552"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "333"
-                  endingLineNumber = "333"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCAccountInfoInputViewController.(uploadAvatar () -&gt; ()).(closure #2)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Register/Controller/TRCAccountInfoInputViewController.swift"
-                  timestampString = "524132448.642091"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "334"
-                  endingLineNumber = "334"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Register/Controller/TRCAccountInfoInputViewController.swift"
@@ -846,7 +798,7 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Register/Controller/TRCRegisterViewController.swift"
-                  timestampString = "524132448.681063"
+                  timestampString = "524369562.545446"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -861,7 +813,7 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Register/Controller/TRCRegisterViewController.swift"
-                  timestampString = "524132448.683453"
+                  timestampString = "524369562.54823"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -874,7 +826,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/Global/Common/JSONParsing.swift"
@@ -890,7 +842,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Register/Model/TRCAccountInfo.swift"
@@ -906,7 +858,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/Global/Common/JSONParsing.swift"
@@ -916,6 +868,54 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "isNull(forKey:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/ViewController/Register/Controller/TRCAccountInfoInputViewController.swift"
+            timestampString = "524138245.611262"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/ViewController/MyPage/Controller/TRCMyPharmacyDetailViewController.swift"
+            timestampString = "524369561.158378"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "nextImg()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/ViewController/MyPage/Controller/TRCMyPharmacyDetailViewController.swift"
+            timestampString = "524369573.40262"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "setPharmacyImage(urlString:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
