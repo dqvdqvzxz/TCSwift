@@ -61,8 +61,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         super.viewDidLoad()
 
         configUI()
-        
-        print("Mode \(mode)")
     }
 
     override func didReceiveMemoryWarning() {
