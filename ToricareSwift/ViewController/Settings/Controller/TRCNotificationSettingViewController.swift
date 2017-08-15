@@ -21,7 +21,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     var dataResult = NSMutableDictionary()
     
-    var dataHours = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+    var dataHours = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
     
     var dataMinutes = ["00", "30"]
     
@@ -79,7 +79,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: Button action
     @IBAction func tapBtnSave(_ sender: Any) {
         self.showHUD()
-        TRCNotificationRequest().notificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, "10:00", "10:00", "10:00", "10:00", "10:00", completion: {(data) in
+        TRCNotificationRequest().notificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, self.dataResult["weight_time"] as! String, self.dataResult["breakfast_time"] as! String, self.dataResult["lunch_time"] as! String, self.dataResult["dinner_time"] as! String, self.dataResult["snack_time"] as! String, completion: {(data) in
             self.hideHUD()
             
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers
@@ -327,8 +327,10 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
     
     func doneGenderPicker(){
         //get time
-        let hourResult =  timePicker.selectedRow(inComponent: 0)
-        let minuteResult = (timePicker.selectedRow(inComponent: 1) * 30)
+        let hourPicked =  timePicker.selectedRow(inComponent: 0)
+        let minutePicked = timePicker.selectedRow(inComponent: 1)
+        let hourResult = dataHours[hourPicked]
+        let minuteResult = dataMinutes[minutePicked]
         let timeResult = "\(hourResult):\(minuteResult)"
         
         //set time to dataResult
