@@ -62,7 +62,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
         configUI()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -188,7 +188,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         // add toolbar to textField
         tfGender.inputAccessoryView = toolbar
@@ -205,6 +205,11 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: _obj.objectAccountInfo.birthDay)
+        datePicker.setDate(date!, animated: true)
         
         //ToolBar
         let toolbar = UIToolbar();
