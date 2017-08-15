@@ -31,6 +31,7 @@ class TRCDetailMessageViewController: UIViewController {
         super.viewDidLoad()
 
         configUI()
+        postData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,18 +42,24 @@ class TRCDetailMessageViewController: UIViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = Localizable(value: "message_list")
+        self.navigationItem.title = Localizable(value: "message")
         
         //UI
         lblTitleMessage.labelStyle(title: messageData.title, fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
         
         lblSender.labelStyle(title: messageData.sender + " | " + messageData.createdAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: BACKGROUND_COLOR)
         
-        viewLine.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        viewLine.backgroundColor = UIColor.init(hexString: LABEL_FONT_GREY_COLOR)
+        tvContent.font = UIFont.init(name: "HiraginoSans-W3", size: LABEL_FONT_SIZE!)
+        tvContent.textColor = UIColor.init(hexString: LABEL_FONT_COLOR)
         tvContent.text = messageData.message
-        
-//        lblContent.lineBreakMode = .byWordWrapping
-//        lblContent.numberOfLines = 0
-//        lblContent.labelStyle(title: "田中様 \n 来店のご予約ですが、\n 明日12月5日（火）10：00となります。\n 何卒宜しくお願い致します。 \n\n ※本メールは、システムより自動的に通知させていただいております。\n\n ○○薬局 \n山田 太郎")
+    }
+    
+    func postData() {
+        TRCMessageRequest().readMessage(messageData.messageID, completion: { (data) in
+            
+        }) { (error) in
+            
+        }
     }
 }
