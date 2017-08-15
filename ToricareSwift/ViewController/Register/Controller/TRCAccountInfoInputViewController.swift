@@ -365,6 +365,14 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         }
 
         if(mode == MODE_REGISTER){
+            //save access token
+            if (Global().isNotNull(self.accessToken)) {
+                UserDefaults.saveUD(self.accessToken, ACCESS_TOKEN)
+            }
+            if (Global().isNotNull(self.refreshToken)) {
+                UserDefaults.saveUD(self.refreshToken, REFRESH_ACCESS_TOKEN)
+            }
+            
             var genderResult = ""
             var birthdayResult = ""
             
@@ -382,14 +390,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             
             TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
                 self.hideHUD()
-                
-                //save access token
-                if (Global().isNotNull(self.accessToken)) {
-                    UserDefaults.saveUD(self.accessToken, ACCESS_TOKEN)
-                }
-                if (Global().isNotNull(self.refreshToken)) {
-                    UserDefaults.saveUD(self.refreshToken, REFRESH_ACCESS_TOKEN)
-                }
 
                 //push view
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
