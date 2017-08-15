@@ -31,7 +31,9 @@ class TRCDetailMessageViewController: UIViewController {
         super.viewDidLoad()
 
         configUI()
-        postData()
+        if (Int(messageData.isRead) == 0) {
+            postData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +49,7 @@ class TRCDetailMessageViewController: UIViewController {
         //UI
         lblTitleMessage.labelStyle(title: messageData.title, fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
         
-        lblSender.labelStyle(title: messageData.sender + " | " + messageData.createdAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: BACKGROUND_COLOR)
+        lblSender.labelStyle(title: messageData.sender + " | " + messageData.updatedAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: BACKGROUND_COLOR)
         
         viewLine.backgroundColor = UIColor.init(hexString: LABEL_FONT_GREY_COLOR)
         tvContent.font = UIFont.init(name: "HiraginoSans-W3", size: LABEL_FONT_SIZE!)
@@ -57,7 +59,7 @@ class TRCDetailMessageViewController: UIViewController {
     
     func postData() {
         TRCMessageRequest().readMessage(messageData.messageID, completion: { (data) in
-            
+            _obj.objectSummary.unread = "\(Int(_obj.objectSummary.unread)! - 1)"
         }) { (error) in
             
         }

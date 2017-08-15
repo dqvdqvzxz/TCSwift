@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCHomeViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="btnMessage" destination="gFS-26-Nxc" id="dRY-XR-nSB"/>
                 <outlet property="btnMore" destination="Zsk-H9-TLX" id="SGp-Bo-ZZL"/>
+                <outlet property="customLeftTab" destination="AO0-Np-bhl" id="I1u-TY-f35"/>
                 <outlet property="imgViewAccessory" destination="4FU-Zf-D2G" id="F94-Mj-apK"/>
                 <outlet property="imgViewWeight" destination="vuP-AO-dEN" id="zQD-QT-9t8"/>
                 <outlet property="lblContentExerciseKcal" destination="8fX-8W-XqD" id="YpQ-fG-x9S"/>
@@ -29,6 +31,7 @@
                 <outlet property="lblTitleGroupSummary" destination="w6U-kh-JEp" id="dwE-hf-LFT"/>
                 <outlet property="lblTitleNotification1" destination="6fz-OV-CXS" id="1Qm-QX-OVs"/>
                 <outlet property="lblTitleNotification2" destination="DlP-aR-bt6" id="gxE-Ys-13A"/>
+                <outlet property="lblUnread" destination="f3N-Ip-8zk" id="rCy-Jk-CU0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewBorderBanner1" destination="4jm-Go-GQ9" id="0aT-Ez-Oot"/>
                 <outlet property="viewBorderBanner2" destination="ggA-nN-aJG" id="COf-2v-ym5"/>
@@ -623,11 +626,39 @@
             </constraints>
             <point key="canvasLocation" x="-898.5" y="-23.5"/>
         </view>
+        <view contentMode="scaleToFill" id="AO0-Np-bhl">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-26-Nxc">
+                    <rect key="frame" x="0.0" y="5" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="ic_home_message">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="f3N-Ip-8zk">
+                    <rect key="frame" x="24" y="0.0" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-1647" y="19"/>
+        </view>
     </objects>
     <resources>
         <image name="banner1" width="99" height="45"/>
         <image name="banner2" width="99" height="45"/>
         <image name="ic_back" width="48" height="48"/>
+        <image name="ic_home_message" width="64" height="64"/>
         <image name="logo_car" width="42" height="50"/>
         <image name="megaphone" width="64" height="64"/>
         <image name="notepad" width="64" height="64"/>

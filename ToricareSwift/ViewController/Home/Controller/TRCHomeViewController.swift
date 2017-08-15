@@ -68,6 +68,9 @@ class TRCHomeViewController: TRCBaseViewController {
     
     var accountInfo: TRCAccountInfo!
     
+    @IBOutlet var customLeftTab: UIView!
+    @IBOutlet weak var lblUnread: UILabel!
+    @IBOutlet weak var btnMessage: UIButton!
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +101,9 @@ class TRCHomeViewController: TRCBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = false
+        if let summary = _obj.objectSummary {
+            updateUnread(summary.unread)
+        }        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -113,12 +119,8 @@ class TRCHomeViewController: TRCBaseViewController {
     func configUI(){
         //navigation
         self.navigationItem.title = STRING_TAB_HOME
-        
-        let leftButton =  UIButton()
-        leftButton.setImage(UIImage(named: "ic_home_message"), for: .normal)
-        leftButton.addTarget(self, action: #selector(pushToMessageList), for: .touchUpInside)
-        leftButton.frame = CGRect(x: 7, y: 10, width: 30, height: 30)
-        let leftBarButton = UIBarButtonItem(customView: leftButton)
+        btnMessage.addTarget(self, action: #selector(pushToMessageList), for: .touchUpInside)
+        let leftBarButton = UIBarButtonItem(customView: customLeftTab)
         navigationItem.leftBarButtonItem = leftBarButton
         
         let rightButton =  UIButton()
@@ -155,6 +157,21 @@ class TRCHomeViewController: TRCBaseViewController {
         imgViewAccessory.image = #imageLiteral(resourceName: "ic_next")
     }
     
+    func updateUnread(_ value: String) {
+        if (Int(value)! == 0) {
+            lblUnread.text = ""
+            lblUnread.isHidden = true
+        } else if (Int(value)! < 10 ) {
+            lblUnread.isHidden = false
+            lblUnread.text = value
+            lblUnread.makeCircle()
+        } else {
+            lblUnread.isHidden = false
+            lblUnread.text = "9+"
+            lblUnread.makeRoundRect()
+        }
+    }
+    
     //MARK: Get data()
     func getData(){
         //get summary
@@ -163,6 +180,7 @@ class TRCHomeViewController: TRCBaseViewController {
             do {
                 self.summaryInfo = try parseDict(dataResult as! JSONObject) as TRCSummary
                 _obj.objectSummary = self.summaryInfo
+                self.updateUnread(self.summaryInfo.unread)
             } catch {
                 print("JSONParsin Error: \(error)")
             }

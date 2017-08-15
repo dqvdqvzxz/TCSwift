@@ -12,6 +12,7 @@ struct TRCSummary {
     var memberID = ""
     var step = ""
     var calo = ""
+    var unread = ""
 }
 
 extension TRCSummary: JSONDecodable{
@@ -19,6 +20,7 @@ extension TRCSummary: JSONDecodable{
         self.memberID = try decoder.value(forKey: SUMMARY_MEMBER_ID)
         self.step = try decoder.value(forKey: SUMMARY_STEP)
         self.calo = try decoder.value(forKey: SUMMARY_CALO)
+        self.unread = try decoder.value(forKey: SUMMARY_UNREAD)
     }
 }
 

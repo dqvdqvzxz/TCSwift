@@ -31,4 +31,10 @@ extension UIView{
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
     }
+    
+    func makeRoundRect() {
+        let radius = self.frame.width / 4
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
 }
