@@ -63,43 +63,38 @@ class TRCBaseAPIController{
                             failed(RESULT_NO_DATA)
                             return
                         }else if(statusCode == STATUS_CODE_UNAUTHORIZED){
-                            let dataError = data?.object(forKey: ERROR) as! NSDictionary
-                            if(Global().convertObjectToString(dataError.object(forKey: ERROR_CODE)) == EXPIRED_REFRESH_TOKEN){
-                                //push pre login
+                            //refresh token
+                            TRCTokenRequest().refreshToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, UserDefaults.getUD(REFRESH_ACCESS_TOKEN) as! String, completion: {(data) in
+                                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                                
+                                // Save access token
+                                if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
+                                    Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                                }
+                                
+                                if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                                    Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                                }
+                                
+                                //re-call API
+                                self.callAPI(params, atPath: path, withMethod: httpMethod, blockCompletion: { (data) in
+                                    completion(data)
+                                }, blockFailed: { (error) in
+                                    TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
+                                        //push to pre login
+                                        let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+                                        let navController = UINavigationController(rootViewController: mainVC)
+                                        UIApplication.shared.keyWindow?.rootViewController = navController
+                                    }, failed: { (error) in
+                                        failed(error)
+                                    })
+                                })
+                                
+                            }) { (error) in
+                                failed(RESULT_FAIL_REFRESH_TOKEN)
                                 let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                                 let navController = UINavigationController(rootViewController: mainVC)
                                 UIApplication.shared.keyWindow?.rootViewController = navController
-                            }else if(Global().convertObjectToString(dataError.object(forKey: ERROR_CODE)) == EXPIRED_REFRESH_TOKEN){
-                                //refresh token
-                                TRCTokenRequest().refreshToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, UserDefaults.getUD(REFRESH_ACCESS_TOKEN) as! String, completion: {(data) in
-                                    let dataResult = data?.object(forKey: DATA) as! NSDictionary
-                                    
-                                    // Save access token
-                                    if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                                        Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
-                                    }
-                                    
-                                    if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                                        Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
-                                    }
-                                    
-                                    //re-call API
-                                    self.callAPI(params, atPath: path, withMethod: httpMethod, blockCompletion: { (data) in
-                                        completion(data)
-                                    }, blockFailed: { (error) in
-                                        TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
-                                            //push to pre login
-                                            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-                                            let navController = UINavigationController(rootViewController: mainVC)
-                                            UIApplication.shared.keyWindow?.rootViewController = navController
-                                        }, failed: { (error) in
-                                            failed(error)
-                                        })
-                                    })
-                                    
-                                }) { (error) in
-                                    failed(RESULT_FAIL_REFRESH_TOKEN)
-                                }
                             }
                         }else if (statusCode == STATUS_CODE_SUCCESS) {
                             completion(data)
