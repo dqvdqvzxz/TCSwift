@@ -55,12 +55,16 @@ class TRCMyPageViewController: TRCBaseViewController {
         //UI of outlet
         viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
-        if(Global().isNotNull(_obj.objectAccountInfo)){
+        if(_obj.objectAccountInfo.firstName != "" && _obj.objectAccountInfo.lastName != ""){
             lblName.labelStyle(title: "\(_obj.objectAccountInfo.firstName) \(_obj.objectAccountInfo.lastName) さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
+        }else{
+            lblName.labelStyle(title: "")
+        }
+        
+        if(_obj.objectAccountInfo.shopName != ""){
             lblPharmacist.labelStyle(title: Localizable(value: "my_pharmacy") + "：\(_obj.objectAccountInfo.shopName)", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
         }else{
-            lblName.labelStyle(title: "", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
-            lblPharmacist.labelStyle(title: Localizable(value: "my_pharmacy"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
+            lblPharmacist.labelStyle(title: "")
         }
         
 //        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
