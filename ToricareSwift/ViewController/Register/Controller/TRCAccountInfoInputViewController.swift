@@ -61,8 +61,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         super.viewDidLoad()
 
         configUI()
-        
-        print("Mode \(mode)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,13 +107,14 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             imgUser.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_user"))
         }
         
-        if(Global().isNotNull(_obj.objectAccountInfo)){
-            if(_obj.objectAccountInfo.imagePath.origin != ""){
-                imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!, placeholderImage: #imageLiteral(resourceName: "default_user"))
-            }
+        if(_obj.objectAccountInfo.imagePath.origin != ""){
+            imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!, placeholderImage: #imageLiteral(resourceName: "default_user"))
         }else{
             imgUser.image = #imageLiteral(resourceName: "default_user")
         }
+        //make image circle
+        imgUser.makeBorder(color: UIColor.lightGray)
+        imgUser.makeCircle()
         
 
         //config mode
@@ -134,11 +133,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         //set default value of gender picker
         tfGender.text = dataGender[0]
-        
-        //make image circle
-        imgUser.makeBorder(color: UIColor.lightGray)
-        imgUser.makeCircle()
-        // make border image
         
         //date of birth
         showDatePicker()
@@ -340,9 +334,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         }
         self.showHUD()
         TRCAccountInfoRequest().uploadAvatar(avatar, completion: { (resultString) in
-            if (resultString == RESULT_SUCCESS) {
-                self.doRegister()
-            }
+            _obj.objectAccountInfo.imagePath.origin = resultString
+            self.doRegister()
         }) { (error) in
             self.showAlert(error)
             self.doRegister()

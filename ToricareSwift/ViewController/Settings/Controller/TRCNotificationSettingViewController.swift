@@ -21,7 +21,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     var dataResult = NSMutableDictionary()
     
-    var dataHours = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+    var dataHours = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
     
     var dataMinutes = ["00", "30"]
     
@@ -79,7 +79,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: Button action
     @IBAction func tapBtnSave(_ sender: Any) {
         self.showHUD()
-        TRCNotificationRequest().notificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, "10:00", "10:00", "10:00", "10:00", "10:00", completion: {(data) in
+        TRCNotificationRequest().notificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, self.dataResult[NOTIF_PARAM_TIME_WEIGHT] as! String, self.dataResult[NOTIF_PARAM_TIME_BREAKFAST] as! String, self.dataResult[NOTIF_PARAM_TIME_LUNCH] as! String, self.dataResult[NOTIF_PARAM_TIME_DINNER] as! String, self.dataResult[NOTIF_PARAM_TIME_SNACK] as! String, completion: {(data) in
             self.hideHUD()
             
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers
@@ -246,7 +246,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
             switch (indexPath.row){
             case 0:
                 cell.lblTitle.labelStyle(title: Localizable(value: "weight"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: "weight_time") as? String)
+                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_WEIGHT) as? String)
                 
                 if(dataResult.object(forKey: NOTIF_PARAM_WEIGHT) as? Int == 1){
                     cell.switchCell.isOn = true
@@ -259,7 +259,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveWeight(switchState:)), for: .valueChanged)
             case 1:
                 cell.lblTitle.labelStyle(title: Localizable(value: "breakfast"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: "breakfast_time") as? String)
+                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_BREAKFAST) as? String)
                 
                 if(dataResult.object(forKey: NOTIF_PARAM_BREAKFAST) as? Int == 1){
                     cell.switchCell.isOn = true
@@ -272,7 +272,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveBreakfast(switchState:)), for: .valueChanged)
             case 2:
                 cell.lblTitle.labelStyle(title: Localizable(value: "lunch"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: "lunch_time") as? String)
+                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_LUNCH) as? String)
                 
                 if(dataResult.object(forKey: NOTIF_PARAM_LUNCH) as? Int == 1){
                     cell.switchCell.isOn = true
@@ -285,7 +285,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveLunch(switchState:)), for: .valueChanged)
             case 3:
                 cell.lblTitle.labelStyle(title: Localizable(value: "dinner"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: "dinner_time") as? String)
+                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_DINNER) as? String)
                 
                 if(dataResult.object(forKey: NOTIF_PARAM_DINNER) as? Int == 1){
                     cell.switchCell.isOn = true
@@ -298,7 +298,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveDinner(switchState:)), for: .valueChanged)
             case 4:
                 cell.lblTitle.labelStyle(title: Localizable(value: "snack"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: "snack_time") as? String)
+                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_SNACK) as? String)
                 
                 if(dataResult.object(forKey: NOTIF_PARAM_SNACK) as? Int == 1){
                     cell.switchCell.isOn = true
@@ -327,22 +327,24 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
     
     func doneGenderPicker(){
         //get time
-        let hourResult =  timePicker.selectedRow(inComponent: 0)
-        let minuteResult = (timePicker.selectedRow(inComponent: 1) * 30)
+        let hourPicked =  timePicker.selectedRow(inComponent: 0)
+        let minutePicked = timePicker.selectedRow(inComponent: 1)
+        let hourResult = dataHours[hourPicked]
+        let minuteResult = dataMinutes[minutePicked]
         let timeResult = "\(hourResult):\(minuteResult)"
         
         //set time to dataResult
         switch (self.cellChange){
         case 0:
-            self.dataResult["weight_time"] = timeResult
+            self.dataResult[NOTIF_PARAM_TIME_WEIGHT] = timeResult
         case 1:
-            self.dataResult["breakfast_time"] = timeResult
+            self.dataResult[NOTIF_PARAM_TIME_BREAKFAST] = timeResult
         case 2:
-            self.dataResult["lunch_time"] = timeResult
+            self.dataResult[NOTIF_PARAM_TIME_LUNCH] = timeResult
         case 3:
-            self.dataResult["dinner_time"] = timeResult
+            self.dataResult[NOTIF_PARAM_TIME_DINNER] = timeResult
         case 4:
-            self.dataResult["snack_time"] = timeResult
+            self.dataResult[NOTIF_PARAM_TIME_SNACK] = timeResult
         default:
             break
         }
@@ -365,10 +367,25 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
         toolbar.sizeToFit()
         
         //done button & cancel button
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let spaceButton1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        var title = UIBarButtonItem()
+        switch (indexPath.row) {
+        case 0:
+            title = UIBarButtonItem(title: Localizable(value: "weight"), style: .plain, target: self, action: nil)
+        case 1:
+            title = UIBarButtonItem(title: Localizable(value: "breakfast"), style: .plain, target: self, action: nil)
+        case 2:
+            title = UIBarButtonItem(title: Localizable(value: "lunch"), style: .plain, target: self, action: nil)
+        case 3:
+            title = UIBarButtonItem(title: Localizable(value: "dinner"), style: .plain, target: self, action: nil)
+        case 4:
+            title = UIBarButtonItem(title: Localizable(value: "snack"), style: .plain, target: self, action: nil)
+        default:
+            break
+        }
         let spaceButton2 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
-        toolbar.setItems([spaceButton,spaceButton2,doneButton], animated: false)
+        toolbar.setItems([spaceButton1,title,spaceButton2,doneButton], animated: false)
         
         // add toolbar to textField
         currentCell.tfTime.inputAccessoryView = toolbar

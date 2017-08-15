@@ -89,6 +89,7 @@ let NOTIF_PARAM_TIME_LUNCH =        "lunch_time"
 let NOTIF_PARAM_TIME_DINNER =       "dinner_time"
 let NOTIF_PARAM_TIME_SNACK =        "snack_time"
 
+
 //Goal
 let GOAL_ID =                       "id"
 let GOAL_WEIGHT =                   "weight"
@@ -122,10 +123,16 @@ let SEARCH_TAB =                    "search_tab"
 let SEARCH_PREFECTURE_NAME =        "search_prefecture_name"
 let SEARCH_TOWN_NAME =              "search_town_name"
 
+let ERROR =                         "errors"
+let ERROR_CODE =                    "errorCode"
+let EXPIRED_ACCESS_TOKEN =          "invalid_token"
+let EXPIRED_REFRESH_TOKEN =         "expired_refresh_token"
+
 let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
 let MESSAGE =                       "message"
+let URL_IMAGE =                     "url"
 let TITLE =                         "title"
 let SENDER =                        "sender"
 

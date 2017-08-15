@@ -92,8 +92,10 @@ class TRCBaseAPIController{
                                 
                             }) { (error) in
                                 failed(RESULT_FAIL_REFRESH_TOKEN)
+                                let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+                                let navController = UINavigationController(rootViewController: mainVC)
+                                UIApplication.shared.keyWindow?.rootViewController = navController
                             }
-                            
                         }else if (statusCode == STATUS_CODE_SUCCESS) {
                             completion(data)
                             return
