@@ -194,35 +194,48 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     @IBAction func tapBtnPharmacy(_ sender: Any) {
-        self.registerPharmacy()
+        goNext()
     }
     
     func registerPharmacy() {
         self.showHUD()
         TRCPharmacyRequest().registerPharmacy(pharmacyData.pharmacyId, completion: { (data) in
             self.hideHUD()
-            self.goNext()
+            self.goInputPharmacist()
         }) { (error) in
             self.hideHUD()
             self.showAlert(error)
         }
     }
     
-    func goNext() {
-        if(mode == MODE_REGISTER){
+    func goInputPharmacist() {
+        if (_obj.objectAccountInfo != nil) {
+            _obj.objectAccountInfo.shopId = pharmacyData.pharmacyId
+            _obj.objectAccountInfo.shopName = pharmacyData.name
+        }
+        
+        if (mode == MODE_REGISTER) {
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_REGISTER
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if(mode == MODE_REGISTER_MYPAGE){
+        } else if (mode == MODE_REGISTER_MYPAGE) {
             let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
             vc.mode = MODE_REGISTER_MYPAGE
             let backItem = UIBarButtonItem()
             backItem.title = STRING_BACK
             navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func goNext() {
+        if(mode == MODE_REGISTER){
+            self.registerPharmacy()
+        }else if(mode == MODE_REGISTER_MYPAGE){
+            self.registerPharmacy()
         }else if(mode == MODE_MYPAGE){
             let alert = UIAlertController(title: nil,
                                           message: "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？",

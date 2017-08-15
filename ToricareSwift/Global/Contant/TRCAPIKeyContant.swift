@@ -100,6 +100,7 @@ let GOAL_STEP =                     "step"
 let SUMMARY_MEMBER_ID =             "member_id"
 let SUMMARY_STEP =                  "step"
 let SUMMARY_CALO =                  "calo"
+let SUMMARY_UNREAD =                "unread"
 
 //MARK: UserDefaultsb
 let DEVICE_ID =                     "deviceID"
@@ -164,6 +165,7 @@ let HOLIDAY =                       "holiday"
 let URL_KEY =                       "url"
 let IMAGES =                        "images"
 let CREATED_AT =                    "created_at"
+let UPDATED_AT =                    "updated_at"
 
 // Message
 let IS_READ =                       "is_read"

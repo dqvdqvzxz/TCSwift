@@ -23,7 +23,7 @@ class TRCMessageRequest: TRCBaseAPIController {
     func readMessage(_ messageId: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         let parameters = Dictionary <String, String>()
         
-        self.callAPI(parameters, atPath: "\(URL_MEMBERS_MESSAGES)" + "/read/" + messageId, withMethod: HTTP_GET, blockCompletion: { (data) in
+        self.callAPI(parameters, atPath: "\(URL_MEMBERS_MESSAGES)" + "/read/" + messageId, withMethod: HTTP_PUT, blockCompletion: { (data) in
             //parse data from model
             completion(data)
         }) { (error) in

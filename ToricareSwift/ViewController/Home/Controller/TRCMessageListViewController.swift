@@ -131,9 +131,10 @@ extension TRCMessageListViewController: UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
             let messageData = dataList[indexPath.row] as TRCMessage
             //style for cell
+        let isUnread = Int(messageData.isRead) == 0
         cell.imgView.image = messageData.isRead == "0" ? #imageLiteral(resourceName: "message_new") : #imageLiteral(resourceName: "message_read")
-        cell.lblTitle.labelStyle(title: messageData.title, fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
-        cell.lblSubTitle.labelStyle(title: messageData.sender + " | " + messageData.createdAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        cell.lblTitle.labelStyle(title: messageData.title, fontSize: LABEL_FONT_SIZE, isBold: true, textColor: isUnread ? LABEL_FONT_COLOR : BACKGROUND_COLOR)
+        cell.lblSubTitle.labelStyle(title: messageData.sender + " | " + messageData.updatedAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: isUnread ? LABEL_FONT_GREY_COLOR : BACKGROUND_COLOR)
         
         return cell
 //        }else{
@@ -182,6 +183,7 @@ extension TRCMessageListViewController: UITableViewDelegate{
             navigationItem.backBarButtonItem = backItem
             vc.messageData = dataList[(indexPath?.row)!]
             self.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath!, animated: true)
 //        }else{
 //            let loadMoreCell = tableView.cellForRow(at: indexPath!) as! TRCLoadMoreCell
 //            loadMoreCell.isUserInteractionEnabled = false
