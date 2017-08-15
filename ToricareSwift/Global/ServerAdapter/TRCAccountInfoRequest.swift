@@ -41,9 +41,9 @@ class TRCAccountInfoRequest: TRCBaseAPIController {
     
     func uploadAvatar(_ avatarImage: UIImage, completion: @escaping(_ result: String)->(), failed: @escaping(_ error: String)->()){
         self.uploadImage(avatarImage, atPath: URL_MEMBERS_IMAGES, blockCompletion: { (data) in
-            guard let data = data else { return }
-            if (((data.object(forKey: DATA) as! NSDictionary).object(forKey: MESSAGE)) != nil) {
-                completion(RESULT_SUCCESS)
+            guard let data = data else { return failed(RESULT_FAIL) }
+            if (((data.object(forKey: DATA) as! NSDictionary).object(forKey: URL_IMAGE)) != nil) {
+                completion((data.object(forKey: DATA) as! NSDictionary).object(forKey: URL_IMAGE) as! String)
             } else {
                 failed(RESULT_FAIL)
             }

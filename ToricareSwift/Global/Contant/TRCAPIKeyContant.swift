@@ -131,6 +131,7 @@ let DATA =                          "data"
 let NAME =                          "name"
 let PREFECTURE_ID =                 "prefecture_id"
 let MESSAGE =                       "message"
+let URL_IMAGE =                     "url"
 let TITLE =                         "title"
 let SENDER =                        "sender"
 
