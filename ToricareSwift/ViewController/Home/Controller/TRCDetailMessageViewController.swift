@@ -59,7 +59,7 @@ class TRCDetailMessageViewController: UIViewController {
     
     func postData() {
         TRCMessageRequest().readMessage(messageData.messageID, completion: { (data) in
-            _obj.objectSummary.unread = "\(Int(_obj.objectSummary.unread)! - 1)"
+//            _obj.objectSummary.unread = "\(Int(_obj.objectSummary.unread)! - 1)"
         }) { (error) in
             
         }

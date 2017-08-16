@@ -37,6 +37,7 @@ let URL_GOAL =                      "members/goals"
 let URL_MEMBERS_IMAGES =            "members/images"
 let URL_SUMMARY =                   "members/summaries"
 let URL_MEMBERS_MESSAGES =          "members/messages"
+let URL_MEMBERS_MESSAGES_UNREAD =   "members/messages/unreads"
 
 //MARK: API Parameters key
 //Login

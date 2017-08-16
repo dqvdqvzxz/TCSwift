@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCMessageRequest: TRCBaseAPIController {
+class TRCMessageRequest: TRCBaseAPIController {    
     func getMessage(completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         let parameters = Dictionary <String, String>()
         
@@ -30,4 +30,16 @@ class TRCMessageRequest: TRCBaseAPIController {
             failed(error!)
         }
     }
+    
+    func getUnreadMessage(completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+        let parameters = Dictionary <String, String>()
+        
+        self.callAPI(parameters, atPath: "\(URL_MEMBERS_MESSAGES_UNREAD)", withMethod: HTTP_GET, blockCompletion: { (data) in
+            //parse data from model
+            completion(data)
+        }) { (error) in
+            failed(error!)
+        }
+    }
+
 }
