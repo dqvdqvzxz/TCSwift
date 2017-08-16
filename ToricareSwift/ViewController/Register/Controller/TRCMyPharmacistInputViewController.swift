@@ -97,6 +97,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         tvNote.layer.borderWidth = tfName.layer.borderWidth
         tvNote.layer.borderColor = tfName.layer.borderColor
         tvNote.layer.cornerRadius = tfName.layer.cornerRadius
+        tvNote.textColor = UIColor.init(hexString: LABEL_FONT_COLOR)
     }
     
     //MARK: Action
