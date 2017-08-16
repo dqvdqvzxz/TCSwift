@@ -75,7 +75,7 @@ let PASSWORD_PARAM_CHANGE_NEW_PASSWORD =  "new_password"
 
 //Notification setting
 let NOTIF_TURNON =                  "1"
-let NOTIF_TURNOFF =                 "2"
+let NOTIF_TURNOFF =                 "0"
 let NOTIF_PARAM_PUSHED =            "is_pushed"
 let NOTIF_PARAM_SHOP =              "is_received_shop"
 let NOTIF_PARAM_OPERATOR =          "is_received_operator"

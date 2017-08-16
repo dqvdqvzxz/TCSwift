@@ -26,6 +26,8 @@ class TRCNotificationRequest: TRCBaseAPIController {
         parameters[NOTIF_PARAM_TIME_DINNER] = dinnerTime
         parameters[NOTIF_PARAM_TIME_SNACK] = snackTime
         
+        DLog(parameters)
+        
         self.callAPI(parameters, atPath: "\(URL_NOTIFICATION)", withMethod: HTTP_PUT, blockCompletion: { (data) in
             //parse data from model
             completion(data)

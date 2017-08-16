@@ -67,6 +67,13 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
             //set result to dic
             self.dataResult = NSMutableDictionary(dictionary: dataResult)  //dataResult as! NSMutableDictionary
             
+            if(dataResult.object(forKey: NOTIF_PARAM_PUSHED) as? Int == 1){
+                UserDefaults.saveUD(self.turnOn, NOTIF_ALL)
+            }else{
+                UserDefaults.saveUD(self.turnOff, NOTIF_ALL)
+            }
+
+            
             self.configUI()
 
         }) { (error) in
@@ -202,12 +209,10 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
             cell.lblTitle.labelStyle(title: Localizable(value: "receive"))
             cell.lblTime.labelStyle()
             
-            if(dataResult.object(forKey: NOTIF_PARAM_PUSHED) as? Int == 1){
+            if(Global().convertObjectToString(UserDefaults.getUD(NOTIF_ALL)) == turnOn){
                 cell.switchCell.isOn = true
-                UserDefaults.saveUD(turnOn, NOTIF_ALL)
             }else{
                 cell.switchCell.isOn = false
-                UserDefaults.saveUD(turnOff, NOTIF_ALL)
             }
             
             cell.switchCell.addTarget(self, action: #selector(switchReceiveAll(switchState:)), for: .valueChanged)
@@ -362,40 +367,51 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
         self.timePicker.dataSource = self
         self.timePicker.delegate = self
         
-        //toolBar
-        let toolbar = UIToolbar();
-        toolbar.sizeToFit()
-        
-        //done button & cancel button
-        let spaceButton1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        var title = UIBarButtonItem()
-        switch (indexPath.row) {
+        switch (indexPath.section) {
         case 0:
-            title = UIBarButtonItem(title: Localizable(value: "weight"), style: .plain, target: self, action: nil)
+            break
         case 1:
-            title = UIBarButtonItem(title: Localizable(value: "breakfast"), style: .plain, target: self, action: nil)
+            break
         case 2:
-            title = UIBarButtonItem(title: Localizable(value: "lunch"), style: .plain, target: self, action: nil)
-        case 3:
-            title = UIBarButtonItem(title: Localizable(value: "dinner"), style: .plain, target: self, action: nil)
-        case 4:
-            title = UIBarButtonItem(title: Localizable(value: "snack"), style: .plain, target: self, action: nil)
+            //toolBar
+            let toolbar = UIToolbar();
+            toolbar.sizeToFit()
+            
+            //done button & cancel button
+            let spaceButton1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            var title = UIBarButtonItem()
+            switch (indexPath.row) {
+            case 0:
+                title = UIBarButtonItem(title: Localizable(value: "weight"), style: .plain, target: self, action: nil)
+            case 1:
+                title = UIBarButtonItem(title: Localizable(value: "breakfast"), style: .plain, target: self, action: nil)
+            case 2:
+                title = UIBarButtonItem(title: Localizable(value: "lunch"), style: .plain, target: self, action: nil)
+            case 3:
+                title = UIBarButtonItem(title: Localizable(value: "dinner"), style: .plain, target: self, action: nil)
+            case 4:
+                title = UIBarButtonItem(title: Localizable(value: "snack"), style: .plain, target: self, action: nil)
+            default:
+                break
+            }
+            let spaceButton2 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
+            toolbar.setItems([spaceButton1,title,spaceButton2,doneButton], animated: false)
+            
+            // add toolbar to textField
+            currentCell.tfTime.inputAccessoryView = toolbar
+            
+            // add datepicker to textField
+            currentCell.tfTime.inputView = timePicker
+            
+            self.cellChange = indexPath.row
+            
+            currentCell.tfTime.becomeFirstResponder()
         default:
             break
         }
-        let spaceButton2 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
-        toolbar.setItems([spaceButton1,title,spaceButton2,doneButton], animated: false)
         
-        // add toolbar to textField
-        currentCell.tfTime.inputAccessoryView = toolbar
-        
-        // add datepicker to textField
-        currentCell.tfTime.inputView = timePicker
-        
-        self.cellChange = indexPath.row
-        
-        currentCell.tfTime.becomeFirstResponder()
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
