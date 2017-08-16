@@ -96,6 +96,12 @@ let GOAL_WEIGHT =                   "weight"
 let GOAL_STEPS =                    "steps"
 let GOAL_STEP =                     "step"
 
+//Pharmacist
+let PHARMACIST_NAME =               "name"
+let PHARMACIST_TEL =                "tel"
+let PHARMACIST_EMAIL =              "email"
+let PHARMACIST_NOTE =               "note"
+
 //Summary
 let SUMMARY_MEMBER_ID =             "member_id"
 let SUMMARY_STEP =                  "step"

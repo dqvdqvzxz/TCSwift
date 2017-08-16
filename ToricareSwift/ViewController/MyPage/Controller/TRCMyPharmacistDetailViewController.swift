@@ -99,10 +99,10 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
             self.view.addSubview(self.viewHadData)
 
             //fill data
-            self.lblNameValue.labelStyle(title: dataResult.object(forKey: "name") as? String)
-            self.lblPhoneValue.labelStyle(title: dataResult.object(forKey: "tel") as? String)
-            self.lblMailValue.labelStyle(title: dataResult.object(forKey: "email") as? String)
-            self.lblMemoValue.labelStyle(title: dataResult.object(forKey: "note") as? String)
+            self.lblNameValue.labelStyle(title: dataResult.object(forKey: PHARMACIST_NAME) as? String)
+            self.lblPhoneValue.labelStyle(title: dataResult.object(forKey: PHARMACIST_TEL) as? String)
+            self.lblMailValue.labelStyle(title: dataResult.object(forKey: PHARMACIST_EMAIL) as? String)
+            self.lblMemoValue.labelStyle(title: dataResult.object(forKey: PHARMACIST_NOTE) as? String)
             
             //set result to dic
             self.dicPharmacist = dataResult
