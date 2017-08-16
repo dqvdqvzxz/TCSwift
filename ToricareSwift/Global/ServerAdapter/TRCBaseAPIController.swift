@@ -70,7 +70,6 @@ class TRCBaseAPIController{
                                 let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                                 let navController = UINavigationController(rootViewController: mainVC)
                                 UIApplication.shared.keyWindow?.rootViewController = navController
-
                             }
                             
                             //refresh token

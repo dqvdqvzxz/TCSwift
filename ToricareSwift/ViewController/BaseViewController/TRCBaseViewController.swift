@@ -61,6 +61,13 @@ class TRCBaseViewController: UIViewController {
     func dismissKeyboard(){
         view.endEditing(true)
     }
+    
+    func backButton(){
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        self.navigationItem.backBarButtonItem = backItem
+        self.hidesBottomBarWhenPushed = true
+    }
 }
 
 extension UIViewController {
