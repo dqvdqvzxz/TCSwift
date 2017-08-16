@@ -55,6 +55,10 @@ extension String {
         }
     }
     
+    func trim() -> String {
+        return trimmingCharacters(in: CharacterSet.whitespaces)
+    }
+    
 //    var containsHankakuCharacters: Bool {
 //        do {
 //            let regex = try NSRegularExpression(pattern: "[^A-Za-z0-9]+", options: .caseInsensitive)

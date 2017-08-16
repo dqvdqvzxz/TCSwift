@@ -201,7 +201,7 @@ class TRCLoginViewController: TRCBaseViewController {
         // Login fail then show : self.showAlert(Localizable(value: "please_login_again"))
         
         self.showHUD()
-        TRCLoginRequest().login(tfUsername.text!, tfPassword.text!, completion: {(data) in
+        TRCLoginRequest().login(tfUsername.text!.trim(), tfPassword.text!, completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             
             // Save access token
