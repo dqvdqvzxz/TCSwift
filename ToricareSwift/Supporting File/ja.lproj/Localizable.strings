@@ -9,7 +9,7 @@
 //MARK: Alert message
 "ok"                                    = "OK";
 "yes"                                   = "はい";
-"check_network_message"                 = "ネットワークをチェックしてください";
+"check_network_message"                 = "通信エラーが発生しました。";
 "check_input_data_message"              = "データを確認してください";
 "warning"                               = "注意";
 "error"                                 = "エラー";
