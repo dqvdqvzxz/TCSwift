@@ -55,10 +55,12 @@ class TRCMyPageViewController: TRCBaseViewController {
         //UI of outlet
         viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
-        if(_obj.objectAccountInfo.firstName != "" && _obj.objectAccountInfo.lastName != ""){
-            lblName.labelStyle(title: "\(_obj.objectAccountInfo.firstName) \(_obj.objectAccountInfo.lastName) さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
-        }else{
-            lblName.labelStyle(title: "")
+        if(Global().isNotNull(_obj.objectAccountInfo.firstName) && Global().isNotNull(_obj.objectAccountInfo.lastName)){
+            if(_obj.objectAccountInfo.firstName != "" && _obj.objectAccountInfo.lastName != ""){
+                lblName.labelStyle(title: "\(_obj.objectAccountInfo.firstName) \(_obj.objectAccountInfo.lastName) さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
+            }else{
+                lblName.labelStyle(title: "")
+            }
         }
         
         if(_obj.objectAccountInfo.shopName != ""){
