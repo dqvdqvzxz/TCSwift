@@ -79,13 +79,17 @@ class TRCHomeViewController: TRCBaseViewController {
         super.viewDidLoad()
         
         _obj.tabController.tabBar.isHidden = false
-        configUI()
+        
         getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = false
         getUnreadMessage()
+        
+        if(_obj.objectGoal != nil){
+            self.lblStep.labelStyle(title: _obj.objectGoal.steps, fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -121,7 +125,8 @@ class TRCHomeViewController: TRCBaseViewController {
         
         //
         lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblStep.labelStyle(title: "5000", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+
         lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 2, isBold: false, textColor: LABEL_FONT_COLOR)
         lblInformSummary.labelStyle(title: Localizable(value: "sucess_percent"), fontSize: LABEL_FONT_SIZE! + 5, isBold: false, textColor: LABEL_FONT_COLOR)
         
@@ -175,6 +180,8 @@ class TRCHomeViewController: TRCBaseViewController {
             do {
                 self.goalInfo = try parseDict(dataResult as! JSONObject) as TRCGoal
                 _obj.objectGoal = self.goalInfo
+                
+                self.lblStep.labelStyle(title: _obj.objectGoal.steps, fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
             } catch {
                 print("JSONParsin Error: \(error)")
             }
@@ -197,6 +204,8 @@ class TRCHomeViewController: TRCBaseViewController {
             self.showAlert(error)
             ELog(error)
         }
+        
+        configUI()
     }
     
     func getUnreadMessage() {

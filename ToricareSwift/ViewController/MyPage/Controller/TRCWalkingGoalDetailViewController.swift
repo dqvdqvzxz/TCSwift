@@ -27,9 +27,9 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
 
         initValuePicker()
         
-        configUI()
+//        getData()
         
-        getData()
+        configUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,9 +58,13 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
         
         pickerTarget.dataSource = self
         pickerTarget.delegate = self
+        
+        if(_obj.objectGoal != nil){
+            self.pickerTarget.selectRow(((Int(_obj.objectGoal.steps)! / 1000) - 1) , inComponent: 0, animated: true)
+        }
     }
     
-    //MARK: Get data
+    //MARK: Get data®
     func getData(){
         if(_obj.objectGoal == nil){
             self.showHUD()
@@ -70,17 +74,15 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
                 do {
                     self.goalInfo = try parseDict(dataResult as! JSONObject) as TRCGoal
                     _obj.objectGoal = self.goalInfo
+                    
+                    for i in stride(from: 1000, to: 51000, by: 1000){
+                        if(i == Int(_obj.objectGoal.steps)){
+                            self.pickerTarget.selectRow(((i / 1000) - 1) , inComponent: 0, animated: true)
+                        }
+                    }
                 } catch {
                     print("JSONParsin Error: \(error)")
                 }
-                
-                for i in stride(from: 1000, to: 51000, by: 1000){
-                    if(i == Int(self.goalInfo.steps)){
-                        self.pickerTarget.selectRow(((i / 1000) - 1) , inComponent: 0, animated: true)
-                    }
-                }
-                
-                
             }) { (error) in
                 self.hideHUD()
                 self.showAlert(error)
