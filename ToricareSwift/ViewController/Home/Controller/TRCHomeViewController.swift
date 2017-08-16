@@ -221,7 +221,7 @@ class TRCHomeViewController: TRCBaseViewController {
     func pushToMessageList(){
         let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
         backButton()
-        hideBar()
+//        hideBar()
         _obj.nc1.pushViewController(vc, animated: true)
     }
     
