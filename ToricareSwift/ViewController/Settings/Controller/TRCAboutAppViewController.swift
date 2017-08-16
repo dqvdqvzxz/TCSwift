@@ -88,21 +88,25 @@ extension TRCAboutAppViewController: UITableViewDelegate{
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
             vc.webAddress = "http://172.16.210.122/rule"
             backButton()
+            hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
             vc.webAddress = "http://172.16.210.122/privacy_policy"
             backButton()
+            hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
             vc.webAddress = "http://172.16.210.122/faq_list"
             backButton()
+            hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 4:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
             vc.webAddress = "http://172.16.210.122/faq_list/1"
             backButton()
+            hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         default:
             break

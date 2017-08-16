@@ -66,6 +66,9 @@ class TRCBaseViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         self.navigationItem.backBarButtonItem = backItem
+    }
+    
+    func hideBar(){
         self.hidesBottomBarWhenPushed = true
     }
 }
