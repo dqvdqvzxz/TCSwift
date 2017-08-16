@@ -18,8 +18,8 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblSubAddress: UILabel!
     
-    @IBOutlet weak var tfAddress: UITextField!
-    @IBOutlet weak var tfSubAddress: UITextField!
+    @IBOutlet weak var tfAddress: CustomizeTextField!
+    @IBOutlet weak var tfSubAddress: CustomizeTextField!
     
     var addressPicker = UIPickerView()
     var subAddressPicker = UIPickerView()
