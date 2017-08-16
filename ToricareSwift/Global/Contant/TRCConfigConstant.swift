@@ -97,3 +97,5 @@ let GREY_BACKGROUND_COLOR = "F0F0F2"
 
 let WHITE_COLOR = "ffffff"
 let ERROR_COLOR = "ff2d55"
+
+let PAGING_NUMBER = 30

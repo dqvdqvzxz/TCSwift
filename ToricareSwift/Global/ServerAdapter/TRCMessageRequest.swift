@@ -9,8 +9,9 @@
 import UIKit
 
 class TRCMessageRequest: TRCBaseAPIController {    
-    func getMessage(completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
-        let parameters = Dictionary <String, String>()
+    func getMessage(_ pageNumber: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+        var parameters = Dictionary <String, String>()
+        parameters[PAGE] = pageNumber
         
         self.callAPI(parameters, atPath: "\(URL_MEMBERS_MESSAGES)", withMethod: HTTP_GET, blockCompletion: { (data) in
             //parse data from model
