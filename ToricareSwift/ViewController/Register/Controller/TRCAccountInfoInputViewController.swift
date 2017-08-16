@@ -32,8 +32,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     @IBOutlet weak var tfLastName: UITextField!
     @IBOutlet weak var tfFirstNameKata: UITextField!
     @IBOutlet weak var tfLastNameKata: UITextField!
-    @IBOutlet weak var tfDateOfBirth: UITextField!
-    @IBOutlet weak var tfGender: UITextField!
+    @IBOutlet weak var tfDateOfBirth: CustomizeTextField!
+    @IBOutlet weak var tfGender: CustomizeTextField!
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnUploadImage: UIButton!

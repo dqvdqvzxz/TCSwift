@@ -305,6 +305,8 @@
 		68F07DB51F3C422E00E1934C /* TRCSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DB01F3C40A000E1934C /* TRCSummary.swift */; };
 		68F07DB71F3D6A5900E1934C /* TRCUserLeaveRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */; };
 		68F07DB81F3D6B0D00E1934C /* TRCUserLeaveRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */; };
+		68F07DC21F43FAE500E1934C /* CustomizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */; };
+		68F07DC31F43FAE500E1934C /* CustomizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */; };
 		C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00CF8F11F17284800B6A5A5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -460,6 +462,7 @@
 		68F07DB01F3C40A000E1934C /* TRCSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSummary.swift; sourceTree = "<group>"; };
 		68F07DB21F3C418400E1934C /* TRCSummaryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSummaryRequest.swift; sourceTree = "<group>"; };
 		68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCUserLeaveRequest.swift; sourceTree = "<group>"; };
+		68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizeTextField.swift; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -710,6 +713,7 @@
 				3FB4119D1F063819008720A6 /* View.swift */,
 				3F47591B1F0C7DA100B82645 /* Image.swift */,
 				17D3384B1F32C98D00F4B254 /* String.swift */,
+				68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1311,6 +1315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F07DC31F43FAE500E1934C /* CustomizeTextField.swift in Sources */,
 				68F07DB81F3D6B0D00E1934C /* TRCUserLeaveRequest.swift in Sources */,
 				68F07DB41F3C422E00E1934C /* TRCSummaryRequest.swift in Sources */,
 				68F07DB51F3C422E00E1934C /* TRCSummary.swift in Sources */,
@@ -1445,6 +1450,7 @@
 				3FB411AD1F09F2AA008720A6 /* TRCRegisterViewController.swift in Sources */,
 				3F57F6FD1F1F035700CC079C /* example5.swift in Sources */,
 				3F4758FD1F0BA08100B82645 /* TRCPharmacySearchViewController.swift in Sources */,
+				68F07DC21F43FAE500E1934C /* CustomizeTextField.swift in Sources */,
 				3F47592B1F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift in Sources */,
 				3FB411441EFB6221008720A6 /* AppDelegate.swift in Sources */,
 				3F475A901F1753FD00B82645 /* TRCPointDetailCell.swift in Sources */,
