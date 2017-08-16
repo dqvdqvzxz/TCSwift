@@ -71,39 +71,21 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet var customLeftTab: UIView!
     @IBOutlet weak var lblUnread: UILabel!
     @IBOutlet weak var btnMessage: UIButton!
+    
+    var isRequestUnread = false
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
         
         _obj.tabController.tabBar.isHidden = false
-        
-        // Do any additional setup after loading the view.
-        
-//        testBtn.buttonStyle(title: "Test BTN", fontSize: 7, titleColor: "0caa7d", borderWidth: 1, borderColor: "nil", radius: nil, backgroundColor: nil)
-//        
-//        testLabel.labelStyle(title: "Test Label", fontSize: 20, textColor: "0caa7d")
-//        
-//        textTextField.textFieldStyle(placeHolder: "Test Place hoder", fontSize: 15, textColor: "0caa7d", borderWidth: 1, borderColor: "a6d4ca", radius: 5, backgroundColor: "a6d4ca")
-//        
-//        TRCLoginAPIController().Login("", "", completion: {
-//            //xu ly hien thi du lieu khi pass
-//            DLog("1")
-//            
-//        }) { (String) in
-//            //khi fail
-//            DLog("2")
-//        }
-        
         configUI()
-
         getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = false
-        if let summary = _obj.objectSummary {
-            updateUnread(summary.unread)
-        }        
+        getUnreadMessage()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -180,7 +162,6 @@ class TRCHomeViewController: TRCBaseViewController {
             do {
                 self.summaryInfo = try parseDict(dataResult as! JSONObject) as TRCSummary
                 _obj.objectSummary = self.summaryInfo
-                self.updateUnread(self.summaryInfo.unread)
             } catch {
                 print("JSONParsin Error: \(error)")
             }
@@ -215,6 +196,24 @@ class TRCHomeViewController: TRCBaseViewController {
             self.hideHUD()
             self.showAlert(error)
             ELog(error)
+        }
+    }
+    
+    func getUnreadMessage() {
+        if (isRequestUnread) {
+            return
+        }
+        
+        isRequestUnread = true
+        TRCMessageRequest().getUnreadMessage(completion: { (data) in
+            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            let unreadValue = Global().convertObjectToString(dataResult.object(forKey: SUMMARY_UNREAD))
+            self.updateUnread(unreadValue)
+            self.isRequestUnread = false
+        }) { (error) in
+            ELog(error)
+            self.updateUnread("0")
+            self.isRequestUnread = false
         }
     }
     

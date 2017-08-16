@@ -112,11 +112,13 @@ class TRCMessageListViewController: TRCBaseViewController {
     //MARK: Action
     func configRefresh(){
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.tintColor = UIColor.init(hexString: MAIN_COLOR)
         tblMessage.addSubview(refreshControl)
     }
     
     func refresh(sender: AnyObject){
-        tblMessage.reloadData()
+        getData()
         refreshControl.endRefreshing()
     }
 }
