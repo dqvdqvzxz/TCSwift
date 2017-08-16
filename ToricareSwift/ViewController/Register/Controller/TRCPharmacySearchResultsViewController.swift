@@ -17,7 +17,8 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     @IBOutlet weak var lblEmpty: UILabel!
 
     @IBOutlet weak var tblSearchResult: UITableView!
-    
+    var refreshControl = UIRefreshControl()
+
     var mode = String()
     
     var keywordString = "赤堤"
@@ -33,6 +34,8 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
 
     var pharmacySearchData: TRCPharmacySearchData!
     
+    var pageNumber = 0
+
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,31 +137,42 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         guard let pharmacySearchData = pharmacySearchData else {
             return
         }
-        self.showHUD()
-        TRCPharmacyRequest().searchPharmacy(pharmacySearchData, completion: { (data) in
-            self.hideHUD()
-            
-            guard let data = data else { return }
-            guard let pharmacyArray = data.object(forKey: DATA) else { return }
-            do {
-                self.arrayResults = try parseArray(pharmacyArray as! [JSONObject])
+        
+        if (arrayResults.count % PAGING_NUMBER == 0) {
+            pageNumber += 1
+            self.showHUD()
+            TRCPharmacyRequest().searchPharmacy(pharmacySearchData, "\(pageNumber)", completion: { (data) in
+                self.hideHUD()
+                
+                guard let data = data else { return }
+                guard let pharmacyArray = data.object(forKey: DATA) else { return }
+                do {
+                    let dataResults:[TRCPharmacy] = try parseArray(pharmacyArray as! [JSONObject])
+                    dataResults.forEach({ (item) in
+                        self.arrayResults.append(item)
+                    })
+                }
+                catch
+                {
+                    print("JSONParsin Error: \(error)")
+                }
+                if (self.arrayResults.count == 0) {
+                    self.tblSearchResult.isHidden = true
+                    self.lblEmpty.isHidden = false
+                }
+            }) { (error) in
+                self.hideHUD()
+                self.pageNumber -= 1
+                if (error == RESULT_NO_DATA && self.pageNumber == 0) {
+                    self.tblSearchResult.isHidden = true
+                    self.lblEmpty.isHidden = false
+                } else {
+//                    self.showAlert(error)
+                }
             }
-            catch
-            {
-                print("JSONParsin Error: \(error)")
-            }
-            if (self.arrayResults.count == 0) {
-                self.tblSearchResult.isHidden = true
-                self.lblEmpty.isHidden = false
-            }
-        }) { (error) in
-            self.hideHUD()
-            if (error == RESULT_NO_DATA) {
-                self.tblSearchResult.isHidden = true
-                self.lblEmpty.isHidden = false
-            } else {
-                self.showAlert(error)
-            }
+
+        } else {
+            return
         }
     }
     
@@ -185,6 +199,18 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         
         lblEmpty.labelStyle(title: Localizable(value: "empty_pharmacy_search"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
         lblEmpty.isHidden = true
+        
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: Localizable(value: "pull_to_refresh"))
+        refreshControl.tintColor = UIColor.init(hexString: MAIN_COLOR)
+        tblSearchResult.addSubview(refreshControl)
+    }
+    
+    func refresh(sender: AnyObject){
+        pageNumber = 0
+        arrayResults.removeAll()
+        requestPharmarcy()
+        refreshControl.endRefreshing()
     }
     
     //MARK: Action
@@ -232,6 +258,13 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
             vc.mode = MODE_REGISTER_MYPAGE
             backButton()
             _obj.nc5.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = arrayResults.count - 1
+        if indexPath.row == lastElement {
+            requestPharmarcy()
         }
     }
 }
