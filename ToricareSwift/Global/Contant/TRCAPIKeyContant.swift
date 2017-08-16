@@ -134,6 +134,7 @@ let ERROR =                         "errors"
 let ERROR_CODE =                    "errorCode"
 let EXPIRED_ACCESS_TOKEN =          "invalid_token"
 let EXPIRED_REFRESH_TOKEN =         "expired_refresh_token"
+let NOT_TOKEN =                     "not_token"
 
 let DATA =                          "data"
 let NAME =                          "name"

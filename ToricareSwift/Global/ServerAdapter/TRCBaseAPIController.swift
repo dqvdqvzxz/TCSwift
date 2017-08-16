@@ -63,6 +63,15 @@ class TRCBaseAPIController{
                             failed(RESULT_NO_DATA)
                             return
                         }else if(statusCode == STATUS_CODE_UNAUTHORIZED){
+                            
+                            //handle not token
+                            let dataResult = data?.object(forKey: ERROR) as! NSDictionary
+                            if(Global().convertObjectToString(dataResult.object(forKey: ERROR_CODE)) == NOT_TOKEN){
+                                let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+                                let navController = UINavigationController(rootViewController: mainVC)
+                                UIApplication.shared.keyWindow?.rootViewController = navController
+                            }
+                            
                             //refresh token
                             TRCTokenRequest().refreshToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, UserDefaults.getUD(REFRESH_ACCESS_TOKEN) as! String, completion: {(data) in
                                 let dataResult = data?.object(forKey: DATA) as! NSDictionary

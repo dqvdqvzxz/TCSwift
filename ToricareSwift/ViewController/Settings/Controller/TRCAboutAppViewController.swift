@@ -94,9 +94,7 @@ extension TRCAboutAppViewController: UITableViewDelegate{
         case 2:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
             vc.webAddress = "http://172.16.210.122/privacy_policy"
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            self.navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
