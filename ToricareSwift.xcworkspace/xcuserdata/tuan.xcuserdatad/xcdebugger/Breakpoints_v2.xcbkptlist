@@ -334,11 +334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Register/Controller/TRCPharmacySearchResultsViewController.swift"
-            timestampString = "523940201.433792"
+            timestampString = "524560780.504607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "prepairSearchData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,11 +350,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Register/Controller/TRCPharmacySearchResultsViewController.swift"
-            timestampString = "523940201.433792"
+            timestampString = "524560780.504607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "prepairSearchData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -430,11 +430,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/Global/ServerAdapter/TRCPharmacyRequest.swift"
-            timestampString = "523952047.03895"
+            timestampString = "524560780.504607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "getPharmacy(_:completion:failed:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1080,11 +1080,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Home/Controller/TRCMessageListViewController.swift"
-            timestampString = "524548073.189912"
+            timestampString = "524560780.504607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>

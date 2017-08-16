@@ -24,7 +24,6 @@ class TRCMessageListViewController: TRCBaseViewController {
     }
 
     var pageNumber = 0
-    var newFetchBool = 0
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -58,6 +57,7 @@ class TRCMessageListViewController: TRCBaseViewController {
             self.showHUD()
             TRCMessageRequest().getMessage("\(pageNumber)", completion: { (data) in
                 self.hideHUD()
+                
                 guard let data = data else { return }
                 guard let messageArray = data.object(forKey: DATA) else { return }
                 do {
@@ -144,19 +144,3 @@ extension TRCMessageListViewController: UITableViewDelegate{
         }
     }
 }
-
-//extension TRCMessageListViewController: UIScrollViewDelegate{
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        print("Scroll \(newFetchBool)")
-//        if(decelerate && newFetchBool >= 2 && scrollView.contentOffset.y >= 0){
-//            let tv =  scrollView as! UITableView
-//            let lastCellIndexPath = IndexPath(row:dataList.count , section: 0)
-//            let refreshCell = tv.cellForRow(at: lastCellIndexPath) as! TRCLoadMoreCell
-//            refreshCell.startStopLoading(true)
-//            self.fetchDataFromServer()
-//            newFetchBool = 0
-//        }else if(!decelerate){
-//            newFetchBool = 0
-//        }
-//    }
-//}

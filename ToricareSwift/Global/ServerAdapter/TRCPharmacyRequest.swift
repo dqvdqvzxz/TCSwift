@@ -9,14 +9,15 @@
 import UIKit
 
 class TRCPharmacyRequest: TRCBaseAPIController {
-    func searchPharmacy(_ pharmacySearchData: TRCPharmacySearchData, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func searchPharmacy(_ pharmacySearchData: TRCPharmacySearchData, _ pageNumber: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         var parameters = Dictionary <String, String>()
         parameters[PREFECTURE_ID] = pharmacySearchData.prefectureId
         parameters[CITY_ID] = pharmacySearchData.cityId
         parameters[SHOP_NAME] = pharmacySearchData.shopName
         parameters[LAT] = pharmacySearchData.lat
         parameters[LONG] = pharmacySearchData.long
-
+        parameters[PAGE] = pageNumber
+        
         self.callAPI(parameters, atPath: "\(URL_SHOPS)", withMethod: HTTP_GET, blockCompletion: { (data) in
             completion(data)
         }) { (error) in
