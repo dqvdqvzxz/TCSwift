@@ -217,16 +217,12 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         if (mode == MODE_REGISTER) {
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         } else if (mode == MODE_REGISTER_MYPAGE) {
             let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
             vc.mode = MODE_REGISTER_MYPAGE
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -250,9 +246,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
                                           handler: { action in
                                             let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
                                             vc.mode = MODE_MYPAGE
-                                            let backItem = UIBarButtonItem()
-                                            backItem.title = STRING_BACK
-                                            self.navigationItem.backBarButtonItem = backItem
+                                            self.backButton()
                                             _obj.nc5.pushViewController(vc, animated: true)
             }))
             

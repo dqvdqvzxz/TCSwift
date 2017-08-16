@@ -42,17 +42,13 @@ class TRCPreLoginViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
         let vc = TRCRegisterViewController(nibName: "TRCRegisterViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
+        backButton()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func tapBtnLogin(_ sender: Any) {
         let vc = TRCLoginViewController(nibName: "TRCLoginViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
+        backButton()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

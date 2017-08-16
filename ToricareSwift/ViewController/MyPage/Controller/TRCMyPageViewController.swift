@@ -160,33 +160,23 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
         case 0:
             let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
             vc.mode = MODE_MYPAGE
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 1:
             let vc = TRCMyPharmacyDetailPageViewController(nibName: "TRCMyPharmacyDetailPageViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCWalkingGoalDetailViewController(nibName: "TRCWalkingGoalDetailViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 4:
             let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         default:
             break

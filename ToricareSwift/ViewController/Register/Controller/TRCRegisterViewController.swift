@@ -91,9 +91,7 @@ class TRCRegisterViewController: TRCBaseViewController {
                 vc.refreshToken = Global().convertObjectToString(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))
             }
             vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            self.navigationItem.backBarButtonItem = backItem
+            self.backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }) { (error) in
             self.hideHUD()

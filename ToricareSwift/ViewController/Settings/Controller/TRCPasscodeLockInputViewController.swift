@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCPasscodeLockInputViewController: UIViewController {
+class TRCPasscodeLockInputViewController: TRCBaseViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblError: UILabel!
@@ -166,9 +166,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                 //push to confirm
                 let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
                 vc.mode = MODE_CONFIRM
-                let backItem = UIBarButtonItem()
-                backItem.title = STRING_BACK
-                navigationItem.backBarButtonItem = backItem
+                backButton()
                 _obj.nc5.pushViewController(vc, animated: true)
             case MODE_CONFIRM:
                 //compare passcode
@@ -205,9 +203,7 @@ class TRCPasscodeLockInputViewController: UIViewController {
                     let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
                     vc.mode = MODE_SETUP
                     vc.modeChange = MODE_SETUP_NEW
-                    let backItem = UIBarButtonItem()
-                    backItem.title = STRING_BACK
-                    navigationItem.backBarButtonItem = backItem
+                    backButton()
                     _obj.nc5.pushViewController(vc, animated: true)
                 }else{
                     lblError.isHidden = false

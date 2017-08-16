@@ -87,9 +87,7 @@ extension TRCAboutAppViewController: UITableViewDelegate{
         case 1:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
             vc.webAddress = "http://172.16.210.122/rule"
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            self.navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
@@ -99,16 +97,12 @@ extension TRCAboutAppViewController: UITableViewDelegate{
         case 3:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
             vc.webAddress = "http://172.16.210.122/faq_list"
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            self.navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 4:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
             vc.webAddress = "http://172.16.210.122/faq_list/1"
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            self.navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         default:
             break

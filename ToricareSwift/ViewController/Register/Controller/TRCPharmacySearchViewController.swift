@@ -113,16 +113,12 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
             }
                 
             //back button
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
             let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
             vc.mode = MODE_MYPAGE
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             self.navigationController?.pushViewController(vc, animated: true)
 
         }

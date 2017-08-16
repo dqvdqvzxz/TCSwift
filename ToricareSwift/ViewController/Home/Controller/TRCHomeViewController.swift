@@ -220,9 +220,7 @@ class TRCHomeViewController: TRCBaseViewController {
     //MARK: Action
     func pushToMessageList(){
         let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
+        backButton()
         _obj.nc1.pushViewController(vc, animated: true)
     }
     

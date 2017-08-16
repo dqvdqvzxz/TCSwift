@@ -71,33 +71,23 @@ extension TRCSettingViewController: UITableViewDelegate{
         switch (indexPath.row) {
         case 0:
             let vc = TRCEmailChangeInputViewController(nibName: "TRCEmailChangeInputViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 1:
             let vc = TRCPasswordChangeViewController(nibName: "TRCPasswordChangeViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCLinkedServicesViewController(nibName: "TRCLinkedServicesViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCNotificationSettingViewController(nibName: "TRCNotificationSettingViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 4:
             let vc = TRCPasscodeLockSettingViewController(nibName: "TRCPasscodeLockSettingViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
 //        case 5:
 //            let vc = TRCThemeColorSettingViewController(nibName: "TRCThemeColorSettingViewController", bundle: nil)
@@ -107,15 +97,11 @@ extension TRCSettingViewController: UITableViewDelegate{
 //            _obj.nc5.pushViewController(vc, animated: true)
         case 5:
             let vc = TRCAboutAppViewController(nibName: "TRCAboutAppViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 6:
             let vc = TRCUserLeaveViewController(nibName: "TRCUserLeaveViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 7:
             TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in

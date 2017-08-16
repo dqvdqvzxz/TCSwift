@@ -224,17 +224,13 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
             vc.pharmacyData = arrayResults[indexPath.row]
             vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
             vc.pharmacyData = arrayResults[indexPath.row]
             vc.mode = MODE_REGISTER_MYPAGE
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }
     }

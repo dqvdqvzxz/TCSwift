@@ -70,9 +70,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     @IBAction func tapBtnQRCode(_ sender: Any) {
         let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
         vc.mode = mode
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
+        backButton()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

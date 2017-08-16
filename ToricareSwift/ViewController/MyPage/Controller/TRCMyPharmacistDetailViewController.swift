@@ -124,17 +124,13 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
         if(mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(mode == MODE_MYPAGE){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.mode = MODE_MYPAGE
             vc.dataResult = dicPharmacist
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }
     }
@@ -142,9 +138,7 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     @IBAction func tapBtnNoData(_ sender: Any) {
         let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
         vc.mode = MODE_MYPAGE
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
+        backButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }
 }

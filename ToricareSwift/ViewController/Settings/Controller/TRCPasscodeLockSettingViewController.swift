@@ -58,9 +58,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
     @IBAction func tapBtnPasscode(_ sender: Any) {
         let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
         vc.mode = MODE_CHANGE
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
+        backButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }
 }
@@ -95,9 +93,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
             let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
             vc.mode = MODE_SETUP
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         } else {
             btnPasscode.isEnabled = false
@@ -124,9 +120,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDelegate{
             
             let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
             vc.mode = MODE_SETUP
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }else{
             btnPasscode.isEnabled = false
@@ -134,9 +128,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDelegate{
             
             let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
             vc.mode = MODE_REMOVE
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
+            backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }
     }

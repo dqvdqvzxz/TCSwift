@@ -129,9 +129,7 @@ extension TRCMessageListViewController: UITableViewDelegate{
         currentCell.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
         
         let vc = TRCDetailMessageViewController(nibName: "TRCDetailMessageViewController", bundle: nil)
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        navigationItem.backBarButtonItem = backItem
+        backButton()
         vc.messageData = dataList[(indexPath?.row)!]
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath!, animated: true)

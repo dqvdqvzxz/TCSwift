@@ -352,9 +352,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         if (DEBUG_REMOVE_API) {
             let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
             vc.mode = MODE_REGISTER
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            self.navigationItem.backBarButtonItem = backItem
+            backButton()
             self.navigationController?.pushViewController(vc, animated: true)
             
             return
@@ -394,9 +392,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 //push view
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
                 vc.mode = MODE_REGISTER
-                let backItem = UIBarButtonItem()
-                backItem.title = STRING_BACK
-                self.navigationItem.backBarButtonItem = backItem
+                self.backButton()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }) { (error) in
