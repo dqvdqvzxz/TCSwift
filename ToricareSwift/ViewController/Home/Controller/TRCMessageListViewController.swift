@@ -25,6 +25,7 @@ class TRCMessageListViewController: TRCBaseViewController {
 
     var pageNumber = 0
     
+    @IBOutlet weak var lblEmpty: UILabel!
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,10 @@ class TRCMessageListViewController: TRCBaseViewController {
         tblMessage.delegate = self
         tblMessage.register(UINib(nibName: "TRCMessageListCell", bundle: nil), forCellReuseIdentifier: "Cell")
         configRefresh()
+        
+        lblEmpty.labelStyle(title: Localizable(value: "empty_data"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblEmpty.isHidden = true
+
     }
     
     //MARK: Get data
@@ -70,10 +75,21 @@ class TRCMessageListViewController: TRCBaseViewController {
                 {
                     print("JSONParsin Error: \(error)")
                 }
+                if (self.dataList.count == 0) {
+                    self.tblMessage.isHidden = true
+                    self.lblEmpty.isHidden = false
+                }
+
             }) { (error) in
                 self.pageNumber -= 1
                 self.hideHUD()
-                self.showAlert(error)
+                if (error == RESULT_NO_DATA && self.pageNumber == 0) {
+                    self.tblMessage.isHidden = true
+                    self.lblEmpty.isHidden = false
+                } else {
+                    //                    self.showAlert(error)
+                }
+
             }
 
         } else {

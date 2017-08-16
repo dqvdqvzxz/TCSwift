@@ -65,6 +65,7 @@ let REGISTER_PARAM_FACEBOOK_TOKEN = "facebook_token"
 let REGISTER_PARAM_SHOP_ID =        "shop_id"
 let REGISTER_PARAM_SHOP_NAME =      "shop_name"
 let REGISTER_PARAM_IMAGE_PATH =     "image_path"
+let REGISTER_PARAM_HEIGHT =         "height"
 
 //Email change
 let EMAIL_PARAM_CHANGE =            "email"
