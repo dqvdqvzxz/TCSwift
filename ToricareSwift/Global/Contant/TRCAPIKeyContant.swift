@@ -143,6 +143,7 @@ let CITY_CODE =                     "city_code"
 let SHOP_NAME =                     "shop_name"
 let LAT =                           "lat"
 let LONG =                          "lon"
+let PAGE =                          "page"
 
 
 //image

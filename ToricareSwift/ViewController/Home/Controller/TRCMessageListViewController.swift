@@ -23,7 +23,7 @@ class TRCMessageListViewController: TRCBaseViewController {
         }
     }
 
-    var loadNumber = 0
+    var pageNumber = 0
     var newFetchBool = 0
     
     //MARK: View controller
@@ -32,7 +32,6 @@ class TRCMessageListViewController: TRCBaseViewController {
 
         configUI()
         getData()
-//        fetchDataFromServer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,70 +48,43 @@ class TRCMessageListViewController: TRCBaseViewController {
         tblMessage.dataSource = self
         tblMessage.delegate = self
         tblMessage.register(UINib(nibName: "TRCMessageListCell", bundle: nil), forCellReuseIdentifier: "Cell")
-//        tblMessage.register(UINib(nibName: "TRCLoadMoreCell", bundle: nil), forCellReuseIdentifier: "LoadMoreCell")
-        
-        tblMessage.tableFooterView = UIView()
-        
         configRefresh()
     }
     
     //MARK: Get data
     func getData() {
-        self.showHUD()
-        TRCMessageRequest().getMessage(completion: { (data) in
-            self.hideHUD()
-            guard let data = data else { return }
-            guard let messageArray = data.object(forKey: DATA) else { return }
-            do {
-                self.dataList = try parseArray(messageArray as! [JSONObject])
+        if (dataList.count % PAGING_NUMBER == 0) {
+            pageNumber += 1
+            self.showHUD()
+            TRCMessageRequest().getMessage("\(pageNumber)", completion: { (data) in
+                self.hideHUD()
+                guard let data = data else { return }
+                guard let messageArray = data.object(forKey: DATA) else { return }
+                do {
+                    let dataMessageArray:[TRCMessage] = try parseArray(messageArray as! [JSONObject])
+                    dataMessageArray.forEach({ (item) in
+                        self.dataList.append(item)
+                    })
+                }
+                catch
+                {
+                    print("JSONParsin Error: \(error)")
+                }
+            }) { (error) in
+                self.pageNumber -= 1
+                self.hideHUD()
+                self.showAlert(error)
             }
-            catch
-            {
-                print("JSONParsin Error: \(error)")
-            }
-        }) { (error) in
-            self.hideHUD()
-            self.showAlert(error)
+
+        } else {
+            return
         }
     }
-    
-    
-//    func fetchDataFromServer()
-//    {
-//        loadNumber += 1
-//        let urlStr = String(format: "https://jsonplaceholder.typicode.com/posts/\(loadNumber)/comments")
-//        let url = URL(string: urlStr)
-//        
-//        let task = URLSession.shared.dataTask(with: url!) { (data, reponse, error) in
-//            if(data != nil)
-//            {
-//                do
-//                {
-//                    let jsonData = try JSONSerialization.jsonObject(with: data!, options:.mutableContainers) as! NSMutableArray
-//                    for item in jsonData
-//                    {
-//                        self.dataList.add(item)
-//                    }
-//                    print(jsonData)
-//                    DispatchQueue.main.async(execute: {
-//                        self.tblMessage.reloadData()
-//                    })
-//                }
-//                catch{
-//                    print("Error in catch block")
-//                }
-//            }
-//            else{
-//                
-//            }
-//        }
-//        task.resume()
-//    }
     
     //MARK: Action
     func configRefresh(){
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: Localizable(value: "pull_to_refresh"))
         refreshControl.tintColor = UIColor.init(hexString: MAIN_COLOR)
         tblMessage.addSubview(refreshControl)
     }
@@ -129,67 +101,45 @@ extension TRCMessageListViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if(indexPath.row < dataList.count){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
-            let messageData = dataList[indexPath.row] as TRCMessage
-            //style for cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCMessageListCell
+        let messageData = dataList[indexPath.row] as TRCMessage
+        //style for cell
         let isUnread = Int(messageData.isRead) == 0
         cell.imgView.image = messageData.isRead == "0" ? #imageLiteral(resourceName: "message_new") : #imageLiteral(resourceName: "message_read")
         cell.lblTitle.labelStyle(title: messageData.title, fontSize: LABEL_FONT_SIZE, isBold: true, textColor: isUnread ? LABEL_FONT_COLOR : BACKGROUND_COLOR)
         cell.lblSubTitle.labelStyle(title: messageData.sender + " | " + messageData.updatedAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: isUnread ? LABEL_FONT_GREY_COLOR : BACKGROUND_COLOR)
         
         return cell
-//        }else{
-//            //load more cell
-//            let loadMoreCell = tableView.dequeueReusableCell(withIdentifier: "LoadMoreCell") as! TRCLoadMoreCell
-//    
-//            loadMoreCell.startStopLoading(false)
-//            
-//            return loadMoreCell
-//        }
     }
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        newFetchBool = 0
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        newFetchBool += 1
-//        print("Call me \(newFetchBool)")
-//    }
 }
 
 extension TRCMessageListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if(indexPath.row < dataList.count){
-            return 66
-//        }else{
-//            return 44
-//        }
+        return 66
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: indexPath!) as! TRCMessageListCell
+        currentCell.imgView.image = #imageLiteral(resourceName: "message_read")
+        currentCell.lblTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        currentCell.lblSubTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
+        currentCell.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
         
-//        if(indexPath!.row < dataList.count){
-            let currentCell = tableView.cellForRow(at: indexPath!) as! TRCMessageListCell
-            
-            currentCell.imgView.image = #imageLiteral(resourceName: "message_read")
-            currentCell.lblTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
-            currentCell.lblSubTitle.textColor = UIColor.init(hexString: BACKGROUND_COLOR)
-            currentCell.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
-            
-            let vc = TRCDetailMessageViewController(nibName: "TRCDetailMessageViewController", bundle: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = STRING_BACK
-            navigationItem.backBarButtonItem = backItem
-            vc.messageData = dataList[(indexPath?.row)!]
-            self.navigationController?.pushViewController(vc, animated: true)
+        let vc = TRCDetailMessageViewController(nibName: "TRCDetailMessageViewController", bundle: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        navigationItem.backBarButtonItem = backItem
+        vc.messageData = dataList[(indexPath?.row)!]
+        self.navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath!, animated: true)
-//        }else{
-//            let loadMoreCell = tableView.cellForRow(at: indexPath!) as! TRCLoadMoreCell
-//            loadMoreCell.isUserInteractionEnabled = false
-//        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = dataList.count - 1
+        if indexPath.row == lastElement {
+            getData()
+        }
     }
 }
 
