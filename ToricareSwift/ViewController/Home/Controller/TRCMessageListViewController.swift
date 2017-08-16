@@ -90,6 +90,8 @@ class TRCMessageListViewController: TRCBaseViewController {
     }
     
     func refresh(sender: AnyObject){
+        pageNumber = 0
+        dataList.removeAll()
         getData()
         refreshControl.endRefreshing()
     }
