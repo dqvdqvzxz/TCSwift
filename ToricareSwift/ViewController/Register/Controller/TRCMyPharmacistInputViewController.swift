@@ -133,6 +133,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     
     func doRegister() {
         if(mode == MODE_REGISTER){
+            self.showHUD()
             TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                 self.hideHUD()
                 let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
@@ -148,6 +149,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             
         }else if(mode == MODE_MYPAGE){
             if(dataResult != nil){
+                self.showHUD()
                 TRCPharmacistRequest().PharmacistInfoChange(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                     self.hideHUD()
                     
@@ -163,6 +165,8 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
                     self.showAlert(error)
                 }
             }
+            
+            self.showHUD()
             TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                 self.hideHUD()
                 
