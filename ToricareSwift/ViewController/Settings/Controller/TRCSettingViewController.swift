@@ -133,7 +133,10 @@ extension TRCSettingViewController: UITableViewDelegate{
                     UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
                     UserDefaults.removeUD(SEARCH_TOWN)
                     UserDefaults.removeUD(SEARCH_TOWN_NAME)
+                    
                     //reset struct
+                    _obj.objectAccountInfo.imagePath.origin = ""
+
                     
                     let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                     let navController = UINavigationController(rootViewController: mainVC)

@@ -49,12 +49,12 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = Localizable(value: "my_pharmacist_setting")
         
+        tfName.textFieldStyle()
+        tfPhone.textFieldStyle()
+        tfEmail.textFieldStyle()
+        
         if(mode == MODE_REGISTER){
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
-            
-            tfName.textFieldStyle()
-            tfPhone.textFieldStyle()
-            tfEmail.textFieldStyle()
 
             lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
         }else if(mode == MODE_MYPAGE){
@@ -75,10 +75,10 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             lblInform.attributedText = attributedString1
             
             if(dataResult != nil){
-                tfName.textFieldStyle(placeHolder: dataResult.object(forKey: "name") as? String)
-                tfPhone.textFieldStyle(placeHolder: dataResult.object(forKey: "tel") as? String)
-                tfEmail.textFieldStyle(placeHolder: dataResult.object(forKey: "email") as? String)
-                tvNote.text = dataResult.object(forKey: "note") as? String
+                tfName.text = dataResult.object(forKey: PHARMACIST_NAME) as? String
+                tfPhone.text = dataResult.object(forKey: PHARMACIST_TEL) as? String
+                tfEmail.text = dataResult.object(forKey: PHARMACIST_EMAIL) as? String
+                tvNote.text = dataResult.object(forKey: PHARMACIST_NOTE) as? String
             }
         }
         
