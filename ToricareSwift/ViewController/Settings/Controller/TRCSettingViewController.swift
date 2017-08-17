@@ -106,7 +106,12 @@ extension TRCSettingViewController: UITableViewDelegate{
         case 7:
             TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
                 UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                    UserDefaults.removeAllKey()
+                    
+                    
+//                    UserDefaults.removeAllKey()
+                    UserDefaults.resetCommonValue()
+                    
+                    
                     //reset struct
                     _obj.objectAccountInfo.imagePath.origin = ""
 

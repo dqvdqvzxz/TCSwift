@@ -210,8 +210,13 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: _obj.objectAccountInfo.birthDay)
-        datePicker.setDate(date!, animated: true)
+        if(_obj.objectAccountInfo != nil){
+            if(_obj.objectAccountInfo.birthDay != ""){
+                let date = dateFormatter.date(from: _obj.objectAccountInfo.birthDay)
+                datePicker.setDate(date!, animated: true)
+            }
+        }
+        
         
         //ToolBar
         let toolbar = UIToolbar();

@@ -109,6 +109,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set root view
         if(UserDefaults.getUD(ACCESS_TOKEN) != nil){
+            //refresh token 
+            
+            
+            
+            //config tabbar
             configTabbar()
             
             //set rootview

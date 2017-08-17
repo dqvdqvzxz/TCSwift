@@ -56,16 +56,15 @@ class TRCMyPageViewController: TRCBaseViewController {
         viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
         lblName.labelStyle(title: "")
+        lblPharmacist.labelStyle(title: "My薬局：未設定")
         if(_obj.objectAccountInfo != nil){
             if(_obj.objectAccountInfo.firstName != "" && _obj.objectAccountInfo.lastName != ""){
                 self.lblName.labelStyle(title: "\(_obj.objectAccountInfo.firstName) \(_obj.objectAccountInfo.lastName) さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
             }
-        }
-        
-        if(_obj.objectAccountInfo.shopName != ""){
-            lblPharmacist.labelStyle(title: Localizable(value: "my_pharmacy") + "：\(_obj.objectAccountInfo.shopName)", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
-        }else{
-            lblPharmacist.labelStyle(title: "")
+            
+            if(_obj.objectAccountInfo.shopName != ""){
+                lblPharmacist.labelStyle(title: Localizable(value: "my_pharmacy") + "：\(_obj.objectAccountInfo.shopName)", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
+            }
         }
         
 //        clvMyPage.layer.backgroundColor = UIColor(hexString: BACKGROUND_COLOR).cgColor
