@@ -47,11 +47,11 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
+        configUI()
+
         if(mode == MODE_MYPAGE) {
             getData()
         }
-
-        configUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,9 +64,12 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     func getData() {
+        if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
+            showEmptyLabel()
+            return
+        }
+        
         self.showHUD()
-//        pharmacyData.pharmacyId
-        // for test
         TRCPharmacyRequest().getPharmacy(_obj.objectAccountInfo.shopId, completion: { (data) in
             self.hideHUD()
             guard let data = data else { return }
@@ -83,16 +86,20 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         }) { (error) in
             self.hideHUD()
             if (error == RESULT_NO_DATA) {
-                self.lblEmpty.isHidden = false
-                self.scrollView.isHidden = true
-                self.btnQRCode.isHidden = true
-                self.btnPharmacy.isHidden = true
+                self.showEmptyLabel()
             } else {
                 self.showAlert(error)
             }
         }
     }
 
+    func showEmptyLabel() {
+        self.lblEmpty.isHidden = false
+        self.scrollView.isHidden = true
+        self.btnQRCode.isHidden = true
+        self.btnPharmacy.isHidden = false
+    }
+    
     //MARK: Config UI
     func configUI(){
         //navigation 
@@ -124,7 +131,11 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         }else if(mode == MODE_MYPAGE){
             btnQRCode.isHidden = true
             contraintBottomScrollView.constant = 54
-            btnPharmacy.buttonStyle(title: Localizable(value: "change_button"))
+            if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
+                btnPharmacy.buttonStyle(title: Localizable(value: "setting_my_pharmacy"))
+            } else {
+                btnPharmacy.buttonStyle(title: Localizable(value: "change_button"))
+            }
         }
     }
     
@@ -233,6 +244,11 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         }else if(mode == MODE_REGISTER_MYPAGE){
             self.registerPharmacy()
         }else if(mode == MODE_MYPAGE){
+            if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
+                goSearchPharmacy()
+                return
+            }
+
             let alert = UIAlertController(title: nil,
                                           message: "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？",
                                           preferredStyle: UIAlertControllerStyle.alert)
@@ -244,15 +260,19 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
                                           style: UIAlertActionStyle.default,
                                           handler: { action in
-                                            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-                                            vc.mode = MODE_MYPAGE
-                                            self.backButton()
-                                            _obj.nc5.pushViewController(vc, animated: true)
+                                            self.goSearchPharmacy()
             }))
             
             // show the alert
             self.present(alert, animated: true, completion: nil)
         }
 
+    }
+    
+    func goSearchPharmacy() {
+        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+        vc.mode = MODE_MYPAGE
+        self.backButton()
+        _obj.nc5.pushViewController(vc, animated: true)
     }
 }

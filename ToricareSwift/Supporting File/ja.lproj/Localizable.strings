@@ -302,8 +302,9 @@
 "pull_to_refresh"                              = "下へスライドして更新...";
 
 "empty_data"                              = "データがありません。";
-""                              = "";
-""                              = "";
+"setting_my_pharmacy"                              = "My薬局を設定する";
+"setting_my_pharmacist"                              = "My薬剤師を設定する";
+"my_pharmacist_did_not_set"                              = "My薬剤師が設定されていません。";
 ""                              = "";
 ""                              = "";
 ""                              = "";
