@@ -109,7 +109,7 @@ extension TRCSettingViewController: UITableViewDelegate{
                     
                     
 //                    UserDefaults.removeAllKey()
-                    UserDefaults.resetCommonValue()
+                    UserDefaults.clearValueWhenLogout()
                     
                     
                     //reset struct

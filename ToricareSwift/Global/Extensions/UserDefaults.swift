@@ -25,7 +25,16 @@ extension UserDefaults{
     
     class func resetCommonValue() {
         for key in Array(UserDefaults.standard.dictionaryRepresentation().keys) {
-            if (key != ACCESS_TOKEN && key != FB_TOKEN && key != REFRESH_ACCESS_TOKEN && key != DEVICE_ID && key != DEVICE_TYPE) {
+            if (key != ACCESS_TOKEN && key != FB_TOKEN && key != REFRESH_ACCESS_TOKEN) {
+                UserDefaults.standard.removeObject(forKey: key)
+            }
+        }
+        UserDefaults.standard.synchronize()
+    }
+    
+    class func clearValueWhenLogout() {
+        for key in Array(UserDefaults.standard.dictionaryRepresentation().keys) {
+            if (key != DEVICE_ID && key != DEVICE_TYPE) {
                 UserDefaults.standard.removeObject(forKey: key)
             }
         }

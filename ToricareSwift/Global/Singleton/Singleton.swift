@@ -38,6 +38,9 @@ final class Singleton{
         objectGoal = nil
         objectSummary = nil
         objectAccountInfo = nil
+        
+        dicPasscode.removeAll()
+        dicFacebookInfo.removeAll()
     }
 }
 
