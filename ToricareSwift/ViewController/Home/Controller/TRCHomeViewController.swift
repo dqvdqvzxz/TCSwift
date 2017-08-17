@@ -168,6 +168,7 @@ class TRCHomeViewController: TRCBaseViewController {
             do {
                 self.summaryInfo = try parseDict(dataResult as! JSONObject) as TRCSummary
                 _obj.objectSummary = self.summaryInfo
+                
                 self.hideHUD()
             } catch {
                 print("JSONParsin Error: \(error)")
@@ -185,7 +186,7 @@ class TRCHomeViewController: TRCBaseViewController {
                 self.goalInfo = try parseDict(dataResult as! JSONObject) as TRCGoal
                 _obj.objectGoal = self.goalInfo
                 
-                self.lblStep.labelStyle(title: _obj.objectGoal.steps, fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+                self.lblStep.labelStyle(title: String().convertDecimal(_obj.objectGoal.steps), fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
                 
                 self.hideHUD()
             } catch {
