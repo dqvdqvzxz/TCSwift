@@ -307,6 +307,10 @@
 		68F07DC31F43FAE500E1934C /* CustomizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */; };
 		68F07DC51F4575A400E1934C /* TRCNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC41F4575A400E1934C /* TRCNotification.swift */; };
 		68F07DC61F4575A500E1934C /* TRCNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC41F4575A400E1934C /* TRCNotification.swift */; };
+		68F07DD51F45A64E00E1934C /* TRCSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DD41F45A64E00E1934C /* TRCSplashViewController.swift */; };
+		68F07DD61F45A64E00E1934C /* TRCSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DD41F45A64E00E1934C /* TRCSplashViewController.swift */; };
+		68F07DD81F45AED800E1934C /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F07DD71F45AED800E1934C /* View.xib */; };
+		68F07DD91F45AED800E1934C /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F07DD71F45AED800E1934C /* View.xib */; };
 		C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00CF8F11F17284800B6A5A5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -463,6 +467,8 @@
 		68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCUserLeaveRequest.swift; sourceTree = "<group>"; };
 		68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizeTextField.swift; sourceTree = "<group>"; };
 		68F07DC41F4575A400E1934C /* TRCNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCNotification.swift; sourceTree = "<group>"; };
+		68F07DD41F45A64E00E1934C /* TRCSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSplashViewController.swift; sourceTree = "<group>"; };
+		68F07DD71F45AED800E1934C /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -770,6 +776,7 @@
 		3FB4113D1EFB6221008720A6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				68F07DD31F45A61B00E1934C /* Splash */,
 				3FB4113E1EFB6221008720A6 /* BaseViewController */,
 				3FB4119F1F09E13E008720A6 /* PreLogin */,
 				3FB411A71F09F0FA008720A6 /* Register */,
@@ -963,6 +970,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		68F07DD31F45A61B00E1934C /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				68F07DD41F45A64E00E1934C /* TRCSplashViewController.swift */,
+				68F07DD71F45AED800E1934C /* View.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		CF69D650093D323D935D7033 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1077,6 +1093,7 @@
 				17C98FAE1F3BFAE8003AF863 /* TRCMessageListCell.xib in Resources */,
 				17C98FAF1F3BFAE8003AF863 /* TRCPreLoginViewController.xib in Resources */,
 				17C98FB01F3BFAE8003AF863 /* TRCWalkingGoalDetailViewController.xib in Resources */,
+				68F07DD91F45AED800E1934C /* View.xib in Resources */,
 				17C98FB11F3BFAE8003AF863 /* TRCMyPharmacistDetailViewController.xib in Resources */,
 				17C98FB21F3BFAE8003AF863 /* TRCTab4ViewController.xib in Resources */,
 				17C98FB31F3BFAE8003AF863 /* TRCAboutAppViewController.xib in Resources */,
@@ -1137,6 +1154,7 @@
 				3F57F73B1F26DBAC00CC079C /* TRCMessageListCell.xib in Resources */,
 				3FB411A61F09E13E008720A6 /* TRCPreLoginViewController.xib in Resources */,
 				3F475A7D1F170ECB00B82645 /* TRCWalkingGoalDetailViewController.xib in Resources */,
+				68F07DD81F45AED800E1934C /* View.xib in Resources */,
 				3F57F74E1F26F21600CC079C /* TRCMyPharmacistDetailViewController.xib in Resources */,
 				684095B31F303B43009F16EA /* TRCTab4ViewController.xib in Resources */,
 				3F4759611F0CC50C00B82645 /* TRCAboutAppViewController.xib in Resources */,
@@ -1376,6 +1394,7 @@
 				17C98F831F3BFAE8003AF863 /* TRCPointViewController.swift in Sources */,
 				17C98F841F3BFAE8003AF863 /* TRCHomeViewController.swift in Sources */,
 				17C98F851F3BFAE8003AF863 /* TRCUserLeaveCompleteViewController.swift in Sources */,
+				68F07DD61F45A64E00E1934C /* TRCSplashViewController.swift in Sources */,
 				17C98F861F3BFAE8003AF863 /* HexColor.swift in Sources */,
 				17C98F871F3BFAE8003AF863 /* TRCLinkedServicesViewController.swift in Sources */,
 				17C98F881F3BFAE8003AF863 /* TRCPreLoginViewController.swift in Sources */,
@@ -1457,6 +1476,7 @@
 				3F475A981F1763AE00B82645 /* TRCSearchResultCell.swift in Sources */,
 				3F475A641F132AC800B82645 /* Singleton.swift in Sources */,
 				68F07DC51F4575A400E1934C /* TRCNotification.swift in Sources */,
+				68F07DD51F45A64E00E1934C /* TRCSplashViewController.swift in Sources */,
 				3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */,
 				1788CE0E1F37FFC300778006 /* JSONParsing.swift in Sources */,
 				3FB411901F04F884008720A6 /* Button.swift in Sources */,

@@ -44,6 +44,7 @@ class TRCSplashViewController: TRCBaseViewController {
             }else{
                 //refresh token
                 self.showHUD()
+                //bo qua ko chay success hay error
                 TRCTokenRequest().refreshToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, UserDefaults.getUD(REFRESH_ACCESS_TOKEN) as! String, completion: {(data) in
                     let dataResult = data?.object(forKey: DATA) as! NSDictionary
 

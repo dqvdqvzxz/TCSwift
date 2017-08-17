@@ -107,55 +107,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: BUTTON_TITLE_COLOR], for: .highlighted)
         
-        //set root view
-        if(UserDefaults.getUD(ACCESS_TOKEN) != nil && UserDefaults.getUD(REFRESH_ACCESS_TOKEN) != nil){
-            //check internet
-            if Connectivity.isConnectToNetwork() == false{
-                //config tabbar
-                configTabbar()
-                
-                //set rootview
-                window?.rootViewController = _obj.tabController
-                UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                    UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-                }, completion: { completed in
-                    // maybe do something here
-                })
-            }else{
-                //refresh token
-                TRCTokenRequest().refreshToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, UserDefaults.getUD(REFRESH_ACCESS_TOKEN) as! String, completion: {(data) in
-                    let dataResult = data?.object(forKey: DATA) as! NSDictionary
-                    
-                    // Save access token
-                    if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                        Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
-                    }
-                    
-                    if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                        Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
-                    }
-                    
-                    //config tabbar
-                    self.configTabbar()
-                    
-                    //set rootview
-                    self.window?.rootViewController = _obj.tabController
-                    UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                        UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-                    }, completion: { completed in
-                        // maybe do something here
-                    })
-                }) { (error) in
-                    let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-                    let navController = UINavigationController(rootViewController: mainVC)
-                    self.window?.rootViewController = navController
-                }
-            }
-        }else{
-            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-            let navController = UINavigationController(rootViewController: mainVC)
-            window?.rootViewController = navController
-        }
+        
+        //init splash
+        let mainVC = TRCSplashViewController(nibName: "View", bundle: nil)
+        let navController = UINavigationController(rootViewController: mainVC)
+        
+//        let mainVC = TRCSplashViewController(nibName: "View", bundle: nil)
+//        let navController = UINavigationController(rootViewController: mainVC)
+
+        
+        //init root view
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
     
