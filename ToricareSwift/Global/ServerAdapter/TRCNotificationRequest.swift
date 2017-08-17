@@ -9,7 +9,7 @@
 import UIKit
 
 class TRCNotificationRequest: TRCBaseAPIController {
-    func notificationInfoChange(_ isPushed: String, _ isReceivedShop: String, _ isReceivedOperator: String, _ isReceivedWeight: String, _ isReceivedBreafast : String, _ isReceivedLunch: String, _ isReceivedDinner: String, isReceivedSnack: String, _ weightTime: String, _ breakfastTime: String, _ lunchTime: String, _ dinnerTime: String, _ snackTime: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func notificationInfoChange(_ isPushed: String, _ isReceivedShop: String, _ isReceivedOperator: String, _ isReceivedWeight: String, _ isReceivedBreafast : String, _ isReceivedLunch: String, _ isReceivedDinner: String, _ isReceivedSnack: String, _ weightTime: String, _ breakfastTime: String, _ lunchTime: String, _ dinnerTime: String, _ snackTime: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
         parameters[NOTIF_PARAM_PUSHED] = isPushed
