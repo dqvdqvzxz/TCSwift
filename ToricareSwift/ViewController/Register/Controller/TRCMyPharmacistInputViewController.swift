@@ -135,7 +135,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     func doRegister() {
         if(mode == MODE_REGISTER){
             self.showHUD()
-            TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
+            TRCPharmacistRequest().pharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                 self.hideHUD()
                 let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
                 vc.mode = MODE_REGISTER
@@ -149,7 +149,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         }else if(mode == MODE_MYPAGE){
             if(dataResult != nil){
                 self.showHUD()
-                TRCPharmacistRequest().PharmacistInfoChange(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
+                TRCPharmacistRequest().pharmacistInfoChange(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                     self.hideHUD()
                     
                     let viewControllers: [UIViewController] = _obj.nc5.viewControllers
@@ -166,7 +166,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             }
             
             self.showHUD()
-            TRCPharmacistRequest().PharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
+            TRCPharmacistRequest().pharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                 self.hideHUD()
                 
                 let viewControllers: [UIViewController] = _obj.nc5.viewControllers

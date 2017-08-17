@@ -9,7 +9,7 @@
 import UIKit
 
 class TRCPharmacistRequest: TRCBaseAPIController {
-    func PharmacistInfoCreate(_ name: String, _ tel: String, _ email: String, _ note: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func pharmacistInfoCreate(_ name: String, _ tel: String, _ email: String, _ note: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
         parameters["name"] = name
@@ -25,7 +25,7 @@ class TRCPharmacistRequest: TRCBaseAPIController {
         }
     }
     
-    func PharmacistInfoChange(_ name: String, _ tel: String, _ email: String, _ note: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func pharmacistInfoChange(_ name: String, _ tel: String, _ email: String, _ note: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
         parameters["name"] = name
@@ -41,7 +41,7 @@ class TRCPharmacistRequest: TRCBaseAPIController {
         }
     }
     
-    func PharmacistInfo(completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func pharmacistInfo(completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         let parameters = Dictionary <String, String>()
         
