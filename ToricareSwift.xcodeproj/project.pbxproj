@@ -47,7 +47,6 @@
 		17C98F691F3BFAE8003AF863 /* TRCPasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759351F0CC3EA00B82645 /* TRCPasswordChangeViewController.swift */; };
 		17C98F6A1F3BFAE8003AF863 /* TRCMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F475A5C1F0F9F0300B82645 /* TRCMyPageViewController.swift */; };
 		17C98F6B1F3BFAE8003AF863 /* TRCRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411AB1F09F2AA008720A6 /* TRCRegisterViewController.swift */; };
-		17C98F6C1F3BFAE8003AF863 /* example5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F6FC1F1F035700CC079C /* example5.swift */; };
 		17C98F6D1F3BFAE8003AF863 /* TRCPharmacySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4758FB1F0BA08100B82645 /* TRCPharmacySearchViewController.swift */; };
 		17C98F6E1F3BFAE8003AF863 /* TRCEmailChangeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4759291F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift */; };
 		17C98F6F1F3BFAE8003AF863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411301EFB6221008720A6 /* AppDelegate.swift */; };
@@ -236,7 +235,6 @@
 		3F57F6EE1F1CD39E00CC079C /* TRCSearchLocationPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F57F6EB1F1CD39E00CC079C /* TRCSearchLocationPageView.xib */; };
 		3F57F6EF1F1CD39E00CC079C /* TRCSearchPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F57F6EC1F1CD39E00CC079C /* TRCSearchPageViewController.xib */; };
 		3F57F6F71F1F032000CC079C /* example2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F6F61F1F032000CC079C /* example2.swift */; };
-		3F57F6FD1F1F035700CC079C /* example5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F6FC1F1F035700CC079C /* example5.swift */; };
 		3F57F7291F21DDEA00CC079C /* TRCQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F7271F21DDEA00CC079C /* TRCQRCodeViewController.swift */; };
 		3F57F72C1F21E1E700CC079C /* TRCQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F57F72B1F21E1E700CC079C /* TRCQRCodeViewController.xib */; };
 		3F57F7331F25F78800CC079C /* TRCMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F7311F25F78800CC079C /* TRCMessageListViewController.swift */; };
@@ -307,6 +305,8 @@
 		68F07DB81F3D6B0D00E1934C /* TRCUserLeaveRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */; };
 		68F07DC21F43FAE500E1934C /* CustomizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */; };
 		68F07DC31F43FAE500E1934C /* CustomizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */; };
+		68F07DC51F4575A400E1934C /* TRCNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC41F4575A400E1934C /* TRCNotification.swift */; };
+		68F07DC61F4575A500E1934C /* TRCNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DC41F4575A400E1934C /* TRCNotification.swift */; };
 		C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00CF8F11F17284800B6A5A5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -399,7 +399,6 @@
 		3F57F6EC1F1CD39E00CC079C /* TRCSearchPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCSearchPageViewController.xib; sourceTree = "<group>"; };
 		3F57F6F01F1DF43E00CC079C /* ToricareSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToricareSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F57F6F61F1F032000CC079C /* example2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example2.swift; sourceTree = "<group>"; };
-		3F57F6FC1F1F035700CC079C /* example5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example5.swift; sourceTree = "<group>"; };
 		3F57F7271F21DDEA00CC079C /* TRCQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCQRCodeViewController.swift; sourceTree = "<group>"; };
 		3F57F72B1F21E1E700CC079C /* TRCQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCQRCodeViewController.xib; sourceTree = "<group>"; };
 		3F57F7311F25F78800CC079C /* TRCMessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCMessageListViewController.swift; sourceTree = "<group>"; };
@@ -463,6 +462,7 @@
 		68F07DB21F3C418400E1934C /* TRCSummaryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSummaryRequest.swift; sourceTree = "<group>"; };
 		68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCUserLeaveRequest.swift; sourceTree = "<group>"; };
 		68F07DC11F43FAE500E1934C /* CustomizeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizeTextField.swift; sourceTree = "<group>"; };
+		68F07DC41F4575A400E1934C /* TRCNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCNotification.swift; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -535,7 +535,7 @@
 		3F47591F1F0CC0F400B82645 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3F57F6FC1F1F035700CC079C /* example5.swift */,
+				68F07DC41F4575A400E1934C /* TRCNotification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1350,7 +1350,6 @@
 				17C98F691F3BFAE8003AF863 /* TRCPasswordChangeViewController.swift in Sources */,
 				17C98F6A1F3BFAE8003AF863 /* TRCMyPageViewController.swift in Sources */,
 				17C98F6B1F3BFAE8003AF863 /* TRCRegisterViewController.swift in Sources */,
-				17C98F6C1F3BFAE8003AF863 /* example5.swift in Sources */,
 				17C98F6D1F3BFAE8003AF863 /* TRCPharmacySearchViewController.swift in Sources */,
 				17C98F6E1F3BFAE8003AF863 /* TRCEmailChangeInputViewController.swift in Sources */,
 				17C98F6F1F3BFAE8003AF863 /* AppDelegate.swift in Sources */,
@@ -1381,6 +1380,7 @@
 				17C98F871F3BFAE8003AF863 /* TRCLinkedServicesViewController.swift in Sources */,
 				17C98F881F3BFAE8003AF863 /* TRCPreLoginViewController.swift in Sources */,
 				17C98F891F3BFAE8003AF863 /* TRCMyPharmacistInputViewController.swift in Sources */,
+				68F07DC61F4575A500E1934C /* TRCNotification.swift in Sources */,
 				17C98F8A1F3BFAE8003AF863 /* TRCImage.swift in Sources */,
 				17C98F8B1F3BFAE8003AF863 /* TRCPointDetailViewController.swift in Sources */,
 				17C98F8C1F3BFAE8003AF863 /* TRCPrefecturesRequest.swift in Sources */,
@@ -1448,7 +1448,6 @@
 				3F475A601F0F9F0300B82645 /* TRCMyPageViewController.swift in Sources */,
 				68F07DB71F3D6A5900E1934C /* TRCUserLeaveRequest.swift in Sources */,
 				3FB411AD1F09F2AA008720A6 /* TRCRegisterViewController.swift in Sources */,
-				3F57F6FD1F1F035700CC079C /* example5.swift in Sources */,
 				3F4758FD1F0BA08100B82645 /* TRCPharmacySearchViewController.swift in Sources */,
 				68F07DC21F43FAE500E1934C /* CustomizeTextField.swift in Sources */,
 				3F47592B1F0CC3BE00B82645 /* TRCEmailChangeInputViewController.swift in Sources */,
@@ -1457,6 +1456,7 @@
 				3F47594B1F0CC45000B82645 /* TRCAboutAppViewController.swift in Sources */,
 				3F475A981F1763AE00B82645 /* TRCSearchResultCell.swift in Sources */,
 				3F475A641F132AC800B82645 /* Singleton.swift in Sources */,
+				68F07DC51F4575A400E1934C /* TRCNotification.swift in Sources */,
 				3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */,
 				1788CE0E1F37FFC300778006 /* JSONParsing.swift in Sources */,
 				3FB411901F04F884008720A6 /* Button.swift in Sources */,

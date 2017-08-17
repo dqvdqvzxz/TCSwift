@@ -26,6 +26,7 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     @IBOutlet weak var btnNoData: UIButton!
     
     @IBOutlet weak var lblNoPharmacy: UILabel!
+    @IBOutlet weak var lblNoPharmacy2: UILabel!
 
     @IBOutlet weak var lblNameValue: UILabel!
     @IBOutlet weak var lblPhoneValue: UILabel!
@@ -82,6 +83,11 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
         
         lblNoData.labelStyle(title: Localizable(value: "my_pharmacist_did_not_set"))
         
+        lblNoPharmacy.labelStyle(title: Localizable(value: "my_pharmacist_did_not_set"))
+        lblNoPharmacy2.labelStyle(title: Localizable(value: "please_register_pharmacy_first"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblNoPharmacy2.lineBreakMode = .byWordWrapping
+        lblNoPharmacy2.numberOfLines = 0
+        
         btnChange.buttonStyle(title: Localizable(value: "change_button"))
         
         btnNoData.buttonStyle(title: Localizable(value: "setting_my_pharmacist"))
@@ -89,8 +95,16 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     
     //MARK: Get data
     func getData(){
+        if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
+            self.viewNoPharmacy.frame = self.view.bounds
+            self.viewNoPharmacy.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            self.view.addSubview(self.viewNoPharmacy)
+            
+            return
+        }
+        
         self.showHUD()
-        TRCPharmacistRequest().PharmacistInfo(completion: {(data) in
+        TRCPharmacistRequest().pharmacistInfo(completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
             
