@@ -79,7 +79,7 @@ class TRCHomeViewController: TRCBaseViewController {
         super.viewDidLoad()
         
         _obj.tabController.tabBar.isHidden = false
-        
+        updateUnread("0")
         getData()
     }
     
