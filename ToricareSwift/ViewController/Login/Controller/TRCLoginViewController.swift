@@ -105,11 +105,11 @@ class TRCLoginViewController: TRCBaseViewController {
                 }else{
                     // Save access token
                     if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                        Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                        UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
                     }
                     
                     if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                        Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                        UserDefaults.saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
                     }
                     
                     //init tabbar
@@ -206,11 +206,11 @@ class TRCLoginViewController: TRCBaseViewController {
             
             // Save access token
             if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
             }
             
             if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                UserDefaults.saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
             }
             
             //get account info

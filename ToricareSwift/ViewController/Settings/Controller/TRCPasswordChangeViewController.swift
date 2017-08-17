@@ -59,11 +59,11 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
             
             // Save access token
             if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+                UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
             }
             
             if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                Global().saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                UserDefaults.saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
             }
             
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers
