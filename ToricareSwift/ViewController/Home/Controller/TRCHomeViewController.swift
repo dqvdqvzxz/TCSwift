@@ -200,7 +200,6 @@ class TRCHomeViewController: TRCBaseViewController {
         //get account info
         TRCAccountInfoRequest().accountInfo(completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
-            self.hideHUD()
             do {
                 self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
                 _obj.objectAccountInfo = self.accountInfo

@@ -14,9 +14,6 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnSave: UIButton!
     
-    var turnOn: String = NOTIF_TURNON
-    var turnOff: String = NOTIF_TURNOFF
-    
     var section = 3
     
     var dataResult = NSMutableDictionary()
@@ -29,12 +26,13 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     var timePicker = UIPickerView()
     
+    var notificationInfo : TRCNotification!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getData()
-        
+        getData()        
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,20 +60,15 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         self.showHUD()
         TRCNotificationRequest().notificationInfo(completion: {(data) in
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
-            self.hideHUD()
-            
-            //set result to dic
-            self.dataResult = NSMutableDictionary(dictionary: dataResult)  //dataResult as! NSMutableDictionary
-            
-            if(dataResult.object(forKey: NOTIF_PARAM_PUSHED) as? Int == 1){
-                UserDefaults.saveUD(self.turnOn, NOTIF_ALL)
-            }else{
-                UserDefaults.saveUD(self.turnOff, NOTIF_ALL)
-            }
-
-            
-            self.configUI()
-
+            do {
+                self.notificationInfo = try parseDict(dataResult as! JSONObject) as TRCNotification
+                self.hideHUD()
+                self.configUI()
+                
+                DLog(self.notificationInfo)
+            } catch {
+                print("JSONParsin Error: \(error)")
+            } 
         }) { (error) in
             self.hideHUD()
             ELog(error)
@@ -86,7 +79,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: Button action
     @IBAction func tapBtnSave(_ sender: Any) {
         self.showHUD()
-        TRCNotificationRequest().notificationInfoChange(UserDefaults.getUD(NOTIF_ALL) as! String, UserDefaults.getUD(NOTIF_PHARMACY) as! String, UserDefaults.getUD(NOTIF_TRICARE) as! String, UserDefaults.getUD(NOTIF_WEIGHT) as! String, UserDefaults.getUD(NOTIF_BREAKFAST) as! String, UserDefaults.getUD(NOTIF_LUNCH) as! String, UserDefaults.getUD(NOTIF_DINNER) as! String, isReceivedSnack: UserDefaults.getUD(NOTIF_SNACK) as! String, self.dataResult[NOTIF_PARAM_TIME_WEIGHT] as! String, self.dataResult[NOTIF_PARAM_TIME_BREAKFAST] as! String, self.dataResult[NOTIF_PARAM_TIME_LUNCH] as! String, self.dataResult[NOTIF_PARAM_TIME_DINNER] as! String, self.dataResult[NOTIF_PARAM_TIME_SNACK] as! String, completion: {(data) in
+        TRCNotificationRequest().notificationInfoChange(self.notificationInfo.isPush, self.notificationInfo.isReceivedShop, self.notificationInfo.isReceivedOperator, self.notificationInfo.isReceivedWeight, self.notificationInfo.isReceivedBreakfast, self.notificationInfo.isReceivedLunch, self.notificationInfo.isReceivedDinner, self.notificationInfo.isReceivedSnack, self.notificationInfo.timeWeight, self.notificationInfo.timeBreakfast, self.notificationInfo.timeLunch, self.notificationInfo.timeDinner, self.notificationInfo.timeSnack, completion: {(data) in
             self.hideHUD()
             
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers
@@ -108,10 +101,10 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: Action
     func switchReceiveAll(switchState: UISwitch){
         if(switchState.isOn){
-            UserDefaults.saveUD(turnOn, NOTIF_ALL)
+            self.notificationInfo.isPush = NOTIF_TURNON
             section = 3
         }else{
-            UserDefaults.saveUD(turnOff, NOTIF_ALL)
+            self.notificationInfo.isPush = NOTIF_TURNOFF
             section = 1
         }
         tblNotify.reloadData()
@@ -119,64 +112,64 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     
     func switchReceivePharmacy(switchState: UISwitch){
         if(switchState.isOn){
-            UserDefaults.saveUD(turnOn, NOTIF_PHARMACY)
+            self.notificationInfo.isReceivedShop = NOTIF_TURNON
         }else{
-            UserDefaults.saveUD(turnOff, NOTIF_PHARMACY)
+            self.notificationInfo.isReceivedShop = NOTIF_TURNOFF
         }
     }
     
     func switchReceiveTricare(switchState: UISwitch){
         if(switchState.isOn){
-            UserDefaults.saveUD(turnOn, NOTIF_TRICARE)
+            self.notificationInfo.isReceivedOperator = NOTIF_TURNON
         }else{
-            UserDefaults.saveUD(turnOff, NOTIF_TRICARE)
+            self.notificationInfo.isReceivedOperator = NOTIF_TURNOFF
         }
     }
     
     func switchReceiveWeight(switchState: UISwitch){
         if(switchState.isOn){
-            UserDefaults.saveUD(turnOn, NOTIF_WEIGHT)
+            self.notificationInfo.isReceivedWeight = NOTIF_TURNON
         }else{
-            UserDefaults.saveUD(turnOff, NOTIF_WEIGHT)
+            self.notificationInfo.isReceivedWeight = NOTIF_TURNOFF
         }
     }
     
     func switchReceiveBreakfast(switchState: UISwitch){
         if(switchState.isOn){
-            UserDefaults.saveUD(turnOn, NOTIF_BREAKFAST)
+            self.notificationInfo.isReceivedBreakfast = NOTIF_TURNON
         }else{
-            UserDefaults.saveUD(turnOff, NOTIF_BREAKFAST)
+            self.notificationInfo.isReceivedBreakfast = NOTIF_TURNOFF
         }
     }
     
     func switchReceiveLunch(switchState: UISwitch){
         if(switchState.isOn){
-            UserDefaults.saveUD(turnOn, NOTIF_LUNCH)
+            self.notificationInfo.isReceivedLunch = NOTIF_TURNON
         }else{
-            UserDefaults.saveUD(turnOff, NOTIF_LUNCH)
+            self.notificationInfo.isReceivedLunch = NOTIF_TURNOFF
         }
     }
     
     func switchReceiveDinner(switchState: UISwitch){
         if(switchState.isOn){
-            UserDefaults.saveUD(turnOn, NOTIF_DINNER)
+            self.notificationInfo.isReceivedDinner = NOTIF_TURNON
         }else{
-            UserDefaults.saveUD(turnOff, NOTIF_DINNER)
+            self.notificationInfo.isReceivedDinner = NOTIF_TURNOFF
         }
     }
     
     func switchReceiveSnack(switchState: UISwitch){
         if(switchState.isOn){
-            UserDefaults.saveUD(turnOn, NOTIF_SNACK)
+            self.notificationInfo.isReceivedSnack = NOTIF_TURNON
         }else{
-            UserDefaults.saveUD(turnOff, NOTIF_SNACK)
+            self.notificationInfo.isReceivedSnack = NOTIF_TURNOFF
         }
     }
 }
 
 extension TRCNotificationSettingViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        if(dataResult.object(forKey: NOTIF_PARAM_PUSHED) as? Int == 1){
+        if(self.notificationInfo.isPush == NOTIF_TURNON){
             return section
         }else{
             return 1
@@ -209,7 +202,7 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
             cell.lblTitle.labelStyle(title: Localizable(value: "receive"))
             cell.lblTime.labelStyle()
             
-            if(Global().convertObjectToString(UserDefaults.getUD(NOTIF_ALL)) == turnOn){
+            if(self.notificationInfo.isPush == NOTIF_TURNON){
                 cell.switchCell.isOn = true
             }else{
                 cell.switchCell.isOn = false
@@ -222,12 +215,10 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_phamarcy"))
                 cell.lblTime.labelStyle()
                 
-                if(dataResult.object(forKey: NOTIF_PARAM_SHOP) as? Int == 1){
+                if(self.notificationInfo.isReceivedShop == NOTIF_TURNON){
                     cell.switchCell.isOn = true
-                    UserDefaults.saveUD(turnOn, NOTIF_PHARMACY)
                 }else{
                     cell.switchCell.isOn = false
-                    UserDefaults.saveUD(turnOff, NOTIF_PHARMACY)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceivePharmacy(switchState:)), for: .valueChanged)
@@ -235,12 +226,10 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
                 cell.lblTitle.labelStyle(title: Localizable(value: "notify_from_tricare"))
                 cell.lblTime.labelStyle()
                 
-                if(dataResult.object(forKey: NOTIF_PARAM_OPERATOR) as? Int == 1){
+                if(self.notificationInfo.isReceivedOperator == NOTIF_TURNON){
                     cell.switchCell.isOn = true
-                    UserDefaults.saveUD(turnOn, NOTIF_TRICARE)
                 }else{
                     cell.switchCell.isOn = false
-                    UserDefaults.saveUD(turnOff, NOTIF_TRICARE)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveTricare(switchState:)), for: .valueChanged)
@@ -251,66 +240,56 @@ extension TRCNotificationSettingViewController: UITableViewDataSource{
             switch (indexPath.row){
             case 0:
                 cell.lblTitle.labelStyle(title: Localizable(value: "weight"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_WEIGHT) as? String)
+                cell.lblTime.labelStyle(title: self.notificationInfo.timeWeight)
                 
-                if(dataResult.object(forKey: NOTIF_PARAM_WEIGHT) as? Int == 1){
+                if(self.notificationInfo.isReceivedWeight == NOTIF_TURNON){
                     cell.switchCell.isOn = true
-                    UserDefaults.saveUD(turnOn, NOTIF_WEIGHT)
                 }else{
                     cell.switchCell.isOn = false
-                    UserDefaults.saveUD(turnOff, NOTIF_WEIGHT)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveWeight(switchState:)), for: .valueChanged)
             case 1:
                 cell.lblTitle.labelStyle(title: Localizable(value: "breakfast"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_BREAKFAST) as? String)
+                cell.lblTime.labelStyle(title: self.notificationInfo.timeBreakfast)
                 
-                if(dataResult.object(forKey: NOTIF_PARAM_BREAKFAST) as? Int == 1){
+                if(self.notificationInfo.isReceivedBreakfast == NOTIF_TURNON){
                     cell.switchCell.isOn = true
-                    UserDefaults.saveUD(turnOn, NOTIF_BREAKFAST)
                 }else{
                     cell.switchCell.isOn = false
-                    UserDefaults.saveUD(turnOff, NOTIF_BREAKFAST)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveBreakfast(switchState:)), for: .valueChanged)
             case 2:
                 cell.lblTitle.labelStyle(title: Localizable(value: "lunch"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_LUNCH) as? String)
+                cell.lblTime.labelStyle(title: self.notificationInfo.timeLunch)
                 
-                if(dataResult.object(forKey: NOTIF_PARAM_LUNCH) as? Int == 1){
+                if(self.notificationInfo.isReceivedLunch == NOTIF_TURNON){
                     cell.switchCell.isOn = true
-                    UserDefaults.saveUD(turnOn, NOTIF_LUNCH)
                 }else{
                     cell.switchCell.isOn = false
-                    UserDefaults.saveUD(turnOff, NOTIF_LUNCH)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveLunch(switchState:)), for: .valueChanged)
             case 3:
                 cell.lblTitle.labelStyle(title: Localizable(value: "dinner"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_DINNER) as? String)
+                cell.lblTime.labelStyle(title: self.notificationInfo.timeDinner)
                 
-                if(dataResult.object(forKey: NOTIF_PARAM_DINNER) as? Int == 1){
+                if(self.notificationInfo.isReceivedDinner == NOTIF_TURNON){
                     cell.switchCell.isOn = true
-                    UserDefaults.saveUD(turnOn, NOTIF_DINNER)
                 }else{
                     cell.switchCell.isOn = false
-                    UserDefaults.saveUD(turnOff, NOTIF_DINNER)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveDinner(switchState:)), for: .valueChanged)
             case 4:
                 cell.lblTitle.labelStyle(title: Localizable(value: "snack"))
-                cell.lblTime.labelStyle(title: dataResult.object(forKey: NOTIF_PARAM_TIME_SNACK) as? String)
+                cell.lblTime.labelStyle(title: self.notificationInfo.timeSnack)
                 
-                if(dataResult.object(forKey: NOTIF_PARAM_SNACK) as? Int == 1){
+                if(self.notificationInfo.isReceivedSnack == NOTIF_TURNON){
                     cell.switchCell.isOn = true
-                    UserDefaults.saveUD(turnOn, NOTIF_SNACK)
                 }else{
                     cell.switchCell.isOn = false
-                    UserDefaults.saveUD(turnOff, NOTIF_SNACK)
                 }
                 
                 cell.switchCell.addTarget(self, action: #selector(switchReceiveSnack(switchState:)), for: .valueChanged)
@@ -341,15 +320,15 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
         //set time to dataResult
         switch (self.cellChange){
         case 0:
-            self.dataResult[NOTIF_PARAM_TIME_WEIGHT] = timeResult
+            self.notificationInfo.timeWeight = timeResult
         case 1:
-            self.dataResult[NOTIF_PARAM_TIME_BREAKFAST] = timeResult
+            self.notificationInfo.timeBreakfast = timeResult
         case 2:
-            self.dataResult[NOTIF_PARAM_TIME_LUNCH] = timeResult
+            self.notificationInfo.timeLunch = timeResult
         case 3:
-            self.dataResult[NOTIF_PARAM_TIME_DINNER] = timeResult
+            self.notificationInfo.timeDinner = timeResult
         case 4:
-            self.dataResult[NOTIF_PARAM_TIME_SNACK] = timeResult
+            self.notificationInfo.timeSnack = timeResult
         default:
             break
         }
