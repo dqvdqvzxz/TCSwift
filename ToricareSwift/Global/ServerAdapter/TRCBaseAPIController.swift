@@ -74,7 +74,7 @@ class TRCBaseAPIController{
                             }
                             
                             //refresh token
-                            if(Global().isNotNull(UserDefaults.getUD(ACCESS_TOKEN)) && Global().isNotNull(UserDefaults.getUD(REFRESH_ACCESS_TOKEN))){
+                            else if(Global().isNotNull(UserDefaults.getUD(ACCESS_TOKEN)) && Global().isNotNull(UserDefaults.getUD(REFRESH_ACCESS_TOKEN))){
                                 TRCTokenRequest().refreshToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, UserDefaults.getUD(REFRESH_ACCESS_TOKEN) as! String, completion: {(data) in
                                     let dataResult = data?.object(forKey: DATA) as! NSDictionary
                                     

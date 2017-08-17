@@ -107,11 +107,13 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             imgUser.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_user"))
         }
         
-        if(_obj.objectAccountInfo.imagePath.origin != ""){
-            imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!, placeholderImage: #imageLiteral(resourceName: "default_user"))
-        }else{
-            imgUser.image = #imageLiteral(resourceName: "default_user")
+        imgUser.image = #imageLiteral(resourceName: "default_user")
+        if(_obj.objectAccountInfo != nil){
+            if(_obj.objectAccountInfo.imagePath.origin != ""){
+                imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!)
+            }
         }
+        
         //make image circle
         imgUser.makeBorder(color: UIColor.lightGray)
         imgUser.makeCircle()
