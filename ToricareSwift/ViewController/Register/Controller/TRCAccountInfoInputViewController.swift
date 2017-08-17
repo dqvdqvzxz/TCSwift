@@ -267,11 +267,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnNext(_ sender: Any) {
-        if (DEBUG_REMOVE_API) {
-            doRegister()
-            return
-        }
-
         validate()
     }
     
@@ -326,6 +321,14 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             return
         }
         
+        //save access token
+        if (Global().isNotNull(self.accessToken)) {
+            UserDefaults.saveUD(self.accessToken, ACCESS_TOKEN)
+        }
+        if (Global().isNotNull(self.refreshToken)) {
+            UserDefaults.saveUD(self.refreshToken, REFRESH_ACCESS_TOKEN)
+        }
+        
         if (isHasNewAvatar) {
             uploadAvatar()
         } else {
@@ -348,29 +351,11 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     }
     
     func doRegister() {
-        // ** DEBUG NO API ** //
-        if (DEBUG_REMOVE_API) {
-            let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
-            backButton()
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-            return
-        }
-        // ** ** ** //
         if (!isHasNewAvatar) {
             self.showHUD()
         }
 
         if(mode == MODE_REGISTER){
-            //save access token
-            if (Global().isNotNull(self.accessToken)) {
-                UserDefaults.saveUD(self.accessToken, ACCESS_TOKEN)
-            }
-            if (Global().isNotNull(self.refreshToken)) {
-                UserDefaults.saveUD(self.refreshToken, REFRESH_ACCESS_TOKEN)
-            }
-            
             var genderResult = ""
             var birthdayResult = ""
             

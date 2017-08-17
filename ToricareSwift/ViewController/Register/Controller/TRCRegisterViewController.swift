@@ -62,10 +62,6 @@ class TRCRegisterViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnRegister(_ sender: Any) {
-        if (DEBUG_REMOVE_API) {
-            doRegister()
-            return
-        }
         validate()
     }
     
@@ -77,7 +73,7 @@ class TRCRegisterViewController: TRCBaseViewController {
         }else{
             registerType = REGISTER_TYPE_NORMAL
         }
-        
+        self.showHUD()
         TRCRegisterRequest().register(tfUsername.text!, tfRePassword.text!, registerType, completion: { (data) in
             self.hideHUD()
             
