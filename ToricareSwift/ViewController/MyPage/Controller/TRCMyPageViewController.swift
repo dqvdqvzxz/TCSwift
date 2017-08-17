@@ -55,8 +55,8 @@ class TRCMyPageViewController: TRCBaseViewController {
         //UI of outlet
         viewInfo.viewStyle(borderWidth: nil, borderColor: nil, radius: nil, backgroundColor: MAIN_COLOR)
         
-        lblName.labelStyle(title: "")
-        lblPharmacist.labelStyle(title: "My薬局：未設定")
+        lblName.labelStyle(title: "", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
+        lblPharmacist.labelStyle(title: "My薬局：未設定", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
         if(_obj.objectAccountInfo != nil){
             if(_obj.objectAccountInfo.firstName != "" && _obj.objectAccountInfo.lastName != ""){
                 self.lblName.labelStyle(title: "\(_obj.objectAccountInfo.firstName) \(_obj.objectAccountInfo.lastName) さん", fontSize: LABEL_FONT_SIZE, isBold: true, textColor: WHITE_COLOR)
