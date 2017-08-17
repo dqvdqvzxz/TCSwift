@@ -80,11 +80,11 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
         lblMail.labelStyle(title: Localizable(value: "mail_address"))
         lblMemo.labelStyle(title: Localizable(value: "memo"))
         
-        lblNoData.labelStyle(title: "My薬剤師が設定されていません。")
+        lblNoData.labelStyle(title: Localizable(value: "my_pharmacist_did_not_set"))
         
         btnChange.buttonStyle(title: Localizable(value: "change_button"))
         
-        btnNoData.buttonStyle(title: Localizable(value: "change_button"))
+        btnNoData.buttonStyle(title: Localizable(value: "setting_my_pharmacist"))
     }
     
     //MARK: Get data
