@@ -113,7 +113,8 @@ extension TRCSettingViewController: UITableViewDelegate{
                     
                     
                     //reset struct
-                    _obj.objectAccountInfo.imagePath.origin = ""
+//                    _obj.objectAccountInfo.imagePath.origin = ""
+                    _obj.clearObject()
 
                     
                     let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)

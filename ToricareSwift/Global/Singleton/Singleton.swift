@@ -33,5 +33,11 @@ final class Singleton{
     var objectAccountInfo: TRCAccountInfo!
     
     var objectSummary: TRCSummary!
+    
+    func clearObject(){
+        objectGoal = nil
+        objectSummary = nil
+        objectAccountInfo = nil
+    }
 }
 
