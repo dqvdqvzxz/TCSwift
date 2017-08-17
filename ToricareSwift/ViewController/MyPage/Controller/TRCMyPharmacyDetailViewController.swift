@@ -112,7 +112,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         lblDayOff.labelStyle(title: Localizable(value: "day_off"))
         lblWebsite.labelStyle(title: Localizable(value: "website"))
         
-        lblEmpty.labelStyle(title: Localizable(value: "pharmacy_not_set"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblEmpty.labelStyle(title: Localizable(value: "pharmacy_not_set"))
         lblEmpty.isHidden = true
         configMode()
         configData()
