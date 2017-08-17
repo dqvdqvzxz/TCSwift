@@ -71,5 +71,20 @@ extension String {
 //            return false
 //        }
 //    }
+    
+    func convertDecimal(_ string: String) -> String{
+        //convert string to number
+        if let numberString = Int(string){
+            let numberConvert = NSNumber(value: numberString)
+            
+            //convert to decimal
+            let formatter = NumberFormatter()
+            formatter.numberStyle = NumberFormatter.Style.decimal
+            return (formatter.string(from: numberConvert))!
+        }
+        
+        return ""
+    }
+
 
 }
