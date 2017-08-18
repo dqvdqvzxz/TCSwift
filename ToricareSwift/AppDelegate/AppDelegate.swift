@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //init splash
-        let mainVC = TRCSplashViewController(nibName: "View", bundle: nil)
+        let mainVC = TRCSplashViewController(nibName: "TRCSplashViewController", bundle: nil)
         let navController = UINavigationController(rootViewController: mainVC)
         
 //        let mainVC = TRCSplashViewController(nibName: "View", bundle: nil)

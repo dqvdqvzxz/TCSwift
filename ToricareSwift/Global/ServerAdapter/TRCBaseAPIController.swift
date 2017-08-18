@@ -64,6 +64,15 @@ class TRCBaseAPIController{
                             return
                         }else if(statusCode == STATUS_CODE_UNAUTHORIZED){
                             
+                            //check path refresh token 
+                            if(path == URL_REFRESH_TOKEN){
+                                let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+                                let navController = UINavigationController(rootViewController: mainVC)
+                                UIApplication.shared.keyWindow?.rootViewController = navController
+                                
+                                return
+                            }
+                            
                             //handle not token
                             let dataError = data?.object(forKey: ERROR) as! NSArray
                             let errorDic = dataError.firstObject as! NSDictionary
