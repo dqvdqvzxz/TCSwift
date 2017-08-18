@@ -123,23 +123,24 @@ class TRCHomeViewController: TRCBaseViewController {
         btnMore.titleLabel?.text = Localizable(value: "view_more")
 //        btnMore.buttonStyle(title: Localizable(value: "view_more"), fontSize: BUTTON_FONT_SIZE! - 2, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
         
-        //
-        lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: HOME_PINK_COLOR)
-
-        lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblInformSummary.labelStyle(title: Localizable(value: "sucess_percent"), fontSize: LABEL_FONT_SIZE! + 5, isBold: false, textColor: LABEL_FONT_COLOR)
         
-        //
+        //step
+        lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 2, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblInformSummary.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 5, isBold: false, textColor: LABEL_FONT_COLOR)
+        
+        //exercise calo
         lblTitleExerciseKcal.labelStyle(title: Localizable(value: "exercise"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblContentExerciseKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: HOME_PINK_COLOR)
+        lblContentExerciseKcal.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: HOME_PINK_COLOR)
         lblContentExerciseKcalUnit.labelStyle(title: "Kcal")
         
+        //food calo
         lblTitleFoodKcal.labelStyle(title: Localizable(value: "meal"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblContentFoodKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: HOME_ORANGE_COLOR)
+        lblContentFoodKcal.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: HOME_ORANGE_COLOR)
         lblContentFoodKcalUnit.labelStyle(title: "Kcal")
         
-        //
+        //weight
         lblRegisterTodayWeight.labelStyle(title: Localizable(value: "register_today_weight"))
         imgViewAccessory.image = #imageLiteral(resourceName: "ic_next")
     }
@@ -171,6 +172,19 @@ class TRCHomeViewController: TRCBaseViewController {
                 do {
                     self.summaryInfo = try parseDict(dataResult as! JSONObject) as TRCSummary
                     _obj.objectSummary = self.summaryInfo
+                    
+                    if(Int(_obj.objectSummary.stepPercent)! <= 49){
+                        self.lblInformSummary.text = "まだ"+(_obj.objectSummary.stepPercent)+"％！がんばろう！"
+                    }else if(Int(_obj.objectSummary.stepPercent)! >= 50 && Int(_obj.objectSummary.stepPercent)! <= 74){
+                         self.lblInformSummary.text = ""+(_obj.objectSummary.stepPercent)+"％達成！まだまだ！"
+                    }else if(Int(_obj.objectSummary.stepPercent)! >= 75 && Int(_obj.objectSummary.stepPercent)! <= 99){
+                         self.lblInformSummary.text = ""+(_obj.objectSummary.stepPercent)+"％達成！あと少し！"
+                    }else if(Int(_obj.objectSummary.stepPercent)! == 100){
+                         self.lblInformSummary.text = "100％達成！おめでとう！！"
+                    }
+                    
+                    self.lblContentExerciseKcal.labelStyle(title: String().convertDecimal(_obj.objectSummary.consumptCalo), fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
+                    self.lblContentFoodKcal.labelStyle(title: String().convertDecimal(_obj.objectSummary.intakeCalo), fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
                     
                     self.hideHUD()
                 } catch {

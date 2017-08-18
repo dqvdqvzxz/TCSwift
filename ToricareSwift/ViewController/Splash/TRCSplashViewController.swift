@@ -28,7 +28,7 @@ class TRCSplashViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //set root view
-        if(UserDefaults.getUD(ACCESS_TOKEN) != nil){
+        if(UserDefaults.getUD(ACCESS_TOKEN) != nil && UserDefaults.getUD(REFRESH_ACCESS_TOKEN) != nil){
             //check internet
             if Connectivity.isConnectToNetwork() == false{
                 //config tabbar
