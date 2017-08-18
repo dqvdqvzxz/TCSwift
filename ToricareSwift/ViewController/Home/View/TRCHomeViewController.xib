@@ -194,10 +194,13 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92f-64-ZkR">
-                                    <rect key="frame" x="83" y="115" width="272" height="63"/>
+                                    <rect key="frame" x="73" y="115" width="282" height="63"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble_speech" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-e7-wnU">
+                                            <rect key="frame" x="0.0" y="7" width="282" height="51"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwj-qe-EAE">
-                                            <rect key="frame" x="10" y="5" width="262" height="58"/>
+                                            <rect key="frame" x="20" y="5" width="262" height="58"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -206,9 +209,13 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="jwj-qe-EAE" firstAttribute="top" secondItem="92f-64-ZkR" secondAttribute="top" constant="5" id="17s-8i-fJl"/>
+                                        <constraint firstAttribute="trailing" secondItem="QeM-e7-wnU" secondAttribute="trailing" id="R7g-pG-uHE"/>
                                         <constraint firstAttribute="trailing" secondItem="jwj-qe-EAE" secondAttribute="trailing" id="UqB-Sx-0d8"/>
+                                        <constraint firstItem="QeM-e7-wnU" firstAttribute="leading" secondItem="92f-64-ZkR" secondAttribute="leading" id="YaW-HV-9TE"/>
+                                        <constraint firstItem="QeM-e7-wnU" firstAttribute="top" secondItem="92f-64-ZkR" secondAttribute="top" constant="7" id="dMM-QW-5wy"/>
                                         <constraint firstAttribute="bottom" secondItem="jwj-qe-EAE" secondAttribute="bottom" id="iSb-Gp-FQ7"/>
-                                        <constraint firstItem="jwj-qe-EAE" firstAttribute="leading" secondItem="92f-64-ZkR" secondAttribute="leading" constant="10" id="rbZ-1n-PkI"/>
+                                        <constraint firstItem="jwj-qe-EAE" firstAttribute="leading" secondItem="92f-64-ZkR" secondAttribute="leading" constant="20" id="rbZ-1n-PkI"/>
+                                        <constraint firstAttribute="bottom" secondItem="QeM-e7-wnU" secondAttribute="bottom" constant="5" id="uew-rJ-ToD"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -221,7 +228,7 @@
                                 <constraint firstItem="KpU-cC-M73" firstAttribute="top" secondItem="w6U-kh-JEp" secondAttribute="bottom" id="6dK-Um-BpJ"/>
                                 <constraint firstAttribute="trailing" secondItem="w6U-kh-JEp" secondAttribute="trailing" constant="10" id="BKY-H1-K7G"/>
                                 <constraint firstItem="KpU-cC-M73" firstAttribute="leading" secondItem="6HV-X6-hoa" secondAttribute="leading" constant="10" id="Fbw-6p-fwl"/>
-                                <constraint firstItem="92f-64-ZkR" firstAttribute="leading" secondItem="CgA-Vf-u8a" secondAttribute="trailing" constant="10" id="HJw-fh-BDw"/>
+                                <constraint firstItem="92f-64-ZkR" firstAttribute="leading" secondItem="CgA-Vf-u8a" secondAttribute="trailing" id="HJw-fh-BDw"/>
                                 <constraint firstItem="w6U-kh-JEp" firstAttribute="leading" secondItem="6HV-X6-hoa" secondAttribute="leading" constant="10" id="MA2-kU-TXg"/>
                                 <constraint firstItem="hu3-fM-Qeh" firstAttribute="height" secondItem="KpU-cC-M73" secondAttribute="height" id="TdZ-nY-J4x"/>
                                 <constraint firstItem="CgA-Vf-u8a" firstAttribute="leading" secondItem="6HV-X6-hoa" secondAttribute="leading" constant="10" id="Xcr-9c-B61"/>
@@ -657,6 +664,7 @@
     <resources>
         <image name="banner1" width="99" height="45"/>
         <image name="banner2" width="99" height="45"/>
+        <image name="bubble_speech" width="479" height="87"/>
         <image name="ic_back" width="48" height="48"/>
         <image name="ic_home_message" width="64" height="64"/>
         <image name="logo_car" width="42" height="50"/>
