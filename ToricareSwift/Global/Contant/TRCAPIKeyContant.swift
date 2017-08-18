@@ -109,6 +109,9 @@ let SUMMARY_MEMBER_ID =             "member_id"
 let SUMMARY_STEP =                  "step"
 let SUMMARY_CALO =                  "calo"
 let SUMMARY_UNREAD =                "unread"
+let SUMMARY_CONSUMPT_CALO =         "consumpt_calo"
+let SUMMARY_INTAKE_CALO =           "intake_calo"
+let SUMMARY_STEP_PERCENT =          "stepcount_percent"
 
 //MARK: UserDefaultsb
 let DEVICE_ID =                     "deviceID"
