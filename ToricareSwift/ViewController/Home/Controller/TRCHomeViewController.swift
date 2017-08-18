@@ -125,18 +125,18 @@ class TRCHomeViewController: TRCBaseViewController {
         
         //
         lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: HOME_PINK_COLOR)
 
         lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 2, isBold: false, textColor: LABEL_FONT_COLOR)
         lblInformSummary.labelStyle(title: Localizable(value: "sucess_percent"), fontSize: LABEL_FONT_SIZE! + 5, isBold: false, textColor: LABEL_FONT_COLOR)
         
         //
         lblTitleExerciseKcal.labelStyle(title: Localizable(value: "exercise"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblContentExerciseKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblContentExerciseKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: HOME_PINK_COLOR)
         lblContentExerciseKcalUnit.labelStyle(title: "Kcal")
         
         lblTitleFoodKcal.labelStyle(title: Localizable(value: "meal"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblContentFoodKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblContentFoodKcal.labelStyle(title: "720", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: HOME_ORANGE_COLOR)
         lblContentFoodKcalUnit.labelStyle(title: "Kcal")
         
         //
@@ -189,7 +189,7 @@ class TRCHomeViewController: TRCBaseViewController {
                     self.goalInfo = try parseDict(dataResult as! JSONObject) as TRCGoal
                     _obj.objectGoal = self.goalInfo
                     
-                    self.lblStep.labelStyle(title: String().convertDecimal(_obj.objectGoal.steps), fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+                    self.lblStep.text = String().convertDecimal(_obj.objectGoal.steps)
                     
                     self.hideHUD()
                 } catch {
