@@ -88,7 +88,7 @@ class TRCHomeViewController: TRCBaseViewController {
         getUnreadMessage()
         
         if(_obj.objectGoal != nil){
-            self.lblStep.labelStyle(title: String().convertDecimal(_obj.objectGoal.steps), fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+            self.lblStep.text = String().convertDecimal(_obj.objectGoal.steps)
         }
     }
     
