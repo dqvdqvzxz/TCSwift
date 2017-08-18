@@ -351,7 +351,10 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         }
         self.showHUD()
         TRCAccountInfoRequest().uploadAvatar(avatar, completion: { (resultString) in
-            _obj.objectAccountInfo.imagePath.origin = resultString
+            // Check null object account info
+            if (_obj.objectAccountInfo != nil) {
+                _obj.objectAccountInfo.imagePath.origin = resultString
+            }
             self.doRegister()
         }) { (error) in
             self.showAlert(error)
