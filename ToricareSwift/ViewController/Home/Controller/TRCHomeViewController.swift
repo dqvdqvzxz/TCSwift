@@ -126,7 +126,7 @@ class TRCHomeViewController: TRCBaseViewController {
         
         //step
         lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: HOME_PINK_COLOR)
         lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 2, isBold: false, textColor: LABEL_FONT_COLOR)
         lblInformSummary.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 5, isBold: false, textColor: LABEL_FONT_COLOR)
         
@@ -183,8 +183,8 @@ class TRCHomeViewController: TRCBaseViewController {
                          self.lblInformSummary.text = "100％達成！おめでとう！！"
                     }
                     
-                    self.lblContentExerciseKcal.labelStyle(title: String().convertDecimal(_obj.objectSummary.consumptCalo), fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
-                    self.lblContentFoodKcal.labelStyle(title: String().convertDecimal(_obj.objectSummary.intakeCalo), fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: LABEL_FONT_COLOR)
+                    self.lblContentExerciseKcal.text = String().convertDecimal(_obj.objectSummary.consumptCalo)
+                    self.lblContentFoodKcal.text = String().convertDecimal(_obj.objectSummary.intakeCalo)
                     
                     self.hideHUD()
                 } catch {
