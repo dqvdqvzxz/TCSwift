@@ -202,20 +202,17 @@ class TRCLoginViewController: TRCBaseViewController {
         
         self.showHUD()
         TRCLoginRequest().login(tfUsername.text!.trim(), tfPassword.text!, completion: {(data) in
-            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            let dataLoginResult = data?.object(forKey: DATA) as! NSDictionary
             
             // Save access token
-            if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
-            }
-            
-            if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                UserDefaults.saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+            if (Global().isNotNull(dataLoginResult.object(forKey: ACCESS_TOKEN))) {
+                UserDefaults.saveUD(dataLoginResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
             }
             
             //get account info
             TRCAccountInfoRequest().accountInfo(completion: {(data) in
                 let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                let abc = dataLoginResult
                 self.hideHUD()
                 do {
                     self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
@@ -237,6 +234,11 @@ class TRCLoginViewController: TRCBaseViewController {
                     
                     UIApplication.shared.keyWindow?.rootViewController = navController
                 }else{
+                    //save refresh token
+                    if (Global().isNotNull(dataLoginResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                        UserDefaults.saveUD(dataLoginResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                    }
+                    
                     //init tabbar
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.configTabbar()
