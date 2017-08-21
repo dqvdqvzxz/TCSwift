@@ -219,7 +219,17 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             }
         }
         
+        //min, max date
+        var components = DateComponents()
+        components.year = -100
+        let minDate = Calendar.current.date(byAdding: components, to: Date())
         
+        components.year = 0
+        let maxDate = Calendar.current.date(byAdding: components, to: Date())
+        
+        datePicker.minimumDate = minDate
+        datePicker.maximumDate = maxDate
+         
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
