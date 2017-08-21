@@ -86,5 +86,17 @@ extension String {
         return ""
     }
 
+    var containsKatakanaCharacters: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "[ァ-ン]+", options: .caseInsensitive)
+            if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) != nil){
+                return true
+            }else{
+                return false
+            }
+        } catch {
+            return false
+        }
+    }
 
 }
