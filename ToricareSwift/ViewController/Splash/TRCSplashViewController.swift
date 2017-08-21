@@ -15,8 +15,6 @@ class TRCSplashViewController: TRCBaseViewController {
 
         configUI()
         
-        print("Call me")
-        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
