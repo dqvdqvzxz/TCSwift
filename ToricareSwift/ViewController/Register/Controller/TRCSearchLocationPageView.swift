@@ -45,16 +45,20 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func addFirstDataAddress() {
-        let firstObject = TRCPrefecture(name: Localizable(value: "all"), prefecture: "")
-        self.dataAddress.insert(firstObject, at: 0)
-        self.tfAddress.text = firstObject.name
+    func configFirstDataAddress() {
+        let dataPrefecture = dataAddress[0]
+        tfAddress.text = dataPrefecture.name
+        prefectureId = dataPrefecture.prefectureId
+        UserDefaults.saveUD(prefectureId, SEARCH_PREFECTURE)
+        UserDefaults.saveUD(dataPrefecture.name, SEARCH_PREFECTURE_NAME)
     }
     
-    func addFirstDataSubAddress() {
-        let firstObject = TRCCity(name: Localizable(value: "all"), cityId: "", cityCode: "")
-        self.dataSubAddress.insert(firstObject, at: 0)
-        self.tfSubAddress.text = firstObject.name
+    func configFirstDataSubAddress() {
+        let dataCity = dataSubAddress[0]
+        tfSubAddress.text = dataCity.name
+        cityId = dataCity.cityId
+        UserDefaults.saveUD(cityId, SEARCH_TOWN)
+        UserDefaults.saveUD(dataCity.name, SEARCH_TOWN_NAME)
     }
 
     //MARK: Config UI
@@ -162,8 +166,9 @@ class TRCSearchLocationPageView: TRCBaseViewController {
                 print("JSONParsin Error: \(error)")
             }
             // Add first value ALL
-            self.addFirstDataAddress()
             self.addressPicker.reloadAllComponents()
+            self.configFirstDataAddress()
+            self.getCity()
         }) { (error) in
             self.hideHUD()
             self.showAlert(error)
@@ -185,8 +190,8 @@ class TRCSearchLocationPageView: TRCBaseViewController {
             {
                 print("JSONParsin Error: \(error)")
             }
-            self.addFirstDataSubAddress()
             self.subAddressPicker.reloadAllComponents()
+            self.configFirstDataSubAddress()
         }, failed: { (error) in
             self.hideHUD()
             self.showAlert(error)
@@ -221,32 +226,15 @@ extension TRCSearchLocationPageView: UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if (row == 0) {
-            
-        }
         if(pickerView.tag == 1){
             let dataPrefecture = dataAddress[row]
             tfAddress.text = dataPrefecture.name
-            if (row == 0) {
-                prefectureId = ""
-                UserDefaults.removeUD(SEARCH_PREFECTURE)
-                UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
-                return
-            }
-
             prefectureId = dataPrefecture.prefectureId
             UserDefaults.saveUD(prefectureId, SEARCH_PREFECTURE)
             UserDefaults.saveUD(dataPrefecture.name, SEARCH_PREFECTURE_NAME)
         }else{
             let dataCity = dataSubAddress[row]
             tfSubAddress.text = dataCity.name
-            if (row == 0) {
-                cityId = ""
-                UserDefaults.removeUD(SEARCH_TOWN)
-                UserDefaults.removeUD(SEARCH_TOWN_NAME)
-                return
-            }
-
             cityId = dataCity.cityId
             UserDefaults.saveUD(cityId, SEARCH_TOWN)
             UserDefaults.saveUD(dataCity.name, SEARCH_TOWN_NAME)
