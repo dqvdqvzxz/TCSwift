@@ -373,9 +373,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         }
         
         //add action to sheet
-        actionSheetController.addAction(cancelAction)
-        actionSheetController.addAction(takePhotoCamera)
         actionSheetController.addAction(takePhotoGallery)
+        actionSheetController.addAction(takePhotoCamera)
+        actionSheetController.addAction(cancelAction)
         
         //provide a popover sourceView when using it on iPad
         actionSheetController.popoverPresentationController?.sourceView = sender as? UIView
@@ -401,6 +401,11 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             return
         }
         
+        if !(tfFirstNameKata.text?.containsKatakanaCharacters)! {
+            self.showAlert(Localizable(value: "please_input_first_name_katakana_half_width"))
+            return
+        }
+        
         if (tfLastNameKata.text?.isBlank)! {
             self.showAlert(Localizable(value: "please_input_last_name_kana"))
             return
@@ -408,6 +413,11 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         if (tfHeight.text?.isBlank)! {
             self.showAlert(Localizable(value: "please_input_height"))
+            return
+        }
+        
+        if (tfDateOfBirth.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_birthday"))
             return
         }
         
