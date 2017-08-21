@@ -44,12 +44,10 @@ class TRCBaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = true
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         _obj.tabController.tabBar.isHidden = true
-        
     }
 
     //MARK: Action
