@@ -71,27 +71,29 @@ class TRCUserLeaveViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnLeave(_ sender: Any) {
-        TRCUserLeaveRequest().deleteAccount(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
-            let alert = UIAlertController(title: Localizable(value: "leave_confirm"),
-                                          message: Localizable(value: "really_want_leave_message"),
-                                          preferredStyle: UIAlertControllerStyle.alert)
-            
-            // add the action
-            alert.addAction(UIAlertAction(title: Localizable(value: "cancel"),
-                                          style: UIAlertActionStyle.cancel,
-                                          handler: nil))
-            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
-                                          style: UIAlertActionStyle.default,
-                                          handler: { action in
+        let alert = UIAlertController(title: Localizable(value: "leave_confirm"),
+                                      message: Localizable(value: "really_want_leave_message"),
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add the action
+        alert.addAction(UIAlertAction(title: Localizable(value: "cancel"),
+                                      style: UIAlertActionStyle.cancel,
+                                      handler: { action in
+                                        
+        }))
+        alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                      style: UIAlertActionStyle.default,
+                                      handler: { action in
+                                        TRCUserLeaveRequest().deleteAccount(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
                                             let vc = TRCUserLeaveCompleteViewController(nibName: "TRCUserLeaveCompleteViewController", bundle: nil)
                                             _obj.nc5.pushViewController(vc, animated: true)
-            }))
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }, failed: { (error) in
-            self.hideHUD()
-            self.showAlert(error)
-            ELog(error)
-        })
+                                        }, failed: { (error) in
+                                            self.hideHUD()
+                                            self.showAlert(error)
+                                            ELog(error)
+                                        })
+        }))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
 }
