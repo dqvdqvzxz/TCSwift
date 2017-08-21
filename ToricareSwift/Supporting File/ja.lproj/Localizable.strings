@@ -296,7 +296,7 @@
 "all" = "すべて";
 "gps_1km_pharmacy"                              = "ＧＰＳで現在地から半径1ｋｍ圏内の薬局";
 "please_input_pharmacist_name"                          = "薬剤師の名前を入力してください。";
-"please_input_height"                   = "身長を入力してください。"
+"please_input_height"                   = "身長を入力してください。";
 
 "empty_pharmacy_search"                              = "該当するデータが\n見つかりませんでした。";
 
