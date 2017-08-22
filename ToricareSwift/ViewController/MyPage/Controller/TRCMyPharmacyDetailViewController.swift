@@ -34,6 +34,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     @IBOutlet weak var btnPharmacy: UIButton!
     
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
+    @IBOutlet weak var constraintTop: NSLayoutConstraint!
     @IBOutlet weak var imgPharmacyView: UIImageView!
     
     @IBOutlet weak var imgNext: UIImageView!
@@ -47,11 +48,13 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configUI()
 
         if(mode == MODE_MYPAGE) {
             getData()
         }
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -114,23 +117,25 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         
         lblEmpty.labelStyle(title: Localizable(value: "pharmacy_not_set"))
         lblEmpty.isHidden = true
+        
+        //hide button qr
+        btnQRCode.isHidden = true
+        contraintBottomScrollView.constant = 54
+        
         configMode()
+        
         configData()
     }
     
     func configMode(){
         if(mode == MODE_REGISTER){
-            btnQRCode.isHidden = true
-            contraintBottomScrollView.constant = 54
+            constraintTop.constant = 74
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }else if(mode == MODE_REGISTER_MYPAGE){
-            btnQRCode.isHidden = true
-            contraintBottomScrollView.constant = 54
+            constraintTop.constant = 74
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }else if(mode == MODE_MYPAGE){
-            btnQRCode.isHidden = true
-            contraintBottomScrollView.constant = 54
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
                 btnPharmacy.buttonStyle(title: Localizable(value: "setting_my_pharmacy"))
             } else {
