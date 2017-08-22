@@ -262,7 +262,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     }
     
     func initValueHeightPicker(){
-        for i in stride(from: 0, to: 250, by:1){
+        for i in stride(from: 0, to: 251, by:1){
             heightPickerData1.append(i)
         }
         
