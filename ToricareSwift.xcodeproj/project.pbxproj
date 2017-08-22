@@ -313,6 +313,10 @@
 		68F07DD61F45A64E00E1934C /* TRCSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DD41F45A64E00E1934C /* TRCSplashViewController.swift */; };
 		68F07DD81F45AED800E1934C /* TRCSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F07DD71F45AED800E1934C /* TRCSplashViewController.xib */; };
 		68F07DD91F45AED800E1934C /* TRCSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F07DD71F45AED800E1934C /* TRCSplashViewController.xib */; };
+		68F07DE11F4C0B7F00E1934C /* TRCSearchTextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DDF1F4C0B7F00E1934C /* TRCSearchTextPageView.swift */; };
+		68F07DE21F4C0B7F00E1934C /* TRCSearchTextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F07DDF1F4C0B7F00E1934C /* TRCSearchTextPageView.swift */; };
+		68F07DE61F4C1D4000E1934C /* TRCSearchTextPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F07DE51F4C1D4000E1934C /* TRCSearchTextPageView.xib */; };
+		68F07DE71F4C1D4000E1934C /* TRCSearchTextPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F07DE51F4C1D4000E1934C /* TRCSearchTextPageView.xib */; };
 		C00CF8EF1F17284800B6A5A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00CF8F11F17284800B6A5A5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -472,6 +476,8 @@
 		68F07DC41F4575A400E1934C /* TRCNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCNotification.swift; sourceTree = "<group>"; };
 		68F07DD41F45A64E00E1934C /* TRCSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSplashViewController.swift; sourceTree = "<group>"; };
 		68F07DD71F45AED800E1934C /* TRCSplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCSplashViewController.xib; sourceTree = "<group>"; };
+		68F07DDF1F4C0B7F00E1934C /* TRCSearchTextPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCSearchTextPageView.swift; sourceTree = "<group>"; };
+		68F07DE51F4C1D4000E1934C /* TRCSearchTextPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCSearchTextPageView.xib; sourceTree = "<group>"; };
 		9BA8D2920B3EE77AA5D9A04B /* Pods-ToricareSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2E964DF771890668F717B /* Pods-ToricareSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToricareSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToricareSwift/Pods-ToricareSwift.release.xcconfig"; sourceTree = "<group>"; };
 		B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToricareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -930,6 +936,7 @@
 				3F4758EF1F0BA02400B82645 /* TRCAccountInfoInputViewController.swift */,
 				3F4758FB1F0BA08100B82645 /* TRCPharmacySearchViewController.swift */,
 				3F57F6E41F1CC33A00CC079C /* TRCSearchPageViewController.swift */,
+				68F07DDF1F4C0B7F00E1934C /* TRCSearchTextPageView.swift */,
 				3F57F6D91F1C618800CC079C /* TRCSearchLocationPageView.swift */,
 				3F57F6DD1F1C619E00CC079C /* TRCSearchCurrentLocationPageView.swift */,
 				3F4758F31F0BA03F00B82645 /* TRCPharmacySearchResultsViewController.swift */,
@@ -962,6 +969,7 @@
 				3F4759071F0BA0D500B82645 /* TRCAccountInfoInputViewController.xib */,
 				3F47590B1F0BA0D500B82645 /* TRCPharmacySearchViewController.xib */,
 				3F57F6EC1F1CD39E00CC079C /* TRCSearchPageViewController.xib */,
+				68F07DE51F4C1D4000E1934C /* TRCSearchTextPageView.xib */,
 				3F57F6EB1F1CD39E00CC079C /* TRCSearchLocationPageView.xib */,
 				3F57F6EA1F1CD39E00CC079C /* TRCSearchCurrentLocationPageView.xib */,
 				3F47590A1F0BA0D500B82645 /* TRCPharmacySearchResultsViewController.xib */,
@@ -1145,6 +1153,7 @@
 				17C98FDD1F3BFAE8003AF863 /* TRCLoadMoreCell.xib in Resources */,
 				17C98FDE1F3BFAE8003AF863 /* LaunchScreen.storyboard in Resources */,
 				17C98FDF1F3BFAE8003AF863 /* TRCSearchResultCell.xib in Resources */,
+				68F07DE71F4C1D4000E1934C /* TRCSearchTextPageView.xib in Resources */,
 				17C98FE01F3BFAE8003AF863 /* TRCHomeViewController.xib in Resources */,
 				17C98FE11F3BFAE8003AF863 /* TRCTab3ViewController.xib in Resources */,
 			);
@@ -1206,6 +1215,7 @@
 				3F55B50C1F2EE9840086EDB4 /* TRCLoadMoreCell.xib in Resources */,
 				3FB411481EFB6221008720A6 /* LaunchScreen.storyboard in Resources */,
 				3F475AAA1F176A3E00B82645 /* TRCSearchResultCell.xib in Resources */,
+				68F07DE61F4C1D4000E1934C /* TRCSearchTextPageView.xib in Resources */,
 				3FB4119A1F05F988008720A6 /* TRCHomeViewController.xib in Resources */,
 				684095AF1F303B36009F16EA /* TRCTab3ViewController.xib in Resources */,
 			);
@@ -1370,6 +1380,7 @@
 				17C98F671F3BFAE8003AF863 /* TRCPasscodeLockSettingViewController.swift in Sources */,
 				17C98F681F3BFAE8003AF863 /* TRCEmailChangeCompleteViewController.swift in Sources */,
 				17C98F691F3BFAE8003AF863 /* TRCPasswordChangeViewController.swift in Sources */,
+				68F07DE21F4C0B7F00E1934C /* TRCSearchTextPageView.swift in Sources */,
 				17C98F6A1F3BFAE8003AF863 /* TRCMyPageViewController.swift in Sources */,
 				17C98F6B1F3BFAE8003AF863 /* TRCRegisterViewController.swift in Sources */,
 				17C98F6D1F3BFAE8003AF863 /* TRCPharmacySearchViewController.swift in Sources */,
@@ -1538,6 +1549,7 @@
 				68F07DA81F3AF05700E1934C /* TRCGoal.swift in Sources */,
 				3F55B5091F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift in Sources */,
 				3F57F7371F25F7C100CC079C /* TRCMessageListCell.swift in Sources */,
+				68F07DE11F4C0B7F00E1934C /* TRCSearchTextPageView.swift in Sources */,
 				3F57F7291F21DDEA00CC079C /* TRCQRCodeViewController.swift in Sources */,
 				684095B61F3313DB009F16EA /* TRCRegisterRequest.swift in Sources */,
 				3F4759151F0BA86C00B82645 /* TRCForgotPasswordEmailInputViewController.swift in Sources */,
