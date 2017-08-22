@@ -195,6 +195,13 @@
 "prefecture"                            = "Prefecture";
 "town"                                  = "Town";
 
+"search_text"                           = "薬局名";
+"search_text_placeholder"               = "薬局名で検索";
+
+"search_tab_1"                          = "薬局名で検索";
+"search_tab_2"                          = "都道府県で検索";
+"search_tab_3"                          = "現在地で検索";
+
 //MARK: Pharmacist Input
 "please_register_your_pharmacist"       = "よく相談する薬剤師がいる場合、薬剤師の名前と連絡先を登録してください。";
 "pharmacist_name"                       = "Name";
