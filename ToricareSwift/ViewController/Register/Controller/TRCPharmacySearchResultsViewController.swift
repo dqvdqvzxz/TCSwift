@@ -60,47 +60,84 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
             }
             lblInform.text = Localizable(value: "search_by_name")
             lblKeyword.text = Localizable(value: "キーワード") + "：" + shopName
-            //SEARCH_TAB
+            return
         }
         
-        if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "0") {
-            if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
-                let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
-                let prefectureName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE_NAME))
-                if (!prefecture.isBlank) {
-                    pharmacySearchData.prefectureId = prefecture
-                    lblKeyword.text = prefectureName
-                }
-                if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
-                    let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
-                    if (!city.isBlank) {
-                        pharmacySearchData.cityId = city
-                        let cityName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN_NAME))
-                        lblKeyword.text = prefectureName + " / " + cityName
-                    }
-                }
-                lblInform.text = pharmacySearchData.shopName.isBlank ? Localizable(value: "search_by_prefecture") : Localizable(value: "キーワード") + "：" + pharmacySearchData.shopName
-                
-                return
+        if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
+            let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
+            let prefectureName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE_NAME))
+            if (!prefecture.isBlank) {
+                pharmacySearchData.prefectureId = prefecture
+                lblKeyword.text = prefectureName
             }
-        } else if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "1") {
-            if (UserDefaults.getUD(SEARCH_LAT) != nil) {
-                let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
-                if (!latValue.isBlank) {
-                    pharmacySearchData.lat = latValue
+            if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
+                let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
+                if (!city.isBlank) {
+                    pharmacySearchData.cityId = city
+                    let cityName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN_NAME))
+                    lblKeyword.text = prefectureName + " / " + cityName
                 }
-                if (UserDefaults.getUD(SEARCH_LON) != nil) {
-                    let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
-                    if (!longValue.isBlank) {
-                        pharmacySearchData.long = longValue
-                    }
-                }
-                lblInform.text = pharmacySearchData.shopName.isBlank ? Localizable(value: "search_by_current_location") : Localizable(value: "キーワード") + "：" + pharmacySearchData.shopName
-                lblKeyword.text = Localizable(value: "gps_1km_pharmacy")
-                
-                return
             }
+            lblInform.text = pharmacySearchData.shopName.isBlank ? Localizable(value: "search_by_prefecture") : Localizable(value: "キーワード") + "：" + pharmacySearchData.shopName
+            
+            return
         }
+        
+        if (UserDefaults.getUD(SEARCH_LAT) != nil) {
+            let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
+            if (!latValue.isBlank) {
+                pharmacySearchData.lat = latValue
+            }
+            if (UserDefaults.getUD(SEARCH_LON) != nil) {
+                let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
+                if (!longValue.isBlank) {
+                    pharmacySearchData.long = longValue
+                }
+            }
+            lblInform.text = pharmacySearchData.shopName.isBlank ? Localizable(value: "search_by_current_location") : Localizable(value: "キーワード") + "：" + pharmacySearchData.shopName
+            lblKeyword.text = Localizable(value: "gps_1km_pharmacy")
+            
+            return
+        }
+
+//        if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "0") {
+//            if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
+//                let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
+//                let prefectureName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE_NAME))
+//                if (!prefecture.isBlank) {
+//                    pharmacySearchData.prefectureId = prefecture
+//                    lblKeyword.text = prefectureName
+//                }
+//                if (UserDefaults.getUD(SEARCH_TOWN) != nil) {
+//                    let city = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN))
+//                    if (!city.isBlank) {
+//                        pharmacySearchData.cityId = city
+//                        let cityName = Global().convertObjectToString(UserDefaults.getUD(SEARCH_TOWN_NAME))
+//                        lblKeyword.text = prefectureName + " / " + cityName
+//                    }
+//                }
+//                lblInform.text = pharmacySearchData.shopName.isBlank ? Localizable(value: "search_by_prefecture") : Localizable(value: "キーワード") + "：" + pharmacySearchData.shopName
+//                
+//                return
+//            }
+//        } else if (UserDefaults.getUD(SEARCH_TAB) != nil && (UserDefaults.getUD(SEARCH_TAB) as! String) == "1") {
+//            if (UserDefaults.getUD(SEARCH_LAT) != nil) {
+//                let latValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LAT))
+//                if (!latValue.isBlank) {
+//                    pharmacySearchData.lat = latValue
+//                }
+//                if (UserDefaults.getUD(SEARCH_LON) != nil) {
+//                    let longValue = Global().convertObjectToString(UserDefaults.getUD(SEARCH_LON))
+//                    if (!longValue.isBlank) {
+//                        pharmacySearchData.long = longValue
+//                    }
+//                }
+//                lblInform.text = pharmacySearchData.shopName.isBlank ? Localizable(value: "search_by_current_location") : Localizable(value: "キーワード") + "：" + pharmacySearchData.shopName
+//                lblKeyword.text = Localizable(value: "gps_1km_pharmacy")
+//                
+//                return
+//            }
+//        }
         
 //        } else if (UserDefaults.getUD(SEARCH_PREFECTURE) != nil) {
 //            let prefecture = Global().convertObjectToString(UserDefaults.getUD(SEARCH_PREFECTURE))
