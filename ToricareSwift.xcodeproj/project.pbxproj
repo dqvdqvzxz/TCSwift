@@ -18,6 +18,8 @@
 		1788CE121F38100B00778006 /* TRCCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE111F38100B00778006 /* TRCCity.swift */; };
 		1788CE141F38231F00778006 /* TRCPharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE131F38231F00778006 /* TRCPharmacy.swift */; };
 		1788CE161F3843D600778006 /* TRCImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE151F3843D600778006 /* TRCImage.swift */; };
+		17B0EEB61F4AEF3E00B5249E /* TRCQRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */; };
+		17B0EEB71F4AEF3E00B5249E /* TRCQRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */; };
 		17B632041F347B46001A379E /* TRCPharmacySearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B632031F347B46001A379E /* TRCPharmacySearchData.swift */; };
 		17B632061F34897E001A379E /* TRCPharmacyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B632051F34897E001A379E /* TRCPharmacyRequest.swift */; };
 		17C98F511F3BFAE8003AF863 /* TRCEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BB9ECD1F386B35009A8454 /* TRCEmailRequest.swift */; };
@@ -324,6 +326,7 @@
 		1788CE111F38100B00778006 /* TRCCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCCity.swift; sourceTree = "<group>"; };
 		1788CE131F38231F00778006 /* TRCPharmacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacy.swift; sourceTree = "<group>"; };
 		1788CE151F3843D600778006 /* TRCImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCImage.swift; sourceTree = "<group>"; };
+		17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCQRRequest.swift; sourceTree = "<group>"; };
 		17B632031F347B46001A379E /* TRCPharmacySearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacySearchData.swift; sourceTree = "<group>"; };
 		17B632051F34897E001A379E /* TRCPharmacyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacyRequest.swift; sourceTree = "<group>"; };
 		17C98FE81F3BFAE8003AF863 /* ToricareSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -742,6 +745,7 @@
 				68F07DB21F3C418400E1934C /* TRCSummaryRequest.swift */,
 				68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */,
 				1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */,
+				17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */,
 			);
 			path = ServerAdapter;
 			sourceTree = "<group>";
@@ -1372,6 +1376,7 @@
 				17C98F6E1F3BFAE8003AF863 /* TRCEmailChangeInputViewController.swift in Sources */,
 				17C98F6F1F3BFAE8003AF863 /* AppDelegate.swift in Sources */,
 				17C98F701F3BFAE8003AF863 /* TRCPointDetailCell.swift in Sources */,
+				17B0EEB71F4AEF3E00B5249E /* TRCQRRequest.swift in Sources */,
 				17C98F711F3BFAE8003AF863 /* TRCAboutAppViewController.swift in Sources */,
 				17C98F721F3BFAE8003AF863 /* TRCSearchResultCell.swift in Sources */,
 				17C98F731F3BFAE8003AF863 /* Singleton.swift in Sources */,
@@ -1492,6 +1497,7 @@
 				68BB9ED61F3AC69D009A8454 /* TRCAccountInfo.swift in Sources */,
 				1706DBA81F307C9400188510 /* TRCQRCodeDoneViewController.swift in Sources */,
 				3FB4116A1EFBBAC2008720A6 /* TRCStringConstant.swift in Sources */,
+				17B0EEB61F4AEF3E00B5249E /* TRCQRRequest.swift in Sources */,
 				3F4759231F0CC37B00B82645 /* TRCSettingViewController.swift in Sources */,
 				3F475A861F172A2000B82645 /* TRCPointViewController.swift in Sources */,
 				3FB411991F05F988008720A6 /* TRCHomeViewController.swift in Sources */,

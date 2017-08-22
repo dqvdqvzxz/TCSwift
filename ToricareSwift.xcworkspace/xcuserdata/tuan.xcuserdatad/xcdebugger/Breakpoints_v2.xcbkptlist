@@ -862,7 +862,7 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Login/Controller/TRCLoginViewController.swift"
-                  timestampString = "524718441.752904"
+                  timestampString = "525000485.128973"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
@@ -877,7 +877,7 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Login/Controller/TRCLoginViewController.swift"
-                  timestampString = "524718441.755138"
+                  timestampString = "525000485.131429"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -1149,7 +1149,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "242"
             endingLineNumber = "242"
-            landmarkName = "donedatePicker()"
+            landmarkName = "showDatePicker()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1186,7 +1186,7 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCRegisterRequest.swift"
-                  timestampString = "524718441.782592"
+                  timestampString = "525000485.256613"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -1201,7 +1201,7 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCRegisterRequest.swift"
-                  timestampString = "524718441.784856"
+                  timestampString = "525000485.261147"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -1257,38 +1257,6 @@
             endingLineNumber = "48"
             landmarkName = "configUI()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCSplashViewController.configUI () -&gt; ()"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Splash/TRCSplashViewController.swift"
-                  timestampString = "524718441.799956"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "1452">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCSplashViewController.(configUI () -&gt; ()).(closure #3)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Splash/TRCSplashViewController.swift"
-                  timestampString = "524718441.802225"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1305,38 +1273,6 @@
             endingLineNumber = "49"
             landmarkName = "configUI()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCSplashViewController.(configUI () -&gt; ()).(closure #3)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Splash/TRCSplashViewController.swift"
-                  timestampString = "524718441.807714"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCSplashViewController.(configUI () -&gt; ()).(closure #3)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Splash/TRCSplashViewController.swift"
-                  timestampString = "524718441.810816"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "3168">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1394,7 +1330,7 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCTokenRequest.swift"
-                  timestampString = "524718441.825837"
+                  timestampString = "525000485.313471"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
@@ -1409,7 +1345,7 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCTokenRequest.swift"
-                  timestampString = "524718441.828789"
+                  timestampString = "525000485.315757"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -1465,6 +1401,38 @@
             endingLineNumber = "77"
             landmarkName = "callAPI(_:atPath:withMethod:blockCompletion:blockFailed:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "ToricareSwiftTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
+                  timestampString = "525000485.330566"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "1644">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "ToricareSwiftTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
+                  timestampString = "525000485.332883"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "7880">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1481,38 +1449,6 @@
             endingLineNumber = "68"
             landmarkName = "callAPI(_:atPath:withMethod:blockCompletion:blockFailed:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "524718441.848335"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "1160">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "524718441.850642"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "7396">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1529,38 +1465,6 @@
             endingLineNumber = "79"
             landmarkName = "callAPI(_:atPath:withMethod:blockCompletion:blockFailed:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "524718441.856065"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "524718441.859074"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "2336">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1577,38 +1481,6 @@
             endingLineNumber = "91"
             landmarkName = "callAPI(_:atPath:withMethod:blockCompletion:blockFailed:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "524718441.865167"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "2008">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1).(closure #1)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "524718441.867472"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1641,38 +1513,6 @@
             endingLineNumber = "94"
             landmarkName = "callAPI(_:atPath:withMethod:blockCompletion:blockFailed:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1).(closure #2)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "524718441.87895"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToricareSwiftTest.TRCBaseAPIController.(callAPI (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, atPath : Swift.String, withMethod : Swift.String, blockCompletion : (Swift.Optional&lt;__ObjC.NSDictionary&gt;) -&gt; (), blockFailed : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1).(closure #2).(closure #1)"
-                  moduleName = "ToricareSwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "524718441.881823"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1688,6 +1528,22 @@
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "callAPI(_:atPath:withMethod:blockCompletion:blockFailed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/ViewController/Register/Controller/TRCSearchLocationPageView.swift"
+            timestampString = "525000527.270551"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
