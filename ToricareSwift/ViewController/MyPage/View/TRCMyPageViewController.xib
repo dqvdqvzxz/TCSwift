@@ -86,6 +86,7 @@
                 <constraint firstItem="gpy-mP-wMO" firstAttribute="top" secondItem="Czy-wp-DsU" secondAttribute="bottom" id="Yql-2H-fmS"/>
                 <constraint firstAttribute="trailing" secondItem="gpy-mP-wMO" secondAttribute="trailing" id="y8r-8I-gBX"/>
             </constraints>
+            <point key="canvasLocation" x="-108" y="-8"/>
         </view>
     </objects>
     <resources>

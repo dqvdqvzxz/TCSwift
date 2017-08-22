@@ -28,6 +28,15 @@ extension String {
         }
     }
     
+    var isPhoneNumber: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "^[0-9]{2,4}-[0-9]{2,4}-[0-9]{3,4}$", options: .caseInsensitive)
+            return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) != nil
+        } catch {
+            return false
+        }
+    }
+    
     //Validate Alpha Numeric
     var isAlphanumeric: Bool {
         return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil

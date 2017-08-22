@@ -139,14 +139,14 @@ extension TRCMyPageViewController: UICollectionViewDataSource{
         case 3: //message
             cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_message")
             cell.lblTitle.labelStyle(title: Localizable(value: "message"))
+            
+        case 4:
+            cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_noti")
+            cell.lblTitle.labelStyle(title: Localizable(value: "notification"))
 
-        case 4: //settings
+        case 5: //settings
             cell.imgIcon.image = #imageLiteral(resourceName: "ic_mypage_settings")
             cell.lblTitle.labelStyle(title: STRING_SETTING)
-        case 5:
-            cell.viewImg.isHidden = true
-            cell.imgIcon.isHidden = true
-            cell.lblTitle.isHidden = true
         default:
             break
         }
@@ -175,7 +175,7 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
             backButton()
             _obj.nc5.pushViewController(vc, animated: true)
-        case 4:
+        case 5:
             let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
             backButton()
             _obj.nc5.pushViewController(vc, animated: true)

@@ -318,6 +318,8 @@
 "setting_my_pharmacist"                              = "My薬剤師を設定する";
 "my_pharmacist_did_not_set"                              = "My薬剤師が設定されていません。";
 "please_register_pharmacy_first"                              = "My薬剤師の設定を行うには、\n先にMy薬局を登録する必要があります。";
+"notification"                                      = "お知らせ";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";
