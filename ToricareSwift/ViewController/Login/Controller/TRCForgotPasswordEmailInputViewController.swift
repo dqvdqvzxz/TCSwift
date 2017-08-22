@@ -12,6 +12,7 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
     
     @IBOutlet weak var lblPolicy: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var lblExplain: UILabel!
     
     @IBOutlet weak var tfEmail: UITextField!
     
@@ -36,7 +37,8 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
         //UI of outlet
         lblPolicy.labelStyle(title: Localizable(value: "reset_password_input"))
         lblEmail.labelStyle(title: STRING_MAIL_ADDRESS)
-        
+        lblExplain.labelStyle(title: Localizable(value: "reset_password_explain"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblExplain.sizeToFit()
         tfEmail.textFieldStyle(placeHolder: "")
         
         btnSendEmail.buttonStyle(title: STRING_SEND)
@@ -69,8 +71,8 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
         TRCPasswordRequest().passwordForgot(tfEmail.text!, completion: {(data) in
             self.hideHUD()
             let vc = TRCForgotPasswordSentViewController(nibName: "TRCForgotPasswordSentViewController", bundle: nil)
+            self.backButton()
             self.navigationController?.pushViewController(vc, animated: true)
-            self.navigationController?.viewControllers.remove(at: 2)
         }) { (error) in
             self.hideHUD()
             self.showAlert(error)

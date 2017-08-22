@@ -483,8 +483,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
-            landmarkName = "viewWillDisappear(_:)"
-            landmarkType = "7">
+            landmarkName = "TRCBaseViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -499,8 +499,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "TRCBaseViewController"
-            landmarkType = "3">
+            landmarkName = "dismissKeyboard()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -862,12 +862,12 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Login/Controller/TRCLoginViewController.swift"
-                  timestampString = "525000485.128973"
+                  timestampString = "525078891.748896"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
                   endingLineNumber = "82"
-                  offsetFromSymbolStart = "476">
+                  offsetFromSymbolStart = "545">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -877,12 +877,12 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/ViewController/Login/Controller/TRCLoginViewController.swift"
-                  timestampString = "525000485.131429"
+                  timestampString = "525078891.752769"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
                   endingLineNumber = "83"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "39">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1186,12 +1186,12 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCRegisterRequest.swift"
-                  timestampString = "525000485.256613"
+                  timestampString = "525078891.795037"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
                   endingLineNumber = "24"
-                  offsetFromSymbolStart = "2636">
+                  offsetFromSymbolStart = "3716">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1201,12 +1201,12 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCRegisterRequest.swift"
-                  timestampString = "525000485.261147"
+                  timestampString = "525078891.808576"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1246,7 +1246,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Splash/TRCSplashViewController.swift"
@@ -1262,7 +1262,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Splash/TRCSplashViewController.swift"
@@ -1278,7 +1278,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Splash/TRCSplashViewController.swift"
@@ -1294,7 +1294,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToricareSwift/ViewController/Splash/TRCSplashViewController.swift"
@@ -1330,12 +1330,12 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCTokenRequest.swift"
-                  timestampString = "525000485.313471"
+                  timestampString = "525078891.843441"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "572">
+                  offsetFromSymbolStart = "826">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1345,12 +1345,12 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCTokenRequest.swift"
-                  timestampString = "525000485.315757"
+                  timestampString = "525078891.850566"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1410,12 +1410,12 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "525000485.330566"
+                  timestampString = "525078891.879692"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "1644">
+                  offsetFromSymbolStart = "2233">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1425,12 +1425,12 @@
                   moduleName = "ToricareSwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift/Global/ServerAdapter/TRCBaseAPIController.swift"
-                  timestampString = "525000485.332883"
+                  timestampString = "525078891.888603"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "7880">
+                  offsetFromSymbolStart = "10525">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1544,6 +1544,70 @@
             startingLineNumber = "229"
             endingLineNumber = "229"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/ViewController/Login/Controller/TRCForgotPasswordEmailInputViewController.swift"
+            timestampString = "525078714.933456"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "doForgot()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/ViewController/Login/Controller/TRCForgotPasswordEmailInputViewController.swift"
+            timestampString = "525078715.722293"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "doForgot()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/Global/ServerAdapter/TRCPasswordRequest.swift"
+            timestampString = "525078771.243421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "passwordForgot(_:completion:failed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToricareSwift/Global/ServerAdapter/TRCPasswordRequest.swift"
+            timestampString = "525078767.718824"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "passwordForgot(_:completion:failed:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -410,13 +410,13 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             return
         }
         
-        if (tfHeight.text?.isBlank)! {
-            self.showAlert(Localizable(value: "please_input_height"))
+        if (tfDateOfBirth.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_birthday"))
             return
         }
         
-        if (tfDateOfBirth.text?.isBlank)! {
-            self.showAlert(Localizable(value: "please_input_birthday"))
+        if (tfHeight.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_height"))
             return
         }
         
