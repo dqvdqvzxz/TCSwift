@@ -44,6 +44,9 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
     }
 
     @IBAction func tapBtnSearch(_ sender: Any) {
+        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        backButton()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
