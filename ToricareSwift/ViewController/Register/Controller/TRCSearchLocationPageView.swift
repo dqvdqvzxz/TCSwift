@@ -92,7 +92,7 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(donePickerAddress))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         
         // add toolbar to textField
         tfAddress.inputAccessoryView = toolbar
@@ -113,7 +113,7 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(donePickerSubAddress))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         // add toolbar to textField
         tfSubAddress.inputAccessoryView = toolbar
@@ -123,15 +123,15 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     
     //MARK: Action
     func donePickerAddress() {
-        if (prefectureId.isBlank) {
-            cityId = ""
-            tfSubAddress.text = ""
-            self.view.endEditing(true)
-
-            return
-        }
-
-        getCity()
+//        if (prefectureId.isBlank) {
+//            cityId = ""
+//            tfSubAddress.text = ""
+//            self.view.endEditing(true)
+//
+//            return
+//        }
+//
+//        getCity()
         self.view.endEditing(true)
     }
     
@@ -232,6 +232,7 @@ extension TRCSearchLocationPageView: UIPickerViewDelegate{
             prefectureId = dataPrefecture.prefectureId
             UserDefaults.saveUD(prefectureId, SEARCH_PREFECTURE)
             UserDefaults.saveUD(dataPrefecture.name, SEARCH_PREFECTURE_NAME)
+            getCity()
         }else{
             let dataCity = dataSubAddress[row]
             tfSubAddress.text = dataCity.name

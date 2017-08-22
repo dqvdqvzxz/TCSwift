@@ -80,7 +80,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = Localizable(value: "register_title")
+        self.navigationItem.title = Localizable(value: "profile")
         
         //UI of outlet
         lblFirstName.labelStyle(title: Localizable(value: "first_name"))
@@ -135,7 +135,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
         //config mode
         if(mode == MODE_REGISTER){
-            self.navigationItem.title = Localizable(value: "register_title")
             btnNext.buttonStyle(title: STRING_NEXT)
         }else if(mode == MODE_MYPAGE){
             self.navigationItem.hidesBackButton = false

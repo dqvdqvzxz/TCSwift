@@ -99,9 +99,12 @@ class TRCQRCodeViewController: TRCBaseViewController {
         capture.layer.frame = view.bounds
     }
     
-    
     func btnCancelDidTap() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func sendQRString(_ qrString: String) {
+        
     }
 }
 
