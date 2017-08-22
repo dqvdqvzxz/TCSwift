@@ -81,7 +81,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         viewParentTutorial.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
         
         //add to self view
-        // comment it out 
         self.view.addSubview(viewParentTutorial)
     }
     
