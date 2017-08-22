@@ -346,6 +346,8 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
         self.timePicker.dataSource = self
         self.timePicker.delegate = self
         
+        timePicker.selectRow(15, inComponent: 0, animated: true)
+        
         switch (indexPath.section) {
         case 0:
             break

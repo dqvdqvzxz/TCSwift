@@ -20,6 +20,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     @IBOutlet weak var viewLeft: UIView!
     @IBOutlet weak var viewRight: UIView!
     @IBOutlet weak var viewGender: UIView!
+    @IBOutlet weak var viewHeight: UIView!
     
     @IBOutlet weak var lblFirstName: UILabel!
     @IBOutlet weak var lblLastName: UILabel!
@@ -27,6 +28,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     @IBOutlet weak var lblLastNameKata: UILabel!
     @IBOutlet weak var lblDateOfBirth: UILabel!
     @IBOutlet weak var lblGender: UILabel!
+    @IBOutlet weak var lblHeight: UILabel!
     
     @IBOutlet weak var tfFirstName: UITextField!
     @IBOutlet weak var tfLastName: UITextField!
@@ -34,6 +36,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     @IBOutlet weak var tfLastNameKata: UITextField!
     @IBOutlet weak var tfDateOfBirth: CustomizeTextField!
     @IBOutlet weak var tfGender: CustomizeTextField!
+    @IBOutlet weak var tfHeight: CustomizeTextField!
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnUploadImage: UIButton!
@@ -44,8 +47,12 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     let datePicker = UIDatePicker()
     
-    var dataGender = [Localizable(value: "male"), Localizable(value: "female"), Localizable(value: "other")]
+    var dataGender = [Localizable(value: "male"), Localizable(value: "female")]
     var genderPicker = UIPickerView()
+    
+    var heightPicker = UIPickerView()
+    var heightPickerData1 = Array<Int>()
+    var heightPickerData2 = Array<Int>()
     
     var userName = String()
     var passWord = String()
@@ -60,6 +67,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initValueHeightPicker()
+        
         configUI()
     }
     
@@ -80,6 +89,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         lblLastNameKata.labelStyle(title: Localizable(value: "last_name_kata"))
         lblDateOfBirth.labelStyle(title: Localizable(value: "birth_date"))
         lblGender.labelStyle(title: Localizable(value: "gender"))
+        lblHeight.labelStyle(title: Localizable(value: "height"))
         
         tfFirstName.textFieldStyle(placeHolder: "")
         tfLastName.textFieldStyle(placeHolder: "")
@@ -88,6 +98,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         tfDateOfBirth.textFieldStyle(placeHolder: "")
         tfGender.textFieldStyle(placeHolder: "")
+        tfHeight.textFieldStyle(placeHolder: "")
         
         //fill data if register with Facebook
         if(_obj.dicFacebookInfo[FB_FIRSTNAME] != nil){
@@ -112,6 +123,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             if(_obj.objectAccountInfo.imagePath.origin != ""){
                 imgUser.af_setImage(withURL: URL(string: _obj.objectAccountInfo.imagePath.origin)!)
             }
+            if(_obj.objectAccountInfo.height != ""){
+                tfHeight.text = _obj.objectAccountInfo.height
+            }
         }
         
         //make image circle
@@ -132,6 +146,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         //add image to text field
         tfDateOfBirth.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
         tfGender.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
+        tfHeight.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
         
         //set default value of gender picker
         tfGender.text = dataGender[0]
@@ -141,6 +156,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
         //gender
         showGenderPicker()
+        
+        //height picker
+        showHeightPicker()
         
         //get data
         getData()
@@ -169,9 +187,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 case "2":
                     self.tfGender.text = Localizable(value: "female")
                     self.genderPicker.selectRow(1, inComponent: 0, animated: true)
-                case "3":
-                    self.tfGender.text = Localizable(value: "other")
-                    self.genderPicker.selectRow(2, inComponent: 0, animated: true)
                 default:
                     break
                 }
@@ -183,6 +198,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     func showGenderPicker(){
         genderPicker.dataSource = self
         genderPicker.delegate = self
+        
+        genderPicker.tag = 1
         
         //toolBar
         let toolbar = UIToolbar();
@@ -203,6 +220,55 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     func doneGenderPicker(){
         self.view.endEditing(true)
+    }
+    
+    //MARK: Height picker
+    func showHeightPicker(){
+        heightPicker.dataSource = self
+        heightPicker.delegate = self
+        
+        if(_obj.objectAccountInfo != nil){
+            if(_obj.objectAccountInfo.height != ""){
+                let heightResult = _obj.objectAccountInfo.height
+                let heightSeparated = heightResult.components(separatedBy: ".")
+                let height1: String = heightSeparated[0]
+                let height2: String = heightSeparated[1]
+                heightPicker.selectRow(Int(height1)!, inComponent: 0, animated: true)
+                heightPicker.selectRow(Int(height2)!, inComponent: 1, animated: true)
+            }
+        }
+        
+        heightPicker.tag = 2
+        
+        //toolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneHeightPicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+        
+        // add toolbar to textField
+        tfHeight.inputAccessoryView = toolbar
+        
+        // add datepicker to textField
+        tfHeight.inputView = heightPicker
+    }
+    
+    func doneHeightPicker(){
+        self.view.endEditing(true)
+    }
+    
+    func initValueHeightPicker(){
+        for i in stride(from: 0, to: 250, by:1){
+            heightPickerData1.append(i)
+        }
+        
+        for j in stride(from: 0, to: 10, by:1){
+            heightPickerData2.append(j)
+        }
     }
     
     //MARK: Date picker of text field DateOfBirth
@@ -237,7 +303,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         //done button & cancel button
         let cancelButton = UIBarButtonItem(title: STRING_CANCEL, style: .plain, target: self, action: #selector(cancelDatePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(donedatePicker))
+        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneDatePicker))
         toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         // add toolbar to textField
@@ -247,7 +313,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
     }
     
-    func donedatePicker(){
+    func doneDatePicker(){
         //For date formate
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日"
@@ -345,8 +411,8 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             return
         }
         
-        if !(tfLastNameKata.text?.containsKatakanaCharacters)! {
-            self.showAlert(Localizable(value: "please_input_last_name_katakana_half_width"))
+        if (tfHeight.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_height"))
             return
         }
         
@@ -400,15 +466,13 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 genderResult = GENDER_MALE
             }else if(tfGender.text! == Localizable(value: "female")){
                 genderResult = GENDER_FEMALE
-            }else if(tfGender.text! == Localizable(value: "other")){
-                genderResult = GENDER_OTHER
             }
             
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayResult = formatter.string(from: datePicker.date)
             
-            TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
+            TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, tfHeight.text!,completion: { (data) in
                 self.hideHUD()
 
                 //push view
@@ -438,7 +502,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayResult = formatter.string(from: datePicker.date)
             
-            TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, completion: { (data) in
+            TRCAccountInfoRequest().accountInfoChange(tfFirstName.text!, tfLastName.text!, tfFirstNameKata.text!, tfLastNameKata.text!, birthdayResult, genderResult, tfHeight.text!, completion: { (data) in
 
                 self.hideHUD()
                 
@@ -449,6 +513,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 _obj.objectAccountInfo.lastNameKata = self.tfLastNameKata.text!
                 _obj.objectAccountInfo.birthDay = birthdayResult
                 _obj.objectAccountInfo.sex = genderResult
+                _obj.objectAccountInfo.height = self.tfHeight.text!
                 
                 let alert = UIAlertController(title: nil,
                                               message: Localizable(value: "profile_updated"),
@@ -477,21 +542,62 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
 extension TRCAccountInfoInputViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        if(pickerView == genderPicker){
+            return 1
+        }else if(pickerView == heightPicker){
+            return 2
+        }
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataGender.count
+        if(pickerView == genderPicker){
+            return dataGender.count
+        }else if(pickerView == heightPicker){
+            if(component == 0){
+                return heightPickerData1.count
+            }else if(component == 1){
+                return heightPickerData2.count
+            }
+        }
+        return 0
     }
 }
 
 extension TRCAccountInfoInputViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tfGender.text = dataGender[row]
+        if(pickerView == genderPicker){
+            tfGender.text = dataGender[row]
+        }else if(pickerView == heightPicker){
+            //get height
+            let height1 = heightPicker.selectedRow(inComponent: 0)
+            let height2 = heightPicker.selectedRow(inComponent: 1)
+            let heightResult = "\(height1).\(height2)"
+            tfHeight.text = heightResult
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataGender[row]
+        if(pickerView == genderPicker){
+            return dataGender[row]
+        }else if(pickerView == heightPicker){
+            if(component == 0){
+                return heightPickerData1[row].description
+            }else if(component == 1){
+                return heightPickerData2[row].description
+            }
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        if(pickerView == genderPicker){
+            return 60
+        }
+        if(pickerView == heightPicker){
+            return 60
+        }
+        return 0
     }
 }
 

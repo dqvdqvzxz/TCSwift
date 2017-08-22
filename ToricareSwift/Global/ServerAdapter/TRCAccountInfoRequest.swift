@@ -21,7 +21,7 @@ class TRCAccountInfoRequest: TRCBaseAPIController {
         }
     }
     
-    func accountInfoChange(_ firstName: String, _ lastName: String, _ firstNameKata: String, _ lastNameKata: String, _ birthDay: String, _ gender: String,completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
+    func accountInfoChange(_ firstName: String, _ lastName: String, _ firstNameKata: String, _ lastNameKata: String, _ birthDay: String, _ gender: String, _ height: String, completion: @escaping(_ result: NSDictionary?)->(), failed: @escaping(_ error: String)->()){
         
         var parameters = Dictionary <String, String>()
         parameters[REGISTER_PARAM_FIRST_NAME] = firstName
@@ -31,7 +31,7 @@ class TRCAccountInfoRequest: TRCBaseAPIController {
         parameters[REGISTER_PARAM_BIRTHDAY] = birthDay
         parameters[REGISTER_PARAM_GENDER_TYPE] = gender
         // TEST: FIX HEIGHT
-        parameters[REGISTER_PARAM_HEIGHT] = "180"
+        parameters[REGISTER_PARAM_HEIGHT] = height
 
         self.callAPI(parameters, atPath: "\(URL_ACCOUNT_INFO)", withMethod: HTTP_PUT, blockCompletion: { (data) in
             //parse data from model

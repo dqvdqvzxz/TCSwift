@@ -50,6 +50,7 @@
 "female"                                = "Female";
 "other"                                 = "Other";
 "next_button"                           = "Next";
+"height"                                = "Height";
 
 //MARK: LoginViewController
 "login_title"                           = "Login";
@@ -294,6 +295,7 @@
 "please_input_first_name_katakana_half_width"       = "カナ（姓）は全角カタカナで入力してください。";
 "please_input_last_name_katakana_half_width"        = "カナ（名）は全角カタカナで入力してください。";
 "please_input_birthday"                             = "生年月日を入力してください。";
+"please_input_height"                   = "身長を入力してください。";
 
 "all" = "ALL";
 "gps_1km_pharmacy"                              = "ＧＰＳで現在地から半径1ｋｍ圏内の薬局";

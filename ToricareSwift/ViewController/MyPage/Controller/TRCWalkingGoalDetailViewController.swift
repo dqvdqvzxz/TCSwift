@@ -64,7 +64,7 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
         }
     }
     
-    //MARK: Get data®
+    //MARK: Get data
     func getData(){
         if(_obj.objectGoal == nil){
             self.showHUD()
