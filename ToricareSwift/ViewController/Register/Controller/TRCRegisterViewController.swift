@@ -154,9 +154,10 @@ class TRCRegisterViewController: TRCBaseViewController {
                     _obj.dicFacebookInfo.updateValue("", forKey: FB_AVATAR)
                 }
                 
-                
+                print("Call this ")
                 //process after login
                 UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                    print("Call me")
                     //change UI of view
                     self.viewLineLeft.isHidden = true
                     self.lblOr.isHidden = true

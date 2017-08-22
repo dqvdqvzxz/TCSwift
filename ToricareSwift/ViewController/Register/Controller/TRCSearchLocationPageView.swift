@@ -212,6 +212,10 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         UserDefaults.saveUD(self.tfAddress.text?.trim(), SEARCH_PREFECTURE_NAME)
         UserDefaults.saveUD(self.tfSubAddress.text?.trim(), SEARCH_TOWN_NAME)
         
+        UserDefaults.removeUD(SEARCH_LAT)
+        UserDefaults.removeUD(SEARCH_LON)
+        UserDefaults.removeUD(SEARCH_KEYWORD)
+        
         backButton()
         self.navigationController?.pushViewController(vc, animated: true)
     }

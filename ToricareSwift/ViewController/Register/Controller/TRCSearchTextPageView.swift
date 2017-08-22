@@ -56,6 +56,11 @@ class TRCSearchTextPageView: TRCBaseViewController {
         if(self.tfSearch.text != nil){
             UserDefaults.saveUD(self.tfSearch.text?.trim(), SEARCH_KEYWORD)
         }
+        
+        UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
+        UserDefaults.removeUD(SEARCH_TOWN_NAME)
+        UserDefaults.removeUD(SEARCH_LAT)
+        UserDefaults.removeUD(SEARCH_LON)
 
         backButton()
         self.navigationController?.pushViewController(vc, animated: true)
