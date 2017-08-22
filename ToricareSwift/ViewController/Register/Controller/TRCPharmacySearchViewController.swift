@@ -12,11 +12,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 
     @IBOutlet weak var lblInform: UILabel!
     
-    @IBOutlet weak var tfSearch: UITextField!
-    
     @IBOutlet weak var viewPage: UIView!
-    
-    @IBOutlet weak var btnSearch: UIButton!
     
     //sub view tutorial
     @IBOutlet var viewParentTutorial: UIView!
@@ -55,11 +51,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         //UI of outlet
         lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacy"))
         
-        btnSearch.buttonStyle(title: STRING_SEARCH)
-        
-        tfSearch.textFieldStyle(placeHolder: Localizable(value: "hint_search_by_name"))
-        tfSearch.addRightImage(#imageLiteral(resourceName: "ic_search"))
-        
         viewPage.clipsToBounds = true
         
         //set up page view
@@ -91,7 +82,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         
         //add to self view
         // comment it out 
-//        self.view.addSubview(viewParentTutorial)
+        self.view.addSubview(viewParentTutorial)
     }
     
     //MARK: Action
@@ -100,28 +91,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         vc.mode = MODE_SKIP
         let navController = UINavigationController(rootViewController: vc)
         UIApplication.shared.keyWindow?.rootViewController = navController
-    }
-
-    //MARK: Button Action
-    @IBAction func tapBtnSearch(_ sender: Any) {
-        if(mode == MODE_REGISTER){
-            let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
-            //data search
-            if(self.tfSearch.text != nil){
-                UserDefaults.saveUD(self.tfSearch.text, SEARCH_KEYWORD)
-            }
-                
-            //back button
-            backButton()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else if(mode == MODE_MYPAGE){
-            let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-            vc.mode = MODE_MYPAGE
-            backButton()
-            self.navigationController?.pushViewController(vc, animated: true)
-
-        }
     }
     
     @IBAction func tapBtnCancel(_ sender: Any) {
