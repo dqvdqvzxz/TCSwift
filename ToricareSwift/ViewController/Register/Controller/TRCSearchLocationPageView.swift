@@ -21,6 +21,8 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     @IBOutlet weak var tfAddress: CustomizeTextField!
     @IBOutlet weak var tfSubAddress: CustomizeTextField!
     
+    @IBOutlet weak var btnSearch: UIButton!
+    
     var addressPicker = UIPickerView()
     var subAddressPicker = UIPickerView()
     
@@ -37,6 +39,7 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         super.viewDidLoad()
 
         configUI()
+        
         loadPrefectures()
     }
 
@@ -72,6 +75,9 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         
         tfAddress.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
         tfSubAddress.addRightImage(#imageLiteral(resourceName: "ic_combobox"))
+        
+        btnSearch.buttonStyle(title: STRING_SEARCH)
+
         //picker
         addressPicker.tag = 1
         
@@ -197,7 +203,10 @@ class TRCSearchLocationPageView: TRCBaseViewController {
             self.showAlert(error)
         })
     }
-
+    
+    //MARK: Button action
+    @IBAction func tapBtnSearch(_ sender: Any) {
+    }
 }
 
 extension TRCSearchLocationPageView: UIPickerViewDataSource{

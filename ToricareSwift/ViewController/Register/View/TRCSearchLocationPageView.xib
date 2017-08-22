@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCSearchLocationPageView" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="btnSearch" destination="JBS-Vq-IWa" id="2jN-qY-iqX"/>
                 <outlet property="lblAddress" destination="5vu-az-sV8" id="C3S-Qh-zog"/>
                 <outlet property="lblSubAddress" destination="M5D-nA-YaF" id="64I-gs-dVc"/>
                 <outlet property="tfAddress" destination="63a-uC-qxj" id="olJ-nb-EAi"/>
@@ -58,6 +59,16 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBS-Vq-IWa">
+                    <rect key="frame" x="10" y="463" width="355" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="15j-rP-J8Q"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="tapBtnSearch:" destination="-1" eventType="touchUpInside" id="1UJ-Ni-qer"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="M5D-nA-YaF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="1jh-E2-Udn"/>
@@ -70,7 +81,10 @@
                 <constraint firstItem="CMh-jR-PQq" firstAttribute="top" secondItem="M5D-nA-YaF" secondAttribute="bottom" id="DRJ-ku-saN"/>
                 <constraint firstAttribute="trailing" secondItem="5vu-az-sV8" secondAttribute="trailing" constant="10" id="Doi-dX-mXy"/>
                 <constraint firstItem="63a-uC-qxj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="RqM-lq-wyN"/>
+                <constraint firstAttribute="bottom" secondItem="JBS-Vq-IWa" secondAttribute="bottom" constant="160" id="SHA-nH-6Vx"/>
+                <constraint firstAttribute="trailing" secondItem="JBS-Vq-IWa" secondAttribute="trailing" constant="10" id="UWb-m4-S0w"/>
                 <constraint firstItem="5vu-az-sV8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="ekz-5C-oQH"/>
+                <constraint firstItem="JBS-Vq-IWa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="fCP-p0-Vv9"/>
                 <constraint firstAttribute="trailing" secondItem="M5D-nA-YaF" secondAttribute="trailing" constant="10" id="m5g-gG-ppP"/>
             </constraints>
         </view>

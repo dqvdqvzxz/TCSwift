@@ -197,6 +197,13 @@
 "prefecture"                            = "Prefecture";
 "town"                                  = "Town";
 
+"search_text"                           = "薬局名";
+"search_text_placeholder"               = "薬局名で検索";
+
+"search_tab_1"                          = "薬局名で検索";
+"search_tab_2"                          = "都道府県で検索";
+"search_tab_3"                          = "現在地で検索";
+
 //MARK: Pharmacist Input
 "please_register_your_pharmacist"       = "よく相談する薬剤師がいる場合、薬剤師の名前と連絡先を登録してください。";
 "pharmacist_name"                       = "Name";
@@ -298,6 +305,7 @@
 "please_input_last_name_katakana_half_width"        = "カナ（名）は全角カタカナで入力してください。";
 "please_input_birthday"                             = "生年月日を入力してください。";
 "please_input_height"                   = "身長を入力してください。";
+"please_input_text"                     = "Please input text search";
 
 "all" = "ALL";
 "gps_1km_pharmacy"                              = "ＧＰＳで現在地から半径1ｋｍ圏内の薬局";

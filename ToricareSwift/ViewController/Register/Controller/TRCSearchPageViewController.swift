@@ -40,19 +40,20 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         
         //size of tab
         self.supportArabic = false
-        self.tabWidth = view.frame.size.width / 2
+        self.tabWidth = view.frame.size.width / 3
         
         //init view
-        let searchPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
-        searchPageView.delegate = self
+        let searchTextPageView = TRCSearchTextPageView(nibName: "TRCSearchTextPageView", bundle: nil)
+        let searchLocationPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
         let searchCurrentLocationPageView = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
         self.viewControllers = [
-            searchPageView,
+            searchTextPageView,
+            searchLocationPageView,
             searchCurrentLocationPageView
         ]
         
         //init title
-        self.tabTitles = [Localizable(value: "search_by_prefecture"), Localizable(value: "search_by_current_location")]
+        self.tabTitles = [Localizable(value: "search_tab_1"), Localizable(value: "search_tab_2"), Localizable(value: "search_tab_3")]
     }
 }
 
@@ -86,11 +87,11 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
         prevLabel.textColor = UIColor.init(colorLiteralRed: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
         currentLabel.textColor = UIColor.init(hexString: MAIN_COLOR)
         
-        if(index == 0){
-            UserDefaults.saveUD("0", SEARCH_TAB)
-        }else if(index == 1){
-            UserDefaults.saveUD("1", SEARCH_TAB)
-        }
+//        if(index == 0){
+//            UserDefaults.saveUD("0", SEARCH_TAB)
+//        }else if(index == 1){
+//            UserDefaults.saveUD("1", SEARCH_TAB)
+//        }
     }
     
     func willChangeTabToIndex(_ viewPager: GLViewPagerViewController, index: Int, fromTabIndex: Int, progress: CGFloat) {
@@ -100,7 +101,7 @@ extension TRCSearchPageViewController: GLViewPagerViewControllerDelegate{
     }
     
     func widthForTabIndex(_ viewPager: GLViewPagerViewController, index: Int) -> CGFloat {
-        return (view.frame.size.width / 2)
+        return (view.frame.size.width / 3)
     }
 }
 

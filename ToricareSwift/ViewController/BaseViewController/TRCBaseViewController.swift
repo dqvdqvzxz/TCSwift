@@ -16,6 +16,8 @@ class TRCBaseViewController: UIViewController {
         super.viewDidLoad()
         
         configGlobalUI()
+        
+        print(self.navigationController?.viewControllers)
     }
     
     override func didReceiveMemoryWarning() {

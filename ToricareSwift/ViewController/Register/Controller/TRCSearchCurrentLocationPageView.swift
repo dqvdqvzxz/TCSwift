@@ -13,6 +13,8 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
 
     @IBOutlet var mapView: GMSMapView!
     
+    @IBOutlet weak var btnSearch: UIButton!
+    
     var locationManager = CLLocationManager()
     
     let marker = GMSMarker()
@@ -20,6 +22,8 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        btnSearch.buttonStyle(title: STRING_SEARCH)
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
@@ -39,6 +43,8 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func tapBtnSearch(_ sender: Any) {
+    }
 }
 
 extension TRCSearchCurrentLocationPageView: CLLocationManagerDelegate {
