@@ -206,6 +206,14 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     
     //MARK: Button action
     @IBAction func tapBtnSearch(_ sender: Any) {
+        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        
+        //data search
+        UserDefaults.saveUD(self.tfAddress.text?.trim(), SEARCH_PREFECTURE_NAME)
+        UserDefaults.saveUD(self.tfSubAddress.text?.trim(), SEARCH_TOWN_NAME)
+        
+        backButton()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -239,15 +247,11 @@ extension TRCSearchLocationPageView: UIPickerViewDelegate{
             let dataPrefecture = dataAddress[row]
             tfAddress.text = dataPrefecture.name
             prefectureId = dataPrefecture.prefectureId
-            UserDefaults.saveUD(prefectureId, SEARCH_PREFECTURE)
-            UserDefaults.saveUD(dataPrefecture.name, SEARCH_PREFECTURE_NAME)
             getCity()
         }else{
             let dataCity = dataSubAddress[row]
             tfSubAddress.text = dataCity.name
             cityId = dataCity.cityId
-            UserDefaults.saveUD(cityId, SEARCH_TOWN)
-            UserDefaults.saveUD(dataCity.name, SEARCH_TOWN_NAME)
         }
     }
 }
