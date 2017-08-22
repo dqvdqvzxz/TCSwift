@@ -21,11 +21,7 @@ class TRCSearchTextPageView: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tfSearch.delegate = self
-        if tfSearch.text!.isEmpty{
-            btnSearch.isEnabled = false
-            btnSearch.buttonStyle(title: STRING_SEARCH, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
-        }
+        btnSearch.buttonStyle(title: STRING_SEARCH)
     
         configUI()
     }
@@ -44,7 +40,18 @@ class TRCSearchTextPageView: TRCBaseViewController {
     }
     
     @IBAction func tapBtnSearch(_ sender: Any) {
-        print("Call me")
+        validate()
+    }
+    
+    func validate() {
+        if (tfSearch.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_text"))
+            return
+        }
+        doSearch()
+    }
+    
+    func doSearch(){
         if(mode == MODE_REGISTER){
             let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
             vc.mode = MODE_REGISTER
@@ -65,20 +72,5 @@ class TRCSearchTextPageView: TRCBaseViewController {
             backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }
-    }
-}
-
-extension TRCSearchTextPageView: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text = (tfSearch.text! as NSString).replacingCharacters(in: range, with: string)
-        
-        if !text.isEmpty{
-            btnSearch.isEnabled = true
-            btnSearch.buttonStyle(title: STRING_SEARCH)
-        } else {
-            btnSearch.isEnabled = false
-            btnSearch.buttonStyle(title: STRING_SEARCH, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
-        } 
-        return true
     }
 }
