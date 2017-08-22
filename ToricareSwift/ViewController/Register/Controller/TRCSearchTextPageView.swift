@@ -16,8 +16,6 @@ class TRCSearchTextPageView: TRCBaseViewController {
     
     @IBOutlet weak var btnSearch: UIButton!
     
-    var mode: String = MODE_REGISTER
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,25 +50,14 @@ class TRCSearchTextPageView: TRCBaseViewController {
     }
     
     func doSearch(){
-        if(mode == MODE_REGISTER){
-            let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
-            //data search
-            if(self.tfSearch.text != nil){
-                UserDefaults.saveUD(self.tfSearch.text, SEARCH_KEYWORD)
-            }
-            //back button
-            backButton()
-            _obj.nc5.pushViewController(vc, animated: true)
-        }else if(mode == MODE_MYPAGE){
-            let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-            vc.mode = MODE_MYPAGE
-            //data search
-            if(self.tfSearch.text != nil){
-                UserDefaults.saveUD(self.tfSearch.text, SEARCH_KEYWORD)
-            }
-            backButton()
-            self.navigationController?.pushViewController(vc, animated: true)
+        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+
+        //data search
+        if(self.tfSearch.text != nil){
+            UserDefaults.saveUD(self.tfSearch.text?.trim(), SEARCH_KEYWORD)
         }
+
+        backButton()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
