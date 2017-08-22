@@ -18,8 +18,6 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
 
     @IBOutlet weak var tblSearchResult: UITableView!
     var refreshControl = UIRefreshControl()
-
-    var mode = String()
     
     var keywordString = "赤堤"
     var arrayResults: [TRCPharmacy] = []
@@ -216,9 +214,9 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             //
         }
         
@@ -253,7 +251,7 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
     //MARK: Action
     func skipAction(){
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-        vc.mode = MODE_SKIP
+        _obj.mode = MODE_SKIP
         let navController = UINavigationController(rootViewController: vc)
         UIApplication.shared.keyWindow?.rootViewController = navController
     }
@@ -283,16 +281,15 @@ extension TRCPharmacySearchResultsViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
             vc.pharmacyData = arrayResults[indexPath.row]
-            vc.mode = MODE_REGISTER
             backButton()
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             let vc = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
             vc.pharmacyData = arrayResults[indexPath.row]
-            vc.mode = MODE_REGISTER_MYPAGE
+            _obj.mode = MODE_REGISTER_MYPAGE
             backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }

@@ -34,6 +34,8 @@ final class Singleton{
     
     var objectSummary: TRCSummary!
     
+    var mode =  String()
+    
     func clearObject(){
         objectGoal = nil
         objectSummary = nil

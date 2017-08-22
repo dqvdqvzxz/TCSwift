@@ -57,8 +57,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     var userName = String()
     var passWord = String()
     
-    var mode = String()
-    
     var isHasNewAvatar = false
     
     var accessToken = ""
@@ -134,9 +132,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         
 
         //config mode
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             btnNext.buttonStyle(title: STRING_NEXT)
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             self.navigationItem.hidesBackButton = false
             btnNext.buttonStyle(title: "変更を保存")
         }
@@ -165,7 +163,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     //MARL: Config data
     func getData(){
-        if(mode == MODE_MYPAGE){
+        if(_obj.mode == MODE_MYPAGE){
             //fill data
             if(_obj.objectAccountInfo != nil){
                 self.tfFirstName.text = _obj.objectAccountInfo.firstName
@@ -457,7 +455,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             self.showHUD()
         }
 
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             var genderResult = ""
             var birthdayResult = ""
             
@@ -476,7 +474,6 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
                 //push view
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-                vc.mode = MODE_REGISTER
                 self.backButton()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
@@ -485,7 +482,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 self.showAlert(error)
                 ELog(error)
             }
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             var genderResult = ""
             var birthdayResult = ""
             

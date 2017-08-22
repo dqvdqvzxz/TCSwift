@@ -26,7 +26,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     @IBOutlet weak var btnReaded: UIButton!
 
     @IBOutlet weak var lblGuide: UILabel!
-    var mode = String()
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -57,9 +56,9 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         configPageView()
         
         //set up tutorial view
-        if(mode == MODE_MYPAGE){
+        if(_obj.mode == MODE_MYPAGE){
             //hide tutorial
-        }else if(mode == MODE_REGISTER){
+        }else if(_obj.mode == MODE_REGISTER){
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
             
             configTutorialView()
@@ -87,7 +86,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     //MARK: Action
     func skipAction(){
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-        vc.mode = MODE_SKIP
+        _obj.mode = MODE_SKIP
         let navController = UINavigationController(rootViewController: vc)
         UIApplication.shared.keyWindow?.rootViewController = navController
     }

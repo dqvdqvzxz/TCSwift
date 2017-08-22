@@ -41,7 +41,6 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     @IBOutlet weak var imgBack: UIImageView!
     @IBOutlet weak var lblEmpty: UILabel!
     
-    var mode : String = MODE_MYPAGE
     var pharmacyData: TRCPharmacy!
     var indexImg = 0
     
@@ -51,7 +50,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         
         configUI()
 
-        if(mode == MODE_MYPAGE) {
+        if(_obj.mode == MODE_MYPAGE) {
             getData()
         }
 
@@ -128,14 +127,14 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     func configMode(){
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             constraintTop.constant = 74
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
-        }else if(mode == MODE_REGISTER_MYPAGE){
+        }else if(_obj.mode == MODE_REGISTER_MYPAGE){
             constraintTop.constant = 74
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
                 btnPharmacy.buttonStyle(title: Localizable(value: "setting_my_pharmacy"))
             } else {
@@ -230,25 +229,23 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             _obj.objectAccountInfo.shopName = pharmacyData.name
         }
         
-        if (mode == MODE_REGISTER) {
+        if (_obj.mode == MODE_REGISTER) {
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
             backButton()
             self.navigationController?.pushViewController(vc, animated: true)
-        } else if (mode == MODE_REGISTER_MYPAGE) {
+        } else if (_obj.mode == MODE_REGISTER_MYPAGE) {
             let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-            vc.mode = MODE_REGISTER_MYPAGE
             backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     func goNext() {
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             self.registerPharmacy()
-        }else if(mode == MODE_REGISTER_MYPAGE){
+        }else if(_obj.mode == MODE_REGISTER_MYPAGE){
             self.registerPharmacy()
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
                 goSearchPharmacy()
                 return
@@ -276,7 +273,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     func goSearchPharmacy() {
         let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-        vc.mode = MODE_MYPAGE
+        _obj.mode = MODE_MYPAGE
         self.backButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }

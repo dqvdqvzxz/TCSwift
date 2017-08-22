@@ -19,7 +19,6 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
     
     let marker = GMSMarker()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,10 +46,15 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
         backButton()
         
-        UserDefaults.removeUD(SEARCH_LAT)
-        UserDefaults.removeUD(SEARCH_LON)
+        UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
+        UserDefaults.removeUD(SEARCH_TOWN_NAME)
+        UserDefaults.removeUD(SEARCH_KEYWORD)
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(_obj.mode == MODE_MYPAGE){
+            _obj.nc5.pushViewController(vc, animated: true)
+        }else if(_obj.mode == MODE_REGISTER){
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

@@ -16,8 +16,6 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     @IBOutlet weak var lblPharmacyNotDone: UILabel!
     @IBOutlet weak var lblTakeQRCode: UILabel!
     
-    var mode = String()
-    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +40,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     }
     
     func configMode(){
-        if(mode == MODE_SKIP){
+        if(_obj.mode == MODE_SKIP){
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "please_register_pharmacy_later"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
             lblPharmacyNotDone.lineBreakMode = .byWordWrapping
             lblPharmacyNotDone.numberOfLines = 0
@@ -51,7 +49,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
             
             btnQRCode.isHidden = true
             btnUsingApp.buttonStyle(title: Localizable(value: "use_app"))
-        }else if(mode == MODE_REGISTER_MYPAGE){
+        }else if(_obj.mode == MODE_REGISTER_MYPAGE){
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "my_pharmacy_register_not_done"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
             lblTakeQRCode.labelStyle(title: Localizable(value: "take_qrcode_label"))
             
@@ -69,13 +67,13 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnQRCode(_ sender: Any) {
         let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
-        vc.mode = mode
+        vc.mode = _obj.mode
         backButton()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func tapBtnUsingApp(_ sender: Any) {
-        if(mode == MODE_REGISTER_MYPAGE){
+        if(_obj.mode == MODE_REGISTER_MYPAGE){
             let viewControllers: [UIViewController] = _obj.nc5.viewControllers
             for descView in viewControllers {
                 if(descView is TRCMyPageViewController){

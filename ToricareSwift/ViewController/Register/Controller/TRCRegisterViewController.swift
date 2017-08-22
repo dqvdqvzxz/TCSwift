@@ -86,7 +86,7 @@ class TRCRegisterViewController: TRCBaseViewController {
             if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
                 vc.refreshToken = Global().convertObjectToString(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))
             }
-            vc.mode = MODE_REGISTER
+            _obj.mode = MODE_REGISTER
             self.backButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }) { (error) in
