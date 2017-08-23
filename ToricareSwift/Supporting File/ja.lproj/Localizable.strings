@@ -43,8 +43,8 @@
 //AccountInfoInput
 "first_name"                            = "氏名（姓）";
 "last_name"                             = "氏名（名）";
-"first_name_kata"                       = "氏名カナ（姓）";
-"last_name_kata"                        = "氏名カナ（名）";
+"first_name_kata"                       = "カナ（姓）";
+"last_name_kata"                        = "カナ（名）";
 "birth_date"                            = "生年月日";
 "gender"                                = "性別";
 "male"                                  = "男性";
@@ -319,6 +319,7 @@
 "my_pharmacist_did_not_set"                              = "My薬剤師が設定されていません。";
 "please_register_pharmacy_first"                              = "My薬剤師の設定を行うには、\n先にMy薬局を登録する必要があります。";
 "notification"                                      = "お知らせ";
+"qr_code_not_match"                              = "ご登録いただいた薬局のQRコードと一致しません。";
 
 ""                              = "";
 ""                              = "";

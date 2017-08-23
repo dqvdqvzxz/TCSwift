@@ -20,6 +20,7 @@ struct TRCAccountInfo {
     var shopId = ""
     var shopName = ""
     var height = ""
+    var shopStatus = ""
 }
 
 extension TRCAccountInfo: JSONDecodable
@@ -40,5 +41,6 @@ extension TRCAccountInfo: JSONDecodable
         self.shopId = try decoder.value(forKey: REGISTER_PARAM_SHOP_ID)
         self.shopName = try decoder.value(forKey: REGISTER_PARAM_SHOP_NAME)
         self.height = try decoder.value(forKey: REGISTER_PARAM_HEIGHT)
+        self.shopStatus = try decoder.value(forKey: SHOP_STATUS)
     }
 }
