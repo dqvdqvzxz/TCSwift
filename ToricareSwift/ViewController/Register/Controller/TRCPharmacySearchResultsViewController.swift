@@ -41,6 +41,14 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
         prepairSearchData()
         requestPharmarcy()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if(_obj.mode == MODE_REGISTER){
+            _obj.mode = MODE_REGISTER
+        }else if(_obj.mode == MODE_REGISTER_MYPAGE){
+            _obj.mode = MODE_MYPAGE
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
