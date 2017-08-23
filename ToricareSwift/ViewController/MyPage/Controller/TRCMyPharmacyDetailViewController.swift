@@ -263,7 +263,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             }
 
             let alert = UIAlertController(title: nil,
-                                          message: "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？",
+                                          message: Localizable(value: "confirm_change_pharmacy"),
                                           preferredStyle: UIAlertControllerStyle.alert)
             
             // add the action
