@@ -117,12 +117,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             return
         }
         
-        if (tfEmail.text?.isBlank)! {
-            self.showAlert(Localizable(value: "please_input_mail"))
-            return
-        }
-        
-        if !(tfEmail.text?.isEmail)! {
+        if (!(tfEmail.text?.isBlank)! && !(tfEmail.text?.isEmail)!) {
             self.showAlert(Localizable(value: "please_input_validate_mail"))
             return
         }

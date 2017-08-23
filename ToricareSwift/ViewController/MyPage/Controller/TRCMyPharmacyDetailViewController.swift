@@ -213,7 +213,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnQRCode(_ sender: Any) {
         let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
-        vc.mode = _obj.mode
+        vc.mode = MODE_REGISTER_MYPAGE
         backButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }
@@ -237,6 +237,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         if (_obj.objectAccountInfo != nil) {
             _obj.objectAccountInfo.shopId = pharmacyData.pharmacyId
             _obj.objectAccountInfo.shopName = pharmacyData.name
+            _obj.objectAccountInfo.shopStatus = REGISTER_FALSE
         }
         
         if (_obj.mode == MODE_REGISTER) {
