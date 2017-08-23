@@ -51,13 +51,43 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
     
     //MARK: Action
     func validate(){
-        if (tfNewPassword.text?.isBlank)! {
+        if (tfCurrentPassword.text?.isBlank)! {
             self.showAlert(Localizable(value: "please_input_new_password"))
             return
         }
         
+        if (tfNewPassword.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_new_password"))
+            return
+        }
+        if (tfNewPassword.text?.isLengthBelow7)! {
+            self.showAlert(Localizable(value: "please_input_more_8_letter"))
+            return
+        }
+        if (tfNewPassword.text?.isLengthOver33)! {
+            self.showAlert(Localizable(value: "please_input_below_32_letter"))
+            return
+        }
+        if !(tfNewPassword.text?.isAlphanumeric)! {
+            self.showAlert(Localizable(value: "please_input_password_half_width"))
+            return
+        }
+
+        
         if (tfConfirmNewPassword.text?.isBlank)! {
             self.showAlert(Localizable(value: "please_input_new_password_confirm"))
+            return
+        }
+        if (tfConfirmNewPassword.text?.isLengthBelow7)! {
+            self.showAlert(Localizable(value: "please_input_more_8_letter"))
+            return
+        }
+        if (tfConfirmNewPassword.text?.isLengthOver33)! {
+            self.showAlert(Localizable(value: "please_input_below_32_letter"))
+            return
+        }
+        if !(tfConfirmNewPassword.text?.isAlphanumeric)! {
+            self.showAlert(Localizable(value: "please_input_password_half_width"))
             return
         }
         
@@ -65,7 +95,7 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
             self.showAlert(Localizable(value: "password_did_not_match"))
             return
         }
-        
+    
         doChangePassword()
     }
     
