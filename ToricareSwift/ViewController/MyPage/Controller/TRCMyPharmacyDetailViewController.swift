@@ -119,7 +119,6 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         
         //hide button qr
         btnQRCode.isHidden = true
-        contraintBottomScrollView.constant = 54
         
         configMode()
         
@@ -129,12 +128,15 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     func configMode(){
         if(_obj.mode == MODE_REGISTER){
             constraintTop.constant = 74
+            contraintBottomScrollView.constant = 54
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }else if(_obj.mode == MODE_REGISTER_MYPAGE){
             constraintTop.constant = 74
+            contraintBottomScrollView.constant = 54
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }else if(_obj.mode == MODE_MYPAGE){
+            contraintBottomScrollView.constant = 110
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
                 btnPharmacy.buttonStyle(title: Localizable(value: "setting_my_pharmacy"))
             } else {
