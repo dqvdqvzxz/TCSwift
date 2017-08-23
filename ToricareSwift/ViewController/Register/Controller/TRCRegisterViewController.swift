@@ -94,6 +94,8 @@ class TRCRegisterViewController: TRCBaseViewController {
             self.configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }) { (error) in
+            _obj.dicFacebookInfo.removeAll()
+            UserDefaults.removeUD(FB_TOKEN)
             self.hideHUD()
             self.showAlert(error)
             ELog(error)
