@@ -94,7 +94,7 @@ class TRCLoginViewController: TRCBaseViewController {
                 if(_obj.objectAccountInfo.firstName == "" || _obj.objectAccountInfo.lastName == ""){
                     //push to AccountInfoInputView
                     let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-                    mainVC.mode = MODE_REGISTER
+                    _obj.mode = MODE_REGISTER
                     let navController = UINavigationController(rootViewController: mainVC)
                     
                     // Back to Home
@@ -225,7 +225,7 @@ class TRCLoginViewController: TRCBaseViewController {
                 if(_obj.objectAccountInfo.firstName == "" || _obj.objectAccountInfo.lastName == ""){
                     //push to AccountInfoInputView
                     let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-                    mainVC.mode = MODE_REGISTER
+                    _obj.mode = MODE_REGISTER
                     let navController = UINavigationController(rootViewController: mainVC)
                     
                     // Back to Home

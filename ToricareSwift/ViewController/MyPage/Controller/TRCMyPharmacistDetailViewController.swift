@@ -37,8 +37,6 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     
     var dicPharmacist = NSDictionary()
     
-    var mode : String = MODE_MYPAGE
-    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,14 +133,12 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnChange(_ sender: Any) {
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
-            vc.mode = MODE_REGISTER
             backButton()
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
-            vc.mode = MODE_MYPAGE
             vc.dataResult = dicPharmacist
             backButton()
             _obj.nc5.pushViewController(vc, animated: true)
@@ -151,7 +147,6 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     
     @IBAction func tapBtnNoData(_ sender: Any) {
         let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
-        vc.mode = MODE_MYPAGE
         backButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }

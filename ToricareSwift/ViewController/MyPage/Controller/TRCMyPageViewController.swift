@@ -160,11 +160,12 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
         switch (indexPath.item) {
         case 0:
             let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
-            vc.mode = MODE_MYPAGE
+            _obj.mode = MODE_MYPAGE
             backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 1:
             let vc = TRCMyPharmacyDetailPageViewController(nibName: "TRCMyPharmacyDetailPageViewController", bundle: nil)
+            _obj.mode = MODE_MYPAGE
             backButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:

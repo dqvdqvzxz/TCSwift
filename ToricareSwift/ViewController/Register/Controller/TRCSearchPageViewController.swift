@@ -46,6 +46,8 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         let searchTextPageView = TRCSearchTextPageView(nibName: "TRCSearchTextPageView", bundle: nil)
         let searchLocationPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
         let searchCurrentLocationPageView = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
+        
+        
         self.viewControllers = [
             searchTextPageView,
             searchLocationPageView,

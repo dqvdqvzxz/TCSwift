@@ -28,8 +28,6 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     
     @IBOutlet weak var btnPharmacistInput: UIButton!
     
-    var mode = String()
-    
     var dataResult = NSDictionary()
     
     //MARK: View controller
@@ -53,11 +51,11 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
         tfPhone.textFieldStyle()
         tfEmail.textFieldStyle()
         
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
 
             lblInform.labelStyle(title: Localizable(value: "please_register_your_pharmacist"))
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             lblInform.labelStyle()
             
             let paragraphStyle = NSMutableParagraphStyle()
@@ -103,7 +101,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     //MARK: Action
     func skipAction(){
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-        vc.mode = MODE_SKIP
+        _obj.mode = MODE_SKIP
         let navController = UINavigationController(rootViewController: vc)
         UIApplication.shared.keyWindow?.rootViewController = navController
     }
@@ -133,12 +131,12 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     }
     
     func doRegister() {
-        if(mode == MODE_REGISTER){
+        if(_obj.mode == MODE_REGISTER){
             self.showHUD()
             TRCPharmacistRequest().pharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                 self.hideHUD()
                 let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-                vc.mode = MODE_REGISTER
+                _obj.mode = MODE_REGISTER
                 self.backButton()
                 self.navigationController?.pushViewController(vc, animated: true)
             }) { (error) in
@@ -146,7 +144,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
                 self.showAlert(error)
             }
             
-        }else if(mode == MODE_MYPAGE){
+        }else if(_obj.mode == MODE_MYPAGE){
             if(dataResult != nil){
                 self.showHUD()
                 TRCPharmacistRequest().pharmacistInfoChange(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
