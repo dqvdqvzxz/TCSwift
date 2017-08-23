@@ -137,7 +137,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
                 self.hideHUD()
                 let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
                 _obj.mode = MODE_REGISTER
-                self.backButton()
+                self.configBackButton()
                 self.navigationController?.pushViewController(vc, animated: true)
             }) { (error) in
                 self.hideHUD()

@@ -71,7 +71,7 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
         TRCPasswordRequest().passwordForgot(tfEmail.text!, completion: {(data) in
             self.hideHUD()
             let vc = TRCForgotPasswordSentViewController(nibName: "TRCForgotPasswordSentViewController", bundle: nil)
-            self.backButton()
+            self.configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }) { (error) in
             self.hideHUD()

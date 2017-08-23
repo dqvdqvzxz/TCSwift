@@ -58,7 +58,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
     @IBAction func tapBtnPasscode(_ sender: Any) {
         let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
         vc.mode = MODE_CHANGE
-        backButton()
+        configBackButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }
 }
@@ -93,7 +93,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
             let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
             vc.mode = MODE_SETUP
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         } else {
             btnPasscode.isEnabled = false
@@ -120,7 +120,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDelegate{
             
             let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
             vc.mode = MODE_SETUP
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }else{
             btnPasscode.isEnabled = false
@@ -128,7 +128,7 @@ extension TRCPasscodeLockSettingViewController: UITableViewDelegate{
             
             let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
             vc.mode = MODE_REMOVE
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }
     }

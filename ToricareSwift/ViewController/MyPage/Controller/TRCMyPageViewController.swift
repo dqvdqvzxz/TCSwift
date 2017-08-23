@@ -161,24 +161,24 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
         case 0:
             let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
             _obj.mode = MODE_MYPAGE
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 1:
             let vc = TRCMyPharmacyDetailPageViewController(nibName: "TRCMyPharmacyDetailPageViewController", bundle: nil)
             _obj.mode = MODE_MYPAGE
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCWalkingGoalDetailViewController(nibName: "TRCWalkingGoalDetailViewController", bundle: nil)
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         case 5:
             let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         default:
             break

@@ -84,7 +84,7 @@ extension TRCPointViewController: UITableViewDelegate{
             break
         case 1:
             let vc = TRCPointDetailViewController(nibName: "TRCPointDetailViewController", bundle: nil)
-            backButton()
+            configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         default:
             break

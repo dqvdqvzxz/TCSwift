@@ -213,7 +213,7 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         UserDefaults.removeUD(SEARCH_LON)
         UserDefaults.removeUD(SEARCH_KEYWORD)
         
-        backButton()
+        configBackButton()
         if(_obj.mode == MODE_MYPAGE){
             _obj.nc5.pushViewController(vc, animated: true)
         }else if(_obj.mode == MODE_REGISTER){

@@ -168,7 +168,7 @@ class TRCLoginViewController: TRCBaseViewController {
     
     func forgotPassword(sender: UITapGestureRecognizer){
         let vc = TRCForgotPasswordEmailInputViewController(nibName: "TRCForgotPasswordEmailInputViewController", bundle: nil)
-        backButton()
+        configBackButton()
         self.navigationController?.pushViewController(vc, animated: true)
 
     }

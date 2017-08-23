@@ -166,7 +166,7 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                 //push to confirm
                 let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
                 vc.mode = MODE_CONFIRM
-                backButton()
+                configBackButton()
                 _obj.nc5.pushViewController(vc, animated: true)
             case MODE_CONFIRM:
                 //compare passcode
@@ -203,7 +203,7 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                     let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
                     vc.mode = MODE_SETUP
                     vc.modeChange = MODE_SETUP_NEW
-                    backButton()
+                    configBackButton()
                     _obj.nc5.pushViewController(vc, animated: true)
                 }else{
                     lblError.isHidden = false

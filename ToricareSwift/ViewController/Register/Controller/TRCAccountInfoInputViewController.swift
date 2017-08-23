@@ -481,7 +481,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
                 //push view
                 let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-                self.backButton()
+                self.configBackButton()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }) { (error) in

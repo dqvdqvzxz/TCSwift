@@ -58,7 +58,7 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
             self.hideHUD()
             
             let vc = TRCEmailChangeCompleteViewController(nibName: "TRCEmailChangeCompleteViewController", bundle: nil)
-            self.backButton()
+            self.configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }) { (error) in
             self.hideHUD()

@@ -214,7 +214,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     @IBAction func tapBtnQRCode(_ sender: Any) {
         let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
         vc.mode = _obj.mode
-        backButton()
+        configBackButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }
     
@@ -241,11 +241,11 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         
         if (_obj.mode == MODE_REGISTER) {
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
-            backButton()
+            configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
         } else if (_obj.mode == MODE_REGISTER_MYPAGE) {
             let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
-            backButton()
+            configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -284,7 +284,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     func goSearchPharmacy() {
         let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
         _obj.mode = MODE_MYPAGE
-        self.backButton()
+        self.configBackButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }
 }

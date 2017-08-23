@@ -62,7 +62,7 @@ class TRCBaseViewController: UIViewController {
         view.endEditing(true)
     }
     
-    func backButton(){
+    func configBackButton(){
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         self.navigationItem.backBarButtonItem = backItem

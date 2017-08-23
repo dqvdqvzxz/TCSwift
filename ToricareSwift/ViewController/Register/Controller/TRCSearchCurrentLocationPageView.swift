@@ -44,7 +44,7 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
 
     @IBAction func tapBtnSearch(_ sender: Any) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-        backButton()
+        configBackButton()
         
         UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
         UserDefaults.removeUD(SEARCH_TOWN_NAME)

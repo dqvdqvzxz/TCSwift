@@ -64,7 +64,7 @@ class TRCSearchTextPageView: TRCBaseViewController {
         UserDefaults.removeUD(SEARCH_LAT)
         UserDefaults.removeUD(SEARCH_LON)
 
-        backButton()
+        configBackButton()
         
         if(_obj.mode == MODE_MYPAGE){
             _obj.nc5.pushViewController(vc, animated: true)
