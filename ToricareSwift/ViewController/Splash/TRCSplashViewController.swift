@@ -80,4 +80,12 @@ class TRCSplashViewController: TRCBaseViewController {
             UIApplication.shared.keyWindow?.rootViewController = navController
         }
     }
+    
+//    func goSearch() {
+//        
+//        let mainVC = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+//        let navController = UINavigationController(rootViewController: mainVC)
+//        UIApplication.shared.keyWindow?.rootViewController = navController
+//
+//    }
 }
