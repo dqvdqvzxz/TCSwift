@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol TRCMyPharmacistDetailViewControllerDelegate {
+    func pushToPharmacistInput()
+}
+
+
 class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     
     @IBOutlet var viewHadData: UIView!
@@ -36,7 +41,8 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     @IBOutlet weak var btnChange: UIButton!
     
     var dicPharmacist = NSDictionary()
-    
+    var delegate: TRCMyPharmacistDetailViewControllerDelegate!
+
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +144,11 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
             configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(_obj.mode == MODE_MYPAGE){
+            if (delegate != nil) {
+                delegate.pushToPharmacistInput()
+                return
+            }
+
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
             vc.dataResult = dicPharmacist
             configBackButton()

@@ -56,10 +56,14 @@ class TRCMyPharmacyDetailPageViewController: GLViewPagerViewController {
         self.tabWidth = view.frame.size.width / 2
         
         //init view
+        let pharmacistView = TRCMyPharmacistDetailViewController(nibName: "TRCMyPharmacistDetailViewController", bundle: nil)
+
         self.viewControllers = [
             TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil),
-            TRCMyPharmacistDetailViewController(nibName: "TRCMyPharmacistDetailViewController", bundle: nil)
+            pharmacistView
         ]
+        pharmacistView.delegate = self
+        
         
         //init title
         self.tabTitles = [Localizable(value: "my_pharmacy"), Localizable(value: "my_pharmacist")]
@@ -106,6 +110,19 @@ extension TRCMyPharmacyDetailPageViewController: GLViewPagerViewControllerDelega
     
     func widthForTabIndex(_ viewPager: GLViewPagerViewController, index: Int) -> CGFloat {
         return (view.frame.size.width / 2)
+    }
+}
+
+extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacistDetailViewControllerDelegate {
+    func pushToPharmacistInput() {
+        let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
+//        vc.dataResult = dicPharmacist
+//        backButton()
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        self.navigationItem.backBarButtonItem = backItem
+
+        _obj.nc5.pushViewController(vc, animated: true)
     }
 }
 
