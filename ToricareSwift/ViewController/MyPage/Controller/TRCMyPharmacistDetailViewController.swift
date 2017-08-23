@@ -41,6 +41,7 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     @IBOutlet weak var btnChange: UIButton!
     
     var dicPharmacist = NSDictionary()
+    
     var delegate: TRCMyPharmacistDetailViewControllerDelegate!
 
     //MARK: View controller

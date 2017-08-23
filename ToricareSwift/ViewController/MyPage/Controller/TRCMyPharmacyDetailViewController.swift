@@ -9,6 +9,11 @@
 import UIKit
 import AlamofireImage
 
+protocol TRCMyPharmacyDetailViewControllerDelegate {
+    func pushtoSearchView()
+    func pushtoQRCodeView()
+}
+
 class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -43,6 +48,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     var pharmacyData: TRCPharmacy!
     var indexImg = 0
+    
+    var delegate: TRCMyPharmacyDetailViewControllerDelegate!
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -214,10 +221,10 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnQRCode(_ sender: Any) {
-        let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
-        vc.mode = _obj.mode
-        configBackButton()
-        _obj.nc5.pushViewController(vc, animated: true)
+        if (delegate != nil) {
+            delegate.pushtoQRCodeView()
+            return
+        }
     }
     
     @IBAction func tapBtnPharmacy(_ sender: Any) {
@@ -284,9 +291,9 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     func goSearchPharmacy() {
-        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
-        _obj.mode = MODE_MYPAGE
-        self.configBackButton()
-        _obj.nc5.pushViewController(vc, animated: true)
+        if (delegate != nil) {
+            delegate.pushtoSearchView()
+            return
+        }
     }
 }

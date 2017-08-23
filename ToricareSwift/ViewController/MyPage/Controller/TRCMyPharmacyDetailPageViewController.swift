@@ -56,17 +56,27 @@ class TRCMyPharmacyDetailPageViewController: GLViewPagerViewController {
         self.tabWidth = view.frame.size.width / 2
         
         //init view
+        let pharmacyDetailView = TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil)
         let pharmacistView = TRCMyPharmacistDetailViewController(nibName: "TRCMyPharmacistDetailViewController", bundle: nil)
-
         self.viewControllers = [
-            TRCMyPharmacyDetailViewController(nibName: "TRCMyPharmacyDetailViewController", bundle: nil),
+            pharmacyDetailView,
             pharmacistView
         ]
+            
+        //set delegatge
+        pharmacyDetailView.delegate = self
         pharmacistView.delegate = self
         
         
         //init title
         self.tabTitles = [Localizable(value: "my_pharmacy"), Localizable(value: "my_pharmacist")]
+    }
+    
+    func configPageBackButton(){
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        self.navigationItem.backBarButtonItem = backItem
+
     }
 }
 
@@ -117,10 +127,21 @@ extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacistDetailViewContro
     func pushToPharmacistInput(_ dicResult: NSDictionary) {
         let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
         vc.dataResult = dicResult
-        let backItem = UIBarButtonItem()
-        backItem.title = STRING_BACK
-        self.navigationItem.backBarButtonItem = backItem
+        self.configPageBackButton()
+        _obj.nc5.pushViewController(vc, animated: true)
+    }
+}
 
+extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacyDetailViewControllerDelegate{
+    func pushtoSearchView() {
+        let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+        self.configPageBackButton()
+        _obj.nc5.pushViewController(vc, animated: true)
+    }
+    
+    func pushtoQRCodeView() {
+        let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+        self.configPageBackButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }
 }
