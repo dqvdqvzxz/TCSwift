@@ -76,7 +76,11 @@ class TRCLoginViewController: TRCBaseViewController {
         
         //process login
         TRCLoginRequest().loginFB(fbUserID!, UserDefaults.getUD(FB_TOKEN) as! String, completion: {(data) in
-            let dataResult = data?.object(forKey: DATA) as! NSDictionary
+            let dataLoginResult = data?.object(forKey: DATA) as! NSDictionary
+            // Save access token
+            if (Global().isNotNull(dataLoginResult.object(forKey: ACCESS_TOKEN))) {
+                UserDefaults.saveUD(dataLoginResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
+            }
             
             //get account info
             TRCAccountInfoRequest().accountInfo(completion: {(data) in
@@ -103,13 +107,10 @@ class TRCLoginViewController: TRCBaseViewController {
                     
                     UIApplication.shared.keyWindow?.rootViewController = navController
                 }else{
-                    // Save access token
-                    if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
-                        UserDefaults.saveUD(dataResult.object(forKey: ACCESS_TOKEN), ACCESS_TOKEN)
-                    }
                     
-                    if (Global().isNotNull(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
-                        UserDefaults.saveUD(dataResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
+                    // Save refresh access token
+                    if (Global().isNotNull(dataLoginResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                        UserDefaults.saveUD(dataLoginResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
                     }
                     
                     //init tabbar
@@ -225,6 +226,12 @@ class TRCLoginViewController: TRCBaseViewController {
                 if(_obj.objectAccountInfo.firstName == "" || _obj.objectAccountInfo.lastName == ""){
                     //push to AccountInfoInputView
                     let mainVC = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+                    
+                    //pass refresh token 
+                    if (Global().isNotNull(dataLoginResult.object(forKey: REFRESH_ACCESS_TOKEN))) {
+                        mainVC.refreshToken = Global().convertObjectToString(dataLoginResult.object(forKey: REFRESH_ACCESS_TOKEN))
+                    }
+                    
                     _obj.mode = MODE_REGISTER
                     let navController = UINavigationController(rootViewController: mainVC)
                     
