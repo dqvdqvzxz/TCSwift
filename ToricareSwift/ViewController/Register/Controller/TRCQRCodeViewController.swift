@@ -107,7 +107,9 @@ class TRCQRCodeViewController: TRCBaseViewController {
         self.showHUD()
         TRCQRRequest().sendQR(qrString, completion: { (data) in
             self.hideHUD()
-            DLog(data)
+            if (_obj.objectAccountInfo != nil) {
+                _obj.objectAccountInfo.shopStatus = REGISTER_TRUE
+            }
             let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
             vc.mode = self.mode
             self.navigationController?.pushViewController(vc, animated: true)
@@ -144,9 +146,6 @@ extension TRCQRCodeViewController: ZXCaptureDelegate{
             DLog(result.text)
             if ((result.text) != nil) {
                 self.sendQRString(result.text)
-//                let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
-//                vc.mode = mode
-//                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
