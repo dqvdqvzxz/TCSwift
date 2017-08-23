@@ -232,6 +232,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 let height2: String = heightSeparated[1]
                 heightPicker.selectRow(Int(height1)!, inComponent: 0, animated: true)
                 heightPicker.selectRow(Int(height2)!, inComponent: 1, animated: true)
+            }else{
+                heightPicker.selectRow(170, inComponent: 0, animated: true)
+                heightPicker.selectRow(0, inComponent: 1, animated: true)
             }
         }
         
