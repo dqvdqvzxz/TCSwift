@@ -102,6 +102,9 @@ class TRCRegisterViewController: TRCBaseViewController {
     }
     
     func onProfileUpdated() {
+        if (FBSDKProfile.current() == nil) {
+            return
+        }
         //get profile
         if let fbFirstName = FBSDKProfile.current().firstName{
             _obj.dicFacebookInfo.updateValue(fbFirstName, forKey: FB_FIRSTNAME)
@@ -160,10 +163,8 @@ class TRCRegisterViewController: TRCBaseViewController {
                     _obj.dicFacebookInfo.updateValue("", forKey: FB_AVATAR)
                 }
                 
-                print("Call this ")
                 //process after login
                 UIView.transition(with: self.view, duration: 0.1, options: .transitionCrossDissolve, animations: {
-                    print("Call me")
                     //change UI of view
                     self.viewLineLeft.isHidden = true
                     self.lblOr.isHidden = true
@@ -183,12 +184,11 @@ class TRCRegisterViewController: TRCBaseViewController {
                 })
             }
         })
-
     }
     
     @IBAction func tapBtnRegisterWithFB(_ sender: Any) {
         let loginManager = LoginManager()
-
+        loginManager.logOut()
         loginManager.logIn([ .publicProfile, .email, .userFriends ], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
