@@ -323,6 +323,8 @@
 "please_register_pharmacy_first"                              = "My薬剤師の設定を行うには、\n先にMy薬局を登録する必要があります。";
 "notification"                                      = "お知らせ";
 "qr_code_not_match"                              = "ご登録いただいた薬局のQRコードと一致しません。";
+"confirm_change_pharmacy"                              = "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";

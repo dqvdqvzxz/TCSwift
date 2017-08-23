@@ -80,11 +80,11 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         viewParentTutorial.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
         
         //add to self view
-        let currentWindow = UIApplication.shared.keyWindow
-        currentWindow?.frame = self.view.bounds
-        currentWindow?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        currentWindow?.addSubview(viewParentTutorial)
-//        self.view.addSubview(viewParentTutorial)
+//        let currentWindow = UIApplication.shared.keyWindow
+//        currentWindow?.frame = self.view.bounds
+//        currentWindow?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        currentWindow?.addSubview(viewParentTutorial)
+        self.view.addSubview(viewParentTutorial)
     }
     
     //MARK: Action

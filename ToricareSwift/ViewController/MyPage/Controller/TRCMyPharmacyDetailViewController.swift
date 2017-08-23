@@ -11,7 +11,7 @@ import AlamofireImage
 
 protocol TRCMyPharmacyDetailViewControllerDelegate {
     func pushtoSearchView()
-    func pushtoQRCodeView()
+    func pushtoQRCodeView(_ mode: String)
 }
 
 class TRCMyPharmacyDetailViewController: TRCBaseViewController {
@@ -222,7 +222,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     //MARK: Button Action
     @IBAction func tapBtnQRCode(_ sender: Any) {
         if (delegate != nil) {
-            delegate.pushtoQRCodeView()
+            delegate.pushtoQRCodeView(MODE_REGISTER_MYPAGE)
             return
         }
     }
@@ -246,6 +246,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         if (_obj.objectAccountInfo != nil) {
             _obj.objectAccountInfo.shopId = pharmacyData.pharmacyId
             _obj.objectAccountInfo.shopName = pharmacyData.name
+            _obj.objectAccountInfo.shopStatus = REGISTER_FALSE
         }
         
         if (_obj.mode == MODE_REGISTER) {
@@ -271,7 +272,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             }
 
             let alert = UIAlertController(title: nil,
-                                          message: "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？",
+                                          message: Localizable(value: "confirm_change_pharmacy"),
                                           preferredStyle: UIAlertControllerStyle.alert)
             
             // add the action
