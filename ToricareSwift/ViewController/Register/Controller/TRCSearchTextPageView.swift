@@ -59,6 +59,8 @@ class TRCSearchTextPageView: TRCBaseViewController {
         
         UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
         UserDefaults.removeUD(SEARCH_TOWN_NAME)
+        UserDefaults.removeUD(SEARCH_PREFECTURE)
+        UserDefaults.removeUD(SEARCH_TOWN)
         UserDefaults.removeUD(SEARCH_LAT)
         UserDefaults.removeUD(SEARCH_LON)
 
