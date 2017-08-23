@@ -114,10 +114,9 @@ extension TRCMyPharmacyDetailPageViewController: GLViewPagerViewControllerDelega
 }
 
 extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacistDetailViewControllerDelegate {
-    func pushToPharmacistInput() {
+    func pushToPharmacistInput(_ dicResult: NSDictionary) {
         let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
-//        vc.dataResult = dicPharmacist
-//        backButton()
+        vc.dataResult = dicResult
         let backItem = UIBarButtonItem()
         backItem.title = STRING_BACK
         self.navigationItem.backBarButtonItem = backItem

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TRCMyPharmacistDetailViewControllerDelegate {
-    func pushToPharmacistInput()
+    func pushToPharmacistInput(_ dicResult: NSDictionary)
 }
 
 
@@ -145,20 +145,16 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(_obj.mode == MODE_MYPAGE){
             if (delegate != nil) {
-                delegate.pushToPharmacistInput()
+                delegate.pushToPharmacistInput(dicPharmacist)
                 return
             }
-
-            let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
-            vc.dataResult = dicPharmacist
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
         }
     }
     
     @IBAction func tapBtnNoData(_ sender: Any) {
-        let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
-        configBackButton()
-        _obj.nc5.pushViewController(vc, animated: true)
+        if (delegate != nil) {
+            delegate.pushToPharmacistInput([:])
+            return
+        }
     }
 }
