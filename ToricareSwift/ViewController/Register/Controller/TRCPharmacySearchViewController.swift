@@ -54,7 +54,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         
         //set up page view
         configPageView()
-        
         //set up tutorial view
         if(_obj.mode == MODE_MYPAGE){
             //hide tutorial
@@ -80,11 +79,9 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         viewParentTutorial.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
         
         //add to self view
-//        let currentWindow = UIApplication.shared.keyWindow
-//        currentWindow?.frame = self.view.bounds
-//        currentWindow?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        currentWindow?.addSubview(viewParentTutorial)
-        self.view.addSubview(viewParentTutorial)
+        let currentWindow = UIApplication.shared.keyWindow
+        viewParentTutorial.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
+        currentWindow?.addSubview(viewParentTutorial)
     }
     
     //MARK: Action
