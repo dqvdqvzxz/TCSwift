@@ -38,7 +38,7 @@ let URL_MEMBERS_IMAGES =            "members/images"
 let URL_SUMMARY =                   "members/summaries"
 let URL_MEMBERS_MESSAGES =          "members/messages"
 let URL_MEMBERS_MESSAGES_UNREAD =   "members/messages/unreads"
-let URL_MEMBERS_SHOPS_APPROVALS =   "/members/shops/approvals"
+let URL_MEMBERS_SHOPS_APPROVALS =   "members/shops/approvals"
 
 //MARK: API Parameters key
 //Login
@@ -180,7 +180,7 @@ let URL_KEY =                       "url"
 let IMAGES =                        "images"
 let CREATED_AT =                    "created_at"
 let UPDATED_AT =                    "updated_at"
-
+let SHOP_STATUS =                   "shop_status"
 // Message
 let IS_READ =                       "is_read"
 

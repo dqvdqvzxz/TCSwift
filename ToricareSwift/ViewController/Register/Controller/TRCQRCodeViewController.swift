@@ -104,7 +104,34 @@ class TRCQRCodeViewController: TRCBaseViewController {
     }
     
     func sendQRString(_ qrString: String) {
+        self.showHUD()
+        TRCQRRequest().sendQR(qrString, completion: { (data) in
+            self.hideHUD()
+            DLog(data)
+            let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
+            vc.mode = self.mode
+            self.navigationController?.pushViewController(vc, animated: true)
+        }) { (error) in
+            self.hideHUD()
+            self.showQRAlert()
+        }
+    }
+    
+    func showQRAlert() {
+        let alert = UIAlertController(title: Localizable(value: "error"),
+                                      message: Localizable(value: "qr_code_not_match"),
+                                      preferredStyle: UIAlertControllerStyle.alert)
         
+        // add the action
+        alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                      style: UIAlertActionStyle.default,
+                                      handler: { action in
+                                        self.hasScannedResult = false
+                                        self.capture.start()
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -116,9 +143,10 @@ extension TRCQRCodeViewController: ZXCaptureDelegate{
             DLog("result capture !!!")
             DLog(result.text)
             if ((result.text) != nil) {
-                let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
-                vc.mode = mode
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.sendQRString(result.text)
+//                let vc = TRCQRCodeDoneViewController(nibName: "TRCQRCodeDoneViewController", bundle: nil)
+//                vc.mode = mode
+//                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

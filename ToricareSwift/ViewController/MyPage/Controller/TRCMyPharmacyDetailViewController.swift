@@ -140,6 +140,12 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             } else {
                 btnPharmacy.buttonStyle(title: Localizable(value: "change_button"))
             }
+            if (_obj.objectAccountInfo != nil) {
+                if (_obj.objectAccountInfo.shopStatus.isBlank || _obj.objectAccountInfo.shopStatus == REGISTER_FALSE) {
+                    btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
+                    btnQRCode.isHidden = false
+                }
+            }
         }
     }
     
@@ -206,6 +212,10 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnQRCode(_ sender: Any) {
+        let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+        vc.mode = _obj.mode
+        backButton()
+        _obj.nc5.pushViewController(vc, animated: true)
     }
     
     @IBAction func tapBtnPharmacy(_ sender: Any) {

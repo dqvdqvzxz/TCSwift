@@ -85,3 +85,7 @@ let REGISTER_TYPE_FACEBOOK =            "2"
 let GENDER_MALE =                       "1"
 let GENDER_FEMALE =                     "2"
 let GENDER_OTHER =                      "3"
+
+// STATUS
+let REGISTER_TRUE =                     "1"
+let REGISTER_FALSE =                    "0"
