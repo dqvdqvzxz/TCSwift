@@ -47,6 +47,7 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         let searchLocationPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
         let searchCurrentLocationPageView = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
         
+        searchLocationPageView.delegate = self
         
         self.viewControllers = [
             searchTextPageView,
@@ -108,5 +109,9 @@ extension TRCSearchPageViewController: TRCSearchLocationPageViewDelegate {
     
     func closeLoading() {
         self.hideHUD()
+    }
+    
+    func pushLocationToSearchResult(_ mode: String) {
+        //
     }
 }

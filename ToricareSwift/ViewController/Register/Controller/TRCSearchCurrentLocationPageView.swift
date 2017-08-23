@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol TRCSearchCurrentLocationPageViewDelegate: class {
+    func pushCurrentLocationToSearchResult(_ mode: String)
+}
 
 class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegate {
 
@@ -18,6 +21,8 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
     var locationManager = CLLocationManager()
     
     let marker = GMSMarker()
+    
+    var delegate: TRCSearchCurrentLocationPageViewDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +48,6 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
     }
 
     @IBAction func tapBtnSearch(_ sender: Any) {
-        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-        configBackButton()
-        
         UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
         UserDefaults.removeUD(SEARCH_TOWN_NAME)
         UserDefaults.removeUD(SEARCH_PREFECTURE)
@@ -53,9 +55,15 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
         UserDefaults.removeUD(SEARCH_KEYWORD)
         
         if(_obj.mode == MODE_MYPAGE){
-            _obj.nc5.pushViewController(vc, animated: true)
+            if (delegate != nil) {
+                delegate.pushCurrentLocationToSearchResult(MODE_MYPAGE)
+                return
+            }
         }else if(_obj.mode == MODE_REGISTER){
-            self.navigationController?.pushViewController(vc, animated: true)
+            if (delegate != nil) {
+                delegate.pushCurrentLocationToSearchResult(MODE_REGISTER)
+                return
+            }
         }
     }
 }

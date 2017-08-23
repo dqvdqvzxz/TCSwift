@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TRCSearchTextPageViewDelegate {
+    func pushTextToSearchResult(_ mode: String)
+} 
+
 class TRCSearchTextPageView: TRCBaseViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
@@ -15,6 +19,8 @@ class TRCSearchTextPageView: TRCBaseViewController {
     @IBOutlet weak var tfSearch: UITextField!
     
     @IBOutlet weak var btnSearch: UIButton!
+    
+    var delegate: TRCSearchTextPageViewDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +56,6 @@ class TRCSearchTextPageView: TRCBaseViewController {
     }
     
     func doSearch(){
-        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-
         //data search
         if(self.tfSearch.text != nil){
             UserDefaults.saveUD(self.tfSearch.text?.trim(), SEARCH_KEYWORD)
@@ -63,13 +67,17 @@ class TRCSearchTextPageView: TRCBaseViewController {
         UserDefaults.removeUD(SEARCH_TOWN)
         UserDefaults.removeUD(SEARCH_LAT)
         UserDefaults.removeUD(SEARCH_LON)
-
-        configBackButton()
         
         if(_obj.mode == MODE_MYPAGE){
-            _obj.nc5.pushViewController(vc, animated: true)
+            if (delegate != nil) {
+                delegate.pushTextToSearchResult(MODE_MYPAGE)
+                return
+            }
         }else if(_obj.mode == MODE_REGISTER){
-            self.navigationController?.pushViewController(vc, animated: true)
+            if (delegate != nil) {
+                delegate.pushTextToSearchResult(MODE_REGISTER)
+                return
+            }
         }
     }
 }

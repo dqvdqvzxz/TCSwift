@@ -33,7 +33,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 
         configUI()
         
-//        vc.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +53,10 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         
         //set up page view
         configPageView()
+        
+        //config delegate
+        configDelegate()
+        
         //set up tutorial view
         if(_obj.mode == MODE_MYPAGE){
             //hide tutorial
@@ -84,6 +87,24 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         currentWindow?.addSubview(viewParentTutorial)
     }
     
+    //Config delegate
+    func configDelegate(){
+        let searchTextPageView = TRCSearchTextPageView(nibName: "TRCSearchTextPageView", bundle: nil)
+        let searchLocationPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
+        let searchCurrentLocationPageView = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
+        
+        searchTextPageView.delegate = self
+        searchLocationPageView.delegate = self
+        searchCurrentLocationPageView.delegate = self
+    }
+    
+    func configPageBackButton(){
+        let backItem = UIBarButtonItem()
+        backItem.title = STRING_BACK
+        self.navigationItem.backBarButtonItem = backItem
+        
+    }
+    
     //MARK: Action
     func skipAction(){
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
@@ -98,5 +119,50 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     
     @IBAction func tapBtnReaded(_ sender: Any) {
         viewParentTutorial.removeFromSuperview()
+    }
+}
+
+extension TRCPharmacySearchViewController: TRCSearchTextPageViewDelegate {
+    func pushTextToSearchResult(_ mode: String) {
+        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        self.configPageBackButton()
+        if(mode == MODE_MYPAGE){
+            _obj.nc5.pushViewController(vc, animated: true)
+        }else if(mode == MODE_REGISTER){
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+
+extension TRCPharmacySearchViewController: TRCSearchLocationPageViewDelegate {
+    func pushLocationToSearchResult(_ mode: String) {
+        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        self.configPageBackButton()
+        if(mode == MODE_MYPAGE){
+            _obj.nc5.pushViewController(vc, animated: true)
+        }else if(mode == MODE_REGISTER){
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func openLoading() {
+        //
+    }
+    
+    func closeLoading() {
+        //
+    }
+}
+
+extension TRCPharmacySearchViewController: TRCSearchCurrentLocationPageViewDelegate {
+    func pushCurrentLocationToSearchResult(_ mode: String) {
+        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        self.configPageBackButton()
+        if(mode == MODE_MYPAGE){
+            _obj.nc5.pushViewController(vc, animated: true)
+        }else if(mode == MODE_REGISTER){
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 protocol TRCSearchLocationPageViewDelegate: class {
     func openLoading()
     func closeLoading()
+    func pushLocationToSearchResult(_ mode: String)
 }
 
 class TRCSearchLocationPageView: TRCBaseViewController {
@@ -206,18 +207,21 @@ class TRCSearchLocationPageView: TRCBaseViewController {
     
     //MARK: Button action
     @IBAction func tapBtnSearch(_ sender: Any) {
-        let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
-        
         //data search
         UserDefaults.removeUD(SEARCH_LAT)
         UserDefaults.removeUD(SEARCH_LON)
         UserDefaults.removeUD(SEARCH_KEYWORD)
-        
-        configBackButton()
+
         if(_obj.mode == MODE_MYPAGE){
-            _obj.nc5.pushViewController(vc, animated: true)
+            if (delegate != nil) {
+                delegate?.pushLocationToSearchResult(MODE_MYPAGE)
+                return
+            }
         }else if(_obj.mode == MODE_REGISTER){
-            self.navigationController?.pushViewController(vc, animated: true)
+            if (delegate != nil) {
+                delegate?.pushLocationToSearchResult(MODE_REGISTER)
+                return
+            }
         }
     }
 }
