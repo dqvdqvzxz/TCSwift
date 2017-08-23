@@ -91,9 +91,10 @@ class TRCRegisterViewController: TRCBaseViewController {
                 vc.refreshToken = Global().convertObjectToString(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))
             }
             _obj.mode = MODE_REGISTER
-            self.configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }) { (error) in
+            _obj.dicFacebookInfo.removeAll()
+            UserDefaults.removeUD(FB_TOKEN)
             self.hideHUD()
             self.showAlert(error)
             ELog(error)

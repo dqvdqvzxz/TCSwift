@@ -18,8 +18,11 @@ class TRCRegisterRequest: TRCBaseAPIController {
         parameters[REGISTER_PARAM_DEVICE_TYPE] = DEVICE_TYPE
         parameters[REGISTER_PARAM_DEVICE_TOKEN] = "1501748135775"
         parameters[REGISTER_PARAM_REGISTER_TYPE] = registerType
-        parameters[REGISTER_PARAM_FACEBOOK_ID] = _obj.dicFacebookInfo[FB_USERID]
-        parameters[REGISTER_PARAM_FACEBOOK_TOKEN] = UserDefaults.getUD(FB_TOKEN) as? String
+        if(registerType == REGISTER_TYPE_FACEBOOK){
+            parameters[REGISTER_PARAM_FACEBOOK_ID] = _obj.dicFacebookInfo[FB_USERID]
+            parameters[REGISTER_PARAM_FACEBOOK_TOKEN] = UserDefaults.getUD(FB_TOKEN) as? String
+        }
+        DLog(parameters)
         
         self.callAPI(parameters, atPath: "\(URL_REGISTER)", withMethod: HTTP_POST, blockCompletion: { (data) in
             //parse data from model

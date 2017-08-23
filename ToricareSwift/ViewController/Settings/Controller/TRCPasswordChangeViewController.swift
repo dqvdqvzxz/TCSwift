@@ -49,8 +49,57 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
         btnConfirm.buttonStyle(title: STRING_CHANGE)
     }
     
-    //MARK: Button Action
-    @IBAction func tapBtnConfirm(_ sender: Any) {
+    //MARK: Action
+    func validate(){
+        if (tfCurrentPassword.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_new_password"))
+            return
+        }
+        
+        if (tfNewPassword.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_new_password"))
+            return
+        }
+        if (tfNewPassword.text?.isLengthBelow7)! {
+            self.showAlert(Localizable(value: "please_input_more_8_letter"))
+            return
+        }
+        if (tfNewPassword.text?.isLengthOver33)! {
+            self.showAlert(Localizable(value: "please_input_below_32_letter"))
+            return
+        }
+        if !(tfNewPassword.text?.isAlphanumeric)! {
+            self.showAlert(Localizable(value: "please_input_password_half_width"))
+            return
+        }
+
+        
+        if (tfConfirmNewPassword.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_new_password_confirm"))
+            return
+        }
+        if (tfConfirmNewPassword.text?.isLengthBelow7)! {
+            self.showAlert(Localizable(value: "please_input_more_8_letter"))
+            return
+        }
+        if (tfConfirmNewPassword.text?.isLengthOver33)! {
+            self.showAlert(Localizable(value: "please_input_below_32_letter"))
+            return
+        }
+        if !(tfConfirmNewPassword.text?.isAlphanumeric)! {
+            self.showAlert(Localizable(value: "please_input_password_half_width"))
+            return
+        }
+        
+        if (tfNewPassword.text != tfConfirmNewPassword.text) {
+            self.showAlert(Localizable(value: "password_did_not_match"))
+            return
+        }
+    
+        doChangePassword()
+    }
+    
+    func doChangePassword(){
         self.showHUD()
         TRCPasswordRequest().passwordChange(tfCurrentPassword.text!, tfConfirmNewPassword.text!, completion: {(data) in
             self.hideHUD()
@@ -77,5 +126,10 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
             self.showAlert(error)
             ELog(error)
         }
+    }
+    
+    //MARK: Button Action
+    @IBAction func tapBtnConfirm(_ sender: Any) {
+        validate()
     }
 }
