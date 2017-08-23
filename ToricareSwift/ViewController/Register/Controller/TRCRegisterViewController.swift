@@ -58,6 +58,10 @@ class TRCRegisterViewController: TRCBaseViewController {
         
         btnRegister.buttonStyle(title: Localizable(value: "register_mail"))
         btnRegisterWithFB.buttonStyle(title: Localizable(value: "register_fb"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_REGISTER_FB_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BUTTON_REGISTER_FB_COLOR)
+        
+        FBSDKProfile.enableUpdates(onAccessTokenChange: true)
+        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(onProfileUpdated), name: NSNotification.Name.FBSDKProfileDidChange, object: nil)
     }
     
     //MARK: Button Action
@@ -127,10 +131,11 @@ class TRCRegisterViewController: TRCBaseViewController {
         }else{
             _obj.dicFacebookInfo.updateValue("", forKey: FB_USERID)
         }
-        
+        self.showHUD()
         //get email, avatar
         let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email, picture.type(large)"])
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            self.hideHUD()
             if ((error) != nil){
                 ELog("Error: \(String(describing: error))")
             }else{
@@ -156,7 +161,7 @@ class TRCRegisterViewController: TRCBaseViewController {
                 
                 print("Call this ")
                 //process after login
-                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                UIView.transition(with: self.view, duration: 0.1, options: .transitionCrossDissolve, animations: {
                     print("Call me")
                     //change UI of view
                     self.viewLineLeft.isHidden = true
@@ -172,6 +177,8 @@ class TRCRegisterViewController: TRCBaseViewController {
                     
                     self.tfUsername.text = _obj.dicFacebookInfo[FB_EMAIL]
                     self.tfUsername.isUserInteractionEnabled = false
+                    self.tfPassword.text = ""
+                    self.tfRePassword.text = ""
                 })
             }
         })
@@ -180,8 +187,6 @@ class TRCRegisterViewController: TRCBaseViewController {
     
     @IBAction func tapBtnRegisterWithFB(_ sender: Any) {
         let loginManager = LoginManager()
-        FBSDKProfile.enableUpdates(onAccessTokenChange: true)
-        NotificationCenter.default.addObserver(self, selector: #selector(onProfileUpdated), name: NSNotification.Name.FBSDKProfileDidChange, object: nil)
 
         loginManager.logIn([ .publicProfile, .email, .userFriends ], viewController: self) { loginResult in
             switch loginResult {
