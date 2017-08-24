@@ -38,8 +38,6 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-        
         if(_obj.newStep != ""){
             self.pickerTarget.selectRow(((Int(_obj.newStep)! / 1000) - 1), inComponent: 0, animated: true)
         }

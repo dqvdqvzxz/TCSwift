@@ -55,6 +55,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         configUI()
 
         if(_obj.mode == MODE_MYPAGE) {
@@ -63,10 +64,6 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
 
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

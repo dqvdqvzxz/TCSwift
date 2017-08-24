@@ -32,9 +32,6 @@ class TRCBaseViewController: UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        //hide tabbar
-        _obj.tabController.tabBar.isHidden = true
-        
         //navigation
         _obj.nc1.setNavigationBarHidden(false, animated: true)
         _obj.nc2.setNavigationBarHidden(false, animated: true)
@@ -42,14 +39,6 @@ class TRCBaseViewController: UIViewController {
         _obj.nc4.setNavigationBarHidden(false, animated: true)
         _obj.nc5.setNavigationBarHidden(false, animated: true)
         self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
     }
 
     //MARK: Action

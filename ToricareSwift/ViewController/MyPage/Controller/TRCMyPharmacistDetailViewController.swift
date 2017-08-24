@@ -47,15 +47,10 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+
         configUI()
         
         getData()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        
     }
     
     override func didReceiveMemoryWarning() {

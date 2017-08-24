@@ -53,7 +53,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9An-qp-z44" userLabel="scrollView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="492"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cb1-ac-zZ4" userLabel="viewMain">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
@@ -213,7 +213,6 @@
                                         <constraint firstItem="dax-w5-mM5" firstAttribute="width" secondItem="XiV-LP-9hy" secondAttribute="width" multiplier="2:3" id="6uD-Wt-SVw"/>
                                         <constraint firstItem="gm4-uM-ThD" firstAttribute="top" secondItem="Y7a-K9-9nQ" secondAttribute="bottom" id="7ke-dW-NiI"/>
                                         <constraint firstAttribute="trailing" secondItem="gnW-WM-Iyc" secondAttribute="trailing" id="ADv-GO-0hH"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="BBD-TH-RCp"/>
                                         <constraint firstItem="ZVR-ij-WoP" firstAttribute="width" secondItem="cbj-IX-DCo" secondAttribute="width" id="CWK-53-CT8"/>
                                         <constraint firstItem="cbj-IX-DCo" firstAttribute="width" secondItem="XiV-LP-9hy" secondAttribute="width" multiplier="1:3" id="EXU-zs-tzB"/>
                                         <constraint firstItem="afR-4b-vfI" firstAttribute="top" secondItem="gnW-WM-Iyc" secondAttribute="bottom" id="Fsx-J6-xnE"/>
@@ -298,7 +297,7 @@
                 <constraint firstItem="cb1-ac-zZ4" firstAttribute="height" secondItem="qsf-DO-NPb" secondAttribute="height" id="USU-q2-GuP"/>
                 <constraint firstItem="ueh-LN-TrC" firstAttribute="top" secondItem="qsf-DO-NPb" secondAttribute="top" constant="10" id="WxI-io-AtM"/>
                 <constraint firstAttribute="bottom" secondItem="QWR-Ne-jvt" secondAttribute="bottom" constant="10" id="bZc-Zh-q6G"/>
-                <constraint firstAttribute="bottom" secondItem="9An-qp-z44" secondAttribute="bottom" constant="108" id="h4p-9u-yxm"/>
+                <constraint firstAttribute="bottom" secondItem="9An-qp-z44" secondAttribute="bottom" constant="90" id="h4p-9u-yxm"/>
                 <constraint firstItem="ueh-LN-TrC" firstAttribute="leading" secondItem="qsf-DO-NPb" secondAttribute="leading" id="qy2-Cb-ZNY"/>
                 <constraint firstAttribute="trailing" secondItem="ueh-LN-TrC" secondAttribute="trailing" id="rQC-3W-Epq"/>
                 <constraint firstAttribute="trailing" secondItem="9An-qp-z44" secondAttribute="trailing" id="tZA-0y-G6d"/>

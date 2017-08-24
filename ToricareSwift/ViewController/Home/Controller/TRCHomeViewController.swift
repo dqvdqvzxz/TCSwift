@@ -78,13 +78,13 @@ class TRCHomeViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _obj.tabController.tabBar.isHidden = false
+//        _obj.tabController.tabBar.isHidden = false
         updateUnread("0")
         getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = false
+//        _obj.tabController.tabBar.isHidden = false
         getUnreadMessage()
         
         if(_obj.objectGoal != nil){
@@ -92,9 +92,9 @@ class TRCHomeViewController: TRCBaseViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = false
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        _obj.tabController.tabBar.isHidden = false
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

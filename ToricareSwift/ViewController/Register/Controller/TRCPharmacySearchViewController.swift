@@ -33,6 +33,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 
         configUI()
         
+//        _obj.tabController.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {

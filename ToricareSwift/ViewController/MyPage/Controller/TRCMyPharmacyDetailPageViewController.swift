@@ -16,8 +16,6 @@ class TRCMyPharmacyDetailPageViewController: GLViewPagerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
-        
-        _obj.tabController.tabBar.isHidden = true
 
         self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
         
@@ -27,15 +25,6 @@ class TRCMyPharmacyDetailPageViewController: GLViewPagerViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
     }
     
     
