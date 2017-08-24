@@ -325,8 +325,8 @@
 "qr_code_not_match"                              = "ご登録いただいた薬局のQRコードと一致しません。";
 "confirm_change_pharmacy"                              = "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？";
 
-""                              = "";
-""                              = "";
+"manager_notification"                                  = "運営からのお知らせ";
+"pharmacy_notification"                                 = "薬局からのお知らせ";
 ""                              = "";
 ""                              = "";
 ""                              = "";

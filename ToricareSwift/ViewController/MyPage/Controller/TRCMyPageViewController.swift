@@ -106,6 +106,14 @@ class TRCMyPageViewController: TRCBaseViewController {
             }
         }
     }
+    
+    func pushToNotificationList(){
+        let vc = TRCNotificationPharmacyViewController(nibName: "TRCNotificationPharmacyViewController", bundle: nil)
+        vc.notifyFromType = .system
+        configBackButton()
+        _obj.nc5.pushViewController(vc, animated: true)
+    }
+
 }
 extension TRCMyPageViewController: UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -176,6 +184,9 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
             let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+        case 4:
+            self.pushToNotificationList()
+            break
         case 5:
             let vc = TRCSettingViewController(nibName: "TRCSettingViewController", bundle: nil)
             configBackButton()
