@@ -54,9 +54,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         //set up page view
         configPageView()
         
-        //config delegate
-        configDelegate()
-        
         //set up tutorial view
         if(_obj.mode == MODE_MYPAGE){
             //hide tutorial
@@ -69,6 +66,9 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
     
     func configPageView(){
         let pageVC =  TRCSearchPageViewController(nibName: "TRCSearchPageViewController", bundle: nil)
+        pageVC.searchTextPageView.delegate = self
+        pageVC.searchLocationPageView.delegate = self
+        pageVC.searchCurrentLocationPageView.delegate = self
         viewPage.addSubview(pageVC.view)
     }
     
@@ -85,17 +85,6 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         let currentWindow = UIApplication.shared.keyWindow
         viewParentTutorial.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
         currentWindow?.addSubview(viewParentTutorial)
-    }
-    
-    //Config delegate
-    func configDelegate(){
-        let searchTextPageView = TRCSearchTextPageView(nibName: "TRCSearchTextPageView", bundle: nil)
-        let searchLocationPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
-        let searchCurrentLocationPageView = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
-        
-        searchTextPageView.delegate = self
-        searchLocationPageView.delegate = self
-        searchCurrentLocationPageView.delegate = self
     }
     
     func configPageBackButton(){

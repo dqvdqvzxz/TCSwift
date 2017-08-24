@@ -192,7 +192,7 @@ class TRCHomeViewController: TRCBaseViewController {
                 }
             }) { (error) in
                 self.hideHUD()
-                self.showAlert(error)
+//                self.showAlert(error)
                 ELog(error)
             }
             
@@ -211,7 +211,7 @@ class TRCHomeViewController: TRCBaseViewController {
                 }
             }) { (error) in
                 self.hideHUD()
-                self.showAlert(error)
+//                self.showAlert(error)
                 ELog(error)
             }
             
@@ -228,7 +228,7 @@ class TRCHomeViewController: TRCBaseViewController {
                 }
             }) { (error) in
                 self.hideHUD()
-                self.showAlert(error)
+//                self.showAlert(error)
                 ELog(error)
             }
             

@@ -13,6 +13,10 @@ class TRCSearchPageViewController: GLViewPagerViewController {
 
     var viewControllers: NSArray = NSArray()
     var tabTitles: NSArray = NSArray()
+    
+    let searchTextPageView = TRCSearchTextPageView(nibName: "TRCSearchTextPageView", bundle: nil)
+    let searchLocationPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
+    let searchCurrentLocationPageView = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +47,6 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         self.tabWidth = view.frame.size.width / 3
         
         //init view
-        let searchTextPageView = TRCSearchTextPageView(nibName: "TRCSearchTextPageView", bundle: nil)
-        let searchLocationPageView = TRCSearchLocationPageView(nibName: "TRCSearchLocationPageView", bundle: nil)
-        let searchCurrentLocationPageView = TRCSearchCurrentLocationPageView(nibName: "TRCSearchCurrentLocationPageView", bundle: nil)
         
         searchLocationPageView.delegate = self
         
