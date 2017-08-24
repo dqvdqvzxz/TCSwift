@@ -22,6 +22,7 @@ class TRCSearchPageViewController: GLViewPagerViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        
         configPageView()
     }
 

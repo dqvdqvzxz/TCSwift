@@ -34,7 +34,17 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        _obj.tabController.tabBar.isHidden = true
+        
         configUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

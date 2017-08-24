@@ -19,7 +19,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configUI()
     }
 

@@ -20,6 +20,10 @@ class TRCBaseViewController: UIViewController {
         print(self.navigationController?.viewControllers)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

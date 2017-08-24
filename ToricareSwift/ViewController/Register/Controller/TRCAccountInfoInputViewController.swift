@@ -41,6 +41,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnUploadImage: UIButton!
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
+    @IBOutlet weak var contraintBottomBtnChange: NSLayoutConstraint!
     
     var pickerController = UIImagePickerController()
     var imgView = UIImage()
@@ -64,10 +65,20 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _obj.tabController.tabBar.isHidden = true
 
         initValueHeightPicker()
         
         configUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -133,10 +144,12 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
 
         //config mode
         if(_obj.mode == MODE_REGISTER){
+            contraintBottomBtnChange.constant = 54
             btnNext.buttonStyle(title: STRING_NEXT)
         }else if(_obj.mode == MODE_MYPAGE){
             self.navigationItem.hidesBackButton = false
             btnNext.buttonStyle(title: "変更を保存")
+            contraintBottomBtnChange.constant = 10
         }
         
         
