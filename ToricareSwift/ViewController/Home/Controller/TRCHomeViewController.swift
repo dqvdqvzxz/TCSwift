@@ -262,6 +262,18 @@ class TRCHomeViewController: TRCBaseViewController {
         _obj.nc1.pushViewController(vc, animated: true)
     }
     
+    @IBAction func btnLoadMoreDidTap(_ sender: Any) {
+        pushToNotificationList()
+    }
+    
+    func pushToNotificationList(){
+        let vc = TRCNotificationPharmacyViewController(nibName: "TRCNotificationPharmacyViewController", bundle: nil)
+        vc.notifyFromType = .pharmacy
+        configBackButton()
+        //        hideBar()
+        _obj.nc1.pushViewController(vc, animated: true)
+    }
+    
     func action(){
         //
     }

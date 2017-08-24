@@ -55,6 +55,7 @@ class TRCDetailMessageViewController: UIViewController {
         tvContent.font = UIFont.init(name: "HiraginoSans-W3", size: LABEL_FONT_SIZE!)
         tvContent.textColor = UIColor.init(hexString: LABEL_FONT_COLOR)
         tvContent.text = messageData.message
+        tvContent.isEditable = false
     }
     
     func postData() {

@@ -89,3 +89,8 @@ let GENDER_OTHER =                      "3"
 // STATUS
 let REGISTER_TRUE =                     "1"
 let REGISTER_FALSE =                    "0"
+
+enum NotificationFromType {
+    case pharmacy
+    case system
+}

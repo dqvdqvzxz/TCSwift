@@ -22,6 +22,16 @@
 		17B0EEB71F4AEF3E00B5249E /* TRCQRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */; };
 		17B632041F347B46001A379E /* TRCPharmacySearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B632031F347B46001A379E /* TRCPharmacySearchData.swift */; };
 		17B632061F34897E001A379E /* TRCPharmacyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B632051F34897E001A379E /* TRCPharmacyRequest.swift */; };
+		17BC583E1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC583C1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift */; };
+		17BC583F1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC583C1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift */; };
+		17BC58431F4E782A0024950B /* TRCNotificationPharmacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BC58421F4E782A0024950B /* TRCNotificationPharmacyViewController.xib */; };
+		17BC58441F4E782A0024950B /* TRCNotificationPharmacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BC58421F4E782A0024950B /* TRCNotificationPharmacyViewController.xib */; };
+		17BC58471F4E7DA70024950B /* TRCNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC58451F4E7DA70024950B /* TRCNotificationTableViewCell.swift */; };
+		17BC58481F4E7DA70024950B /* TRCNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC58451F4E7DA70024950B /* TRCNotificationTableViewCell.swift */; };
+		17BC584C1F4E7DC50024950B /* TRCNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BC584B1F4E7DC50024950B /* TRCNotificationTableViewCell.xib */; };
+		17BC584D1F4E7DC50024950B /* TRCNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BC584B1F4E7DC50024950B /* TRCNotificationTableViewCell.xib */; };
+		17BC58521F4E81190024950B /* TRCNotificationPharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC58511F4E81190024950B /* TRCNotificationPharmacy.swift */; };
+		17BC58531F4E81190024950B /* TRCNotificationPharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC58511F4E81190024950B /* TRCNotificationPharmacy.swift */; };
 		17C98F511F3BFAE8003AF863 /* TRCEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BB9ECD1F386B35009A8454 /* TRCEmailRequest.swift */; };
 		17C98F521F3BFAE8003AF863 /* TRCTab3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095AC1F303B36009F16EA /* TRCTab3ViewController.swift */; };
 		17C98F531F3BFAE8003AF863 /* TRCPasscodeLockLoginInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57F7501F298C3500CC079C /* TRCPasscodeLockLoginInputViewController.swift */; };
@@ -333,6 +343,11 @@
 		17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCQRRequest.swift; sourceTree = "<group>"; };
 		17B632031F347B46001A379E /* TRCPharmacySearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacySearchData.swift; sourceTree = "<group>"; };
 		17B632051F34897E001A379E /* TRCPharmacyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacyRequest.swift; sourceTree = "<group>"; };
+		17BC583C1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCNotificationPharmacyViewController.swift; sourceTree = "<group>"; };
+		17BC58421F4E782A0024950B /* TRCNotificationPharmacyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCNotificationPharmacyViewController.xib; sourceTree = "<group>"; };
+		17BC58451F4E7DA70024950B /* TRCNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		17BC584B1F4E7DC50024950B /* TRCNotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCNotificationTableViewCell.xib; sourceTree = "<group>"; };
+		17BC58511F4E81190024950B /* TRCNotificationPharmacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCNotificationPharmacy.swift; sourceTree = "<group>"; };
 		17C98FE81F3BFAE8003AF863 /* ToricareSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToricareSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C98FE91F3BFAE9003AF863 /* ToricareSwift copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ToricareSwift copy-Info.plist"; path = "/Users/tuan/Documents/Project/Tricare/TCSwift/ToricareSwift copy-Info.plist"; sourceTree = "<absolute>"; };
 		17D3384B1F32C98D00F4B254 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -869,6 +884,8 @@
 				3F57F7561F2AD06000CC079C /* TRCDetailMessageViewController.swift */,
 				3F57F7351F25F7C100CC079C /* TRCMessageListCell.swift */,
 				3F55B5071F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift */,
+				17BC583C1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift */,
+				17BC58451F4E7DA70024950B /* TRCNotificationTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -878,6 +895,7 @@
 			children = (
 				68F07DB01F3C40A000E1934C /* TRCSummary.swift */,
 				1757AF3B1F4177D200F340D6 /* TRCMessage.swift */,
+				17BC58511F4E81190024950B /* TRCNotificationPharmacy.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -885,6 +903,8 @@
 		3FB411971F05F988008720A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				17BC58421F4E782A0024950B /* TRCNotificationPharmacyViewController.xib */,
+				17BC584B1F4E7DC50024950B /* TRCNotificationTableViewCell.xib */,
 				3FB411981F05F988008720A6 /* TRCHomeViewController.xib */,
 				3F57F73A1F26DBAC00CC079C /* TRCMessageListViewController.xib */,
 				3F57F75A1F2ADBB200CC079C /* TRCDetailMessageViewController.xib */,
@@ -1123,6 +1143,8 @@
 				17C98FBF1F3BFAE8003AF863 /* TRCMyPharmacyDetailPageViewController.xib in Resources */,
 				17C98FC01F3BFAE8003AF863 /* TRCUserLeaveViewController.xib in Resources */,
 				17C98FC11F3BFAE8003AF863 /* TRCQRCodeDoneViewController.xib in Resources */,
+				17BC584D1F4E7DC50024950B /* TRCNotificationTableViewCell.xib in Resources */,
+				17BC58441F4E782A0024950B /* TRCNotificationPharmacyViewController.xib in Resources */,
 				17C98FC21F3BFAE8003AF863 /* TRCSearchLocationPageView.xib in Resources */,
 				17C98FC31F3BFAE8003AF863 /* TRCPasscodeLockLoginInputViewController.xib in Resources */,
 				17C98FC41F3BFAE8003AF863 /* TRCThemeColorSettingViewController.xib in Resources */,
@@ -1185,6 +1207,8 @@
 				3F57F74F1F26F21600CC079C /* TRCMyPharmacyDetailPageViewController.xib in Resources */,
 				3F47596C1F0CC50C00B82645 /* TRCUserLeaveViewController.xib in Resources */,
 				1706DBAB1F307CB600188510 /* TRCQRCodeDoneViewController.xib in Resources */,
+				17BC584C1F4E7DC50024950B /* TRCNotificationTableViewCell.xib in Resources */,
+				17BC58431F4E782A0024950B /* TRCNotificationPharmacyViewController.xib in Resources */,
 				3F57F6EE1F1CD39E00CC079C /* TRCSearchLocationPageView.xib in Resources */,
 				3F57F7551F29963200CC079C /* TRCPasscodeLockLoginInputViewController.xib in Resources */,
 				3F47596A1F0CC50C00B82645 /* TRCThemeColorSettingViewController.xib in Resources */,
@@ -1375,6 +1399,7 @@
 				17C98F621F3BFAE8003AF863 /* TRCThemeColorSettingViewController.swift in Sources */,
 				17C98F631F3BFAE8003AF863 /* Image.swift in Sources */,
 				17C98F641F3BFAE8003AF863 /* TRCPharmacySearchResultsViewController.swift in Sources */,
+				17BC583F1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift in Sources */,
 				17C98F651F3BFAE8003AF863 /* TRCTab2ViewController.swift in Sources */,
 				17C98F661F3BFAE8003AF863 /* TRCMessageListViewController.swift in Sources */,
 				17C98F671F3BFAE8003AF863 /* TRCPasscodeLockSettingViewController.swift in Sources */,
@@ -1424,6 +1449,7 @@
 				17C98F8F1F3BFAE8003AF863 /* TRCLogoutViewController.swift in Sources */,
 				17C98F901F3BFAE8003AF863 /* TRCNotificationRequest.swift in Sources */,
 				17C98F921F3BFAE8003AF863 /* Textfield.swift in Sources */,
+				17BC58481F4E7DA70024950B /* TRCNotificationTableViewCell.swift in Sources */,
 				17C98F931F3BFAE8003AF863 /* TRCUserRegistCompleteViewController.swift in Sources */,
 				17C98F941F3BFAE8003AF863 /* TRCPharmacySearchData.swift in Sources */,
 				17C98F951F3BFAE8003AF863 /* TRCTab4ViewController.swift in Sources */,
@@ -1435,6 +1461,7 @@
 				17C98F9B1F3BFAE8003AF863 /* TRCMyPharmacyDetailViewController.swift in Sources */,
 				17C98F9C1F3BFAE8003AF863 /* TRCForgotPasswordSentViewController.swift in Sources */,
 				17C98F9D1F3BFAE8003AF863 /* TRCPharmacyRequest.swift in Sources */,
+				17BC58531F4E81190024950B /* TRCNotificationPharmacy.swift in Sources */,
 				17C98F9E1F3BFAE8003AF863 /* TRCSearchLocationPageView.swift in Sources */,
 				17C98F9F1F3BFAE8003AF863 /* TRCBaseAPIController.swift in Sources */,
 				17C98FA01F3BFAE8003AF863 /* Label.swift in Sources */,
@@ -1471,6 +1498,7 @@
 				3F57F6F71F1F032000CC079C /* example2.swift in Sources */,
 				3FB4116C1EFBBEF6008720A6 /* Alert.swift in Sources */,
 				3F475A671F14687F00B82645 /* TRCAboutAppCell.swift in Sources */,
+				17BC58521F4E81190024950B /* TRCNotificationPharmacy.swift in Sources */,
 				3FB411771F00988A008720A6 /* TRCAPIKeyContant.swift in Sources */,
 				3F4759471F0CC44000B82645 /* TRCThemeColorSettingViewController.swift in Sources */,
 				3F47591C1F0C7DA100B82645 /* Image.swift in Sources */,
@@ -1496,6 +1524,7 @@
 				3FB411681EFBBA11008720A6 /* TRCConfigConstant.swift in Sources */,
 				1788CE0E1F37FFC300778006 /* JSONParsing.swift in Sources */,
 				3FB411901F04F884008720A6 /* Button.swift in Sources */,
+				17BC583E1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift in Sources */,
 				3F4759751F0DE72A00B82645 /* TRCLinkedServiceCell.swift in Sources */,
 				3FB4119E1F063819008720A6 /* View.swift in Sources */,
 				3FB411791F00B05A008720A6 /* Connectivity.swift in Sources */,
@@ -1543,6 +1572,7 @@
 				3FB411921F05F7B9008720A6 /* Label.swift in Sources */,
 				3F57F6DF1F1C619E00CC079C /* TRCSearchCurrentLocationPageView.swift in Sources */,
 				3F475A7A1F16155200B82645 /* TRCWalkingGoalDetailViewController.swift in Sources */,
+				17BC58471F4E7DA70024950B /* TRCNotificationTableViewCell.swift in Sources */,
 				1757AF391F4151FA00F340D6 /* TRCMessageRequest.swift in Sources */,
 				68BB9ED01F386E80009A8454 /* TRCAccountInfoRequest.swift in Sources */,
 				3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */,
