@@ -37,6 +37,8 @@ class TRCForgotPasswordSentViewController: TRCBaseViewController {
         lblInform1.labelStyle(title: Localizable(value: "send_reset_password_mail"))
         lblInform2.labelStyle(title: Localizable(value: "please_check_mail"))
         lblInform3.labelStyle(title: Localizable(value: "reset_password_done_message"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblInform1.makeLineSpacing()
+        lblInform2.makeLineSpacing()
         lblInform3.makeLineSpacing()
         btnBackToHome.buttonStyle(title: Localizable(value: "back_to_top"))
     }

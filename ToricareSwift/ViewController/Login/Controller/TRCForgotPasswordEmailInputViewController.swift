@@ -36,6 +36,7 @@ class TRCForgotPasswordEmailInputViewController: TRCBaseViewController {
         
         //UI of outlet
         lblPolicy.labelStyle(title: Localizable(value: "reset_password_input"))
+        lblPolicy.makeLineSpacing()
         lblEmail.labelStyle(title: STRING_MAIL_ADDRESS)
         lblExplain.labelStyle(title: Localizable(value: "reset_password_explain"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
         lblExplain.sizeToFit()
