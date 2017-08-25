@@ -77,24 +77,19 @@ class TRCHomeViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        _obj.tabController.tabBar.isHidden = false
+
         updateUnread("0")
+        
         getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        _obj.tabController.tabBar.isHidden = false
         getUnreadMessage()
         
         if(_obj.objectGoal != nil){
             self.lblStep.text = String().convertDecimal(_obj.objectGoal.steps)
         }
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        _obj.tabController.tabBar.isHidden = false
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -230,6 +225,13 @@ class TRCHomeViewController: TRCBaseViewController {
                 self.hideHUD()
 //                self.showAlert(error)
                 ELog(error)
+            }
+            
+            //get banner
+            TRCBannerRequest().getBanner(completion: { (data) in
+                //
+            }) { (error) in
+                //
             }
             
             self.configUI()

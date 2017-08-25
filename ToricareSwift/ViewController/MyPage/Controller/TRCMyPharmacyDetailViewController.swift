@@ -64,6 +64,12 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if(_obj.mode == MODE_REGISTER_MYPAGE){
+            _obj.tabController.tabBar.isHidden = true
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -90,6 +90,7 @@ class TRCRegisterViewController: TRCBaseViewController {
             if (Global().isNotNull(dataResult.object(forKey: ACCESS_TOKEN))) {
                 vc.refreshToken = Global().convertObjectToString(dataResult.object(forKey: REFRESH_ACCESS_TOKEN))
             }
+            
             _obj.mode = MODE_REGISTER
             self.navigationController?.pushViewController(vc, animated: true)
         }) { (error) in

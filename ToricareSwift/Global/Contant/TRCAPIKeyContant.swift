@@ -39,6 +39,7 @@ let URL_SUMMARY =                   "members/summaries"
 let URL_MEMBERS_MESSAGES =          "members/messages"
 let URL_MEMBERS_MESSAGES_UNREAD =   "members/messages/unreads"
 let URL_MEMBERS_SHOPS_APPROVALS =   "members/shops/approvals"
+let URL_BANNERS =                   "banners"
 
 //MARK: API Parameters key
 //Login

@@ -33,20 +33,11 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 
         configUI()
         
-        _obj.tabController.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = false
     }
     
     //MARK: Config UI
@@ -123,6 +114,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 extension TRCPharmacySearchViewController: TRCSearchTextPageViewDelegate {
     func pushTextToSearchResult(_ mode: String) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.configPageBackButton()
         if(mode == MODE_MYPAGE){
             _obj.nc5.pushViewController(vc, animated: true)
@@ -136,6 +128,7 @@ extension TRCPharmacySearchViewController: TRCSearchTextPageViewDelegate {
 extension TRCPharmacySearchViewController: TRCSearchLocationPageViewDelegate {
     func pushLocationToSearchResult(_ mode: String) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.configPageBackButton()
         if(mode == MODE_MYPAGE){
             _obj.nc5.pushViewController(vc, animated: true)
@@ -156,6 +149,7 @@ extension TRCPharmacySearchViewController: TRCSearchLocationPageViewDelegate {
 extension TRCPharmacySearchViewController: TRCSearchCurrentLocationPageViewDelegate {
     func pushCurrentLocationToSearchResult(_ mode: String) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.configPageBackButton()
         if(mode == MODE_MYPAGE){
             _obj.nc5.pushViewController(vc, animated: true)

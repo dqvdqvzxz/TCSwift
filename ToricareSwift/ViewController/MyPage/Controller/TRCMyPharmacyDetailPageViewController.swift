@@ -115,6 +115,7 @@ extension TRCMyPharmacyDetailPageViewController: GLViewPagerViewControllerDelega
 extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacistDetailViewControllerDelegate {
     func pushToPharmacistInput(_ dicResult: NSDictionary) {
         let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         vc.dataResult = dicResult
         self.configPageBackButton()
         _obj.nc5.pushViewController(vc, animated: true)
@@ -124,12 +125,14 @@ extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacistDetailViewContro
 extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacyDetailViewControllerDelegate{
     func pushtoSearchView() {
         let vc = TRCPharmacySearchViewController(nibName: "TRCPharmacySearchViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.configPageBackButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }
     
     func pushtoQRCodeView(_ mode: String) {
         let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         vc.mode = mode
         self.configPageBackButton()
         _obj.nc5.pushViewController(vc, animated: true)
