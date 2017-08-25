@@ -28,10 +28,10 @@ class TRCSearchResultCell: UITableViewCell {
     func fillData(pharmacyObject: TRCPharmacy) {
         lblName.labelStyle(title: pharmacyObject.name,
                            fontSize: LABEL_FONT_SIZE! + 2,
-                           isBold: true,
+                           isBold: false,
                            textColor: LABEL_FONT_COLOR)
         
-        lblAddress.labelStyle(title: pharmacyObject.address1 + " " + pharmacyObject.address2,
+        lblAddress.labelStyle(title: pharmacyObject.address1,
                               fontSize: LABEL_FONT_SIZE,
                               isBold: false,
                               textColor: LABEL_FONT_GREY_COLOR)

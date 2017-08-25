@@ -54,13 +54,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="まだMy薬局の登録は完了していません。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPM-xy-Utz" userLabel="lblUsername">
-                    <rect key="frame" x="10" y="104" width="355" height="16"/>
+                    <rect key="frame" x="10" y="114" width="355" height="16"/>
                     <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My薬局として登録した薬局の店舗にあるQRコードを読み取ることでMy薬局の登録が完了となります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpP-GR-2jO" userLabel="lblUsername">
-                    <rect key="frame" x="10" y="127" width="355" height="57.5"/>
+                    <rect key="frame" x="10" y="137" width="355" height="57.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                 <constraint firstItem="kPM-xy-Utz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="4o6-4v-fRs"/>
                 <constraint firstAttribute="trailing" secondItem="O0W-xS-nWd" secondAttribute="trailing" constant="10" id="Jdu-6w-qKR"/>
                 <constraint firstItem="O0W-xS-nWd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="NMj-pS-iv7"/>
-                <constraint firstItem="kPM-xy-Utz" firstAttribute="top" secondItem="wSQ-uW-JL7" secondAttribute="bottom" id="ZFD-5P-vfU"/>
+                <constraint firstItem="kPM-xy-Utz" firstAttribute="top" secondItem="wSQ-uW-JL7" secondAttribute="bottom" constant="10" id="ZFD-5P-vfU"/>
                 <constraint firstItem="PPo-z6-uUj" firstAttribute="bottom" secondItem="O0W-xS-nWd" secondAttribute="top" constant="-10" id="ZfX-rJ-yJj"/>
                 <constraint firstAttribute="trailing" secondItem="kPM-xy-Utz" secondAttribute="trailing" constant="10" id="gF7-e5-pPk"/>
                 <constraint firstAttribute="trailing" secondItem="wSQ-uW-JL7" secondAttribute="trailing" constant="10" id="ipt-2M-hhy"/>
@@ -97,7 +97,7 @@
                 <constraint firstItem="HpP-GR-2jO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="z9G-Gf-LLB"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <point key="canvasLocation" x="26.5" y="52.5"/>
+            <point key="canvasLocation" x="-633" y="-7"/>
         </view>
     </objects>
 </document>
