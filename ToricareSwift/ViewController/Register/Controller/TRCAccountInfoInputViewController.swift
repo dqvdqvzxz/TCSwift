@@ -260,6 +260,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     }
     
     func doneHeightPicker(){
+        let height1 = heightPicker.selectedRow(inComponent: 0)
+        let height2 = heightPicker.selectedRow(inComponent: 1)
+        self.tfHeight.text = "\(height1).\(height2)"
         self.view.endEditing(true)
     }
     
