@@ -297,6 +297,8 @@
 		684095B21F303B43009F16EA /* TRCTab4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095B01F303B43009F16EA /* TRCTab4ViewController.swift */; };
 		684095B31F303B43009F16EA /* TRCTab4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 684095B11F303B43009F16EA /* TRCTab4ViewController.xib */; };
 		684095B61F3313DB009F16EA /* TRCRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095B51F3313DB009F16EA /* TRCRegisterRequest.swift */; };
+		685892DF1F4EB28B00DD4EDA /* TRCBannerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685892DE1F4EB28B00DD4EDA /* TRCBannerRequest.swift */; };
+		685892E01F4EB28B00DD4EDA /* TRCBannerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685892DE1F4EB28B00DD4EDA /* TRCBannerRequest.swift */; };
 		68BB9ECC1F385F9B009A8454 /* TRCPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BB9ECB1F385F9B009A8454 /* TRCPasswordRequest.swift */; };
 		68BB9ECE1F386B35009A8454 /* TRCEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BB9ECD1F386B35009A8454 /* TRCEmailRequest.swift */; };
 		68BB9ED01F386E80009A8454 /* TRCAccountInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BB9ECF1F386E80009A8454 /* TRCAccountInfoRequest.swift */; };
@@ -475,6 +477,7 @@
 		684095B01F303B43009F16EA /* TRCTab4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCTab4ViewController.swift; sourceTree = "<group>"; };
 		684095B11F303B43009F16EA /* TRCTab4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCTab4ViewController.xib; sourceTree = "<group>"; };
 		684095B51F3313DB009F16EA /* TRCRegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCRegisterRequest.swift; sourceTree = "<group>"; };
+		685892DE1F4EB28B00DD4EDA /* TRCBannerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCBannerRequest.swift; sourceTree = "<group>"; };
 		68BB9ECB1F385F9B009A8454 /* TRCPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPasswordRequest.swift; sourceTree = "<group>"; };
 		68BB9ECD1F386B35009A8454 /* TRCEmailRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCEmailRequest.swift; sourceTree = "<group>"; };
 		68BB9ECF1F386E80009A8454 /* TRCAccountInfoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCAccountInfoRequest.swift; sourceTree = "<group>"; };
@@ -767,6 +770,7 @@
 				68F07DB61F3D6A5900E1934C /* TRCUserLeaveRequest.swift */,
 				1757AF381F4151FA00F340D6 /* TRCMessageRequest.swift */,
 				17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */,
+				685892DE1F4EB28B00DD4EDA /* TRCBannerRequest.swift */,
 			);
 			path = ServerAdapter;
 			sourceTree = "<group>";
@@ -1460,6 +1464,7 @@
 				17C98F9A1F3BFAE8003AF863 /* TRCPasscodeLockInputViewController.swift in Sources */,
 				17C98F9B1F3BFAE8003AF863 /* TRCMyPharmacyDetailViewController.swift in Sources */,
 				17C98F9C1F3BFAE8003AF863 /* TRCForgotPasswordSentViewController.swift in Sources */,
+				685892E01F4EB28B00DD4EDA /* TRCBannerRequest.swift in Sources */,
 				17C98F9D1F3BFAE8003AF863 /* TRCPharmacyRequest.swift in Sources */,
 				17BC58531F4E81190024950B /* TRCNotificationPharmacy.swift in Sources */,
 				17C98F9E1F3BFAE8003AF863 /* TRCSearchLocationPageView.swift in Sources */,
@@ -1575,6 +1580,7 @@
 				17BC58471F4E7DA70024950B /* TRCNotificationTableViewCell.swift in Sources */,
 				1757AF391F4151FA00F340D6 /* TRCMessageRequest.swift in Sources */,
 				68BB9ED01F386E80009A8454 /* TRCAccountInfoRequest.swift in Sources */,
+				685892DF1F4EB28B00DD4EDA /* TRCBannerRequest.swift in Sources */,
 				3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */,
 				68F07DA81F3AF05700E1934C /* TRCGoal.swift in Sources */,
 				3F55B5091F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -158,9 +158,9 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMB-5z-3fa">
-                    <rect key="frame" x="10" y="613" width="355" height="44"/>
+                    <rect key="frame" x="10" y="140" width="355" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="KWZ-QL-TL1"/>
+                        <constraint firstAttribute="height" constant="44" id="l2q-Cc-P9S"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                     <connections>
@@ -170,15 +170,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ZMB-5z-3fa" secondAttribute="trailing" constant="10" id="4A5-Fd-bES"/>
                 <constraint firstItem="cJy-ne-M26" firstAttribute="width" secondItem="QOm-fe-m0S" secondAttribute="width" multiplier="35%" id="Bkv-kO-6KP"/>
                 <constraint firstAttribute="trailing" secondItem="Kb3-nO-JKA" secondAttribute="trailing" id="DDa-An-Q1O"/>
-                <constraint firstAttribute="bottom" secondItem="ZMB-5z-3fa" secondAttribute="bottom" constant="10" id="IJp-fb-8lX"/>
+                <constraint firstItem="ZMB-5z-3fa" firstAttribute="top" secondItem="cJy-ne-M26" secondAttribute="bottom" constant="10" id="QhL-Bv-BWn"/>
+                <constraint firstItem="ZMB-5z-3fa" firstAttribute="leading" secondItem="QOm-fe-m0S" secondAttribute="leading" constant="10" id="Qzu-Qi-PFA"/>
                 <constraint firstItem="cJy-ne-M26" firstAttribute="top" secondItem="QOm-fe-m0S" secondAttribute="top" constant="10" id="UQe-Mo-H5f"/>
-                <constraint firstItem="ZMB-5z-3fa" firstAttribute="leading" secondItem="QOm-fe-m0S" secondAttribute="leading" constant="10" id="cvv-Sp-KfM"/>
                 <constraint firstItem="Kb3-nO-JKA" firstAttribute="width" secondItem="QOm-fe-m0S" secondAttribute="width" multiplier="65%" id="f5F-72-31F"/>
                 <constraint firstItem="Kb3-nO-JKA" firstAttribute="top" secondItem="QOm-fe-m0S" secondAttribute="top" constant="10" id="m4L-jm-4OY"/>
                 <constraint firstItem="cJy-ne-M26" firstAttribute="leading" secondItem="QOm-fe-m0S" secondAttribute="leading" id="oPe-j1-EDq"/>
+                <constraint firstAttribute="trailing" secondItem="ZMB-5z-3fa" secondAttribute="trailing" constant="10" id="vgn-V6-6l2"/>
             </constraints>
             <point key="canvasLocation" x="258" y="-36"/>
         </view>
@@ -196,7 +196,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT6-bM-ttp">
-                    <rect key="frame" x="10" y="613" width="355" height="44"/>
+                    <rect key="frame" x="10" y="60" width="355" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="ebG-39-z5g"/>
                     </constraints>
@@ -211,8 +211,8 @@
                 <constraint firstItem="qT6-bM-ttp" firstAttribute="leading" secondItem="AdP-3q-mPK" secondAttribute="leading" constant="10" id="1KA-bb-5N8"/>
                 <constraint firstAttribute="trailing" secondItem="qT6-bM-ttp" secondAttribute="trailing" constant="10" id="H5N-X5-K1B"/>
                 <constraint firstItem="EBx-uR-3Kj" firstAttribute="leading" secondItem="AdP-3q-mPK" secondAttribute="leading" constant="10" id="KN0-hJ-2fj"/>
-                <constraint firstAttribute="bottom" secondItem="qT6-bM-ttp" secondAttribute="bottom" constant="10" id="U9q-N6-MyN"/>
                 <constraint firstItem="EBx-uR-3Kj" firstAttribute="top" secondItem="AdP-3q-mPK" secondAttribute="top" constant="20" id="Uji-vx-N3j"/>
+                <constraint firstItem="qT6-bM-ttp" firstAttribute="top" secondItem="EBx-uR-3Kj" secondAttribute="bottom" constant="10" id="bGn-BF-a7O"/>
                 <constraint firstAttribute="trailing" secondItem="EBx-uR-3Kj" secondAttribute="trailing" constant="10" id="d0x-Ob-rSo"/>
             </constraints>
             <point key="canvasLocation" x="780" y="-36"/>
