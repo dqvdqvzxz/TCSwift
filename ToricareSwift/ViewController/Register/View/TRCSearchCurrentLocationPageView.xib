@@ -21,11 +21,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryM-Qh-K1Q" customClass="GMSMapView">
-                    <rect key="frame" x="10" y="10" width="355" height="443"/>
+                    <rect key="frame" x="10" y="10" width="355" height="448"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CF-nf-G3T">
-                    <rect key="frame" x="10" y="463" width="355" height="44"/>
+                    <rect key="frame" x="10" y="468" width="355" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="mhT-i1-49u"/>
                     </constraints>
@@ -42,7 +42,7 @@
                 <constraint firstItem="ryM-Qh-K1Q" firstAttribute="leading" secondItem="ncK-St-k7g" secondAttribute="leading" constant="10" id="HCP-gk-feU"/>
                 <constraint firstItem="ryM-Qh-K1Q" firstAttribute="bottom" secondItem="0CF-nf-G3T" secondAttribute="top" constant="-10" id="KTk-IX-x3q"/>
                 <constraint firstAttribute="trailing" secondItem="ryM-Qh-K1Q" secondAttribute="trailing" constant="10" id="Ofa-ZD-Iuu"/>
-                <constraint firstAttribute="bottom" secondItem="0CF-nf-G3T" secondAttribute="bottom" constant="160" id="Pv1-Sn-S2i"/>
+                <constraint firstAttribute="bottom" secondItem="0CF-nf-G3T" secondAttribute="bottom" constant="155" id="Pv1-Sn-S2i"/>
                 <constraint firstAttribute="trailing" secondItem="0CF-nf-G3T" secondAttribute="trailing" constant="10" id="zxV-Vy-P5R"/>
             </constraints>
             <point key="canvasLocation" x="843" y="463"/>
