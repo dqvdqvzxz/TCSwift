@@ -33,20 +33,11 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 
         configUI()
         
-        _obj.tabController.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = false
     }
     
     //MARK: Config UI

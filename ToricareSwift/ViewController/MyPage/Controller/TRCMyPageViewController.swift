@@ -160,6 +160,7 @@ extension TRCMyPageViewController: UICollectionViewDelegate{
         switch (indexPath.item) {
         case 0:
             let vc = TRCAccountInfoInputViewController(nibName: "TRCAccountInfoInputViewController", bundle: nil)
+            vc.hidesBottomBarWhenPushed = true
             _obj.mode = MODE_MYPAGE
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
