@@ -24,4 +24,13 @@ extension UILabel{
             label.textColor = UIColor.init(hexString: textColor!)
         }
     }
+    
+    func makeLineSpacing() {
+        let attrString = NSMutableAttributedString(string: self.text!)
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: self.text!.characters.count))
+        self.text = ""
+        self.attributedText = attrString
+    }
 }

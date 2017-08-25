@@ -15,6 +15,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     @IBOutlet weak var lblRegisterDone: UILabel!
     @IBOutlet weak var lblPharmacyNotDone: UILabel!
     @IBOutlet weak var lblTakeQRCode: UILabel!
+    @IBOutlet weak var constraintTopPharmacyNotDone: NSLayoutConstraint!
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -41,10 +42,11 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     
     func configMode(){
         if(_obj.mode == MODE_SKIP){
-            lblPharmacyNotDone.labelStyle(title: Localizable(value: "please_register_pharmacy_later"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
+            lblPharmacyNotDone.labelStyle(title: Localizable(value: "please_register_pharmacy_later"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_COLOR)
             lblPharmacyNotDone.lineBreakMode = .byWordWrapping
             lblPharmacyNotDone.numberOfLines = 0
-            
+            lblPharmacyNotDone.makeLineSpacing()
+            constraintTopPharmacyNotDone.constant = 10
             lblTakeQRCode.isHidden = true
             
             btnQRCode.isHidden = true
