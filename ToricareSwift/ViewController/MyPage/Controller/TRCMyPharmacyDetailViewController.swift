@@ -172,7 +172,6 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             lblWorkScheduleResult.labelStyle(title: nil)
             lblWorkScheduleDayOffResult.labelStyle(title: nil)
             lblDayOffResult.labelStyle(title: nil)
-            lblWebsiteResult.labelStyle(title: nil)
             
             lblPharmacyName.text = pharmacyData.name
             lblAddressResult.text = pharmacyData.address1 + " " + pharmacyData.address2
@@ -180,13 +179,34 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             lblWorkScheduleResult.text = pharmacyData.businessHours
             lblWorkScheduleDayOffResult.text = pharmacyData.holiday
             lblDayOffResult.text = pharmacyData.holiday
-            lblWebsiteResult.text = pharmacyData.url
+            lblWebsiteResult.labelStyle(title: pharmacyData.url, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: URL_COLOR)
+            
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openURL))
+            lblWebsiteResult.gestureRecognizers = [tapGesture]
+            lblWebsiteResult.isUserInteractionEnabled = true
+            
             let imageCount = pharmacyData.images.count
+            if (imageCount == 0 || imageCount == 1) {
+                imgNext.isHidden = true
+                imgBack.isHidden = true
+            }
+            
             if (imageCount > 0) {
                 setPharmacyImage(urlString: pharmacyData.images[0].origin)
             }
         } else {
             
+        }
+    }
+    
+    func openURL() {
+        if (pharmacyData != nil) {
+            let url = URL(string: pharmacyData.url)!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
         }
     }
     
