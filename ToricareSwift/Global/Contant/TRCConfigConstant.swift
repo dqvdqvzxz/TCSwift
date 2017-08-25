@@ -103,3 +103,6 @@ let WHITE_COLOR = "ffffff"
 let ERROR_COLOR = "ff2d55"
 
 let PAGING_NUMBER = 30
+
+let URL_COLOR = "007aff"
+
