@@ -136,6 +136,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
         if(_obj.mode == MODE_REGISTER){
             contraintBottomBtnChange.constant = 54
             btnNext.buttonStyle(title: STRING_NEXT)
+            self.navigationItem.setHidesBackButton(true, animated: false)
         }else if(_obj.mode == MODE_MYPAGE){
             self.navigationItem.hidesBackButton = false
             btnNext.buttonStyle(title: "変更を保存")
