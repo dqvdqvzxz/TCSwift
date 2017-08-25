@@ -101,6 +101,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     //MARK: Action
     func skipAction(){
         let vc = TRCUserRegistCompleteViewController(nibName: "TRCUserRegistCompleteViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         _obj.mode = MODE_SKIP
         let navController = UINavigationController(rootViewController: vc)
         UIApplication.shared.keyWindow?.rootViewController = navController
