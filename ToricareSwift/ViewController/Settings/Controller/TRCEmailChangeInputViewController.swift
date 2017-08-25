@@ -14,6 +14,7 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
     @IBOutlet weak var lblCurrentEmailResult: UILabel!
     @IBOutlet weak var lblNewEmail: UILabel!
     @IBOutlet weak var lblConfirmNewEmail: UILabel!
+    @IBOutlet weak var lblInform: UILabel!
     
     @IBOutlet var viewLine: UIView!
     
@@ -36,7 +37,7 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
 
     //MARK: Config UI
     func configUI(){
-        //navigation
+        //navigation 
         self.navigationItem.title = STRING_SETTING_EMAIL_CHANGE
         
         //UI of outlet
@@ -44,6 +45,11 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
         lblCurrentEmailResult.labelStyle(title: _obj.objectAccountInfo.email, fontSize: LABEL_FONT_SIZE, textColor: MAIN_COLOR)
         lblNewEmail.labelStyle(title: Localizable(value: "new_mail"))
         lblConfirmNewEmail.labelStyle(title: Localizable(value: "new_mail_confirm"))
+        lblInform.labelStyle(title: Localizable(value: "inform_change_email"))
+        lblInform.labelStyle(title: Localizable(value: "inform_change_email"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_GREY_COLOR)
+        lblInform.lineBreakMode = .byWordWrapping
+        lblInform.numberOfLines = 0
+        lblInform.makeLineSpacing()
         
         tfNewEmail.textFieldStyle(placeHolder: "")
         tfConfirmNewEmail.textFieldStyle(placeHolder: "")

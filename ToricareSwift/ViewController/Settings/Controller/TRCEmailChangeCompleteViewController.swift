@@ -43,6 +43,9 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
         lblMailSent3.lineBreakMode = .byWordWrapping
         lblMailSent3.numberOfLines = 0
         
+        lblMailSent2.makeLineSpacing()
+        lblMailSent3.makeLineSpacing()
+        
         btnBackToMyPage.buttonStyle(title: Localizable(value: "back_to_top"))
     }
     

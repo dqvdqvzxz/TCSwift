@@ -215,6 +215,11 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         UserDefaults.removeUD(SEARCH_LAT)
         UserDefaults.removeUD(SEARCH_LON)
         UserDefaults.removeUD(SEARCH_KEYWORD)
+        
+        UserDefaults.saveUD(prefectureId, SEARCH_PREFECTURE)
+        UserDefaults.saveUD(self.tfAddress.text!, SEARCH_PREFECTURE_NAME)
+        UserDefaults.saveUD(cityId, SEARCH_TOWN)
+        UserDefaults.saveUD(self.tfSubAddress.text!, SEARCH_TOWN_NAME)
 
         if(_obj.mode == MODE_MYPAGE){
             if (delegate != nil) {
