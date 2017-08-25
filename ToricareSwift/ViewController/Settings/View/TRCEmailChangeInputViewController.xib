@@ -79,7 +79,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6s-F7-hit">
-                    <rect key="frame" x="10" y="569" width="355" height="44"/>
+                    <rect key="frame" x="10" y="328" width="355" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="oLA-rg-vyH"/>
                     </constraints>
@@ -114,7 +114,6 @@
                 <constraint firstAttribute="trailing" secondItem="bJv-7Y-Y4C" secondAttribute="trailing" constant="10" id="Uz9-gc-mGX"/>
                 <constraint firstItem="NeL-RJ-nWl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="ejv-bO-rLU"/>
                 <constraint firstItem="YIc-iQ-5i1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="f23-SJ-hk9"/>
-                <constraint firstAttribute="bottom" secondItem="K6s-F7-hit" secondAttribute="bottom" constant="54" id="fQ5-WS-QgQ"/>
                 <constraint firstAttribute="trailing" secondItem="p3c-1H-mGN" secondAttribute="trailing" constant="10" id="j2c-OE-3uz"/>
                 <constraint firstItem="NeL-RJ-nWl" firstAttribute="top" secondItem="r6o-8N-ZVj" secondAttribute="bottom" id="l2w-Ad-zzF"/>
                 <constraint firstItem="9xq-83-N18" firstAttribute="top" secondItem="7I7-Aa-XBe" secondAttribute="bottom" constant="10" id="mpm-kQ-Udi"/>
@@ -123,6 +122,7 @@
                 <constraint firstItem="r6o-8N-ZVj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="qGB-yh-mbo"/>
                 <constraint firstItem="r6o-8N-ZVj" firstAttribute="top" secondItem="9xq-83-N18" secondAttribute="bottom" constant="10" id="qog-xk-9CZ"/>
                 <constraint firstAttribute="trailing" secondItem="r6o-8N-ZVj" secondAttribute="trailing" constant="10" id="sfM-W9-xG6"/>
+                <constraint firstItem="K6s-F7-hit" firstAttribute="top" secondItem="YIc-iQ-5i1" secondAttribute="bottom" constant="20" id="ttB-Zz-wRm"/>
                 <constraint firstItem="bJv-7Y-Y4C" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="v35-6D-9hc"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="52.5"/>

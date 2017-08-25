@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rRk-RR-yoA" userLabel="tblNotify">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chs-og-sZY">
@@ -42,7 +42,7 @@
                 <constraint firstItem="Chs-og-sZY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="cRc-vm-fKQ"/>
                 <constraint firstAttribute="trailing" secondItem="Chs-og-sZY" secondAttribute="trailing" constant="10" id="eyZ-JJ-ufq"/>
                 <constraint firstAttribute="bottom" secondItem="Chs-og-sZY" secondAttribute="bottom" constant="54" id="grm-rS-kHx"/>
-                <constraint firstAttribute="bottom" secondItem="rRk-RR-yoA" secondAttribute="bottom" constant="64" id="p0d-NB-JsQ"/>
+                <constraint firstAttribute="bottom" secondItem="rRk-RR-yoA" secondAttribute="bottom" constant="108" id="p0d-NB-JsQ"/>
                 <constraint firstItem="rRk-RR-yoA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z9w-TA-Xi3"/>
             </constraints>
         </view>

@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-sf-kfX" userLabel="lblBackToMyPage">
-                    <rect key="frame" x="10" y="569" width="355" height="44"/>
+                    <rect key="frame" x="10" y="185.5" width="355" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="0fO-dc-rKQ"/>
                     </constraints>
@@ -57,9 +57,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="HZd-sf-kfX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="0JA-gi-mb5"/>
-                <constraint firstAttribute="bottom" secondItem="HZd-sf-kfX" secondAttribute="bottom" constant="54" id="2zT-Pc-oDu"/>
                 <constraint firstAttribute="trailing" secondItem="GBj-r4-pdg" secondAttribute="trailing" constant="10" id="713-RE-P6m"/>
                 <constraint firstAttribute="trailing" secondItem="a0g-ks-sLa" secondAttribute="trailing" constant="10" id="GiB-WX-y8u"/>
+                <constraint firstItem="HZd-sf-kfX" firstAttribute="top" secondItem="a0g-ks-sLa" secondAttribute="bottom" constant="20" id="I2C-j0-YLP"/>
                 <constraint firstItem="L8t-jm-fUf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="K4F-it-jd6"/>
                 <constraint firstItem="a0g-ks-sLa" firstAttribute="top" secondItem="L8t-jm-fUf" secondAttribute="bottom" constant="10" id="WUE-LJ-x1X"/>
                 <constraint firstAttribute="trailing" secondItem="HZd-sf-kfX" secondAttribute="trailing" constant="10" id="aFJ-9J-VqC"/>
