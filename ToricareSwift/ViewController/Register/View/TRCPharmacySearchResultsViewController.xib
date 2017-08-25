@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TRCPharmacySearchResultsViewController" customModule="ToricareSwift" customModuleProvider="target">
             <connections>
+                <outlet property="constraintInformTop" destination="bSi-Xb-Scb" id="Gzx-Rs-uDY"/>
                 <outlet property="lblEmpty" destination="OYe-q9-VZE" id="uLY-6x-yXV"/>
                 <outlet property="lblInform" destination="fHr-gD-9wQ" id="hFw-9K-duA"/>
                 <outlet property="lblKeyword" destination="2aT-W6-0xH" id="niZ-8M-grp"/>

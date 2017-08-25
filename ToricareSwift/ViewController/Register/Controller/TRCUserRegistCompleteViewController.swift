@@ -36,10 +36,10 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     //MARK: Config UI 
     func configUI(){
         //navigation
-        self.navigationItem.title = Localizable(value: "register_complete_title")
+        self.navigationItem.title = _obj.mode == MODE_REGISTER_MYPAGE ? Localizable(value: "my_pharmacy_setting") : Localizable(value: "register_complete_title")
 
         //UI of outlet
-        lblRegisterDone.labelStyle(title: Localizable(value: "register_member_complete"))
+        lblRegisterDone.labelStyle(title: _obj.mode == MODE_REGISTER_MYPAGE ? Localizable(value: "select_pharmacy_done") : Localizable(value: "register_member_complete"))
         
         configMode()
     }
@@ -57,14 +57,14 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
             btnUsingApp.buttonStyle(title: Localizable(value: "use_app"))
         }else if(_obj.mode == MODE_REGISTER_MYPAGE){
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "my_pharmacy_register_not_done"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
-            lblTakeQRCode.labelStyle(title: Localizable(value: "take_qrcode_label"))
-            
+            lblTakeQRCode.labelStyle(title: Localizable(value: "pharmacy_register_done"))
+            lblTakeQRCode.makeLineSpacing()
             btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
             btnUsingApp.buttonStyle(title: Localizable(value: "back_to_mypage"))
         }else{
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "my_pharmacy_register_not_done"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
             lblTakeQRCode.labelStyle(title: Localizable(value: "take_qrcode_label"))
-            
+            lblTakeQRCode.makeLineSpacing()
             btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
             btnUsingApp.buttonStyle(title: Localizable(value: "use_app"))
         }
