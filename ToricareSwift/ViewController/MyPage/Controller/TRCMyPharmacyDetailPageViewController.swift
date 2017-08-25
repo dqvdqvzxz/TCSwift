@@ -132,6 +132,7 @@ extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacyDetailViewControll
     
     func pushtoQRCodeView(_ mode: String) {
         let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         vc.mode = mode
         self.configPageBackButton()
         _obj.nc5.pushViewController(vc, animated: true)

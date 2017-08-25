@@ -34,6 +34,8 @@ class TRCMyPageViewController: TRCBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         _obj.nc5.setNavigationBarHidden(true, animated: animated)
         
+        _obj.tabController.tabBar.isHidden = false
+        
         configUI()
     }
 

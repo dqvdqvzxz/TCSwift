@@ -114,6 +114,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
 extension TRCPharmacySearchViewController: TRCSearchTextPageViewDelegate {
     func pushTextToSearchResult(_ mode: String) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.configPageBackButton()
         if(mode == MODE_MYPAGE){
             _obj.nc5.pushViewController(vc, animated: true)
@@ -127,6 +128,7 @@ extension TRCPharmacySearchViewController: TRCSearchTextPageViewDelegate {
 extension TRCPharmacySearchViewController: TRCSearchLocationPageViewDelegate {
     func pushLocationToSearchResult(_ mode: String) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.configPageBackButton()
         if(mode == MODE_MYPAGE){
             _obj.nc5.pushViewController(vc, animated: true)
@@ -147,6 +149,7 @@ extension TRCPharmacySearchViewController: TRCSearchLocationPageViewDelegate {
 extension TRCPharmacySearchViewController: TRCSearchCurrentLocationPageViewDelegate {
     func pushCurrentLocationToSearchResult(_ mode: String) {
         let vc = TRCPharmacySearchResultsViewController(nibName: "TRCPharmacySearchResultsViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.configPageBackButton()
         if(mode == MODE_MYPAGE){
             _obj.nc5.pushViewController(vc, animated: true)
