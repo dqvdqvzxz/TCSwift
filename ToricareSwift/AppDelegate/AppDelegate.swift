@@ -27,9 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         UserDefaults.resetCommonValue()
+        
         //config UI
         configUI()
+        
         //set device id
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         UserDefaults.saveUD(deviceID, DEVICE_ID)
@@ -79,10 +82,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        //handle schema website
+        if(url.scheme == "tri-care.com"){
+            //delete data
+            UserDefaults.clearValueWhenLogout()
+            _obj.clearObject()
+            
+            //push to pre login
+            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: mainVC)
+            window?.rootViewController = navController
+        }else{
+            //if url.schema is blank
+            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: mainVC)
+            window?.rootViewController = navController
+        }
+        
+        //handle schema facebook
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        
         return handled
     }
-
+    
     
     //MARK: Config UI
     func configUI(){

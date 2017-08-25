@@ -26,6 +26,16 @@
 				<string>fb1936231916645936</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>jp.co.icsol.tricareapp.test</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tricareapp</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>18.0823</string>
