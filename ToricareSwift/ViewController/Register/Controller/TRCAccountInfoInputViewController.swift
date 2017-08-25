@@ -65,20 +65,10 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        _obj.tabController.tabBar.isHidden = true
 
         initValueHeightPicker()
         
         configUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -248,11 +238,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
                 let height2: String = heightSeparated[1]
                 heightPicker.selectRow(Int(height1)!, inComponent: 0, animated: true)
                 heightPicker.selectRow(Int(height2)!, inComponent: 1, animated: true)
-            }else{
-                self.tfHeight.text = "170.0"
             }
-        }else{
-            self.tfHeight.text = "170.0"
         }
         
         heightPicker.tag = 2
