@@ -169,7 +169,7 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                         
                         self.lblError.text = Localizable(value: "passcode_not_match")
                         self.lblError2.text = Localizable(value: "input_again")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             self.lblError.isHidden = true
                             self.lblError2.isHidden = true
                         }
@@ -210,17 +210,19 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                         
                         self.lblError.text = Localizable(value: "passcode_not_match")
                         self.lblError2.text = Localizable(value: "input_again")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             self.lblError.isHidden = true
                             self.lblError2.isHidden = true
                         }
                         
                         self.tfPasscode.text = ""
                         
-                        self.imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
-                        self.imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
-                        self.imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
-                        self.imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        //push to setup
+                        let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+                        vc.mode = MODE_SETUP
+                        self.configBackButton()
+                        _obj.nc5.pushViewController(vc, animated: true)
+
                     }
                 case MODE_CHANGE:
                     //input old passcode
@@ -237,7 +239,7 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                         
                         self.lblError.text = Localizable(value: "passcode_not_match")
                         self.lblError2.text = Localizable(value: "input_again")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             self.lblError.isHidden = true
                             self.lblError2.isHidden = true
                         }
@@ -268,7 +270,7 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                         
                         self.lblError.text = Localizable(value: "passcode_not_match")
                         self.lblError2.text = Localizable(value: "input_again")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             self.lblError.isHidden = true
                             self.lblError2.isHidden = true
                         }
