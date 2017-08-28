@@ -21,6 +21,10 @@ class TRCWebView: TRCBaseViewController, UIWebViewDelegate {
         
         self.navigationItem.title = navTitle
         
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+        
         webView.delegate = self
         if let url = URL(string: webAddress!) {
             let request = URLRequest(url: url)
@@ -31,5 +35,13 @@ class TRCWebView: TRCBaseViewController, UIWebViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func back(sender: UIBarButtonItem) {
+        if(webView.canGoBack){
+            webView.goBack()
+        }else{
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }

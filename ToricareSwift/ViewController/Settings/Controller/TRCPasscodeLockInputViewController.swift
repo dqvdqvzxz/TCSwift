@@ -235,10 +235,9 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                         _obj.nc5.pushViewController(vc, animated: true)
                     }else{
                         self.lblError.isHidden = false
-                        self.lblError2.isHidden = false
+                        self.lblError2.isHidden = true
                         
-                        self.lblError.text = Localizable(value: "passcode_not_match")
-                        self.lblError2.text = Localizable(value: "input_again")
+                        self.lblError.text = Localizable(value: "old_passcode_not_correct")
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             self.lblError.isHidden = true
                             self.lblError2.isHidden = true

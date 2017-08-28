@@ -242,6 +242,7 @@
 "enable_passcode"                       = "パスコードロックを有効にする";
 "change_passcode"                       = "パスコードを変更する";
 "input_passcode"                        = "パスコードロックを入力してください。";
+"old_passcode_not_correct"              = "パスコードが正しくありません。";
 "confirm_passcode"                      = "確認のためもう一度入力してください。";
 "passcode_not_match"                    = "パスコードが一致しません。";
 "input_again"                           = "もう一度入力してください。";
