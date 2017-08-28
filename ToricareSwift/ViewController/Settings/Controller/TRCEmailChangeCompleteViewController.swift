@@ -32,6 +32,7 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
     func configUI(){
         //navigation
         self.navigationItem.title = STRING_SETTING_EMAIL_CHANGE
+        self.navigationItem.hidesBackButton = true
         
         //UI of outlet
         lblMailSent1.labelStyle(title: Localizable(value: "mail_sent_message1"))
@@ -46,7 +47,7 @@ class TRCEmailChangeCompleteViewController: TRCBaseViewController {
         lblMailSent2.makeLineSpacing()
         lblMailSent3.makeLineSpacing()
         
-        btnBackToMyPage.buttonStyle(title: Localizable(value: "back_to_top"))
+        btnBackToMyPage.buttonStyle(title: Localizable(value: "back_to_mypage"))
     }
     
     //MARK: Button Action

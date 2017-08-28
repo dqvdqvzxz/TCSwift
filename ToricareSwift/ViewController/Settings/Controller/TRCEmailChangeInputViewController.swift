@@ -62,9 +62,7 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
         self.showHUD()
         TRCEmailRequest().EmailChange(tfConfirmNewEmail.text!, completion: {(data) in
             self.hideHUD()
-            
             let vc = TRCEmailChangeCompleteViewController(nibName: "TRCEmailChangeCompleteViewController", bundle: nil)
-            self.configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
         }) { (error) in
             self.hideHUD()
