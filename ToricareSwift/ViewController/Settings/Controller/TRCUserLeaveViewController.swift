@@ -86,6 +86,7 @@ class TRCUserLeaveViewController: TRCBaseViewController {
                                       handler: { action in
                                         TRCUserLeaveRequest().deleteAccount(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
                                             let vc = TRCUserLeaveCompleteViewController(nibName: "TRCUserLeaveCompleteViewController", bundle: nil)
+                                            vc.hidesBottomBarWhenPushed = true
                                             _obj.nc5.pushViewController(vc, animated: true)
                                         }, failed: { (error) in
                                             self.hideHUD()
