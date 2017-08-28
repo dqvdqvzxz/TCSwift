@@ -37,4 +37,10 @@ extension UIView{
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
     }
+    
+    func makeRoundRadius() {
+        self.layer.cornerRadius = BUTTON_RADIUS!
+        self.layer.masksToBounds = true
+    }
+
 }

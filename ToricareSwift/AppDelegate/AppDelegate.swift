@@ -117,18 +117,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set theme style
         //        UITabBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
         
-        let currentTheme = UserDefaults.getUD(THEME_COLOR)
-        if (currentTheme != nil) {
-            UINavigationBar.appearance().barTintColor = UIColor.init(hexString: currentTheme as! String)
-        } else {
-            UINavigationBar.appearance().barTintColor = UIColor.init(hexString: MAIN_COLOR)
-        }
+        UINavigationBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
         
-        UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)]
+//        UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)]
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(hexString: BUTTON_TITLE_COLOR)], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: BUTTON_TITLE_COLOR], for: .highlighted)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: MAIN_COLOR], for: .highlighted)
         
         
         //init splash

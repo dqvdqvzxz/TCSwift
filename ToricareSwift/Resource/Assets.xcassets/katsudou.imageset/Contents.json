@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "pin.png",
+      "filename" : "katsudou.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "pin-1.png",
+      "filename" : "katsudou-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "pin-2.png",
+      "filename" : "katsudou-2.png",
       "scale" : "3x"
     }
   ],
