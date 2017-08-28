@@ -15,7 +15,7 @@ class TRCTab2ViewController: UIViewController {
 
         //init tabbar
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.configTabbar2()
+        appDelegate.configTabbar()
         
         //push to home view
         UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
