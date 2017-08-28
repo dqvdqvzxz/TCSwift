@@ -158,22 +158,6 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
                     self.showAlert(error)
                 }
             }
-            
-            self.showHUD()
-            TRCPharmacistRequest().pharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
-                self.hideHUD()
-                
-                let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-                for descView in viewControllers {
-                    if(descView is TRCMyPageViewController){
-                        _obj.nc5.popToViewController(descView, animated: true)
-                    }
-                }
-            }) { (error) in
-                self.hideHUD()
-                ELog(error)
-                self.showAlert(error)
-            }
         }
     }
 }
