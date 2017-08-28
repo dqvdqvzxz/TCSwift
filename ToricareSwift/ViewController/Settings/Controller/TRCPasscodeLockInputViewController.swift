@@ -87,6 +87,12 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
 
             if(modeChange == MODE_SETUP_NEW){
                 lblTitle.labelStyle(title: Localizable(value: "input_new_passcode"))
+                self.navigationItem.title = Localizable(value: "input_passcode_new_title")
+                
+                //customize close button
+                self.navigationItem.hidesBackButton = true
+                let newBackButton = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.plain, target: self, action: #selector(close(sender:)))
+                self.navigationItem.leftBarButtonItem = newBackButton
             }else{
                 lblTitle.labelStyle(title: Localizable(value: "input_passcode"))
             }
@@ -105,6 +111,16 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
         default:
             break
         }
+    }
+    
+    func close(sender: UIBarButtonItem) {
+        let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+        for descView in viewControllers {
+            if(descView is TRCPasscodeLockSettingViewController){
+                _obj.nc5.popToViewController(descView, animated: true)
+            }
+        }
+
     }
     
     //MARK: Action

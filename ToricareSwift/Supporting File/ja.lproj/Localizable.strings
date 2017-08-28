@@ -162,6 +162,7 @@
 "point_history"                         = "ポイント履歴";
 "point_use"                             = "ポイントを利用する";
 "point_about"                           = "ポイントサービスについて";
+"back_qr"                               = "閉じる";
 
 //Reset pass
 "reset_password"                        = "パスワード再設定";
@@ -241,7 +242,8 @@
 "input_current_passcode"                = "現在のパスコードを入力してください。 ";
 "input_new_passcode"                    = "新しいパスコードを入力してください。";
 "change_passcode_title"                 = "パスコード変更";
-"input_passcode_title" = "パスコード入力";
+"input_passcode_title"                  = "パスコード入力";
+"input_passcode_new_title"              = "パスコード変更";
 
 "passcode_login_title"                  = "パスコードを入力してください。";
 "passcode_login_guide"                  = "パスコードを忘れた方はこちら";

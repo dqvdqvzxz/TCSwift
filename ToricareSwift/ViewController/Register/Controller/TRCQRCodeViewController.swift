@@ -38,17 +38,33 @@ class TRCQRCodeViewController: TRCBaseViewController {
         
         _obj.tabController.tabBar.isHidden = true
     }
+    
     //MARK: Config UI
-
     func configUI() {
         self.navigationItem.title = Localizable(value: "qr_title")
         
         _obj.tabController.tabBar.isHidden = true
+        
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: Localizable(value: "back_qr"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(close(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+
 
         lblGuide.labelStyle(title: Localizable(value: "guide_qr_code"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
         btnCancel.buttonStyle(title: STRING_CANCEL, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: ERROR_COLOR, radius: BUTTON_RADIUS, backgroundColor: ERROR_COLOR)
         
         btnCancel.addTarget(self, action: #selector(btnCancelDidTap), for: UIControlEvents.touchUpInside)
+    }
+    
+    //MARK: Action
+    func close(sender: UIBarButtonItem) {
+        let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+        for descView in viewControllers {
+            if(descView is TRCPasscodeLockSettingViewController){
+                _obj.nc5.popToViewController(descView, animated: true)
+            }
+        }
+        
     }
     
     //MARK: Config scan code view
