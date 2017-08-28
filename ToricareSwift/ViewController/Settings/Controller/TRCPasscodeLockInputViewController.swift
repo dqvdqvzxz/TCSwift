@@ -77,35 +77,36 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
     }
     
     func configMode(){
+        
+        //customize close button
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: Localizable(value: "back_passcode"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(close(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+        
         switch (mode) {
         case MODE_LOGIN:
-            self.navigationItem.title = Localizable(value: "input_passcode_title")
+            self.navigationItem.title = Localizable(value: "input_passcode_nav")
             
             lblTitle.labelStyle(title: Localizable(value: "input_passcode"))
         case MODE_SETUP:
-            self.navigationItem.title = Localizable(value: STRING_SETTING_PASSCODE)
+            self.navigationItem.title = Localizable(value: "input_passcode_nav")
 
             if(modeChange == MODE_SETUP_NEW){
                 lblTitle.labelStyle(title: Localizable(value: "input_new_passcode"))
-                self.navigationItem.title = Localizable(value: "input_passcode_new_title")
-                
-                //customize close button
-                self.navigationItem.hidesBackButton = true
-                let newBackButton = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.plain, target: self, action: #selector(close(sender:)))
-                self.navigationItem.leftBarButtonItem = newBackButton
+                self.navigationItem.title = Localizable(value: "input_passcode_nav")
             }else{
                 lblTitle.labelStyle(title: Localizable(value: "input_passcode"))
             }
         case MODE_CONFIRM:
-            self.navigationItem.title = Localizable(value: STRING_SETTING_PASSCODE)
+            self.navigationItem.title = Localizable(value: "input_passcode_nav")
 
             lblTitle.labelStyle(title: Localizable(value: "confirm_passcode"))
         case MODE_CHANGE:
-            self.navigationItem.title = Localizable(value: "change_passcode_title")
+            self.navigationItem.title = Localizable(value: "input_passcode_nav")
 
             lblTitle.labelStyle(title: Localizable(value: "input_current_passcode"))
         case MODE_REMOVE:
-            self.navigationItem.title = Localizable(value: STRING_SETTING_PASSCODE)
+            self.navigationItem.title = Localizable(value: "input_passcode_nav")
 
             lblTitle.labelStyle(title: Localizable(value: "input_passcode"))
         default:
@@ -147,124 +148,142 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_circle")
             
-            let passcodeString = tfPasscode.text
-            
-            switch (mode) {
-            case MODE_LOGIN:
-                let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
-                if(passcodeString == oldPasscode){
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.configTabbar()
-
-                    UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                        UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-                    }, completion: { completed in
-                        // maybe do something here
-                    })
-                }else{
-                    lblError.isHidden = false
-                    lblError2.isHidden = false
-                    
-                    lblError.text = Localizable(value: "passcode_not_match")
-                    lblError2.text = Localizable(value: "input_again")
-                    
-                    tfPasscode.text = ""
-                    
-                    imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
-                }
-            case MODE_SETUP:
-                //save to dic
-                _obj.dicPasscode.updateValue(passcodeString!, forKey: DIC_PASSCODE)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                let passcodeString = self.tfPasscode.text
                 
-                //push to confirm
-                let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
-                vc.mode = MODE_CONFIRM
-                configBackButton()
-                _obj.nc5.pushViewController(vc, animated: true)
-            case MODE_CONFIRM:
-                //compare passcode
-                if(passcodeString == _obj.dicPasscode[DIC_PASSCODE]){
-                    
-                    //save to userdefault
-                    UserDefaults.saveUD(passcodeString, PASSCODE)
-                    
-                    //pop to setting passcode
-                    let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-                    for descView in viewControllers {
-                        if(descView is TRCPasscodeLockSettingViewController){
-                            _obj.nc5.popToViewController(descView, animated: true)
+                switch (self.mode) {
+                case MODE_LOGIN:
+                    let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
+                    if(passcodeString == oldPasscode){
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.configTabbar()
+                        
+                        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                        }, completion: { completed in
+                            // maybe do something here
+                        })
+                    }else{
+                        self.lblError.isHidden = false
+                        self.lblError2.isHidden = false
+                        
+                        self.lblError.text = Localizable(value: "passcode_not_match")
+                        self.lblError2.text = Localizable(value: "input_again")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            self.lblError.isHidden = true
+                            self.lblError2.isHidden = true
                         }
+                        
+                        self.tfPasscode.text = ""
+                        
+                        self.imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
                     }
-                }else{
-                    lblError.isHidden = false
-                    lblError2.isHidden = false
+                case MODE_SETUP:
+                    //save to dic
+                    _obj.dicPasscode.updateValue(passcodeString!, forKey: DIC_PASSCODE)
                     
-                    lblError.text = Localizable(value: "passcode_not_match")
-                    lblError2.text = Localizable(value: "input_again")
-                    
-                    tfPasscode.text = ""
-                    
-                    imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
-                }
-            case MODE_CHANGE:
-                //input old passcode
-                let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
-                if(passcodeString == oldPasscode){
+                    //push to confirm
                     let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
-                    vc.mode = MODE_SETUP
-                    vc.modeChange = MODE_SETUP_NEW
-                    configBackButton()
+                    vc.mode = MODE_CONFIRM
+                    self.configBackButton()
                     _obj.nc5.pushViewController(vc, animated: true)
-                }else{
-                    lblError.isHidden = false
-                    lblError2.isHidden = false
-                    
-                    lblError.text = Localizable(value: "passcode_not_match")
-                    lblError2.text = Localizable(value: "input_again")
-                    
-                    tfPasscode.text = ""
-                    
-                    imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
-                }
-            case MODE_REMOVE:
-                let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
-                if(passcodeString == oldPasscode){
-                    //remove from userdefault
-                    UserDefaults.removeUD(PASSCODE)
-                    
-                    //pop to setting passcode
-                    let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-                    for descView in viewControllers {
-                        if(descView is TRCPasscodeLockSettingViewController){
-                            _obj.nc5.popToViewController(descView, animated: true)
+                case MODE_CONFIRM:
+                    //compare passcode
+                    if(passcodeString == _obj.dicPasscode[DIC_PASSCODE]){
+                        
+                        //save to userdefault
+                        UserDefaults.saveUD(passcodeString, PASSCODE)
+                        
+                        //pop to setting passcode
+                        let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                        for descView in viewControllers {
+                            if(descView is TRCPasscodeLockSettingViewController){
+                                _obj.nc5.popToViewController(descView, animated: true)
+                            }
                         }
+                    }else{
+                        self.lblError.isHidden = false
+                        self.lblError2.isHidden = false
+                        
+                        self.lblError.text = Localizable(value: "passcode_not_match")
+                        self.lblError2.text = Localizable(value: "input_again")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            self.lblError.isHidden = true
+                            self.lblError2.isHidden = true
+                        }
+                        
+                        self.tfPasscode.text = ""
+                        
+                        self.imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
                     }
-                }else{
-                    lblError.isHidden = false
-                    lblError2.isHidden = false
-                    
-                    lblError.text = Localizable(value: "passcode_not_match")
-                    lblError2.text = Localizable(value: "input_again")
-                    
-                    tfPasscode.text = ""
-                    
-                    imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
-                    imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
+                case MODE_CHANGE:
+                    //input old passcode
+                    let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
+                    if(passcodeString == oldPasscode){
+                        let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+                        vc.mode = MODE_SETUP
+                        vc.modeChange = MODE_SETUP_NEW
+                        self.configBackButton()
+                        _obj.nc5.pushViewController(vc, animated: true)
+                    }else{
+                        self.lblError.isHidden = false
+                        self.lblError2.isHidden = false
+                        
+                        self.lblError.text = Localizable(value: "passcode_not_match")
+                        self.lblError2.text = Localizable(value: "input_again")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            self.lblError.isHidden = true
+                            self.lblError2.isHidden = true
+                        }
+                        
+                        self.tfPasscode.text = ""
+                        
+                        self.imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
+                    }
+                case MODE_REMOVE:
+                    let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
+                    if(passcodeString == oldPasscode){
+                        //remove from userdefault
+                        UserDefaults.removeUD(PASSCODE)
+                        
+                        //pop to setting passcode
+                        let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                        for descView in viewControllers {
+                            if(descView is TRCPasscodeLockSettingViewController){
+                                _obj.nc5.popToViewController(descView, animated: true)
+                            }
+                        }
+                    }else{
+                        self.lblError.isHidden = false
+                        self.lblError2.isHidden = false
+                        
+                        self.lblError.text = Localizable(value: "passcode_not_match")
+                        self.lblError2.text = Localizable(value: "input_again")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            self.lblError.isHidden = true
+                            self.lblError2.isHidden = true
+                        }
+                        self.tfPasscode.text = ""
+                        
+                        self.imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
+                        self.imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
+                    }
+                default:
+                    break
                 }
-            default:
-                break
             }
+            
         default:
             imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
             imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")

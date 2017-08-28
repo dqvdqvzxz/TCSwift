@@ -78,7 +78,6 @@
 "setting_other_services"                = "Linked Services";
 "setting_notify"                        = "Notification";
 "setting_passcode"                      = "Passcode Lock";
-"setting_passcode_title"                = "パスコードロック設定";
 "setting_theme"                         = "Theme Color";
 "about_app"                             = "About App";
 "resign"                                = "Resign";
@@ -165,6 +164,8 @@
 "point_about"                           = "Point About";
 "back_qr"                               = "閉じる";
 
+"back_passcode"                         = "X 閉じる";
+
 //Reset pass
 "reset_password"                        = "Reset Password";
 "reset_password_input"                  = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";
@@ -249,6 +250,7 @@
 "change_passcode_title"                 = "パスコード変更";
 "input_passcode_title"                  = "パスコード入力";
 "input_passcode_new_title"              = "パスコード変更";
+"input_passcode_nav"                    = "パスコードロック設定";
 
 
 "passcode_login_title"                  = "パスコードを入力してください。";
