@@ -142,6 +142,10 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     @IBAction func tapBtnChange(_ sender: Any) {
         if(_obj.mode == MODE_REGISTER){
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
+            if (_obj.objectAccountInfo != nil) {
+                vc.pharmacyName = _obj.objectAccountInfo.shopName
+            }
+
             configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(_obj.mode == MODE_MYPAGE){

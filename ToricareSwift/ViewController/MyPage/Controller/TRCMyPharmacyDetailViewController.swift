@@ -275,6 +275,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         
         if (_obj.mode == MODE_REGISTER) {
             let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
+            vc.pharmacyName = pharmacyData.name
+
             configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
         } else if (_obj.mode == MODE_REGISTER_MYPAGE) {

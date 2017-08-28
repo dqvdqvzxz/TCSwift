@@ -24,9 +24,8 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var lblTitleGroupSummary: UILabel!
     @IBOutlet weak var lblStep: UILabel!
     @IBOutlet weak var lblStepUnit: UILabel!
-    @IBOutlet weak var viewImageSummary: UIView!
-    @IBOutlet weak var viewBorderInformSummary: UIView!
     @IBOutlet weak var lblInformSummary: UILabel!
+    @IBOutlet weak var viewBelowLogo: UIView!
     
     @IBOutlet weak var viewBorderExerciseKcal: UIView!
     @IBOutlet weak var viewExerciseKcal: UIView!
@@ -61,6 +60,7 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var viewImageBanner1: UIView!
     @IBOutlet weak var viewBorderBanner2: UIView!
     @IBOutlet weak var viewImageBanner2: UIView!
+    @IBOutlet weak var imgLogoCar: UIImageView!
     
     var goalInfo: TRCGoal!
     
@@ -73,6 +73,8 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var btnMessage: UIButton!
     
     var isRequestUnread = false
+    
+    @IBOutlet weak var notificationPharmacyView: UIView!
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -101,7 +103,12 @@ class TRCHomeViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = STRING_TAB_HOME
+        
+        let logoHome = UIImageView(image: #imageLiteral(resourceName: "logo_home"))
+        logoHome.frame = CGRect(x: 0, y: 0, width: 137, height: 30)
+        logoHome.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = logoHome
+        
         btnMessage.addTarget(self, action: #selector(pushToMessageList), for: .touchUpInside)
         let leftBarButton = UIBarButtonItem(customView: customLeftTab)
         navigationItem.leftBarButtonItem = leftBarButton
@@ -114,31 +121,44 @@ class TRCHomeViewController: TRCBaseViewController {
         navigationItem.rightBarButtonItem = rightBarButton
         
         //UI of outlet
-        lblTitleGroupNotification.labelStyle(title: Localizable(value:  "notify_from_tricare_pharmacy"), fontSize: LABEL_FONT_SIZE! + 2, isBold: true, textColor: LABEL_FONT_COLOR)
+        viewMain.backgroundColor = UIColor.init(hexString: HOME_VIEW_MAIN_COLOR)
+        notificationPharmacyView.backgroundColor = UIColor.init(hexString: HOME_NOTIFICATION_COLOR)
+        viewBelowLogo.backgroundColor = UIColor.init(hexString: HOME_VIEW_BELOW_LOGO_COLOR)
+        
+        viewNotification.makeRoundRadius()
+        notificationPharmacyView.makeRoundRadius()
+        viewSummary.makeRoundRadius()
+        viewExerciseKcal.makeRoundRadius()
+        viewFoodKcal.makeRoundRadius()
+        viewWeight.makeRoundRadius()
+        viewBelowLogo.makeRoundRadius()
+        
+        
+        lblTitleGroupNotification.labelStyle(title: Localizable(value:  "notify_from_tricare_pharmacy"), fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: WHITE_COLOR)
         lblTitleNotification1.labelStyle(title: "6/25(日) 第７回ウォークラリー開催")
         lblTitleNotification2.labelStyle(title: "6/07(水) 毎月第一水曜日健康フェア開催")
         btnMore.titleLabel?.text = Localizable(value: "view_more")
-//        btnMore.buttonStyle(title: Localizable(value: "view_more"), fontSize: BUTTON_FONT_SIZE! - 2, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: MAIN_COLOR)
+        btnMore.setTitleColor(UIColor.init(hexString: WHITE_COLOR), for: .normal)
         
         
         //step
-        lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 20, isBold: true, textColor: HOME_PINK_COLOR)
-        lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE! - 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblInformSummary.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 5, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblTitleGroupSummary.labelStyle(title: Localizable(value: "today_step"), fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblStep.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 25, isBold: true, textColor: HOME_PINK_COLOR)
+        lblStepUnit.labelStyle(title: Localizable(value: "walking"), fontSize: LABEL_FONT_SIZE!, isBold: false, textColor: LABEL_FONT_COLOR)
+        lblInformSummary.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
         
         //exercise calo
-        lblTitleExerciseKcal.labelStyle(title: Localizable(value: "exercise"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblContentExerciseKcal.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: HOME_PINK_COLOR)
+        lblTitleExerciseKcal.labelStyle(title: Localizable(value: "exercise"), fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblContentExerciseKcal.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 10, isBold: true, textColor: HOME_PINK_COLOR)
         lblContentExerciseKcalUnit.labelStyle(title: "Kcal")
         
         //food calo
-        lblTitleFoodKcal.labelStyle(title: Localizable(value: "meal"), fontSize: LABEL_FONT_SIZE! + 2, isBold: false, textColor: LABEL_FONT_COLOR)
-        lblContentFoodKcal.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 10, isBold: false, textColor: HOME_ORANGE_COLOR)
+        lblTitleFoodKcal.labelStyle(title: Localizable(value: "meal"), fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblContentFoodKcal.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 10, isBold: true, textColor: HOME_ORANGE_COLOR)
         lblContentFoodKcalUnit.labelStyle(title: "Kcal")
         
         //weight
-        lblRegisterTodayWeight.labelStyle(title: Localizable(value: "register_today_weight"))
+        lblRegisterTodayWeight.labelStyle(title:  Localizable(value: "register_today_weight"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
         imgViewAccessory.image = #imageLiteral(resourceName: "ic_next")
     }
     
