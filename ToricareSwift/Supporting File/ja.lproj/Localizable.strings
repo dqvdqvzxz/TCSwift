@@ -242,6 +242,10 @@
 "change_passcode_title"                 = "パスコード変更";
 "input_passcode_title" = "パスコード入力";
 
+"passcode_login_title"                  = "パスコードを入力してください。";
+"passcode_login_guide"                  = "パスコードを忘れた方はこちら";
+"passcode_login_guide_msg"              = "パスコードを忘れた場合はアプリをアンインストールして再度インストールしてログインしてください。";
+
 "message_list"                          = "メッセージ一覧";
 
 "name"                                  = "名前 ";
