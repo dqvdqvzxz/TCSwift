@@ -13,7 +13,18 @@ class TRCTab2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //init tabbar
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.configTabbar2()
+        
+        //push to home view
+        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+            _obj.tabController.selectedIndex = 0
+        }, completion: { completed in
+            // maybe do something here
+        })
+
     }
 
     override func didReceiveMemoryWarning() {
