@@ -115,11 +115,10 @@ class TRCPasscodeLockLoginInputViewController: UIViewController {
             
             let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
             if(passcodeString == oldPasscode){
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.configTabbar()
-
                 UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                    UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                    let mainVC = TRCSplashViewController(nibName: "TRCSplashViewController", bundle: nil)
+                    let navController = UINavigationController(rootViewController: mainVC)
+                    UIApplication.shared.keyWindow?.rootViewController = navController
                 }, completion: { completed in
                     // maybe do something here
                 })
