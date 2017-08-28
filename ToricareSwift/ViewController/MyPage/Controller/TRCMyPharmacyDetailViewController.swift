@@ -146,7 +146,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             contraintBottomScrollView.constant = 54
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }else if(_obj.mode == MODE_MYPAGE){
-            contraintBottomScrollView.constant = 110
+            contraintBottomScrollView.constant = 54
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
                 btnPharmacy.buttonStyle(title: Localizable(value: "setting_my_pharmacy"))
             } else {
@@ -156,6 +156,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
                 if (_obj.objectAccountInfo.shopStatus.isBlank || _obj.objectAccountInfo.shopStatus == REGISTER_FALSE) {
                     btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
                     btnQRCode.isHidden = false
+                    contraintBottomScrollView.constant = 110
                 }
             }
         }
