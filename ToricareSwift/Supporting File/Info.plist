@@ -37,10 +37,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>FacebookAppID</key>
-	<string>258562111292141</string>
-	<key>FacebookDisplayName</key>
-	<string>とりけあ-Test</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Fabric</key>
@@ -57,6 +53,10 @@
 			</dict>
 		</array>
 	</dict>
+	<key>FacebookAppID</key>
+	<string>258562111292141</string>
+	<key>FacebookDisplayName</key>
+	<string>とりけあ-Test</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
