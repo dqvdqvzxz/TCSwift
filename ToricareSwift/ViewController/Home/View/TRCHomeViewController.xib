@@ -203,13 +203,13 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpU-cC-M73">
-                                    <rect key="frame" x="10" y="41.5" width="219" height="73.5"/>
+                                    <rect key="frame" x="10" y="41.5" width="237.5" height="73.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu3-fM-Qeh">
-                                    <rect key="frame" x="239" y="41.5" width="116" height="73.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu3-fM-Qeh">
+                                    <rect key="frame" x="257.5" y="41.5" width="97.5" height="73.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -243,7 +243,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="KpU-cC-M73" firstAttribute="width" secondItem="6HV-X6-hoa" secondAttribute="width" multiplier="60%" id="1tP-o0-Pfn"/>
+                                <constraint firstItem="KpU-cC-M73" firstAttribute="width" secondItem="6HV-X6-hoa" secondAttribute="width" multiplier="65%" id="1tP-o0-Pfn"/>
                                 <constraint firstItem="KpU-cC-M73" firstAttribute="height" secondItem="6HV-X6-hoa" secondAttribute="height" multiplier="40%" id="38v-KL-dCF"/>
                                 <constraint firstItem="KpU-cC-M73" firstAttribute="top" secondItem="w6U-kh-JEp" secondAttribute="bottom" id="6dK-Um-BpJ"/>
                                 <constraint firstItem="w6U-kh-JEp" firstAttribute="leading" secondItem="eer-Vd-E0i" secondAttribute="trailing" id="ElE-2w-ODm"/>
