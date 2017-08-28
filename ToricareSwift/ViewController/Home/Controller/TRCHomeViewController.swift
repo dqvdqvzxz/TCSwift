@@ -89,6 +89,8 @@ class TRCHomeViewController: TRCBaseViewController {
         if(_obj.objectGoal != nil){
             self.lblStep.text = String().convertDecimal(_obj.objectGoal.steps)
         }
+        
+        _obj.tabController.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
