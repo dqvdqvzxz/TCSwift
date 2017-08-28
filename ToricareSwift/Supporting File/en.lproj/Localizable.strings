@@ -115,6 +115,7 @@
 "lunch"                                 = "Lunch";
 "dinner"                                = "Dinner";
 "snack"                                 = "Snack";
+"notification_button_change"            = "設定を保存する";
 
 //Passcode Setting
 "enable_passcode"                       = "Enable Passcode";

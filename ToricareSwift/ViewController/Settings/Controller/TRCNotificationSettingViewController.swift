@@ -45,7 +45,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         //navigation
         self.navigationItem.title = STRING_SETTING_NOTIFY
         
-        btnSave.buttonStyle(title: STRING_CHANGE)
+        btnSave.buttonStyle(title: Localizable(value: "notification_button_change"))
         
         //table view
         tblNotify.dataSource = self
@@ -345,8 +345,15 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
 
         self.timePicker.dataSource = self
         self.timePicker.delegate = self
-        
+    
         timePicker.selectRow(15, inComponent: 0, animated: true)
+        
+        let timeResult = currentCell.lblTime.text!
+        let timeSeparated = timeResult.components(separatedBy: ":")
+        let time1: String = timeSeparated[0]
+        let time2: String = timeSeparated[1]
+        timePicker.selectRow(Int(time1)!, inComponent: 0, animated: true)
+        timePicker.selectRow((Int(time2)! / 30), inComponent: 1, animated: true)
         
         switch (indexPath.section) {
         case 0:

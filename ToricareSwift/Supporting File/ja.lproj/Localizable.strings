@@ -116,6 +116,7 @@
 "lunch"                                 = "昼食";
 "dinner"                                = "夕食";
 "snack"                                 = "間食";
+"notification_button_change"            = "設定を保存する";
 
 //Passcode Setting
 "enable_passcode"                       = "パスコードロックを有効にする";
