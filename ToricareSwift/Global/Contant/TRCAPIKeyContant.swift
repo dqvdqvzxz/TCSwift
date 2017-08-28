@@ -8,7 +8,13 @@
 
 import UIKit
 
+//MARK: URL
 let APP_DOMAIN =                    "http://172.16.210.122/api/"
+
+let APP_POLICY =                    "http://172.16.210.122/privacy_policy"
+let APP_FAQ =                       "http://172.16.210.122/faq_list"
+let APP_TERM =                      "http://172.16.210.122/faq_list/1"
+let APP_QUESTION =                  "http://172.16.210.122/rule"
 
 //MARK: API
 let HEADER_AUTHORIZATION =          "Basic dG9yaV9hcHBfaW9zX3Rlc3Q6MmY1YzY5Njc4Mzg4NGIwMmEwNjkxNjNlOWI2ODAzMTI="

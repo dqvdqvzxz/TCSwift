@@ -14,9 +14,13 @@ class TRCWebView: TRCBaseViewController, UIWebViewDelegate {
     
     var webAddress: String?
     
+    var navTitle: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationItem.title = navTitle
+        
         webView.delegate = self
         if let url = URL(string: webAddress!) {
             let request = URLRequest(url: url)

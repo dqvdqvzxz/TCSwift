@@ -50,23 +50,25 @@ extension TRCAboutAppViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TRCAboutAppCell
         
+        cell.accessoryType = .disclosureIndicator
+        
         switch (indexPath.row) {
         case 0:
+            cell.lblTitle.labelStyle(title: Localizable(value: "term_of_service"))
+            cell.lblVersion.isHidden = true
+        case 1:
+            cell.lblTitle.labelStyle(title: Localizable(value: "policy"))
+            cell.lblVersion.isHidden = true
+        case 2:
+            cell.lblTitle.labelStyle(title: Localizable(value: "faq"))
+            cell.lblVersion.isHidden = true
+        case 3:
+            cell.lblTitle.labelStyle(title: Localizable(value: "question"))
+            cell.lblVersion.isHidden = true
+        case 4:
             cell.lblTitle.labelStyle(title: Localizable(value: "app_version"))
             cell.lblVersion.isHidden = false
             cell.lblVersion.text = "1.0.1"
-        case 1:
-            cell.lblTitle.labelStyle(title: Localizable(value: "term_of_service"))
-            cell.lblVersion.isHidden = true
-        case 2:
-            cell.lblTitle.labelStyle(title: Localizable(value: "policy"))
-            cell.lblVersion.isHidden = true
-        case 3:
-            cell.lblTitle.labelStyle(title: Localizable(value: "faq"))
-            cell.lblVersion.isHidden = true
-        case 4:
-            cell.lblTitle.labelStyle(title: Localizable(value: "question"))
-            cell.lblVersion.isHidden = true
         default:
             break
         }
@@ -84,27 +86,31 @@ extension TRCAboutAppViewController: UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: false)
         
         switch (indexPath.row) {
+        case 0:
+            let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
+            vc.navTitle = Localizable(value: "term_of_service")
+            vc.webAddress = APP_TERM
+            configBackButton()
+            hideBar()
+            _obj.nc5.pushViewController(vc, animated: true)
         case 1:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
-            vc.webAddress = "http://172.16.210.122/rule"
+            vc.navTitle = Localizable(value: "policy")
+            vc.webAddress = APP_POLICY
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
-            vc.webAddress = "http://172.16.210.122/privacy_policy"
+            vc.navTitle = Localizable(value: "faq")
+            vc.webAddress = APP_FAQ
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
-            vc.webAddress = "http://172.16.210.122/faq_list"
-            configBackButton()
-            hideBar()
-            _obj.nc5.pushViewController(vc, animated: true)
-        case 4:
-            let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
-            vc.webAddress = "http://172.16.210.122/faq_list/1"
+            vc.navTitle = Localizable(value: "question")
+            vc.webAddress = APP_QUESTION
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
