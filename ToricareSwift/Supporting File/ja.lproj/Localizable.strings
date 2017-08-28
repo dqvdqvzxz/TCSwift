@@ -79,6 +79,7 @@
 "setting_other_services"                = "他サービス連携";
 "setting_notify"                        = "お知らせ通知";
 "setting_passcode"                      = "パスコードロック";
+"setting_passcode_title"                = "パスコードロック設定";
 "setting_theme"                         = "カラーテーマ";
 "about_app"                             = "このアプリについて";
 "resign"                                = "退会";
@@ -234,7 +235,7 @@
 
 //MARK: Setting Passcode
 "enable_passcode"                       = "パスコードロックを有効にする";
-"change_passcode"                       = "パスコード変更する";
+"change_passcode"                       = "パスコードを変更する";
 "input_passcode"                        = "パスコードロックを入力してください。";
 "confirm_passcode"                      = "確認のためもう一度入力してください。";
 "passcode_not_match"                    = "パスコードが一致しません。";

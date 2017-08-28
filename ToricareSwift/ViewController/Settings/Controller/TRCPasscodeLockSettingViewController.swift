@@ -34,7 +34,7 @@ class TRCPasscodeLockSettingViewController: TRCBaseViewController {
     //MARK: Config UI
     func configUI(){
         //navigation
-        self.navigationItem.title = STRING_SETTING_PASSCODE
+        self.navigationItem.title = Localizable(value: "setting_passcode_title")
         
         //UI
         if(UserDefaults.getUD(PASSCODE) != nil){

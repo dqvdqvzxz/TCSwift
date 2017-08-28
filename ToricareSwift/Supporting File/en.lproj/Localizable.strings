@@ -78,6 +78,7 @@
 "setting_other_services"                = "Linked Services";
 "setting_notify"                        = "Notification";
 "setting_passcode"                      = "Passcode Lock";
+"setting_passcode_title"                = "パスコードロック設定";
 "setting_theme"                         = "Theme Color";
 "about_app"                             = "About App";
 "resign"                                = "Resign";
@@ -238,7 +239,7 @@
 
 //MARK: Setting Passcode
 "enable_passcode"                       = "パスコードロックを有効にする";
-"change_passcode"                       = "パスコード変更する";
+"change_passcode"                       = "パスコードを変更する";
 "input_passcode"                        = "パスコードロックを入力してください。";
 "confirm_passcode"                      = "確認のためもう一度入力してください。";
 "passcode_not_match"                    = "パスコードが一致しません。";
@@ -248,6 +249,7 @@
 "change_passcode_title"                 = "パスコード変更";
 "input_passcode_title"                  = "パスコード入力";
 "input_passcode_new_title"              = "パスコード変更";
+
 
 "passcode_login_title"                  = "パスコードを入力してください。";
 "passcode_login_guide"                  = "パスコードを忘れた方はこちら";
