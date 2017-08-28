@@ -29,6 +29,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
     @IBOutlet weak var btnPharmacistInput: UIButton!
     
     var dataResult = NSDictionary()
+    var pharmacyName = ""
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -64,7 +65,7 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             let attrs1 = [NSForegroundColorAttributeName : UIColor.init(hexString: LABEL_FONT_COLOR)]
             let attrs2 = [NSForegroundColorAttributeName : UIColor.init(hexString: LABEL_FONT_GREY_COLOR)]
             
-            let attributedString1 = NSMutableAttributedString(string:"薬局 \nサンドラッグ赤堤薬局 ", attributes:attrs1)
+            let attributedString1 = NSMutableAttributedString(string:"薬局 \n\(pharmacyName) ", attributes:attrs1)
             let attributedString2 = NSMutableAttributedString(string:"\n※変更できません。", attributes:attrs2)
             
             attributedString1.append(attributedString2)
