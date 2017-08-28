@@ -81,6 +81,11 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
         lblMail.labelStyle(title: Localizable(value: "mail_address"))
         lblMemo.labelStyle(title: Localizable(value: "memo"))
         
+        lblNameValue.labelStyle()
+        lblPhoneValue.labelStyle()
+        lblMailValue.labelStyle()
+        lblMemoValue.labelStyle()
+        
         lblNoData.labelStyle(title: Localizable(value: "my_pharmacist_did_not_set"))
         
         lblNoPharmacy.labelStyle(title: Localizable(value: "my_pharmacist_did_not_set"))
