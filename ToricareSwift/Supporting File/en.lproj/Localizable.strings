@@ -281,6 +281,12 @@
 
 "loading"                               = "Loading...";
 
+//MARK: VALIDATE CHANGE EMAIL
+"please_input_change_email"             = "新しいメールアドレスを入力してください。";
+"please_input_change_confirm_email"     = "新しいメールアドレス（確認）を入力してください。";
+"please_input_correct_email_type"       = "正しいメールアドレスを入力してください。";
+"email_change_did_not_match"            = "入力したメールアドレスと確認用のメールアドレスが一致しません。";
+
 //MARK: VALIDATE MESSAGE
 "please_input_mail"                     = "メールアドレスを入力してください。";
 "please_input_validate_mail"            = "正しいメールアドレスを入力してください。";

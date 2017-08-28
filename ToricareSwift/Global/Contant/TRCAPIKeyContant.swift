@@ -9,7 +9,7 @@
 import UIKit
 
 //MARK: URL
-let APP_DOMAIN =                    "http://172.16.210.122/api/"
+let APP_DOMAIN =                    "http://172.16.210.122/api/v1/"
 
 let APP_POLICY =                    "http://172.16.210.122/privacy_policy"
 let APP_FAQ =                       "http://172.16.210.122/faq_list"

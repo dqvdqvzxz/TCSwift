@@ -59,6 +59,41 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnConfirm(_ sender: Any) {
+        validate()
+    }
+    
+    //MARK: Validate
+    func validate(){
+        if (tfNewEmail.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_change_email"))
+            return
+        }
+        if !(tfNewEmail.text?.isEmail)! {
+            self.showAlert(Localizable(value: "please_input_correct_email_type"))
+            return
+        }
+        
+        
+        if (tfConfirmNewEmail.text?.isBlank)! {
+            self.showAlert(Localizable(value: "please_input_change_confirm_email"))
+            return
+        }
+        if (tfConfirmNewEmail.text?.isEmail)! {
+            self.showAlert(Localizable(value: "please_input_correct_email_type"))
+            return
+        }
+
+        
+        if (tfNewEmail.text != tfConfirmNewEmail.text) {
+            self.showAlert(Localizable(value: "email_change_did_not_match"))
+            return
+        }
+        
+        changeEmail()
+    }
+    
+    //MARK: Change email
+    func changeEmail(){
         self.showHUD()
         TRCEmailRequest().EmailChange(tfConfirmNewEmail.text!, completion: {(data) in
             self.hideHUD()
