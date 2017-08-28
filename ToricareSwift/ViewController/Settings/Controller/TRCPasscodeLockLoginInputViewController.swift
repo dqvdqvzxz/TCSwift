@@ -55,6 +55,14 @@ class TRCPasscodeLockLoginInputViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         //UI
+        lblTitle.labelStyle(title: Localizable(value: "passcode_login_title"))
+        lblGuilde.labelStyle(title: Localizable(value: "passcode_login_guide"))
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showGuide(_:)))
+        lblGuilde.isUserInteractionEnabled = true
+        lblGuilde.addGestureRecognizer(tap)
+        
+        //passcode input
         self.view.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
         viewBorderImageIcon.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
         viewBorderInputPasscode.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
@@ -75,10 +83,8 @@ class TRCPasscodeLockLoginInputViewController: UIViewController {
         tfPasscode.becomeFirstResponder()
         tfPasscode.isHidden = true
         
-//        lblError.isHidden = true
-//        lblError2.isHidden = true
-//        lblError.labelStyle(title: "", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: ERROR_COLOR)
-//        lblError2.labelStyle(title: "", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: ERROR_COLOR)
+        lblError.isHidden = true
+        lblError.labelStyle(title: "", fontSize: LABEL_FONT_SIZE, isBold: false, textColor: ERROR_COLOR)
     }
     
     //MARK: Action
@@ -118,11 +124,11 @@ class TRCPasscodeLockLoginInputViewController: UIViewController {
                     // maybe do something here
                 })
             }else{
-//                lblError.isHidden = false
-//                lblError2.isHidden = false
-//                
-//                lblError.text = Localizable(value: "passcode_not_match")
-//                lblError2.text = Localizable(value: "input_again")
+                lblError.isHidden = false
+                self.lblError.text = Localizable(value: "passcode_not_match")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.lblError.isHidden = true
+                }
                 
                 tfPasscode.text = ""
                 
@@ -137,5 +143,11 @@ class TRCPasscodeLockLoginInputViewController: UIViewController {
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
         }
+    }
+    
+    func showGuide(_ sender: UITapGestureRecognizer){
+        let alert = UIAlertController(title: nil, message: Localizable(value: "passcode_login_guide_msg"), preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: Localizable(value: "ok"), style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
