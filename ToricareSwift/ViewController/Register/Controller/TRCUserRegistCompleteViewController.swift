@@ -36,6 +36,8 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     //MARK: Config UI 
     func configUI(){
         //navigation
+        self.navigationItem.hidesBackButton = true
+        
         self.navigationItem.title = _obj.mode == MODE_REGISTER_MYPAGE ? Localizable(value: "my_pharmacy_setting") : Localizable(value: "register_complete_title")
 
         //UI of outlet
@@ -72,10 +74,18 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     
     //MARK: Button Action
     @IBAction func tapBtnQRCode(_ sender: Any) {
-        let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
-        vc.mode = _obj.mode
-        configBackButton()
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(_obj.mode == MODE_REGISTER_MYPAGE){
+            let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+            vc.hidesBottomBarWhenPushed = true
+            vc.mode = _obj.mode
+            configBackButton()
+            _obj.nc5.pushViewController(vc, animated: true)
+        }else{
+            let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+            vc.mode = _obj.mode
+            configBackButton()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func tapBtnUsingApp(_ sender: Any) {
