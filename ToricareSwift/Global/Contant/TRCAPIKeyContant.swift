@@ -20,14 +20,14 @@ let ROOT_URL =                      "http://42.125.230.115/"
 let ROOT_URL =                      "http://172.16.210.122/"
 
 #endif
-    //42.125.230.115
-//MARK: URL
-let APP_DOMAIN =                    "\(ROOT_URL)api/v1/"
 
-let APP_POLICY =                    "\(ROOT_URL)privacy_policy"
-let APP_FAQ =                       "\(ROOT_URL)faq_list"
-let APP_TERM =                      "\(ROOT_URL)faq_list/1"
-let APP_QUESTION =                  "\(ROOT_URL)rule"
+//MARK: URL
+let APP_DOMAIN =                    "http://42.125.230.115/api/v1/"
+
+let APP_POLICY =                    "http://42.125.230.115/privacy_policy"
+let APP_FAQ =                       "http://42.125.230.115/faq_list"
+let APP_TERM =                      "http://42.125.230.115/faq_list/1"
+let APP_QUESTION =                  "http://42.125.230.115/rule"
 
 //MARK: API
 let HEADER_AUTHORIZATION =          "Basic dG9yaV9hcHBfaW9zX3Rlc3Q6MmY1YzY5Njc4Mzg4NGIwMmEwNjkxNjNlOWI2ODAzMTI="
