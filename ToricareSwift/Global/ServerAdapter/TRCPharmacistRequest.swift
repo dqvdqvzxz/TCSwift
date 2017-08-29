@@ -29,9 +29,15 @@ class TRCPharmacistRequest: TRCBaseAPIController {
         
         var parameters = Dictionary <String, String>()
         parameters["name"] = name
-        parameters["tel"] = tel
-        parameters["email"] = email
-        parameters["note"] = note
+        if(tel != ""){
+            parameters["tel"] = tel
+        }
+        if(email != ""){
+            parameters["email"] = email
+        }
+        if(note != ""){
+            parameters["note"] = note
+        }
         
         self.callAPI(parameters, atPath: "\(URL_PHARMACIST_INFO)", withMethod: HTTP_PUT, blockCompletion: { (data) in
             //parse data from model
