@@ -125,7 +125,7 @@ extension TRCMessageListViewController: UITableViewDataSource{
         let isUnread = Int(messageData.isRead) == 0
         cell.imgView.image = messageData.isRead == "0" ? #imageLiteral(resourceName: "message_new") : #imageLiteral(resourceName: "message_read")
         cell.lblTitle.labelStyle(title: messageData.title, fontSize: LABEL_FONT_SIZE, isBold: true, textColor: isUnread ? LABEL_FONT_COLOR : BACKGROUND_COLOR)
-        cell.lblSubTitle.labelStyle(title: messageData.sender + " | " + messageData.updatedAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: isUnread ? LABEL_FONT_GREY_COLOR : BACKGROUND_COLOR)
+        cell.lblSubTitle.labelStyle(title: messageData.sender + " | " + messageData.sentAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: isUnread ? LABEL_FONT_GREY_COLOR : BACKGROUND_COLOR)
         
         return cell
     }

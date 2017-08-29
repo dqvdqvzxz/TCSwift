@@ -16,6 +16,7 @@ struct TRCMessage {
     var title = ""
     var sender = ""
     var updatedAt = ""
+    var sentAt = ""
 }
 
 extension TRCMessage: JSONDecodable{
@@ -27,6 +28,7 @@ extension TRCMessage: JSONDecodable{
         self.title = try decoder.value(forKey: TITLE)
         self.sender = try decoder.value(forKey: SENDER)
         self.updatedAt = try decoder.value(forKey: UPDATED_AT)
+        self.sentAt = try decoder.value(forKey: SENT_AT)
     }
 }
 
