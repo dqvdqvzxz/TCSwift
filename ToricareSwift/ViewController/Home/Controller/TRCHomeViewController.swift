@@ -150,14 +150,14 @@ class TRCHomeViewController: TRCBaseViewController {
         lblInformSummary.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
         
         //exercise calo
-        lblTitleExerciseKcal.labelStyle(title: Localizable(value: "exercise"), fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblTitleExerciseKcal.labelStyle(title: Localizable(value: "today_exercise"), fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
         lblContentExerciseKcal.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 10, isBold: true, textColor: HOME_PINK_COLOR)
-        lblContentExerciseKcalUnit.labelStyle(title: "Kcal")
+        lblContentExerciseKcalUnit.labelStyle(title: "kcal")
         
         //food calo
-        lblTitleFoodKcal.labelStyle(title: Localizable(value: "meal"), fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
+        lblTitleFoodKcal.labelStyle(title: Localizable(value: "today_meal"), fontSize: LABEL_FONT_SIZE!, isBold: true, textColor: LABEL_FONT_COLOR)
         lblContentFoodKcal.labelStyle(title: "-", fontSize: LABEL_FONT_SIZE! + 10, isBold: true, textColor: HOME_ORANGE_COLOR)
-        lblContentFoodKcalUnit.labelStyle(title: "Kcal")
+        lblContentFoodKcalUnit.labelStyle(title: "kcal")
         
         //weight
         lblRegisterTodayWeight.labelStyle(title:  Localizable(value: "register_today_weight"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,37 +27,25 @@
                     <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="トリケア" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdF-HV-344">
-                    <rect key="frame" x="10" y="315" width="355" height="36"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_home" translatesAutoresizingMaskIntoConstraints="NO" id="ywM-5w-4iN">
+                    <rect key="frame" x="97" y="313.5" width="180" height="39"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="36" id="Lld-mE-cGE"/>
-                        <constraint firstAttribute="width" constant="355" id="djz-yD-Ikm"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                    <color key="textColor" red="0.047058823530000002" green="0.66666666669999997" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tricare_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ywM-5w-4iN">
-                    <rect key="frame" x="82" y="92" width="210" height="210"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="210" id="YjF-l4-EJy"/>
-                        <constraint firstAttribute="width" constant="210" id="caC-Ys-JkD"/>
+                        <constraint firstAttribute="width" constant="180" id="7yw-Lv-tu4"/>
+                        <constraint firstAttribute="height" constant="39" id="8f0-os-7pj"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="RdF-HV-344" firstAttribute="centerY" secondItem="16P-VP-gcW" secondAttribute="centerY" id="7L7-v4-vsY"/>
+                <constraint firstItem="ywM-5w-4iN" firstAttribute="centerX" secondItem="16P-VP-gcW" secondAttribute="centerX" id="DUg-8j-gY0"/>
                 <constraint firstAttribute="bottom" secondItem="iAo-34-mhS" secondAttribute="bottom" constant="10" id="Qa8-eT-KTZ"/>
                 <constraint firstAttribute="trailing" secondItem="iAo-34-mhS" secondAttribute="trailing" constant="10" id="XWP-PU-Sr4"/>
-                <constraint firstItem="RdF-HV-344" firstAttribute="centerX" secondItem="16P-VP-gcW" secondAttribute="centerX" id="hOQ-gF-dla"/>
-                <constraint firstItem="RdF-HV-344" firstAttribute="top" secondItem="ywM-5w-4iN" secondAttribute="bottom" constant="13" id="ibP-TG-mQP"/>
+                <constraint firstItem="ywM-5w-4iN" firstAttribute="centerY" secondItem="16P-VP-gcW" secondAttribute="centerY" id="Yh9-Hu-aOv"/>
                 <constraint firstItem="iAo-34-mhS" firstAttribute="leading" secondItem="16P-VP-gcW" secondAttribute="leading" constant="10" id="lQh-Yk-eeg"/>
-                <constraint firstItem="ywM-5w-4iN" firstAttribute="centerX" secondItem="16P-VP-gcW" secondAttribute="centerX" id="xvu-rr-wmQ"/>
             </constraints>
         </view>
     </objects>
     <resources>
-        <image name="tricare_logo" width="256" height="256"/>
+        <image name="logo_home" width="180" height="39"/>
     </resources>
 </document>

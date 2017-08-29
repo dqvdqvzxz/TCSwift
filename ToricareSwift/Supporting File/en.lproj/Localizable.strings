@@ -230,9 +230,12 @@
 "message"                               = "メッセージ";
 
 //MARK: Home
-"notify_from_tricare_pharmacy"          = "とりけあ薬局からのお知らせ";
+"notify_from_tricare_pharmacy"          = "My薬局からのお知らせ";
 "view_more"                             = "もっと見る";
 "today_step"                            = "今日の歩数";
+"today_exercise"                        = "今日の活動";
+"today_meal"                            = "今日のごはん";
+
 "sucess_percent"                        = "80％達成！あと少し！";
 "exercise"                              = "活動";
 "meal"                                  = "食事";

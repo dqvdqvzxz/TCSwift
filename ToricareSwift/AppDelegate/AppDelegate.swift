@@ -107,6 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+
 //    //MARK: Config UI
 //    func configUI(){
 //        
@@ -257,6 +258,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //set color for navigation
             UINavigationBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
+            UINavigationBar.appearance().tintColor = UIColor.init(hexString: MAIN_COLOR)
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)]
             
             //set color for tabbar
