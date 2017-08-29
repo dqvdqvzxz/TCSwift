@@ -114,8 +114,7 @@ class TRCLoginViewController: TRCBaseViewController {
                     }
                     
                     //init tabbar
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.configTabbar()
+                    _obj.initTabbarController()
                     
                     //push to home view
                     UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
@@ -246,10 +245,9 @@ class TRCLoginViewController: TRCBaseViewController {
                         UserDefaults.saveUD(dataLoginResult.object(forKey: REFRESH_ACCESS_TOKEN), REFRESH_ACCESS_TOKEN)
                     }
                     
-                    //init tabbar
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.configTabbar()
-                    
+                    //init tab controller
+                    _obj.initTabbarController()
+
                     //push to home view
                     UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                         UIApplication.shared.keyWindow?.rootViewController = _obj.tabController

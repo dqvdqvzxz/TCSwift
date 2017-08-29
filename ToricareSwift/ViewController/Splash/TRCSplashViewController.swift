@@ -29,9 +29,8 @@ class TRCSplashViewController: TRCBaseViewController {
         if(UserDefaults.getUD(ACCESS_TOKEN) != nil && UserDefaults.getUD(REFRESH_ACCESS_TOKEN) != nil){
             //check internet
             if Connectivity.isConnectToNetwork() == false{
-                //config tabbar
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.configTabbar()
+                //init tabbar controller
+                _obj.initTabbarController()
 
                 //set rootview
                 UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
@@ -57,9 +56,8 @@ class TRCSplashViewController: TRCBaseViewController {
                     
                     self.hideHUD()
                     
-                    //config tabbar
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.configTabbar()
+                    //init tabbar controller
+                    _obj.initTabbarController()
 
                     //set rootview
                     UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {

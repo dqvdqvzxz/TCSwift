@@ -119,10 +119,7 @@ extension TRCSettingViewController: UITableViewDelegate{
                     
                     let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                     let navController = UINavigationController(rootViewController: mainVC)
-                    
-                    // Back to Home
-                    self.navigationController?.popToRootViewController(animated: false)
-                    _obj.tabController.selectedIndex = 0
+
                     
                     UIApplication.shared.keyWindow?.rootViewController = navController
                 }, completion: { completed in

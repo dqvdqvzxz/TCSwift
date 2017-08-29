@@ -97,8 +97,8 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
                 }
             }
         }else{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.configTabbar()
+            //init tabbar controller
+            _obj.initTabbarController()
 
             UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
