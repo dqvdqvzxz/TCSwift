@@ -119,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
         
-//        UINavigationBar.appearance().tintColor = UIColor.init(hexString: BUTTON_TITLE_COLOR)
+        UINavigationBar.appearance().tintColor = UIColor.init(hexString: MAIN_COLOR)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)]
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)], for: .normal)
