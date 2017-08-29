@@ -20,3 +20,14 @@ extension UIImageView{
         self.layer.borderColor = color.cgColor
     }
 }
+
+extension UIImage{
+    func makeImageWithColorAndSize(color: UIColor, size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        color.setFill()
+        UIRectFill(CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
