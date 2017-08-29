@@ -38,7 +38,9 @@ class TRCSearchResultCell: UITableViewCell {
 
         if (pharmacyObject.images.count > 0) {
             guard let url = URL(string: pharmacyObject.images[0].origin) else { return }
-            imgPharmacy.af_setImage(withURL: url, placeholderImage: nil)
+            imgPharmacy.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "no_image"))
+        } else {
+            imgPharmacy.image = #imageLiteral(resourceName: "no_image")
         }
     }
 }

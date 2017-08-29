@@ -200,6 +200,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             
             if (imageCount > 0) {
                 setPharmacyImage(urlString: pharmacyData.images[0].origin)
+            } else {
+                imgPharmacyView.image = #imageLiteral(resourceName: "no_image")
             }
         } else {
             
@@ -219,7 +221,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     func setPharmacyImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
-        imgPharmacyView.af_setImage(withURL: url, placeholderImage: nil)
+        imgPharmacyView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "no_image"))
     }
     
     //MARK: Action

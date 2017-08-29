@@ -63,10 +63,10 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var imgLogoCar: UIImageView!
     
     var goalInfo: TRCGoal!
-    
     var summaryInfo: TRCSummary!
-    
     var accountInfo: TRCAccountInfo!
+    var bannerArray: [TRCBanner] = []
+    var rotationTime = 0
     
     @IBOutlet var customLeftTab: UIView!
     @IBOutlet weak var lblUnread: UILabel!
@@ -245,15 +245,28 @@ class TRCHomeViewController: TRCBaseViewController {
                 }
             }) { (error) in
                 self.hideHUD()
-//                self.showAlert(error)
                 ELog(error)
             }
             
             //get banner
             TRCBannerRequest().getBanner(completion: { (data) in
-                //
+                let dataResult = data?.object(forKey: DATA) as! NSDictionary
+                let dataListBanner = dataResult.object(forKey: LIST_BANNER)
+                self.rotationTime = dataResult.object(forKey: ROTATION) as! Int
+
+                do {
+                    let dataResults:[TRCBanner] = try parseArray(dataListBanner as! [JSONObject])
+                    dataResults.forEach({ (item) in
+                        self.bannerArray.append(item)
+                    })
+                    
+                    self.hideHUD()
+                } catch {
+                    print("JSONParsin Error: \(error)")
+                }
             }) { (error) in
-                //
+                self.hideHUD()
+                ELog(error)
             }
             
             self.configUI()

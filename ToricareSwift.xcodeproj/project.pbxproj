@@ -20,6 +20,8 @@
 		1788CE161F3843D600778006 /* TRCImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1788CE151F3843D600778006 /* TRCImage.swift */; };
 		17B0EEB61F4AEF3E00B5249E /* TRCQRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */; };
 		17B0EEB71F4AEF3E00B5249E /* TRCQRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */; };
+		17B55DDF1F550C3F00E4AD6E /* TRCBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B55DDE1F550C3F00E4AD6E /* TRCBanner.swift */; };
+		17B55DE01F550C3F00E4AD6E /* TRCBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B55DDE1F550C3F00E4AD6E /* TRCBanner.swift */; };
 		17B632041F347B46001A379E /* TRCPharmacySearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B632031F347B46001A379E /* TRCPharmacySearchData.swift */; };
 		17B632061F34897E001A379E /* TRCPharmacyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B632051F34897E001A379E /* TRCPharmacyRequest.swift */; };
 		17BC583E1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC583C1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift */; };
@@ -343,6 +345,7 @@
 		1788CE131F38231F00778006 /* TRCPharmacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacy.swift; sourceTree = "<group>"; };
 		1788CE151F3843D600778006 /* TRCImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCImage.swift; sourceTree = "<group>"; };
 		17B0EEB51F4AEF3E00B5249E /* TRCQRRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCQRRequest.swift; sourceTree = "<group>"; };
+		17B55DDE1F550C3F00E4AD6E /* TRCBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCBanner.swift; sourceTree = "<group>"; };
 		17B632031F347B46001A379E /* TRCPharmacySearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacySearchData.swift; sourceTree = "<group>"; };
 		17B632051F34897E001A379E /* TRCPharmacyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacyRequest.swift; sourceTree = "<group>"; };
 		17BC583C1F4E780F0024950B /* TRCNotificationPharmacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCNotificationPharmacyViewController.swift; sourceTree = "<group>"; };
@@ -900,6 +903,7 @@
 				68F07DB01F3C40A000E1934C /* TRCSummary.swift */,
 				1757AF3B1F4177D200F340D6 /* TRCMessage.swift */,
 				17BC58511F4E81190024950B /* TRCNotificationPharmacy.swift */,
+				17B55DDE1F550C3F00E4AD6E /* TRCBanner.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1448,6 +1452,7 @@
 				17C98F8A1F3BFAE8003AF863 /* TRCImage.swift in Sources */,
 				17C98F8B1F3BFAE8003AF863 /* TRCPointDetailViewController.swift in Sources */,
 				17C98F8C1F3BFAE8003AF863 /* TRCPrefecturesRequest.swift in Sources */,
+				17B55DE01F550C3F00E4AD6E /* TRCBanner.swift in Sources */,
 				17C98F8D1F3BFAE8003AF863 /* TRCWebView.swift in Sources */,
 				17C98F8E1F3BFAE8003AF863 /* TRCPasswordRequest.swift in Sources */,
 				17C98F8F1F3BFAE8003AF863 /* TRCLogoutViewController.swift in Sources */,
@@ -1583,6 +1588,7 @@
 				685892DF1F4EB28B00DD4EDA /* TRCBannerRequest.swift in Sources */,
 				3FB4114C1EFB7C98008720A6 /* TRCBaseViewController.swift in Sources */,
 				68F07DA81F3AF05700E1934C /* TRCGoal.swift in Sources */,
+				17B55DDF1F550C3F00E4AD6E /* TRCBanner.swift in Sources */,
 				3F55B5091F2ECFDC0086EDB4 /* TRCLoadMoreCell.swift in Sources */,
 				3F57F7371F25F7C100CC079C /* TRCMessageListCell.swift in Sources */,
 				68F07DE11F4C0B7F00E1934C /* TRCSearchTextPageView.swift in Sources */,

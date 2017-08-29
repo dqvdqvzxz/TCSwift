@@ -163,7 +163,7 @@ let SHOP_NAME =                     "shop_name"
 let LAT =                           "lat"
 let LONG =                          "lon"
 let PAGE =                          "page"
-
+let LIST_BANNER =                   "listBanners"
 
 //image
 let ORIGIN =                        "origin"
@@ -213,6 +213,8 @@ let FB_AVATAR =                     "fbAvatar"
 
 //dicPasscode
 let DIC_PASSCODE =                  "dicPassCode"
+
+let ROTATION =                      "rotation"
 
 //MARK: Http method
 let HTTP_POST =                     "POST"
