@@ -420,6 +420,11 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
             return
         }
         
+        if !(tfLastNameKata.text?.containsKatakanaCharacters)! {
+            self.showAlert(Localizable(value: "please_input_last_name_katakana_half_width"))
+            return
+        }
+        
         if (tfDateOfBirth.text?.isBlank)! {
             self.showAlert(Localizable(value: "please_input_birthday"))
             return
