@@ -86,75 +86,15 @@ class TRCHomeViewController: TRCBaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        
-        //init tabbar
-//        UITabBar.appearance().backgroundColor = UIColor.init(hexString: MAIN_COLOR)
-//        UITabBar.appearance().tintColor = UIColor.init(hexString: "00532e")
-        
-        
-        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: WHITE_COLOR)]
-        let unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: "00532e")]
-        
-        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "home")
-        _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "home_hl")
-
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "nutrition")
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "nutrition_hl")
-
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "run")
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "run_hl")
-
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "pill")
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "pill_hl")
-
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "profile")
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "profile_hl")
-
-        
-        _obj.tabController.tabBar.selectionIndicatorImage = UIImage().makeImageWithColorAndSize(color: UIColor.init(hexString: "00532e"), size: CGSize(width: _obj.tabController.tabBar.frame.width/5, height: _obj.tabController.tabBar.frame.height))
-
-        
-        
-//        //set image for tab item
-//        _obj.tabController.tabBar.items?[0].image = UIImage(named: "menu_home_00.png")
-//        _obj.tabController.tabBar.items?[0].selectedImage = UIImage(named: "menu_home_w.png")
-//        
-//        _obj.tabController.tabBar.items?[1].image = UIImage(named: "menu_syokuji_00.png")
-//        _obj.tabController.tabBar.items?[1].selectedImage = UIImage(named: "menu_syokuji_w.png")
-//        
-//        _obj.tabController.tabBar.items?[2].image = UIImage(named: "menu_katsudou_00.png")
-//        _obj.tabController.tabBar.items?[2].selectedImage = UIImage(named: "menu_katsudou_w.png")
-//        
-//        _obj.tabController.tabBar.items?[3].image = UIImage(named: "menu_okusuri_00.png")
-//        _obj.tabController.tabBar.items?[3].selectedImage = UIImage(named: "menu_okusuri_w.png")
-//        
-//        _obj.tabController.tabBar.items?[4].image = UIImage(named: "menu_mypage_00.png")
-//        _obj.tabController.tabBar.items?[4].selectedImage = UIImage(named: "menu_mypage_w.png")
-        
+        //tabbar
+        _obj.tabController.tabBar.isHidden = false
+        configTabbar1()
         
         getUnreadMessage()
         
         if(_obj.objectGoal != nil){
             self.lblStep.text = String().convertDecimal(_obj.objectGoal.steps)
         }
-        
-        _obj.tabController.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

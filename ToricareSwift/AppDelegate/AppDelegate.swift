@@ -244,6 +244,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             nc5.viewControllers = [vc5]
             _obj.tabController.viewControllers = [nc1, nc2, nc3, nc4, nc5]
             
+            //set title for tab item
+            _obj.tabController.tabBar.items?[0].title = STRING_TAB_HOME
+            _obj.tabController.tabBar.items?[1].title = STRING_TAB_NUTRITION
+            _obj.tabController.tabBar.items?[2].title = STRING_TAB_EXERCISE
+            _obj.tabController.tabBar.items?[3].title = STRING_TAB_MEDICINE
+            _obj.tabController.tabBar.items?[4].title = STRING_TAB_MYPAGE
             
             //set default tab
             _obj.tabController.selectedIndex = 0
@@ -268,142 +274,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func configTabbar(){
+        //set color background
+        _obj.tabController.tabBar.selectionIndicatorImage = UIImage().makeImageWithColorAndSize(color: UIColor.init(hexString: TABBAR_COLOR_1), size: CGSize(width: _obj.tabController.tabBar.frame.width/5, height: _obj.tabController.tabBar.frame.height))
         
-//        UITabBar.appearance().backgroundColor = UIColor.init(hexString: MAIN_COLOR)
-//        UITabBar.appearance().tintColor = UIColor.init(hexString: "00532e")
+        //set color for select item
+        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: WHITE_COLOR)]
+        let unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_1)]
         
-//                UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)], for: .normal)
-//                UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: MAIN_COLOR], for: .highlighted)
-
-        let item1 = _obj.tabController.tabBar.items?[0]
-        let item2 = _obj.tabController.tabBar.items?[1]
-        let item3 = _obj.tabController.tabBar.items?[2]
-        let item4 = _obj.tabController.tabBar.items?[3]
-        let item5 = _obj.tabController.tabBar.items?[4]
+        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(unSelectedItem, for: .normal)
+        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(selectedItem, for: .selected)
         
-        item1?.title = STRING_TAB_HOME
-        item2?.title = STRING_TAB_NUTRITION
-        item3?.title = STRING_TAB_EXERCISE
-        item4?.title = STRING_TAB_MEDICINE
-        item5?.title = STRING_TAB_MYPAGE
+        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(unSelectedItem, for: .normal)
+        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(selectedItem, for: .selected)
         
+        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(unSelectedItem, for: .normal)
+        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(selectedItem, for: .selected)
         
-        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: MAIN_COLOR)]
-        let unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: LABEL_FONT_GREY_COLOR)]
-
-        item1?.setTitleTextAttributes(unSelectedItem, for: .normal)
-        item1?.setTitleTextAttributes(selectedItem, for: .selected)
-
-        item2?.setTitleTextAttributes(unSelectedItem, for: .normal)
-        item2?.setTitleTextAttributes(selectedItem, for: .selected)
-
-        item3?.setTitleTextAttributes(unSelectedItem, for: .normal)
-        item3?.setTitleTextAttributes(selectedItem, for: .selected)
-
-        item4?.setTitleTextAttributes(unSelectedItem, for: .normal)
-        item4?.setTitleTextAttributes(selectedItem, for: .selected)
-
-        item5?.setTitleTextAttributes(unSelectedItem, for: .normal)
-        item5?.setTitleTextAttributes(selectedItem, for: .selected)
+        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(unSelectedItem, for: .normal)
+        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(selectedItem, for: .selected)
         
-//        item1?.image = UIImage(named: "menu_home_00.png")
-//        item1?.selectedImage = UIImage(named: "menu_home_w.png")
-//        
-//        item2?.image = UIImage(named: "menu_syokuji_00.png")
-//        item2?.selectedImage = UIImage(named: "menu_syokuji_w.png")
-//        
-//        item3?.image = UIImage(named: "menu_katsudou_00.png")
-//        item3?.selectedImage = UIImage(named: "menu_katsudou_w.png")
-//        
-//        item4?.image = UIImage(named: "menu_okusuri_00.png")
-//        item4?.selectedImage = UIImage(named: "menu_okusuri_w.png")
-//        
-//        item5?.image = UIImage(named: "menu_mypage_00.png")
-//        item5?.selectedImage = UIImage(named: "menu_mypage_w.png")
-
+        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(unSelectedItem, for: .normal)
+        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(selectedItem, for: .selected)
+        
+        //set image
+        _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "home")
+        _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "home_hl")
+        
+        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "nutrition")
+        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "nutrition_hl")
+        
+        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "run")
+        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "run_hl")
+        
+        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "pill")
+        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "pill_hl")
+        
+        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "profile")
+        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "profile_hl")
     }
-    
-//    func configTabbar2(){
-//
-//        UITabBar.appearance().backgroundColor = UIColor.init(hexString: WHITE_COLOR)
-//        UITabBar.appearance().tintColor = UIColor.init(hexString: "d0700")
-
-//        let item1 = _obj.tabController.tabBar.items?[0]
-//        let item2 = _obj.tabController.tabBar.items?[1]
-//        let item3 = _obj.tabController.tabBar.items?[2]
-//        let item4 = _obj.tabController.tabBar.items?[3]
-//        let item5 = _obj.tabController.tabBar.items?[4]
-//        
-//        //set image for tab item
-//        item1?.image = UIImage(named: "menu_home_01.png")
-//        item1?.selectedImage = UIImage(named: "menu_home_w.png")
-//        
-//        item2?.image = UIImage(named: "menu_syokuji_01.png")
-//        item2?.selectedImage = UIImage(named: "menu_syokuji_w.png")
-//        
-//        item3?.image = UIImage(named: "menu_katsudou_01.png")
-//        item3?.selectedImage = UIImage(named: "menu_katsudou_w.png")
-//        
-//        item4?.image = UIImage(named: "menu_okusuri_01.png")
-//        item4?.selectedImage = UIImage(named: "menu_okusuri_w.png")
-//        
-//        item5?.image = UIImage(named: "menu_mypage_01.png")
-//        item5?.selectedImage = UIImage(named: "menu_mypage_w.png")
-//    }
-//    
-//    func configTabbar3(){
-//        
-//        UITabBar.appearance().backgroundColor = UIColor.init(hexString: WHITE_COLOR)
-//        UITabBar.appearance().tintColor = UIColor.init(hexString: "c12f5b")
-
-//        let item1 = _obj.tabController.tabBar.items?[0]
-//        let item2 = _obj.tabController.tabBar.items?[1]
-//        let item3 = _obj.tabController.tabBar.items?[2]
-//        let item4 = _obj.tabController.tabBar.items?[3]
-//        let item5 = _obj.tabController.tabBar.items?[4]
-//
-//        //set image for tab item
-//        item1?.image = UIImage(named: "menu_home_02")
-//        item1?.selectedImage = UIImage(named: "menu_home_w")
-//        
-//        item2?.image = UIImage(named: "menu_syokuji_02")
-//        item2?.selectedImage = UIImage(named: "menu_syokuji_w")
-//        
-//        item3?.image = UIImage(named: "menu_katsudou_02")
-//        item3?.selectedImage = UIImage(named: "menu_katsudou_w")
-//        
-//        item4?.image = UIImage(named: "menu_okusuri_02")
-//        item4?.selectedImage = UIImage(named: "menu_okusuri_w")
-//        
-//        item5?.image = UIImage(named: "menu_mypage_02")
-//        item5?.selectedImage = UIImage(named: "menu_mypage_w")
-//    }
-//    
-//    func configTabbar4(){
-//        
-//        UITabBar.appearance().backgroundColor = UIColor.init(hexString: WHITE_COLOR)
-//        UITabBar.appearance().tintColor = UIColor.init(hexString: "13918d")
-
-//        let item1 = _obj.tabController.tabBar.items?[0]
-//        let item2 = _obj.tabController.tabBar.items?[1]
-//        let item3 = _obj.tabController.tabBar.items?[2]
-//        let item4 = _obj.tabController.tabBar.items?[3]
-//        let item5 = _obj.tabController.tabBar.items?[4]
-//        
-//        //set image for tab item
-//        item1?.image = UIImage(named: "menu_home_03")
-//        item1?.selectedImage = UIImage(named: "menu_home_w")
-//        
-//        item2?.image = UIImage(named: "menu_syokuji_03")
-//        item2?.selectedImage = UIImage(named: "menu_syokuji_w")
-//        
-//        item3?.image = UIImage(named: "menu_katsudou_03")
-//        item3?.selectedImage = UIImage(named: "menu_katsudou_w")
-//        
-//        item4?.image = UIImage(named: "menu_okusuri_03")
-//        item4?.selectedImage = UIImage(named: "menu_okusuri_w")
-//        
-//        item5?.image = UIImage(named: "menu_mypage_03")
-//        item5?.selectedImage = UIImage(named: "menu_mypage_w")
-//    }
 }
