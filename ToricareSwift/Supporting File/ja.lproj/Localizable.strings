@@ -68,8 +68,8 @@
 "back_to_top"                           = "アプリトップへ";
 
 //Setting Profile
-"take_photo_camera"                     = "カメラを起動する";
-"take_photo_gallery"                    = "ライブラリから選ぶ";
+"take_photo_camera"                     = "カメラを起動";
+"take_photo_gallery"                    = "ライブラリから選択";
 "camera_warning"                        = "カメラの問題が発生されました";
 
 //MARK: Settings

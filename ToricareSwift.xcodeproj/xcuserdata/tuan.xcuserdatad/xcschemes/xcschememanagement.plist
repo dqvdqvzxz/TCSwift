@@ -9,7 +9,12 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>ToricareSwiftTest.xcscheme</key>
+		<key>ToricareSwiftDev.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
+		<key>ToricareSwiftLocal.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>14</integer>
@@ -18,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>17C98F4E1F3BFAE8003AF863</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>17D9BEE01F5567E2004F090A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
