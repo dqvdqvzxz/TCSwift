@@ -37,7 +37,7 @@ class TRCMyPageViewController: TRCBaseViewController {
         
         //tabbar
         _obj.tabController.tabBar.isHidden = false
-        customizeTabbar(0)
+//        customizeTabbar(0)
         
         configUI()
     }

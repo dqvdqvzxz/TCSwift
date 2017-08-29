@@ -227,6 +227,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UITabBar.appearance().barTintColor = UIColor.init(hexString: WHITE_COLOR)
             UITabBar.appearance().tintColor = UIColor.init(hexString: WHITE_COLOR)
             
+            _obj.tabController.delegate = self
+            
             //init root view
             let mainVC = TRCSplashViewController(nibName: "TRCSplashViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
@@ -275,4 +277,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_00").withRenderingMode(.alwaysOriginal)
 //        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
 //    }
+}
+
+extension AppDelegate: UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        _obj.customizeTabbar(tabBarController.selectedIndex)
+    }
 }

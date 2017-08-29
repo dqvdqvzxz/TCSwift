@@ -28,7 +28,7 @@ class TRCTab4ViewController: TRCBaseViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        customizeTabbar(3)
+//        customizeTabbar(3)
     }
 
     /*
