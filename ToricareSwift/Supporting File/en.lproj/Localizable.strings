@@ -1,102 +1,103 @@
-/* 
-  Localizable.strings
-  ToricareSwift
-
-  Created by Tuan Le Anh on 7/13/17.
-  Copyright © 2017 Mèo Béo. All rights reserved.
-*/
+/*
+ Localizable.strings
+ ToricareSwift
+ 
+ Created by Tuan Le Anh on 7/13/17.
+ Copyright © 2017 Mèo Béo. All rights reserved.
+ */
 
 //MARK: Alert message
 "ok"                                    = "OK";
-"yes"                                   = "Yes";
-"check_network_message"                 = "Please check network connection";
-"check_input_data_message"              = "Please check data input";
+"yes"                                   = "はい";
+"check_network_message"                 = "通信エラーが発生しました。";
+"check_input_data_message"              = "データを確認してください";
 "warning"                               = "注意";
+"error"                                 = "エラー";
 
 //MARK: Navigation
-"back"                                  = "Back";
-"done"                                  = "Done";
-"cancel"                                = "Cancel";
+"back"                                  = "戻る";
+"done"                                  = "完了";
+"cancel"                                = "キャンセル";
 "close"                                 = "閉じる";
 
 //MARK: Tabbar
 "tab_home"                              = "ホーム";
-"tab_nutrition"                         = "栄養管理";
-"tab_exercise"                          = "運動管理";
-"tab_medicine"                          = "お薬管理";
+"tab_nutrition"                         = "食事";
+"tab_exercise"                          = "活動";
+"tab_medicine"                          = "おくすり";
 "tab_mypage"                            = "マイページ";
 
 //MARK: PreLoginViewController
-"do_login" = "Login";
+"do_login"                              = "ログインする";
 
 //MARK: RegisterViewController
-"register_title"                        = "Member Register";
-"mail_address"                          = "Mail Address";
+"register_title"                        = "会員登録";
+"mail_address"                          = "メールアドレス";
 
-"password"                              = "Password";
-"password_confirm"                      = "Password (Confirm)";
-"register_mail"                         = "Register";
-"register_fb"                           = "Facebook Register";
-"or"                                    = "Or";
+"password"                              = "パスワード";
+"password_confirm"                      = "パスワード（確認）";
+"register_mail"                         = "メールアドレスで登録";
+"register_fb"                           = "Facebookアカウントで登録";
+"or"                                    = "または";
 
 //AccountInfoInput
-"first_name"                            = "Family Name";
-"last_name"                             = "Last Name";
-"first_name_kata"                       = "Family Name Kana";
-"last_name_kata"                        = "Last Name Kana";
-"birth_date"                            = "Birth Date";
-"gender"                                = "Gender";
-"male"                                  = "Male";
-"female"                                = "Female";
-"other"                                 = "Other";
-"next_button"                           = "Next";
-"height"                                = "Height";
+"first_name"                            = "氏名（姓）";
+"last_name"                             = "氏名（名）";
+"first_name_kata"                       = "カナ（姓）";
+"last_name_kata"                        = "カナ（名）";
+"birth_date"                            = "生年月日";
+"gender"                                = "性別";
+"male"                                  = "男性";
+"female"                                = "女性";
+"other"                                 = "その他";
+"next_button"                           = "次へ";
+"height"                                = "身長";
 
 //MARK: LoginViewController
-"login_title"                           = "Login";
-"forgot_password_title"                 = "Forgot Password";
-"login_fb"                              = "Facebook Login";
+"login_title"                           = "ログイン";
+"forgot_password_title"                 = "パスワードをお忘れの方";
+"login_fb"                              = "Facebookアカウントでログイン";
 
 //ForgotPasswordEmailInput
 "forgot_password_input_mail"            = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";
-"send_title"                            = "Send";
+"send_title"                            = "送信する";
 
 //ForgotPasswordSent
 "forgot_passsword_sent"                 = "ご入力いただいたメールアドレス宛に、パスワード再設定の案内メールを送信しました。";
 "forgot_password_check"                 = "メールの内容をご確認いただき、パスワードの再設定を行ってください。";
-"back_to_top"                           = "Back To Top";
+"back_to_top"                           = "アプリトップへ";
 
 //Setting Profile
-"take_photo_camera"                     = "Take Photo by Camera";
-"take_photo_gallery"                    = "Choose From Gallery";
-"camera_warning"                        = "Warning Camera";
+"take_photo_camera"                     = "カメラを起動";
+"take_photo_gallery"                    = "ライブラリから選択";
+"camera_warning"                        = "カメラの問題が発生されました";
 
 //MARK: Settings
-"setting"                               = "Setting";
-"setting_email_change"                  = "Change Email";
-"setting_password_change"               = "Change Password";
-"setting_other_services"                = "Linked Services";
-"setting_notify"                        = "Notification";
-"setting_passcode"                      = "Passcode Lock";
-"setting_theme"                         = "Theme Color";
-"about_app"                             = "About App";
-"resign"                                = "Resign";
-"logout"                                = "Logout";
+"setting"                               = "設定";
+"setting_email_change"                  = "メールアドレス変更";
+"setting_password_change"               = "パスワード変更";
+"setting_other_services"                = "他サービス連携";
+"setting_notify"                        = "お知らせ通知";
+"setting_passcode"                      = "パスコードロック";
+"setting_theme"                         = "カラーテーマ";
+"about_app"                             = "このアプリについて";
+"resign"                                = "退会";
+"logout"                                = "ログアウト";
 
 //MARK: Change email
-"current_email"                         = "Current Email";
-"new_mail"                              = "New Email";
-"new_mail_confirm"                      = "New Email (Confirm)";
-"change_button"                         = "Change";
+"current_email"                         = "現在のメールアドレス";
+"new_mail"                              = "新しいメールアドレス";
+"new_mail_confirm"                      = "新しいメールアドレス（確認）";
+"change_button"                         = "変更する";
 
 "mail_sent_message1"                    = "確認メールを送信しました。";
 "mail_sent_message2"                    = "ご入力いただきました新しいメールアドレス宛にメールアドレス変更手続きの確認メールを送信いたしました。メール内のURLをクリックして変更手続きを完了させてください。";
 "mail_sent_message3"                    = "※メールに記載されたURLをクリックしないまま24時間が経過した場合、ご変更依頼が無効となってしまいますのでご注意ください。\n※フリーメールアドレスをご利用の場合は迷惑メールフォルダやゴミ箱に振り分けられてしまうことがありますのでご注意ください。\n※入力されたメールアドレスに誤りがあるとメールが届きません。\n※確認メールが届かない場合や確認メールの有効期限が切れてしまった場合は、再度、変更手続きを行ってください。";
 
 //Change pass
-"current_password"                      = "Current Password";
-"new_password"                          = "New Password";
-"new_password_confirm"                  = "New Password (Confirm)";
+"current_password"                      = "現在のパスワード";
+"new_password"                          = "新しいパスワード";
+"new_password_confirm"                  = "新しいパスワード（確認）";
 
 //Linked service
 "health_manager_feature"                = "健康管理機能";
@@ -107,22 +108,22 @@
 "service_facebook"                      = "Facebook";
 
 //Notification
-"receive"                               = "Receive Notification";
-"notify_from_phamarcy"                  = "Notification From Pharmacy";
-"notify_from_tricare"                   = "Notification From Tricare";
-"weight"                                = "Weight";
-"breakfast"                             = "Breakfast";
-"lunch"                                 = "Lunch";
-"dinner"                                = "Dinner";
-"snack"                                 = "Snack";
+"receive"                               = "プッシュ通知を受け取る";
+"notify_from_phamarcy"                  = "薬局からのお知らせ";
+"notify_from_tricare"                   = "トリケアからのお知らせ";
+"weight"                                = "体重";
+"breakfast"                             = "朝食";
+"lunch"                                 = "昼食";
+"dinner"                                = "夕食";
+"snack"                                 = "間食";
 "notification_button_change"            = "設定を保存する";
 
 //Passcode Setting
-"enable_passcode"                       = "Enable Passcode";
-"change_passcode"                       = "Change Passcode";
+"enable_passcode"                       = "パスコードロックを有効にする";
+"change_passcode"                       = "パスコード変更する";
 
-"passcode_input"                        = "Please Input Passcode";
-"passcode_input"                        = "Please Input Passcode (Confirm)";
+"passcode_input"                        = "パスコードロックを入力してください。";
+"passcode_input"                        = "パスコードロックを入力してください。（確認）";
 
 //Color theme
 "setting_color_theme"                   = "カラーテーマ設定";
@@ -132,11 +133,11 @@
 "brown"                                 = "ブラウン";
 
 //About app
-"app_version"                           = "Version";
-"term_of_service"                       = "Terms Of Services";
-"policy"                                = "Policy";
-"faq"                                   = "FAQ";
-"question"                              = "Question";
+"app_version"                           = "バージョン情報";
+"term_of_service"                       = "利用規約";
+"policy"                                = "プライバシーポリシー";
+"faq"                                   = "よくあるご質問";
+"question"                              = "お問い合わせ";
 
 //Resign account
 "resign_confirm"                        = "退会される前に必ずご確認ください。";
@@ -149,40 +150,40 @@
 "logout_confirm_title"                  = "本当にログアウトしますか？";
 "logout_confirm_message"                = "ログアウト後はログイン画面より再度ログインしてください。";
 
-//Pharmacy Setting
-"my_pharmacy_setting"                   = "My Pharmacy Setting";
-"read_qrcode"                           = "Read QR Code";
-"register_my_pharmacy"                  = "Register My Pharmacy";
+////Pharmacy Setting
+"my_pharmacy_setting"                   = "My薬局設定";
+"read_qrcode"                           = "QRコードを読み取る";
+"register_my_pharmacy"                  = "My薬局に登録する";
 "register_my_pharmacist"                = "My薬剤師に登録する";
-
-"point"                                 = "Point";
-"search"                                = "Search";
-"point_reference"                       = "Point Reference";
-"point_own"                             = "Point Own";
-"point_history"                         = "Point History";
-"point_use"                             = "Point Use";
-"point_about"                           = "Point About";
+"point"                                 = "ポイント";
+"search"                                = "検索";
+"point_reference"                       = "ポイント照会";
+"point_own"                             = "所持ポイント";
+"point_history"                         = "ポイント履歴";
+"point_use"                             = "ポイントを利用する";
+"point_about"                           = "ポイントサービスについて";
 "back_qr"                               = "閉じる";
+
 
 "back_passcode"                         = "X 閉じる";
 
 //Reset pass
-"reset_password"                        = "Reset Password";
-"reset_password_input"                  = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";
+"reset_password"                        = "パスワード再設定";
+"reset_password_input"                  = "パスワードの再設定のために、ご本人確認を行います。アカウントに登録したメールアドレスを入力してください。";
 "reset_password_explain" = "※登録されたメールアドレス宛てに、パスワード再設定するためのURLをお送りします。\n※メールに記載されたURLをクリックし、新しいパスワードの設定を行った上で再度ログインをお願いします。\n※ドメイン指定受信を設定している方は、「noreply@tri-care.com」が受信できるように設定を変更してください。メールが受信できない場合があります。";
 "reset_password_done_message" = "※メールに記載されたURLをクリックしないまま24時間が経過した場合、ご変更依頼が無効となってしまいますのでご注意ください。\n※フリーメールアドレスをご利用の場合は 迷惑メールフォルダやゴミ箱に振り分けられてしまうことがありますのでご注意ください。\n※入力されたメールアドレスに誤りがあるとメールが届きません。\n※確認メールが届かない場合や確認メールの有効期限が切れてしまった場合は、再度、変更手続きを行ってください。";
 "send_reset_password_mail"              = "ご入力いただいたメールアドレス宛に、パスワード再設定の案内メールを送信しました。\nメールの内容をご確認いただき、パスワードの再設定を行ってください。";
-"setting_target"                        = "Target Setting";
-"walking_per_day"                       = "Target Per Day";
-"walking"                               = "Steps";
-"save"                                  = "Save";
+"setting_target"                        = "目標設定";
+"walking_per_day"                       = "歩数（1日）";
+"walking"                               = "歩";
+"save"                                  = "保存";
 
 //MARK: Pharmacy Detail
-"address"                               = "Address";
-"phone_number"                          = "Phone";
-"business_time"                         = "Business Time";
-"day_off"                               = "Days Off";
-"website"                               = "Website";
+"address"                               = "住所";
+"phone_number"                          = "電話番号";
+"business_time"                         = "営業時間";
+"day_off"                               = "定休日";
+"website"                               = "公式HP";
 
 //MARK: Pharmacy Search Result
 "search_by_name"                        = "薬局名で検索";
@@ -190,16 +191,12 @@
 "skip"                                  = "スキップ";
 
 //MARK: Pharmacy Search
-"please_register_your_pharmacy"         = "Please register your pharmacy.";
-"hint_search_by_name"                   = "Search By Name";
-"search_by_prefecture"                  = "Search By Prefecture";
-"search_by_location"                    = "Search By Location";
-
-"search_by_prefecture"                  = "Prefecture";
-"search_by_current_location"            = "Current Location";
-"prefecture"                            = "Prefecture";
-"town"                                  = "Town";
-
+"please_register_your_pharmacy"         = "あなたがかかりつけにしている薬局を登録してください。";
+"hint_search_by_name"                   = "薬局名で検索";
+"search_by_prefecture"                  = "都道府県から探す";
+"search_by_current_location"            = "現在地付近の薬局";
+"prefecture"                            = "都道府県";
+"town"                                  = "市区町村";
 "search_text"                           = "薬局名";
 "search_text_placeholder"               = "薬局名で検索";
 
@@ -209,13 +206,13 @@
 
 //MARK: Pharmacist Input
 "please_register_your_pharmacist"       = "よく相談する薬剤師がいる場合、薬剤師の名前と連絡先を登録してください。";
-"pharmacist_name"                       = "Name";
-"pharmacist_phone"                      = "Phone";
-"pharmacist_mail_address"               = "Email";
-"pharmacist_note"                       = "Note";
+"pharmacist_name"                       = "薬剤師の名前";
+"pharmacist_phone"                      = "連絡先電話番号";
+"pharmacist_mail_address"               = "連絡先メールアドレス";
+"pharmacist_note"                       = "メモ";
 
 //MARK: Register Complete
-"register_complete_title"               = "Register Complete";
+"register_complete_title"               = "会員登録完了";
 "register_member_complete"              = "会員登録が完了しました。";
 "my_pharmacy_register_not_done"         = "まだMy薬局の登録は完了していません。";
 "take_qrcode_label"                     = "My薬局として登録した薬局の店舗にあるQRコードを読み取ることでMy薬局の登録が完了となります。";
@@ -232,9 +229,11 @@
 //MARK: Home
 "notify_from_tricare_pharmacy"          = "My薬局からのお知らせ";
 "view_more"                             = "もっと見る";
+
 "today_step"                            = "今日の歩数";
 "today_exercise"                        = "今日の活動";
 "today_meal"                            = "今日のごはん";
+
 
 "sucess_percent"                        = "80％達成！あと少し！";
 "exercise"                              = "活動";
@@ -245,9 +244,9 @@
 "enable_passcode"                       = "パスコードロックを有効にする";
 "change_passcode"                       = "パスコードを変更する";
 "input_passcode"                        = "パスコードロックを入力してください。";
-"old_passcode_not_correct"              = "パスコードが正しくありません。";
 "confirm_passcode"                      = "確認のためもう一度入力してください。";
 "passcode_not_match"                    = "パスコードが一致しません。";
+"old_passcode_not_correct"              = "パスコードが正しくありません。";
 "input_again"                           = "もう一度入力してください。";
 "input_current_passcode"                = "現在のパスコードを入力してください。 ";
 "input_new_passcode"                    = "新しいパスコードを入力してください。";
@@ -255,7 +254,6 @@
 "input_passcode_title"                  = "パスコード入力";
 "input_passcode_new_title"              = "パスコード変更";
 "input_passcode_nav"                    = "パスコードロック設定";
-
 
 "passcode_login_title"                  = "パスコードを入力してください。";
 "passcode_login_guide"                  = "パスコードを忘れた方はこちら";
@@ -281,15 +279,15 @@
 "leave_confirm"                         = "退会確認";
 "really_want_leave_message"             = "本当に退会しますか？";
 
-//QR
 "guide_qr_code"                         = "薬局の店頭にあるＱＲコードを読み込んでください。読み取りがうまくいかない場合、平らな明るい場所でお試しください。";
 "qr_title"                              = "QRコード読取り";
+
 "register_my_pharmacy_done"             = "My薬局の登録が完了しました。";
 "profile_updated"                       = "プロフィールを更新しました。";
 "back_to_mypage"                        = "マイページトップへ";
 "save_change"                           = "変更を保存";
 
-"loading"                               = "Loading...";
+"loading"                               = "読み込み中...";
 
 //MARK: VALIDATE CHANGE EMAIL
 "please_input_change_email"             = "新しいメールアドレスを入力してください。";
@@ -297,7 +295,7 @@
 "please_input_correct_email_type"       = "正しいメールアドレスを入力してください。";
 "email_change_did_not_match"            = "入力したメールアドレスと確認用のメールアドレスが一致しません。";
 
-//MARK: VALIDATE MESSAGE
+//MARK: VALIDATE LOGIN REGISTER
 "please_input_mail"                     = "メールアドレスを入力してください。";
 "please_input_validate_mail"            = "正しいメールアドレスを入力してください。";
 "please_input_password"                 = "パスワードを入力してください。";
@@ -306,14 +304,14 @@
 
 "please_input_new_password"             = "新しいパスワードを入力してください。";
 "please_input_new_password_confirm"     = "新しいパスワード（確認）を入力してください。";
-"please_input_alphanumeric"             = "半角英数で入力してください。";
+"please_input_half_width"               = "半角英数で入力してください。";
 "password_did_not_match"                = "入力したパスワードと確認用のパスワードが一致しません。";
 "please_input_letter_number"            = "パスワードはアルファベットと数字を混合で入力してください。";
 "please_input_more_8_letter"            = "パスワードは8文字以上で入力してください｡";
 "please_input_below_32_letter"          = "パスワードは32文字以内で入力してください｡";
 
 "email_can_not_use"                     = "そのメールアドレスは既に使用されています。";
-"please_input_password_alphanumeric"    = "パスワードは半角英数で入力してください。";
+"please_input_password_half_width"      = "パスワードは半角英数で入力してください。";
 "please_input_password_confirm"         = "パスワード（確認）を入力してください。";
 
 //MARK: VALIDATE PROFILE
@@ -324,12 +322,13 @@
 "please_input_first_name_katakana_half_width"       = "カナ（姓）は全角カタカナで入力してください。";
 "please_input_last_name_katakana_half_width"        = "カナ（名）は全角カタカナで入力してください。";
 "please_input_birthday"                             = "生年月日を入力してください。";
-"please_input_height"                   = "身長を入力してください。";
-"please_input_text"                     = "Please input text search";
 
-"all" = "ALL";
+"please_input_text"                     = "薬局名を入力してください。";
+
+"all" = "すべて";
 "gps_1km_pharmacy"                              = "ＧＰＳで現在地から半径1ｋｍ圏内の薬局";
 "please_input_pharmacist_name"                          = "薬剤師の名前を入力してください。";
+"please_input_height"                   = "身長を入力してください。";
 
 "empty_pharmacy_search"                              = "該当するデータが\n見つかりませんでした。";
 
@@ -343,6 +342,7 @@
 "please_register_pharmacy_first"                              = "My薬剤師の設定を行うには、\n先にMy薬局を登録する必要があります。";
 "notification"                                      = "お知らせ";
 "qr_code_not_match"                              = "ご登録いただいた薬局のQRコードと一致しません。";
+
 "confirm_change_pharmacy"                              = "My薬局を変更すると、現在My薬局として登録している薬局からのメッセージやその他関連データが全て削除されますがよろしいですか？";
 
 "manager_notification"                                  = "運営からのお知らせ";
@@ -351,34 +351,11 @@
 "inform_change_email"                              = "※登録されたメールアドレス宛てに、パスワード再設定するためのURLをお送りします。\n※メールに記載されたURLをクリックし、新しいパスワードの設定を行った上で再度ログインをお願いします。\n※ドメイン指定受信を設定している方は、「noreply@tri-care.com」が受信できるように設定を変更してください。メールが受信できない場合があります。";
 "select_pharmacy_done"                              = "薬局の選択が完了しました。";
 "pharmacy_register_done"                              = "登録した薬局の店舗にあるQRコードを読み取ることでMy薬局の登録が完了となります。";
+
 ""                              = "";
 ""                              = "";
 ""                              = "";
 ""                              = "";
 ""                              = "";
 ""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
-""                              = "";
+

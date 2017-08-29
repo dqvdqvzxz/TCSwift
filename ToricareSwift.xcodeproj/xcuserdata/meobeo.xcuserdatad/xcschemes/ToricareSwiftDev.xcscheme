@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17C98F4E1F3BFAE8003AF863"
-               BuildableName = "ToricareSwiftLocal.app"
-               BlueprintName = "ToricareSwiftLocal"
+               BlueprintIdentifier = "17D9BEE01F5567E2004F090A"
+               BuildableName = "ToricareSwiftDev.app"
+               BlueprintName = "ToricareSwiftDev"
                ReferencedContainer = "container:ToricareSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17C98F4E1F3BFAE8003AF863"
-            BuildableName = "ToricareSwiftLocal.app"
-            BlueprintName = "ToricareSwiftLocal"
+            BlueprintIdentifier = "17D9BEE01F5567E2004F090A"
+            BuildableName = "ToricareSwiftDev.app"
+            BlueprintName = "ToricareSwiftDev"
             ReferencedContainer = "container:ToricareSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,19 +55,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17C98F4E1F3BFAE8003AF863"
-            BuildableName = "ToricareSwiftLocal.app"
-            BlueprintName = "ToricareSwiftLocal"
+            BlueprintIdentifier = "17D9BEE01F5567E2004F090A"
+            BuildableName = "ToricareSwiftDev.app"
+            BlueprintName = "ToricareSwiftDev"
             ReferencedContainer = "container:ToricareSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -81,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17C98F4E1F3BFAE8003AF863"
-            BuildableName = "ToricareSwiftLocal.app"
-            BlueprintName = "ToricareSwiftLocal"
+            BlueprintIdentifier = "17D9BEE01F5567E2004F090A"
+            BuildableName = "ToricareSwiftDev.app"
+            BlueprintName = "ToricareSwiftDev"
             ReferencedContainer = "container:ToricareSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
