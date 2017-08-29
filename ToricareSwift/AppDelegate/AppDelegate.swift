@@ -92,11 +92,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
             let navController = UINavigationController(rootViewController: mainVC)
             window?.rootViewController = navController
-        }else{
-            //if url.schema is blank
-            let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-            let navController = UINavigationController(rootViewController: mainVC)
-            window?.rootViewController = navController
         }
         
         //handle schema facebook

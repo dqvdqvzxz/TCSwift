@@ -21,11 +21,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rRk-RR-yoA" userLabel="tblNotify">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chs-og-sZY">
-                    <rect key="frame" x="10" y="569" width="355" height="44"/>
+                    <rect key="frame" x="10" y="613" width="355" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="aGz-zn-YNe"/>
                     </constraints>
@@ -38,11 +38,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="rRk-RR-yoA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4lY-kl-Csz"/>
+                <constraint firstItem="rRk-RR-yoA" firstAttribute="bottom" secondItem="Chs-og-sZY" secondAttribute="top" constant="-10" id="71t-Eq-u40"/>
                 <constraint firstAttribute="trailing" secondItem="rRk-RR-yoA" secondAttribute="trailing" id="OtI-lx-UJ8"/>
                 <constraint firstItem="Chs-og-sZY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="cRc-vm-fKQ"/>
                 <constraint firstAttribute="trailing" secondItem="Chs-og-sZY" secondAttribute="trailing" constant="10" id="eyZ-JJ-ufq"/>
-                <constraint firstAttribute="bottom" secondItem="Chs-og-sZY" secondAttribute="bottom" constant="54" id="grm-rS-kHx"/>
-                <constraint firstAttribute="bottom" secondItem="rRk-RR-yoA" secondAttribute="bottom" constant="108" id="p0d-NB-JsQ"/>
+                <constraint firstAttribute="bottom" secondItem="Chs-og-sZY" secondAttribute="bottom" constant="10" id="grm-rS-kHx"/>
                 <constraint firstItem="rRk-RR-yoA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z9w-TA-Xi3"/>
             </constraints>
         </view>
