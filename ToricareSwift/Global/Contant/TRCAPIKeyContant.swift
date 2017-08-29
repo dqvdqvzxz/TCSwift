@@ -16,6 +16,9 @@ let ROOT_URL =                      "http://172.16.210.122/"
 #elseif ENV_2
 let ROOT_URL =                      "http://42.125.230.115/"
 
+#elseif ENV_0
+let ROOT_URL =                      "http://172.16.210.122/"
+
 #endif
     //42.125.230.115
 //MARK: URL
