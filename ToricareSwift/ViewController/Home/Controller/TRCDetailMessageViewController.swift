@@ -49,7 +49,7 @@ class TRCDetailMessageViewController: UIViewController {
         //UI
         lblTitleMessage.labelStyle(title: messageData.title, fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
         
-        lblSender.labelStyle(title: messageData.sender + " | " + messageData.updatedAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: BACKGROUND_COLOR)
+        lblSender.labelStyle(title: messageData.sender + " | " + messageData.sentAt, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: BACKGROUND_COLOR)
         
         viewLine.backgroundColor = UIColor.init(hexString: LABEL_FONT_GREY_COLOR)
         tvContent.font = UIFont.init(name: "HiraginoSans-W3", size: LABEL_FONT_SIZE!)

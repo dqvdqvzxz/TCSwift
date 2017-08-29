@@ -187,6 +187,8 @@ let URL_KEY =                       "url"
 let IMAGES =                        "images"
 let CREATED_AT =                    "created_at"
 let UPDATED_AT =                    "updated_at"
+let SENT_AT =                       "sent_at"
+
 let SHOP_STATUS =                   "shop_status"
 // Message
 let IS_READ =                       "is_read"

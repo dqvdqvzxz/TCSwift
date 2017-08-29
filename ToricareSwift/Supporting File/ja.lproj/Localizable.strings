@@ -22,9 +22,9 @@
 
 //MARK: Tabbar
 "tab_home"                              = "ホーム";
-"tab_nutrition"                         = "栄養管理";
-"tab_exercise"                          = "運動管理";
-"tab_medicine"                          = "お薬管理";
+"tab_nutrition"                         = "食事";
+"tab_exercise"                          = "活動";
+"tab_medicine"                          = "おくすり";
 "tab_mypage"                            = "マイページ";
 
 //MARK: PreLoginViewController
