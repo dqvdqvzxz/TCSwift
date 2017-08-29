@@ -93,17 +93,17 @@ class TRCBaseViewController: UIViewController {
         _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "menu_home_00").withRenderingMode(.alwaysOriginal)
         _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "menu_home_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "nutrition")
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "nutrition_hl")
+        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "menu_syokuji_00").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "run")
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "run_hl")
+        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "menu_katsudou_00").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "pill")
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "pill_hl")
+        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "menu_okusuri_00").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "menu_okusuri_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "profile")
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "profile_hl")
+        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_00").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
     }
     
     func configTabbar2(){
@@ -133,17 +133,17 @@ class TRCBaseViewController: UIViewController {
         _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "menu_home_01").withRenderingMode(.alwaysOriginal)
         _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "menu_home_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "nutrition")
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "nutrition_hl")
+        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "menu_syokuji_01").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "menu_syokuji_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "run")
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "run_hl")
+        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "menu_katsudou_01").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "pill")
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "pill_hl")
+        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "menu_okusuri_01").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "menu_okusuri_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "profile")
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "profile_hl")
+        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_01").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
     }
     
     func configTabbar3(){
@@ -174,17 +174,17 @@ class TRCBaseViewController: UIViewController {
         _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "menu_home_w").withRenderingMode(.alwaysOriginal)
         
         
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "nutrition").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "nutrition_hl").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "menu_syokuji_02").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "menu_syokuji_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "run")
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "run_hl")
+        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "menu_katsudou_02").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "pill")
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "pill_hl")
+        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "menu_okusuri_02").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "menu_okusuri_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "profile")
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "profile_hl")
+        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_02").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
     }
     
     func configTabbar4(){
@@ -214,17 +214,17 @@ class TRCBaseViewController: UIViewController {
         _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "menu_home_03").withRenderingMode(.alwaysOriginal)
         _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "menu_home_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "nutrition")
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "nutrition_hl")
+        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "menu_syokuji_03").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "menu_syokuji_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "run")
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "run_hl")
+        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "menu_katsudou_03").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "pill")
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "pill_hl")
+        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "menu_okusuri_03").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "menu_okusuri_w").withRenderingMode(.alwaysOriginal)
         
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "profile")
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "profile_hl")
+        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_03").withRenderingMode(.alwaysOriginal)
+        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
     }
 }
 
