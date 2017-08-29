@@ -79,13 +79,35 @@ class TRCHomeViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         updateUnread("0")
         
         getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
+        //init tabbar
+
+        
+//        //set image for tab item
+//        _obj.tabController.tabBar.items?[0].image = UIImage(named: "menu_home_00.png")
+//        _obj.tabController.tabBar.items?[0].selectedImage = UIImage(named: "menu_home_w.png")
+//        
+//        _obj.tabController.tabBar.items?[1].image = UIImage(named: "menu_syokuji_00.png")
+//        _obj.tabController.tabBar.items?[1].selectedImage = UIImage(named: "menu_syokuji_w.png")
+//        
+//        _obj.tabController.tabBar.items?[2].image = UIImage(named: "menu_katsudou_00.png")
+//        _obj.tabController.tabBar.items?[2].selectedImage = UIImage(named: "menu_katsudou_w.png")
+//        
+//        _obj.tabController.tabBar.items?[3].image = UIImage(named: "menu_okusuri_00.png")
+//        _obj.tabController.tabBar.items?[3].selectedImage = UIImage(named: "menu_okusuri_w.png")
+//        
+//        _obj.tabController.tabBar.items?[4].image = UIImage(named: "menu_mypage_00.png")
+//        _obj.tabController.tabBar.items?[4].selectedImage = UIImage(named: "menu_mypage_w.png")
+        
+        
         getUnreadMessage()
         
         if(_obj.objectGoal != nil){
