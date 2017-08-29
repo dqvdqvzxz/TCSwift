@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -233,7 +233,7 @@
                                         <constraint firstAttribute="trailing" secondItem="Xhc-TB-kQW" secondAttribute="trailing" constant="73" id="a90-Pc-iIq"/>
                                     </constraints>
                                 </view>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character01" translatesAutoresizingMaskIntoConstraints="NO" id="tF7-xS-sVN">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character03" translatesAutoresizingMaskIntoConstraints="NO" id="tF7-xS-sVN">
                                     <rect key="frame" x="282" y="112" width="73" height="61"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="73" id="9tW-1a-yeV"/>
@@ -674,7 +674,7 @@
         <image name="arrow_size1_w" width="8" height="12"/>
         <image name="banner1" width="99" height="45"/>
         <image name="banner2" width="99" height="45"/>
-        <image name="character01" width="73" height="61"/>
+        <image name="character03" width="85" height="61"/>
         <image name="healthmeter" width="19" height="15"/>
         <image name="ic_back" width="48" height="48"/>
         <image name="ic_home_message" width="28" height="28"/>
