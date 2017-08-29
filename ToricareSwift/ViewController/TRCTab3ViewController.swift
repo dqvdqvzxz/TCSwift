@@ -22,7 +22,7 @@ class TRCTab3ViewController: TRCBaseViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        configTabbar3()
+        customizeTabbar(2)
     }
 
     override func didReceiveMemoryWarning() {

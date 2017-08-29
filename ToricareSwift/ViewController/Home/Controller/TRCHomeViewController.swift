@@ -88,7 +88,7 @@ class TRCHomeViewController: TRCBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         //tabbar
         _obj.tabController.tabBar.isHidden = false
-        configTabbar1()
+        customizeTabbar(0)
         
         getUnreadMessage()
         

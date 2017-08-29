@@ -66,14 +66,83 @@ class TRCBaseViewController: UIViewController {
     }
     
     //MARK: Customize tabbar 
-    func configTabbar1(){
+    func customizeTabbar(_ tabIndex: Int){
+        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: WHITE_COLOR)]
+        var unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_1)]
+        
+        var backgroundImage: String = ""
+        
+        var tab0Image: UIImage!
+        var tab1Image: UIImage!
+        var tab2Image: UIImage!
+        var tab3Image: UIImage!
+        var tab4Image: UIImage!
+        
+        switch tabIndex {
+        case 0:
+            backgroundImage = TABBAR_COLOR_1
+            
+            unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_1)]
+            
+            tab0Image = #imageLiteral(resourceName: "menu_home_00")
+            tab1Image = #imageLiteral(resourceName: "menu_syokuji_00")
+            tab2Image = #imageLiteral(resourceName: "menu_katsudou_00")
+            tab3Image = #imageLiteral(resourceName: "menu_okusuri_00")
+            tab4Image = #imageLiteral(resourceName: "menu_mypage_00")
+        case 1:
+            backgroundImage = TABBAR_COLOR_2
+            
+            unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_2)]
+            
+            tab0Image = #imageLiteral(resourceName: "menu_home_01")
+            tab1Image = #imageLiteral(resourceName: "menu_syokuji_01")
+            tab2Image = #imageLiteral(resourceName: "menu_katsudou_01")
+            tab3Image = #imageLiteral(resourceName: "menu_okusuri_01")
+            tab4Image = #imageLiteral(resourceName: "menu_mypage_01")
+        case 2:
+            backgroundImage = TABBAR_COLOR_3
+            
+            unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_3)]
+
+            tab0Image = #imageLiteral(resourceName: "menu_home_02")
+            tab1Image = #imageLiteral(resourceName: "menu_syokuji_02")
+            tab2Image = #imageLiteral(resourceName: "menu_katsudou_02")
+            tab3Image = #imageLiteral(resourceName: "menu_okusuri_02")
+            tab4Image = #imageLiteral(resourceName: "menu_mypage_02")
+        case 3:
+            backgroundImage = TABBAR_COLOR_4
+            
+            unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_4)]
+
+            tab0Image = #imageLiteral(resourceName: "menu_home_03")
+            tab1Image = #imageLiteral(resourceName: "menu_syokuji_03")
+            tab2Image = #imageLiteral(resourceName: "menu_katsudou_03")
+            tab3Image = #imageLiteral(resourceName: "menu_okusuri_03")
+            tab4Image = #imageLiteral(resourceName: "menu_mypage_03")
+        default:
+            break
+        }
+        
         //set background color for selected item
-        _obj.tabController.tabBar.selectionIndicatorImage = UIImage().makeImageWithColorAndSize(color: UIColor.init(hexString: TABBAR_COLOR_1), size: CGSize(width: _obj.tabController.tabBar.frame.width/5, height: _obj.tabController.tabBar.frame.height))
+        _obj.tabController.tabBar.selectionIndicatorImage = UIImage().makeImageWithColorAndSize(color: UIColor.init(hexString:backgroundImage), size: CGSize(width: _obj.tabController.tabBar.frame.width/5, height: _obj.tabController.tabBar.frame.height))
+
+        //set image
+        _obj.tabController.tabBar.items?[0].image = convertImage(tab0Image)
+        _obj.tabController.tabBar.items?[0].selectedImage = convertImage(#imageLiteral(resourceName: "menu_home_w"))
+        
+        _obj.tabController.tabBar.items?[1].image = convertImage(tab1Image)
+        _obj.tabController.tabBar.items?[1].selectedImage = convertImage(#imageLiteral(resourceName: "menu_syokuji_w"))
+        
+        _obj.tabController.tabBar.items?[2].image = convertImage(tab2Image)
+        _obj.tabController.tabBar.items?[2].selectedImage = convertImage(#imageLiteral(resourceName: "menu_katsudou_w"))
+        
+        _obj.tabController.tabBar.items?[3].image = convertImage(tab3Image)
+        _obj.tabController.tabBar.items?[3].selectedImage = convertImage(#imageLiteral(resourceName: "menu_okusuri_w"))
+        
+        _obj.tabController.tabBar.items?[4].image = convertImage(tab4Image)
+        _obj.tabController.tabBar.items?[4].selectedImage = convertImage(#imageLiteral(resourceName: "menu_mypage_w"))
         
         //setcolor for text
-        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: WHITE_COLOR)]
-        let unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_1)]
-        
         _obj.tabController.tabBar.items?[0].setTitleTextAttributes(unSelectedItem, for: .normal)
         _obj.tabController.tabBar.items?[0].setTitleTextAttributes(selectedItem, for: .selected)
         
@@ -88,143 +157,10 @@ class TRCBaseViewController: UIViewController {
         
         _obj.tabController.tabBar.items?[4].setTitleTextAttributes(unSelectedItem, for: .normal)
         _obj.tabController.tabBar.items?[4].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        //set image
-        _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "menu_home_00").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "menu_home_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "menu_syokuji_00").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "menu_katsudou_00").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "menu_okusuri_00").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "menu_okusuri_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_00").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
     }
-    
-    func configTabbar2(){
-        //set background color for selected item
-        _obj.tabController.tabBar.selectionIndicatorImage = UIImage().makeImageWithColorAndSize(color: UIColor.init(hexString: TABBAR_COLOR_2), size: CGSize(width: _obj.tabController.tabBar.frame.width/5, height: _obj.tabController.tabBar.frame.height))
-        
-        //setcolor for text
-        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: WHITE_COLOR)]
-        let unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_2)]
-        
-        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        //set image
-        _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "menu_home_01").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "menu_home_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "menu_syokuji_01").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "menu_syokuji_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "menu_katsudou_01").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "menu_okusuri_01").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "menu_okusuri_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_01").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
-    }
-    
-    func configTabbar3(){
-        //set background color for selected item
-        _obj.tabController.tabBar.selectionIndicatorImage = UIImage().makeImageWithColorAndSize(color: UIColor.init(hexString: TABBAR_COLOR_3), size: CGSize(width: _obj.tabController.tabBar.frame.width/5, height: _obj.tabController.tabBar.frame.height))
-        
-        //setcolor for text
-        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: WHITE_COLOR)]
-        let unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_3)]
-        
-        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        //set image
-        _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "menu_home_02").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "menu_home_w").withRenderingMode(.alwaysOriginal)
-        
-        
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "menu_syokuji_02").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "menu_syokuji_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "menu_katsudou_02").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "menu_okusuri_02").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "menu_okusuri_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_02").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
-    }
-    
-    func configTabbar4(){
-        //set background color for selected item
-        _obj.tabController.tabBar.selectionIndicatorImage = UIImage().makeImageWithColorAndSize(color: UIColor.init(hexString: TABBAR_COLOR_4), size: CGSize(width: _obj.tabController.tabBar.frame.width/5, height: _obj.tabController.tabBar.frame.height))
-        
-        //setcolor for text
-        let selectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: WHITE_COLOR)]
-        let unSelectedItem = [NSForegroundColorAttributeName: UIColor.init(hexString: TABBAR_COLOR_4)]
-        
-        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[0].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[1].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[2].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[3].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(unSelectedItem, for: .normal)
-        _obj.tabController.tabBar.items?[4].setTitleTextAttributes(selectedItem, for: .selected)
-        
-        //set image
-        _obj.tabController.tabBar.items?[0].image = #imageLiteral(resourceName: "menu_home_03").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "menu_home_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[1].image = #imageLiteral(resourceName: "menu_syokuji_03").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "menu_syokuji_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[2].image = #imageLiteral(resourceName: "menu_katsudou_03").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "menu_katsudou_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[3].image = #imageLiteral(resourceName: "menu_okusuri_03").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[3].selectedImage = #imageLiteral(resourceName: "menu_okusuri_w").withRenderingMode(.alwaysOriginal)
-        
-        _obj.tabController.tabBar.items?[4].image = #imageLiteral(resourceName: "menu_mypage_03").withRenderingMode(.alwaysOriginal)
-        _obj.tabController.tabBar.items?[4].selectedImage = #imageLiteral(resourceName: "menu_mypage_w").withRenderingMode(.alwaysOriginal)
+ 
+    func convertImage(_ image: UIImage) -> UIImage{
+        return image.withRenderingMode(.alwaysOriginal)
     }
 }
 

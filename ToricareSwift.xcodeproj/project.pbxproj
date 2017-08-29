@@ -299,6 +299,8 @@
 		684095B21F303B43009F16EA /* TRCTab4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095B01F303B43009F16EA /* TRCTab4ViewController.swift */; };
 		684095B31F303B43009F16EA /* TRCTab4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 684095B11F303B43009F16EA /* TRCTab4ViewController.xib */; };
 		684095B61F3313DB009F16EA /* TRCRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095B51F3313DB009F16EA /* TRCRegisterRequest.swift */; };
+		6848E3761F55705F0086A288 /* LocalEnglish.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6848E3751F55705F0086A288 /* LocalEnglish.strings */; };
+		6848E3771F55705F0086A288 /* LocalEnglish.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6848E3751F55705F0086A288 /* LocalEnglish.strings */; };
 		685892DF1F4EB28B00DD4EDA /* TRCBannerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685892DE1F4EB28B00DD4EDA /* TRCBannerRequest.swift */; };
 		685892E01F4EB28B00DD4EDA /* TRCBannerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685892DE1F4EB28B00DD4EDA /* TRCBannerRequest.swift */; };
 		68BB9ECC1F385F9B009A8454 /* TRCPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BB9ECB1F385F9B009A8454 /* TRCPasswordRequest.swift */; };
@@ -480,6 +482,7 @@
 		684095B01F303B43009F16EA /* TRCTab4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCTab4ViewController.swift; sourceTree = "<group>"; };
 		684095B11F303B43009F16EA /* TRCTab4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCTab4ViewController.xib; sourceTree = "<group>"; };
 		684095B51F3313DB009F16EA /* TRCRegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCRegisterRequest.swift; sourceTree = "<group>"; };
+		6848E3751F55705F0086A288 /* LocalEnglish.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = LocalEnglish.strings; sourceTree = "<group>"; };
 		685892DE1F4EB28B00DD4EDA /* TRCBannerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCBannerRequest.swift; sourceTree = "<group>"; };
 		68BB9ECB1F385F9B009A8454 /* TRCPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPasswordRequest.swift; sourceTree = "<group>"; };
 		68BB9ECD1F386B35009A8454 /* TRCEmailRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCEmailRequest.swift; sourceTree = "<group>"; };
@@ -801,6 +804,7 @@
 				3FB4113C1EFB6221008720A6 /* LaunchScreen.storyboard */,
 				C00CF8F11F17284800B6A5A5 /* Localizable.strings */,
 				3F57F6F01F1DF43E00CC079C /* ToricareSwift-Bridging-Header.h */,
+				6848E3751F55705F0086A288 /* LocalEnglish.strings */,
 			);
 			path = "Supporting File";
 			sourceTree = "<group>";
@@ -1146,6 +1150,7 @@
 				17C98FBA1F3BFAE8003AF863 /* TRCPasscodeLockSettingViewController.xib in Resources */,
 				17C98FBB1F3BFAE8003AF863 /* TRCLinkedServiceCell.xib in Resources */,
 				17C98FBC1F3BFAE8003AF863 /* TRCSearchCurrentLocationPageView.xib in Resources */,
+				6848E3771F55705F0086A288 /* LocalEnglish.strings in Resources */,
 				17C98FBD1F3BFAE8003AF863 /* TRCWebView.xib in Resources */,
 				17C98FBE1F3BFAE8003AF863 /* TRCDetailMessageViewController.xib in Resources */,
 				17C98FBF1F3BFAE8003AF863 /* TRCMyPharmacyDetailPageViewController.xib in Resources */,
@@ -1210,6 +1215,7 @@
 				3F4759671F0CC50C00B82645 /* TRCPasscodeLockSettingViewController.xib in Resources */,
 				3F4759781F0DE74400B82645 /* TRCLinkedServiceCell.xib in Resources */,
 				3F57F6ED1F1CD39E00CC079C /* TRCSearchCurrentLocationPageView.xib in Resources */,
+				6848E3761F55705F0086A288 /* LocalEnglish.strings in Resources */,
 				3F57F7431F26DEE700CC079C /* TRCWebView.xib in Resources */,
 				3F57F75B1F2ADBB200CC079C /* TRCDetailMessageViewController.xib in Resources */,
 				3F57F74F1F26F21600CC079C /* TRCMyPharmacyDetailPageViewController.xib in Resources */,
