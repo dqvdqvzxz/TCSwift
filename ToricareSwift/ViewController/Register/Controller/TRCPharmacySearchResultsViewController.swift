@@ -130,7 +130,7 @@ class TRCPharmacySearchResultsViewController: TRCBaseViewController {
                 }
                 catch
                 {
-                    print("JSONParsin Error: \(error)")
+                    DLog("JSONParsin Error: \(error)")
                 }
                 if (self.arrayResults.count == 0) {
                     self.tblSearchResult.isHidden = true

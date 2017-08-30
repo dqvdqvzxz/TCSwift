@@ -17,7 +17,7 @@ class TRCBaseViewController: UIViewController {
         
         configGlobalUI()
         
-        print(self.navigationController?.viewControllers)
+        DLog(self.navigationController?.viewControllers)
     }
     
     override func viewWillAppear(_ animated: Bool) {

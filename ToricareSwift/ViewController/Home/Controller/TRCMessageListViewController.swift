@@ -73,7 +73,7 @@ class TRCMessageListViewController: TRCBaseViewController {
                 }
                 catch
                 {
-                    print("JSONParsin Error: \(error)")
+                    DLog("JSONParsin Error: \(error)")
                 }
                 if (self.dataList.count == 0) {
                     self.tblMessage.isHidden = true

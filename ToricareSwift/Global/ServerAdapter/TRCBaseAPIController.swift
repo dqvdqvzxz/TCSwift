@@ -174,7 +174,7 @@ class TRCBaseAPIController{
                         }
                         break
                     case .failure(let encodingError):
-                        print(encodingError)
+                        DLog(encodingError)
                         failed(RESULT_FAIL)
                         break
                     }

@@ -208,7 +208,7 @@ class TRCHomeViewController: TRCBaseViewController {
                     
                     self.hideHUD()
                 } catch {
-                    print("JSONParsin Error: \(error)")
+                    DLog("JSONParsin Error: \(error)")
                 }
             }) { (error) in
                 self.hideHUD()
@@ -225,7 +225,7 @@ class TRCHomeViewController: TRCBaseViewController {
                     
                     self.hideHUD()
                 } catch {
-                    print("JSONParsin Error: \(error)")
+                    DLog("JSONParsin Error: \(error)")
                 }
             }) { (error) in
                 self.hideHUD()
@@ -242,7 +242,7 @@ class TRCHomeViewController: TRCBaseViewController {
                     
                     self.hideHUD()
                 } catch {
-                    print("JSONParsin Error: \(error)")
+                    DLog("JSONParsin Error: \(error)")
                 }
             }) { (error) in
                 self.hideHUD()
@@ -259,11 +259,13 @@ class TRCHomeViewController: TRCBaseViewController {
                     let dataResults:[TRCBanner] = try parseArray(dataListBanner as! [JSONObject])
                     dataResults.forEach({ (item) in
                         self.bannerArray.append(item)
+                        
+                        DLog(self.bannerArray)
                     })
                     
                     self.hideHUD()
                 } catch {
-                    print("JSONParsin Error: \(error)")
+                    DLog("JSONParsin Error: \(error)")
                 }
             }) { (error) in
                 self.hideHUD()

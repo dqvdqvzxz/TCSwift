@@ -73,7 +73,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
                 
                 DLog(self.notificationInfo)
             } catch {
-                print("JSONParsin Error: \(error)")
+                DLog("JSONParsin Error: \(error)")
             } 
         }) { (error) in
             self.hideHUD()
