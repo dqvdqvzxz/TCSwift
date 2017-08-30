@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TRCWebView: TRCBaseViewController, UIWebViewDelegate {
+class TRCWebViewController: TRCBaseViewController, UIWebViewDelegate{
 
     @IBOutlet weak var webView: UIWebView!
     

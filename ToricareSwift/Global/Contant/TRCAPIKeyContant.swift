@@ -21,14 +21,13 @@ let ROOT_URL =                      "http://42.125.230.115/"
 //********************* RELEASE
 #elseif ENV_0
 let ROOT_URL =                      "http://172.16.210.122/"
-
 #endif
 
 let APP_DOMAIN =                    "\(ROOT_URL)api/v1/"
+let APP_RULE =                      "\(ROOT_URL)rule"
 let APP_POLICY =                    "\(ROOT_URL)privacy_policy"
-let APP_FAQ =                       "\(ROOT_URL)faq_list"
-let APP_TERM =                      "\(ROOT_URL)faq_list/1"
-let APP_QUESTION =                  "\(ROOT_URL)rule"
+let APP_FAQ_LIST =                  "\(ROOT_URL)faq_list"
+let APP_FAQ_DETAIL =                "\(ROOT_URL)faq_detail/1"
 
 // *************************************************************************
 
