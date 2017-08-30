@@ -31,13 +31,18 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        hideItem(isHide: true)
         getData()        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func hideItem(isHide: Bool) {
+        tblNotify.isHidden = isHide
+        btnSave.isHidden = isHide
     }
     
     //MARK: Config UI
@@ -53,6 +58,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         tblNotify.register(UINib(nibName: "TRCLinkedServiceCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         tblNotify.tableFooterView = UIView()
+        hideItem(isHide: false)
     }
     
     //MARK: Get data
