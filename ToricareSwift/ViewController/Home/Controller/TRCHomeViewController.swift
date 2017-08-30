@@ -91,10 +91,6 @@ class TRCHomeViewController: TRCBaseViewController {
         _obj.customizeTabbar(0)
         
         getUnreadMessage()
-        
-        if(_obj.objectGoal != nil){
-            self.lblStep.text = String().convertDecimal(_obj.objectGoal.steps)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -208,6 +204,7 @@ class TRCHomeViewController: TRCBaseViewController {
                     
                     self.lblContentExerciseKcal.text = String().convertDecimal(_obj.objectSummary.consumptCalo)
                     self.lblContentFoodKcal.text = String().convertDecimal(_obj.objectSummary.intakeCalo)
+                    self.lblStep.text = String().convertDecimal(_obj.objectSummary.step)
                     
                     self.hideHUD()
                 } catch {
@@ -225,8 +222,6 @@ class TRCHomeViewController: TRCBaseViewController {
                 do {
                     self.goalInfo = try parseDict(dataResult as! JSONObject) as TRCGoal
                     _obj.objectGoal = self.goalInfo
-                    
-                    self.lblStep.text = String().convertDecimal(_obj.objectGoal.steps)
                     
                     self.hideHUD()
                 } catch {
