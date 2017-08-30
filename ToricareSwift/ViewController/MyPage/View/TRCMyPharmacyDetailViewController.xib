@@ -103,7 +103,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiV-LP-9hy" userLabel="viewInformation">
-                                    <rect key="frame" x="10" y="260" width="365" height="180"/>
+                                    <rect key="frame" x="10" y="260" width="365" height="210"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-IX-DCo" userLabel="lblAddress">
                                             <rect key="frame" x="0.0" y="0.0" width="121.5" height="30"/>
@@ -114,7 +114,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dax-w5-mM5" userLabel="lblAddressResult">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dax-w5-mM5" userLabel="lblAddressResult">
                                             <rect key="frame" x="91.5" y="0.0" width="273.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="RMl-26-BDd"/>
@@ -132,7 +132,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnW-WM-Iyc" userLabel="lblPhoneResult">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnW-WM-Iyc" userLabel="lblPhoneResult">
                                             <rect key="frame" x="91.5" y="30" width="273.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="R1E-KE-a28"/>
@@ -150,7 +150,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afR-4b-vfI" userLabel="lblWorkScheduleResult">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afR-4b-vfI" userLabel="lblWorkScheduleResult">
                                             <rect key="frame" x="91.5" y="60" width="273.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="AYX-va-Dbr"/>
@@ -159,7 +159,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-K9-9nQ" userLabel="lblWorkScheduleDayOffResult">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-K9-9nQ" userLabel="lblWorkScheduleDayOffResult">
                                             <rect key="frame" x="91.5" y="90" width="273.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="hpl-u8-LQ5"/>
@@ -177,7 +177,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm4-uM-ThD" userLabel="lblDayOffResult">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm4-uM-ThD" userLabel="lblDayOffResult">
                                             <rect key="frame" x="91.5" y="120" width="273.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="EpF-ra-DeV"/>
@@ -195,7 +195,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="QHq-L8-4Th" userLabel="lblWebsiteResult">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="QHq-L8-4Th" userLabel="lblWebsiteResult">
                                             <rect key="frame" x="91.5" y="150" width="273.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="atn-2r-utY"/>
@@ -218,7 +218,7 @@
                                         <constraint firstItem="afR-4b-vfI" firstAttribute="top" secondItem="gnW-WM-Iyc" secondAttribute="bottom" id="Fsx-J6-xnE"/>
                                         <constraint firstItem="cbj-IX-DCo" firstAttribute="leading" secondItem="XiV-LP-9hy" secondAttribute="leading" id="GrO-qz-WYV"/>
                                         <constraint firstItem="MfR-db-g3Q" firstAttribute="leading" secondItem="XiV-LP-9hy" secondAttribute="leading" id="J9i-rG-MGp"/>
-                                        <constraint firstAttribute="height" constant="180" id="NiE-0c-AIw"/>
+                                        <constraint firstAttribute="height" constant="210" id="NiE-0c-AIw"/>
                                         <constraint firstAttribute="trailing" secondItem="Y7a-K9-9nQ" secondAttribute="trailing" id="OXM-CV-TIy"/>
                                         <constraint firstItem="dax-w5-mM5" firstAttribute="top" secondItem="XiV-LP-9hy" secondAttribute="top" id="TW3-ej-fiY"/>
                                         <constraint firstItem="ABY-3a-mw3" firstAttribute="top" secondItem="MfR-db-g3Q" secondAttribute="bottom" constant="30" id="XgO-9d-1YH"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,17 +40,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QnN-OI-Slx">
                     <rect key="frame" x="0.0" y="54" width="375" height="80"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tricare_passcode_login" translatesAutoresizingMaskIntoConstraints="NO" id="8CY-gc-daf">
-                            <rect key="frame" x="94" y="8" width="187.5" height="64"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_home" translatesAutoresizingMaskIntoConstraints="NO" id="8CY-gc-daf">
+                            <rect key="frame" x="97" y="20" width="180" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="l7X-un-8p7"/>
+                                <constraint firstAttribute="width" constant="180" id="sCJ-9J-x5e"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="8CY-gc-daf" firstAttribute="centerY" secondItem="QnN-OI-Slx" secondAttribute="centerY" id="ADV-Ob-YAb"/>
+                        <constraint firstItem="8CY-gc-daf" firstAttribute="centerX" secondItem="QnN-OI-Slx" secondAttribute="centerX" id="3AL-37-d2E"/>
                         <constraint firstAttribute="height" constant="80" id="CEY-3H-5CS"/>
-                        <constraint firstItem="8CY-gc-daf" firstAttribute="height" secondItem="QnN-OI-Slx" secondAttribute="height" multiplier="80%" id="NoN-9v-BbQ"/>
-                        <constraint firstItem="8CY-gc-daf" firstAttribute="centerX" secondItem="QnN-OI-Slx" secondAttribute="centerX" id="wiL-rO-Xgv"/>
-                        <constraint firstItem="8CY-gc-daf" firstAttribute="width" secondItem="QnN-OI-Slx" secondAttribute="width" multiplier="1:2" id="wvD-16-dXe"/>
+                        <constraint firstItem="8CY-gc-daf" firstAttribute="centerY" secondItem="QnN-OI-Slx" secondAttribute="centerY" id="bIM-Dk-503"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETQ-VD-hBa">
@@ -224,6 +226,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_tricare_passcode_login" width="105" height="39"/>
+        <image name="logo_home" width="180" height="39"/>
     </resources>
 </document>
