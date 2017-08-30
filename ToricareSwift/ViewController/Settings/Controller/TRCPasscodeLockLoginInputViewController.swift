@@ -111,28 +111,31 @@ class TRCPasscodeLockLoginInputViewController: UIViewController {
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_circle")
             
-            let passcodeString = tfPasscode.text
             
-            let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
-            if(passcodeString == oldPasscode){
-                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                    UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
-                }, completion: { completed in
-                    // maybe do something here
-                })
-            }else{
-                lblError.isHidden = false
-                self.lblError.text = Localizable(value: "passcode_not_match")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.lblError.isHidden = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                let passcodeString = self.tfPasscode.text
+                
+                let oldPasscode = UserDefaults.getUD(PASSCODE) as! String
+                if(passcodeString == oldPasscode){
+                    UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                        UIApplication.shared.keyWindow?.rootViewController = _obj.tabController
+                    }, completion: { completed in
+                        // maybe do something here
+                    })
+                }else{
+                    self.lblError.isHidden = false
+                    self.lblError.text = Localizable(value: "passcode_not_match")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.lblError.isHidden = true
+                    }
+                    
+                    self.tfPasscode.text = ""
+                    
+                    self.imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
+                    self.imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
+                    self.imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
+                    self.imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
                 }
-                
-                tfPasscode.text = ""
-                
-                imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")
-                imgView2.image = #imageLiteral(resourceName: "ic_passcode_line")
-                imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
-                imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
             }
         default:
             imgView1.image = #imageLiteral(resourceName: "ic_passcode_line")

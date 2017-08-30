@@ -98,6 +98,10 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
         } else {
             btnPasscode.isEnabled = false
             btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
+            let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+            vc.mode = MODE_REMOVE
+            configBackButton()
+            _obj.nc5.pushViewController(vc, animated: true)
         }
     }
 }

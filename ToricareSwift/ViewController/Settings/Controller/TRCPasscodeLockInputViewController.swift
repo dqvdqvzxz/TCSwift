@@ -148,7 +148,7 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_circle")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_circle")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 let passcodeString = self.tfPasscode.text
                 
                 switch (self.mode) {
