@@ -348,18 +348,6 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath) as! TRCLinkedServiceCell
-
-        self.timePicker.dataSource = self
-        self.timePicker.delegate = self
-    
-        timePicker.selectRow(15, inComponent: 0, animated: true)
-        
-        let timeResult = currentCell.lblTime.text!
-        let timeSeparated = timeResult.components(separatedBy: ":")
-        let time1: String = timeSeparated[0]
-        let time2: String = timeSeparated[1]
-        timePicker.selectRow(Int(time1)!, inComponent: 0, animated: true)
-        timePicker.selectRow((Int(time2)! / 30), inComponent: 1, animated: true)
         
         switch (indexPath.section) {
         case 0:
@@ -367,6 +355,19 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
         case 1:
             break
         case 2:
+            //set time picker
+            self.timePicker.dataSource = self
+            self.timePicker.delegate = self
+            
+            timePicker.selectRow(15, inComponent: 0, animated: true)
+            
+            let timeResult = currentCell.lblTime.text!
+            let timeSeparated = timeResult.components(separatedBy: ":")
+            let time1: String = timeSeparated[0]
+            let time2: String = timeSeparated[1]
+            timePicker.selectRow(Int(time1)!, inComponent: 0, animated: true)
+            timePicker.selectRow((Int(time2)! / 30), inComponent: 1, animated: true)
+            
             //toolBar
             let toolbar = UIToolbar();
             toolbar.sizeToFit()
