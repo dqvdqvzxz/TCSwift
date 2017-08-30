@@ -89,7 +89,7 @@ extension TRCAboutAppViewController: UITableViewDelegate{
         case 0:
             let vc = TRCWebViewController(nibName: "TRCWebViewController", bundle: nil)
             vc.navTitle = Localizable(value: "term_of_service")
-            vc.webAddress = APP_TERM
+            vc.webAddress = APP_RULE
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
@@ -103,14 +103,14 @@ extension TRCAboutAppViewController: UITableViewDelegate{
         case 2:
             let vc = TRCWebViewController(nibName: "TRCWebViewController", bundle: nil)
             vc.navTitle = Localizable(value: "faq")
-            vc.webAddress = APP_FAQ
+            vc.webAddress = APP_FAQ_LIST
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
             let vc = TRCWebViewController(nibName: "TRCWebViewController", bundle: nil)
             vc.navTitle = Localizable(value: "question")
-            vc.webAddress = APP_QUESTION
+            vc.webAddress = APP_FAQ_DETAIL
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
