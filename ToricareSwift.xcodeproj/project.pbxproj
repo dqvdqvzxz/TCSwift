@@ -2095,6 +2095,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
 				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ENV_1;
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -2141,6 +2142,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
 				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ENV_2;
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -2283,6 +2285,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
 				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ENV_0;
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
