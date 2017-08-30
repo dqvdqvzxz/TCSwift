@@ -13,6 +13,7 @@
 "check_input_data_message"              = "データを確認してください";
 "warning"                               = "注意";
 "error"                                 = "エラー";
+"common_error"                          = "エラーが発生しました。";
 
 //MARK: Navigation
 "back"                                  = "戻る";

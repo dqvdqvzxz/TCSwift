@@ -12,6 +12,7 @@ let STRING_OK =                         Localizable(value: "OK")
 let STRING_CHECK_NETWORK =              Localizable(value: "check_network_message")
 let STRING_CHECK_INPUT_DATA =           Localizable(value: "check_input_data_message")
 let STRING_WARNING =                    Localizable(value: "warning")
+let STRING_COMMON_ERROR =               Localizable(value: "common_error")
 
 //MARK: Navigation 
 let STRING_BACK =                       Localizable(value: "back")
