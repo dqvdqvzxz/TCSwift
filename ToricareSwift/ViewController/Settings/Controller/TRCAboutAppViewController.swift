@@ -87,28 +87,28 @@ extension TRCAboutAppViewController: UITableViewDelegate{
         
         switch (indexPath.row) {
         case 0:
-            let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
+            let vc = TRCWebViewController(nibName: "TRCWebViewController", bundle: nil)
             vc.navTitle = Localizable(value: "term_of_service")
             vc.webAddress = APP_TERM
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 1:
-            let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
+            let vc = TRCWebViewController(nibName: "TRCWebViewController", bundle: nil)
             vc.navTitle = Localizable(value: "policy")
             vc.webAddress = APP_POLICY
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 2:
-            let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
+            let vc = TRCWebViewController(nibName: "TRCWebViewController", bundle: nil)
             vc.navTitle = Localizable(value: "faq")
             vc.webAddress = APP_FAQ
             configBackButton()
             hideBar()
             _obj.nc5.pushViewController(vc, animated: true)
         case 3:
-            let vc = TRCWebView(nibName: "TRCWebView", bundle: nil)
+            let vc = TRCWebViewController(nibName: "TRCWebViewController", bundle: nil)
             vc.navTitle = Localizable(value: "question")
             vc.webAddress = APP_QUESTION
             configBackButton()
