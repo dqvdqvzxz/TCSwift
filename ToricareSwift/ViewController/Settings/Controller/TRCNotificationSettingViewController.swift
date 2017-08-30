@@ -32,7 +32,10 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideItem(isHide: true)
-        getData()        
+        getData()
+        
+        self.timePicker.dataSource = self
+        self.timePicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -356,11 +359,6 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
             break
         case 2:
             //set time picker
-            self.timePicker.dataSource = self
-            self.timePicker.delegate = self
-            
-            timePicker.selectRow(15, inComponent: 0, animated: true)
-            
             let timeResult = currentCell.lblTime.text!
             let timeSeparated = timeResult.components(separatedBy: ":")
             let time1: String = timeSeparated[0]
