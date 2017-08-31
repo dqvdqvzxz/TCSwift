@@ -148,8 +148,8 @@ class TRCRegisterViewController: TRCBaseViewController {
                 
                 //get avatar, email
                 let picture = data["picture"]
-                let avatar = picture?.object(forKey: "data")
-                let avatarURL = (avatar as AnyObject).object(forKey: "url")
+                let avatar = picture?.object(forKey: DATA)
+                let avatarURL = (avatar as AnyObject).object(forKey: URL_KEY)
                 
                 if let fbEmail = data["email"]{
                     _obj.dicFacebookInfo.updateValue(fbEmail as! String, forKey: FB_EMAIL)
@@ -174,13 +174,13 @@ class TRCRegisterViewController: TRCBaseViewController {
                     DLog(_obj.dicFacebookInfo)
                     
                     //fill data to form register
-                    self.lblUsername.text = "Facebookとの連携が完了しました。\nとりけあのログイン用パスワードを設定してください。"
+                    self.lblUsername.text = Localizable(value: "register_facebook_inform")
                     self.lblUsername.lineBreakMode = .byWordWrapping
                     self.lblUsername.numberOfLines = 0
                     
                     self.tfUsername.text = _obj.dicFacebookInfo[FB_EMAIL]
                     self.tfUsername.isUserInteractionEnabled = false
-                    self.tfUsername.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+                    self.setGrayColorForView(self.tfUsername)
                     self.tfPassword.text = ""
                     self.tfRePassword.text = ""
                 })

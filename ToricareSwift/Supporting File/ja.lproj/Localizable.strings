@@ -40,6 +40,7 @@
 "register_mail"                         = "メールアドレスで登録";
 "register_fb"                           = "Facebookアカウントで登録";
 "or"                                    = "または";
+"register_facebook_inform"              = "Facebookとの連携が完了しました。\nとりけあのログイン用パスワードを設定してください。";
 
 //AccountInfoInput
 "first_name"                            = "氏名（姓）";
