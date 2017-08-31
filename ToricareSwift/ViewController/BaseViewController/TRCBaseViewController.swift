@@ -32,6 +32,8 @@ class TRCBaseViewController: UIViewController {
     //MARK: Config UI
     func configGlobalUI(){
         //tap to cancel keyboard
+        
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)

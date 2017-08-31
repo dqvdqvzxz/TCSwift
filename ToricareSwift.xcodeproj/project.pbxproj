@@ -1303,8 +1303,8 @@
 				ORGANIZATIONNAME = "Mèo Béo";
 				TargetAttributes = {
 					17C98F4E1F3BFAE8003AF863 = {
-						DevelopmentTeam = MCPGP47PRG;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 2L8CWRYK58;
+						ProvisioningStyle = Automatic;
 					};
 					17D9BEE01F5567E2004F090A = {
 						DevelopmentTeam = MCPGP47PRG;
@@ -2078,15 +2078,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Son Nguyen (ZFWYQ77AD6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MCPGP47PRG;
+				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = "ToricareSwift copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.ic-sol.tricareapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
-				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG_LEVEL_1 ENV_1";
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2102,15 +2102,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Son Nguyen (ZFWYQ77AD6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MCPGP47PRG;
+				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "ToricareSwift copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.ic-sol.tricareapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
-				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ENV_1;
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
