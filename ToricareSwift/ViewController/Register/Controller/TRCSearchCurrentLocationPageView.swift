@@ -42,13 +42,14 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = true
     }
 
     @IBAction func tapBtnSearch(_ sender: Any) {
