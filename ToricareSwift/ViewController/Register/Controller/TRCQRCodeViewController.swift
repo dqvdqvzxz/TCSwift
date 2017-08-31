@@ -60,7 +60,7 @@ class TRCQRCodeViewController: TRCBaseViewController {
     func close(sender: UIBarButtonItem) {
         let viewControllers: [UIViewController] = _obj.nc5.viewControllers
         for descView in viewControllers {
-            if(descView is TRCPasscodeLockSettingViewController){
+            if(descView is TRCUserRegistCompleteViewController){
                 _obj.nc5.popToViewController(descView, animated: true)
             }
         }
