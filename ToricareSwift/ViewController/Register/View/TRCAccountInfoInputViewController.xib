@@ -15,6 +15,7 @@
                 <outlet property="btnUploadImage" destination="A83-dy-JcO" id="VcQ-Sd-DAK"/>
                 <outlet property="contraintBottomBtnChange" destination="yDK-f2-SlT" id="uBc-eQ-uCL"/>
                 <outlet property="contraintBottomScrollView" destination="vmg-mz-nhX" id="wXb-4y-OXH"/>
+                <outlet property="heightViewMain" destination="aFE-7J-lw6" id="vw7-qm-JE7"/>
                 <outlet property="imgUser" destination="Qxe-TD-YGz" id="kdJ-z5-4tr"/>
                 <outlet property="lblDateOfBirth" destination="yTJ-BX-iV7" id="V8t-Q9-UuT"/>
                 <outlet property="lblFirstName" destination="gzK-ls-Dwi" id="9ow-wO-kCK"/>
@@ -291,6 +292,7 @@
                                 <constraint firstItem="aFm-vo-H2q" firstAttribute="centerX" secondItem="iRj-rn-iAi" secondAttribute="centerX" id="OVL-U2-ghh"/>
                                 <constraint firstItem="Qxe-TD-YGz" firstAttribute="top" secondItem="iRj-rn-iAi" secondAttribute="top" constant="10" id="VGO-5a-NQF"/>
                                 <constraint firstItem="QJL-8d-PIv" firstAttribute="leading" secondItem="iRj-rn-iAi" secondAttribute="leading" id="WKX-55-Zfg"/>
+                                <constraint firstAttribute="height" constant="800" id="aFE-7J-lw6"/>
                                 <constraint firstItem="sJK-Lb-0g5" firstAttribute="top" secondItem="yTJ-BX-iV7" secondAttribute="bottom" id="bDi-4j-Rie"/>
                                 <constraint firstItem="yTJ-BX-iV7" firstAttribute="leading" secondItem="iRj-rn-iAi" secondAttribute="leading" constant="10" id="e6z-jB-K64"/>
                                 <constraint firstItem="voE-Dq-LNV" firstAttribute="leading" secondItem="iRj-rn-iAi" secondAttribute="leading" id="fPR-B4-Vae"/>
@@ -324,7 +326,6 @@
             </subviews>
             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="iRj-rn-iAi" firstAttribute="height" secondItem="FXY-tx-k1V" secondAttribute="height" id="4ac-zC-pQ7"/>
                 <constraint firstAttribute="trailing" secondItem="yxA-DY-szf" secondAttribute="trailing" constant="10" id="BFJ-52-2f9"/>
                 <constraint firstItem="T8T-LH-fJi" firstAttribute="leading" secondItem="FXY-tx-k1V" secondAttribute="leading" id="HIC-GZ-CJw"/>
                 <constraint firstItem="iRj-rn-iAi" firstAttribute="width" secondItem="FXY-tx-k1V" secondAttribute="width" id="K2O-jv-6vg"/>
