@@ -10,28 +10,20 @@ import UIKit
 
 // ******************** API ROOT ******************************************
 
-// LOCAL
+// ******************** LOCAL
 #if ENV_1
 let ROOT_URL =                      "http://172.16.210.122/"
-//DEV
+    
+//********************* DEV ENV OF CUSTOMER
 #elseif ENV_2
 let ROOT_URL =                      "http://42.125.230.115/"
 
+//********************* RELEASE
 #elseif ENV_0
 let ROOT_URL =                      "http://172.16.210.122/"
-
 #endif
 
-//MARK: URL
-//let APP_DOMAIN =                    "http://42.125.230.115/api/v1/"
-//
-//let APP_POLICY =                    "http://42.125.230.115/privacy_policy"
-//let APP_FAQ =                       "http://42.125.230.115/faq_list"
-//let APP_TERM =                      "http://42.125.230.115/faq_list/1"
-//let APP_QUESTION =                  "http://42.125.230.115/rule"
-
 let APP_DOMAIN =                    "\(ROOT_URL)api/v1/"
-
 let APP_RULE =                      "\(ROOT_URL)rule"
 let APP_POLICY =                    "\(ROOT_URL)privacy_policy"
 let APP_FAQ_LIST =                  "\(ROOT_URL)faq_list"

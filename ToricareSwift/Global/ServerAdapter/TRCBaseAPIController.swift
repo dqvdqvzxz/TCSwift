@@ -129,11 +129,13 @@ class TRCBaseAPIController{
                                     failed(message as? String)
                                     return
                                 }
+                            } else {
+                                failed(STRING_COMMON_ERROR)
                             }
                         }
                     }
                 }catch{
-                    failed("error")
+                    failed(STRING_COMMON_ERROR)
                 }
             }else{
                 failed(STRING_CHECK_INPUT_DATA)
