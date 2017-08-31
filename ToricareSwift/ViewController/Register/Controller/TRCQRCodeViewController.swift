@@ -61,7 +61,7 @@ class TRCQRCodeViewController: TRCBaseViewController {
         let viewControllers: [UIViewController] = _obj.nc5.viewControllers
         for descView in viewControllers {
             if(descView is TRCUserRegistCompleteViewController){
-                _obj.nc5.popToViewController(descView, animated: true)
+                
             }
         }
         

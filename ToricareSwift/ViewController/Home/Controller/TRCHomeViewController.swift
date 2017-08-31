@@ -62,19 +62,25 @@ class TRCHomeViewController: TRCBaseViewController {
     @IBOutlet weak var viewImageBanner2: UIView!
     @IBOutlet weak var imgLogoCar: UIImageView!
     
+    @IBOutlet var customLeftTab: UIView!
+    @IBOutlet weak var lblUnread: UILabel!
+    @IBOutlet weak var btnMessage: UIButton!
+    
+    @IBOutlet weak var notificationPharmacyView: UIView!
+    
+    @IBOutlet var pageViewController: UIPageViewController!
+    
     var goalInfo: TRCGoal!
     var summaryInfo: TRCSummary!
     var accountInfo: TRCAccountInfo!
     var bannerArray: [TRCBanner] = []
     var rotationTime = 0
     
-    @IBOutlet var customLeftTab: UIView!
-    @IBOutlet weak var lblUnread: UILabel!
-    @IBOutlet weak var btnMessage: UIButton!
-    
     var isRequestUnread = false
     
-    @IBOutlet weak var notificationPharmacyView: UIView!
+    var itemIndex: Int = 0
+    var pageControl = UIPageControl()
+    var timer: Timer = Timer()
     
     //MARK: View controller
     override func viewDidLoad() {
@@ -175,6 +181,51 @@ class TRCHomeViewController: TRCBaseViewController {
         }
     }
     
+    //MARK: Config Banner page view
+    func configBannerPageView(){
+        //control indicator
+        pageControl = UIPageControl(frame: CGRect(x: 0,y: viewImageBanner1.bounds.maxY - 20,width: viewImageBanner1.bounds.width,height: 20))
+        pageControl.numberOfPages = bannerArray.count
+        pageControl.currentPage = 0
+        pageControl.alpha = 0.5
+        pageControl.tintColor = UIColor.black
+        pageControl.pageIndicatorTintColor = UIColor.white
+        pageControl.currentPageIndicatorTintColor = UIColor.black
+        pageViewController.view.addSubview(pageControl)
+        
+        //page view control
+        pageViewController.dataSource = self
+        
+        if(bannerArray.count > 0){
+            let firstController = self.getViewImagePageAtIndex(index: 0)
+            let startingViewControllers = [firstController]
+            pageViewController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        }
+        
+        addChildViewController(pageViewController)
+//        pageViewController.view.frame = CGRect(x: viewImageBanner1.layer.zPosition, y: viewImageBanner1.layer.zPosition, width: viewImageBanner1.frame.width, height: viewImageBanner1.frame.height)
+        pageViewController.view.frame = self.viewImageBanner1.bounds
+        pageViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewImageBanner1.addSubview(pageViewController.view)
+        pageViewController.didMove(toParentViewController: self)
+    }
+    
+    func getViewImagePageAtIndex(index: NSInteger) -> TRCBannerPageView{
+        let pageContentViewController = TRCBannerPageView(nibName: "TRCBannerPageView", bundle: nil)
+        pageContentViewController.imgString = "\(bannerArray[index].imagePath.origin)"
+        pageContentViewController.urlString = "\(bannerArray[index].url)"
+        pageContentViewController.pageIndex = index
+        
+        return pageContentViewController
+    }
+    
+//    func setupPageControl(){
+//        let appearance = UIPageControl.appearance()
+//        appearance.pageIndicatorTintColor = UIColor.white
+//        appearance.currentPageIndicatorTintColor = UIColor.gray
+//        appearance.backgroundColor = UIColor.clear
+//    }
+    
     //MARK: Get data()
     func getData(){
         if Connectivity.isConnectToNetwork() == false{
@@ -259,10 +310,11 @@ class TRCHomeViewController: TRCBaseViewController {
                     let dataResults:[TRCBanner] = try parseArray(dataListBanner as! [JSONObject])
                     dataResults.forEach({ (item) in
                         self.bannerArray.append(item)
-                        
-                        DLog(self.bannerArray)
                     })
                     
+                    self.configBannerPageView()
+                    
+                    DLog("Call me \(self.bannerArray)")
                     self.hideHUD()
                 } catch {
                     DLog("JSONParsin Error: \(error)")
@@ -316,5 +368,51 @@ class TRCHomeViewController: TRCBaseViewController {
     
     func action(){
         //
+    }
+}
+
+extension TRCHomeViewController: UIPageViewControllerDataSource{
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let pageContent: TRCBannerPageView = viewController as! TRCBannerPageView
+        var index = pageContent.pageIndex
+        
+        if(index == NSNotFound){
+            return nil
+        }
+        
+        index -= 1
+        
+        if(index <= 0){
+            index = bannerArray.count - 1
+        }
+        
+        return getViewImagePageAtIndex(index: index)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let pageContent: TRCBannerPageView = viewController as! TRCBannerPageView
+        var index = pageContent.pageIndex
+        
+        if(index == NSNotFound){
+            return nil
+        }
+        
+        index += 1
+        
+        if(index == bannerArray.count){
+            index = 0 
+        }
+    
+        return getViewImagePageAtIndex(index: index)
+    }
+    
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        setupPageControl()
+        return bannerArray.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
     }
 }
