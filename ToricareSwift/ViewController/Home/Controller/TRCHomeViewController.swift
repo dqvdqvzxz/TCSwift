@@ -68,8 +68,6 @@ class TRCHomeViewController: TRCBaseViewController {
     
     @IBOutlet weak var notificationPharmacyView: UIView!
     
-    @IBOutlet var pageViewController: UIPageViewController!
-    
     var goalInfo: TRCGoal!
     var summaryInfo: TRCSummary!
     var accountInfo: TRCAccountInfo!
@@ -79,9 +77,11 @@ class TRCHomeViewController: TRCBaseViewController {
     var isRequestUnread = false
     
     var itemIndex: Int = 0
-    var pageControl = UIPageControl()
     var timer: Timer = Timer()
-    
+    @IBOutlet weak var scrollViewBanner: UIScrollView!
+    @IBOutlet weak var pageControlBanner: UIPageControl!
+    var colors:[UIColor] = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow]
+
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,6 +164,8 @@ class TRCHomeViewController: TRCBaseViewController {
         //weight
         lblRegisterTodayWeight.labelStyle(title:  Localizable(value: "register_today_weight"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
         imgViewAccessory.image = #imageLiteral(resourceName: "ic_next")
+        self.configBanner()
+
     }
     
     func updateUnread(_ value: String) {
@@ -181,50 +183,46 @@ class TRCHomeViewController: TRCBaseViewController {
         }
     }
     
-    //MARK: Config Banner page view
-    func configBannerPageView(){
-        //control indicator
-        pageControl = UIPageControl(frame: CGRect(x: 0,y: viewImageBanner1.bounds.maxY - 20,width: viewImageBanner1.bounds.width,height: 20))
-        pageControl.numberOfPages = bannerArray.count
-        pageControl.currentPage = 0
-        pageControl.alpha = 0.5
-        pageControl.tintColor = UIColor.black
-        pageControl.pageIndicatorTintColor = UIColor.white
-        pageControl.currentPageIndicatorTintColor = UIColor.black
-        pageViewController.view.addSubview(pageControl)
+    //MARK: Config Banner
+    func configurePageControl() {
+        // The total number of pages that are available is based on how many available colors we have.
+        pageControlBanner.numberOfPages = colors.count
+        pageControlBanner.currentPage = 0
+        pageControlBanner.tintColor = UIColor.red
+        pageControlBanner.pageIndicatorTintColor = UIColor.white
+        pageControlBanner.currentPageIndicatorTintColor = UIColor.init(hexString: MAIN_COLOR)
+    }
+    
+    func configBanner() {
+        configurePageControl()
         
-        //page view control
-        pageViewController.dataSource = self
+        scrollViewBanner.delegate = self
+        scrollViewBanner.isPagingEnabled = true
+        scrollViewBanner.showsHorizontalScrollIndicator = false
         
-        if(bannerArray.count > 0){
-            let firstController = self.getViewImagePageAtIndex(index: 0)
-            let startingViewControllers = [firstController]
-            pageViewController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        var frame: CGRect = CGRect(x:0, y:0, width:0, height:0)
+        
+        for index in 0..<4 {
+            
+            frame.origin.x = scrollViewBanner.frame.size.width * CGFloat(index)
+            frame.size = scrollViewBanner.frame.size
+            
+            let subView = UIView(frame: frame)
+            subView.backgroundColor = colors[index]
+            self.scrollViewBanner.addSubview(subView)
         }
         
-        addChildViewController(pageViewController)
-//        pageViewController.view.frame = CGRect(x: viewImageBanner1.layer.zPosition, y: viewImageBanner1.layer.zPosition, width: viewImageBanner1.frame.width, height: viewImageBanner1.frame.height)
-        pageViewController.view.frame = self.viewImageBanner1.bounds
-        pageViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viewImageBanner1.addSubview(pageViewController.view)
-        pageViewController.didMove(toParentViewController: self)
+        self.scrollViewBanner.contentSize = CGSize(width:self.scrollViewBanner.frame.size.width * 4,height: self.scrollViewBanner.frame.size.height - 10)
+        pageControlBanner.addTarget(self, action: #selector(changePage(sender:)), for: .valueChanged)
+
     }
     
-    func getViewImagePageAtIndex(index: NSInteger) -> TRCBannerPageView{
-        let pageContentViewController = TRCBannerPageView(nibName: "TRCBannerPageView", bundle: nil)
-        pageContentViewController.imgString = "\(bannerArray[index].imagePath.origin)"
-        pageContentViewController.urlString = "\(bannerArray[index].url)"
-        pageContentViewController.pageIndex = index
-        
-        return pageContentViewController
+    // MARK : TO CHANGE WHILE CLICKING ON PAGE CONTROL
+    func changePage(sender: AnyObject) -> () {
+        let x = CGFloat(pageControlBanner.currentPage) * scrollViewBanner.frame.size.width
+        scrollViewBanner.setContentOffset(CGPoint(x:x, y:0), animated: true)
     }
-    
-//    func setupPageControl(){
-//        let appearance = UIPageControl.appearance()
-//        appearance.pageIndicatorTintColor = UIColor.white
-//        appearance.currentPageIndicatorTintColor = UIColor.gray
-//        appearance.backgroundColor = UIColor.clear
-//    }
+
     
     //MARK: Get data()
     func getData(){
@@ -302,6 +300,8 @@ class TRCHomeViewController: TRCBaseViewController {
             
             //get banner
             TRCBannerRequest().getBanner(completion: { (data) in
+                self.hideHUD()
+
                 let dataResult = data?.object(forKey: DATA) as! NSDictionary
                 let dataListBanner = dataResult.object(forKey: LIST_BANNER)
                 self.rotationTime = dataResult.object(forKey: ROTATION) as! Int
@@ -312,10 +312,6 @@ class TRCHomeViewController: TRCBaseViewController {
                         self.bannerArray.append(item)
                     })
                     
-                    self.configBannerPageView()
-                    
-                    DLog("Call me \(self.bannerArray)")
-                    self.hideHUD()
                 } catch {
                     DLog("JSONParsin Error: \(error)")
                 }
@@ -371,48 +367,10 @@ class TRCHomeViewController: TRCBaseViewController {
     }
 }
 
-extension TRCHomeViewController: UIPageViewControllerDataSource{
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let pageContent: TRCBannerPageView = viewController as! TRCBannerPageView
-        var index = pageContent.pageIndex
+extension TRCHomeViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
-        if(index == NSNotFound){
-            return nil
-        }
-        
-        index -= 1
-        
-        if(index <= 0){
-            index = bannerArray.count - 1
-        }
-        
-        return getViewImagePageAtIndex(index: index)
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let pageContent: TRCBannerPageView = viewController as! TRCBannerPageView
-        var index = pageContent.pageIndex
-        
-        if(index == NSNotFound){
-            return nil
-        }
-        
-        index += 1
-        
-        if(index == bannerArray.count){
-            index = 0 
-        }
-    
-        return getViewImagePageAtIndex(index: index)
-    }
-    
-    
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-//        setupPageControl()
-        return bannerArray.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 0
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControlBanner.currentPage = Int(pageNumber)
     }
 }
