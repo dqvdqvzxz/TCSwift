@@ -47,6 +47,10 @@ class TRCSearchCurrentLocationPageView: TRCBaseViewController, GMSMapViewDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = true
+    }
 
     @IBAction func tapBtnSearch(_ sender: Any) {
         UserDefaults.removeUD(SEARCH_PREFECTURE_NAME)
