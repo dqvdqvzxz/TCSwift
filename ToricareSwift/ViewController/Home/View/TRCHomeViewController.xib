@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,7 +33,8 @@
                 <outlet property="lblTitleNotification2" destination="DlP-aR-bt6" id="gxE-Ys-13A"/>
                 <outlet property="lblUnread" destination="f3N-Ip-8zk" id="rCy-Jk-CU0"/>
                 <outlet property="notificationPharmacyView" destination="3C0-O1-Q2R" id="PNB-4m-xtU"/>
-                <outlet property="pageViewController" destination="Uzv-Jc-bdf" id="wPf-wX-f6b"/>
+                <outlet property="pageControlBanner" destination="Zqa-Ku-fmd" id="y6P-7N-cua"/>
+                <outlet property="scrollViewBanner" destination="v2D-bc-GDu" id="pq8-uh-cxh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewBelowLogo" destination="6h8-w8-kkf" id="IGr-iI-35B"/>
                 <outlet property="viewBorderBanner1" destination="4jm-Go-GQ9" id="0aT-Ez-Oot"/>
@@ -48,7 +49,6 @@
                 <outlet property="viewBorderTitleExerciseKcal" destination="Uc9-8X-SM3" id="9uV-5J-ncU"/>
                 <outlet property="viewExerciseKcal" destination="MRr-He-G5f" id="ICY-0v-tXb"/>
                 <outlet property="viewFoodKcal" destination="pgf-Wq-aI0" id="H8i-dG-tH9"/>
-                <outlet property="viewImageBanner1" destination="j6q-je-pXt" id="K4H-lp-V0K"/>
                 <outlet property="viewImageExerciseKcal" destination="Yia-yA-R2L" id="ek8-N0-119"/>
                 <outlet property="viewImageFoodKcal" destination="YXS-Pj-DwZ" id="qOG-0p-WaN"/>
                 <outlet property="viewImageNotification1" destination="cwN-Sl-dNd" id="Yrs-CM-vEu"/>
@@ -547,18 +547,27 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jm-Go-GQ9" userLabel="viewBorderBanner1">
-                            <rect key="frame" x="0.0" y="496" width="375" height="102"/>
+                            <rect key="frame" x="5" y="496" width="365" height="102"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6q-je-pXt">
-                                    <rect key="frame" x="5" y="0.0" width="367.5" height="102"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-bc-GDu">
+                                    <rect key="frame" x="0.0" y="0.0" width="365" height="102"/>
+                                </scrollView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zqa-Ku-fmd">
+                                    <rect key="frame" x="82" y="70" width="200" height="37"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="0he-Ve-PhR"/>
+                                        <constraint firstAttribute="height" constant="37" id="h6u-RM-lKK"/>
+                                    </constraints>
+                                </pageControl>
                             </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="j6q-je-pXt" secondAttribute="trailing" constant="2.5" id="MLa-QL-HSI"/>
-                                <constraint firstAttribute="bottom" secondItem="j6q-je-pXt" secondAttribute="bottom" id="Tlg-zb-Ve2"/>
-                                <constraint firstItem="j6q-je-pXt" firstAttribute="leading" secondItem="4jm-Go-GQ9" secondAttribute="leading" constant="5" id="YNH-zT-okm"/>
-                                <constraint firstItem="j6q-je-pXt" firstAttribute="top" secondItem="4jm-Go-GQ9" secondAttribute="top" id="jnc-Xz-8m8"/>
+                                <constraint firstAttribute="bottom" secondItem="v2D-bc-GDu" secondAttribute="bottom" id="Dcw-XE-DZT"/>
+                                <constraint firstItem="v2D-bc-GDu" firstAttribute="top" secondItem="4jm-Go-GQ9" secondAttribute="top" id="MVK-tX-fbI"/>
+                                <constraint firstAttribute="bottom" secondItem="Zqa-Ku-fmd" secondAttribute="bottom" constant="-5" id="QCJ-3f-Jbk"/>
+                                <constraint firstItem="Zqa-Ku-fmd" firstAttribute="centerX" secondItem="4jm-Go-GQ9" secondAttribute="centerX" id="QCf-q3-1E2"/>
+                                <constraint firstItem="v2D-bc-GDu" firstAttribute="leading" secondItem="4jm-Go-GQ9" secondAttribute="leading" id="RC1-QL-kGC"/>
+                                <constraint firstAttribute="trailing" secondItem="v2D-bc-GDu" secondAttribute="trailing" id="uXq-HW-CLY"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -569,6 +578,7 @@
                         <constraint firstItem="pds-vU-SED" firstAttribute="height" secondItem="mak-dc-aip" secondAttribute="height" multiplier="22%" id="CUw-bn-O5W"/>
                         <constraint firstItem="Fa8-87-fNg" firstAttribute="width" secondItem="mak-dc-aip" secondAttribute="width" multiplier="1:2" id="I14-DC-zyD"/>
                         <constraint firstItem="ZH9-ev-g4p" firstAttribute="top" secondItem="Fa8-87-fNg" secondAttribute="bottom" constant="5" id="KAH-6Q-xTA"/>
+                        <constraint firstAttribute="trailing" secondItem="4jm-Go-GQ9" secondAttribute="trailing" constant="5" id="NrY-yY-pxv"/>
                         <constraint firstItem="pds-vU-SED" firstAttribute="top" secondItem="mak-dc-aip" secondAttribute="top" constant="5" id="P9w-jU-tZ0"/>
                         <constraint firstItem="KjF-sA-oYf" firstAttribute="height" secondItem="Fa8-87-fNg" secondAttribute="height" id="RfT-24-I6R"/>
                         <constraint firstAttribute="bottom" secondItem="4jm-Go-GQ9" secondAttribute="bottom" constant="5" id="Tsk-4j-KmP"/>
@@ -582,9 +592,8 @@
                         <constraint firstItem="6HV-X6-hoa" firstAttribute="top" secondItem="pds-vU-SED" secondAttribute="bottom" constant="5" id="bdx-sV-hRA"/>
                         <constraint firstItem="KjF-sA-oYf" firstAttribute="top" secondItem="6HV-X6-hoa" secondAttribute="bottom" constant="5" id="fZQ-Bh-9aR"/>
                         <constraint firstItem="6HV-X6-hoa" firstAttribute="leading" secondItem="mak-dc-aip" secondAttribute="leading" constant="5" id="h4z-9D-8ut"/>
-                        <constraint firstItem="4jm-Go-GQ9" firstAttribute="width" secondItem="mak-dc-aip" secondAttribute="width" id="iGW-3P-PXv"/>
                         <constraint firstAttribute="trailing" secondItem="KjF-sA-oYf" secondAttribute="trailing" id="laZ-MU-yzv"/>
-                        <constraint firstItem="4jm-Go-GQ9" firstAttribute="leading" secondItem="mak-dc-aip" secondAttribute="leading" id="lqq-Rr-lKl"/>
+                        <constraint firstItem="4jm-Go-GQ9" firstAttribute="leading" secondItem="mak-dc-aip" secondAttribute="leading" constant="5" id="lqq-Rr-lKl"/>
                         <constraint firstItem="Fa8-87-fNg" firstAttribute="height" secondItem="mak-dc-aip" secondAttribute="height" multiplier="15%" id="q2d-pQ-fvV"/>
                         <constraint firstItem="ZH9-ev-g4p" firstAttribute="leading" secondItem="mak-dc-aip" secondAttribute="leading" constant="5" id="rtL-GE-4Ec"/>
                         <constraint firstAttribute="trailing" secondItem="ZH9-ev-g4p" secondAttribute="trailing" constant="5" id="xcE-sT-Az5"/>
@@ -598,7 +607,7 @@
                 <constraint firstItem="mak-dc-aip" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="WVc-le-Kn6"/>
                 <constraint firstItem="mak-dc-aip" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rxd-En-IEU"/>
             </constraints>
-            <point key="canvasLocation" x="-1512.5" y="-308.5"/>
+            <point key="canvasLocation" x="-1883" y="-148"/>
         </view>
         <view contentMode="scaleToFill" id="AO0-Np-bhl">
             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -627,9 +636,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-1176" y="-61"/>
         </view>
-        <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="Uzv-Jc-bdf">
-            <point key="canvasLocation" x="-881" y="-320"/>
-        </pageViewController>
     </objects>
     <resources>
         <image name="arrow_size1_w" width="8" height="12"/>

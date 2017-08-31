@@ -77,7 +77,7 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
         
         configMode()
     }
-    
+        
     func configMode(){
         
         //customize close button
