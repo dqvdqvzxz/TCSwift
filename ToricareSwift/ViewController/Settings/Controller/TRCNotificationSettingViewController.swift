@@ -32,7 +32,10 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideItem(isHide: true)
-        getData()        
+        getData()
+        
+        self.timePicker.dataSource = self
+        self.timePicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +76,7 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
                 
                 DLog(self.notificationInfo)
             } catch {
-                print("JSONParsin Error: \(error)")
+                DLog("JSONParsin Error: \(error)")
             } 
         }) { (error) in
             self.hideHUD()
@@ -348,18 +351,11 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath) as! TRCLinkedServiceCell
-
-        self.timePicker.dataSource = self
-        self.timePicker.delegate = self
-    
-        timePicker.selectRow(15, inComponent: 0, animated: true)
         
-        let timeResult = currentCell.lblTime.text!
-        let timeSeparated = timeResult.components(separatedBy: ":")
-        let time1: String = timeSeparated[0]
-        let time2: String = timeSeparated[1]
-        timePicker.selectRow(Int(time1)!, inComponent: 0, animated: true)
-        timePicker.selectRow((Int(time2)! / 30), inComponent: 1, animated: true)
+        //done button & cancel button
+        let spaceButton1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let spaceButton2 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
         
         switch (indexPath.section) {
         case 0:
@@ -367,29 +363,38 @@ extension TRCNotificationSettingViewController: UITableViewDelegate{
         case 1:
             break
         case 2:
+            //set time picker
+            let timeResult = currentCell.lblTime.text!
+            let timeSeparated = timeResult.components(separatedBy: ":")
+            if(timeSeparated.count >= 2){
+                let time1: String = timeSeparated[0]
+                let time2: String = timeSeparated[1]
+                timePicker.selectRow(Int(time1)!, inComponent: 0, animated: false)
+                timePicker.selectRow((Int(time2)! / 30), inComponent: 1, animated: false)
+            }
+            
             //toolBar
             let toolbar = UIToolbar();
             toolbar.sizeToFit()
             
-            //done button & cancel button
-            let spaceButton1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             var title = UIBarButtonItem()
+            var textTitle = ""
             switch (indexPath.row) {
             case 0:
-                title = UIBarButtonItem(title: Localizable(value: "weight"), style: .plain, target: self, action: nil)
+                textTitle = Localizable(value: "weight")
             case 1:
-                title = UIBarButtonItem(title: Localizable(value: "breakfast"), style: .plain, target: self, action: nil)
+                textTitle = Localizable(value: "breakfast")
             case 2:
-                title = UIBarButtonItem(title: Localizable(value: "lunch"), style: .plain, target: self, action: nil)
+                textTitle = Localizable(value: "lunch")
             case 3:
-                title = UIBarButtonItem(title: Localizable(value: "dinner"), style: .plain, target: self, action: nil)
+                textTitle = Localizable(value: "dinner")
             case 4:
-                title = UIBarButtonItem(title: Localizable(value: "snack"), style: .plain, target: self, action: nil)
+                textTitle = Localizable(value: "snack")
             default:
                 break
             }
-            let spaceButton2 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-            let doneButton = UIBarButtonItem(title: STRING_DONE, style: .plain, target: self, action: #selector(doneGenderPicker))
+            title = UIBarButtonItem(title: textTitle, style: .plain, target: self, action: nil)
+            
             toolbar.setItems([spaceButton1,title,spaceButton2,doneButton], animated: false)
             
             // add toolbar to textField

@@ -91,7 +91,7 @@ class TRCLoginViewController: TRCBaseViewController {
                     self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
                     _obj.objectAccountInfo = self.accountInfo
                 } catch {
-                    print("JSONParsin Error: \(error)")
+                    DLog("JSONParsin Error: \(error)")
                 }
                 
                 //check info
@@ -218,7 +218,7 @@ class TRCLoginViewController: TRCBaseViewController {
                     self.accountInfo = try parseDict(dataResult as! JSONObject) as TRCAccountInfo
                     _obj.objectAccountInfo = self.accountInfo
                 } catch {
-                    print("JSONParsin Error: \(error)")
+                    DLog("JSONParsin Error: \(error)")
                 }
                 
                 //check info

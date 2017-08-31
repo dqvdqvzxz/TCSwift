@@ -79,7 +79,7 @@ class TRCQRCodeViewController: TRCBaseViewController {
         bottomBlankView.isHidden = false
         leftBlankView.isHidden = false
         rightBlankView.isHidden = false
-        
+
         self.view.bringSubview(toFront: topBlankView)
         self.view.bringSubview(toFront: bottomBlankView)
         self.view.bringSubview(toFront: leftBlankView)

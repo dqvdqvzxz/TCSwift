@@ -22,7 +22,7 @@ class TRCWebViewController: TRCBaseViewController, UIWebViewDelegate{
         self.navigationItem.title = navTitle
         
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(sender:)))
+        let newBackButton = UIBarButtonItem(title: STRING_BACK, style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
         
         webView.delegate = self

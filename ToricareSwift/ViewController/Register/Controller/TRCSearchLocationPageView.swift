@@ -174,7 +174,7 @@ class TRCSearchLocationPageView: TRCBaseViewController {
             }
             catch
             {
-                print("JSONParsin Error: \(error)")
+                DLog("JSONParsin Error: \(error)")
             }
             // Add first value ALL
             self.addressPicker.reloadAllComponents()
@@ -199,7 +199,7 @@ class TRCSearchLocationPageView: TRCBaseViewController {
             }
             catch
             {
-                print("JSONParsin Error: \(error)")
+                DLog("JSONParsin Error: \(error)")
             }
             self.subAddressPicker.reloadAllComponents()
             self.configFirstDataSubAddress()

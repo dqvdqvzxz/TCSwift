@@ -92,7 +92,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             }
             catch
             {
-                print("JSONParsin Error: \(error)")
+                DLog("JSONParsin Error: \(error)")
             }
 
         }) { (error) in

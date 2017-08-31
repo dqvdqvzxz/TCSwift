@@ -180,6 +180,7 @@ class TRCRegisterViewController: TRCBaseViewController {
                     
                     self.tfUsername.text = _obj.dicFacebookInfo[FB_EMAIL]
                     self.tfUsername.isUserInteractionEnabled = false
+                    self.tfUsername.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
                     self.tfPassword.text = ""
                     self.tfRePassword.text = ""
                 })
@@ -206,83 +207,6 @@ class TRCRegisterViewController: TRCBaseViewController {
                 
                 //upload token into server
                 return
-                //get profile
-//                if let fbFirstName = FBSDKProfile.current().firstName{
-//                    _obj.dicFacebookInfo.updateValue(fbFirstName, forKey: FB_FIRSTNAME)
-//                }else{
-//                    _obj.dicFacebookInfo.updateValue("", forKey: FB_FIRSTNAME)
-//                }
-//                
-//                if let fbMiddleName = FBSDKProfile.current().middleName{
-//                    _obj.dicFacebookInfo.updateValue(fbMiddleName, forKey: FB_MIDDLENAME)
-//                }else{
-//                    _obj.dicFacebookInfo.updateValue("", forKey: FB_MIDDLENAME)
-//                }
-//                
-//                if let fbLastName = FBSDKProfile.current().lastName{
-//                    _obj.dicFacebookInfo.updateValue(fbLastName, forKey: FB_LASTNAME)
-//                }else{
-//                    _obj.dicFacebookInfo.updateValue("", forKey: FB_LASTNAME)
-//                }
-//                
-//                if let fbName = FBSDKProfile.current().name{
-//                    _obj.dicFacebookInfo.updateValue(fbName, forKey: FB_NAME)
-//                }else{
-//                    _obj.dicFacebookInfo.updateValue("", forKey: FB_NAME)
-//                }
-//                
-//                if let fbUserID = FBSDKProfile.current().userID{
-//                    _obj.dicFacebookInfo.updateValue(fbUserID, forKey: FB_USERID)
-//                }else{
-//                    _obj.dicFacebookInfo.updateValue("", forKey: FB_USERID)
-//                }
-//                
-//                //get email, avatar
-//                let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email, picture.type(large)"])
-//                graphRequest.start(completionHandler: { (connection, result, error) -> Void in
-//                    if ((error) != nil){
-//                        ELog("Error: \(String(describing: error))")
-//                    }else{
-//                        let data:[String:AnyObject] = result as! [String : AnyObject]
-//                        
-//                        //get avatar, email
-//                        let picture = data["picture"]
-//                        let avatar = picture?.object(forKey: "data")
-//                        let avatarURL = (avatar as AnyObject).object(forKey: "url")
-//
-//                        if let fbEmail = data["email"]{
-//                            _obj.dicFacebookInfo.updateValue(fbEmail as! String, forKey: FB_EMAIL)
-//                        }else{
-//                            _obj.dicFacebookInfo.updateValue("", forKey: FB_EMAIL)
-//                        }
-//                        
-//                        if let fbAvatar = avatarURL{
-//                            _obj.dicFacebookInfo.updateValue(fbAvatar as! String, forKey: FB_AVATAR)
-//                        }
-//                        else{
-//                            _obj.dicFacebookInfo.updateValue("", forKey: FB_AVATAR)
-//                        }
-//                        
-//                        
-//                        //process after login
-//                        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-//                            //change UI of view
-//                            self.viewLineLeft.isHidden = true
-//                            self.lblOr.isHidden = true
-//                            self.viewLineRight.isHidden = true
-//                            self.btnRegisterWithFB.isHidden = true
-//                            DLog(_obj.dicFacebookInfo)
-//                            
-//                            //fill data to form register
-//                            self.lblUsername.text = "Facebookとの連携が完了しました。\nとりけあのログイン用パスワードを設定してください。"
-//                            self.lblUsername.lineBreakMode = .byWordWrapping
-//                            self.lblUsername.numberOfLines = 0
-//                            
-//                            self.tfUsername.text = _obj.dicFacebookInfo[FB_EMAIL]
-//                            self.tfUsername.isUserInteractionEnabled = false
-//                        })
-//                    }
-//                })
             }
         }
     }

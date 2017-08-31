@@ -76,7 +76,7 @@ class TRCPharmacySearchViewController: TRCBaseViewController {
         //UI
         lblGuide.labelStyle(title: "My薬局、\nMy薬剤師の説明")
         btnReaded.buttonStyle()
-        btnReaded.setTitle(Localizable(value: "close"), for: UIControlState.normal)
+        btnReaded.setTitle(Localizable(value: STRING_CLOSE), for: UIControlState.normal)
 
         btnCancel.setTitle("", for: .normal)
         viewParentTutorial.backgroundColor = UIColor.init(hexString: "000000", alpha: 0.5)
