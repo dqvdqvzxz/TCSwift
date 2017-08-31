@@ -44,9 +44,6 @@ class TRCSearchLocationPageView: TRCBaseViewController {
         loadPrefectures()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

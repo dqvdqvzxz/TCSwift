@@ -30,9 +30,6 @@ class TRCSearchTextPageView: TRCBaseViewController {
         configUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        _obj.tabController.tabBar.isHidden = true
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
