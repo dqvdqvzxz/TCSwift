@@ -163,9 +163,6 @@
 "point_use"                             = "Point Use";
 "point_about"                           = "Point About";
 "back_qr"                               = "閉じる";
-
-"back_passcode"                         = "X 閉じる";
-
 //Reset pass
 "reset_password"                        = "Reset Password";
 "reset_password_input"                  = "パスワードを再設定するためのメールを送信します。ご登録済みのメールアドレスを入力してください。";

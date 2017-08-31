@@ -29,6 +29,8 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
     @IBOutlet weak var imgView4: UIImageView!
     
     @IBOutlet weak var tfPasscode: UITextField!
+    @IBOutlet var leftBarView: UIView!
+    @IBOutlet weak var leftBarLabel: UILabel!
     
     var mode = String()
     
@@ -80,8 +82,15 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
         
         //customize close button
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: Localizable(value: "back_passcode"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(close(sender:)))
-        self.navigationItem.leftBarButtonItem = newBackButton
+        
+        leftBarLabel.labelStyle(title: Localizable(value: "close"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: MAIN_COLOR)
+        let leftTap = UITapGestureRecognizer(target: self, action: #selector(close))
+        leftBarView.addGestureRecognizer(leftTap)
+        leftBarView.isUserInteractionEnabled = true
+
+        let leftBarButton = UIBarButtonItem(customView: leftBarView)
+
+        self.navigationItem.leftBarButtonItem = leftBarButton
         
         switch (mode) {
         case MODE_LOGIN:
@@ -114,14 +123,13 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
         }
     }
     
-    func close(sender: UIBarButtonItem) {
+    func close() {
         let viewControllers: [UIViewController] = _obj.nc5.viewControllers
         for descView in viewControllers {
             if(descView is TRCPasscodeLockSettingViewController){
                 _obj.nc5.popToViewController(descView, animated: true)
             }
         }
-
     }
     
     //MARK: Action
