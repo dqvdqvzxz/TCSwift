@@ -43,7 +43,9 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
     @IBOutlet weak var contraintBottomBtnChange: NSLayoutConstraint!
     
-    @IBOutlet weak var heightViewMain: NSLayoutConstraint!
+    @IBOutlet weak var contraintHeightViewMain: NSLayoutConstraint!
+    
+    
     var pickerController = UIImagePickerController()
     var imgView = UIImage()
     
@@ -169,7 +171,7 @@ class TRCAccountInfoInputViewController: TRCBaseViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        heightViewMain.constant = viewHeight.frame.origin.y + viewHeight.frame.size.height + 10
+        contraintHeightViewMain.constant = viewHeight.frame.origin.y + viewHeight.frame.size.height + 10
     }
     
     //MARL: Config data

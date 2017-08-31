@@ -15,7 +15,7 @@
                 <outlet property="btnUploadImage" destination="A83-dy-JcO" id="VcQ-Sd-DAK"/>
                 <outlet property="contraintBottomBtnChange" destination="yDK-f2-SlT" id="uBc-eQ-uCL"/>
                 <outlet property="contraintBottomScrollView" destination="vmg-mz-nhX" id="wXb-4y-OXH"/>
-                <outlet property="heightViewMain" destination="aFE-7J-lw6" id="vw7-qm-JE7"/>
+                <outlet property="contraintHeightViewMain" destination="aFE-7J-lw6" id="j2N-Ol-x2Z"/>
                 <outlet property="imgUser" destination="Qxe-TD-YGz" id="kdJ-z5-4tr"/>
                 <outlet property="lblDateOfBirth" destination="yTJ-BX-iV7" id="V8t-Q9-UuT"/>
                 <outlet property="lblFirstName" destination="gzK-ls-Dwi" id="9ow-wO-kCK"/>
