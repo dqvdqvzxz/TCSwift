@@ -205,7 +205,6 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                             }
                         }
                     }else{
-                        
                         //push to setup
                         let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
                         vc.mode = MODE_SETUP
