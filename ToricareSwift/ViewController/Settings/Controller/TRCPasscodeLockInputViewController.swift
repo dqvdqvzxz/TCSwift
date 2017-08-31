@@ -205,6 +205,13 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                             }
                         }
                     }else{
+                        
+                        //push to setup
+                        let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
+                        vc.mode = MODE_SETUP
+                        self.configBackButton()
+                        _obj.nc5.pushViewController(vc, animated: true)
+                        
                         self.lblError.isHidden = false
                         self.lblError2.isHidden = false
                         
@@ -216,13 +223,6 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
                         }
                         
                         self.tfPasscode.text = ""
-                        
-                        //push to setup
-                        let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
-                        vc.mode = MODE_SETUP
-                        self.configBackButton()
-                        _obj.nc5.pushViewController(vc, animated: true)
-
                     }
                 case MODE_CHANGE:
                     //input old passcode
@@ -291,5 +291,10 @@ class TRCPasscodeLockInputViewController: TRCBaseViewController {
             imgView3.image = #imageLiteral(resourceName: "ic_passcode_line")
             imgView4.image = #imageLiteral(resourceName: "ic_passcode_line")
         }
+    }
+
+    //call this function when the tap is recognized
+    override func dismissKeyboard(){
+        tfPasscode.becomeFirstResponder()
     }
 }
