@@ -64,6 +64,10 @@ class TRCBaseViewController: UIViewController {
     func hideBar(){
         self.hidesBottomBarWhenPushed = true
     }
+    
+    func setGrayColorForView(_ inputView: UIView){
+        inputView.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+    }
 }
 
 extension UIViewController {
