@@ -19,10 +19,6 @@ class TRCSettingViewController: TRCBaseViewController {
         super.viewDidLoad()
 
         configUI()
-        
-//        let numbers = Singleton.shared.nc5.viewControllers.count
-        
-//        print(numbers)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +32,8 @@ class TRCSettingViewController: TRCBaseViewController {
         self.navigationItem.title = STRING_SETTING
         
         //table view
+        setGrayColorForView(tblSetting)
+        
         tblSetting.dataSource = self
         tblSetting.delegate = self
         tblSetting.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -59,6 +57,7 @@ extension TRCSettingViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        self.setGrayColorForView(cell)
         cell.textLabel?.labelStyle(title: self.listItems?[indexPath.row])
         cell.accessoryType = .disclosureIndicator
         
@@ -73,53 +72,48 @@ extension TRCSettingViewController: UITableViewDelegate{
             let vc = TRCEmailChangeInputViewController(nibName: "TRCEmailChangeInputViewController", bundle: nil)
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+            break
         case 1:
             let vc = TRCPasswordChangeViewController(nibName: "TRCPasswordChangeViewController", bundle: nil)
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+            break
         case 2:
             let vc = TRCLinkedServicesViewController(nibName: "TRCLinkedServicesViewController", bundle: nil)
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+            break
         case 3:
             let vc = TRCNotificationSettingViewController(nibName: "TRCNotificationSettingViewController", bundle: nil)
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+            break
         case 4:
             let vc = TRCPasscodeLockSettingViewController(nibName: "TRCPasscodeLockSettingViewController", bundle: nil)
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
-//        case 5:
-//            let vc = TRCThemeColorSettingViewController(nibName: "TRCThemeColorSettingViewController", bundle: nil)
-//            let backItem = UIBarButtonItem()
-//            backItem.title = STRING_BACK
-//            navigationItem.backBarButtonItem = backItem
-//            _obj.nc5.pushViewController(vc, animated: true)
+            break
         case 5:
             let vc = TRCAboutAppViewController(nibName: "TRCAboutAppViewController", bundle: nil)
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+            break
         case 6:
             let vc = TRCUserLeaveViewController(nibName: "TRCUserLeaveViewController", bundle: nil)
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+            break
         case 7:
             TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
                 UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                     
-                    
-//                    UserDefaults.removeAllKey()
                     UserDefaults.clearValueWhenLogout()
                     
-                    
                     //reset struct
-//                    _obj.objectAccountInfo.imagePath.origin = ""
                     _obj.clearObject()
 
-                    
                     let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
                     let navController = UINavigationController(rootViewController: mainVC)
-
                     
                     UIApplication.shared.keyWindow?.rootViewController = navController
                 }, completion: { completed in
@@ -130,6 +124,7 @@ extension TRCSettingViewController: UITableViewDelegate{
                 self.showAlert(error)
                 ELog(error)
             })
+            break
         default:
             break
         }
