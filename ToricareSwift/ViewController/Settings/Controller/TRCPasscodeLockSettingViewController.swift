@@ -89,19 +89,19 @@ extension TRCPasscodeLockSettingViewController: UITableViewDataSource{
     
     func stateChanged(switchState: UISwitch) {
         if switchState.isOn {
-            btnPasscode.isEnabled = true
-            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
             let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
             vc.mode = MODE_SETUP
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+//            btnPasscode.isEnabled = true
+//            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
         } else {
-            btnPasscode.isEnabled = false
-            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
             let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
             vc.mode = MODE_REMOVE
             configBackButton()
             _obj.nc5.pushViewController(vc, animated: true)
+//            btnPasscode.isEnabled = false
+//            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BACKGROUND_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
         }
     }
 }
@@ -112,28 +112,6 @@ extension TRCPasscodeLockSettingViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow
-        
-        let currentCell = tableView.cellForRow(at: indexPath!) as! TRCLinkedServiceCell
-        
-        currentCell.switchCell.isOn = !currentCell.switchCell.isOn
-        
-        if(currentCell.switchCell.isOn){
-            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"))
-            btnPasscode.isEnabled = true
-            
-            let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
-            vc.mode = MODE_SETUP
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
-        }else{
-            btnPasscode.isEnabled = false
-            btnPasscode.buttonStyle(title: Localizable(value: "change_passcode"), fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: BUTTON_BORDER_COLOR, radius: BUTTON_RADIUS, backgroundColor: BACKGROUND_COLOR)
-            
-            let vc = TRCPasscodeLockInputViewController(nibName: "TRCPasscodeLockInputViewController", bundle: nil)
-            vc.mode = MODE_REMOVE
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
-        }
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
