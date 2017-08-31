@@ -20,6 +20,14 @@ class TRCQRCodeViewController: TRCBaseViewController {
     var _captureSizeTransform = CGAffineTransform()
     var mode = String()
 
+    @IBOutlet var leftBarView: UIView!
+    @IBOutlet weak var leftBarLabel: UILabel!
+    @IBOutlet weak var centerBlankView: UIView!
+    @IBOutlet weak var topBlankView: UIView!
+    @IBOutlet weak var bottomBlankView: UIView!
+    @IBOutlet weak var leftBlankView: UIView!
+    @IBOutlet weak var rightBlankView: UIView!
+    
     //MARK: View controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +48,15 @@ class TRCQRCodeViewController: TRCBaseViewController {
         _obj.tabController.tabBar.isHidden = true
         
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: Localizable(value: "back_qr"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(close(sender:)))
-        self.navigationItem.leftBarButtonItem = newBackButton
-
-
+        
+        leftBarLabel.labelStyle(title: Localizable(value: "back_qr"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: MAIN_COLOR)
+        
+        let leftBarButton = UIBarButtonItem(customView: leftBarView)
+        let leftTap = UITapGestureRecognizer(target: self, action: #selector(close))
+        leftBarView.addGestureRecognizer(leftTap)
+        leftBarView.isUserInteractionEnabled = true
+        
+        self.navigationItem.leftBarButtonItem = leftBarButton
         lblGuide.labelStyle(title: Localizable(value: "guide_qr_code"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: WHITE_COLOR)
         btnCancel.buttonStyle(title: STRING_CANCEL, fontSize: BUTTON_FONT_SIZE, titleColor: BUTTON_TITLE_COLOR, borderWidth: BUTTON_BORDER_WIDTH, borderColor: ERROR_COLOR, radius: BUTTON_RADIUS, backgroundColor: ERROR_COLOR)
         
@@ -51,14 +64,22 @@ class TRCQRCodeViewController: TRCBaseViewController {
     }
     
     //MARK: Action
-    func close(sender: UIBarButtonItem) {
-        let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-        for descView in viewControllers {
-            if(descView is TRCUserRegistCompleteViewController){
-                
-            }
-        }
-        
+    func close() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func bringViewUp() {
+        topBlankView.isHidden = false
+        bottomBlankView.isHidden = false
+        leftBlankView.isHidden = false
+        rightBlankView.isHidden = false
+
+        self.view.bringSubview(toFront: topBlankView)
+        self.view.bringSubview(toFront: bottomBlankView)
+        self.view.bringSubview(toFront: leftBlankView)
+        self.view.bringSubview(toFront: rightBlankView)
+        self.view.bringSubview(toFront: self.lblGuide)
+        self.view.bringSubview(toFront: self.btnCancel)
     }
     
     //MARK: Config scan code view
@@ -70,8 +91,7 @@ class TRCQRCodeViewController: TRCBaseViewController {
             DispatchQueue.main.async { // 2
                 self.capture.layer.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
                 self.view.layer.addSublayer(self.capture.layer)
-                self.view.bringSubview(toFront: self.lblGuide)
-                self.view.bringSubview(toFront: self.btnCancel)
+                self.bringViewUp()
                 self.hideHUD()
             }
         }

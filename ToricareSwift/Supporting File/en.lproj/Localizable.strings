@@ -165,9 +165,6 @@
 "point_about"                           = "ポイントサービスについて";
 "back_qr"                               = "閉じる";
 
-
-"back_passcode"                         = "X 閉じる";
-
 //Reset pass
 "reset_password"                        = "パスワード再設定";
 "reset_password_input"                  = "パスワードの再設定のために、ご本人確認を行います。アカウントに登録したメールアドレスを入力してください。";
