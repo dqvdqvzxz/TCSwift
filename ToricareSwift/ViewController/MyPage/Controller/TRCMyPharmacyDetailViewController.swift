@@ -40,11 +40,13 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
     @IBOutlet weak var constraintTop: NSLayoutConstraint!
+    @IBOutlet weak var contraintHeightViewMain: NSLayoutConstraint!
     @IBOutlet weak var imgPharmacyView: UIImageView!
     
     @IBOutlet weak var imgNext: UIImageView!
     @IBOutlet weak var imgBack: UIImageView!
     @IBOutlet weak var lblEmpty: UILabel!
+    @IBOutlet weak var btnNoPharmacy: UIButton!
     
     var pharmacyData: TRCPharmacy!
     var indexImg = 0
@@ -55,13 +57,11 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         configUI()
 
         if(_obj.mode == MODE_MYPAGE) {
             getData()
         }
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,6 +107,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
 
     func showEmptyLabel() {
         self.lblEmpty.isHidden = false
+        self.btnNoPharmacy.isHidden = false
         self.scrollView.isHidden = true
         self.btnQRCode.isHidden = true
         self.btnPharmacy.isHidden = false
@@ -117,6 +118,9 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         //navigation 
         self.navigationItem.title = Localizable(value: "my_pharmacy_setting")
         
+//        viewMain.backgroundColor = UIColor.init(hexString: GREY_BACKGROUND_COLOR)
+        setGrayColorForView(viewMain)
+        
         //UI of outlet
         lblAddress.labelStyle(title: Localizable(value: "address"))
         lblPhone.labelStyle(title: Localizable(value: "phone_number"))
@@ -126,6 +130,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         
         lblEmpty.labelStyle(title: Localizable(value: "pharmacy_not_set"))
         lblEmpty.isHidden = true
+        btnNoPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
+        btnNoPharmacy.isHidden = true
         
         //hide button qr
         btnQRCode.isHidden = true
@@ -135,18 +141,16 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         configData()
     }
     
+    override func viewDidLayoutSubviews() {
+        contraintHeightViewMain.constant = btnPharmacy.frame.origin.y + btnPharmacy.frame.size.height + 10
+    }
+    
     func configMode(){
         if(_obj.mode == MODE_REGISTER){
             constraintTop.constant = 74
-            contraintBottomScrollView.constant = 54
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
-        }else if(_obj.mode == MODE_REGISTER_MYPAGE){
-            constraintTop.constant = 74
-            contraintBottomScrollView.constant = 54
-            btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }else if(_obj.mode == MODE_MYPAGE){
-            contraintBottomScrollView.constant = 54
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
                 btnPharmacy.buttonStyle(title: Localizable(value: "setting_my_pharmacy"))
             } else {
@@ -156,7 +160,6 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
                 if (_obj.objectAccountInfo.shopStatus.isBlank || _obj.objectAccountInfo.shopStatus == REGISTER_FALSE) {
                     btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
                     btnQRCode.isHidden = false
-                    contraintBottomScrollView.constant = 110
                 }
             }
         }
@@ -257,6 +260,10 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         goNext()
     }
     
+    @IBAction func tapBtnNoPharmacy(_ sender: Any) {
+        self.goSearchPharmacy()
+    }
+    
     func registerPharmacy() {
         self.showHUD()
         TRCPharmacyRequest().registerPharmacy(pharmacyData.pharmacyId, completion: { (data) in
@@ -290,8 +297,6 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     func goNext() {
         if(_obj.mode == MODE_REGISTER){
-            self.registerPharmacy()
-        }else if(_obj.mode == MODE_REGISTER_MYPAGE){
             self.registerPharmacy()
         }else if(_obj.mode == MODE_MYPAGE){
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
