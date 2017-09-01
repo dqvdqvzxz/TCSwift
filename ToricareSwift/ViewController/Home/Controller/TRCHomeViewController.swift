@@ -77,7 +77,7 @@ class TRCHomeViewController: TRCBaseViewController {
     var isRequestUnread = false
     
     var itemIndex: Int = 0
-    var timer: Timer = Timer()
+    var timer: Timer!
     @IBOutlet weak var scrollViewBanner: UIScrollView!
     @IBOutlet weak var pageControlBanner: UIPageControl!
     var colors:[UIColor] = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow]
@@ -102,6 +102,10 @@ class TRCHomeViewController: TRCBaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        configBanner()
     }
     
     //MARK: Config UI
@@ -164,8 +168,6 @@ class TRCHomeViewController: TRCBaseViewController {
         //weight
         lblRegisterTodayWeight.labelStyle(title:  Localizable(value: "register_today_weight"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
         imgViewAccessory.image = #imageLiteral(resourceName: "ic_next")
-        self.configBanner()
-
     }
     
     func updateUnread(_ value: String) {
@@ -214,7 +216,18 @@ class TRCHomeViewController: TRCBaseViewController {
         
         self.scrollViewBanner.contentSize = CGSize(width:self.scrollViewBanner.frame.size.width * 4,height: self.scrollViewBanner.frame.size.height - 10)
         pageControlBanner.addTarget(self, action: #selector(changePage(sender:)), for: .valueChanged)
-
+        
+        // Comment it out
+//        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
+    }
+    
+    func autoScroll() {
+        if (pageControlBanner.currentPage < 4) {
+            pageControlBanner.currentPage = pageControlBanner.currentPage + 1
+            let nextPos:CGFloat = self.scrollViewBanner.frame.size.width * (CGFloat)(pageControlBanner.currentPage)
+            let rect = CGRect(x: nextPos, y: self.scrollViewBanner.frame.origin.y, width: 1.0, height: 1.0)
+            scrollViewBanner.scrollRectToVisible(rect, animated: true)
+        }
     }
     
     // MARK : TO CHANGE WHILE CLICKING ON PAGE CONTROL
