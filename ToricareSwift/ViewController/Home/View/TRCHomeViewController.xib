@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -73,9 +73,12 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3C0-O1-Q2R">
                                     <rect key="frame" x="5" y="5" width="355" height="33.5"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="information" translatesAutoresizingMaskIntoConstraints="NO" id="kW9-Rg-K5v">
-                                            <rect key="frame" x="8" y="7" width="17" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="information" translatesAutoresizingMaskIntoConstraints="NO" id="kW9-Rg-K5v">
+                                            <rect key="frame" x="8" y="9.5" width="15" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="15" id="BOV-it-iMK"/>
+                                                <constraint firstAttribute="width" secondItem="kW9-Rg-K5v" secondAttribute="height" multiplier="1:1" id="Q8g-Ax-gNr"/>
+                                            </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsk-H9-TLX">
                                             <rect key="frame" x="261" y="6" width="68" height="20"/>
@@ -99,6 +102,7 @@
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
+                                        <constraint firstItem="kW9-Rg-K5v" firstAttribute="leading" secondItem="3C0-O1-Q2R" secondAttribute="leading" constant="8" id="C7w-Zb-LII"/>
                                         <constraint firstItem="o28-hx-zih" firstAttribute="leading" secondItem="Zsk-H9-TLX" secondAttribute="trailing" constant="8" id="HKf-lb-45c"/>
                                         <constraint firstAttribute="trailing" secondItem="o28-hx-zih" secondAttribute="trailing" constant="10" id="mGA-aU-es7"/>
                                         <constraint firstItem="o28-hx-zih" firstAttribute="centerY" secondItem="3C0-O1-Q2R" secondAttribute="centerY" id="ug3-cG-e7C"/>
@@ -159,6 +163,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="3C0-O1-Q2R" secondAttribute="trailing" constant="5" id="3eQ-N5-Jkb"/>
+                                <constraint firstItem="kW9-Rg-K5v" firstAttribute="centerY" secondItem="AFV-C3-rZP" secondAttribute="centerY" id="6Dk-jg-9l4"/>
                                 <constraint firstItem="v04-Sn-Gj9" firstAttribute="leading" secondItem="pds-vU-SED" secondAttribute="leading" constant="10" id="6Wy-ds-RFe"/>
                                 <constraint firstItem="6fz-OV-CXS" firstAttribute="top" secondItem="3C0-O1-Q2R" secondAttribute="bottom" constant="10" id="CHU-gd-DVe"/>
                                 <constraint firstItem="cwN-Sl-dNd" firstAttribute="height" secondItem="pds-vU-SED" secondAttribute="height" multiplier="1:7" id="CJX-aw-bzI"/>

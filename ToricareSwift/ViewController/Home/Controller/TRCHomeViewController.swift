@@ -346,7 +346,6 @@ class TRCHomeViewController: TRCBaseViewController {
     func pushToMessageList(){
         let vc = TRCMessageListViewController(nibName: "TRCMessageListViewController", bundle: nil)
         configBackButton()
-//        hideBar()
         _obj.nc1.pushViewController(vc, animated: true)
     }
     
@@ -358,7 +357,6 @@ class TRCHomeViewController: TRCBaseViewController {
         let vc = TRCNotificationPharmacyViewController(nibName: "TRCNotificationPharmacyViewController", bundle: nil)
         vc.notifyFromType = .pharmacy
         configBackButton()
-        //        hideBar()
         _obj.nc1.pushViewController(vc, animated: true)
     }
     
