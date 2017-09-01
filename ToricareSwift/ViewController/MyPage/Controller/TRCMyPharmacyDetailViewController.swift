@@ -41,6 +41,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     @IBOutlet weak var contraintBottomScrollView: NSLayoutConstraint!
     @IBOutlet weak var constraintTop: NSLayoutConstraint!
     @IBOutlet weak var contraintHeightViewMain: NSLayoutConstraint!
+    @IBOutlet weak var contraintTopBtnQRCode: NSLayoutConstraint!
+    @IBOutlet weak var contraintTopBtnSearch: NSLayoutConstraint!
     @IBOutlet weak var imgPharmacyView: UIImageView!
     
     @IBOutlet weak var imgNext: UIImageView!
@@ -142,7 +144,18 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        contraintHeightViewMain.constant = btnPharmacy.frame.origin.y + btnPharmacy.frame.size.height + 10
+        let heightbottomContent = (btnPharmacy.frame.origin.y + btnPharmacy.frame.size.height + 10)
+        let selfViewHeight = self.view.frame.size.height
+        if(_obj.mode == MODE_REGISTER_MYPAGE && heightbottomContent <= selfViewHeight){
+            contraintHeightViewMain.constant = selfViewHeight
+            if let newContraintTopBtnSearch: NSLayoutConstraint = contraintTopBtnSearch {
+                newContraintTopBtnSearch.isActive = false
+            }
+            
+            self.view.layoutIfNeeded()
+        }else{
+            contraintHeightViewMain.constant = heightbottomContent
+        }
     }
     
     func configMode(){

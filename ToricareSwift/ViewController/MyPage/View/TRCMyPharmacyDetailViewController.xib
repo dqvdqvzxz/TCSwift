@@ -17,6 +17,8 @@
                 <outlet property="constraintTop" destination="UjA-ON-fAv" id="kvQ-AZ-ZFh"/>
                 <outlet property="contraintBottomScrollView" destination="h4p-9u-yxm" id="I4w-Ql-FJy"/>
                 <outlet property="contraintHeightViewMain" destination="sjU-R9-1r0" id="Jhf-TI-M6o"/>
+                <outlet property="contraintTopBtnQRCode" destination="2Rv-Ze-9Te" id="gDh-sr-WUh"/>
+                <outlet property="contraintTopBtnSearch" destination="Egs-1H-EOH" id="gdT-rk-Lsw"/>
                 <outlet property="imgBack" destination="jo9-52-xI5" id="snh-ZC-9mj"/>
                 <outlet property="imgNext" destination="8qX-xM-oX4" id="5s3-oY-Bwr"/>
                 <outlet property="imgPharmacyView" destination="keC-s3-mte" id="sd6-IQ-4Ua"/>
@@ -207,7 +209,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QHq-L8-4Th" userLabel="lblWebsiteResult">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QHq-L8-4Th" userLabel="lblWebsiteResult">
                                             <rect key="frame" x="91.5" y="160" width="273.5" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -288,6 +290,7 @@
                                 <constraint firstItem="W6u-4g-CED" firstAttribute="top" secondItem="tzX-UU-bLg" secondAttribute="bottom" constant="10" id="RgW-cd-IrC"/>
                                 <constraint firstItem="tzX-UU-bLg" firstAttribute="top" secondItem="cb1-ac-zZ4" secondAttribute="top" constant="10" id="UjA-ON-fAv"/>
                                 <constraint firstAttribute="trailing" secondItem="W6u-4g-CED" secondAttribute="trailing" id="dns-oC-fBV"/>
+                                <constraint firstAttribute="bottom" secondItem="QWR-Ne-jvt" secondAttribute="bottom" priority="750" constant="10" id="lFQ-iD-FY7"/>
                                 <constraint firstItem="XiV-LP-9hy" firstAttribute="leading" secondItem="cb1-ac-zZ4" secondAttribute="leading" constant="10" id="nK9-HH-dkv"/>
                                 <constraint firstAttribute="height" constant="600" id="sjU-R9-1r0"/>
                             </constraints>
