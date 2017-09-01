@@ -36,8 +36,6 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     //MARK: Config UI 
     func configUI(){
         //navigation
-        self.navigationItem.hidesBackButton = true
-        
         self.navigationItem.title = _obj.mode == MODE_REGISTER_MYPAGE ? Localizable(value: "my_pharmacy_setting") : Localizable(value: "register_complete_title")
 
         //UI of outlet
@@ -48,6 +46,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
     
     func configMode(){
         if(_obj.mode == MODE_SKIP){
+            self.navigationItem.hidesBackButton = true
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "please_register_pharmacy_later"), fontSize: LABEL_FONT_SIZE, isBold: false, textColor: LABEL_FONT_COLOR)
             lblPharmacyNotDone.lineBreakMode = .byWordWrapping
             lblPharmacyNotDone.numberOfLines = 0
@@ -58,12 +57,14 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
             btnQRCode.isHidden = true
             btnUsingApp.buttonStyle(title: Localizable(value: "use_app"))
         }else if(_obj.mode == MODE_REGISTER_MYPAGE){
+            self.navigationItem.hidesBackButton = false
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "my_pharmacy_register_not_done"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
             lblTakeQRCode.labelStyle(title: Localizable(value: "pharmacy_register_done"))
             lblTakeQRCode.makeLineSpacing()
             btnQRCode.buttonStyle(title: Localizable(value: "read_qrcode"))
             btnUsingApp.buttonStyle(title: Localizable(value: "back_to_mypage"))
         }else{
+            self.navigationItem.hidesBackButton = true
             lblPharmacyNotDone.labelStyle(title: Localizable(value: "my_pharmacy_register_not_done"), fontSize: LABEL_FONT_SIZE, isBold: true, textColor: LABEL_FONT_COLOR)
             lblTakeQRCode.labelStyle(title: Localizable(value: "take_qrcode_label"))
             lblTakeQRCode.makeLineSpacing()
