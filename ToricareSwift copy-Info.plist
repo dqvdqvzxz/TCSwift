@@ -75,9 +75,9 @@
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>$(PRODUCT_NAME) heath update use</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Use Location</string>
+	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Use Location</string>
+	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>

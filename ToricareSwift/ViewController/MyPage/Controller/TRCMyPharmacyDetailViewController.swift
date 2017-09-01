@@ -206,7 +206,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             lblWorkScheduleDayOffResult.text = pharmacyData.holiday
             lblDayOffResult.text = pharmacyData.holiday
             lblWebsiteResult.labelStyle(title: pharmacyData.url, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: URL_COLOR)
-            
+            lblWebsiteResult.makeLineSpacing()
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openURL))
             lblWebsiteResult.gestureRecognizers = [tapGesture]
             lblWebsiteResult.isUserInteractionEnabled = true
