@@ -52,7 +52,7 @@ class TRCPasswordChangeViewController: TRCBaseViewController {
     //MARK: Action
     func validate(){
         if (tfCurrentPassword.text?.isBlank)! {
-            self.showAlert(Localizable(value: "please_input_new_password"))
+            self.showAlert(Localizable(value: "please_input_current_password"))
             return
         }
         
