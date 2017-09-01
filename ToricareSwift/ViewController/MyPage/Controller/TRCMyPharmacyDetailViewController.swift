@@ -150,6 +150,9 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             constraintTop.constant = 74
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localizable(value: "skip"), style: .plain, target: self, action: #selector(skipAction))
             btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
+        }else if(_obj.mode == MODE_REGISTER_MYPAGE){
+            constraintTop.constant = 74
+            btnPharmacy.buttonStyle(title: Localizable(value: "register_my_pharmacy"))
         }else if(_obj.mode == MODE_MYPAGE){
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
                 btnPharmacy.buttonStyle(title: Localizable(value: "setting_my_pharmacy"))
@@ -297,6 +300,8 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     
     func goNext() {
         if(_obj.mode == MODE_REGISTER){
+            self.registerPharmacy()
+        }else if(_obj.mode == MODE_REGISTER_MYPAGE){
             self.registerPharmacy()
         }else if(_obj.mode == MODE_MYPAGE){
             if (_obj.objectAccountInfo != nil && _obj.objectAccountInfo.shopId.isBlank) {
