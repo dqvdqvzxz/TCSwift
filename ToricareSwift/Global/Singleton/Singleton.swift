@@ -34,6 +34,8 @@ final class Singleton{
     
     var objectSummary: TRCSummary!
     
+    var objectPharmacist: TRCPharmacist!
+    
     var mode =  String()
     
     func clearObject(){

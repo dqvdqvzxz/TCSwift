@@ -122,6 +122,7 @@ let GOAL_STEPS =                    "steps"
 let GOAL_STEP =                     "step"
 
 //Pharmacist
+let PHARMACIST_ID =                 "id"
 let PHARMACIST_NAME =               "name"
 let PHARMACIST_TEL =                "tel"
 let PHARMACIST_EMAIL =              "email"

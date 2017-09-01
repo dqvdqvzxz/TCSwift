@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TRCMyPharmacistDetailViewControllerDelegate {
-    func pushToPharmacistInput(_ dicResult: NSDictionary)
+    func pushToPharmacistInput()
 }
 
 
@@ -48,14 +48,18 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configUI()
-        
         getData()
+        
+        configUI()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configData()
     }
     
     //MARK: Config UI
@@ -113,18 +117,13 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
             let dataResult = data?.object(forKey: DATA) as! NSDictionary
             self.hideHUD()
             
-            self.viewHadData.frame = self.view.bounds
-            self.viewHadData.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            self.view.addSubview(self.viewHadData)
-
-            //fill data
-            self.lblNameValue.labelStyle(title: dataResult.object(forKey: PHARMACIST_NAME) as? String)
-            self.lblPhoneValue.labelStyle(title: dataResult.object(forKey: PHARMACIST_TEL) as? String)
-            self.lblMailValue.labelStyle(title: dataResult.object(forKey: PHARMACIST_EMAIL) as? String)
-            self.lblMemoValue.labelStyle(title: dataResult.object(forKey: PHARMACIST_NOTE) as? String)
-            
-            //set result to dic
-            self.dicPharmacist = dataResult
+            do{
+                _obj.objectPharmacist = try parseDict(dataResult as! JSONObject) as TRCPharmacist
+                
+                self.configData()
+            }catch{
+                ELog("JSONParsin Error: \(error)")
+            }
         }) { (error) in
             self.hideHUD()
             ELog(error)
@@ -135,6 +134,20 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
             }else{
                 self.showAlert(error)
             }
+        }
+    }
+    
+    func configData(){
+        if(_obj.objectPharmacist != nil){
+            self.viewHadData.frame = self.view.bounds
+            self.viewHadData.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            self.view.addSubview(self.viewHadData)
+            
+            //fill data
+            self.lblNameValue.labelStyle(title: _obj.objectPharmacist.name)
+            self.lblPhoneValue.labelStyle(title: _obj.objectPharmacist.tel)
+            self.lblMailValue.labelStyle(title: _obj.objectPharmacist.email)
+            self.lblMemoValue.labelStyle(title: _obj.objectPharmacist.note)
         }
     }
     
@@ -150,7 +163,7 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(_obj.mode == MODE_MYPAGE){
             if (delegate != nil) {
-                delegate.pushToPharmacistInput(dicPharmacist)
+                delegate.pushToPharmacistInput()
                 return
             }
         }
@@ -158,7 +171,7 @@ class TRCMyPharmacistDetailViewController: TRCBaseViewController {
     
     @IBAction func tapBtnNoData(_ sender: Any) {
         if (delegate != nil) {
-            delegate.pushToPharmacistInput([:])
+            delegate.pushToPharmacistInput()
             return
         }
     }

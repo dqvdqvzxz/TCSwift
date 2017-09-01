@@ -73,11 +73,11 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             
             lblInform.attributedText = attributedString1
             
-            if(dataResult != nil){
-                tfName.text = dataResult.object(forKey: PHARMACIST_NAME) as? String
-                tfPhone.text = dataResult.object(forKey: PHARMACIST_TEL) as? String
-                tfEmail.text = dataResult.object(forKey: PHARMACIST_EMAIL) as? String
-                tvNote.text = dataResult.object(forKey: PHARMACIST_NOTE) as? String
+            if(_obj.objectPharmacist != nil){
+                tfName.text = _obj.objectPharmacist.name
+                tfPhone.text = _obj.objectPharmacist.tel
+                tfEmail.text = _obj.objectPharmacist.email
+                tvNote.text = _obj.objectPharmacist.note
             }
         }
         
@@ -142,14 +142,19 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
             }
             
         }else if(_obj.mode == MODE_MYPAGE){
-            if(dataResult != nil){
+            if(_obj.objectPharmacist != nil){
                 self.showHUD()
                 TRCPharmacistRequest().pharmacistInfoChange(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
                     self.hideHUD()
                     
+                    _obj.objectPharmacist.name = self.tfName.text!
+                    _obj.objectPharmacist.tel = self.tfPhone.text!
+                    _obj.objectPharmacist.email = self.tfEmail.text!
+                    _obj.objectPharmacist.note = self.tvNote.text!
+
                     let viewControllers: [UIViewController] = _obj.nc5.viewControllers
                     for descView in viewControllers {
-                        if(descView is TRCMyPageViewController){
+                        if(descView is TRCMyPharmacyDetailPageViewController){
                             _obj.nc5.popToViewController(descView, animated: true)
                         }
                     }
@@ -158,22 +163,27 @@ class TRCMyPharmacistInputViewController: TRCBaseViewController {
                     ELog(error)
                     self.showAlert(error)
                 }
-            }
-            
-            self.showHUD()
-            TRCPharmacistRequest().pharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
-                self.hideHUD()
-                
-                let viewControllers: [UIViewController] = _obj.nc5.viewControllers
-                for descView in viewControllers {
-                    if(descView is TRCMyPageViewController){
-                        _obj.nc5.popToViewController(descView, animated: true)
+            }else{
+                self.showHUD()
+                TRCPharmacistRequest().pharmacistInfoCreate(tfName.text!, tfPhone.text!, tfEmail.text!, tvNote.text!,completion: {(data) in
+                    self.hideHUD()
+                    
+                    _obj.objectPharmacist.name = self.tfName.text!
+                    _obj.objectPharmacist.tel = self.tfPhone.text!
+                    _obj.objectPharmacist.email = self.tfEmail.text!
+                    _obj.objectPharmacist.note = self.tvNote.text!
+                    
+                    let viewControllers: [UIViewController] = _obj.nc5.viewControllers
+                    for descView in viewControllers {
+                        if(descView is TRCMyPharmacyDetailPageViewController){
+                            _obj.nc5.popToViewController(descView, animated: true)
+                        }
                     }
+                }) { (error) in
+                    self.hideHUD()
+                    ELog(error)
+                    self.showAlert(error)
                 }
-            }) { (error) in
-                self.hideHUD()
-                ELog(error)
-                self.showAlert(error)
             }
         }
     }

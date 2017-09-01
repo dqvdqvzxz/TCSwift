@@ -302,6 +302,7 @@
 "please_login_again"                    = "ログインできません｡メールアドレスとパスワードを確認してもう一度ログインしてください。";
 "email_not_exist"                       = "該当のメールアドレスは登録されておりません。";
 
+"please_input_current_password"         = "現在のパスワードを入力してください。";
 "please_input_new_password"             = "新しいパスワードを入力してください。";
 "please_input_new_password_confirm"     = "新しいパスワード（確認）を入力してください。";
 "please_input_half_width"               = "半角英数で入力してください。";
