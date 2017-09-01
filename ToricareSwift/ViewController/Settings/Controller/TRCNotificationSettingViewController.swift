@@ -81,8 +81,16 @@ class TRCNotificationSettingViewController: TRCBaseViewController {
         }) { (error) in
             self.hideHUD()
             ELog(error)
-            self.showAlert(error)
+            self.showAlertThenBack()
         }
+    }
+    
+    func showAlertThenBack(_ message: String = STRING_COMMON_ERROR, _ title: String = Localizable(value: "error")) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: Localizable(value: "ok"), style: .default, handler: { (alertAction) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: Button action
