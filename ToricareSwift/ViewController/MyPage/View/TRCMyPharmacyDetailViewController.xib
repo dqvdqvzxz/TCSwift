@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -208,7 +208,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QHq-L8-4Th" userLabel="lblWebsiteResult">
-                                            <rect key="frame" x="91.5" y="160" width="273.5" height="0.0"/>
+                                            <rect key="frame" x="91.5" y="157" width="273.5" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -223,7 +223,7 @@
                                         <constraint firstItem="gm4-uM-ThD" firstAttribute="top" secondItem="Y7a-K9-9nQ" secondAttribute="bottom" id="7ke-dW-NiI"/>
                                         <constraint firstAttribute="trailing" secondItem="gnW-WM-Iyc" secondAttribute="trailing" id="ADv-GO-0hH"/>
                                         <constraint firstItem="ZVR-ij-WoP" firstAttribute="width" secondItem="cbj-IX-DCo" secondAttribute="width" id="CWK-53-CT8"/>
-                                        <constraint firstItem="QHq-L8-4Th" firstAttribute="top" secondItem="gm4-uM-ThD" secondAttribute="bottom" constant="10" id="DBe-HT-Qeb"/>
+                                        <constraint firstItem="QHq-L8-4Th" firstAttribute="top" secondItem="gm4-uM-ThD" secondAttribute="bottom" constant="7" id="DBe-HT-Qeb"/>
                                         <constraint firstItem="cbj-IX-DCo" firstAttribute="width" secondItem="XiV-LP-9hy" secondAttribute="width" multiplier="1:3" id="EXU-zs-tzB"/>
                                         <constraint firstItem="afR-4b-vfI" firstAttribute="top" secondItem="gnW-WM-Iyc" secondAttribute="bottom" id="Fsx-J6-xnE"/>
                                         <constraint firstItem="cbj-IX-DCo" firstAttribute="leading" secondItem="XiV-LP-9hy" secondAttribute="leading" id="GrO-qz-WYV"/>
@@ -316,7 +316,7 @@
                 <constraint firstAttribute="trailing" secondItem="9An-qp-z44" secondAttribute="trailing" id="tZA-0y-G6d"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="567.5" y="146"/>
+            <point key="canvasLocation" x="309" y="137"/>
         </view>
     </objects>
     <resources>
