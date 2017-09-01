@@ -83,6 +83,7 @@ class TRCUserRegistCompleteViewController: TRCBaseViewController {
             _obj.nc5.pushViewController(vc, animated: true)
         }else{
             let vc = TRCQRCodeViewController(nibName: "TRCQRCodeViewController", bundle: nil)
+            vc.hidesBottomBarWhenPushed = true
             vc.mode = _obj.mode
             configBackButton()
             self.navigationController?.pushViewController(vc, animated: true)
