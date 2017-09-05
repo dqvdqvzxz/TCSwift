@@ -111,7 +111,7 @@
 //Notification
 "receive"                               = "プッシュ通知を受け取る";
 "notify_from_phamarcy"                  = "薬局からのお知らせ";
-"notify_from_tricare"                   = "トリケアからのお知らせ";
+"notify_from_tricare"                   = "とりけあからのお知らせ";
 "weight"                                = "体重";
 "breakfast"                             = "朝食";
 "lunch"                                 = "昼食";
