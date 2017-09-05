@@ -204,7 +204,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             lblPhoneResult.text = pharmacyData.tel
             lblWorkScheduleResult.text = pharmacyData.businessHours
             lblWorkScheduleResult.makeLineSpacing()
-            lblDayOffResult.text = pharmacyData.holiday//getValueAtIndex(stringValue: pharmacyData.holiday, index: 0)
+            lblDayOffResult.text = pharmacyData.holiday
             lblDayOffResult.makeLineSpacing()
             lblWebsiteResult.labelStyle(title: pharmacyData.url, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: URL_COLOR)
             lblWebsiteResult.makeLineSpacing()
@@ -217,7 +217,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
                 imgNext.isHidden = true
                 imgBack.isHidden = true
             }
-            
+            checkNextBackImage()
             if (imageCount > 0) {
                 setPharmacyImage(urlString: pharmacyData.images[0].origin)
             } else {
@@ -225,6 +225,42 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             }
         } else {
             
+        }
+    }
+    
+    func checkNextBackImage() {
+        let imageCount = pharmacyData.images.count
+
+        if (indexImg < imageCount - 1) {
+            disableNext(isDisable: false)
+        } else {
+            disableNext(isDisable: true)
+        }
+        
+        if (indexImg > 0) {
+            disableBack(isDisable: false)
+        } else {
+            disableBack(isDisable: true)
+        }
+    }
+    
+    func disableNext(isDisable: Bool) {
+        if (isDisable) {
+            imgNext.alpha = ALPHA_DISABLE
+            imgNext.isUserInteractionEnabled = false
+        } else {
+            imgNext.alpha = ALPHA_ENABLE
+            imgNext.isUserInteractionEnabled = true
+        }
+    }
+    
+    func disableBack(isDisable: Bool) {
+        if (isDisable) {
+            imgBack.alpha = ALPHA_DISABLE
+            imgBack.isUserInteractionEnabled = false
+        } else {
+            imgBack.alpha = ALPHA_ENABLE
+            imgBack.isUserInteractionEnabled = true
         }
     }
     
@@ -263,7 +299,9 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     func nextImg() {
         let imageCount = pharmacyData.images.count
         if (indexImg < imageCount - 1) {
+            indexImg += 1
             setPharmacyImage(urlString: pharmacyData.images[indexImg].origin)
+            checkNextBackImage()
         }
     }
     
@@ -271,6 +309,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         if (indexImg > 0) {
             indexImg -= 1
             setPharmacyImage(urlString: pharmacyData.images[indexImg].origin)
+            checkNextBackImage()
         }
     }
     
