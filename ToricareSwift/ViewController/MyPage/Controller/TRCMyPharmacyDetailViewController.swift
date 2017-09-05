@@ -189,9 +189,9 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             lblPharmacyName.text = pharmacyData.name
             lblAddressResult.text = pharmacyData.address1 + " " + pharmacyData.address2
             lblPhoneResult.text = pharmacyData.tel
-            lblWorkScheduleResult.text = pharmacyData.businessHours
-            lblWorkScheduleDayOffResult.text = pharmacyData.holiday
-            lblDayOffResult.text = pharmacyData.holiday
+            lblWorkScheduleResult.text = getValueAtIndex(stringValue: pharmacyData.businessHours, index: 0)
+            lblWorkScheduleDayOffResult.text = getValueAtIndex(stringValue: pharmacyData.businessHours, index: 1)
+            lblDayOffResult.text = getValueAtIndex(stringValue: pharmacyData.holiday, index: 0)
             lblWebsiteResult.labelStyle(title: pharmacyData.url, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: URL_COLOR)
             lblWebsiteResult.makeLineSpacing()
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openURL))
@@ -212,6 +212,21 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         } else {
             
         }
+    }
+    
+    func getValueAtIndex(stringValue: String, index: Int) -> String {
+        let stringSeparator = "\r\n"
+        let stringObject = NSString(string: stringValue)
+        if (stringValue.isBlank || stringObject.range(of: stringSeparator).location == NSNotFound) {
+            return ""
+        }
+        
+        let stringArray = stringObject.components(separatedBy: stringSeparator)
+        if (stringArray.count == 2) {
+            return stringArray[index]
+        }
+        
+        return ""
     }
     
     func openURL() {
