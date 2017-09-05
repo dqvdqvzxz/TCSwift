@@ -67,67 +67,76 @@ extension TRCSettingViewController: UITableViewDataSource{
 
 extension TRCSettingViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var vc = UIViewController()
+        
         switch (indexPath.row) {
         case 0:
-            let vc = TRCEmailChangeInputViewController(nibName: "TRCEmailChangeInputViewController", bundle: nil)
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
+            vc = TRCEmailChangeInputViewController(nibName: "TRCEmailChangeInputViewController", bundle: nil)
             break
         case 1:
-            let vc = TRCPasswordChangeViewController(nibName: "TRCPasswordChangeViewController", bundle: nil)
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
+            vc = TRCPasswordChangeViewController(nibName: "TRCPasswordChangeViewController", bundle: nil)
             break
         case 2:
-            let vc = TRCLinkedServicesViewController(nibName: "TRCLinkedServicesViewController", bundle: nil)
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
+            vc = TRCLinkedServicesViewController(nibName: "TRCLinkedServicesViewController", bundle: nil)
             break
         case 3:
-            let vc = TRCNotificationSettingViewController(nibName: "TRCNotificationSettingViewController", bundle: nil)
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
+            vc = TRCNotificationSettingViewController(nibName: "TRCNotificationSettingViewController", bundle: nil)
             break
         case 4:
-            let vc = TRCPasscodeLockSettingViewController(nibName: "TRCPasscodeLockSettingViewController", bundle: nil)
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
+            vc = TRCPasscodeLockSettingViewController(nibName: "TRCPasscodeLockSettingViewController", bundle: nil)
             break
         case 5:
-            let vc = TRCAboutAppViewController(nibName: "TRCAboutAppViewController", bundle: nil)
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
+            vc = TRCAboutAppViewController(nibName: "TRCAboutAppViewController", bundle: nil)
             break
         case 6:
-            let vc = TRCUserLeaveViewController(nibName: "TRCUserLeaveViewController", bundle: nil)
-            configBackButton()
-            _obj.nc5.pushViewController(vc, animated: true)
+            vc = TRCUserLeaveViewController(nibName: "TRCUserLeaveViewController", bundle: nil)
             break
         case 7:
-            TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
-                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                    
-                    UserDefaults.clearValueWhenLogout()
-                    
-                    //reset struct
-                    _obj.clearObject()
-
-                    let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
-                    let navController = UINavigationController(rootViewController: mainVC)
-                    
-                    UIApplication.shared.keyWindow?.rootViewController = navController
-                }, completion: { completed in
-                    // maybe do something here
-                })
-            }, failed: { (error) in
-                self.hideHUD()
-                self.showAlert(error)
-                ELog(error)
-            })
+            let alert = UIAlertController(title: nil,
+                                          message: Localizable(value: "really_logout_message"),
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            // add the action
+            alert.addAction(UIAlertAction(title: Localizable(value: "cancel"),
+                                          style: UIAlertActionStyle.cancel,
+                                          handler: { action in
+                                            
+            }))
+            alert.addAction(UIAlertAction(title: Localizable(value: "OK"),
+                                          style: UIAlertActionStyle.default,
+                                          handler: { action in
+                                            TRCTokenRequest().deleteToken(UserDefaults.getUD(ACCESS_TOKEN) as! String, completion: { (data) in
+                                                UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                                                    
+                                                    UserDefaults.clearValueWhenLogout()
+                                                    
+                                                    //reset struct
+                                                    _obj.clearObject()
+                                                    
+                                                    let mainVC = TRCPreLoginViewController(nibName: "TRCPreLoginViewController", bundle: nil)
+                                                    let navController = UINavigationController(rootViewController: mainVC)
+                                                    
+                                                    UIApplication.shared.keyWindow?.rootViewController = navController
+                                                }, completion: { completed in
+                                                    // maybe do something here
+                                                })
+                                            }, failed: { (error) in
+                                                self.hideHUD()
+                                                self.showAlert(error)
+                                                ELog(error)
+                                            })
+            }))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
             break
         default:
             break
         }
+        
+        configBackButton()
+        _obj.nc5.pushViewController(vc, animated: true)
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -276,6 +276,7 @@
 
 "leave_confirm"                         = "退会確認";
 "really_want_leave_message"             = "本当に退会しますか？";
+"really_logout_message"                 = "本当にログアウトしますか。";
 
 "guide_qr_code"                         = "薬局の店頭にあるＱＲコードを読み込んでください。読み取りがうまくいかない場合、平らな明るい場所でお試しください。";
 "qr_title"                              = "QRコード読取り";
