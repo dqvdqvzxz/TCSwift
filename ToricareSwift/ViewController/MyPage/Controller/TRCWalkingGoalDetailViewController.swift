@@ -73,7 +73,7 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
                     self.goalInfo = try parseDict(dataResult as! JSONObject) as TRCGoal
                     _obj.objectGoal = self.goalInfo
                     
-                    for i in stride(from: 1000, to: 51000, by: 1000){
+                    for i in stride(from: 1000, to: 21000, by: 1000){
                         if(i == Int(_obj.objectGoal.steps)){
                             self.pickerTarget.selectRow(((i / 1000) - 1) , inComponent: 0, animated: true)
                         }
@@ -93,7 +93,7 @@ class TRCWalkingGoalDetailViewController: TRCBaseViewController {
     
     //MARK: Function
     func initValuePicker(){
-        for i in stride(from: 1000, to: 51000, by: 1000){
+        for i in stride(from: 1000, to: 21000, by: 1000){
             pickerData.append(i)
         }
     }
@@ -132,29 +132,20 @@ extension TRCWalkingGoalDetailViewController: UIPickerViewDataSource{
 }
 
 extension TRCWalkingGoalDetailViewController: UIPickerViewDelegate{
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        lblTitle.text = pickerData[row]
-    }
-    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-            var pickerLabel: UILabel? = (view as? UILabel)
-            if pickerLabel == nil {
-                pickerLabel = UILabel()
-                pickerLabel?.font = UIFont.systemFont(ofSize: 60)
-                pickerLabel?.textAlignment = .center
-            }
-            pickerLabel?.text = pickerData[row].description
-            pickerLabel?.textColor = UIColor.init(hexString: MAIN_COLOR)
-            
-            return pickerLabel!
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont.systemFont(ofSize: 45)
+            pickerLabel?.textAlignment = .center
+        }
+        pickerLabel?.text = String().convertDecimal(pickerData[row].description)
+        pickerLabel?.textColor = UIColor.init(hexString: LABEL_FONT_COLOR)
+
+        return pickerLabel!
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 90
     }
-    
-    
-//    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-////        return 190
-//    }
 }
