@@ -121,3 +121,5 @@ let TABBAR_COLOR_2 = "d07c00"
 let TABBAR_COLOR_3 = "c12f5b"
 let TABBAR_COLOR_4 = "13918d"
 
+let ALPHA_DISABLE:CGFloat = 0.3
+let ALPHA_ENABLE:CGFloat = 1.0
