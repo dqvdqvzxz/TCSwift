@@ -26,6 +26,9 @@ extension UILabel{
     }
     
     func makeLineSpacing(spacing: CGFloat = 5) {
+        if (self.text?.isBlank)! {
+            self.text = " "
+        }
         let attrString = NSMutableAttributedString(string: self.text!)
         let style = NSMutableParagraphStyle()
         style.lineSpacing = spacing
