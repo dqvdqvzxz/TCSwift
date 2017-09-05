@@ -113,14 +113,12 @@ extension TRCMyPharmacyDetailPageViewController: GLViewPagerViewControllerDelega
 }
 
 extension TRCMyPharmacyDetailPageViewController: TRCMyPharmacistDetailViewControllerDelegate {
-    func pushToPharmacistInput(_ dicResult: NSDictionary) {
+    func pushToPharmacistInput() {
         let vc = TRCMyPharmacistInputViewController(nibName: "TRCMyPharmacistInputViewController", bundle: nil)
         if (_obj.objectAccountInfo != nil) {
             vc.pharmacyName = _obj.objectAccountInfo.shopName
         }
-
         vc.hidesBottomBarWhenPushed = true
-        vc.dataResult = dicResult
         self.configPageBackButton()
         _obj.nc5.pushViewController(vc, animated: true)
     }

@@ -41,6 +41,10 @@ class TRCQRCodeViewController: TRCBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        _obj.tabController.tabBar.isHidden = true
+    }
+    
     //MARK: Config UI
     func configUI() {
         self.navigationItem.title = Localizable(value: "qr_title")

@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import HealthKit
 
 class TRCLinkedServicesViewController: TRCBaseViewController {
 
     @IBOutlet weak var tblLinked: UITableView!
+    
+    //declare for HealthKit
+    let healthManager: HealthKitManager = HealthKitManager()
 
     //MARK: View controller
     override func viewDidLoad() {
@@ -35,6 +39,34 @@ class TRCLinkedServicesViewController: TRCBaseViewController {
         tblLinked.register(UINib(nibName: "TRCLinkedServiceCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         tblLinked.tableFooterView = UIView()
+    }
+    
+    //MARK: Setup healthkit
+    func getHealthKitPermission(){
+        healthManager.authorizeHealthKit { (authorized, error) in
+            if authorized{
+                //get and set the user's step count
+            }else{
+                if error != nil{
+                    ELog(error)
+                }
+                ELog("Permission denied.")
+            }
+        }
+    }
+    
+    //Retriever step count 
+    func retrieveStepCount(completion: (_ stepRetrieved: Double) -> Void){
+        //define the step quantity type
+        let stepCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+        
+        //get the start of the day
+        let date = Date()
+        let cal = Calendar(identifier: Calendar.Identifier.gregorian)
+        let newDate = cal.startOfDay(for: date)
+        
+        //set the predicates & interval
+//        let predicate = HKQuery.prediacty
     }
 }
 
@@ -109,6 +141,9 @@ extension TRCLinkedServicesViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        if(indexPath.section == 0){
+            print("Call function setup HealthKit")
+            getHealthKitPermission()
+        }
     }
 }

@@ -78,7 +78,7 @@ class TRCEmailChangeInputViewController: TRCBaseViewController {
             self.showAlert(Localizable(value: "please_input_change_confirm_email"))
             return
         }
-        if (tfConfirmNewEmail.text?.isEmail)! {
+        if !(tfConfirmNewEmail.text?.isEmail)! {
             self.showAlert(Localizable(value: "please_input_correct_email_type"))
             return
         }

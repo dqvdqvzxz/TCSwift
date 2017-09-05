@@ -455,6 +455,14 @@
 		3FB411AD1F09F2AA008720A6 /* TRCRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB411AB1F09F2AA008720A6 /* TRCRegisterViewController.swift */; };
 		3FB411B01F09F2C2008720A6 /* TRCRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB411AF1F09F2C2008720A6 /* TRCRegisterViewController.xib */; };
 		57C6E70B6D71631356703859 /* Pods_ToricareSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */; };
+		6811A1721F591AF900BA74CA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6811A1711F591AF900BA74CA /* HealthKit.framework */; };
+		6811A1791F59207700BA74CA /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811A1781F59207700BA74CA /* HealthKitManager.swift */; };
+		6811A17A1F59207700BA74CA /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811A1781F59207700BA74CA /* HealthKitManager.swift */; };
+		6811A17B1F59207700BA74CA /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811A1781F59207700BA74CA /* HealthKitManager.swift */; };
+		6811A17D1F59367E00BA74CA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6811A1711F591AF900BA74CA /* HealthKit.framework */; };
+		6811A17F1F597A2000BA74CA /* TRCPharmacist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811A17E1F597A2000BA74CA /* TRCPharmacist.swift */; };
+		6811A1801F597A2000BA74CA /* TRCPharmacist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811A17E1F597A2000BA74CA /* TRCPharmacist.swift */; };
+		6811A1811F597A2000BA74CA /* TRCPharmacist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811A17E1F597A2000BA74CA /* TRCPharmacist.swift */; };
 		684095AA1F303B2A009F16EA /* TRCTab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095A81F303B2A009F16EA /* TRCTab2ViewController.swift */; };
 		684095AB1F303B2A009F16EA /* TRCTab2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 684095A91F303B2A009F16EA /* TRCTab2ViewController.xib */; };
 		684095AE1F303B36009F16EA /* TRCTab3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684095AC1F303B36009F16EA /* TRCTab3ViewController.swift */; };
@@ -646,6 +654,11 @@
 		3FB411A41F09E13E008720A6 /* TRCPreLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCPreLoginViewController.xib; sourceTree = "<group>"; };
 		3FB411AB1F09F2AA008720A6 /* TRCRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCRegisterViewController.swift; sourceTree = "<group>"; };
 		3FB411AF1F09F2C2008720A6 /* TRCRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCRegisterViewController.xib; sourceTree = "<group>"; };
+		6811A1701F591AF900BA74CA /* ToricareSwiftDev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToricareSwiftDev.entitlements; sourceTree = "<group>"; };
+		6811A1711F591AF900BA74CA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		6811A1781F59207700BA74CA /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		6811A17C1F59367E00BA74CA /* ToricareSwiftLocal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToricareSwiftLocal.entitlements; sourceTree = "<group>"; };
+		6811A17E1F597A2000BA74CA /* TRCPharmacist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCPharmacist.swift; sourceTree = "<group>"; };
 		684095A81F303B2A009F16EA /* TRCTab2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCTab2ViewController.swift; sourceTree = "<group>"; };
 		684095A91F303B2A009F16EA /* TRCTab2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRCTab2ViewController.xib; sourceTree = "<group>"; };
 		684095AC1F303B36009F16EA /* TRCTab3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCTab3ViewController.swift; sourceTree = "<group>"; };
@@ -688,6 +701,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C98FAB1F3BFAE8003AF863 /* Pods_ToricareSwift.framework in Frameworks */,
+				6811A17D1F59367E00BA74CA /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D9BF4D1F5567E2004F090A /* Pods_ToricareSwift.framework in Frameworks */,
+				6811A1721F591AF900BA74CA /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +730,7 @@
 			children = (
 				1788CE0D1F37FFC300778006 /* JSONParsing.swift */,
 				17D338521F341FF400F4B254 /* Global.swift */,
+				6811A1781F59207700BA74CA /* HealthKitManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -812,6 +828,7 @@
 			isa = PBXGroup;
 			children = (
 				68F07DA71F3AF05700E1934C /* TRCGoal.swift */,
+				6811A17E1F597A2000BA74CA /* TRCPharmacist.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -860,6 +877,8 @@
 		3FB411111EFB607C008720A6 = {
 			isa = PBXGroup;
 			children = (
+				6811A17C1F59367E00BA74CA /* ToricareSwiftLocal.entitlements */,
+				6811A1701F591AF900BA74CA /* ToricareSwiftDev.entitlements */,
 				3FB4111C1EFB607C008720A6 /* ToricareSwift */,
 				3FB4111B1EFB607C008720A6 /* Products */,
 				CF69D650093D323D935D7033 /* Pods */,
@@ -1220,6 +1239,7 @@
 		D25007C60A0A6E546FF58934 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6811A1711F591AF900BA74CA /* HealthKit.framework */,
 				B6768D856B942112EB83DFE3 /* Pods_ToricareSwift.framework */,
 			);
 			name = Frameworks;
@@ -1303,12 +1323,22 @@
 				ORGANIZATIONNAME = "Mèo Béo";
 				TargetAttributes = {
 					17C98F4E1F3BFAE8003AF863 = {
-						DevelopmentTeam = 2L8CWRYK58;
-						ProvisioningStyle = Automatic;
-					};
-					17D9BEE01F5567E2004F090A = {
 						DevelopmentTeam = MCPGP47PRG;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+					17D9BEE01F5567E2004F090A = {
+						DevelopmentTeam = 2L8CWRYK58;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					3FB411191EFB607C008720A6 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -1757,6 +1787,7 @@
 				17C98F691F3BFAE8003AF863 /* TRCPasswordChangeViewController.swift in Sources */,
 				68F07DE21F4C0B7F00E1934C /* TRCSearchTextPageView.swift in Sources */,
 				17C98F6A1F3BFAE8003AF863 /* TRCMyPageViewController.swift in Sources */,
+				6811A17A1F59207700BA74CA /* HealthKitManager.swift in Sources */,
 				17C98F6B1F3BFAE8003AF863 /* TRCRegisterViewController.swift in Sources */,
 				6848E37B1F5694AC0086A288 /* TRCBannerPageView.swift in Sources */,
 				17C98F6D1F3BFAE8003AF863 /* TRCPharmacySearchViewController.swift in Sources */,
@@ -1799,6 +1830,7 @@
 				17C98F8D1F3BFAE8003AF863 /* TRCWebViewController.swift in Sources */,
 				17C98F8E1F3BFAE8003AF863 /* TRCPasswordRequest.swift in Sources */,
 				17C98F8F1F3BFAE8003AF863 /* TRCLogoutViewController.swift in Sources */,
+				6811A1801F597A2000BA74CA /* TRCPharmacist.swift in Sources */,
 				17C98F901F3BFAE8003AF863 /* TRCNotificationRequest.swift in Sources */,
 				17C98F921F3BFAE8003AF863 /* Textfield.swift in Sources */,
 				17BC58481F4E7DA70024950B /* TRCNotificationTableViewCell.swift in Sources */,
@@ -1870,6 +1902,7 @@
 				17D9BF041F5567E2004F090A /* TRCPasswordChangeViewController.swift in Sources */,
 				17D9BF051F5567E2004F090A /* TRCSearchTextPageView.swift in Sources */,
 				17D9BF061F5567E2004F090A /* TRCMyPageViewController.swift in Sources */,
+				6811A17B1F59207700BA74CA /* HealthKitManager.swift in Sources */,
 				17D9BF071F5567E2004F090A /* TRCRegisterViewController.swift in Sources */,
 				6848E37C1F5694AC0086A288 /* TRCBannerPageView.swift in Sources */,
 				17D9BF081F5567E2004F090A /* TRCPharmacySearchViewController.swift in Sources */,
@@ -1912,6 +1945,7 @@
 				17D9BF2D1F5567E2004F090A /* TRCWebViewController.swift in Sources */,
 				17D9BF2E1F5567E2004F090A /* TRCPasswordRequest.swift in Sources */,
 				17D9BF2F1F5567E2004F090A /* TRCLogoutViewController.swift in Sources */,
+				6811A1811F597A2000BA74CA /* TRCPharmacist.swift in Sources */,
 				17D9BF301F5567E2004F090A /* TRCNotificationRequest.swift in Sources */,
 				17D9BF311F5567E2004F090A /* Textfield.swift in Sources */,
 				17D9BF321F5567E2004F090A /* TRCNotificationTableViewCell.swift in Sources */,
@@ -1949,6 +1983,7 @@
 			files = (
 				68BB9ECE1F386B35009A8454 /* TRCEmailRequest.swift in Sources */,
 				684095AE1F303B36009F16EA /* TRCTab3ViewController.swift in Sources */,
+				6811A17F1F597A2000BA74CA /* TRCPharmacist.swift in Sources */,
 				1757AF3C1F4177D200F340D6 /* TRCMessage.swift in Sources */,
 				3F57F7521F298C3600CC079C /* TRCPasscodeLockLoginInputViewController.swift in Sources */,
 				3F475A741F14B05A00B82645 /* TRCMyPageCell.swift in Sources */,
@@ -2005,6 +2040,7 @@
 				3FB4116A1EFBBAC2008720A6 /* TRCStringConstant.swift in Sources */,
 				17B0EEB61F4AEF3E00B5249E /* TRCQRRequest.swift in Sources */,
 				3F4759231F0CC37B00B82645 /* TRCSettingViewController.swift in Sources */,
+				6811A1791F59207700BA74CA /* HealthKitManager.swift in Sources */,
 				3F475A861F172A2000B82645 /* TRCPointViewController.swift in Sources */,
 				3FB411991F05F988008720A6 /* TRCHomeViewController.swift in Sources */,
 				3F4759531F0CC46E00B82645 /* TRCUserLeaveCompleteViewController.swift in Sources */,
@@ -2076,17 +2112,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ToricareSwiftLocal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Son Nguyen (ZFWYQ77AD6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2L8CWRYK58;
+				DEVELOPMENT_TEAM = MCPGP47PRG;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = "ToricareSwift copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.ic-sol.tricareapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
+				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG_LEVEL_1 ENV_1";
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2100,17 +2137,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ToricareSwiftLocal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Son Nguyen (ZFWYQ77AD6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2L8CWRYK58;
+				DEVELOPMENT_TEAM = MCPGP47PRG;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "ToricareSwift copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.ic-sol.tricareapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
+				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ENV_1;
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -2123,17 +2161,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ToricareSwiftDev.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Son Nguyen (ZFWYQ77AD6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MCPGP47PRG;
+				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = "ToricareSwiftTest copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.ic-sol.tricareapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.ic-sol.tricareapp.test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
-				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG_LEVEL_1 ENV_2";
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2147,17 +2186,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ToricareSwiftDev.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Son Nguyen (ZFWYQ77AD6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MCPGP47PRG;
+				DEVELOPMENT_TEAM = 2L8CWRYK58;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "ToricareSwiftTest copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.ic-sol.tricareapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.ic-sol.tricareapp.test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "876ce39e-6999-49dd-910a-e6dde97b99b6";
-				PROVISIONING_PROFILE_SPECIFIER = TricareApp_Development_Profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ENV_2;
 				SWIFT_OBJC_BRIDGING_HEADER = "ToricareSwift/Supporting File/ToricareSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
