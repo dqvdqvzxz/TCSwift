@@ -21,6 +21,7 @@ class TRCLinkedServicesViewController: TRCBaseViewController {
         super.viewDidLoad()
 
         configUI()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,28 +46,14 @@ class TRCLinkedServicesViewController: TRCBaseViewController {
     func getHealthKitPermission(){
         healthManager.authorizeHealthKit { (authorized, error) in
             if authorized{
-                //get and set the user's step count
+                DLog("Permission accepted !")
             }else{
                 if error != nil{
-                    ELog(error)
+                    ELog(error as Any)
                 }
                 ELog("Permission denied.")
             }
         }
-    }
-    
-    //Retriever step count 
-    func retrieveStepCount(completion: (_ stepRetrieved: Double) -> Void){
-        //define the step quantity type
-        let stepCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-        
-        //get the start of the day
-        let date = Date()
-        let cal = Calendar(identifier: Calendar.Identifier.gregorian)
-        let newDate = cal.startOfDay(for: date)
-        
-        //set the predicates & interval
-//        let predicate = HKQuery.prediacty
     }
 }
 
@@ -142,8 +129,13 @@ extension TRCLinkedServicesViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.section == 0){
-            print("Call function setup HealthKit")
+            //require permission
             getHealthKitPermission()
+            
+            //get steps
+            healthManager.getTodaysSteps(completion: { (steps) in
+                print(steps)
+            })
         }
     }
 }

@@ -33,4 +33,32 @@ class HealthKitManager{
             }
         })
     }
+    
+    func getTodaysSteps(completion: @escaping (Double) -> Void) {
+        let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+        
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        
+        let query = HKStatisticsQuery(quantityType: stepsQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (_, result, error) in
+            var resultCount = 0.0
+            
+            guard let result = result else {
+                print("Failed to fetch steps = \(error?.localizedDescription ?? "N/A")")
+                completion(resultCount)
+                return
+            }
+            
+            if let sum = result.sumQuantity() {
+                resultCount = sum.doubleValue(for: HKUnit.count())
+            }
+            
+            DispatchQueue.main.async {
+                completion(resultCount)
+            }
+        }
+        
+        healthKitStore.execute(query)
+    }
 }
