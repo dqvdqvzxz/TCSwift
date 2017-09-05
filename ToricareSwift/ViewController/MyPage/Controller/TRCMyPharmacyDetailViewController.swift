@@ -25,7 +25,7 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
     @IBOutlet weak var lblPhoneResult: UILabel!
     @IBOutlet weak var lblWorkSchedule: UILabel!
     @IBOutlet weak var lblWorkScheduleResult: UILabel!
-    @IBOutlet weak var lblWorkScheduleDayOffResult: UILabel!
+//    @IBOutlet weak var lblWorkScheduleDayOffResult: UILabel!
     @IBOutlet weak var lblDayOff: UILabel!
     @IBOutlet weak var lblDayOffResult: UILabel!
     @IBOutlet weak var lblWebsite: UILabel!
@@ -196,15 +196,16 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
             lblAddressResult.labelStyle(title: nil)
             lblPhoneResult.labelStyle(title: nil)
             lblWorkScheduleResult.labelStyle(title: nil)
-            lblWorkScheduleDayOffResult.labelStyle(title: nil)
             lblDayOffResult.labelStyle(title: nil)
             
             lblPharmacyName.text = pharmacyData.name
             lblAddressResult.text = pharmacyData.address1 + " " + pharmacyData.address2
+            lblAddressResult.makeLineSpacing()
             lblPhoneResult.text = pharmacyData.tel
             lblWorkScheduleResult.text = pharmacyData.businessHours
-            lblWorkScheduleDayOffResult.text = pharmacyData.holiday
-            lblDayOffResult.text = pharmacyData.holiday
+            lblWorkScheduleResult.makeLineSpacing()
+            lblDayOffResult.text = pharmacyData.holiday//getValueAtIndex(stringValue: pharmacyData.holiday, index: 0)
+            lblDayOffResult.makeLineSpacing()
             lblWebsiteResult.labelStyle(title: pharmacyData.url, fontSize: LABEL_FONT_SIZE, isBold: false, textColor: URL_COLOR)
             lblWebsiteResult.makeLineSpacing()
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openURL))
@@ -225,6 +226,21 @@ class TRCMyPharmacyDetailViewController: TRCBaseViewController {
         } else {
             
         }
+    }
+    
+    func getValueAtIndex(stringValue: String, index: Int) -> String {
+        let stringSeparator = "\r\n"
+        let stringObject = NSString(string: stringValue)
+        if (stringValue.isBlank || stringObject.range(of: stringSeparator).location == NSNotFound) {
+            return ""
+        }
+        
+        let stringArray = stringObject.components(separatedBy: stringSeparator)
+        if (stringArray.count == 2) {
+            return stringArray[index]
+        }
+        
+        return ""
     }
     
     func openURL() {

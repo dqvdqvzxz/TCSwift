@@ -25,10 +25,10 @@ extension UILabel{
         }
     }
     
-    func makeLineSpacing() {
+    func makeLineSpacing(spacing: CGFloat = 5) {
         let attrString = NSMutableAttributedString(string: self.text!)
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
+        style.lineSpacing = spacing
         attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: self.text!.characters.count))
         self.text = ""
         self.attributedText = attrString
